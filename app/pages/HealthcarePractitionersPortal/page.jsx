@@ -157,7 +157,7 @@ const HealthcarePortal = () => {
               </div>
 
               <form className="p-8 space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Title
@@ -195,8 +195,10 @@ const HealthcarePortal = () => {
                       className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     />
                   </div>
+                </div>
 
-                  <div className="space-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Email Address
                     </label>
@@ -206,9 +208,6 @@ const HealthcarePortal = () => {
                       className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     />
                   </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Mobile
@@ -253,7 +252,10 @@ const HealthcarePortal = () => {
                       type="date"
                     />
                   </div>
-                  <div className="space-y-2">
+                 
+                </div>
+                <div className="">
+                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Upload Image
                     </label>

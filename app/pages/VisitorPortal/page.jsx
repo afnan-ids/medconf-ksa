@@ -186,7 +186,7 @@ const VisitorPortal = () => {
               </div>
 
               <form className="p-8 space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Title
@@ -225,7 +225,11 @@ const VisitorPortal = () => {
                     />
                   </div>
 
-                  <div className="space-y-2">
+                 
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Email Address
                     </label>
@@ -235,9 +239,6 @@ const VisitorPortal = () => {
                       className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     />
                   </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Mobile
@@ -278,9 +279,6 @@ const VisitorPortal = () => {
                       className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     />
                   </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       State
@@ -292,6 +290,10 @@ const VisitorPortal = () => {
                     />
                   </div>
 
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Organization / Institution
@@ -501,7 +503,7 @@ const VisitorPortal = () => {
                       <div className="flex flex-col items-center justify-center border border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
                       
                         <div className="w-full h-full bg-white shadow-inner rounded-lg flex items-center justify-center">
-                          <img src="/Images/QrCode-e-Ticket.png" alt="QrCode-e-Ticket" />
+                          <img src="/Images/QrCode-e-Ticket.png" alt="QrCode-e-Ticket" className="h-42" />
                         </div>
                         <p className="mt-4 text-xs text-gray-500 text-center">
                           Show this QR code at the entrance
