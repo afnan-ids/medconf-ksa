@@ -81,7 +81,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Stats Box */}
-      <div className="absolute lg:bottom-0 lg:right-72 flex gap-10 px-10 py-6 bg-blue-900 backdrop-blur-xl border border-white/20 rounded-t-2xl shadow-2xl">
+      <div className="absolute lg:bottom-0 lg:right-72 flex gap-10 px-10 py-6 bg-gradient-to-br from-blue-900 via-blue-600 to-purple-900  border border-white/20 rounded-t-2xl shadow-2xl">
         <div className="flex flex-col">
           <span className="text-4xl font-extrabold text-white mb-2">250+</span>
           <span className="text-lg text-gray-200 tracking-wide">
