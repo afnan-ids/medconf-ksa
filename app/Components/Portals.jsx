@@ -20,13 +20,13 @@ const portals = [
     title: "Visitor Portal",
     description: "Registration, agenda, live streaming",
     icon: Users,
-    href: "#",
+    href: "/pages/VisitorPortal",
   },
   {
     title: "Healthcare Practitioners Portal",
     description: "License upload & SCFHS verification",
     icon: Stethoscope,
-    href: "#",
+    href: "/pages/HealthcarePractitionersPortal",
   },
 ];
 

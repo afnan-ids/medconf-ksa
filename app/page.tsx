@@ -4,7 +4,7 @@ import Slider from "@/app/Layout/Slider"
 import Services from "@/app/Components/Services"
 import Portals from "@/app/Components/Portals"
 import UpcomingEvents from "@/app/Components/UpcomingEvents"
-import Footer from "@/app/Layout/Footer"
+import Testimonials from "@/app/Components/Testonomials"
 
 export default function Home() {
   return (
@@ -15,8 +15,7 @@ export default function Home() {
      <Services/>
      <Portals/>
      <UpcomingEvents/>
-     <Footer/>
-    
+   
     </>
   );
 }
