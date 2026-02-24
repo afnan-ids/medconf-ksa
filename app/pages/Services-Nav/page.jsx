@@ -4,7 +4,7 @@ import Services from "@/app/Components/Services"
 
 const page = () => {
   return (
-    <div className='lg:pt-20'><Services/></div>
+    <div className=''><Services/></div>
   )
 }
 

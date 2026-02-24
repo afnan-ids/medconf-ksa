@@ -174,8 +174,9 @@ export default function PartnersGrid() {
             Our Corporate & Innovation Partners
           </h2>
 
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full" />
-
+          {/* <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full" /> */}
+           <div className="mt-7 w-24 h-1 rounded-full bg-gradient-to-r from-blue-400 to-cyan-300 group-hover:w-24 transition-all duration-500" />
+           
           <p className="mt-6 text-white max-w-2xl mx-auto text-lg">
             Collaborating with global industry leaders, venture funds, and innovation pioneers driving the future of technology.
           </p>

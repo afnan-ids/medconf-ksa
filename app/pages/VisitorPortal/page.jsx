@@ -79,9 +79,9 @@ const VisitorPortal = () => {
   ];
 
   return (
-    <div className="lg:mt-12 min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className=" min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section*/}
-      <div className="relative w-full bg-gradient-to-br from-blue-900 via-blue-600 to-purple-900 text-white overflow-hidden">
+      <div className="lg:h-8 relative w-full bg-gradient-to-br from-blue-900 via-blue-600 to-purple-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
           {/* Breadcrumb with enhanced styling */}
@@ -224,12 +224,10 @@ const VisitorPortal = () => {
                       className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     />
                   </div>
-
-                 
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                   <div className="space-y-2">
+                  <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Email Address
                     </label>
@@ -289,11 +287,9 @@ const VisitorPortal = () => {
                       className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     />
                   </div>
-
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-700">
                       Organization / Institution
@@ -317,27 +313,31 @@ const VisitorPortal = () => {
                       <option value="Dr">Other</option>
                     </select>
                   </div>
-                  
                 </div>
 
                 <div className="flex justify-between">
                   <div className="flex items-center justify-between gap-2 p-4 bg-gray-50 rounded-xl">
-                  <input
-                    type="checkbox"
-                    id="pdpl"
-                    className="rounded text-blue-600"
-                    defaultChecked
-                  />
-                  <label htmlFor="pdpl" className="text-sm text-gray-600">
-                    I consent to data processing in accordance with PDPL
-                    regulations
-                  </label>
+                    <input
+                      type="checkbox"
+                      id="pdpl"
+                      className="rounded text-blue-600"
+                      defaultChecked
+                    />
+                    <label htmlFor="pdpl" className="text-sm text-gray-600">
+                      I consent to data processing in accordance with PDPL
+                      regulations
+                    </label>
                   </div>
                   <div className="justify-center  rounded-2xl p-2 absolute right-8 bottom-25">
-                  <img src="/Images/ScanMoblie_registeration.png" alt="ScanMoblie_registeration" className="h-32 w-32 object-cover justify-self-center" />
-                  <span className="text-xs font-semibold mt-2">Scan QR for instant mobile registration</span>
+                    <img
+                      src="/Images/ScanMoblie_registeration.png"
+                      alt="ScanMoblie_registeration"
+                      className="h-32 w-32 object-cover justify-self-center"
+                    />
+                    <span className="text-xs font-semibold mt-2">
+                      Scan QR for instant mobile registration
+                    </span>
                   </div>
-                  
                 </div>
 
                 <div className="flex gap-4">
@@ -457,9 +457,9 @@ const VisitorPortal = () => {
           <div className="max-w-6xl mx-auto animate-fadeIn py-10">
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
               {/* Header */}
-             <div className="bg-gradient-to-r from-blue-900 via-blue-600 to-purple-900  px-8 py-6">
+              <div className="bg-gradient-to-r from-blue-900 via-blue-600 to-purple-900  px-8 py-6">
                 <h2 className="text-2xl font-bold text-white">
-                Your Digital E-Ticket
+                  Your Digital E-Ticket
                 </h2>
                 <p className="text-green-100 mt-1">
                   Present this ticket at the entrance for seamless access.
@@ -501,9 +501,12 @@ const VisitorPortal = () => {
 
                       {/* QR Section */}
                       <div className="flex flex-col items-center justify-center border border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
-                      
                         <div className="w-full h-full bg-white shadow-inner rounded-lg flex items-center justify-center">
-                          <img src="/Images/QrCode-e-Ticket.png" alt="QrCode-e-Ticket" className="h-42" />
+                          <img
+                            src="/Images/QrCode-e-Ticket.png"
+                            alt="QrCode-e-Ticket"
+                            className="h-42"
+                          />
                         </div>
                         <p className="mt-4 text-xs text-gray-500 text-center">
                           Show this QR code at the entrance

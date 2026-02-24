@@ -48,7 +48,7 @@ const HealthcarePortal = () => {
   ];
 
   return (
-    <div className="lg:mt-12 min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className=" min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section*/}
       <div className="relative w-full bg-gradient-to-br from-blue-900 via-blue-600 to-purple-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
