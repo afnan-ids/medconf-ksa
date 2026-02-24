@@ -124,7 +124,7 @@ export default function Footer() {
                     placeholder="Enter your email"
                     className="bg-transparent outline-none flex-1 text-sm text-white placeholder:text-gray-500"
                   />
-                  <button className="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-semibold hover:opacity-90 transition">
+                  <button className="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-900 via-blue-600 to-purple-900 text-white text-sm font-semibold hover:opacity-90 transition">
                     Join
                   </button>
                 </div>

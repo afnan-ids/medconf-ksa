@@ -23,7 +23,7 @@ const services = [
 export default function Services() {
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* Background Theme (same colors as your BackgroundTheme component) */}
+      {/* Background Theme */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-950/80 to-black/90 -z-10" />
       <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-600/25 blur-[140px] rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-[-250px] right-[-200px] w-[600px] h-[600px] bg-cyan-400/20 blur-[160px] rounded-full -z-10 animate-pulse" />
