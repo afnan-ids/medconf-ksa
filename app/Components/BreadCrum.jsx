@@ -21,7 +21,7 @@ const BreadCrum = ({ title, backgroundImage, path }) => {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2))",
+            "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.1))",
         }}
       />
 

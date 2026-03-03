@@ -45,9 +45,9 @@ export default function Portals() {
     <BreadCrum
           title="Portals"
           backgroundImage="/Images/Home/Bread-crum-1.avif"
-          path={["Home", "Pages", "Portals"]}
+          path={["Home", "Portals"]}
         />
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-10 overflow-hidden">
       {/* Animated Background - Matching Services and Events sections */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
         {/* Floating orbs */}
@@ -69,8 +69,7 @@ export default function Portals() {
 
           {/* Main title */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-white">Secure</span>
-            <br />
+            <span className="text-white">Secure</span> {""}
             <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
               Portals
             </span>
@@ -151,15 +150,6 @@ export default function Portals() {
                       </li>
                     ))}
                   </ul>
-
-                  {/* Link with enhanced styling */}
-                  <Link
-                    href={portal.href}
-                    className="relative inline-flex items-center gap-2 font-semibold text-blue-300 hover:text-cyan-300 transition-all group/link"
-                  >
-                    <span>Enter Portal</span>
-                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
 
                   {/* Bottom accent line */}
                   <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${portal.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>

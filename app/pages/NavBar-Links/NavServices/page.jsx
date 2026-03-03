@@ -43,9 +43,9 @@ export default function Services() {
     <BreadCrum
         title="Services"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "Pages", "Services"]}
+        path={["Home", "Services"]}
       />
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-10 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
         {/* Floating orbs */}
@@ -78,7 +78,7 @@ export default function Services() {
 
           {/* Description with decorative line */}
           <div className="relative max-w-3xl mx-auto">
-            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
               Everything you need to deliver high-impact medical conferences,
               workshops, and compliant healthcare events in Saudi Arabia.
