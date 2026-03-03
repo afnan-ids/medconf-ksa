@@ -1,10 +1,7 @@
-
-import React from 'react'
-
-const raugh = () => {
-  return (
-    <div>raugh</div>
+const rughpage =()=>{
+  return(
+    <>
+    </>
   )
 }
-
-export default raugh
+export default rughpage

@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 
 const navlinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/pages/Services-Nav" },
-  { label: "Events", href: "#" },
-  { label: "Portals", href: "/pages/Portals-Nav" },
+  { label: "Services", href: "/pages/NavBar-Pages/NavServices" },
+  { label: "Events", href: "/pages/NavBar-Pages/NavEvents" },
+  { label: "Portals", href: "/pages/NavBar-Pages/NavPortals" },
   { label: "About", href: "#" },
   { label: "Admin Dashboard", href: "/pages/AdminDashboard" },
   { label: "Contact", href: "#" },
@@ -77,8 +77,8 @@ export default function Navbar() {
               scrolled ? "text-gray-900" : "text-white"
             }`}
           >
-            Medconf
-            <span className="bg-gradient-to-br from-blue-900 via-blue-600 to-purple-900 bg-clip-text text-transparent ps-2">
+            Medconf {""}
+            <span className="text-transparent [-webkit-text-stroke:2px_white]">
               KSA
             </span>
           </Link>

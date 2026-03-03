@@ -18,6 +18,7 @@ import {
   Inventory as InventoryIcon,
   AttachMoney as AttachMoneyIcon,
 } from "@mui/icons-material";
+import BreadCrum from "../../Components/BreadCrum";
 
 const PortalHome = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -66,38 +67,13 @@ const PortalHome = () => {
   return (
     <div className=" min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section with Parallax Effect */}
-      <div className="relative w-full bg-gradient-to-br from-blue-900 via-blue-600 to-purple-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          {/* Breadcrumb with enhanced styling */}
-          <nav className="flex items-center space-x-2 text-sm text-blue-200 mb-6">
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <Link
-              href="/portals"
-              className="hover:text-white transition-colors"
-            >
-              Portals
-            </Link>
-            <span>/</span>
-            <span className="text-white font-medium">Exhibitor Dashboard</span>
-          </nav>
-
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-                Exhibitor Dashboard
-              </h1>
-              <p className="mt-3 text-lg text-blue-200 flex items-center">
-                <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                Welcome back, Pharma Co. | Global Health Exhibition 2026
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="">
+       <BreadCrum
+        title="Exhibitor Dashboard"
+        backgroundImage="/Images/Home/Bread-crum-1.avif"
+        path={["Home", "Pages", "Exhibitor Dashboard"]}
+      />
+    </div>
 
       {/* Tabs Section - Floating Design */}
       <div className="sticky top-4 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8">
