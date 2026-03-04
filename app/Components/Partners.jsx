@@ -1,85 +1,14 @@
-// "use client";
-// import React from "react";
-// import Link from "next/link";
-
-// const MediaPartnersSection = () => {
-//   const mediaPartners = [
-//     {
-//       name: "AI Press Room",
-//       logo: "https://cdn.showmanonline.com/event739/Posts/Media%20partners/AIPressRoom_800_250_transparent.png",
-//       url: "https://example.com",
-//     },
-//     {
-//       name: "Alertify",
-//       logo: "https://cdn.showmanonline.com/event739/Posts/Media%20partners/Alertify.png",
-//       url: "https://alertify.eu/",
-//     },
-//     {
-//       name: "Computing Deutschland",
-//       logo: "https://cdn.showmanonline.com/event739/Posts/logos25/ComputingDeutschlandlogo2001.jpg",
-//       url: "https://www.computingdeutschland.de/",
-//     },
-//     // keep the rest...
-//   ];
-
-//   return (
-//     <section className="bg-gray-50 py-20">
-//       <div className="max-w-6xl mx-auto px-6">
-
-//         {/* Header */}
-//         <div className="text-center mb-16">
-//           <h2 className="text-4xl font-semibold text-gray-900">
-//             Media Partners
-//           </h2>
-//           <p className="mt-4 text-gray-500 max-w-xl mx-auto">
-//             Leading publications covering innovation and technology worldwide.
-//           </p>
-//         </div>
-
-//         {/* Grid */}
-//         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-//           {mediaPartners.map((partner, index) => (
-//             <a
-//               key={index}
-//               href={partner.url}
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="flex items-center justify-center bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition duration-300"
-//             >
-//               <img
-//                 src={partner.logo}
-//                 alt={partner.name}
-//                 className="max-h-14 object-contain grayscale hover:grayscale-0 transition duration-300"
-//               />
-//             </a>
-//           ))}
-//         </div>
-
-//         {/* CTA */}
-//         <div className="text-center mt-16">
-//           <Link
-//             href="/media-partners"
-//             className="inline-block px-8 py-3 bg-gray-900 text-white rounded-full text-sm font-medium hover:bg-gray-800 transition"
-//           >
-//             Become a Media Partner
-//           </Link>
-//         </div>
-
-//         {/* Small note */}
-//         <div className="text-center mt-6">
-//           <p className="text-sm text-gray-500">
-//             Join {mediaPartners.length}+ global media outlets.
-//           </p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default MediaPartnersSection;
-
 "use client";
+
+import {
+  Award,
+  ChevronRight,
+  Globe,
+  Sparkles,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const partners = [
   {
@@ -158,38 +87,68 @@ const partners = [
 
 export default function PartnersGrid() {
   return (
-    <section className="py-16 bg-gradient-to-br from-black/80 via-blue-950/80 to-black/90 -z-10">
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Our Corporate & Innovation Partners
-          </h2>
+    <section className="relative w-full overflow-hidden py-20">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+      </div>
 
-          <div className="w-full flex justify-center">
-            <div className="mt-7 w-24 h-1 rounded-full bg-gradient-to-r from-blue-400 to-cyan-300 group-hover:w-24 transition-all duration-500" />
+      <div className="relative z-10 px-6">
+        <div className="rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl p-10 lg:p-14">
+
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-xs mb-6">
+              <Globe className="w-4 h-4 text-blue-400" />
+              Global Network
+              <span className="w-1 h-1 bg-white/30 rounded-full"></span>
+              <Award className="w-4 h-4 text-cyan-400" />
+              {partners.length}+ Partners
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Media & Innovation
+              <span className="block text-2xl md:text-3xl text-gray-300 mt-2">
+                Partners
+              </span>
+            </h2>
+
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Collaborating with global industry leaders and innovation pioneers.
+            </p>
           </div>
-          <p className="mt-6 text-white max-w-2xl mx-auto text-lg">
-            Collaborating with global industry leaders, venture funds, and
-            innovation pioneers driving the future of technology.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center">
-          {partners.map((partner, index) => (
-            <div key={index} className="w-full flex justify-center">
-              <div className="w-full bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-center hover:shadow-md transition duration-300 shadow-2xl">
+          {/* Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+            {partners.map((partner) => (
+              <div
+                key={partner.name}
+                className="group bg-white rounded-xl p-6 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+              >
                 <Image
                   src={partner.logo}
                   alt={partner.name}
                   width={160}
                   height={80}
-                  loading="lazy"
-                  className="object-contain max-h-14 w-auto"
+                  className="object-contain max-h-14 w-auto grayscale group-hover:grayscale-0 transition duration-300"
                 />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <Link
+              href="#"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-lg font-medium hover:scale-105 transition"
+            >
+              <Users className="w-5 h-5" />
+              Become a Partner
+              <ChevronRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

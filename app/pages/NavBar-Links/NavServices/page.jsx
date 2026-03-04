@@ -164,13 +164,7 @@ export default function Services() {
 
         {/* Bottom CTA */}
         <div className="mt-24 text-center">
-          <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-8 py-4 hover:bg-white/10 transition-all duration-300 cursor-pointer group">
-            <span className="text-gray-300">Need a custom solution?</span>
-            <span className="text-white font-semibold group-hover:ml-2 transition-all">
-              Talk to our team
-            </span>
-            <ArrowRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 transition-transform" />
-          </div>
+          
         </div>
       </div>
 

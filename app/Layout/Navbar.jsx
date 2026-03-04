@@ -10,9 +10,9 @@ const navlinks = [
   { label: "Services", href: "/pages/NavBar-Links/NavServices" },
   { label: "Events", href: "/pages/NavBar-Links/NavEvents" },
   { label: "Portals", href: "/pages/NavBar-Links/NavPortals" },
-  { label: "About", href: "#" },
+  { label: "About", href: "/pages/AboutUs" },
   { label: "Admin Dashboard", href: "/pages/AdminDashboard" },
-  { label: "Contact", href: "#" },
+  { label: "Contact", href: "/pages/ContactUs" },
 ];
 
 export default function Navbar() {
@@ -91,7 +91,7 @@ export default function Navbar() {
                 <span
                   className="
                   bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 
-                  bg-clip-text text-transparent
+                  bg-clip-text text-transparent stroke-text
                   ml-1
                   "
                 >
