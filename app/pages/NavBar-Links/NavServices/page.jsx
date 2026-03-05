@@ -43,7 +43,7 @@ export default function Services() {
     <BreadCrum
         title="Services"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "Services"]}
+        path={["Services"]}
       />
     <section className="relative py-10 overflow-hidden">
       {/* Animated Background */}

@@ -164,7 +164,7 @@ export default function AboutPage() {
       <BreadCrum
         title="About Us"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "About Us "]}
+        path={["About Us "]}
       />
       <section className="relative min-h-screen py-28 overflow-hidden">
         {/* Animated Background */}

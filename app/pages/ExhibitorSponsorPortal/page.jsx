@@ -71,7 +71,7 @@ const PortalHome = () => {
        <BreadCrum
         title="Exhibitor Dashboard"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "Pages", "Exhibitor Dashboard"]}
+        path={["Portals","Exhibitor Dashboard"]}
       />
     </div>
 

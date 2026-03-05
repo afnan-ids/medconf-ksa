@@ -109,11 +109,11 @@ export default function Services() {
 
               {/* Title with gradient */}
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Comprehensive{" "}
+               Our{" "}
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Healthcare Event
+                  Services
                 </span>{" "}
-                Solutions
+               
               </h2>
 
               {/* Decorative line - matching footer style */}

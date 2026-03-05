@@ -55,7 +55,7 @@ const HealthcarePortal = () => {
        <BreadCrum
         title="Healthcare Practitioners Portal"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "Pages", "Healthcare Practitioners Portal"]}
+        path={["Portals", "Healthcare Practitioners Portal"]}
       />
     </div>
 

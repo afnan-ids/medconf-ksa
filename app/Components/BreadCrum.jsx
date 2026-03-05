@@ -28,7 +28,6 @@ const BreadCrumb = ({ title, backgroundImage, path }) => {
       {/* Content */}
       <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-center z-10">
         <div className="text-white animate-fadeIn">
-          {/* Breadcrumb path with enhanced styling */}
           <nav className="flex items-center gap-2 text-sm mb-4" aria-label="Breadcrumb">
             <Link 
               href="/" 

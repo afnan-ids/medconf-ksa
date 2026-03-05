@@ -60,7 +60,7 @@ const AdminDashboard = () => {
        <BreadCrum
         title="Admin Dash Board"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "Admin Dash Board"]}
+        path={["Admin Dash Board"]}
       />
     </div>
     

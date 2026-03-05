@@ -120,7 +120,7 @@ export default function ContactPage() {
     <BreadCrum  
         title="Contact Us"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "Contact Us "]}
+        path={["Contact Us "]}
       />
     <section className="relative min-h-screen py-28 overflow-hidden">
       {/* Animated Background */}

@@ -85,7 +85,7 @@ const VisitorPortal = () => {
       <BreadCrum
         title="Visitors Dashboard"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "Visitors Dashboard"]}
+        path={["Portals", "Visitors Dashboard"]}
       />
 
       {/* Tabs Section - Floating Design */}

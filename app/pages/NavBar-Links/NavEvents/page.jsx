@@ -41,7 +41,7 @@ const EventsSection = () => {
    <BreadCrum
         title="Events"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Home", "Pages", "Events"]}
+        path={["Events"]}
       />
     <section id="events" className="relative py-10 overflow-hidden">
       {/* Animated Background - Matching Services section */}
