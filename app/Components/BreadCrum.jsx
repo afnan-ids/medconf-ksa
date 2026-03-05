@@ -21,36 +21,47 @@ const BreadCrumb = ({ title, backgroundImage, path }) => {
 
       {/* Gradient Overlay - Enhanced with radial gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/50 to-transparent"></div>
-      
+
       {/* Additional bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent"></div>
 
       {/* Content */}
       <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-center z-10">
         <div className="text-white animate-fadeIn">
-          <nav className="flex items-center gap-2 text-sm mb-4" aria-label="Breadcrumb">
-            <Link 
-              href="/" 
+          <nav
+            className="flex items-center gap-2 text-sm mb-4"
+            aria-label="Breadcrumb"
+          >
+            <Link
+              href="/"
               className="flex items-center gap-1 text-gray-400 hover:text-blue-400 transition-colors group"
             >
               <Home className="w-4 h-4 group-hover:scale-110 transition-transform" />
               <span>Home</span>
             </Link>
-            
-            {path?.map((item, index) => (
-              <React.Fragment key={index}>
-                <ChevronRight className="w-4 h-4 text-gray-600" />
-                <span
-                  className={`${
-                    index === path.length - 1
-                      ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 font-semibold"
-                      : "text-gray-300 hover:text-blue-400 transition-colors cursor-pointer"
-                  }`}
-                >
-                  {item}
-                </span>
-              </React.Fragment>
-            ))}
+
+            {path?.map((item, index) => {
+              const isLast = index === path.length - 1;
+
+              return (
+                <React.Fragment key={index}>
+                  <ChevronRight className="w-4 h-4 text-gray-600" />
+
+                  {isLast ? (
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 font-semibold">
+                      {item.label}
+                    </span>
+                  ) : (
+                    <Link
+                      href={item?.href || "#"}
+                      className="text-gray-300 hover:text-blue-400 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </React.Fragment>
+              );
+            })}
           </nav>
 
           {/* Title with enhanced styling */}
@@ -64,7 +75,6 @@ const BreadCrumb = ({ title, backgroundImage, path }) => {
             <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-400 rounded-full"></div>
           </div>
-          
         </div>
       </div>
 
@@ -80,7 +90,7 @@ const BreadCrumb = ({ title, backgroundImage, path }) => {
             transform: translateY(0);
           }
         }
-        
+
         .animate-fadeIn {
           animation: fadeIn 0.8s ease-out forwards;
         }

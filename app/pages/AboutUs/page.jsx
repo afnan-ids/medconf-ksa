@@ -23,7 +23,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
-import BreadCrum from "../../Components/BreadCrum";
+import BreadCrumb from "../../Components/BreadCrum";
 
 export default function AboutPage() {
   const stats = [
@@ -66,7 +66,7 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Dr. Abdullah Al-Saud",
+      name: "Dr. Jane Smith *",
       role: "Founder & CEO",
       bio: "Former consultant at King Faisal Specialist Hospital with 20+ years in healthcare management.",
       image: "/Images/team/placeholder-1.jpg",
@@ -77,7 +77,7 @@ export default function AboutPage() {
       },
     },
     {
-      name: "Dr. Nora Al-Qahtani",
+      name: "Dr. Alex *",
       role: "Medical Director",
       bio: "Board-certified physician leading clinical content development and accreditation.",
       image: "/Images/team/placeholder-2.jpg",
@@ -88,7 +88,7 @@ export default function AboutPage() {
       },
     },
     {
-      name: "Engineer Fahad Al-Otaibi",
+      name: "Engineer Jordan *",
       role: "Technical Director",
       bio: "Expert in healthcare technology and digital transformation with 15 years experience.",
       image: "/Images/team/placeholder-3.jpg",
@@ -99,7 +99,7 @@ export default function AboutPage() {
       },
     },
     {
-      name: "Lina Al-Ghamdi",
+      name: "Casey *",
       role: "Events Director",
       bio: "Award-winning event planner specializing in large-scale medical conferences.",
       image: "/Images/team/placeholder-4.jpg",
@@ -151,22 +151,88 @@ export default function AboutPage() {
   ];
 
   const partners = [
-    { name: "SCFHS", logo: "/Images/partners/scfhs.png" },
-    { name: "MOH", logo: "/Images/partners/moh.png" },
-    { name: "KFSH", logo: "/Images/partners/kfsh.png" },
-    { name: "WHO", logo: "/Images/partners/who.png" },
-    { name: "GCC Health", logo: "/Images/partners/gcc.png" },
-    { name: "Saudi Vision 2030", logo: "/Images/partners/vision2030.png" },
+    {
+      name: "Airbus",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Airbuslogo18.jpg",
+    },
+    {
+      name: "Ajinomoto",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Side_Events/ajinomoto.jpg",
+    },
+    {
+      name: "Aschendorff",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Aschendorff-CVC.png",
+    },
+    {
+      name: "Bayer",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Bayer.png",
+    },
+    {
+      name: "Beiersdorf",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/Beiersdorflogo19.png",
+    },
+    {
+      name: "BMW i Ventures",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/BMW%20I%20ventures.jpeg",
+    },
+    {
+      name: "Gekko Capital Partners",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/gcp-logo-black.png",
+    },
+    {
+      name: "Giesecke+Devrient",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/GD_Logo_GieseckeDevrient.png",
+    },
+    {
+      name: "Hitachi Ventures",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/hitachi-ventures-logo-NEW.png",
+    },
+    {
+      name: "Orange Ventures",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/OrangeVentureslogo19.png",
+    },
+    {
+      name: "Porsche Ventures",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/Ventures_1c_grey.png",
+    },
+    {
+      name: "Raiffeisen Bank",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/RaiffeisenBanklogo18.jpg",
+    },
+    {
+      name: "Seven Ventures",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/SevenVentures-Logo_red.png",
+    },
+    {
+      name: "Sony Innovation Fund",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/SonyInnovationFundlogo18.jpg",
+    },
+    {
+      name: "Sopra Steria Ventures",
+      logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/SopraSterialogo19.png",
+    },
+    {
+      name: "T Capital",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/TCapitallogo01.jpg",
+    },
+    {
+      name: "UCB Ventures",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/UCB-Ventures.png",
+    },
+    {
+      name: "Wayra",
+      logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Wayra.png",
+    },
   ];
 
   return (
     <>
-      <BreadCrum
+      <BreadCrumb
         title="About Us"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["About Us "]}
+        path={[{ label: "About Us" }]}
       />
-      <section className="relative min-h-screen py-28 overflow-hidden">
+      <section className="relative min-h-screen py-15 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
           {/* Floating orbs */}
@@ -476,11 +542,22 @@ export default function AboutPage() {
                   className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300 group"
                 >
                   <div className="aspect-square flex items-center justify-center">
-                    <Building2 className="w-12 h-12 text-gray-500 group-hover:text-blue-400 transition-colors" />
+                    <div
+                      key={partner.name}
+                      className="group bg-white rounded-xl p-6 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={160}
+                        height={80}
+                        className="object-contain max-h-14 w-auto grayscale group-hover:grayscale-0 transition duration-300"
+                      />
+                    </div>
                   </div>
-                  <p className="text-center text-sm text-gray-400 mt-2">
+                  {/* <p className="text-center text-sm text-gray-400 mt-2">
                     {partner.name}
-                  </p>
+                  </p> */}
                 </div>
               ))}
             </div>
@@ -507,7 +584,7 @@ export default function AboutPage() {
                   </div>
                   <div className="text-left">
                     <p className="text-white font-semibold">
-                      Dr. Ahmed Al-Sulaiman
+                      Dr.John Doe 
                     </p>
                     <p className="text-sm text-gray-400">
                       Former Deputy Minister, MOH Saudi Arabia

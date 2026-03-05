@@ -20,7 +20,7 @@ import {
   Award,
   HeadphonesIcon,
 } from "lucide-react";
-import BreadCrum from "../../Components/BreadCrum";
+import BreadCrumb from "../../Components/BreadCrum";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -82,21 +82,21 @@ export default function ContactPage() {
       role: "Conference Director",
       email: "a.alsaud@medconfksa.sa",
       phone: "+966 50 123 4567",
-      image: "/Images/team/placeholder-1.jpg", // Add actual image path
+      image: "/Images/team/placeholder-1.jpg", 
     },
     {
       name: "Sarah Al-Otaibi",
       role: "Exhibitor Relations",
       email: "s.alotaibi@medconfksa.sa",
       phone: "+966 50 234 5678",
-      image: "/Images/team/placeholder-2.jpg", // Add actual image path
+      image: "/Images/team/placeholder-2.jpg", 
     },
     {
       name: "Mohammed Al-Qahtani",
       role: "Technical Support",
       email: "m.alqahtani@medconfksa.sa",
       phone: "+966 50 345 6789",
-      image: "/Images/team/placeholder-3.jpg", // Add actual image path
+      image: "/Images/team/placeholder-3.jpg", 
     },
   ];
 
@@ -117,12 +117,12 @@ export default function ContactPage() {
 
   return (
     <>
-    <BreadCrum  
+    <BreadCrumb  
         title="Contact Us"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Contact Us "]}
+        path={[{label:"Contact Us "}]}
       />
-    <section className="relative min-h-screen py-28 overflow-hidden">
+    <section className="relative min-h-screen py-15 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
         {/* Floating orbs */}

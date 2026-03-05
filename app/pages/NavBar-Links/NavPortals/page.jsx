@@ -11,6 +11,7 @@ import {
   Lock,
 } from "lucide-react";
 import BreadCrum from "../../../Components/BreadCrum";
+import BreadCrumb from "../../../Components/BreadCrum";
 
 const portals = [
   {
@@ -42,10 +43,10 @@ const portals = [
 export default function Portals() {
   return (
    <>
-    <BreadCrum
+    <BreadCrumb
           title="Portals"
           backgroundImage="/Images/Home/Bread-crum-1.avif"
-          path={["Portals"]}
+          path={[{label:"Portals"}]}
         />
     <section className="relative py-10 overflow-hidden">
       {/* Animated Background - Matching Services and Events sections */}

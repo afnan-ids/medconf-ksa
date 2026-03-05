@@ -22,6 +22,7 @@ import HowToRegIcon from "@mui/icons-material/HowToReg";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { ChevronDown } from "lucide-react";
 import BreadCrum from "../../Components/BreadCrum";
+import BreadCrumb from "../../Components/BreadCrum";
 
 const VisitorPortal = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -82,10 +83,10 @@ const VisitorPortal = () => {
   return (
     <div className=" min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section*/}
-      <BreadCrum
+      <BreadCrumb
         title="Visitors Dashboard"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Portals", "Visitors Dashboard"]}
+        path={[{label:"Portals",href:'/pages/NavBar-Links/NavPortals'},{label:"Visitors Dashboard"}]}
       />
 
       {/* Tabs Section - Floating Design */}

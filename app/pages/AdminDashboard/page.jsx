@@ -14,7 +14,7 @@ import {
 import ScoreboardIcon from "@mui/icons-material/Scoreboard";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { ChevronDown } from "lucide-react";
-import BreadCrum from '../../Components/BreadCrum'
+import BreadCrumb from '../../Components/BreadCrum'
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("Overview");
@@ -57,10 +57,10 @@ const AdminDashboard = () => {
   return (
     <div className=" min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
      <div className="">
-       <BreadCrum
+       <BreadCrumb
         title="Admin Dash Board"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Admin Dash Board"]}
+        path={[{label:"Admin Dash Board"}]}
       />
     </div>
     

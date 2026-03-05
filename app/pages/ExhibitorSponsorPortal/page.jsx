@@ -18,7 +18,7 @@ import {
   Inventory as InventoryIcon,
   AttachMoney as AttachMoneyIcon,
 } from "@mui/icons-material";
-import BreadCrum from "../../Components/BreadCrum";
+import BreadCrumb from "../../Components/BreadCrum";
 
 const PortalHome = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -68,12 +68,15 @@ const PortalHome = () => {
     <div className=" min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section with Parallax Effect */}
       <div className="">
-       <BreadCrum
-        title="Exhibitor Dashboard"
-        backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={["Portals","Exhibitor Dashboard"]}
-      />
-    </div>
+        <BreadCrumb
+          title="Exhibitor Dashboard"
+          backgroundImage="/Images/Home/Bread-crum-1.avif"
+          path={[
+            { label: "Portals", href: "/" },
+            { label: "Exhibitor Dashboard"},
+          ]}
+        />
+      </div>
 
       {/* Tabs Section - Floating Design */}
       <div className="sticky top-4 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8">
@@ -573,7 +576,11 @@ const PortalHome = () => {
                   </div>
                 </div>
 
-                <img src="/Images/3-Best-Payment-Gateways-in-Saudi-Arabia.png" alt="3-Best-Payment-Gateways-in-Saudi-Arabia image" className="h-full w-full shadow-md rounded-2xl mb-6"/>
+                <img
+                  src="/Images/3-Best-Payment-Gateways-in-Saudi-Arabia.png"
+                  alt="3-Best-Payment-Gateways-in-Saudi-Arabia image"
+                  className="h-full w-full shadow-md rounded-2xl mb-6"
+                />
 
                 <div className="bg-blue-50 rounded-xl p-4 mb-6">
                   <p className="text-sm text-blue-800 flex items-center">
