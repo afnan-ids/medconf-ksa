@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
 import { GrServices } from "react-icons/gr";
+import Link from "next/link";
 
 const services = [
   {
@@ -17,6 +18,7 @@ const services = [
     description: "Full planning, live workshops, international streaming",
     features: ["End-to-end planning", "Live streaming", "Workshop management"],
     color: "from-blue-500 to-cyan-400",
+    href:"/Services/conferenceorganization",
   },
   {
     icon: MapPin,
@@ -28,6 +30,7 @@ const services = [
       "Automated contracts",
     ],
     color: "from-purple-500 to-pink-400",
+    href: "/Services/exhibitionspacebooking",
   },
   {
     icon: UserCheck,
@@ -35,6 +38,7 @@ const services = [
     description: "SCFHS license verification & compliance",
     features: ["License verification", "Compliance checks", "Credentialing"],
     color: "from-amber-500 to-orange-400",
+    href: "/Services/practitionerregistration",
   },
 ];
 
@@ -46,6 +50,7 @@ export default function Services() {
         backgroundImage="/Images/Home/Bread-crum-1.avif"
         path={[{ label: "Services" }]}
       />
+
       <section className="relative py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
@@ -143,13 +148,15 @@ export default function Services() {
                       ))}
                     </ul>
 
-                     {/* Mobile button - always visible */}
-                  <div className="md:hidden mt-3">
-                    <button className={`inline-flex items-center justify-center gap-1 sm:gap-2 w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-r ${service.color} text-white text-xs sm:text-sm font-semibold hover:shadow-lg transition-all duration-300 group/btn`}>
-                      Learn more
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
+                    {/* Mobile button - always visible */}
+                    <div className="md:hidden mt-3">
+                      <Link href={service.href}
+                        className={`inline-flex items-center justify-center gap-1 sm:gap-2 w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-r ${service.color} text-white text-xs sm:text-sm font-semibold hover:shadow-lg transition-all duration-300 group/btn`}
+                      >
+                        Learn more
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
 
                     {/* Bottom accent line */}
                     <div
@@ -159,13 +166,13 @@ export default function Services() {
 
                   {/* Floating button on hover - hidden on mobile, shown on desktop hover */}
                   <div className=" md:block absolute -bottom-5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:-bottom-6">
-                    <button className="bg-white text-gray-900 rounded-full px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-semibold shadow-xl hover:shadow-2xl flex items-center gap-1 sm:gap-2 group/btn whitespace-nowrap">
+                    <Link href={service.href}
+                      className="bg-white text-gray-900 rounded-full px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-semibold shadow-xl hover:shadow-2xl flex items-center gap-1 sm:gap-2 group whitespace-nowrap hover:cursor-pointer"
+                    >
                       Learn more
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
-
-                 
                 </div>
               );
             })}
