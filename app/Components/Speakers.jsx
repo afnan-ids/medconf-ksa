@@ -125,7 +125,7 @@ const SpeakersSection = () => {
   const scroll = (direction) => {
     const container = scrollContainerRef.current;
     if (container) {
-      const scrollAmount = 400;
+      const scrollAmount = window.innerWidth < 640 ? 280 : 400;
       container.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -134,43 +134,43 @@ const SpeakersSection = () => {
   };
 
   return (
-    <section className="relative w-full  mx-auto  overflow-hidden">
+    <section className="relative w-full mx-auto overflow-hidden">
       {/* Dark themed background - matching footer */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
-        {/* Floating orbs */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        {/* Floating orbs - reduced size and blur for mobile */}
+        <div className="absolute top-10 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/3 left-1/3 w-48 h-48 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
       </div>
 
       {/* Glass container - matching footer style */}
-      <div className="relative z-10 mx-auto px-6 lg:px-4 py-4">
-        <div className="rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(79,70,229,0.3)] transition-all duration-700">
+      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4">
+        <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(79,70,229,0.3)] transition-all duration-700">
           
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
           
-          <div className="p-10 lg:p-12 relative">
-            {/* Decorative orbs inside */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="p-4 sm:p-8 lg:p-12 relative">
+            {/* Decorative orbs inside - hidden on mobile */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl hidden sm:block"></div>
 
             {/* Header with badge */}
-            <div className="max-w-3xl mx-auto text-center mb-16 relative z-10">
+            <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-16 relative z-10">
               {/* Trust badge - like footer */}
-              <div className="relative inline-block group/badge mb-6">
+              <div className="relative inline-block group/badge mb-4 sm:mb-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
-                <div className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
-                  <Mic className="w-4 h-4 text-blue-400" />
+                <div className="relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] sm:text-xs">
+                  <Mic className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                   <span>Featured Speakers</span>
-                  <span className="w-1 h-1 bg-white/30 rounded-full"></span>
-                  <Star className="w-4 h-4 text-cyan-400" />
+                  <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
                   <span>2026 Lineup</span>
                 </div>
               </div>
 
               {/* Title with gradient */}
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4 px-2">
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                   Visionary
                 </span>{" "}
@@ -178,36 +178,36 @@ const SpeakersSection = () => {
               </h2>
 
               {/* Decorative line */}
-              <div className="relative w-32 h-1 mx-auto my-6">
+              <div className="relative w-20 sm:w-32 h-1 mx-auto my-3 sm:my-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
               </div>
 
-              <p className="text-lg text-gray-300 mt-6 max-w-2xl mx-auto">
+              <p className="text-xs sm:text-sm md:text-lg text-gray-300 mt-3 sm:mt-6 max-w-2xl mx-auto px-4">
                 Industry leaders shaping the future of technology and innovation.
               </p>
             </div>
 
             {/* Horizontal Scroll Container with Navigation */}
-            <div className="relative">
-              {/* Left Navigation Button */}
+            <div className="relative px-1 sm:px-0">
+              {/* Left Navigation Button - hidden on mobile */}
               {canScrollLeft && (
                 <button
                   onClick={() => scroll("left")}
-                  className="absolute -left-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 group shadow-xl"
+                  className="hidden sm:flex absolute -left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 group shadow-xl"
                 >
-                  <ChevronRight className="w-6 h-6 rotate-180 group-hover:-translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6 rotate-180 group-hover:-translate-x-1 transition-transform" />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
                 </button>
               )}
 
-              {/* Right Navigation Button */}
+              {/* Right Navigation Button - hidden on mobile */}
               {canScrollRight && (
                 <button
                   onClick={() => scroll("right")}
-                  className="absolute -right-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 group shadow-xl"
+                  className="hidden sm:flex absolute -right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 group shadow-xl"
                 >
-                  <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
                 </button>
               )}
@@ -215,30 +215,30 @@ const SpeakersSection = () => {
               {/* Horizontal Scrolling Container - NEW CARD DESIGN */}
               <div
                 ref={scrollContainerRef}
-                className="flex overflow-x-auto scrollbar-hide gap-6 pb-8 px-2"
+                className="flex overflow-x-auto scrollbar-hide gap-3 sm:gap-4 md:gap-6 pb-4 sm:pb-8 px-1 sm:px-2"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {speakers.map((speaker, index) => (
                   <div
                     key={index}
-                    className="flex-none w-80 group relative"
+                    className="flex-none w-[240px] sm:w-72 md:w-80 group relative"
                   >
                     {/* Card with glass effect - NEW DESIGN */}
-                    <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                    <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 sm:hover:-translate-y-2">
                       
                       {/* Gradient overlay on hover */}
                       <div className={`absolute inset-0 bg-gradient-to-br ${speaker.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
                       
                       {/* Top colored bar */}
-                      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${speaker.gradient}`}></div>
+                      <div className={`absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r ${speaker.gradient}`}></div>
 
                       {/* Image container - circular design */}
-                      <div className="relative pt-8 px-8 pb-4">
+                      <div className="relative pt-4 sm:pt-8 px-4 sm:px-8 pb-2 sm:pb-4">
                         {/* Glow effect behind image */}
-                        <div className={`absolute top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-r ${speaker.gradient} rounded-full blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-500`}></div>
+                        <div className={`absolute top-8 sm:top-12 left-1/2 -translate-x-1/2 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gradient-to-r ${speaker.gradient} rounded-full blur-xl sm:blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-500`}></div>
                         
                         {/* Circular image */}
-                        <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 group-hover:border-white/20 transition-all duration-500 ring-2 ring-transparent group-hover:ring-blue-500/50">
+                        <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-2 sm:border-4 border-white/10 group-hover:border-white/20 transition-all duration-500 ring-1 sm:ring-2 ring-transparent group-hover:ring-blue-500/50">
                           <img
                             src={speaker.image}
                             alt={speaker.name}
@@ -246,44 +246,44 @@ const SpeakersSection = () => {
                           />
                         </div>
                         
-                        {/* Speaker number badge */}
-                        <div className={`absolute top-6 right-6 w-10 h-10 rounded-full bg-gradient-to-r ${speaker.gradient} flex items-center justify-center text-sm font-bold text-white shadow-lg`}>
+                        {/* Speaker number badge - smaller on mobile */}
+                        <div className={`absolute top-2 right-2 sm:top-6 sm:right-6 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r ${speaker.gradient} flex items-center justify-center text-[10px] sm:text-xs md:text-sm font-bold text-white shadow-lg`}>
                           #{index + 1}
                         </div>
                       </div>
 
                       {/* Content */}
-                      <div className="p-6 text-center">
+                      <div className="p-3 sm:p-4 md:p-6 text-center">
                         {/* Name with gradient on hover */}
-                        <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-300 transition-all duration-500">
+                        <h3 className="text-sm sm:text-base md:text-xl font-bold text-white mb-0.5 sm:mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-300 transition-all duration-500">
                           {speaker.name}
                         </h3>
 
-                        {/* Title */}
-                        <p className="text-sm text-gray-400 mb-2">
+                        {/* Title - hidden on very small screens */}
+                        <p className="hidden sm:block text-xs md:text-sm text-gray-400 mb-1 sm:mb-2">
                           {speaker.title}
                         </p>
 
                         {/* Company badge */}
-                        <div className={`inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-4 group-hover:border-${speaker.gradient.split(' ')[0].replace('from-', '')}/30 transition-all duration-300`}>
-                          <span className="text-xs font-medium text-gray-300">
+                        <div className={`inline-block px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-1.5 rounded-full bg-white/5 border border-white/10 mb-2 sm:mb-3 md:mb-4 group-hover:border-${speaker.gradient.split(' ')[0].replace('from-', '')}/30 transition-all duration-300`}>
+                          <span className="text-[10px] sm:text-xs font-medium text-gray-300">
                             {speaker.company}
                           </span>
                         </div>
 
                         {/* Topic chip */}
-                        <div className="flex items-center justify-center gap-1 text-xs text-cyan-300">
-                          <Mic className="w-3 h-3" />
-                          <span>{speaker.topic}</span>
+                        <div className="flex items-center justify-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs text-cyan-300">
+                          <Mic className="w-2 h-2 sm:w-3 sm:h-3" />
+                          <span className="truncate max-w-[120px] sm:max-w-none">{speaker.topic}</span>
                         </div>
                       </div>
 
                       {/* Bottom shine effect */}
-                      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-20 bg-gradient-to-t from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
 
-                    {/* Floating dots indicator */}
-                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    {/* Floating dots indicator - hidden on mobile */}
+                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 hidden sm:flex">
                       {[0, 1, 2].map((i) => (
                         <div
                           key={i}
@@ -295,18 +295,28 @@ const SpeakersSection = () => {
                   </div>
                 ))}
               </div>
+              
+              {/* Scroll indicator dots for mobile */}
+              <div className="flex justify-center gap-1 mt-2 sm:hidden">
+                {speakers.map((_, index) => (
+                  <div
+                    key={index}
+                    className="w-1 h-1 rounded-full bg-white/30"
+                  ></div>
+                ))}
+              </div>
             </div>
 
             {/* Bottom CTA - matching footer style */}
-            <div className="text-center mt-12 relative z-10">
+            <div className="text-center mt-6 sm:mt-8 md:mt-12 relative z-10">
               <Link
                 href="#"
-                className="relative inline-flex items-center gap-3 group/cta"
+                className="relative inline-flex items-center gap-2 sm:gap-3 group/cta"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-0 group-hover/cta:opacity-60 transition-opacity duration-500"></div>
-                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 sm:gap-3">
                   <span>View All Speakers</span>
-                  <ChevronRight className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/cta:translate-x-1 transition-transform" />
                   <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover/cta:opacity-20 transition-opacity"></div>
                 </div>
               </Link>
