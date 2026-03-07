@@ -209,9 +209,6 @@ export default function Navbar() {
                   }`}
                 >
                   <span className="flex items-center gap-3">
-                    {/* Icon based on link */}
-                    {link.label === "Admin Dashboard" && <Shield className="w-4 h-4 text-purple-400" />}
-                    {link.label === "Services" && <Sparkles className="w-4 h-4 text-blue-400" />}
                     <span>{link.label}</span>
                   </span>
                 </Link>

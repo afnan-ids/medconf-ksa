@@ -14,76 +14,76 @@ import Link from "next/link";
 const partners = [
   {
     name: "Airbus",
-    logo: "/Images/taqeem-exhibition-booth-designs-1024x602.jpg",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Airbuslogo18.jpg",
   },
-  // {
-  //   name: "Ajinomoto",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Side_Events/ajinomoto.jpg",
-  // },
-  // {
-  //   name: "Aschendorff",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Aschendorff-CVC.png",
-  // },
-  // {
-  //   name: "Bayer",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Bayer.png",
-  // },
-  // {
-  //   name: "Beiersdorf",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/Beiersdorflogo19.png",
-  // },
-  // {
-  //   name: "BMW i Ventures",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/BMW%20I%20ventures.jpeg",
-  // },
-  // {
-  //   name: "Gekko Capital Partners",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/gcp-logo-black.png",
-  // },
-  // {
-  //   name: "Giesecke+Devrient",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/logos25/GD_Logo_GieseckeDevrient.png",
-  // },
-  // {
-  //   name: "Hitachi Ventures",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/hitachi-ventures-logo-NEW.png",
-  // },
-  // {
-  //   name: "Orange Ventures",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/OrangeVentureslogo19.png",
-  // },
-  // {
-  //   name: "Porsche Ventures",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/Ventures_1c_grey.png",
-  // },
-  // {
-  //   name: "Raiffeisen Bank",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/logos25/RaiffeisenBanklogo18.jpg",
-  // },
-  // {
-  //   name: "Seven Ventures",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/SevenVentures-Logo_red.png",
-  // },
-  // {
-  //   name: "Sony Innovation Fund",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/logos25/SonyInnovationFundlogo18.jpg",
-  // },
-  // {
-  //   name: "Sopra Steria Ventures",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/SopraSterialogo19.png",
-  // },
-  // {
-  //   name: "T Capital",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/logos25/TCapitallogo01.jpg",
-  // },
-  // {
-  //   name: "UCB Ventures",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/logos25/UCB-Ventures.png",
-  // },
-  // {
-  //   name: "Wayra",
-  //   logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Wayra.png",
-  // },
+  {
+    name: "Ajinomoto",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Side_Events/ajinomoto.jpg",
+  },
+  {
+    name: "Aschendorff",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Aschendorff-CVC.png",
+  },
+  {
+    name: "Bayer",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Bayer.png",
+  },
+  {
+    name: "Beiersdorf",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/Beiersdorflogo19.png",
+  },
+  {
+    name: "BMW i Ventures",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/BMW%20I%20ventures.jpeg",
+  },
+  {
+    name: "Gekko Capital Partners",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/gcp-logo-black.png",
+  },
+  {
+    name: "Giesecke+Devrient",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/GD_Logo_GieseckeDevrient.png",
+  },
+  {
+    name: "Hitachi Ventures",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/hitachi-ventures-logo-NEW.png",
+  },
+  {
+    name: "Orange Ventures",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/OrangeVentureslogo19.png",
+  },
+  {
+    name: "Porsche Ventures",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/Ventures_1c_grey.png",
+  },
+  {
+    name: "Raiffeisen Bank",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/RaiffeisenBanklogo18.jpg",
+  },
+  {
+    name: "Seven Ventures",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Meet-Fellow-Investors/SevenVentures-Logo_red.png",
+  },
+  {
+    name: "Sony Innovation Fund",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/SonyInnovationFundlogo18.jpg",
+  },
+  {
+    name: "Sopra Steria Ventures",
+    logo: "https://cdn.showmanonline.com/event739/Posts/Community%20Partner/SopraSterialogo19.png",
+  },
+  {
+    name: "T Capital",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/TCapitallogo01.jpg",
+  },
+  {
+    name: "UCB Ventures",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/UCB-Ventures.png",
+  },
+  {
+    name: "Wayra",
+    logo: "https://cdn.showmanonline.com/event739/Posts/logos25/Wayra.png",
+  },
 ];
 
 export default function PartnersGrid() {
