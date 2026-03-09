@@ -74,7 +74,7 @@ export default function Services() {
             {/* Main title */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
               <span className="text-white">Comprehensive</span>
-              <br />
+              {''} {""}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                 Event Services
               </span>

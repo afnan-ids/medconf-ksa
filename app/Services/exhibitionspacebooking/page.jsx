@@ -23,19 +23,28 @@ import {
   Settings,
   Phone,
   TicketCheckIcon,
+  Star,
+  Zap,
+  Shield,
+  TrendingUp,
+  BarChart3,
+  Compass,
 } from "lucide-react";
 import BreadCrumb from "../../Components/BreadCrum";
-import { GrServices } from "react-icons/gr";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ExhibitionSpaceBooking() {
+  const [selectedBooth, setSelectedBooth] = useState(null);
+
   const benefits = [
     {
       icon: Building2,
       title: "Brand Exposure",
       description:
-        "Present your brand and innovations to thousands of healthcare professionals.",
+        "Present your brand to thousands of healthcare professionals and decision-makers.",
       color: "from-purple-500 to-pink-400",
+      stats: "10,000+ Visitors",
     },
     {
       icon: Network,
@@ -43,20 +52,22 @@ export default function ExhibitionSpaceBooking() {
       description:
         "Connect with distributors, buyers, investors, and industry leaders.",
       color: "from-blue-500 to-cyan-400",
+      stats: "500+ Delegates",
     },
     {
       icon: Rocket,
       title: "Product Launch",
       description:
-        "Introduce new products and solutions directly to your target market.",
+        "Introduce new products directly to your target market with maximum impact.",
       color: "from-amber-500 to-orange-400",
+      stats: "Launch Ready",
     },
     {
       icon: Handshake,
       title: "Business Opportunities",
-      description:
-        "Generate leads and build partnerships with healthcare organizations.",
-      color: "from-purple-500 to-pink-400",
+      description: "Generate qualified leads and build lasting partnerships.",
+      color: "from-emerald-500 to-green-400",
+      stats: "ROI Focused",
     },
   ];
 
@@ -64,80 +75,183 @@ export default function ExhibitionSpaceBooking() {
     {
       number: "01",
       title: "Inquiry",
-      description:
-        "Contact our team to inquire about available exhibition spaces.",
+      description: "Contact our team to check availability and get pricing.",
       color: "from-purple-500 to-pink-400",
+      icon: Phone,
     },
     {
       number: "02",
       title: "Choose Space",
-      description: "Select the booth size and location that suits your brand.",
+      description: "Select your preferred booth size and prime location.",
       color: "from-blue-500 to-cyan-400",
+      icon: MapPin,
     },
     {
       number: "03",
       title: "Registration",
-      description: "Complete exhibitor registration and confirm participation.",
+      description: "Complete registration and confirm your participation.",
       color: "from-amber-500 to-orange-400",
+      icon: Ticket,
     },
     {
       number: "04",
-      title: "Setup",
-      description:
-        "Prepare your booth and showcase your products during the exhibition.",
-      color: "from-purple-500 to-pink-400",
+      title: "Setup & Exhibit",
+      description: "Set up your booth and engage with attendees.",
+      color: "from-emerald-500 to-green-400",
+      icon: Building2,
     },
   ];
 
   const features = [
-    "Premium booth locations with high traffic",
-    "Customizable booth sizes & configurations",
-    "Branding & signage opportunities",
-    "Exhibitor listing in event materials",
-    "Access to attendee lead retrieval system",
-    "Pre-event promotion across our channels",
-    "On-site exhibitor lounge access",
-    "Networking events & receptions",
-    "Technical support for setup",
-    "Post-event attendee data insights",
+    {
+      category: "Location",
+      icon: MapPin,
+      color: "from-blue-500 to-cyan-400",
+    },
+    {
+      category: "Flexibility",
+      icon: LayoutGrid,
+      color: "from-green-500 to-emerald-400",
+    },
+    {
+      category: "Visibility",
+      icon: Star,
+      color: "from-amber-500 to-orange-400",
+    },
+    {
+      category: "Promotion",
+      icon: Shield,
+      color: "from-purple-500 to-pink-400",
+    },
+    {
+      category: "Leads",
+      icon: Target,
+      color: "from-blue-500 to-cyan-400",
+    },
+    {
+      category: "Marketing",
+      icon: TrendingUp,
+      color: "from-green-500 to-emerald-400",
+    },
+    {
+      category: "Comfort",
+      icon: Compass,
+      color: "from-amber-500 to-orange-400",
+    },
+    {
+      category: "Networking",
+      icon: Users,
+      color: "from-purple-500 to-pink-400",
+    },
+    {
+      category: "Support",
+      icon: Settings,
+      color: "from-blue-500 to-cyan-400",
+    },
+    {
+      category: "Analytics",
+      icon: BarChart3,
+      color: "from-purple-500 to-pink-400",
+    },
   ];
 
   const boothTypes = [
     {
       name: "Standard Booth",
       size: "3m x 3m",
+      price: "Starting at $2,500",
       includes: [
-        "Shell scheme",
-        "1 table",
+        "Shell scheme with back wall",
+        "1 table (600 x 600mm)",
         "2 chairs",
-        "Basic lighting",
-        "Power outlet",
+        "Basic LED lighting",
+        "1 power outlet (500W)",
+        "Company listing in directory",
       ],
       color: "from-blue-500 to-cyan-400",
+      bgColor: "bg-blue-500/10",
+      borderColor: "border-blue-500/20",
+      availability: "12 Spaces Left",
+      popular: false,
     },
     {
       name: "Premium Booth",
       size: "6m x 4m",
+      price: "Starting at $5,500",
       includes: [
-        "Custom build-up",
-        "Premium furniture",
-        "LED screens",
-        "Storage room",
-        "Hospitality area",
+        "Custom build-up design",
+        "Premium furniture package",
+        '2 LED screens (55")',
+        "Private storage room",
+        "Hospitality area with seating",
+        "Premium directory listing",
+        "Dedicated account manager",
       ],
       color: "from-purple-500 to-pink-400",
+      bgColor: "bg-purple-500/10",
+      borderColor: "border-purple-500/20",
+      availability: "8 Spaces Left",
+      // popular: true,
     },
     {
       name: "Corner Booth",
       size: "4m x 4m",
+      price: "Starting at $4,200",
       includes: [
         "Double-side access",
         "Enhanced visibility",
         "Premium furniture",
-        "Branding wall",
-        "Demo area",
+        "Custom branding wall",
+        "Product demo area",
+        "Featured listing in directory",
+        "2 exhibitor passes",
       ],
       color: "from-amber-500 to-orange-400",
+      bgColor: "bg-amber-500/10",
+      borderColor: "border-amber-500/20",
+      availability: "5 Spaces Left",
+      popular: false,
+    },
+    {
+      name: "Custom Pavilion",
+      size: "Custom Size",
+      price: "Custom Pricing",
+      includes: [
+        "Fully customizable space",
+        "Island booth configuration",
+        "Multi-level structure",
+        "Lounge & meeting rooms",
+        "Premium AV equipment",
+        "VIP hospitality suite",
+        "Dedicated branding area",
+        "Priority marketing package",
+      ],
+      color: "from-emerald-500 to-green-400",
+      bgColor: "bg-emerald-500/10",
+      borderColor: "border-emerald-500/20",
+      availability: "Limited Availability",
+      popular: false,
+    },
+  ];
+
+  const upcomingEvents = [
+    {
+      name: "Global Health Expo 2024",
+      date: "Nov 15-18, 2024",
+      location: "Dubai World Trade Centre",
+      attendees: "15,000+",
+    },
+    {
+      name: "MedTech Innovation Summit",
+      date: "Dec 5-7, 2024",
+      location: "Abu Dhabi National Exhibition Centre",
+      attendees: "8,000+",
+    },
+    {
+      name: "Healthcare Leaders Forum",
+      date: "Jan 20-22, 2025",
+      location: "Riyadh International Convention Center",
+      attendees: "5,000+",
     },
   ];
 
@@ -152,194 +266,244 @@ export default function ExhibitionSpaceBooking() {
         ]}
       />
 
-      <section className="relative py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden">
-        {/* Animated Background - matching services page */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
-          {/* Floating orbs - using purple/pink tones for this page */}
-          <div className="absolute top-10 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+      <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900">
+        {/* Enhanced Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+
+          {/* Grid Pattern */}
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)`,
+              backgroundSize: "40px 40px",
+            }}
+          ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            {/* Top badge */}
-            <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
-              <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-              <span className="text-xs sm:text-sm font-medium text-gray-300">
-                Premium Exhibition Spaces
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              <span className="text-sm font-medium text-gray-300">
+                Premium Exhibition Spaces • Limited Availability
               </span>
             </div>
 
-            {/* Main title */}
-           
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
-                <span className="text-white">Exhibition &</span>
-                <br />
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                  Space Booking
-                </span>
-              </h2>
-            
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-white">Showcase Your Brand at</span>
+              <br />
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-amber-400 bg-clip-text text-transparent">
+                Premier Healthcare Events
+              </span>
+            </h1>
 
-            {/* Description */}
-            <div className="relative max-w-3xl mx-auto">
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
-                Showcase your products and innovations by securing premium
-                exhibition space at our medical events and conferences.
-              </p>
+            <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-8 px-4">
+              Secure premium exhibition space at leading medical conferences and
+              connect with thousands of healthcare professionals,
+              decision-makers, and industry leaders.
+            </p>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+              {[
+                { number: "50+", label: "Events Yearly", icon: Calendar },
+                { number: "15K+", label: "Annual Visitors", icon: Users },
+                { number: "200+", label: "Exhibitors", icon: Building2 },
+                { number: "85%", label: "Return Rate", icon: TrendingUp },
+              ].map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div
+                    key={index}
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4"
+                  >
+                    <Icon className="w-5 h-5 text-purple-400 mx-auto mb-2" />
+                    <div className="text-xl font-bold text-white">
+                      {stat.number}
+                    </div>
+                    <div className="text-xs text-gray-400">{stat.label}</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Service Explanation */}
-          <div className="relative mb-16 sm:mb-20 md:mb-24">
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12">
-              <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
-                    Exhibit Your Brand to the Right Audience
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-4">
-                    Our exhibitions provide companies with an opportunity to
-                    present their medical products, technologies, and services
-                    directly to healthcare professionals, decision-makers, and
-                    industry leaders.
-                  </p>
-                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                    We provide well-organized exhibition spaces designed to
-                    maximize visibility and engagement, ensuring your brand
-                    stands out.
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    {[
-                      "Medical Products",
-                      "Healthcare Technology",
-                      "Pharmaceuticals",
-                    ].map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs sm:text-sm text-gray-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+          {/* Upcoming Events Banner */}
+          <div className="mb-16 md:mb-20">
+            <div className="bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-amber-500/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-purple-400" />
+                Upcoming Exhibition Opportunities
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {upcomingEvents.map((event, index) => (
+                  <div
+                    key={index}
+                    className="bg-white/5 rounded-xl p-4 border border-white/10"
+                  >
+                    <h4 className="text-white font-medium mb-2">
+                      {event.name}
+                    </h4>
+                    <div className="flex items-center gap-2 text-xs text-gray-400 mb-1">
+                      <Calendar className="w-3 h-3" />
+                      {event.date}
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-400 mb-2">
+                      <MapPin className="w-3 h-3" />
+                      {event.location}
+                    </div>
+                    <div className="flex items-center gap-1 text-xs text-purple-400">
+                      <Users className="w-3 h-3" />
+                      {event.attendees} expected
+                    </div>
                   </div>
-                </div>
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-400 rounded-2xl blur-2xl opacity-20"></div>
-                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 bg-gradient-to-br from-purple-500/20 to-pink-400/20 rounded-2xl border border-white/20 flex items-center justify-center">
-                    <LayoutGrid className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-white/80" />
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Booth Types Section */}
-          <div className="mb-16 sm:mb-20 md:mb-24">
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
-                Choose Your
-                <span className="bg-gradient-to-r  from-blue-400 via-cyan-300 to-teal-300  bg-clip-text text-transparent">
+          {/* Booth Types with Enhanced Cards */}
+          <div className="mb-16 md:mb-20">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+                Choose Your Perfect
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {" "}
                   Exhibition Space
                 </span>
-              </h3>
-              <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
-                Flexible booth options to match your exhibition goals
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Select from our range of premium booth options designed to
+                maximize your brand visibility
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-              {boothTypes.map((booth, index) => (
-                <div key={index} className="group relative">
-                  <div className="relative h-full rounded-xl sm:rounded-2xl p-5 sm:p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {boothTypes.map((booth, index) => {
+                const Icon = booth.popular ? Star : Package;
+                return (
+                  <div
+                    key={index}
+                    className={`group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer ${
+                      selectedBooth === index ? "ring-2 ring-purple-500" : ""
+                    }`}
+                    onClick={() => setSelectedBooth(index)}
+                  >
+                    {/* Popular Badge */}
+                    {booth.popular && (
+                      <div className="absolute top-1 right-4 z-10">
+                        <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                          <Star className="w-3 h-3" />
+                          Most Popular
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Background Gradient */}
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${booth.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                     ></div>
 
-                    {/* Shine effect */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    </div>
+                    {/* Border Gradient */}
+                    <div
+                      className={`absolute inset-0 border-2 border-transparent group-hover:border-${booth.color.split("-")[1]}-500/50 rounded-2xl transition-all duration-500`}
+                    ></div>
 
-                    <div className="relative mb-4">
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-r ${booth.color} rounded-lg blur-md opacity-20`}
-                      ></div>
-                      <div className="relative w-12 h-12 rounded-lg flex items-center justify-center border border-white/20 bg-white/10">
-                        <Package className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-
-                    <h4 className="text-lg font-bold text-white mb-1">
-                      {booth.name}
-                    </h4>
-                    <p className="text-sm text-gray-400 mb-3">{booth.size}</p>
-
-                    <ul className="space-y-2 mb-4">
-                      {booth.includes.map((item, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-center gap-2 text-xs text-gray-300"
+                    {/* Content */}
+                    <div
+                      className={`relative h-full p-6 ${booth.bgColor} backdrop-blur-sm border ${booth.borderColor} rounded-2xl`}
+                    >
+                      <div className="mb-4 flex items-center justify-between">
+                        <div
+                          className={`w-12 h-12 rounded-xl bg-gradient-to-r ${booth.color} flex items-center justify-center`}
                         >
-                          <div
-                            className={`w-1 h-1 rounded-full bg-gradient-to-r ${booth.color}`}
-                          ></div>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-xs font-semibold text-white/60 bg-white/10 px-3 py-1 rounded-full">
+                          {booth.availability}
+                        </span>
+                      </div>
 
-                    <button className="w-full px-3 py-2 rounded-lg border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-colors">
-                      Inquire About This Space
-                    </button>
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        {booth.name}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-2">{booth.size}</p>
+                      <p className="text-lg font-bold text-white mb-4">
+                        {booth.price}
+                      </p>
+
+                      <div className="space-y-2 mb-6">
+                        {booth.includes.slice(0, 4).map((item, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <CheckCircle
+                              className={`w-4 h-4 text-${booth.color.split("-")[1]}-400 flex-shrink-0 mt-0.5`}
+                            />
+                            <span className="text-xs text-gray-300">
+                              {item}
+                            </span>
+                          </div>
+                        ))}
+                        {booth.includes.length > 4 && (
+                          <p className="text-xs text-gray-500">
+                            +{booth.includes.length - 4} more items
+                          </p>
+                        )}
+                      </div>
+
+                      <button
+                        className={`w-full py-2 px-4 rounded-xl bg-gradient-to-r ${booth.color} text-white text-sm font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0`}
+                      >
+                        Select This Space
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
-          {/* Benefits Section */}
-          <div className="mb-16 sm:mb-20 md:mb-24">
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
-                Benefits of
+          {/* Benefits Grid */}
+          <div className="mb-16 md:mb-20">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+                Why Exhibit With
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {" "}
-                  Exhibiting
+                  Us?
                 </span>
-              </h3>
-              <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
-                Maximize your ROI with our premium exhibition opportunities
-              </p>
+              </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
                   <div key={index} className="group relative">
-                    <div className="relative h-full rounded-xl sm:rounded-2xl p-5 sm:p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                    <div className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
                       <div
-                        className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                        className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity`}
                       ></div>
 
-                      <div className="relative mb-4">
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-r ${benefit.color} rounded-lg blur-md opacity-20`}
-                        ></div>
-                        <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center border border-white/20 bg-white/10">
-                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                        </div>
+                      <div
+                        className={`w-12 h-12 rounded-xl bg-gradient-to-r ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                      >
+                        <Icon className="w-6 h-6 text-white" />
                       </div>
 
-                      <h4 className="text-base sm:text-lg font-bold text-white mb-2">
-                        {benefit.title}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-white">
+                          {benefit.title}
+                        </h3>
+                        <span className="text-xs font-semibold text-purple-400 bg-purple-400/10 px-2 py-1 rounded-full">
+                          {benefit.stats}
+                        </span>
+                      </div>
+
+                      <p className="text-sm text-gray-400">
                         {benefit.description}
                       </p>
                     </div>
@@ -349,110 +513,141 @@ export default function ExhibitionSpaceBooking() {
             </div>
           </div>
 
-          {/* Process Section */}
-          <div className="mb-16 sm:mb-20 md:mb-24">
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
+          {/* Process Timeline */}
+          <div className="mb-16 md:mb-20">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
                 Simple
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {" "}
-                  Booking Process
+                  4-Step Process
                 </span>
-              </h3>
-              <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
-                Four easy steps to secure your exhibition space
-              </p>
+              </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {process.map((step, index) => (
-                <div key={index} className="relative group">
-                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 sm:p-5 text-center hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                    <div
-                      className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r ${step.color} mb-3 text-sm sm:text-base font-bold text-white`}
-                    >
-                      {step.number}
-                    </div>
-                    <h4 className="text-sm sm:text-base font-bold text-white mb-1">
-                      {step.title}
-                    </h4>
-                    <p className="text-xs text-gray-400">{step.description}</p>
-                  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {process.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index} className="relative">
+                    {/* Connector Line */}
+                    {index < process.length - 1 && (
+                      <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                    )}
 
-                  {index < process.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-2 transform -translate-y-1/2 z-10">
-                      <ArrowRight className="w-4 h-4 text-white/30" />
+                    <div className="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center group hover:bg-white/10 transition-all duration-300">
+                      <div
+                        className={`w-16 h-16 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
+                      >
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+
+                      <span
+                        className={`text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r ${step.color} block mb-2`}
+                      >
+                        Step {step.number}
+                      </span>
+
+                      <h3 className="text-lg font-bold text-white mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-gray-400">
+                        {step.description}
+                      </p>
                     </div>
-                  )}
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="mb-16 sm:mb-20 md:mb-24">
-            <div className="bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-rose-500/10 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center mb-8">
+          <div className="mb-20">
+            <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
                 Everything Included in Your
-                <span className="bg-gradient-to-r  from-blue-400 via-cyan-300 to-teal-300  bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                   {" "}
                   Exhibition Package
                 </span>
               </h3>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-2 group">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mt-0.5 group-hover:scale-110 transition-transform">
-                      <CheckCircle className="w-3 h-3 text-white" />
+              <div className="flex flex-wrap justify-center gap-3">
+                {features.map((feature, index) => {
+                  const Icon = feature.icon;
+
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full 
+        bg-white/10 border border-white/10 backdrop-blur-sm
+        hover:scale-105 transition-all duration-300 shadow-lg"
+                    >
+                      {/* Icon */}
+                      <div
+                        className={`w-6 h-6 flex items-center justify-center rounded-md bg-gradient-to-r ${feature.color}`}
+                      >
+                        <Icon className="w-3.5 h-3.5 text-white" />
+                      </div>
+
+                      {/* Text */}
+                      <span className="text-sm text-white font-medium whitespace-nowrap">
+                        {feature.category}
+                      </span>
                     </div>
-                    <span className="text-xs sm:text-sm text-gray-300">
-                      {feature}
-                    </span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
 
-          {/* CTA Section */}
+          {/* CTA */}
           <div className="text-center">
-            <div className="relative mt-16 sm:mt-20 md:mt-24 lg:mt-32 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
-              {/* Animated background */}
+            <div className="relative overflow-hidden rounded-3xl">
+              <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 opacity-90"></div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+              </div>
               <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
-
-              {/* Floating orbs - responsive */}
-              <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
-
-              <div className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 text-center backdrop-blur-sm">
-                <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
-                  <TicketCheckIcon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                  <span className="text-xs sm:text-sm font-medium text-white/90">
-                    Book Yours
-                  </span>
-                </div>
-
-                <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                  Secure Your Exhibition Space
+              <div className="relative py-16 px-8">
+                <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+                  Ready to Showcase Your Brand?
                 </h4>
 
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                  Join our upcoming exhibitions and present your medical
-                  innovations to a global audience.
+                <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                  Join industry leaders at our upcoming exhibitions and connect
+                  with thousands of healthcare professionals.
                 </p>
 
-                <button className="group inline-flex items-center gap-1 sm:gap-2 bg-white text-gray-900 px-5 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                  Book Your Space
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Book Your Space Now
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+
+                  <button className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-300">
+                    Contact Sales
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-6 mt-8">
+                  <div className="flex items-center gap-2 text-white/80">
+                    <Shield className="w-4 h-4" />
+                    <span className="text-sm">Best price guarantee</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/80">
+                    <Zap className="w-4 h-4" />
+                    <span className="text-sm">Fast confirmation</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/80">
+                    <Users className="w-4 h-4" />
+                    <span className="text-sm">Dedicated support</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 md:h-24 lg:h-32 bg-gradient-to-t from-gray-900 to-transparent"></div>
       </section>
     </>
   );

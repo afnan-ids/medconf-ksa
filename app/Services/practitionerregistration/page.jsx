@@ -26,6 +26,10 @@ import {
   ClipboardCheck,
   GraduationCap,
   TicketCheckIcon,
+  ShieldCheck,
+  Building2,
+  FileText,
+  Video,
 } from "lucide-react";
 import BreadCrumb from "../../Components/BreadCrum";
 import Link from "next/link";
@@ -130,47 +134,58 @@ export default function PractitionerRegistration() {
   const features = [
     {
       text: "SCFHS license verification included",
+      icon: ShieldCheck,
       color: "from-blue-500 to-cyan-400",
     },
     {
       text: "Access to all conference sessions",
+      icon: Mic,
       color: "from-purple-500 to-pink-400",
     },
     {
       text: "Exhibitor hall access",
+      icon: Building2,
       color: "from-amber-500 to-orange-400",
     },
     {
       text: "Networking lounge access",
+      icon: Users,
       color: "from-green-500 to-emerald-400",
     },
     {
       text: "CME/CPD credit tracking",
+      icon: Award,
       color: "from-blue-500 to-cyan-400",
     },
     {
       text: "Workshop participation",
+      icon: GraduationCap,
       color: "from-purple-500 to-pink-400",
     },
     {
       text: "Event materials & resources",
+      icon: FileText,
       color: "from-amber-500 to-orange-400",
     },
     {
       text: "Post-event content access",
+      icon: Video,
       color: "from-green-500 to-emerald-400",
     },
   ];
-
   return (
     <>
       <BreadCrumb
         title="Practitioner Registration"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Services" }, { label: "Practitioner Registration" }]}
+        path={[
+          { label: "Services", href: "/pages/NavBar-Links/NavServices" },
+          { label: "Practitioner Registration" },
+        ]}
       />
 
       <section className="relative py-16 overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900">
+        
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -199,7 +214,7 @@ export default function PractitionerRegistration() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="text-white">Practitioner</span>
-              <br />
+              {""} {''}
               <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Registration
               </span>
@@ -337,9 +352,9 @@ export default function PractitionerRegistration() {
                     {index < process.length - 1 && (
                       <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
                     )}
-                    <div className="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                    <div className="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 group hover:bg-white/10 transition-all duration-300">
                       <div
-                        className={`w-16 h-16 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center mb-4 mx-auto`}
+                        className={`w-16 h-16 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform`}
                       >
                         <Icon className="w-8 h-8 text-white" />
                       </div>
@@ -375,19 +390,28 @@ export default function PractitionerRegistration() {
               </h3>
 
               <div className="flex flex-wrap justify-center gap-3">
-                {features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className={`px-4 py-2 rounded-full bg-gradient-to-r ${feature.color} bg-opacity-10 hover:scale-105 transition-transform duration-300 cursor-default shadow-lg`}
-                    style={{
-                      background: `linear-gradient(to right, ${feature.color.split(" ")[1]}, ${feature.color.split(" ")[3]})`,
-                    }}
-                  >
-                    <span className="text-sm text-white font-medium whitespace-nowrap">
-                      {feature.text}
-                    </span>
-                  </div>
-                ))}
+                {features.map((feature, index) => {
+                  const Icon = feature.icon;
+
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full 
+        bg-white/10 border border-white/10 backdrop-blur-sm
+        hover:scale-105 transition-all duration-300 shadow-lg"
+                    >
+                      <div
+                        className={`w-6 h-6 flex items-center justify-center rounded-md bg-gradient-to-r ${feature.color}`}
+                      >
+                        <Icon className="w-3.5 h-3.5 text-white" />
+                      </div>
+
+                      <span className="text-sm text-white font-medium whitespace-nowrap">
+                        {feature.text}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -418,10 +442,10 @@ export default function PractitionerRegistration() {
                   updated with the latest industry innovations.
                 </p>
 
-                <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <Link href='/Forms/PractitionerRegistrationForm' className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
                   Register Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
 
                 <p className="text-white/70 text-sm mt-4">
                   Free registration for limited time • Verified professionals
