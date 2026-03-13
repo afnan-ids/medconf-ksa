@@ -325,36 +325,6 @@ const SponsorPortal = () => {
                   </div>
                 </div>
 
-                {/* Upcoming Events */}
-                <div className="bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg p-4 sm:p-5 md:p-6 border border-gray-100">
-                  <div className="flex items-center justify-between mb-3 sm:mb-4">
-                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 flex items-center gap-2">
-                      <EventIcon className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
-                      Upcoming Sponsor Events
-                    </h3>
-                  </div>
-                  <div className="space-y-3">
-                    {events.map((event) => (
-                      <div
-                        key={event.id}
-                        className="flex items-center justify-between p-2 sm:p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all"
-                      >
-                        <div>
-                          <p className="text-xs sm:text-sm font-medium text-gray-800">{event.title}</p>
-                          <p className="text-xs text-gray-500 mt-1">{event.date} • {event.time}</p>
-                          <p className="text-xs text-gray-400 mt-0.5">{event.location}</p>
-                        </div>
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${
-                          event.type === "Mandatory" ? "bg-amber-100 text-amber-800" :
-                          event.type === "Exclusive" ? "bg-purple-100 text-purple-800" :
-                          "bg-gray-100 text-gray-800"
-                        }`}>
-                          {event.type}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
 
               {/* Right Column - Sponsorship Status */}
@@ -389,33 +359,40 @@ const SponsorPortal = () => {
                     View Full Details
                   </button>
                 </div>
-
-                {/* Quick Actions */}
+              </div>
+              
+            </div>
+            
+                {/* Upcoming Events */}
                 <div className="bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg p-4 sm:p-5 md:p-6 border border-gray-100">
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 mb-3 sm:mb-4">
-                    Quick Actions
-                  </h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    <button className="p-2 sm:p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all text-center">
-                      <DownloadIcon className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 mx-auto mb-1" />
-                      <span className="text-xs text-gray-600">Brand Kit</span>
-                    </button>
-                    <button className="p-2 sm:p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all text-center">
-                      <PaymentIcon className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 mx-auto mb-1" />
-                      <span className="text-xs text-gray-600">Pay Now</span>
-                    </button>
-                    <button className="p-2 sm:p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all text-center">
-                      <SupportIcon className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 mx-auto mb-1" />
-                      <span className="text-xs text-gray-600">Support</span>
-                    </button>
-                    <button className="p-2 sm:p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all text-center">
-                      <EditIcon className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 mx-auto mb-1" />
-                      <span className="text-xs text-gray-600">Profile</span>
-                    </button>
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 flex items-center gap-2">
+                      <EventIcon className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                      Upcoming Sponsor Events
+                    </h3>
+                  </div>
+                  <div className="space-y-3">
+                    {events.map((event) => (
+                      <div
+                        key={event.id}
+                        className="flex items-center justify-between p-2 sm:p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all"
+                      >
+                        <div>
+                          <p className="text-xs sm:text-sm font-medium text-gray-800">{event.title}</p>
+                          <p className="text-xs text-gray-500 mt-1">{event.date} • {event.time}</p>
+                          <p className="text-xs text-gray-400 mt-0.5">{event.location}</p>
+                        </div>
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${
+                          event.type === "Mandatory" ? "bg-amber-100 text-amber-800" :
+                          event.type === "Exclusive" ? "bg-purple-100 text-purple-800" :
+                          "bg-gray-100 text-gray-800"
+                        }`}>
+                          {event.type}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            </div>
           </div>
         )}
 
