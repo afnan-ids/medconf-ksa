@@ -492,7 +492,7 @@ const SponsorPortal = () => {
                 </div>
 
                 {/* Branding Information Section */}
-                <div className="bg-amber-50/50 rounded-xl p-4 sm:p-5">
+                <div className="rounded-xl p-4 sm:p-5">
                   <h3 className="text-sm sm:text-base font-semibold text-gray-800 mb-3 flex items-center gap-2">
                     <StarIcon className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
                     Branding Information
@@ -501,7 +501,7 @@ const SponsorPortal = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="block text-xs sm:text-sm font-medium text-gray-700">
-                        Upload Company Logo (Light Background)
+                        Upload Company Logo
                       </label>
                       <div className="flex items-center gap-3">
                         <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-purple-100 rounded-lg flex items-center justify-center border-2 border-amber-300">
@@ -514,50 +514,7 @@ const SponsorPortal = () => {
                         />
                       </div>
                     </div>
-
-                    <div className="space-y-2">
-                      <label className="block text-xs sm:text-sm font-medium text-gray-700">
-                        Upload Company Logo (Dark Background)
-                      </label>
-                      <div className="flex items-center gap-3">
-                        <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center border-2 border-amber-500">
-                          <span className="text-xl font-bold text-amber-400">P</span>
-                        </div>
-                        <input
-                          type="file"
-                          accept="image/*"
-                          className="text-xs sm:text-sm text-gray-500 file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="block text-xs sm:text-sm font-medium text-gray-700">
-                        Brand Colors (Primary)
-                      </label>
-                      <div className="flex gap-2">
-                        <input
-                          type="text"
-                          defaultValue="#F59E0B"
-                          className="w-24 border border-gray-300 rounded-lg p-2 text-xs"
-                        />
-                        <div className="w-8 h-8 bg-amber-500 rounded-lg"></div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="block text-xs sm:text-sm font-medium text-gray-700">
-                        Brand Colors (Secondary)
-                      </label>
-                      <div className="flex gap-2">
-                        <input
-                          type="text"
-                          defaultValue="#8B5CF6"
-                          className="w-24 border border-gray-300 rounded-lg p-2 text-xs"
-                        />
-                        <div className="w-8 h-8 bg-purple-500 rounded-lg"></div>
-                      </div>
-                    </div>
+                  
                   </div>
                 </div>
 
