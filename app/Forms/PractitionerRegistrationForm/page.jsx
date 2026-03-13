@@ -29,15 +29,18 @@ import {
   Medal,
   Sparkles,
 } from "lucide-react";
+import BreadCrumb from "../../Components/BreadCrum";
 
 export default function PractitionerRegisterPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900">
       {/* Header */}
       <div className="">
-        <div className="max-w-7xl mx-auto lg:pt-12">
-          
-        </div>
+      <BreadCrumb
+        title="Practitioner Account Registeration"
+        backgroundImage="/Images/Home/Bread-crum-1.avif"   
+        path={[{ label: "Services", href: '/pages/NavBar-Links/NavServices' }, { label: "Register for Practitioner" }]}
+      />
       </div>
 
       {/* Main Content */}
@@ -465,7 +468,7 @@ export default function PractitionerRegisterPage() {
                 <span className="text-red-400">*</span> Required fields
               </p>
               
-              <button className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 text-white px-8 py-4 rounded-xl text-base font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full sm:w-auto order-1 sm:order-2">
+              <button className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-xl transition-all duration-300 text-white px-8 py-4 rounded-xl text-base font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full sm:w-auto order-1 sm:order-2">
                 Complete Registration
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>

@@ -14,7 +14,7 @@ import {
 import ScoreboardIcon from '@mui/icons-material/Scoreboard';
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { ChevronDown } from "lucide-react";
-import BreadCrum from "../../Components/BreadCrum";
+import BreadCrum from "../../../Components/BreadCrum";
 
 const HealthcarePortal = () => {
   const [activeTab, setActiveTab] = useState("dashboard");

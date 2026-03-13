@@ -14,18 +14,26 @@ import BreadCrumb from "../../../Components/BreadCrum";
 
 const portals = [
   {
-    title: "Exhibitor & Sponsor Portal",
+    title: "Sponsor Portal",
     description: "Account creation, space booking, contract management",
     icon: Building2,
-    href: "/pages/ExhibitorSponsorPortal",
+    href: "/pages/Portals/SponcerPortal",
     features: ["Space booking", "Contract management", "Real-time updates"],
     color: "from-blue-500 to-cyan-400",
+  },
+  {
+    title: "Exhibitor Portal",
+    description: "Account creation, space booking, contract management",
+    icon: Building2,
+    href: "/pages/Portals/ExhibitorPortal",
+    features: ["Space booking", "Contract management", "Real-time updates"],
+    color: "from-blue-800 to-cyan-600",
   },
   {
     title: "Visitor Portal",
     description: "Registration, agenda, live streaming",
     icon: Users,
-    href: "/pages/VisitorPortal",
+    href: "/pages/Portals/VisitorPortal",
     features: ["Easy registration", "Live agenda", "Streaming access"],
     color: "from-purple-500 to-pink-400",
   },
@@ -33,7 +41,7 @@ const portals = [
     title: "Healthcare Practitioners Portal",
     description: "License upload & SCFHS verification",
     icon: Stethoscope,
-    href: "/pages/HealthcarePractitionersPortal",
+    href: "/pages/Portals/HealthcarePractitionersPortal",
     features: ["License upload", "SCFHS verification", "Credentialing"],
     color: "from-amber-500 to-orange-400",
   },
