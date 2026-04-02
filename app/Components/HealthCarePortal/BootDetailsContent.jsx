@@ -16,25 +16,15 @@ import { Calendar, Clock, MapPin, Users, Award, AlertCircle } from "lucide-react
 
 const BootDetailsContent = ({
   booths,
-  getColorClasses,
-  onReschedule,
   onCancel,
 }) => {
   const [hoveredBooth, setHoveredBooth] = useState(null);
-  const [favorites, setFavorites] = useState([]);
 
   const bookedBooths = booths.filter((b) => b.status === "Booked");
   const totalBookings = bookedBooths.length;
   const totalSpent = bookedBooths.reduce((sum, booth) => sum + (booth.price || 0), 0);
   const upcomingCount = bookedBooths.filter(b => new Date(b.date) > new Date()).length;
 
-  const toggleFavorite = (boothId) => {
-    setFavorites(prev => 
-      prev.includes(boothId) 
-        ? prev.filter(id => id !== boothId)
-        : [...prev, boothId]
-    );
-  };
 
   const getStatusStyle = (status) => {
     if (status === "Booked") return "bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400";
@@ -112,16 +102,10 @@ const BootDetailsContent = ({
             >
               <div className="relative h-28 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 p-4">
                 <div className="absolute top-3 right-3">
-                  <button
-                    onClick={() => toggleFavorite(booth.number)}
-                    className="p-1.5 bg-white dark:bg-gray-900 rounded-full shadow-sm"
-                  >
-                    {favorites.includes(booth.number) ? (
-                      <Star className="w-4 h-4 text-amber-500 fill-current" />
-                    ) : (
-                      <StarBorder className="w-4 h-4 text-gray-400" />
-                    )}
-                  </button>
+                 
+                  <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusStyle(booth.status)}`}>
+                    {booth.status}
+                  </span>
                 </div>
                 <div className="absolute bottom-3 left-3">
                   <span className="px-2 py-1 bg-white dark:bg-gray-900 rounded-lg text-xs font-medium">
@@ -139,9 +123,6 @@ const BootDetailsContent = ({
                       <span>Hall A, Section {Math.floor(Math.random() * 5) + 1}</span>
                     </div>
                   </div>
-                  <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusStyle(booth.status)}`}>
-                    {booth.status}
-                  </span>
                 </div>
 
                 <div className="space-y-2 mb-4">
@@ -165,12 +146,7 @@ const BootDetailsContent = ({
                     <p className="font-bold text-gray-900 dark:text-white">${booth.price?.toLocaleString() || "2,500"}</p>
                   </div>
                   <div className="flex gap-2">
-                    <button
-                      onClick={() => onReschedule?.(booth)}
-                      className="px-3 py-1.5 text-sm font-medium text-blue-600 bg-blue-50 dark:bg-blue-950 rounded-lg hover:bg-blue-100 transition-all"
-                    >
-                      Reschedule
-                    </button>
+                    
                     <button
                       onClick={() => onCancel?.(booth)}
                       className="px-3 py-1.5 text-sm font-medium text-red-600 bg-red-50 dark:bg-red-950 rounded-lg hover:bg-red-100 transition-all"

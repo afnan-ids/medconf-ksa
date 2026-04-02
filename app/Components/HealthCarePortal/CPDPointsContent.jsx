@@ -18,7 +18,7 @@ import {
   CheckCircle
 } from "lucide-react";
 
-const CPDPointsContent = ({ getColorClasses }) => {
+const CPDPointsContent = () => {
   const [selectedTimeframe, setSelectedTimeframe] = useState("year");
   const [showDetails, setShowDetails] = useState(false);
 
@@ -70,15 +70,6 @@ const CPDPointsContent = ({ getColorClasses }) => {
   const progress = (currentPoints / targetPoints) * 100;
   const pointsNeeded = targetPoints - currentPoints;
   
-  const achievements = [
-    { name: "First Steps", icon: Star, points: 10, achieved: true },
-    { name: "Learning Enthusiast", icon: Flame, points: 50, achieved: true },
-    { name: "Expert Level", icon: Trophy, points: 100, achieved: false },
-    { name: "Master Achiever", icon: Medal, points: 200, achieved: false },
-  ];
-
-  const nextAchievement = achievements.find(a => !a.achieved);
-  const nextAchievementProgress = nextAchievement ? (currentPoints / nextAchievement.points) * 100 : 0;
 
   return (
     <div className="space-y-6">
@@ -100,22 +91,6 @@ const CPDPointsContent = ({ getColorClasses }) => {
               </div>
             </div>
             
-            {/* Timeframe selector */}
-            <div className="flex gap-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-              {["year", "month", "week"].map((tf) => (
-                <button
-                  key={tf}
-                  onClick={() => setSelectedTimeframe(tf)}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
-                    selectedTimeframe === tf
-                      ? "bg-white dark:bg-gray-900 text-gray-900 dark:text-white shadow-sm"
-                      : "text-gray-500 dark:text-gray-400 hover:text-gray-700"
-                  }`}
-                >
-                  {tf.charAt(0).toUpperCase() + tf.slice(1)}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -181,84 +156,7 @@ const CPDPointsContent = ({ getColorClasses }) => {
             )}
           </div>
 
-          {/* Achievements Section */}
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <Trophy className="w-4 h-4 text-amber-500" />
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Achievements</h3>
-              </div>
-              <span className="text-xs text-gray-500">
-                {achievements.filter(a => a.achieved).length}/{achievements.length} unlocked
-              </span>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {achievements.map((achievement, index) => {
-                const Icon = achievement.icon;
-                const isAchieved = achievement.achieved;
-                return (
-                  <div
-                    key={index}
-                    className={`relative p-3 rounded-lg border transition-all ${
-                      isAchieved
-                        ? "bg-amber-50 dark:bg-amber-950/30 border-amber-200 dark:border-amber-800"
-                        : "bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 opacity-60"
-                    }`}
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className={`p-1.5 rounded-lg ${isAchieved ? "bg-amber-100 dark:bg-amber-900" : "bg-gray-200 dark:bg-gray-800"}`}>
-                        <Icon className={`w-4 h-4 ${isAchieved ? "text-amber-600" : "text-gray-400"}`} />
-                      </div>
-                      <div>
-                        <p className="text-xs font-medium text-gray-900 dark:text-white">{achievement.name}</p>
-                        <p className="text-xs text-gray-500">{achievement.points} pts</p>
-                      </div>
-                    </div>
-                    {!isAchieved && (
-                      <div className="mt-2 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-amber-400 to-yellow-400 rounded-full transition-all"
-                          style={{ width: `${Math.min(100, (currentPoints / achievement.points) * 100)}%` }}
-                        />
-                      </div>
-                    )}
-                    {isAchieved && (
-                      <div className="absolute -top-1 -right-1">
-                        <CheckCircle className="w-4 h-4 text-emerald-500" />
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Next Achievement Progress */}
-          {nextAchievement && (
-            <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
-              <div className="flex items-start gap-3">
-                <div className="p-2 bg-white dark:bg-gray-900 rounded-lg">
-                  <Gift className="w-4 h-4 text-blue-600" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                    Next Achievement: {nextAchievement.name}
-                  </p>
-                  <p className="text-xs text-gray-600 mt-1">
-                    Earn {nextAchievement.points - currentPoints} more points to unlock
-                  </p>
-                  <div className="mt-2 h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all"
-                      style={{ width: `${nextAchievementProgress}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
+          
           {/* Activities */}
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -266,7 +164,6 @@ const CPDPointsContent = ({ getColorClasses }) => {
                 <Award className="w-4 h-4 text-purple-500" />
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Completed Activities</h3>
               </div>
-              <button className="text-xs text-blue-600 hover:text-blue-700 font-medium">View All</button>
             </div>
 
             <div className="space-y-3">

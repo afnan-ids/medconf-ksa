@@ -1,11 +1,10 @@
 import {
-  Dashboard as DashboardIcon,
-  CloudUpload as CloudUploadIcon,
-  Event as EventIcon,
-  Map as MapIcon,
-  Storefront as StorefrontIcon,
-  SupportAgent as SupportAgentIcon,
-} from "@mui/icons-material";
+  LayoutDashboard,   
+  UploadCloud,       
+  CalendarDays,      
+  MapPinned,        
+  Headset,          
+} from "lucide-react";
 import ScoreboardIcon from "@mui/icons-material/Scoreboard";
 import {
   Shield,
@@ -15,44 +14,39 @@ import {
   Award,
   User,
 } from "lucide-react";
+import { PiStorefrontDuotone } from "react-icons/pi";
 
 // Menu items configuration
 export const menuItems = [
-  { id: "dashboard", label: "Dashboard", icon: DashboardIcon, badge: null },
-  {
-    id: "document-upload",
-    label: "Document Upload",
-    icon: CloudUploadIcon,
-    badge: null,
-  },
-  {
-    id: "event-schedule",
-    label: "Event Schedule",
-    icon: EventIcon,
-    badge: null,
-  },
+  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard, badge: null },
   {
     id: "exhibition-floor-plan",
     label: "Exhibition Floor Plan",
-    icon: MapIcon,
+    icon: MapPinned,
     badge: null,
   },
   {
     id: "boot-details",
     label: "Boot Details",
-    icon: StorefrontIcon,
+    icon: PiStorefrontDuotone,
     badge: null,
   },
   {
     id: "cpd-points",
     label: "CPD Points",
-    icon: ScoreboardIcon,
+    icon: CalendarDays,
+    badge: null,
+  },
+    {
+    id: "document-upload",
+    label: "Document Upload",
+    icon: UploadCloud,
     badge: null,
   },
   {
     id: "support-help-desk",
     label: "Support / Help Desk",
-    icon: SupportAgentIcon,
+    icon: Headset,
     badge: null,
   },
 ];
@@ -174,6 +168,7 @@ export const booths = [
     status: "Booked",
     date: "01-03-2026",
     color: "blue",
+    price: 2500,
   },
   {
     number: "B-789",
@@ -181,6 +176,7 @@ export const booths = [
     status: "Booked",
     date: "02-02-2026",
     color: "violet",
+    price: 2500,
   },
 ];
 
