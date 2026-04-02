@@ -519,12 +519,7 @@ const ExhibitorPortal = () => {
                       >
                         Selected
                       </Button>
-                      <Button
-                        variant="contained"
-                        className="!bg-gradient-to-r !from-purple-500 !to-pink-400 !rounded-full !px-3 sm:!px-4 md:!px-5 lg:!px-6 !text-xs sm:!text-sm !py-1.5 sm:!py-2 !shadow-md hover:!shadow-lg !normal-case"
-                      >
-                        Your Booth
-                      </Button>
+                      
                       <Button
                         variant="contained"
                         className="!bg-gradient-to-r !from-red-500 !to-rose-500 !rounded-full !px-3 sm:!px-4 md:!px-5 lg:!px-6 !text-xs sm:!text-sm !py-1.5 sm:!py-2 !shadow-md hover:!shadow-lg !normal-case"

@@ -9,7 +9,7 @@ const navlinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/pages/NavBar-Links/NavServices" },
   { label: "Events", href: "/pages/NavBar-Links/NavEvents" },
-  { label: "Portals", href: "/pages/NavBar-Links/NavPortals" },
+  { label: "Portals", href: "/pages/Portals" },
   { label: "About", href: "/pages/AboutUs" },
   { label: "Admin Dashboard", href: "/pages/AdminDashboard" },
   { label: "Contact", href: "/pages/ContactUs" },
@@ -140,7 +140,7 @@ export default function Navbar() {
             {/* ---------------- DESKTOP BUTTONS ---------------- */}
             <div className="hidden lg:flex items-center gap-3">
               <Link
-                href="/signin"
+                href="/Forms/Login"
                 className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105"
               >
                 <span className="relative z-10 flex items-center gap-2">
