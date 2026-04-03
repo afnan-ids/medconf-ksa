@@ -27,7 +27,7 @@ export const menuItems = [
   },
   {
     id: "boot-details",
-    label: "Boot Details",
+    label: "Booth Details",
     icon: PiStorefrontDuotone,
     badge: null,
   },

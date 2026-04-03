@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        bg: "var(--bg-main)",
+        card: "var(--bg-card)",
+        text: "var(--text-main)",
+        accent: "var(--accent)",
+        accent2: "var(--accent-2)",
+      },
       keyframes: {
         "slide-up": {
           "0%": { opacity: "0", transform: "translateY(30px)" },

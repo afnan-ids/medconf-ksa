@@ -30,31 +30,30 @@ const DocumentUploadContent = ({
   setSelectedFile,
   uploading,
   setUploading,
+  isGlassTheme,
 }) => {
   const [dragActive, setDragActive] = useState(false);
   const [hoveredDoc, setHoveredDoc] = useState(null);
   const fileInputRef = useRef(null);
 
-  // File type icons mapping
   const getFileIcon = (fileName) => {
     const extension = fileName.split('.').pop().toLowerCase();
     switch(extension) {
       case 'pdf':
-        return <PictureAsPdf className="w-5 h-5 text-red-500" />;
+        return <PictureAsPdf className="w-4 h-4 text-red-500" />;
       case 'jpg':
       case 'jpeg':
       case 'png':
       case 'gif':
-        return <Image className="w-5 h-5 text-blue-500" />;
+        return <Image className="w-4 h-4 text-blue-500" />;
       case 'doc':
       case 'docx':
-        return <Article className="w-5 h-5 text-blue-600" />;
+        return <Article className="w-4 h-4 text-blue-600" />;
       default:
-        return <InsertDriveFile className="w-5 h-5 text-gray-500" />;
+        return <InsertDriveFile className="w-4 h-4 text-gray-500" />;
     }
   };
 
-  // Handle drag events
   const handleDrag = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -113,32 +112,38 @@ const DocumentUploadContent = ({
   };
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+    <div className="space-y-4">
+      <div className={`rounded-lg border shadow-sm overflow-hidden ${
+        isGlassTheme 
+          ? "bg-white/5 backdrop-blur-sm border-white/20" 
+          : "bg-white dark:bg-gray-950 border-gray-200 dark:border-gray-800"
+      }`}>
         
-        {/* Header */}
-        <div className="p-6 border-b border-gray-200 dark:border-gray-800">
-          <div className="flex items-center justify-between flex-wrap gap-4">
+        {/* Compact Header */}
+        <div className={`p-4 border-b ${isGlassTheme ? "border-white/20" : "border-gray-200 dark:border-gray-800"}`}>
+          <div className="flex items-center justify-between flex-wrap gap-3">
             <div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white">Document Management</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                Secure document storage • {docs.length} file{docs.length !== 1 ? "s" : ""} on file
+              <h2 className={`text-base font-bold ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>Documents</h2>
+              <p className={`text-xs flex items-center gap-1.5 ${isGlassTheme ? "text-gray-300" : "text-gray-500 dark:text-gray-400"}`}>
+                <Shield className="w-3 h-3" />
+                {docs.length} file{docs.length !== 1 ? "s" : ""} stored
               </p>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                <Lock className="w-4 h-4 text-gray-500" />
-                <span className="text-xs font-medium text-gray-600 dark:text-gray-400">
-                  Encrypted Storage
+            <div className="flex items-center gap-2">
+              <div className={`flex items-center gap-1.5 px-2 py-1 rounded-md ${
+                isGlassTheme ? "bg-white/10" : "bg-gray-100 dark:bg-gray-800"
+              }`}>
+                <Lock className="w-3 h-3 text-gray-500" />
+                <span className={`text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
+                  Encrypted
                 </span>
               </div>
               <button
                 onClick={() => fileInputRef.current?.click()}
-                className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg cursor-pointer flex items-center gap-2 hover:shadow-md transition-all text-sm font-medium"
+                className="px-3 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-md cursor-pointer flex items-center gap-1.5 hover:shadow-md transition-all text-xs font-medium"
               >
-                <CloudUploadIcon className="w-4 h-4" />
-                Upload New
+                <CloudUploadIcon className="w-3.5 h-3.5" />
+                Upload
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -150,10 +155,10 @@ const DocumentUploadContent = ({
           </div>
         </div>
 
-        {/* Drag and Drop Zone */}
+        {/* Compact Drag and Drop Zone */}
         {!selectedFile && (
           <div
-            className={`mx-6 mt-2 transition-all duration-200 ${
+            className={`px-4 pt-2 transition-all duration-200 ${
               dragActive ? "opacity-100 scale-[1.02]" : "opacity-100"
             }`}
             onDragEnter={handleDrag}
@@ -161,26 +166,28 @@ const DocumentUploadContent = ({
             onDragOver={handleDrag}
             onDrop={handleDrop}
           >
-            <div className={`
-              relative border-2 border-dashed rounded-lg p-8 text-center transition-all duration-200
-              ${dragActive 
-                ? "border-blue-500 bg-blue-50 dark:bg-blue-950/20" 
-                : "border-gray-300 dark:border-gray-700 hover:border-blue-400 hover:bg-gray-50 dark:hover:bg-gray-900/50"
-              }
-            `}>
+            <div className={`relative border-2 border-dashed rounded-md p-6 text-center transition-all duration-200 ${
+              dragActive 
+                ? "border-blue-500 bg-blue-500/20" 
+                : isGlassTheme
+                  ? "border-white/20 hover:border-blue-400 hover:bg-white/5"
+                  : "border-gray-300 dark:border-gray-700 hover:border-blue-400 hover:bg-gray-50 dark:hover:bg-gray-900/50"
+            }`}>
               <div className="relative">
-                <div className="inline-block p-4 bg-gray-100 dark:bg-gray-800 rounded-full mb-4">
-                  <Upload className={`w-8 h-8 transition-colors duration-200 ${
+                <div className={`inline-block p-2.5 rounded-full mb-2 ${
+                  isGlassTheme ? "bg-white/10" : "bg-gray-100 dark:bg-gray-800"
+                }`}>
+                  <Upload className={`w-5 h-5 transition-colors duration-200 ${
                     dragActive ? "text-blue-500" : "text-gray-400"
                   }`} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  {dragActive ? "Drop your file here" : "Drag & drop your file"}
+                <h3 className={`text-sm font-semibold mb-1 ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>
+                  {dragActive ? "Drop here" : "Drag & drop"}
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                  or click the upload button above
+                <p className={`text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-500 dark:text-gray-400"}`}>
+                  or click upload button
                 </p>
-                <div className="flex justify-center gap-4 text-xs text-gray-400">
+                <div className={`flex justify-center gap-2 text-[10px] mt-2 ${isGlassTheme ? "text-gray-400" : "text-gray-400"}`}>
                   <span>PDF, DOC, DOCX</span>
                   <span>•</span>
                   <span>JPG, PNG</span>
@@ -192,50 +199,58 @@ const DocumentUploadContent = ({
           </div>
         )}
 
-        {/* File Preview Before Upload */}
+        {/* Compact File Preview */}
         {selectedFile && (
-          <div className="m-6 p-5 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-            <div className="flex items-start justify-between gap-4 flex-wrap">
-              <div className="flex items-center gap-4 flex-1 min-w-0">
-                <div className="p-3 bg-white dark:bg-gray-900 rounded-lg shadow-sm">
+          <div className={`m-4 p-3 rounded-md border ${
+            isGlassTheme 
+              ? "bg-blue-500/20 border-blue-500/30" 
+              : "bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800"
+          }`}>
+            <div className="flex items-start justify-between gap-3 flex-wrap">
+              <div className="flex items-center gap-3 flex-1 min-w-0">
+                <div className={`p-2 rounded-md shadow-sm ${isGlassTheme ? "bg-white/10" : "bg-white dark:bg-gray-900"}`}>
                   {getFileIcon(selectedFile.name)}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">
+                  <p className={`text-xs font-semibold truncate ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>
                     {selectedFile.name}
                   </p>
-                  <div className="flex items-center gap-3 mt-1">
-                    <span className="text-xs text-gray-500">
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className={`text-[10px] ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>
                       {formatFileSize(selectedFile.size)}
                     </span>
-                    <span className="text-xs text-gray-400">•</span>
-                    <span className="text-xs text-gray-500">
-                      Ready to upload
+                    <span className={`text-[10px] ${isGlassTheme ? "text-gray-400" : "text-gray-400"}`}>•</span>
+                    <span className={`text-[10px] ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>
+                      Ready
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-1.5">
                 <button
                   onClick={() => setSelectedFile(null)}
-                  className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
+                  className={`p-1.5 rounded-md transition-all ${
+                    isGlassTheme 
+                      ? "text-gray-300 hover:text-red-400 hover:bg-red-500/20" 
+                      : "text-gray-500 hover:text-red-600 hover:bg-red-50"
+                  }`}
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
                 <button
                   onClick={handleFileUpload}
                   disabled={uploading}
-                  className="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:shadow-md transition-all disabled:opacity-50 flex items-center gap-2"
+                  className="px-3 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-md text-xs font-medium hover:shadow-md transition-all disabled:opacity-50 flex items-center gap-1.5"
                 >
                   {uploading ? (
                     <>
-                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />
                       Uploading...
                     </>
                   ) : (
                     <>
-                      <Check className="w-4 h-4" />
-                      Confirm Upload
+                      <Check className="w-3.5 h-3.5" />
+                      Confirm
                     </>
                   )}
                 </button>
@@ -243,12 +258,12 @@ const DocumentUploadContent = ({
             </div>
             
             {uploading && (
-              <div className="mt-4">
-                <div className="flex justify-between text-xs text-gray-600 mb-1">
+              <div className="mt-3">
+                <div className={`flex justify-between text-[10px] mb-1 ${isGlassTheme ? "text-gray-300" : "text-gray-600"}`}>
                   <span>Uploading...</span>
                   <span>Processing</span>
                 </div>
-                <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className={`h-1.5 rounded-full overflow-hidden ${isGlassTheme ? "bg-white/10" : "bg-gray-200"}`}>
                   <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse w-3/4" />
                 </div>
               </div>
@@ -256,109 +271,115 @@ const DocumentUploadContent = ({
           </div>
         )}
 
-        {/* Document Grid */}
-        <div className="p-6">
+        {/* Compact Document Grid */}
+        <div className="p-4">
           {docs.length === 0 ? (
-            <div className="text-center py-16 rounded-lg border border-dashed border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
-              <Description className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                No documents uploaded
+            <div className={`text-center py-10 rounded-md border border-dashed ${
+              isGlassTheme 
+                ? "border-white/20 bg-white/5" 
+                : "border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900"
+            }`}>
+              <Description className="w-12 h-12 text-gray-300 mx-auto mb-2" />
+              <h3 className={`text-sm font-semibold mb-1 ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>
+                No documents
               </h3>
-              <p className="text-sm text-gray-500 mb-4">
-                Upload your first document to get started
+              <p className={`text-xs mb-3 ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>
+                Upload your first document
               </p>
               <button
                 onClick={() => fileInputRef.current?.click()}
-                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:shadow-md transition-all"
+                className="px-3 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-md text-xs font-medium hover:shadow-md transition-all"
               >
                 Upload Document
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {docs.map((doc, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all hover:-translate-y-0.5 overflow-hidden"
+                  className={`group relative rounded-md border transition-all hover:shadow-md hover:-translate-y-0.5 overflow-hidden ${
+                    isGlassTheme 
+                      ? "bg-white/5 border-white/20 hover:bg-white/10" 
+                      : "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700"
+                  }`}
                   onMouseEnter={() => setHoveredDoc(index)}
                   onMouseLeave={() => setHoveredDoc(null)}
                 >
-                  <div className="relative p-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2.5 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:scale-110 transition-transform">
+                  <div className="relative p-3">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className={`p-1.5 rounded-md group-hover:scale-110 transition-transform ${
+                          isGlassTheme ? "bg-white/10" : "bg-gray-100 dark:bg-gray-800"
+                        }`}>
                           {getFileIcon(doc.name)}
                         </div>
                         <div>
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs font-medium text-gray-500">
+                          <div className="flex items-center gap-1">
+                            <span className={`text-[10px] font-medium ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>
                               {doc.type?.split('/').pop().toUpperCase() || 'FILE'}
                             </span>
                             {doc.verified && (
-                              <CheckCircle className="w-3 h-3 text-emerald-500" />
+                              <CheckCircle className="w-2.5 h-2.5 text-emerald-500" />
                             )}
                           </div>
                         </div>
                       </div>
                       
-                      {/* Status Badge */}
-                      <div className={`px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${
+                      <div className={`px-1.5 py-0.5 rounded-full text-[10px] font-medium flex items-center gap-0.5 ${
                         doc.status === "Verified" 
                           ? "bg-emerald-100 dark:bg-emerald-950 text-emerald-700"
                           : "bg-amber-100 dark:bg-amber-950 text-amber-700"
                       }`}>
                         {doc.status === "Verified" ? (
-                          <Check className="w-3 h-3" />
+                          <Check className="w-2.5 h-2.5" />
                         ) : (
-                          <Clock className="w-3 h-3" />
+                          <Clock className="w-2.5 h-2.5" />
                         )}
-                        {doc.status}
+                        {doc.status === "Verified" ? "OK" : "Pending"}
                       </div>
                     </div>
                     
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1 line-clamp-2">
+                    <h3 className={`text-xs font-semibold mb-1 line-clamp-2 ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>
                       {doc.name}
                     </h3>
                     
-                    <div className="flex items-center gap-2 text-xs text-gray-500 mt-2">
-                      <Clock className="w-3 h-3" />
+                    <div className={`flex items-center gap-1.5 text-[10px] mt-1.5 ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>
+                      <Clock className="w-2.5 h-2.5" />
                       <span>{doc.date}</span>
-                      {doc.time && (
-                        <>
-                          <span>•</span>
-                          <span>{doc.time}</span>
-                        </>
-                      )}
                     </div>
                     
                     {doc.size && (
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p className={`text-[10px] mt-0.5 ${isGlassTheme ? "text-gray-400" : "text-gray-400"}`}>
                         {formatFileSize(doc.size)}
                       </p>
                     )}
                     
-                    {/* Action Buttons */}
-                    <div className={`absolute bottom-3 right-3 flex gap-1 transition-all duration-200 ${
+                    <div className={`absolute bottom-2 right-2 flex gap-0.5 transition-all duration-200 ${
                       hoveredDoc === index ? "opacity-100" : "opacity-0 pointer-events-none"
                     }`}>
-                      <button
-                        className="p-1.5 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:bg-gray-100 transition-all"
-                        title="Preview"
-                      >
-                        <Visibility className="w-3.5 h-3.5 text-gray-600" />
+                      <button className={`p-1 rounded shadow-sm transition-all ${
+                        isGlassTheme 
+                          ? "bg-white/10 hover:bg-white/20" 
+                          : "bg-white dark:bg-gray-800 hover:bg-gray-100"
+                      }`}>
+                        <Visibility className="w-3 h-3 text-gray-600" />
                       </button>
                       <button
                         onClick={() => handleDelete(doc)}
-                        className="p-1.5 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:bg-red-50 transition-all"
-                        title="Delete"
-                      >
-                        <Delete className="w-3.5 h-3.5 text-red-500" />
+                        className={`p-1 rounded shadow-sm transition-all ${
+                          isGlassTheme 
+                            ? "bg-white/10 hover:bg-red-500/20" 
+                            : "bg-white dark:bg-gray-800 hover:bg-red-50"
+                        }`}>
+                        <Delete className="w-3 h-3 text-red-500" />
                       </button>
-                      <button
-                        className="p-1.5 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:bg-gray-100 transition-all"
-                        title="Share"
-                      >
-                        <Share2 className="w-3.5 h-3.5 text-gray-600" />
+                      <button className={`p-1 rounded shadow-sm transition-all ${
+                        isGlassTheme 
+                          ? "bg-white/10 hover:bg-white/20" 
+                          : "bg-white dark:bg-gray-800 hover:bg-gray-100"
+                      }`}>
+                        <Share2 className="w-3 h-3 text-gray-600" />
                       </button>
                     </div>
                   </div>
@@ -372,19 +393,18 @@ const DocumentUploadContent = ({
           )}
         </div>
 
-        {/* Security Notice */}
+        {/* Compact Security Notice */}
         {docs.length > 0 && (
-          <div className="mx-6 mb-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
-            <div className="flex items-start gap-3">
-              <Shield className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
-                  Secure Document Storage
-                </p>
-                <p className="text-xs text-gray-500 mt-0.5">
-                  All documents are encrypted and stored securely. Access is limited to authorized personnel only.
-                </p>
-              </div>
+          <div className={`mx-4 mb-4 p-2.5 rounded-md border ${
+            isGlassTheme 
+              ? "bg-white/5 border-white/20" 
+              : "bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800"
+          }`}>
+            <div className="flex items-start gap-2">
+              <Shield className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+              <p className={`text-[10px] ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>
+                All documents are encrypted and stored securely.
+              </p>
             </div>
           </div>
         )}

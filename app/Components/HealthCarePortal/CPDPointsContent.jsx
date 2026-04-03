@@ -18,7 +18,7 @@ import {
   CheckCircle
 } from "lucide-react";
 
-const CPDPointsContent = () => {
+const CPDPointsContent = ({ isGlassTheme }) => {
   const [selectedTimeframe, setSelectedTimeframe] = useState("year");
   const [showDetails, setShowDetails] = useState(false);
 
@@ -72,134 +72,138 @@ const CPDPointsContent = () => {
   
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Main Card */}
-      <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
-        {/* Header */}
-        <div className="p-6 border-b border-gray-200 dark:border-gray-800">
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-md">
-                <Brain className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">CPD Points Tracker</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" />
-                  Track your professional development journey
-                </p>
-              </div>
+      <div className={`rounded-lg border shadow-sm ${
+        isGlassTheme 
+          ? "bg-white/5 backdrop-blur-sm border-white/20" 
+          : "bg-white dark:bg-gray-950 border-gray-200 dark:border-gray-800"
+      }`}>
+        {/* Compact Header */}
+        <div className={`p-4 border-b ${isGlassTheme ? "border-white/20" : "border-gray-200 dark:border-gray-800"}`}>
+          <div className="flex items-center gap-2">
+            <div className="p-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-md shadow-sm">
+              <Brain className="w-4 h-4 text-white" />
             </div>
-            
+            <div>
+              <h2 className={`text-base font-bold ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>CPD Points</h2>
+              <p className={`text-xs flex items-center gap-1 ${isGlassTheme ? "text-gray-300" : "text-gray-500 dark:text-gray-400"}`}>
+                <Sparkles className="w-3 h-3" />
+                Track your journey
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="p-6">
-          {/* Progress Section */}
-          <div className="mb-6 p-5 bg-gray-50 dark:bg-gray-900 rounded-lg">
-            <div className="flex justify-between items-start mb-4">
+        <div className="p-4">
+          {/* Compact Progress Section */}
+          <div className={`mb-4 p-3 rounded-md ${isGlassTheme ? "bg-white/5" : "bg-gray-50 dark:bg-gray-900"}`}>
+            <div className="flex justify-between items-start mb-2">
               <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <Target className="w-4 h-4 text-blue-500" />
-                  <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">Annual Goal</span>
+                <div className="flex items-center gap-1 mb-0.5">
+                  <Target className="w-3 h-3 text-blue-500" />
+                  <span className="text-xs font-semibold text-blue-600">Annual Goal</span>
                 </div>
-                <p className="text-sm text-gray-500">Target: {targetPoints} points</p>
+                <p className={`text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>{targetPoints} pts target</p>
               </div>
               <div className="text-right">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-bold text-blue-600">{currentPoints}</span>
-                  <span className="text-lg text-gray-400">/{targetPoints}</span>
+                <div className="flex items-baseline gap-0.5">
+                  <span className="text-2xl font-bold text-blue-600">{currentPoints}</span>
+                  <span className={`text-sm ${isGlassTheme ? "text-gray-300" : "text-gray-400"}`}>/{targetPoints}</span>
                 </div>
-                <p className="text-xs text-gray-500 mt-1">{progress.toFixed(0)}% Complete</p>
+                <p className={`text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>{progress.toFixed(0)}% done</p>
               </div>
             </div>
 
             {/* Progress bar */}
-            <div className="relative mb-3">
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+            <div className="relative mb-2">
+              <div className={`w-full rounded-full h-2 overflow-hidden ${isGlassTheme ? "bg-white/10" : "bg-gray-200 dark:bg-gray-700"}`}>
                 <div
-                  className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2.5 rounded-full transition-all duration-500"
+                  className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full transition-all duration-500"
                   style={{ width: `${progress}%` }}
                 />
               </div>
             </div>
 
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <TrendingUp className="w-3 h-3 text-blue-500" />
-                <p className="text-xs text-gray-600">
-                  <span className="font-semibold text-blue-600">{pointsNeeded}</span> points to reach target
+                <p className={`text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-600"}`}>
+                  <span className="font-semibold text-blue-600">{pointsNeeded}</span> left
                 </p>
               </div>
               <button 
                 onClick={() => setShowDetails(!showDetails)}
-                className="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+                className="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center gap-0.5"
               >
-                {showDetails ? "Hide" : "View"} Details
+                {showDetails ? "Hide" : "View"}
                 <ChevronRight className={`w-3 h-3 transition-transform ${showDetails ? "rotate-90" : ""}`} />
               </button>
             </div>
 
             {showDetails && (
-              <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="flex items-center gap-2">
+              <div className={`mt-3 pt-3 border-t ${isGlassTheme ? "border-white/20" : "border-gray-200 dark:border-gray-700"}`}>
+                <div className="flex gap-3">
+                  <div className="flex items-center gap-1">
                     <Calendar className="w-3 h-3 text-gray-400" />
-                    <span className="text-xs text-gray-600">Year ends: Dec 31, 2024</span>
+                    <span className={`text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-600"}`}>Dec 31, 2024</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     <Clock className="w-3 h-3 text-gray-400" />
-                    <span className="text-xs text-gray-600">Time left: 8 months</span>
+                    <span className={`text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-600"}`}>8 months left</span>
                   </div>
                 </div>
               </div>
             )}
           </div>
 
-          
-          {/* Activities */}
+          {/* Compact Activities */}
           <div>
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-purple-500" />
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Completed Activities</h3>
-              </div>
+            <div className="flex items-center gap-1.5 mb-2">
+              <Award className="w-3.5 h-3.5 text-purple-500" />
+              <h3 className={`text-sm font-semibold ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>Activities</h3>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               {activities.map((activity, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+                  className={`p-3 rounded-md transition-all ${
+                    isGlassTheme 
+                      ? "bg-white/5 hover:bg-white/10" 
+                      : "bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  }`}
                 >
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                  <div className="flex justify-between items-start gap-2">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5 flex-wrap mb-0.5">
+                        <span className={`text-sm font-semibold ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>
                           {activity.name}
                         </span>
-                        <span className="px-2 py-0.5 bg-gray-200 dark:bg-gray-700 text-xs rounded-full">
+                        <span className={`px-1.5 py-0.5 text-xs rounded-full ${
+                          isGlassTheme ? "bg-white/10 text-gray-300" : "bg-gray-200 dark:bg-gray-700"
+                        }`}>
                           {activity.category}
                         </span>
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-gray-500">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
+                      <div className={`flex items-center gap-2 text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-500"}`}>
+                        <div className="flex items-center gap-0.5">
+                          <Calendar className="w-2.5 h-2.5" />
                           {activity.date}
                         </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
+                        <div className="flex items-center gap-0.5">
+                          <Clock className="w-2.5 h-2.5" />
                           {activity.duration}
                         </div>
                         {activity.certificate && (
-                          <div className="flex items-center gap-1 text-emerald-600">
-                            <CheckCircle className="w-3 h-3" />
-                            Certificate
+                          <div className="flex items-center gap-0.5 text-emerald-600">
+                            <CheckCircle className="w-2.5 h-2.5" />
+                            <span>Cert</span>
                           </div>
                         )}
                       </div>
                     </div>
-                    <div className="px-3 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg">
+                    <div className="px-2 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-md flex-shrink-0">
                       <span className="text-xs font-bold text-white">+{activity.points}</span>
                     </div>
                   </div>
@@ -210,15 +214,18 @@ const CPDPointsContent = () => {
         </div>
       </div>
 
-      {/* Info Card */}
-      <div className="bg-blue-50 dark:bg-blue-950/30 rounded-xl p-5 border border-blue-200 dark:border-blue-800">
-        <div className="flex items-start gap-3">
-          <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+      {/* Compact Info Card */}
+      <div className={`rounded-lg p-3 border ${
+        isGlassTheme 
+          ? "bg-blue-500/20 border-blue-500/30" 
+          : "bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800"
+      }`}>
+        <div className="flex items-start gap-2">
+          <Info className="w-3.5 h-3.5 text-blue-600 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">CPD Points Guidelines</p>
-            <p className="text-xs text-gray-600 dark:text-gray-400">
-              Earn points by attending workshops, conferences, and completing certified courses. 
-              Minimum 50 points required annually for professional certification renewal.
+            <p className={`text-xs font-semibold mb-0.5 ${isGlassTheme ? "text-white" : "text-gray-900 dark:text-white"}`}>CPD Guidelines</p>
+            <p className={`text-xs ${isGlassTheme ? "text-gray-300" : "text-gray-600 dark:text-gray-400"}`}>
+              Earn points through workshops & conferences. Minimum 50 points required annually.
             </p>
           </div>
         </div>
