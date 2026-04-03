@@ -73,96 +73,105 @@ const CPDPointsContent = () => {
 
   return (
     <div className="space-y-6">
-      {/* Main Card */}
-      <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+      {/* Main Card - Glassmorphism */}
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+        {/* Decorative glows */}
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        
         {/* Header */}
-        <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+        <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-md">
+              <div className="p-2.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg shadow-lg shadow-blue-500/30">
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">CPD Points Tracker</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" />
+                <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                  CPD Points Tracker
+                </h2>
+                <p className="text-sm text-gray-300 mt-0.5 flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-blue-400" />
                   Track your professional development journey
                 </p>
               </div>
             </div>
-            
           </div>
         </div>
 
-        <div className="p-6">
-          {/* Progress Section */}
-          <div className="mb-6 p-5 bg-gray-50 dark:bg-gray-900 rounded-lg">
-            <div className="flex justify-between items-start mb-4">
+        <div className="relative p-6">
+          {/* Progress Section - Glass style */}
+          <div className="relative mb-6 p-5 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
+            
+            <div className="relative flex justify-between items-start mb-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Target className="w-4 h-4 text-blue-500" />
-                  <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">Annual Goal</span>
+                  <Target className="w-4 h-4 text-blue-400" />
+                  <span className="text-xs font-semibold text-blue-400 uppercase tracking-wide">Annual Goal</span>
                 </div>
-                <p className="text-sm text-gray-500">Target: {targetPoints} points</p>
+                <p className="text-sm text-gray-300">Target: {targetPoints} points</p>
               </div>
               <div className="text-right">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-bold text-blue-600">{currentPoints}</span>
+                  <span className="text-3xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text">
+                    {currentPoints}
+                  </span>
                   <span className="text-lg text-gray-400">/{targetPoints}</span>
                 </div>
-                <p className="text-xs text-gray-500 mt-1">{progress.toFixed(0)}% Complete</p>
+                <p className="text-xs text-gray-400 mt-1">{progress.toFixed(0)}% Complete</p>
               </div>
             </div>
 
             {/* Progress bar */}
             <div className="relative mb-3">
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+              <div className="w-full bg-white/10 rounded-full h-2.5 overflow-hidden">
                 <div
-                  className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2.5 rounded-full transition-all duration-500"
+                  className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2.5 rounded-full transition-all duration-500 shadow-lg shadow-blue-500/30"
                   style={{ width: `${progress}%` }}
                 />
               </div>
             </div>
 
-            <div className="flex justify-between items-center">
+            <div className="relative flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <TrendingUp className="w-3 h-3 text-blue-500" />
-                <p className="text-xs text-gray-600">
-                  <span className="font-semibold text-blue-600">{pointsNeeded}</span> points to reach target
+                <TrendingUp className="w-3 h-3 text-blue-400" />
+                <p className="text-xs text-gray-300">
+                  <span className="font-semibold text-blue-400">{pointsNeeded}</span> points to reach target
                 </p>
               </div>
               <button 
                 onClick={() => setShowDetails(!showDetails)}
-                className="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+                className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center gap-1 transition-colors"
               >
                 {showDetails ? "Hide" : "View"} Details
-                <ChevronRight className={`w-3 h-3 transition-transform ${showDetails ? "rotate-90" : ""}`} />
+                <ChevronRight className={`w-3 h-3 transition-transform duration-300 ${showDetails ? "rotate-90" : ""}`} />
               </button>
             </div>
 
             {showDetails && (
-              <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="mt-4 pt-4 border-t border-white/10 animate-in fade-in duration-300">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-3 h-3 text-gray-400" />
-                    <span className="text-xs text-gray-600">Year ends: Dec 31, 2024</span>
+                    <span className="text-xs text-gray-300">Year ends: Dec 31, 2024</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="w-3 h-3 text-gray-400" />
-                    <span className="text-xs text-gray-600">Time left: 8 months</span>
+                    <span className="text-xs text-gray-300">Time left: 8 months</span>
                   </div>
                 </div>
               </div>
             )}
           </div>
 
-          
           {/* Activities */}
           <div>
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-purple-500" />
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Completed Activities</h3>
+                <Award className="w-4 h-4 text-purple-400" />
+                <h3 className="text-sm font-semibold text-white">Completed Activities</h3>
               </div>
             </div>
 
@@ -170,36 +179,39 @@ const CPDPointsContent = () => {
               {activities.map((activity, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+                  className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/10 overflow-hidden"
                 >
-                  <div className="flex justify-between items-start">
+                  {/* Hover gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                  
+                  <div className="relative flex justify-between items-start">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                        <span className="text-sm font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
                           {activity.name}
                         </span>
-                        <span className="px-2 py-0.5 bg-gray-200 dark:bg-gray-700 text-xs rounded-full">
+                        <span className="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-300 border border-white/10">
                           {activity.category}
                         </span>
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-gray-500">
+                      <div className="flex items-center gap-3 text-xs text-gray-400">
                         <div className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
+                          <Calendar className="w-3 h-3 text-blue-400" />
                           {activity.date}
                         </div>
                         <div className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
+                          <Clock className="w-3 h-3 text-purple-400" />
                           {activity.duration}
                         </div>
                         {activity.certificate && (
-                          <div className="flex items-center gap-1 text-emerald-600">
+                          <div className="flex items-center gap-1 text-emerald-400">
                             <CheckCircle className="w-3 h-3" />
                             Certificate
                           </div>
                         )}
                       </div>
                     </div>
-                    <div className="px-3 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg">
+                    <div className="px-3 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg shadow-lg shadow-blue-500/30">
                       <span className="text-xs font-bold text-white">+{activity.points}</span>
                     </div>
                   </div>
@@ -210,13 +222,14 @@ const CPDPointsContent = () => {
         </div>
       </div>
 
-      {/* Info Card */}
-      <div className="bg-blue-50 dark:bg-blue-950/30 rounded-xl p-5 border border-blue-200 dark:border-blue-800">
-        <div className="flex items-start gap-3">
-          <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+      {/* Info Card - Glass style */}
+      <div className="relative bg-blue-500/10 backdrop-blur-xl rounded-xl p-5 border border-blue-500/30 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
+        <div className="relative flex items-start gap-3">
+          <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">CPD Points Guidelines</p>
-            <p className="text-xs text-gray-600 dark:text-gray-400">
+            <p className="text-sm font-semibold text-white mb-1">CPD Points Guidelines</p>
+            <p className="text-xs text-gray-300">
               Earn points by attending workshops, conferences, and completing certified courses. 
               Minimum 50 points required annually for professional certification renewal.
             </p>

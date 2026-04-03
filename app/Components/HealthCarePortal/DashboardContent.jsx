@@ -23,7 +23,7 @@ const DashboardContent = () => {
 
   const statsData = [
     { title: "Total Booths", value: "120", icon: Store, trend: "+12%", trendUp: true, progress: 80 },
-    { title: "Active Exhibitors", value: "98", icon: Users, trend: "+8%", trendUp: true, progress: 70 },
+    { title: "CPD Points", value: "98", icon: Users, trend: "+8%", trendUp: true, progress: 70 },
     { title: "Pending Approvals", value: "12", icon: AlertCircle, trend: "-5%", trendUp: false, progress: 40 },
   ];
 
@@ -44,35 +44,44 @@ const DashboardContent = () => {
 
   const getStatusBadge = (status) => {
     switch(status) {
-      case "approved": return "bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400";
-      case "pending": return "bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400";
-      case "rejected": return "bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400";
-      default: return "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300";
+      case "approved": return "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+      case "pending": return "bg-amber-500/20 text-amber-400 border border-amber-500/30";
+      case "rejected": return "bg-red-500/20 text-red-400 border border-red-500/30";
+      default: return "bg-white/10 text-gray-300 border border-white/10";
     }
   };
 
   return (
     <div className="space-y-6">
-      {/* Stats Cards */}
+      {/* Stats Cards - Glassmorphism */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {statsData.map((stat, i) => {
           const Icon = stat.icon;
           return (
-            <div key={i} className="bg-white dark:bg-gray-950 rounded-xl p-6 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md transition-all">
-              <div className="flex justify-between items-start mb-4">
-                <div className="p-2.5 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                  <Icon className="w-5 h-5 text-blue-600" />
+            <div key={i} className="group relative bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 shadow-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+              {/* Hover gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-cyan-500/0 opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
+              
+              {/* Decorative corner glow */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/20 rounded-bl-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative flex justify-between items-start mb-4">
+                <div className="p-2.5 bg-white/10 rounded-lg border border-white/20">
+                  <Icon className="w-5 h-5 text-blue-400" />
                 </div>
-                <div className={`flex items-center gap-1 text-sm font-medium ${stat.trendUp ? 'text-emerald-600' : 'text-red-600'}`}>
+                <div className={`flex items-center gap-1 text-sm font-medium ${stat.trendUp ? 'text-emerald-400' : 'text-red-400'}`}>
                   <TrendingUp className={`w-4 h-4 ${!stat.trendUp && 'rotate-180'}`} />
                   {stat.trend}
                 </div>
               </div>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{stat.title}</p>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{stat.value}</h2>
+              <p className="text-sm text-gray-300">{stat.title}</p>
+              <h2 className="text-2xl font-bold text-white mt-1">{stat.value}</h2>
               <div className="mt-4">
-                <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all" style={{ width: `${stat.progress}%` }} />
+                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-500 shadow-lg shadow-blue-500/30" 
+                    style={{ width: `${stat.progress}%` }} 
+                  />
                 </div>
               </div>
             </div>
@@ -82,35 +91,45 @@ const DashboardContent = () => {
 
       {/* Main Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Booth Updates */}
-        <div className="lg:col-span-2 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+        {/* Booth Updates - Glass */}
+        <div className="lg:col-span-2 relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+          {/* Decorative glow */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative p-6 border-b border-white/10 flex justify-between items-center">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Booth Status Updates</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Recent activity and approvals</p>
+              <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                Booth Status Updates
+              </h3>
+              <p className="text-sm text-gray-300 mt-1">Recent activity and approvals</p>
             </div>
             <button 
               onClick={() => setShowAllUpdates(!showAllUpdates)} 
-              className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+              className="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center gap-1 transition-colors"
             >
               {showAllUpdates ? "Show Less" : "View All"}
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
-          <div className="p-6">
+          <div className="relative p-6">
             <div className="space-y-3">
               {displayedUpdates.map((item) => (
-                <div key={item.id} className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
-                  <div className="flex justify-between items-start">
+                <div key={item.id} className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden">
+                  {/* Hover gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                  
+                  <div className="relative flex justify-between items-start">
                     <div className="flex-1">
-                      <p className="font-semibold text-gray-900 dark:text-white">{item.title}</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{item.details}</p>
+                      <p className="font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
+                        {item.title}
+                      </p>
+                      <p className="text-sm text-gray-300 mt-1">{item.details}</p>
                       <div className="flex items-center gap-1 text-xs text-gray-400 mt-2">
-                        <Clock className="w-3 h-3" />
+                        <Clock className="w-3 h-3 text-blue-400" />
                         {item.time}
                       </div>
                     </div>
-                    <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${getStatusBadge(item.status)}`}>
+                    <span className={`px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${getStatusBadge(item.status)}`}>
                       {item.status}
                     </span>
                   </div>
@@ -120,28 +139,35 @@ const DashboardContent = () => {
           </div>
         </div>
 
-        {/* Upcoming Events */}
-        <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Upcoming Events</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Don't miss these key moments</p>
+        {/* Upcoming Events - Glass */}
+        <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+          {/* Decorative glow */}
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative p-6 border-b border-white/10">
+            <h3 className="text-lg font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Upcoming Events
+            </h3>
+            <p className="text-sm text-gray-300 mt-1">Don't miss these key moments</p>
           </div>
-          <div className="p-6">
+          <div className="relative p-6">
             <div className="space-y-3">
               {eventUpdates.map((event) => (
-                <div key={event.id} className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
-                  <p className="font-semibold text-gray-900 dark:text-white">{event.title}</p>
+                <div key={event.id} className="group p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                  <p className="font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-purple-200 group-hover:bg-clip-text transition-all duration-300">
+                    {event.title}
+                  </p>
                   <div className="space-y-1 mt-2">
-                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                      <Calendar className="w-4 h-4 text-blue-500" />
+                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                      <Calendar className="w-4 h-4 text-blue-400" />
                       {event.date} • {event.time}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                      <MapPin className="w-4 h-4 text-blue-500" />
+                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                      <MapPin className="w-4 h-4 text-purple-400" />
                       {event.location}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                      <Users className="w-4 h-4 text-blue-500" />
+                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                      <Users className="w-4 h-4 text-cyan-400" />
                       {event.attendees} attending
                     </div>
                   </div>
@@ -149,37 +175,49 @@ const DashboardContent = () => {
               ))}
             </div>
           </div>
-          <div className="p-4 border-t border-gray-200 dark:border-gray-800">
-            <button className="w-full text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center justify-center gap-2">
-              View Full Schedule <ArrowRight className="w-4 h-4" />
+          <div className="relative p-4 border-t border-white/10">
+            <button className="group/btn relative w-full text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center justify-center gap-2 transition-colors">
+              <span>View Full Schedule</span>
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Quick Actions */}
-      <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
-        <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+      {/* Quick Actions - Glass */}
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+        {/* Decorative glows */}
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+        
+        <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-blue-500" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Quick Actions</h3>
+            <Sparkles className="w-5 h-5 text-blue-400" />
+            <h3 className="text-lg font-semibold text-white">Quick Actions</h3>
           </div>
         </div>
-        <div className="p-6">
+        <div className="relative p-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: "Create Booth", icon: Store },
-              { name: "Send Broadcast", icon: Megaphone },
-              { name: "View Reports", icon: TrendingUp },
-              { name: "Help Center", icon: MessageSquare },
+              { name: "New Booth", icon: Store, gradient: "from-blue-500 to-cyan-400" },
+              { name: "Send Broadcast", icon: Megaphone, gradient: "from-purple-500 to-pink-400" },
+              { name: "View Reports", icon: TrendingUp, gradient: "from-emerald-500 to-teal-400" },
+              { name: "Help Center", icon: MessageSquare, gradient: "from-amber-500 to-orange-400" },
             ].map((action, idx) => {
               const Icon = action.icon;
               return (
-                <button key={idx} className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:shadow-md transition-all text-left group">
-                  <div className="p-2 bg-white dark:bg-gray-800 rounded-lg w-fit mb-3 group-hover:scale-110 transition-transform">
-                    <Icon className="w-5 h-5 text-blue-600" />
+                <button key={idx} className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left">
+                  {/* Hover gradient background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${action.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                  
+                  <div className="relative">
+                    <div className="p-2 bg-white/10 rounded-lg w-fit mb-3 group-hover:scale-110 transition-transform duration-300 border border-white/20">
+                      <Icon className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
+                    </div>
+                    <p className="font-medium text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
+                      {action.name}
+                    </p>
                   </div>
-                  <p className="font-medium text-gray-900 dark:text-white">{action.name}</p>
                 </button>
               );
             })}
