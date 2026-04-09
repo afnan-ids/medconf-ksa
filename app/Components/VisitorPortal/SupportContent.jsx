@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import {
   MessageSquare,
@@ -15,106 +16,69 @@ import {
   ArrowRight,
   ThumbsUp,
   ThumbsDown,
-  ExternalLink,
-  MessageCircle,
   FileText,
-  Video,
-  BookOpen,
   AlertCircle,
+  Sparkles,
 } from "lucide-react";
+import { faqData, contactOptions } from "../../Data/visitor-data";
 
-const SupportHelpDeskContent = ({ getColorClasses }) => {
+const SupportContent = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedFaq, setExpandedFaq] = useState(null);
   const [showTicketModal, setShowTicketModal] = useState(false);
+  const [ticketSubject, setTicketSubject] = useState("");
+  const [ticketMessage, setTicketMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const faqs = [
-    {
-      question: "How do I upload documents?",
-      answer:
-        "Navigate to the Document Management section. Click on 'Upload New' and select your document. Supported formats: PDF, DOC, JPG, PNG. Max size: 10MB.",
-      category: "Documents",
-      helpful: 128,
-    },
-    {
-      question: "How to earn CPD points?",
-      answer:
-        "Earn points by attending workshops, conferences, and completing certified courses. Track progress in the CPD Points Tracker section.",
-      category: "CPD",
-      helpful: 245,
-    },
-    {
-      question: "Event registration process",
-      answer:
-        "Go to Event Schedule, browse events, and click 'Register'. You'll receive a confirmation email with ticket details.",
-      category: "Events",
-      helpful: 189,
-    },
-    {
-      question: "Booth booking guidelines",
-      answer:
-        "Select an available booth from the Exhibition Floor Plan, review pricing, and complete the booking process.",
-      category: "Exhibition",
-      helpful: 156,
-    },
-    {
-      question: "How to reset my password?",
-      answer:
-        "Click 'Forgot Password' on login page. Follow instructions sent to your email. Link expires in 24 hours.",
-      category: "Account",
-      helpful: 167,
-    },
-  ];
-
-  const contactOptions = [
-    {
-      icon: FileText,
-      title: "Submit a Request",
-      desc: "Describe your issue and our team will assist you",
-      availability: "24/7",
-      action: "Create Ticket",
-      color: "blue",
-    },
-    {
-      icon: Mail,
-      title: "Email Support",
-      desc: "support@medconf.com",
-      availability: "Response within 24h",
-      action: "Send Email",
-      color: "blue",
-    },
-    {
-      icon: Phone,
-      title: "Phone Support",
-      desc: "+966 800 123 4567",
-      availability: "9 AM - 6 PM",
-      action: "Call Now",
-      color: "blue",
-    },
-  ];
-
-  const filteredFaqs = faqs.filter(
+  const filteredFaqs = faqData.filter(
     (faq) =>
       faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      faq.category.toLowerCase().includes(searchTerm.toLowerCase()),
+      faq.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const categories = [...new Set(faqs.map((f) => f.category))];
+  const categories = [...new Set(faqData.map((f) => f.category))];
+
+  const handleSubmitTicket = () => {
+    if (!ticketSubject || !ticketMessage) {
+      alert("Please fill in all fields");
+      return;
+    }
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setShowTicketModal(false);
+      setTicketSubject("");
+      setTicketMessage("");
+      alert("Support ticket submitted successfully! Our team will respond within 24 hours.");
+    }, 1500);
+  };
+
+  const getIcon = (iconName) => {
+    switch (iconName) {
+      case "FileText":
+        return <FileText className="w-5 h-5 text-blue-400" />;
+      case "Mail":
+        return <Mail className="w-5 h-5 text-blue-400" />;
+      case "Phone":
+        return <Phone className="w-5 h-5 text-blue-400" />;
+      default:
+        return <Headphones className="w-5 h-5 text-blue-400" />;
+    }
+  };
 
   return (
     <div className="space-y-6">
       {/* Hero Section - Glass */}
-      <div className="relative bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 overflow-hidden">
-        {/* Decorative glows */}
+      <div className="relative bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"></div>
 
         <div className="relative text-center max-w-2xl mx-auto">
-          <div className="inline-block p-3 bg-gradient-to-r from-cyan-600 to-green-600 rounded-xl mb-4 shadow-lg shadow-blue-500/30">
+          <div className="inline-block p-3 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl mb-4 shadow-lg shadow-blue-500/30">
             <Headphones className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-2">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text text-transparent mb-2">
             How can we help you?
           </h1>
           <p className="text-gray-300 mb-6">
@@ -148,43 +112,37 @@ const SupportHelpDeskContent = ({ getColorClasses }) => {
             </div>
 
             <div className="relative p-6 space-y-3">
-              {contactOptions.map(
-                ({ icon: Icon, title, desc, availability, color }) => (
-                  <button
-                    key={title}
-                    className="group w-full text-left p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 border border-white/10 hover:border-white/20"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="p-2 bg-blue-500/20 rounded-lg">
-                        <Icon className="w-5 h-5 text-blue-400" />
+              {contactOptions.map((option, idx) => (
+                <button
+                  key={idx}
+                  className="group w-full text-left p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-300 border border-white/10 hover:border-white/20"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 bg-blue-500/20 rounded-lg">
+                      {getIcon(option.icon)}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-sm font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
+                          {option.title}
+                        </h3>
+                        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between">
-                          <h3 className="text-sm font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
-                            {title}
-                          </h3>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
-                        </div>
-                        <p className="text-xs text-gray-300 mt-1">{desc}</p>
-                        <div className="flex items-center gap-1 mt-2">
-                          <Clock className="w-3 h-3 text-gray-400" />
-                          <p className="text-xs text-gray-400">
-                            {availability}
-                          </p>
-                        </div>
+                      <p className="text-xs text-gray-300 mt-1">{option.desc}</p>
+                      <div className="flex items-center gap-1 mt-2">
+                        <Clock className="w-3 h-3 text-gray-400" />
+                        <p className="text-xs text-gray-400">{option.availability}</p>
                       </div>
                     </div>
-                  </button>
-                ),
-              )}
+                  </div>
+                </button>
+              ))}
             </div>
 
             <div className="relative p-6 border-t border-white/10 bg-white/5">
               <div className="flex items-center gap-2 mb-3">
                 <Headphones className="w-4 h-4 text-blue-400" />
-                <h4 className="text-sm font-semibold text-white">
-                  Support Hours
-                </h4>
+                <h4 className="text-sm font-semibold text-white">Support Hours</h4>
               </div>
               <div className="space-y-1 text-xs text-gray-300">
                 <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
@@ -210,7 +168,7 @@ const SupportHelpDeskContent = ({ getColorClasses }) => {
                     Find quick answers to common questions
                   </p>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   {categories.map((cat) => (
                     <button
                       key={cat}
@@ -294,7 +252,7 @@ const SupportHelpDeskContent = ({ getColorClasses }) => {
             </div>
 
             {/* Still Need Help - Glass */}
-            <div className="relative p-6 border-t border-white/10 bg-gradient-to-r from-blue-500/10 to-cyan-500/10">
+            <div className="relative p-6 border-t border-white/10 bg-gradient-to-r from-blue-500/10 to-purple-500/10">
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-white/10 rounded-lg border border-white/20">
                   <FileText className="w-5 h-5 text-blue-400" />
@@ -311,7 +269,7 @@ const SupportHelpDeskContent = ({ getColorClasses }) => {
 
                   <button
                     onClick={() => setShowTicketModal(true)}
-                    className="relative px-4 py-2 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-lg text-sm font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:cursor-pointer"
+                    className="relative px-4 py-2 bg-gradient-to-br from-purple-500 to-pink-400 text-white rounded-lg text-sm font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30"
                   >
                     <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
                     <span className="relative flex items-center gap-2">
@@ -322,68 +280,94 @@ const SupportHelpDeskContent = ({ getColorClasses }) => {
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
-    {showTicketModal && (
-  <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50">
-    
-    {/* Glow background */}
-    <div className="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl top-10 right-10"></div>
-    <div className="absolute w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl bottom-10 left-10"></div>
 
-    <div className="relative w-full max-w-md mx-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
-      
-      {/* Header */}
-      <div className="p-5 border-b border-white/10">
-        <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-          Submit a Request
-        </h3>
-        <p className="text-xs text-gray-400 mt-1">
-          Our team will get back to you within 24 hours
-        </p>
-      </div>
+      {/* Submit Ticket Modal */}
+      {showTicketModal && (
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50">
+          <div className="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl top-10 right-10"></div>
+          <div className="absolute w-72 h-72 bg-purple-500/20 rounded-full blur-3xl bottom-10 left-10"></div>
 
-      {/* Form */}
-      <div className="p-5 space-y-4">
-        <input
-          type="text"
-          placeholder="Subject"
-          className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/40 focus:bg-white/10 transition-all"
-        />
+          <div className="relative w-full max-w-md mx-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+            {/* Header */}
+            <div className="p-5 border-b border-white/10">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text text-transparent">
+                  Submit a Request
+                </h3>
+                <button
+                  onClick={() => setShowTicketModal(false)}
+                  className="p-1 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-400 hover:text-white"
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <p className="text-xs text-gray-400 mt-1">
+                Our team will get back to you within 24 hours
+              </p>
+            </div>
 
-        <textarea
-          placeholder="Describe your issue..."
-          rows={4}
-          className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/40 focus:bg-white/10 transition-all resize-none"
-        />
+            {/* Form */}
+            <div className="p-5 space-y-4">
+              <div>
+                <label className="block text-xs font-medium text-gray-300 mb-1">Subject</label>
+                <input
+                  type="text"
+                  value={ticketSubject}
+                  onChange={(e) => setTicketSubject(e.target.value)}
+                  placeholder="Brief description of your issue"
+                  className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/40 focus:bg-white/10 transition-all"
+                />
+              </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3 pt-2">
-          
-          {/* Submit */}
-          <button className="flex-1 py-2.5 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-xl font-medium relative overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:cursor-pointer">
-            <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></span>
-            <span className="relative">Submit Ticket</span>
-          </button>
+              <div>
+                <label className="block text-xs font-medium text-gray-300 mb-1">Message</label>
+                <textarea
+                  value={ticketMessage}
+                  onChange={(e) => setTicketMessage(e.target.value)}
+                  placeholder="Please provide details about your issue..."
+                  rows={4}
+                  className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/40 focus:bg-white/10 transition-all resize-none"
+                />
+              </div>
 
-          {/* Cancel (now styled properly) */}
-          <button
-            onClick={() => setShowTicketModal(false)}
-            className="px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-red-400/70 transition-all duration-300 hover:cursor-pointer"
-          >
-            Cancel
-          </button>
+              {/* Actions */}
+              <div className="flex items-center gap-3 pt-2">
+                <button
+                  onClick={handleSubmitTicket}
+                  disabled={isSubmitting}
+                  className="flex-1 py-2.5 bg-gradient-to-br from-purple-500 to-pink-400 text-white rounded-xl font-medium relative overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Submit Ticket
+                    </>
+                  )}
+                </button>
 
+                <button
+                  onClick={() => setShowTicketModal(false)}
+                  className="px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-red-500/20 transition-all duration-300"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
-  </div>
-)}
-    </div>
-    
   );
 };
 
-export default SupportHelpDeskContent;
+export default SupportContent;

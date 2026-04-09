@@ -8,9 +8,10 @@ export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
 
   const hiddenRoutes = [
-    "/pages/Portals/HealthcarePractitionersPortal/",
-    "/Forms/",
+    "/pages/Portals/",
+    // "/Forms/",
   ];
+
 
   const hideLayout = hiddenRoutes.some(route =>
     pathname.startsWith(route)

@@ -130,9 +130,11 @@ export default function RegisterPage() {
             <p className="text-gray-300 mb-8">
               Welcome to MEDCONF KSA, {form.name || "Doctor"}!
             </p>
-            <button className="bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-all">
-              Go to Dashboard
-            </button>
+            <Link href="/pages/Portals/VisitorPortal/dashboard">
+              <button className="bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-all">
+                Go to Dashboard
+              </button>
+            </Link>
           </div>
         </div>
       </div>

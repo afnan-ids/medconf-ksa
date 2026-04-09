@@ -1,9 +1,9 @@
 "use client";
+
 import { useState, useRef } from "react";
 import {
   Map as MapIcon,
   Fullscreen,
-  Refresh,
   Layers,
   Navigation,
   Info,
@@ -23,101 +23,20 @@ import {
   X,
   MapPin,
 } from "lucide-react";
+import { boothData, statusConfig } from "../../Data/visitor-data";
 
-const statusConfig = [
-  { label: "Available", icon: CheckCircle, color: "emerald", count: 24 },
-  { label: "Reserved", icon: Clock, color: "amber", count: 12 },
-  { label: "Booked", icon: Bookmark, color: "blue", count: 84 },
-];
-
-// Enhanced booth data with positions for the map overlay
-const boothData = [
-  {
-    id: "07",
-    status: "Available",
-    size: "standard",
-    price: "$2,500",
-    position: { top: "28%", left: "30%" },
-  },
-  {
-    id: "05",
-    status: "Reserved",
-    size: "premium",
-    price: "$5,000",
-    position: { top: "20%", left: "39%" },
-  },
-  {
-    id: "04",
-    status: "Booked",
-    size: "standard",
-    price: "$2,500",
-    position: { top: "24%", left: "59%" },
-  },
-  {
-    id: "10",
-    status: "Available",
-    size: "corner",
-    price: "$3,500",
-    position: { top: "39%", left: "18%" },
-  },
-  {
-    id: "19",
-    status: "Booked",
-    size: "premium",
-    price: "$5,000",
-    position: { top: "43%", left: "43.5%" },
-  },
-  {
-    id: "02",
-    status: "Reserved",
-    size: "standard",
-    price: "$2,500",
-    position: { top: "32%", left: "67%" },
-  },
-  {
-    id: "36",
-    status: "Available",
-    size: "standard",
-    price: "$2,500",
-    position: { top: "67%", left: "23%" },
-  },
-  {
-    id: "40",
-    status: "Booked",
-    size: "premium",
-    price: "$5,000",
-    position: { top: "75%", left: "45%" },
-  },
-  {
-    id: "31",
-    status: "Reserved",
-    size: "standard",
-    price: "$2,500",
-    position: { top: "53%", left: "54%" },
-  },
-];
-
-const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
+const FloorPlanContent = () => {
   const [zoom, setZoom] = useState(1);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [selectedBooth, setSelectedBooth] = useState(null);
-
-  const statusItem = selectedBooth
-    ? statusConfig.find((s) => s.label === selectedBooth.status)
-    : null;
-  const Icon = statusItem?.icon;
-
   const [filterStatus, setFilterStatus] = useState("all");
   const [showLegend, setShowLegend] = useState(true);
   const [favorites, setFavorites] = useState([]);
   const [hoveredBooth, setHoveredBooth] = useState(null);
   const mapContainerRef = useRef(null);
-  const imageContainerRef = useRef(null);
 
   const totalBooths = boothData.length;
-  const availableCount = boothData.filter(
-    (b) => b.status === "Available",
-  ).length;
+  const availableCount = boothData.filter((b) => b.status === "Available").length;
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -133,7 +52,7 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
     setFavorites((prev) =>
       prev.includes(boothId)
         ? prev.filter((id) => id !== boothId)
-        : [...prev, boothId],
+        : [...prev, boothId]
     );
   };
 
@@ -172,6 +91,19 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
     }
   };
 
+  const getStatusIcon = (status) => {
+    switch (status) {
+      case "Available":
+        return CheckCircle;
+      case "Reserved":
+        return Clock;
+      case "Booked":
+        return Bookmark;
+      default:
+        return MapPin;
+    }
+  };
+
   return (
     <div className="space-y-6">
       <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
@@ -183,11 +115,11 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-gradient-to-r from-cyan-600 to-green-600 rounded-lg shadow-lg shadow-blue-500/30">
+              <div className="p-2.5 bg-gradient-to-br from-purple-500 to-pink-400 rounded-lg shadow-lg shadow-blue-500/30">
                 <MapIcon className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text text-transparent">
                   Exhibition Floor Plan
                 </h2>
                 <p className="text-sm text-gray-300 mt-0.5 flex items-center gap-2">
@@ -201,7 +133,7 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
             <div className="flex flex-wrap gap-4 text-xs text-gray-400">
               <div className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg border border-white/20 backdrop-blur-sm">
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-gradient-to-br from-cyan-600 to-green-600 rounded-full" />
+                  <div className="w-4 h-4 bg-gradient-to-br from-blue-500 to-purple-400 rounded-full" />
                   <span className="text-xs font-medium text-gray-300">Booth Pin</span>
                 </div>
               </div>
@@ -214,13 +146,13 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
               <div className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg border border-white/20 backdrop-blur-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse" />
-                  <span  className="text-xs font-medium text-gray-300">Available</span>
+                  <span className="text-xs font-medium text-gray-300">Available</span>
                 </div>
               </div>
               <div className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg border border-white/20 backdrop-blur-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 flex items-center justify-center text-[8px] font-bold text-white">
-                    12
+                    07
                   </div>
                   <span className="text-xs font-medium text-gray-300">Booth Number</span>
                 </div>
@@ -266,7 +198,7 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                   onClick={() => setFilterStatus(status)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
                     filterStatus === status
-                      ? "bg-gradient-to-r from-cyan-600 to-green-600 text-white shadow-lg shadow-blue-500/30"
+                      ? "bg-gradient-to-br from-purple-500 to-pink-400 text-white shadow-lg shadow-blue-500/30"
                       : "bg-white/10 text-gray-300 hover:bg-white/20 border border-white/10"
                   }`}
                 >
@@ -282,7 +214,7 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
           </div>
         </div>
 
-        {/* Map Area with Interactive Booths - Glass background */}
+        {/* Map Area with Interactive Booths */}
         <div
           ref={mapContainerRef}
           className="relative overflow-hidden bg-gradient-to-br from-gray-900/50 to-indigo-950/50"
@@ -293,10 +225,7 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
             style={{ transform: `scale(${zoom})`, transformOrigin: "0 0" }}
           >
             <div className="p-6">
-              <div
-                className="relative rounded-xl overflow-hidden border border-white/10"
-                ref={imageContainerRef}
-              >
+              <div className="relative rounded-xl overflow-hidden border border-white/10">
                 {/* Main Floor Plan Image */}
                 <img
                   src="/Images/exhibition-floor-plan.webp"
@@ -313,6 +242,7 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                   {filteredBooths.map((booth) => {
                     const statusColor = getStatusColor(booth.status);
                     const isFavorite = favorites.includes(booth.id);
+                    const StatusIcon = getStatusIcon(booth.status);
 
                     return (
                       <div
@@ -331,16 +261,16 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                         <div className="relative">
                           <div
                             className={`
-                            w-10 h-10 rounded-full flex items-center justify-center shadow-lg
-                            transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl
-                            ${
-                              booth.status === "Available"
-                                ? "bg-gradient-to-br from-emerald-500 to-teal-400"
-                                : booth.status === "Reserved"
+                              w-10 h-10 rounded-full flex items-center justify-center shadow-lg
+                              transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl
+                              ${
+                                booth.status === "Available"
+                                  ? "bg-gradient-to-br from-emerald-500 to-teal-400"
+                                  : booth.status === "Reserved"
                                   ? "bg-gradient-to-br from-amber-500 to-orange-400"
-                                  : "bg-gradient-to-br from-cyan-600 to-green-600"
-                            }
-                          `}
+                                  : "bg-gradient-to-br from-blue-500 to-purple-400"
+                              }
+                            `}
                           >
                             <MapPin className="w-5 h-5 text-white" />
                           </div>
@@ -380,8 +310,8 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                                     booth.status === "Available"
                                       ? "bg-emerald-500/80"
                                       : booth.status === "Reserved"
-                                        ? "bg-amber-500/80"
-                                        : "bg-blue-500/80"
+                                      ? "bg-amber-500/80"
+                                      : "bg-blue-500/80"
                                   }`}
                                 >
                                   {booth.status}
@@ -417,8 +347,7 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
           <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-xl rounded-lg px-3 py-1.5 text-xs flex items-center gap-2 shadow-lg border border-white/20">
             <Navigation className="w-3 h-3 text-blue-400" />
             <p className="text-gray-200">
-              Click on pins for booth details • <b>{filteredBooths.length}</b>{" "}
-              booths shown
+              Click on pins for booth details • <b>{filteredBooths.length}</b> booths shown
               <br />
               Press <b>Esc</b> to close Full Screen mode
             </p>
@@ -428,7 +357,6 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
           {selectedBooth && (
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-200">
               <div className="relative bg-white/10 backdrop-blur-2xl rounded-2xl max-w-md w-full shadow-2xl border border-white/20 animate-in slide-in-from-bottom-4 duration-300">
-                {/* Decorative glow */}
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
                 <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
 
@@ -440,8 +368,8 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                           selectedBooth.status === "Available"
                             ? "bg-emerald-500/20"
                             : selectedBooth.status === "Reserved"
-                              ? "bg-amber-500/20"
-                              : "bg-blue-500/20"
+                            ? "bg-amber-500/20"
+                            : "bg-blue-500/20"
                         }`}
                       >
                         <MapPin
@@ -449,8 +377,8 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                             selectedBooth.status === "Available"
                               ? "text-emerald-400"
                               : selectedBooth.status === "Reserved"
-                                ? "text-amber-400"
-                                : "text-blue-400"
+                              ? "text-amber-400"
+                              : "text-blue-400"
                           }`}
                         />
                       </div>
@@ -467,17 +395,15 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                   </div>
 
                   <div className="space-y-3">
-                    <div
-                      className={`px-3 py-2 rounded-lg backdrop-blur-sm border ${getStatusStyle(selectedBooth.status)}`}
-                    >
-                      {selectedBooth && (
-                        <div className="flex items-center gap-2">
-                          {Icon && <Icon className="w-4 h-4" />}
-                          <span className="text-sm font-medium">
-                            Status: {selectedBooth.status}
-                          </span>
-                        </div>
-                      )}
+                    <div className={`px-3 py-2 rounded-lg backdrop-blur-sm border ${getStatusStyle(selectedBooth.status)}`}>
+                      <div className="flex items-center gap-2">
+                        {selectedBooth.status === "Available" && <CheckCircle className="w-4 h-4" />}
+                        {selectedBooth.status === "Reserved" && <Clock className="w-4 h-4" />}
+                        {selectedBooth.status === "Booked" && <Bookmark className="w-4 h-4" />}
+                        <span className="text-sm font-medium">
+                          Status: {selectedBooth.status}
+                        </span>
+                      </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
@@ -498,44 +424,30 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                     <div className="p-3 bg-white/5 rounded-lg border border-white/10">
                       <p className="text-xs text-gray-400">Includes</p>
                       <div className="flex flex-wrap gap-2 mt-2">
-                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300 border border-white/10">
-                          2 Chairs
-                        </span>
-                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300 border border-white/10">
-                          1 Table
-                        </span>
-                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300 border border-white/10">
-                          Power Outlet
-                        </span>
-                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300 border border-white/10">
-                          WiFi
-                        </span>
+                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300 border border-white/10">2 Chairs</span>
+                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300 border border-white/10">1 Table</span>
+                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300 border border-white/10">Power Outlet</span>
+                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-gray-300 border border-white/10">WiFi</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="flex gap-2 mt-6">
                     <button
-                      onClick={() => {
-                        toggleFavorite(selectedBooth.id);
-                      }}
+                      onClick={() => toggleFavorite(selectedBooth.id)}
                       className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
                         favorites.includes(selectedBooth.id)
                           ? "bg-amber-500/20 text-amber-400 border border-amber-500/30"
                           : "bg-white/10 text-gray-300 border border-white/20 hover:bg-white/20"
                       }`}
                     >
-                      <Star
-                        className={`w-4 h-4 ${favorites.includes(selectedBooth.id) ? "fill-amber-400 text-amber-400" : ""}`}
-                      />
-                      {favorites.includes(selectedBooth.id)
-                        ? "Favorited"
-                        : "Add to Favorites"}
+                      <Star className={`w-4 h-4 ${favorites.includes(selectedBooth.id) ? "fill-amber-400 text-amber-400" : ""}`} />
+                      {favorites.includes(selectedBooth.id) ? "Favorited" : "Add to Favorites"}
                     </button>
                     {selectedBooth.status === "Available" && (
-                      <button className="flex-1 px-4 py-2 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-lg text-sm font-medium overflow-hidden group relative transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
+                      <button className="flex-1 px-4 py-2 bg-gradient-to-br from-purple-500 to-pink-400 text-white rounded-lg text-sm font-medium overflow-hidden group relative transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
                         <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-                        <span className="relative">Book Now</span>
+                        <span className="relative">Inquire Now</span>
                       </button>
                     )}
                   </div>
@@ -555,13 +467,12 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
               </p>
               <div className="flex items-center gap-2 text-xs text-gray-400">
                 <PinDrop className="w-3 h-3" />
-                {totalBooths - availableCount} booths occupied •{" "}
-                {favorites.length} favorited
+                {totalBooths - availableCount} booths occupied • {favorites.length} favorited
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {statusConfig.map(({ label, icon: Icon, color, count }) => (
+              {statusConfig.map(({ label, color, count }) => (
                 <button
                   key={label}
                   onClick={() => setFilterStatus(label)}
@@ -573,14 +484,12 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <Icon className={`w-4 h-4 text-${color}-400`} />
-                      <span className="text-sm font-medium text-white">
-                        {label}
-                      </span>
+                      {label === "Available" && <CheckCircle className={`w-4 h-4 text-${color}-400`} />}
+                      {label === "Reserved" && <Clock className={`w-4 h-4 text-${color}-400`} />}
+                      {label === "Booked" && <Bookmark className={`w-4 h-4 text-${color}-400`} />}
+                      <span className="text-sm font-medium text-white">{label}</span>
                     </div>
-                    <span className="text-lg font-bold text-white">
-                      {count}
-                    </span>
+                    <span className="text-lg font-bold text-white">{count}</span>
                   </div>
                   <div className="mt-2 h-1.5 bg-white/10 rounded-full overflow-hidden">
                     <div
@@ -600,34 +509,16 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
 
       {/* Tips Card - Glass */}
       <div className="relative bg-blue-500/10 backdrop-blur-xl rounded-xl p-5 border border-blue-500/30 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
         <div className="relative flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-sm font-semibold text-white mb-1">
-              Interactive Floor Plan Tips
-            </p>
+            <p className="text-sm font-semibold text-white mb-1">Interactive Floor Plan Tips</p>
             <p className="text-xs text-gray-300">
-              •{" "}
-              <span className="font-medium text-blue-400">
-                Click on any colored pin
-              </span>{" "}
-              to view booth details and availability
-              <br />•{" "}
-              <span className="font-medium text-blue-400">
-                Click the star icon
-              </span>{" "}
-              on any booth pin to add to favorites
-              <br />•{" "}
-              <span className="font-medium text-blue-400">
-                Filter booths by status
-              </span>{" "}
-              to find available spaces quickly
-              <br />•{" "}
-              <span className="font-medium text-blue-400">
-                Green pulsing pins
-              </span>{" "}
-              indicate booths that are currently available
+              • <span className="font-medium text-blue-400">Click on any colored pin</span> to view booth details and availability
+              <br />• <span className="font-medium text-blue-400">Click the star icon</span> on any booth pin to add to favorites
+              <br />• <span className="font-medium text-blue-400">Filter booths by status</span> to find available spaces quickly
+              <br />• <span className="font-medium text-blue-400">Green pulsing pins</span> indicate booths that are currently available
             </p>
           </div>
         </div>
@@ -636,4 +527,4 @@ const ExhibitionFloorPlanContent = ({ getColorClasses }) => {
   );
 };
 
-export default ExhibitionFloorPlanContent;
+export default FloorPlanContent;

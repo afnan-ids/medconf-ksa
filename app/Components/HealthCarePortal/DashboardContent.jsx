@@ -79,7 +79,7 @@ const DashboardContent = () => {
               <div className="mt-4">
                 <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-500 shadow-lg shadow-blue-500/30" 
+                    className="h-full bg-gradient-to-r from-cyan-600 to-green-600 rounded-full transition-all duration-500 shadow-lg shadow-blue-500/30" 
                     style={{ width: `${stat.progress}%` }} 
                   />
                 </div>
@@ -199,7 +199,7 @@ const DashboardContent = () => {
         <div className="relative p-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: "New Booth", icon: Store, gradient: "from-blue-500 to-cyan-400" },
+              { name: "New Booth", icon: Store, gradient: "from-cyan-600 to-green-600" },
               { name: "Send Broadcast", icon: Megaphone, gradient: "from-purple-500 to-pink-400" },
               { name: "View Reports", icon: TrendingUp, gradient: "from-emerald-500 to-teal-400" },
               { name: "Help Center", icon: MessageSquare, gradient: "from-amber-500 to-orange-400" },

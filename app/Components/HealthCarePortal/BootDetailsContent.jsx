@@ -50,7 +50,7 @@ const BootDetailsContent = ({
               </p>
             </div>
             <button className="relative px-4 py-2 text-sm font-medium text-blue-400 bg-blue-500/10 rounded-lg border border-blue-500/30 overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:bg-blue-500/20">
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></span>
               <span className="relative flex items-center gap-2">
                 <Refresh className="w-4 h-4" />
                 Sync
@@ -102,7 +102,7 @@ const BootDetailsContent = ({
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">No booths booked yet</h3>
             <p className="text-gray-300 mb-4">Browse available booths and secure your spot today.</p>
-            <button className="relative px-6 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
+            <button className="relative px-6 py-2.5 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
               <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
               <span className="relative">Book New Booth</span>
             </button>

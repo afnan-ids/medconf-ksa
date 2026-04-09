@@ -5,7 +5,7 @@ import { Home, ChevronRight, Sparkles } from "lucide-react";
 const BreadCrumb = ({ title, backgroundImage, path }) => {
   return (
     <div
-      className="relative h-[50vh] w-full overflow-hidden "
+      className="relative h-[35vh] w-full overflow-hidden "
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -19,7 +19,7 @@ const BreadCrumb = ({ title, backgroundImage, path }) => {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent"></div>
 
       {/* Content */}
-      <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-center z-10 ">
+      <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-4 flex items-end z-10 pb-10">
         <div className="text-white animate-fadeIn">
           <nav
             className="flex items-center gap-2 text-sm mb-4"
@@ -58,7 +58,7 @@ const BreadCrumb = ({ title, backgroundImage, path }) => {
           </nav>
 
           {/* Title with enhanced styling */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="text-white">{title}</span>
           </h1>
 

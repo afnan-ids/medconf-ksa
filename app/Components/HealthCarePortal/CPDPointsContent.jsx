@@ -84,7 +84,7 @@ const CPDPointsContent = () => {
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg shadow-lg shadow-blue-500/30">
+              <div className="p-2.5 bg-gradient-to-r from-cyan-600 to-green-600 rounded-lg shadow-lg shadow-blue-500/30">
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -128,7 +128,7 @@ const CPDPointsContent = () => {
             <div className="relative mb-3">
               <div className="w-full bg-white/10 rounded-full h-2.5 overflow-hidden">
                 <div
-                  className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2.5 rounded-full transition-all duration-500 shadow-lg shadow-blue-500/30"
+                  className="bg-gradient-to-r from-cyan-600 to-green-600 h-2.5 rounded-full transition-all duration-500 shadow-lg shadow-blue-500/30"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -211,7 +211,7 @@ const CPDPointsContent = () => {
                         )}
                       </div>
                     </div>
-                    <div className="px-3 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg shadow-lg shadow-blue-500/30">
+                    <div className="px-3 py-1.5 bg-gradient-to-r from-cyan-600 to-green-600 rounded-lg shadow-lg shadow-blue-500/30">
                       <span className="text-xs font-bold text-white">+{activity.points}</span>
                     </div>
                   </div>

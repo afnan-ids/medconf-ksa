@@ -11,28 +11,31 @@ import {
   User,
   Menu,
   X,
-  Heart,
-  Sparkles,
   Shield,
+  Building2,
+  LayoutDashboard,
+  MapPin,
+  Store,
+  FileText,
+  Folder,
+  Headphones,
+  CreditCard,
 } from "lucide-react";
-import { menuItems } from "../../../Data/hcp-data";
+
+import { exhibitorMenuItems } from "../../../Data/exhibitor-data";
 import PortalIntro from "../../../Layout/PortalsAnimation";
-export default function HCPLayout({ children }) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+export default function ExhibitorLayout({ children }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [showIntro, setShowIntro] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
   const [searchFocused, setSearchFocused] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
-  useEffect(() => {
-    if(!sessionStorage.getItem("introPlayed")) {
-      setShowIntro(true);
-      sessionStorage.setItem("introPlayed", "true");
-    }
-  }, []);
+  // Get current page from pathname
+  const currentPage = pathname?.split("/").pop() || "dashboard";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
@@ -40,13 +43,12 @@ export default function HCPLayout({ children }) {
       {showIntro && (
         <PortalIntro
           onFinish={() => setShowIntro(false)}
-          title={"HealthCare"}
-          subtitle={"HEALTHCARE DASHBOARD"}
-          titlecolor={"from-white via-cyan-300 to-green-300"}
-          portalcolor={"from-green-200 via-cyan-200 to-blue-200"}
+          title={"Exhibitor"}
+          subtitle={"EXHIBITOR DASHBOARD"}
+          titlecolor={"from-blue-400 to-cyan-400"}
+          portalcolor={"from-cyan-600 to-blue-800"}
         />
       )}
-
       {/* Floating orbs background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -55,7 +57,7 @@ export default function HCPLayout({ children }) {
         <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl animate-pulse delay-700"></div>
       </div>
 
-      {/* Top Nav - Glassmorphism */}
+      {/* Top Nav  */}
       <nav className="fixed top-0 left-0 right-0 z-40 bg-white/5 backdrop-blur-2xl border-b border-white/10 h-16 shadow-2xl">
         <div className="flex items-center justify-between px-4 sm:px-6 h-full">
           <div className="flex items-center gap-3">
@@ -76,25 +78,31 @@ export default function HCPLayout({ children }) {
               )}
             </button>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-green-400 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30">
-                <Heart className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-800/80 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30">
+                <Building2 className="w-4 h-4 text-white" />
               </div>
-              <span className="text-base font-bold bg-gradient-to-r from-blue-400 to-green-300 bg-clip-text text-transparent">
-                HealthCare
+              <span className="text-base font-bold bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">
+                Exhibitor Portal
               </span>
             </div>
           </div>
 
-          {/* Search Bar - Glass style */}
+          {/* Search Bar */}
           <div
-            className={`hidden md:flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-lg border transition-all duration-300 ${searchFocused ? "border-blue-500/50 shadow-lg shadow-blue-500/20" : "border-white/10"}`}
+            className={`hidden md:flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-lg border transition-all duration-300 ${
+              searchFocused
+                ? "border-blue-500/50 shadow-lg shadow-blue-500/20"
+                : "border-white/10"
+            }`}
           >
             <Search
-              className={`w-4 h-4 transition-colors duration-300 ${searchFocused ? "text-blue-400" : "text-gray-400"}`}
+              className={`w-4 h-4 transition-colors duration-300 ${
+                searchFocused ? "text-blue-400" : "text-gray-400"
+              }`}
             />
             <input
               type="text"
-              placeholder="Search events, conferences..."
+              placeholder="Search booths, leads, documents..."
               className="bg-transparent border-none focus:outline-none text-sm w-64 text-white placeholder:text-gray-400"
               onFocus={() => setSearchFocused(true)}
               onBlur={() => setSearchFocused(false)}
@@ -112,24 +120,24 @@ export default function HCPLayout({ children }) {
               onClick={() => setShowProfileModal(true)}
               className="flex items-center gap-2 ml-1 p-1.5 rounded-lg transition-all duration-300 hover:bg-white/10"
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-green-400 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
-                <span className="text-white text-xs font-bold">DR</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-800 to-cyan-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
+                <span className="text-white text-xs font-bold">PC</span>
               </div>
               <span className="text-sm font-medium text-gray-200 hidden sm:block">
-                Dr. Ahmed
+                PharmaCo
               </span>
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Search - Glass style */}
+      {/* Mobile Search  */}
       <div className="md:hidden fixed top-16 left-0 right-0 z-30 bg-white/5 backdrop-blur-xl border-b border-white/10 px-4 py-2">
         <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
           <Search className="w-4 h-4 text-gray-400" />
           <input
             type="text"
-            placeholder="Search events, conferences..."
+            placeholder="Search booths, leads, documents..."
             className="bg-transparent border-none focus:outline-none text-sm flex-1 text-white placeholder:text-gray-400"
           />
         </div>
@@ -137,71 +145,74 @@ export default function HCPLayout({ children }) {
 
       {/* Layout */}
       <div className="flex pt-16 md:pt-16">
-        {/* Sidebar - Glassmorphism with GPU acceleration */}
+        {/* Sidebar */}
         <aside
           className={`
-      fixed left-0 top-16 h-[calc(100vh-4rem)]
-      bg-white/5 backdrop-blur-xl border-r border-white/10
-      z-30
-      ${isCollapsed ? "w-20" : "w-70"}
-      ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-    `}
-          style={{
-            transform: "translateZ(0)",
-            willChange: "width, transform",
-            transition:
-              "width 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
-          }}
+            fixed left-0 top-16 h-[calc(100vh-4rem)]
+            bg-white/5 backdrop-blur-xl border-r border-white/10
+            z-30 transition-all duration-300
+            ${isCollapsed ? "w-20" : "w-70"}
+            ${
+              isMobileMenuOpen
+                ? "translate-x-0"
+                : "-translate-x-full lg:translate-x-0"
+            }
+          `}
         >
           <nav className="h-full flex flex-col py-4">
             <div className="flex-1 space-y-1 px-3 overflow-y-auto">
-              {menuItems.map(({ id, label, icon: Icon, badge }) => {
+              {exhibitorMenuItems.map(({ id, label, icon: iconName }) => {
                 const isActive =
-                  pathname ===
-                  `/pages/Portals/HealthcarePractitionersPortal/${id}`;
+                  pathname === `/pages/Portals/ExhibitorPortal/${id}`;
+
+                const getSidebarIcon = () => {
+                  const iconClasses = `w-5 h-5 flex-shrink-0 ${isActive ? "text-white" : "text-gray-400"}`;
+                  switch (iconName) {
+                    case "Dashboard":
+                      return <LayoutDashboard className={iconClasses} />;
+                    case "User":
+                      return <User className={iconClasses} />;
+                    case "Map":
+                      return <MapPin className={iconClasses} />;
+                    case "Store":
+                      return <Store className={iconClasses} />;
+                    case "FileText":
+                      return <FileText className={iconClasses} />;
+                    case "CreditCard":
+                      return <CreditCard className={iconClasses} />;
+                    case "Folder":
+                      return <Folder className={iconClasses} />;
+                    case "Headphones":
+                      return <Headphones className={iconClasses} />;
+                    default:
+                      return <LayoutDashboard className={iconClasses} />;
+                  }
+                };
+
                 return (
                   <button
                     key={id}
                     onClick={() => {
-                      router.push(
-                        `/pages/Portals/HealthcarePractitionersPortal/${id}`,
-                      );
+                      router.push(`/pages/Portals/ExhibitorPortal/${id}`);
                       setIsMobileMenuOpen(false);
                     }}
                     className={`
-                relative w-full flex items-center gap-3 px-3 py-2.5 rounded-lg
-                ${
-                  isActive
-                    ? "bg-gradient-to-r from-cyan-600 to-green-600 text-white shadow-lg shadow-blue-500/20 border border-white/20"
-                    : "text-gray-300 hover:bg-white/10 hover:text-white"
-                }
-                ${isCollapsed ? "justify-center" : ""}
-              `}
-                    style={{
-                      transition: "background-color 0.1s ease, color 0.1s ease",
-                    }}
+                      group relative w-full flex items-center gap-3 px-3 py-2.5 rounded-lg
+                      transition-all duration-300
+                      ${
+                        isActive
+                          ? "bg-gradient-to-r from-blue-600/80 to-cyan-600/80 text-white shadow-lg shadow-blue-500/20 border border-white/20"
+                          : "text-gray-300 hover:bg-white/10 hover:text-white"
+                      }
+                      ${isCollapsed ? "justify-center" : ""}
+                    `}
                   >
-                    <Icon
-                      className={`w-5 h-5 flex-shrink-0 ${isActive ? "text-white" : ""}`}
-                    />
+                    {getSidebarIcon()}
 
                     {!isCollapsed && (
-                      <>
-                        <span className="text-sm font-medium flex-1 text-left">
-                          {label}
-                        </span>
-                        {badge && (
-                          <span
-                            className={`text-xs px-2 py-0.5 rounded-full ${
-                              isActive
-                                ? "bg-white/20 text-white"
-                                : "bg-white/10 text-gray-300"
-                            }`}
-                          >
-                            {badge}
-                          </span>
-                        )}
-                      </>
+                      <span className="text-sm font-medium flex-1 text-left">
+                        {label}
+                      </span>
                     )}
 
                     {isCollapsed && (
@@ -218,27 +229,25 @@ export default function HCPLayout({ children }) {
             <div className="border-t border-white/10 pt-4 mt-4 px-3 space-y-1">
               <button
                 onClick={() => setShowProfileModal(true)}
-                className={`group w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 text-gray-300 hover:text-white ${
+                className={`group w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 text-gray-300 hover:text-white transition-all duration-300 ${
                   isCollapsed ? "justify-center" : ""
                 }`}
-                style={{ transition: "background-color 0.1s ease" }}
               >
                 <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
-                  <User className="w-4 h-4 text-gray-300" />
+                  <Building2 className="w-4 h-4 text-gray-300" />
                 </div>
                 {!isCollapsed && (
                   <div className="flex-1 text-left">
-                    <p className="text-sm font-medium text-white">Dr. Ahmed</p>
-                    <p className="text-xs text-gray-400">Cardiologist</p>
+                    <p className="text-sm font-medium text-white">PharmaCo</p>
+                    <p className="text-xs text-gray-400">Premium Exhibitor</p>
                   </div>
                 )}
               </button>
 
               <button
-                className={`group w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 hover:bg-red-500/10 hover:text-red-400 ${
+                className={`group w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 ${
                   isCollapsed ? "justify-center" : ""
                 }`}
-                style={{ transition: "background-color 0.1s ease" }}
               >
                 <LogOut className="w-5 h-5" />
                 {!isCollapsed && (
@@ -257,17 +266,13 @@ export default function HCPLayout({ children }) {
           />
         )}
 
-        {/* Main content */}
+        {/* Main content - children will be the page component */}
         <main
           className={`
-      flex-1 min-w-0
-      ${isCollapsed ? "lg:ml-20" : "lg:ml-70"}
-      ml-0
-    `}
-          style={{
-            transition: "margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
-            willChange: "margin-left",
-          }}
+            flex-1 min-w-0 transition-all duration-300
+            ${isCollapsed ? "lg:ml-20" : "lg:ml-70"}
+            ml-0
+          `}
         >
           <div className="p-4 lg:p-4">{children}</div>
         </main>
@@ -275,34 +280,28 @@ export default function HCPLayout({ children }) {
 
       {/* Profile Modal - Glassmorphism */}
       {showProfileModal && (
-        <ProfileModal
-          isOpen={showProfileModal}
-          onClose={() => setShowProfileModal(false)}
-        />
+        <ProfileModal onClose={() => setShowProfileModal(false)} />
       )}
     </div>
   );
 }
 
-// Profile Modal Component - Transformed
-const ProfileModal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
+// Profile Modal Component
+const ProfileModal = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-white/20">
-        {/* Decorative glow */}
+      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-white/20 animate-in fade-in zoom-in duration-300">
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
 
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-green-300 bg-clip-text text-transparent">
-              Profile
+            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text text-transparent">
+              Exhibitor Profile
             </h2>
             <button
               onClick={onClose}
@@ -314,26 +313,30 @@ const ProfileModal = ({ isOpen, onClose }) => {
         </div>
         <div className="relative p-6">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-400 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-              <span className="text-white text-xl font-bold">DR</span>
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-800 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+              <Building2 className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">Dr. Ahmed Hassan</h3>
-              <p className="text-sm text-blue-400">Senior Cardiologist</p>
+              <h3 className="text-lg font-bold text-white">
+                PharmaCo Exhibitions
+              </h3>
+              <p className="text-sm text-blue-400">Premium Exhibitor</p>
               <div className="flex items-center gap-1 mt-1">
                 <Shield className="w-3 h-3 text-green-400" />
-                <span className="text-xs text-gray-400">
-                  Verified Professional
-                </span>
+                <span className="text-xs text-gray-400">Booth A12</span>
               </div>
             </div>
           </div>
 
           <div className="space-y-3">
             <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+              <p className="text-xs text-gray-400">Contact Person</p>
+              <p className="text-sm font-medium text-white">Ahmed Al-Saud</p>
+            </div>
+            <div className="p-3 bg-white/5 rounded-lg border border-white/10">
               <p className="text-xs text-gray-400">Email</p>
               <p className="text-sm font-medium text-white">
-                dr.ahmed@medical.com
+                exhibitor@pharmaco.com
               </p>
             </div>
             <div className="p-3 bg-white/5 rounded-lg border border-white/10">
@@ -341,14 +344,16 @@ const ProfileModal = ({ isOpen, onClose }) => {
               <p className="text-sm font-medium text-white">+966 50 123 4567</p>
             </div>
             <div className="p-3 bg-white/5 rounded-lg border border-white/10">
-              <p className="text-xs text-gray-400">License ID</p>
-              <p className="text-sm font-medium text-white">SCH-2024-12345</p>
+              <p className="text-xs text-gray-400">Booth Number</p>
+              <p className="text-sm font-medium text-white">
+                A12 - Premium Corner
+              </p>
             </div>
           </div>
 
-          <button className="relative w-full mt-6 py-2.5 bg-gradient-to-r from-blue-500 to-green-400 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
+          <button className="relative w-full mt-6 py-2.5 bg-gradient-to-br from-blue-800 to-cyan-600 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-            <span className="relative">Edit Profile</span>
+            <span className="relative">View Full Profile</span>
           </button>
         </div>
       </div>

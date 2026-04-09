@@ -11,28 +11,24 @@ import {
   User,
   Menu,
   X,
-  Heart,
+  Ticket,
   Sparkles,
   Shield,
 } from "lucide-react";
-import { menuItems } from "../../../Data/hcp-data";
+import { menuItems } from "../../../Data/visitor-data";
+import { GiTicket } from "react-icons/gi";
+import { IoPersonCircle } from "react-icons/io5";
 import PortalIntro from "../../../Layout/PortalsAnimation";
-export default function HCPLayout({ children }) {
+
+export default function VisitorLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [showIntro, setShowIntro] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [showIntro, setShowIntro] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-
-  useEffect(() => {
-    if(!sessionStorage.getItem("introPlayed")) {
-      setShowIntro(true);
-      sessionStorage.setItem("introPlayed", "true");
-    }
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
@@ -40,10 +36,10 @@ export default function HCPLayout({ children }) {
       {showIntro && (
         <PortalIntro
           onFinish={() => setShowIntro(false)}
-          title={"HealthCare"}
-          subtitle={"HEALTHCARE DASHBOARD"}
-          titlecolor={"from-white via-cyan-300 to-green-300"}
-          portalcolor={"from-green-200 via-cyan-200 to-blue-200"}
+          title={"VISITOR"}
+          subtitle={"VISITOR DASHBOARD"}
+          titlecolor={"from-purple-500 to-pink-400"}
+          portalcolor={"from-pink-400 to-purple-500"}
         />
       )}
 
@@ -55,7 +51,7 @@ export default function HCPLayout({ children }) {
         <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl animate-pulse delay-700"></div>
       </div>
 
-      {/* Top Nav - Glassmorphism */}
+      {/* Top Nav */}
       <nav className="fixed top-0 left-0 right-0 z-40 bg-white/5 backdrop-blur-2xl border-b border-white/10 h-16 shadow-2xl">
         <div className="flex items-center justify-between px-4 sm:px-6 h-full">
           <div className="flex items-center gap-3">
@@ -76,25 +72,31 @@ export default function HCPLayout({ children }) {
               )}
             </button>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-green-400 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30">
-                <Heart className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-400 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30">
+                <IoPersonCircle className="w-4 h-4 text-white" />
               </div>
-              <span className="text-base font-bold bg-gradient-to-r from-blue-400 to-green-300 bg-clip-text text-transparent">
-                HealthCare
+              <span className="text-base font-bold bg-gradient-to-br from-purple-500 to-pink-400 bg-clip-text text-transparent">
+                Visitor
               </span>
             </div>
           </div>
 
           {/* Search Bar - Glass style */}
           <div
-            className={`hidden md:flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-lg border transition-all duration-300 ${searchFocused ? "border-blue-500/50 shadow-lg shadow-blue-500/20" : "border-white/10"}`}
+            className={`hidden md:flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-lg border transition-all duration-300 ${
+              searchFocused
+                ? "border-blue-500/50 shadow-lg shadow-blue-500/20"
+                : "border-white/10"
+            }`}
           >
             <Search
-              className={`w-4 h-4 transition-colors duration-300 ${searchFocused ? "text-blue-400" : "text-gray-400"}`}
+              className={`w-4 h-4 transition-colors duration-300 ${
+                searchFocused ? "text-blue-400" : "text-gray-400"
+              }`}
             />
             <input
               type="text"
-              placeholder="Search events, conferences..."
+              placeholder="Search events, schedules..."
               className="bg-transparent border-none focus:outline-none text-sm w-64 text-white placeholder:text-gray-400"
               onFocus={() => setSearchFocused(true)}
               onBlur={() => setSearchFocused(false)}
@@ -112,24 +114,24 @@ export default function HCPLayout({ children }) {
               onClick={() => setShowProfileModal(true)}
               className="flex items-center gap-2 ml-1 p-1.5 rounded-lg transition-all duration-300 hover:bg-white/10"
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-green-400 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
-                <span className="text-white text-xs font-bold">DR</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-400 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
+                <span className="text-white text-xs font-bold">JD</span>
               </div>
               <span className="text-sm font-medium text-gray-200 hidden sm:block">
-                Dr. Ahmed
+                John Doe
               </span>
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Search - Glass style */}
+      {/* Mobile Search  */}
       <div className="md:hidden fixed top-16 left-0 right-0 z-30 bg-white/5 backdrop-blur-xl border-b border-white/10 px-4 py-2">
         <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
           <Search className="w-4 h-4 text-gray-400" />
           <input
             type="text"
-            placeholder="Search events, conferences..."
+            placeholder="Search events, schedules..."
             className="bg-transparent border-none focus:outline-none text-sm flex-1 text-white placeholder:text-gray-400"
           />
         </div>
@@ -137,15 +139,19 @@ export default function HCPLayout({ children }) {
 
       {/* Layout */}
       <div className="flex pt-16 md:pt-16">
-        {/* Sidebar - Glassmorphism with GPU acceleration */}
+        {/* Sidebar  */}
         <aside
           className={`
-      fixed left-0 top-16 h-[calc(100vh-4rem)]
-      bg-white/5 backdrop-blur-xl border-r border-white/10
-      z-30
-      ${isCollapsed ? "w-20" : "w-70"}
-      ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-    `}
+            fixed left-0 top-16 h-[calc(100vh-4rem)]
+            bg-white/5 backdrop-blur-xl border-r border-white/10
+            z-30
+            ${isCollapsed ? "w-20" : "w-70"}
+            ${
+              isMobileMenuOpen
+                ? "translate-x-0"
+                : "-translate-x-full lg:translate-x-0"
+            }
+          `}
           style={{
             transform: "translateZ(0)",
             willChange: "width, transform",
@@ -155,53 +161,39 @@ export default function HCPLayout({ children }) {
         >
           <nav className="h-full flex flex-col py-4">
             <div className="flex-1 space-y-1 px-3 overflow-y-auto">
-              {menuItems.map(({ id, label, icon: Icon, badge }) => {
+              {menuItems.map(({ id, label, icon: Icon }) => {
                 const isActive =
-                  pathname ===
-                  `/pages/Portals/HealthcarePractitionersPortal/${id}`;
+                  pathname === `/pages/Portals/VisitorPortal/${id}`;
                 return (
                   <button
                     key={id}
                     onClick={() => {
-                      router.push(
-                        `/pages/Portals/HealthcarePractitionersPortal/${id}`,
-                      );
+                      router.push(`/pages/Portals/VisitorPortal/${id}`);
                       setIsMobileMenuOpen(false);
                     }}
                     className={`
-                relative w-full flex items-center gap-3 px-3 py-2.5 rounded-lg
-                ${
-                  isActive
-                    ? "bg-gradient-to-r from-cyan-600 to-green-600 text-white shadow-lg shadow-blue-500/20 border border-white/20"
-                    : "text-gray-300 hover:bg-white/10 hover:text-white"
-                }
-                ${isCollapsed ? "justify-center" : ""}
-              `}
+                      relative w-full flex items-center gap-3 px-3 py-2.5 rounded-lg
+                      ${
+                        isActive
+                          ? "bg-gradient-to-r from-purple-500/80 to-pink-400/80 text-white shadow-lg shadow-blue-500/20 border border-white/20"
+                          : "text-gray-300 hover:bg-white/10 hover:text-white"
+                      }
+                      ${isCollapsed ? "justify-center" : ""}
+                    `}
                     style={{
                       transition: "background-color 0.1s ease, color 0.1s ease",
                     }}
                   >
                     <Icon
-                      className={`w-5 h-5 flex-shrink-0 ${isActive ? "text-white" : ""}`}
+                      className={`w-5 h-5 flex-shrink-0 ${
+                        isActive ? "text-white" : ""
+                      }`}
                     />
 
                     {!isCollapsed && (
-                      <>
-                        <span className="text-sm font-medium flex-1 text-left">
-                          {label}
-                        </span>
-                        {badge && (
-                          <span
-                            className={`text-xs px-2 py-0.5 rounded-full ${
-                              isActive
-                                ? "bg-white/20 text-white"
-                                : "bg-white/10 text-gray-300"
-                            }`}
-                          >
-                            {badge}
-                          </span>
-                        )}
-                      </>
+                      <span className="text-sm font-medium flex-1 text-left">
+                        {label}
+                      </span>
                     )}
 
                     {isCollapsed && (
@@ -228,8 +220,8 @@ export default function HCPLayout({ children }) {
                 </div>
                 {!isCollapsed && (
                   <div className="flex-1 text-left">
-                    <p className="text-sm font-medium text-white">Dr. Ahmed</p>
-                    <p className="text-xs text-gray-400">Cardiologist</p>
+                    <p className="text-sm font-medium text-white">John Doe</p>
+                    <p className="text-xs text-gray-400">VIP Visitor</p>
                   </div>
                 )}
               </button>
@@ -260,10 +252,10 @@ export default function HCPLayout({ children }) {
         {/* Main content */}
         <main
           className={`
-      flex-1 min-w-0
-      ${isCollapsed ? "lg:ml-20" : "lg:ml-70"}
-      ml-0
-    `}
+            flex-1 min-w-0
+            ${isCollapsed ? "lg:ml-20" : "lg:ml-70"}
+            ml-0
+          `}
           style={{
             transition: "margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
             willChange: "margin-left",
@@ -284,7 +276,7 @@ export default function HCPLayout({ children }) {
   );
 }
 
-// Profile Modal Component - Transformed
+// Profile Modal Component
 const ProfileModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
@@ -301,7 +293,7 @@ const ProfileModal = ({ isOpen, onClose }) => {
 
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-green-300 bg-clip-text text-transparent">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text text-transparent">
               Profile
             </h2>
             <button
@@ -314,17 +306,15 @@ const ProfileModal = ({ isOpen, onClose }) => {
         </div>
         <div className="relative p-6">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-400 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-              <span className="text-white text-xl font-bold">DR</span>
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-400 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+              <span className="text-white text-xl font-bold">JD</span>
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">Dr. Ahmed Hassan</h3>
-              <p className="text-sm text-blue-400">Senior Cardiologist</p>
+              <h3 className="text-lg font-bold text-white">John Doe</h3>
+              <p className="text-sm text-blue-400">VIP Visitor</p>
               <div className="flex items-center gap-1 mt-1">
                 <Shield className="w-3 h-3 text-green-400" />
-                <span className="text-xs text-gray-400">
-                  Verified Professional
-                </span>
+                <span className="text-xs text-gray-400">Verified Attendee</span>
               </div>
             </div>
           </div>
@@ -333,7 +323,7 @@ const ProfileModal = ({ isOpen, onClose }) => {
             <div className="p-3 bg-white/5 rounded-lg border border-white/10">
               <p className="text-xs text-gray-400">Email</p>
               <p className="text-sm font-medium text-white">
-                dr.ahmed@medical.com
+                john.doe@medical.com
               </p>
             </div>
             <div className="p-3 bg-white/5 rounded-lg border border-white/10">
@@ -341,12 +331,18 @@ const ProfileModal = ({ isOpen, onClose }) => {
               <p className="text-sm font-medium text-white">+966 50 123 4567</p>
             </div>
             <div className="p-3 bg-white/5 rounded-lg border border-white/10">
-              <p className="text-xs text-gray-400">License ID</p>
-              <p className="text-sm font-medium text-white">SCH-2024-12345</p>
+              <p className="text-xs text-gray-400">Registration ID</p>
+              <p className="text-sm font-medium text-white">REG-2026-12345</p>
+            </div>
+            <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+              <p className="text-xs text-gray-400">Ticket Type</p>
+              <p className="text-sm font-medium text-white">
+                VIP Pass - Full Access
+              </p>
             </div>
           </div>
 
-          <button className="relative w-full mt-6 py-2.5 bg-gradient-to-r from-blue-500 to-green-400 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
+          <button className="relative w-full mt-6 py-2.5 bg-gradient-to-br from-purple-500 to-pink-400 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30">
             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
             <span className="relative">Edit Profile</span>
           </button>

@@ -141,7 +141,7 @@ const DocumentUploadContent = ({
               </div>
               <button
                 onClick={() => fileInputRef.current?.click()}
-                className="relative px-5 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-lg cursor-pointer flex items-center gap-2 overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30"
+                className="relative px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-lg cursor-pointer flex items-center gap-2 overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30"
               >
                 <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
                 <span className="relative flex items-center gap-2">
@@ -235,7 +235,7 @@ const DocumentUploadContent = ({
                 <button
                   onClick={handleFileUpload}
                   disabled={uploading}
-                  className="relative px-5 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-50 flex items-center gap-2"
+                  className="relative px-5 py-2 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-50 flex items-center gap-2"
                 >
                   <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
                   <span className="relative flex items-center gap-2">
@@ -262,7 +262,7 @@ const DocumentUploadContent = ({
                   <span>Processing</span>
                 </div>
                 <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full animate-pulse w-3/4 shadow-lg shadow-blue-500/30" />
+                  <div className="h-full bg-gradient-to-r from-cyan-600 to-green-600 rounded-full animate-pulse w-3/4 shadow-lg shadow-blue-500/30" />
                 </div>
               </div>
             )}
@@ -282,7 +282,7 @@ const DocumentUploadContent = ({
               </p>
               <button
                 onClick={() => fileInputRef.current?.click()}
-                className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30"
+                className="relative px-4 py-2 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30"
               >
                 <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
                 <span className="relative">Upload Document</span>

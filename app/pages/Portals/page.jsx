@@ -14,18 +14,22 @@ import BreadCrumb from "../../Components/BreadCrum";
 
 const portals = [
   {
-    title: "Sponsor Portal",
-    description: "Account creation, space booking, contract management",
-    icon: Building2,
-    href: "/pages/Portals/SponcerPortal",
-    features: ["Space booking", "Contract management", "Real-time updates"],
-    color: "from-amber-500 to-orange-400",
-  },
+  title: "Sponsor Portal",
+  description: "Manage sponsorships, book exhibition space, and track contracts in real-time.",
+  icon: Building2,
+  href: "/pages/Portals/SponcerPortal/dashboard",
+  features: [
+    "Booth & space selection",
+    "Contract signing & tracking",
+    "Live booking status updates"
+  ],
+  color: "from-amber-500 to-orange-400",
+},
   {
     title: "Exhibitor Portal",
     description: "Account creation, space booking, contract management",
     icon: Building2,
-    href: "/pages/Portals/ExhibitorPortal",
+    href: "/pages/Portals/ExhibitorPortal/dashboard",
     features: ["Space booking", "Contract management", "Real-time updates"],
     color: "from-blue-800 to-cyan-600",
   },
@@ -33,7 +37,7 @@ const portals = [
     title: "Visitor Portal",
     description: "Registration, agenda, live streaming",
     icon: Users,
-    href: "/pages/Portals/VisitorPortal",
+    href: "/pages/Portals/VisitorPortal/dashboard",
     features: ["Easy registration", "Live agenda", "Streaming access"],
     color: "from-purple-500 to-pink-400",
   },
