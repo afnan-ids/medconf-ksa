@@ -2,9 +2,11 @@ import Slider from "@/app/Layout/Slider"
 import Services from "@/app/Components/Services"
 import Portals from "@/app/Components/Portals"
 import UpcomingEvents from "@/app/Components/UpcomingEvents"
-// import Testimonials from "@/app/Components/Testonomials"
+import Testimonials from "@/app/Components/Testonomials"
 import SpeakersSection from "@/app/Components/Speakers"
 import MediaPartnersSection from "@/app/Components/Partners"
+import WhyAttend from "@/app/Components/WhytoAttend"
+import HealthSectors from "@/app/Components/HealthSectors"
 // import EventsSection from "@/app/Components/raugh"
 
 export default function Home() {
@@ -15,6 +17,9 @@ export default function Home() {
      <Services/>
      <Portals/>
      <UpcomingEvents/>
+     <WhyAttend/>
+     <HealthSectors/>
+     <Testimonials/>
      <MediaPartnersSection/>
      {/* <EventsSection/> */}
 

@@ -215,7 +215,7 @@ const SpeakersSection = () => {
               {/* Horizontal Scrolling Container - NEW CARD DESIGN */}
               <div
                 ref={scrollContainerRef}
-                className="flex overflow-x-auto scrollbar-hide gap-3 sm:gap-4 md:gap-6 pb-4 sm:pb-8 px-1 sm:px-2"
+                className="flex overflow-x-auto scrollbar-hide gap-3 sm:gap-4 md:gap-6 pb-4 sm:pb-8 px-1 sm:px-2 lg:p-2"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {speakers.map((speaker, index) => (

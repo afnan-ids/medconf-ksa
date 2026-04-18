@@ -1,0 +1,526 @@
+"use client";
+
+import { useState } from "react";
+import {
+  Search,
+  Sparkles,
+  Headphones,
+  Clock,
+  Users,
+  Award,
+  Mail,
+  Phone,
+  MessageCircle,
+  ArrowRight,
+  ThumbsUp,
+  ThumbsDown,
+  HelpCircle,
+  Ticket,
+  Building2,
+  Calendar,
+  UserCheck,
+  CreditCard,
+  Globe,
+  Shield,
+  Zap,
+  Star,
+  MessageSquare,
+  FileText,
+  Video,
+  Download,
+  ExternalLink,
+  CheckCircle,
+  XCircle,
+  ChevronRight,
+} from "lucide-react";
+import Link from "next/link";
+import BreadCrumb from "../../Components/BreadCrum";
+
+// FAQ Categories with icons and colors
+const categories = [
+  {
+    id: "all",
+    name: "All Topics",
+    icon: Sparkles,
+    color: "from-blue-500 to-purple-500",
+    count: 24,
+  },
+  {
+    id: "registration",
+    name: "Registration",
+    icon: Ticket,
+    color: "from-green-500 to-emerald-500",
+    count: 8,
+  },
+  {
+    id: "booth",
+    name: "Booth Booking",
+    icon: Building2,
+    color: "from-orange-500 to-amber-500",
+    count: 6,
+  },
+  {
+    id: "event",
+    name: "Event",
+    icon: Calendar,
+    color: "from-purple-500 to-pink-500",
+    count: 10,
+  },
+  {
+    id: "portal",
+    name: "Portal",
+    icon: UserCheck,
+    color: "from-cyan-500 to-blue-500",
+    count: 12,
+  },
+  {
+    id: "payment",
+    name: "Payment",
+    icon: CreditCard,
+    color: "from-indigo-500 to-purple-500",
+    count: 5,
+  },
+];
+
+// FAQ Data - Organized by category
+const faqData = {
+  registration: [
+    {
+      question: "How do I register for an event?",
+      answer:
+        "Visit the Events page, select your event, click 'Register Now', create an account or log in, fill your details, choose ticket type, and complete payment. You'll receive a confirmation email instantly.",
+      helpful: 245,
+    },
+    {
+      question: "What is the early bird deadline?",
+      answer:
+        "Early bird pricing ends 60 days before the event. Save up to 30% by registering early. Check specific event pages for exact dates.",
+      helpful: 189,
+    },
+    {
+      question: "Can I transfer my registration?",
+      answer:
+        "Yes, transfers are allowed up to 14 days before the event. Contact support with both participants' details. A small administrative fee applies.",
+      helpful: 67,
+    },
+    {
+      question: "What is your cancellation policy?",
+      answer:
+        "30+ days: 80% refund | 15-29 days: 50% refund | Less than 14 days: No refund. Submit cancellation requests in writing to support@medconf.com.",
+      helpful: 123,
+    },
+  ],
+  booth: [
+    {
+      question: "How do I book a booth?",
+      answer:
+        "Go to Exhibition section, view interactive floor plan, select your preferred location, review pricing, and complete booking form. Our team confirms within 24 hours.",
+      helpful: 156,
+    },
+    {
+      question: "What's included in booth package?",
+      answer:
+        "Each booth includes: branded backdrop, table & chairs, power outlet, Wi-Fi, company listing, 2 exhibitor passes, and basic cleaning. Premium packages available.",
+      helpful: 134,
+    },
+    {
+      question: "Can I customize my booth?",
+      answer:
+        "Yes! Custom designs allowed with approval 30 days before event. Our team provides guidelines. Additional fees may apply for custom setups.",
+      helpful: 89,
+    },
+  ],
+  event: [
+    {
+      question: "How do I earn CME credits?",
+      answer:
+        "Attend sessions and get your badge scanned at each session. Certificates available in your portal within 2 weeks post-event. Track your progress in real-time.",
+      helpful: 312,
+    },
+    {
+      question: "What's the dress code?",
+      answer:
+        "Business professional for conference sessions. Business formal for networking events and gala dinner. Lab coats welcome for clinical sessions.",
+      helpful: 45,
+    },
+    {
+      question: "Will there be networking?",
+      answer:
+        "Yes! Dedicated networking sessions, coffee breaks, lunch meetups, evening gala, and our networking app to connect with attendees before, during, and after.",
+      helpful: 178,
+    },
+    {
+      question: "Can I attend virtually?",
+      answer:
+        "Yes! Hybrid attendance available. Virtual attendees get live stream access, interactive Q&A, virtual networking, and 30-day on-demand recordings.",
+      helpful: 234,
+    },
+  ],
+  portal: [
+    {
+      question: "How to access my dashboard?",
+      answer:
+        "Log in with your email and password. Click 'My Dashboard' to access registrations, certificates, invoices, and profile settings.",
+      helpful: 167,
+    },
+    {
+      question: "How to reset password?",
+      answer:
+        "Click 'Forgot Password' on login page. Enter your email, receive reset link (valid 24 hours), and create new password.",
+      helpful: 98,
+    },
+    {
+      question: "How to download certificates?",
+      answer:
+        "After event, log in to portal, go to 'My Certificates', click 'Download' for PDF certificates ready to share with your board.",
+      helpful: 203,
+    },
+    {
+      question: "How to update profile?",
+      answer:
+        "Go to 'My Profile' in dashboard. Update name, contact info, professional details, and preferences. Changes save automatically.",
+      helpful: 76,
+    },
+  ],
+  payment: [
+    {
+      question: "What payment methods?",
+      answer:
+        "All major credit cards (Visa, Mastercard, Amex), bank transfers, and corporate purchase orders. Secure payment gateway with encryption.",
+      helpful: 145,
+    },
+    {
+      question: "How to get invoice?",
+      answer:
+        "Invoice attached to confirmation email. Also available in portal under 'My Invoices' for download anytime.",
+      helpful: 112,
+    },
+  ],
+};
+
+// Quick Stats
+const stats = [
+  {
+    icon: Headphones,
+    value: "24/7",
+    label: "Support",
+    color: "from-blue-500 to-cyan-400",
+  },
+  {
+    icon: Clock,
+    value: "< 24h",
+    label: "Response Time",
+    color: "from-green-500 to-emerald-400",
+  },
+  {
+    icon: Users,
+    value: "98%",
+    label: "Satisfaction",
+    color: "from-purple-500 to-pink-400",
+  },
+  {
+    icon: Award,
+    value: "5K+",
+    label: "Questions Answered",
+    color: "from-orange-500 to-amber-400",
+  },
+];
+
+// Contact Cards
+const contactCards = [
+  {
+    icon: Mail,
+    title: "Email Support",
+    value: "support@medconf.com",
+    action: "Send Email",
+    link: "mailto:support@medconf.com",
+    gradient: "from-blue-500 to-cyan-400",
+    bgGradient: "from-blue-500/10 to-cyan-500/10",
+  },
+  {
+    icon: Phone,
+    title: "Phone Support",
+    value: "+966 800 123 4567",
+    action: "Call Now",
+    link: "tel:+9668001234567",
+    gradient: "from-purple-500 to-pink-400",
+    bgGradient: "from-purple-500/10 to-pink-500/10",
+  },
+  {
+    icon: MessageSquare,
+    title: "Submit a Ticket",
+    value: "Get help from our support team",
+    action: "Create Ticket",
+    link: "/support",
+    gradient: "from-green-500 to-emerald-400",
+    bgGradient: "from-green-500/10 to-emerald-500/10",
+  },
+];
+
+export default function FAQPage() {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedFaq, setSelectedFaq] = useState(null);
+  const [feedbackGiven, setFeedbackGiven] = useState({});
+
+  // Get current FAQs based on category
+  const getCurrentFaqs = () => {
+    if (activeCategory === "all") {
+      // Flatten all FAQs from all categories
+      return [
+        ...faqData.registration,
+        ...faqData.booth,
+        ...faqData.event,
+        ...faqData.portal,
+        ...faqData.payment,
+      ];
+    }
+    return faqData[activeCategory] || [];
+  };
+
+  // Filter FAQs based on search
+  const allFaqs = getCurrentFaqs();
+  const filteredFaqs = allFaqs.filter(
+    (faq) =>
+      faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
+
+  // Get current category color
+  const currentCategory = categories.find((c) => c.id === activeCategory);
+  const currentColor = currentCategory?.color || "from-blue-500 to-purple-500";
+
+  const handleFeedback = (faqIndex, type) => {
+    setFeedbackGiven((prev) => ({ ...prev, [faqIndex]: type }));
+  };
+
+  return (
+    <>
+      <BreadCrumb
+        title="Help Center"
+        backgroundImage="/Images/Home/Bread-crum-1.avif"
+        path={[{ label: "Help & Support" }]}
+      />
+
+      <section className="relative min-h-screen py-10 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Hero Section - Modern */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 mb-4">
+              <Star className="w-3 h-3 text-blue-400" />
+              <span className="text-xs font-medium text-gray-300">
+                How can we help ?
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+              Hello!{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                How can we help you?
+              </span>
+            </h1>
+            <p className="text-gray-400 text-sm max-w-xl mx-auto">
+              Find answers to common questions or get in touch with our support
+              team
+            </p>
+          </div>
+
+          {/* Search Bar - Hero Style */}
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="relative group">
+              <div
+                className={`absolute -inset-0.5 bg-gradient-to-r ${currentColor} rounded-xl blur opacity-0 group-focus-within:opacity-30 transition duration-500`}
+              ></div>
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-blue-400 transition-colors" />
+                <input
+                  type="text"
+                  placeholder="Search for answers..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-3.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-sm text-white placeholder:text-gray-400 focus:outline-none focus:border-transparent transition-all"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                  >
+                    <XCircle className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Category Tabs - Modern Pill Design */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {categories.map((cat) => {
+              const Icon = cat.icon;
+              const isActive = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`relative group px-4 py-2 rounded-full transition-all duration-300 ${
+                    isActive
+                      ? `bg-gradient-to-r ${cat.color} text-white shadow-lg scale-105`
+                      : "bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <Icon className="w-3.5 h-3.5" />
+                    <span className="text-xs font-medium">{cat.name}</span>
+                    <span
+                      className={`text-[10px] ${isActive ? "text-white/80" : "text-gray-500"}`}
+                    >
+                      {cat.count}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* FAQ Grid - Card Based Layout */}
+          {filteredFaqs.length === 0 ? (
+            <div className="text-center py-16 bg-white/5 rounded-2xl border border-white/10">
+              <HelpCircle className="w-16 h-16 text-gray-500 mx-auto mb-4" />
+              <p className="text-gray-400">
+                No results found for "{searchQuery}"
+              </p>
+              <button
+                onClick={() => setSearchQuery("")}
+                className="mt-4 text-sm text-blue-400 hover:text-blue-300"
+              >
+                Clear search
+              </button>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-4 mb-12">
+              {filteredFaqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className={`group relative bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-all duration-300 cursor-pointer ${
+                    selectedFaq === idx ? "ring-2 ring-blue-500/50" : ""
+                  }`}
+                  onClick={() =>
+                    setSelectedFaq(selectedFaq === idx ? null : idx)
+                  }
+                >
+                  {/* Gradient hover effect */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r ${currentColor} opacity-0 group-hover:opacity-5 rounded-xl transition-opacity duration-500`}
+                  ></div>
+
+                  <div className="relative">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1">
+                        <h3 className="text-sm font-semibold text-white mb-2 pr-6">
+                          {faq.question}
+                        </h3>
+                        {selectedFaq === idx && (
+                          <p className="text-xs text-gray-400 leading-relaxed mt-3 pt-3 border-t border-white/10">
+                            {faq.answer}
+                          </p>
+                        )}
+                      </div>
+                      <ChevronRight
+                        className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform duration-300 ${selectedFaq === idx ? "rotate-90" : ""}`}
+                      />
+                    </div>
+
+                    {/* Helpful buttons - only show when expanded */}
+                    {selectedFaq === idx && (
+                      <div className="flex items-center gap-4 mt-4 pt-3 border-t border-white/10">
+                        <span className="text-[10px] text-gray-500">
+                          Was this helpful?
+                        </span>
+                        <div className="flex gap-2">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleFeedback(idx, "yes");
+                            }}
+                            className={`flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] transition-all ${
+                              feedbackGiven[idx] === "yes"
+                                ? "bg-green-500/20 text-green-400"
+                                : "text-gray-400 hover:text-green-400 hover:bg-green-500/10"
+                            }`}
+                          >
+                            <ThumbsUp className="w-3 h-3" />
+                            Yes ({faq.helpful})
+                          </button>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleFeedback(idx, "no");
+                            }}
+                            className={`flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] transition-all ${
+                              feedbackGiven[idx] === "no"
+                                ? "bg-red-500/20 text-red-400"
+                                : "text-gray-400 hover:text-red-400 hover:bg-red-500/10"
+                            }`}
+                          >
+                            <ThumbsDown className="w-3 h-3" />
+                            No
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Contact Section - Modern 3 Column Cards */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h2 className="text-xl font-bold text-white mb-2">
+                Still have questions?
+              </h2>
+              <p className="text-sm text-gray-400">
+                Our support team is ready to help you
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              {contactCards.map((card, idx) => {
+                const Icon = card.icon;
+                return (
+                  <Link key={idx} href={card.link} className="group relative">
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r ${card.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`}
+                    ></div>
+                    <div
+                      className={`relative bg-gradient-to-r ${card.bgGradient} border border-white/20 rounded-2xl p-5 text-center hover:bg-white/10 transition-all duration-300`}
+                    >
+                      <div
+                        className={`w-12 h-12 rounded-xl bg-gradient-to-r ${card.gradient} flex items-center justify-center mx-auto mb-3 shadow-lg`}
+                      >
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-sm font-semibold text-white mb-1">
+                        {card.title}
+                      </h3>
+                      <p className="text-xs text-gray-400 mb-3">{card.value}</p>
+                      <span className="inline-flex items-center gap-1 text-xs text-blue-400 group-hover:gap-2 transition-all">
+                        {card.action} <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

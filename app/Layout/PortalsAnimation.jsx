@@ -7,13 +7,14 @@ export default function PortalIntro({
   subtitle,
   portalcolor,
   titlecolor,
+  isPortal
 }) {
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setHide(true);
-      setTimeout(onFinish, 400);
+      setTimeout(onFinish, 200);
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -21,7 +22,7 @@ export default function PortalIntro({
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-700 ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-700${
         hide ? "opacity-0 scale-105 blur-md" : "opacity-100 scale-100 blur-0"
       }`}
     >
@@ -47,9 +48,9 @@ export default function PortalIntro({
           </span>
           <br />
           <span
-            className={`inline-block bg-gradient-to-r ${portalcolor} bg-clip-text text-transparent animate-shine-delayed`}
+            className={`inline-block bg-gradient-to-r ${portalcolor} bg-clip-text text-transparent animate-shine-delayed pb-4`}
           >
-            PORTAL
+            {isPortal || "PORTAL"}
           </span>
         </h1>
 

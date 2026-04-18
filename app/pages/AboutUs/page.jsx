@@ -20,9 +20,9 @@ import {
   CheckCircle,
   Quote,
   Mail,
-  Linkedin,
-  Twitter,
+  Star,
 } from "lucide-react";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
 import BreadCrumb from "../../Components/BreadCrum";
 
 export default function AboutPage() {
@@ -251,7 +251,7 @@ export default function AboutPage() {
             {/* Main title */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
               <span className="text-white">Shaping the Future of</span>
-              {''} {''}
+              {""} {""}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                 Healthcare Excellence
               </span>
@@ -281,7 +281,9 @@ export default function AboutPage() {
                   <p className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-white mb-0.5 sm:mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-xs sm:text-sm text-gray-400">{stat.label}</p>
+                  <p className="text-xs sm:text-sm text-gray-400">
+                    {stat.label}
+                  </p>
                 </div>
               );
             })}
@@ -319,7 +321,9 @@ export default function AboutPage() {
                   <Globe className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                 </div>
               </div>
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">Our Vision</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
+                Our Vision
+              </h2>
               <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                 To be the premier healthcare events organizer in the Middle
                 East, connecting regional expertise with global innovation for
@@ -401,16 +405,22 @@ export default function AboutPage() {
                 <div key={index} className="relative pl-8 sm:pl-10">
                   {/* Timeline line */}
                   <div className="absolute left-3 sm:left-4 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 to-transparent"></div>
-                  
+
                   {/* Year bubble */}
                   <div className="absolute left-0 top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 flex items-center justify-center border-2 border-gray-900">
-                    <span className="text-[10px] sm:text-xs font-bold text-white">{milestone.year}</span>
+                    <span className="text-[10px] sm:text-xs font-bold text-white">
+                      {milestone.year}
+                    </span>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5">
-                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-1">{milestone.title}</h3>
-                    <p className="text-xs sm:text-sm text-gray-400">{milestone.description}</p>
+                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-1">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-400">
+                      {milestone.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -508,7 +518,9 @@ export default function AboutPage() {
                       <p className="text-xs sm:text-sm text-blue-400 mb-2 sm:mb-3">
                         {member.role}
                       </p>
-                      <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4 line-clamp-3">{member.bio}</p>
+                      <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4 line-clamp-3">
+                        {member.bio}
+                      </p>
 
                       {/* Social links */}
                       <div className="flex items-center gap-2 sm:gap-3">
@@ -516,13 +528,13 @@ export default function AboutPage() {
                           href={member.social.linkedin}
                           className="text-gray-500 hover:text-blue-400 transition-colors"
                         >
-                          <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <FaLinkedin className="w-3 h-3 sm:w-4 sm:h-4" />
                         </Link>
                         <Link
                           href={member.social.twitter}
                           className="text-gray-500 hover:text-blue-400 transition-colors"
                         >
-                          <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <FaTwitter className="w-3 h-3 sm:w-4 sm:h-4" />
                         </Link>
                         <Link
                           href={`mailto:${member.social.email}`}
@@ -574,33 +586,40 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Testimonial */}
-          <div className="mb-12 sm:mb-16 md:mb-20">
-            <div className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 overflow-hidden">
-              {/* Quote icon */}
-              <Quote className="absolute top-4 right-4 sm:top-6 sm:right-6 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-white/5" />
+          <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
+            {/* Animated background */}
+            <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
 
-              <div className="relative max-w-3xl mx-auto text-center">
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 mb-4 sm:mb-5 md:mb-6 leading-relaxed px-2">
-                  "Medconf KSA has been instrumental in advancing medical
-                  education in Saudi Arabia. Their conferences bring world-class
-                  expertise to our healthcare professionals, directly
-                  contributing to Vision 2030's healthcare transformation
-                  goals."
-                </p>
+            {/* Floating orbs */}
+            <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
 
-                <div className="flex flex-col xs:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center flex-shrink-0">
-                    <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                  </div>
-                  <div className="text-center xs:text-left">
-                    <p className="text-sm sm:text-base text-white font-semibold">
-                      Dr.John Doe 
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-400">
-                      Former Deputy Minister, MOH Saudi Arabia
-                    </p>
-                  </div>
+            <div className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 text-center backdrop-blur-sm">
+              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                <span className="text-xs sm:text-sm font-medium text-white/90">
+                  Since 2014
+                </span>
+              </div>
+
+              <h4 className="text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
+                "Medconf KSA has been instrumental in advancing medical
+                education in Saudi Arabia. Their conferences bring world-class
+                expertise to our healthcare professionals, directly contributing
+                to Vision 2030's healthcare transformation goals"
+              </h4>
+
+              <div className="flex flex-col xs:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center flex-shrink-0">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <div className="text-center xs:text-left">
+                  <p className="text-sm sm:text-base text-white font-semibold">
+                    Dr.John Doe
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-400">
+                    Former Deputy Minister, MOH Saudi Arabia
+                  </p>
                 </div>
               </div>
             </div>

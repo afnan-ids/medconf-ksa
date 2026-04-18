@@ -60,7 +60,7 @@ export default function Portals() {
           path={[{label:"Portals"}]}
         />
     <section className="relative py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden">
-      {/* Animated Background - Matching Services and Events sections */}
+      {/* Animated Background  */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
         {/* Floating orbs - responsive sizes */}
         <div className="absolute top-10 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -97,7 +97,7 @@ export default function Portals() {
           
         </div>
 
-        {/* Cards - Enhanced with feature lists and better hover effects */}
+        {/* Cards  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
           {portals.map((portal, index) => {
             const Icon = portal.icon;
@@ -140,7 +140,7 @@ export default function Portals() {
                     {portal.description}
                   </p>
 
-                  {/* Features list - matching Services section */}
+                  {/* Features list  */}
                   <ul className="space-y-1.5 sm:space-y-2 md:space-y-2.5 lg:space-y-3 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                     {portal.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-1.5 sm:gap-2 md:gap-3 text-gray-300 text-xs sm:text-sm">
@@ -150,7 +150,7 @@ export default function Portals() {
                     ))}
                   </ul>
                 
-                 {/* Mobile button - always visible */}
+                 {/* Mobile button */}
                 <div className="md:hidden mt-3">
                   <Link
                     href={portal.href}
@@ -165,7 +165,7 @@ export default function Portals() {
                   <div className={`absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r ${portal.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
                 </div>
 
-                {/* Floating button on hover - hidden on mobile, shown on desktop hover */}
+                {/* Floating button */}
                 <div className="hidden md:block absolute -bottom-5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:-bottom-6">
                   <Link
                     href={portal.href}

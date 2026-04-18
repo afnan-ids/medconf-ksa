@@ -19,6 +19,7 @@ import {
   Globe,
   Award,
   HeadphonesIcon,
+  Star,
 } from "lucide-react";
 import BreadCrumb from "../../Components/BreadCrum";
 
@@ -53,10 +54,10 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      details: "+966 (11) 456-7890",
+      details: "+966 (00) 000-000",
       subdetails: "Sun-Thu, 9:00 AM - 6:00 PM",
       color: "from-blue-500 to-cyan-400",
-      action: "tel:+966114567890",
+      action: "tel:+96000000090",
     },
     {
       icon: Mail,
@@ -406,18 +407,33 @@ export default function ContactPage() {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600"></div>
-          
-          <div className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 text-center">
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-              Ready to Transform Your Healthcare Event?
-            </h3>
-            <p className="text-sm sm:text-base md:text-lg text-white/90 mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-2xl mx-auto px-4">
-              Join hundreds of healthcare professionals who trust us for world-class medical conferences.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+       
+        
+          <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
+            {/* Animated background */}
+            <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
+
+            {/* Floating orbs */}
+            <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+
+            <div className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 text-center backdrop-blur-sm">
+              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
+                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                <span className="text-xs sm:text-sm font-medium text-white/90">
+                  Medical Conferences
+                </span>
+              </div>
+
+              <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
+                Ready to Transform Your Healthcare Event?
+              </h4>
+
+              <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
+                Join hundreds of healthcare professionals who trust us for world-class medical conferences
+              </p>
+
+               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Link
                 href="/pages/NavBar-Links/NavEvents"
                 className="group bg-white text-gray-900 px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
@@ -433,8 +449,8 @@ export default function ContactPage() {
                 <Shield className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
             </div>
+            </div>
           </div>
-        </div>
       </div>
 
       {/* Bottom gradient fade */}

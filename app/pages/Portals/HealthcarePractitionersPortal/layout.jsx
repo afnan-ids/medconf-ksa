@@ -20,19 +20,12 @@ import PortalIntro from "../../../Layout/PortalsAnimation";
 export default function HCPLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [showIntro, setShowIntro] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-
-  useEffect(() => {
-    if(!sessionStorage.getItem("introPlayed")) {
-      setShowIntro(true);
-      sessionStorage.setItem("introPlayed", "true");
-    }
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">

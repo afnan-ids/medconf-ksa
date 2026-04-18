@@ -17,7 +17,6 @@ import {
   Camera,
   CheckCircle,
   AlertCircle,
-  Linkedin,
   Twitter,
   Instagram,
   Shield,
@@ -25,6 +24,7 @@ import {
   Clock,
   Star,
 } from "lucide-react";
+import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { sponsorProfile } from "../../Data/sponsor-data";
 
 const ProfileContent = () => {
@@ -422,7 +422,7 @@ const ProfileContent = () => {
 
             <div className="relative p-4 sm:p-5 space-y-2 sm:space-y-3">
               <div className="flex items-center gap-3 p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10">
-                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
+                <FaLinkedin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
                 <div className="flex-1 min-w-0">
                   {isEditing ? (
                     <input
@@ -446,7 +446,7 @@ const ProfileContent = () => {
               </div>
 
               <div className="flex items-center gap-3 p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10">
-                <Twitter className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 flex-shrink-0" />
+                <FaTwitter className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 flex-shrink-0" />
                 <div className="flex-1 min-w-0">
                   {isEditing ? (
                     <input
@@ -470,7 +470,7 @@ const ProfileContent = () => {
               </div>
 
               <div className="flex items-center gap-3 p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10">
-                <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-pink-400 flex-shrink-0" />
+                <FaInstagram className="w-4 h-4 sm:w-5 sm:h-5 text-pink-400 flex-shrink-0" />
                 <div className="flex-1 min-w-0">
                   {isEditing ? (
                     <input
