@@ -206,7 +206,7 @@ export default function PractitionerRegisterPage() {
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Let's Talk MedConf.
+                    Let's Talk MedConf
                   </span>
                 </h1>
 
@@ -269,8 +269,8 @@ export default function PractitionerRegisterPage() {
             id="form"
           >
             {/* Form Header */}
-            <div className="text-center py-8 px-4 border-b border-white/10 bg-white/5">
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+            <div className="text-center py-8 px-4 border-b border-white/10 bg-white/10 ">
+              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-cyan-600 pb-2 bg-clip-text text-transparent">
                 Practitioner Registration
               </h2>
               <p className="text-gray-400 mt-2">Join the region's premier healthcare network</p>

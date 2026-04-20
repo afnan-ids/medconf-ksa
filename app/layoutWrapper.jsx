@@ -9,7 +9,7 @@ export default function LayoutWrapper({ children }) {
 
   const hiddenRoutes = [
     "/pages/Portals/",
-    //  "/Forms/Login",
+    "/AdminPortal/"
   ];
 
 

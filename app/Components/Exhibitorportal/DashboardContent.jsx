@@ -279,7 +279,7 @@ const DashboardContent = () => {
         </div>
 
         <div className="relative p-4 sm:p-5 md:p-6">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
             {exhibitorQuickLinks.map((action, idx) => {
               const Icon = getIcon(action.icon);
               return (

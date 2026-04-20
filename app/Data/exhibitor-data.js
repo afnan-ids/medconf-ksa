@@ -94,11 +94,10 @@ export const exhibitorEvents = [
 // Quick Links for Exhibitor
 export const exhibitorQuickLinks = [
   { name: "Download Exhibitor Kit", icon: "FileText", link: "#" },
-  { name: "Submit Booth Design", icon: "Edit", link: "#" },
   { name: "Staff Registration", icon: "Users", link: "#" },
   { name: "Order Extras", icon: "ShoppingCart", link: "#" },
   { name: "View Floor Plan", icon: "Map", link: "#" },
-  { name: "Lead Scanner App", icon: "QrCode", link: "#" },
+ 
 ];
 
 // Booth Details Data

@@ -7,7 +7,8 @@ import {
   Menu, X, LogIn, ChevronDown, 
   Calendar, Building, UserPlus, Eye, 
   Stethoscope, Trophy, Lightbulb, Microscope, Cpu, 
-  UsersRound, Landmark, BookOpen, ArrowRight
+  UsersRound, Landmark, BookOpen, ArrowRight,
+  Shield
 } from "lucide-react";
 
 const navlinks = [
@@ -41,32 +42,37 @@ const navlinks = [
   },
   { label: "Events", href: "/pages/NavBar-Links/NavEvents" },
   {
-    label: "Portals",
-    href: "/pages/Portals",
-    submenus: [
-      {
-        label: "Sponsor Portal",
-        href: "/pages/Portals/SponcerPortal/dashboard",
-        icon: Trophy,
-      },
-      {
-        label: "Exhibitor Portal",
-        href: "/pages/Portals/ExhibitorPortal/dashboard",
-        icon: Building,
-      },
-      {
-        label: "Visitor Portal",
-        href: "/pages/Portals/VisitorPortal/dashboard",
-        icon: Eye,
-      },
-      {
-        label: "Health Care Portal",
-        href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
-        icon: Stethoscope,
-      },
-      { label: "View All Portals", href: "/pages/Portals/", isViewAll: true, icon: Eye },
-    ],
-  },
+  label: "Portals",
+  href: "/pages/Portals",
+  submenus: [
+    {
+      label: "Sponsor Portal",
+      href: "/pages/Portals/SponcerPortal/dashboard",
+      icon: Trophy,
+    },
+    {
+      label: "Exhibitor Portal",
+      href: "/pages/Portals/ExhibitorPortal/dashboard",
+      icon: Building,
+    },
+    {
+      label: "Visitor Portal",
+      href: "/pages/Portals/VisitorPortal/dashboard",
+      icon: Eye,
+    },
+    {
+      label: "Health Care Portal",
+      href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
+      icon: Stethoscope,
+    },
+    {
+      label: "Admin Portal",
+      href: "/AdminPortal/Dashboard",
+      icon: Shield, 
+    },
+    { label: "View All Portals", href: "/pages/Portals/", isViewAll: true, icon: Eye },
+  ],
+},
   { label: "About", href: "/pages/AboutUs" },
   { label: "Contact", href: "/pages/ContactUs" },
   { label: "News & Blogs", href: "/pages/NewsBlogPage" },
@@ -118,12 +124,10 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
-  /* ---------------- MOUNT FIX ---------------- */
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  /* ---------------- SCROLL EFFECT ---------------- */
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
@@ -134,7 +138,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* ---------------- CLOSE MOBILE ON ROUTE CHANGE ---------------- */
   useEffect(() => {
     setMobileOpen(false);
     setOpenDropdown(null);
@@ -149,14 +152,11 @@ export default function Navbar() {
 
   if (!mounted) return null;
 
-  /* ---------------- ACTIVE LINK ---------------- */
   const isActive = (href, submenus = null) => {
     if (href === "/") return pathname === "/";
     
-    // Check if current path matches the main href (ignore #)
     if (href !== "#" && pathname?.startsWith(href)) return true;
     
-    // Check if any submenu item is active
     if (submenus && submenus.length > 0) {
       return submenus.some(submenu => pathname?.startsWith(submenu.href));
     }
@@ -164,7 +164,6 @@ export default function Navbar() {
     return false;
   };
 
-  /* ---------------- DROPDOWN HANDLERS ---------------- */
   const handleMouseEnter = (label) => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
@@ -185,14 +184,25 @@ export default function Navbar() {
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
           scrolled
             ? "bg-gray-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl"
-            : "bg-transparent"
+            : "bg-gray-900/80 backdrop-blur-sm border-b border-white/5"
         }`}
       >
+        {/* Floating Orbs Background - Same as Footer */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/3 w-48 h-48 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Top Gradient Line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+        
+        {/* Bottom Gradient Line when scrolled */}
         {scrolled && (
-          <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
         )}
 
-        <div className="max-w-[1300px] mx-auto px-6">
+        <div className="max-w-[1300px] mx-auto px-6 relative z-10">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="group relative">
@@ -223,7 +233,7 @@ export default function Navbar() {
                         ? "text-blue-400"
                         : scrolled
                           ? "text-gray-300 hover:text-white"
-                          : "text-gray-200 hover:text-white"
+                          : "text-gray-300 hover:text-white"
                     }`}
                   >
                     {isActive(link.href, link.submenus) && (
@@ -243,12 +253,16 @@ export default function Navbar() {
                     )}
                   </Link>
 
-                  {/* Dropdown Submenu */}
+                  {/* Dropdown Submenu - Matching Footer Style */}
                   {link.submenus && openDropdown === link.label && (
                     <div className="absolute left-0 top-full pt-2 w-80 z-50">
                       <div className="relative overflow-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl">
+                        {/* Floating Orbs inside dropdown */}
                         <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
                         <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
+                        
+                        {/* Top gradient line */}
+                        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
                         <div className="relative p-2">
                           <div className="space-y-1">
@@ -347,13 +361,9 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-
-        {scrolled && (
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
-        )}
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Matching Footer Dark Style */}
       <div
         className={`lg:hidden fixed inset-x-0 top-20 z-50 transition-all duration-500 ${
           mobileOpen
@@ -363,8 +373,13 @@ export default function Navbar() {
       >
         <div className="mx-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div className="relative overflow-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
+            {/* Floating Orbs in Mobile Menu */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl"></div>
+            
+            {/* Top gradient line */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
             <div className="relative p-4 space-y-2">
               {navlinks.map((link) => (
