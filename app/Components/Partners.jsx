@@ -115,11 +115,19 @@ export default function PartnersGrid() {
 
             {/* Title - responsive */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 px-2">
-              Media & Innovation
-              <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mt-1 sm:mt-2">
+              Media &{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                Innovation
+              </span>
+              <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mt-1 sm:mt-2 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                 Partners
               </span>
             </h2>
+            {/* Decorative line  */}
+            <div className="relative w-20 sm:w-32 h-1 mx-auto my-3 sm:my-6">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
+            </div>
 
             {/* Description */}
             <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-2xl mx-auto px-4">

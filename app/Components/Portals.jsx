@@ -146,8 +146,8 @@ export default function Portals() {
                     {/* Icon with gradient background */}
                     <div className="relative mb-3 sm:mb-4 md:mb-6">
                       <div className={`absolute inset-0 bg-gradient-to-r ${portal.gradient} blur-lg sm:blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 rounded-xl sm:rounded-2xl`} />
-                      <div className={`relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${portal.gradient} shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
+                      <div className={`relative w-11 h-11 sm:w-13 sm:h-13 md:w-15 md:h-15 flex items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${portal.gradient} shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                       </div>
                     </div>
 

@@ -217,7 +217,7 @@ export default function WhyAttend() {
               <p className="text-xs sm:text-sm md:text-lg text-gray-300 mt-3 sm:mt-6 max-w-2xl mx-auto px-4">
                 Join thousands of healthcare professionals at the region's most
                 impactful medical conference. Here's why you can't afford to
-                miss it.
+                miss it
               </p>
             </div>
 
