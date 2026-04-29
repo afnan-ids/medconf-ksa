@@ -37,10 +37,10 @@ export default function ExhibitionFloorPlanningManagement() {
 
   // Halls data
   const halls = [
-    { id: "hallA", name: "Hall A", totalBooths: 48, occupied: 38, color: "orange" },
-    { id: "hallB", name: "Hall B", totalBooths: 42, occupied: 29, color: "purple" },
-    { id: "hallC", name: "Hall C", totalBooths: 36, occupied: 31, color: "cyan" },
-    { id: "hallD", name: "Hall D", totalBooths: 30, occupied: 18, color: "emerald" },
+    { id: "hallA", name: "Hall A", totalBooths: 48, occupied: 38 },
+    { id: "hallB", name: "Hall B", totalBooths: 42, occupied: 29 },
+    { id: "hallC", name: "Hall C", totalBooths: 36, occupied: 31 },
+    { id: "hallD", name: "Hall D", totalBooths: 30, occupied: 18 },
   ];
 
   // Booth grid data for Hall A (48 booths - 6x8 grid)
@@ -114,17 +114,6 @@ export default function ExhibitionFloorPlanningManagement() {
     }
   };
 
-  const getSizeStyle = (size) => {
-    switch (size) {
-      case "premium":
-        return "col-span-2 row-span-2";
-      case "corner":
-        return "col-span-1 row-span-1 border-l-4 border-t-4";
-      default:
-        return "col-span-1 row-span-1";
-    }
-  };
-
   const currentHallBooths = booths.filter((b) => b.hall === selectedHall);
   const hallStats = halls.find((h) => h.id === selectedHall);
   const availableCount = currentHallBooths.filter((b) => b.status === "available").length;
@@ -155,7 +144,7 @@ export default function ExhibitionFloorPlanningManagement() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             Exhibition Floor Planning
           </h1>
           <p className="text-sm text-gray-400 mt-1">
@@ -163,7 +152,7 @@ export default function ExhibitionFloorPlanningManagement() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <button className="p-2 bg-white/5 border border-white/10 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+          <button className="p-2 bg-white/5 border border-white/10 rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-all">
             <Download className="w-5 h-5" />
           </button>
         </div>
@@ -175,9 +164,9 @@ export default function ExhibitionFloorPlanningManagement() {
           <button
             key={hall.id}
             onClick={() => setSelectedHall(hall.id)}
-            className={`px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-5 py-2.5 rounded-xl font-medium transition-all duration-300 ${
               selectedHall === hall.id
-                ? `bg-gradient-to-r from-${hall.color}-600 to-${hall.color}-500 text-white shadow-lg shadow-${hall.color}-500/30`
+                ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30"
                 : "bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10"
             }`}
           >
@@ -192,19 +181,19 @@ export default function ExhibitionFloorPlanningManagement() {
       {/* Hall Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         {[
-          { label: "Total Booths", value: hallStats?.totalBooths, icon: Grid3x3, color: "indigo" },
-          { label: "Available", value: availableCount, icon: MapPin, color: "emerald" },
-          { label: "Booked", value: bookedCount, icon: CheckCircle, color: "blue" },
-          { label: "Reserved", value: reservedCount, icon: Clock, color: "amber" },
+          { label: "Total Booths", value: hallStats?.totalBooths, icon: Grid3x3 },
+          { label: "Available", value: availableCount, icon: MapPin },
+          { label: "Booked", value: bookedCount, icon: CheckCircle },
+          { label: "Reserved", value: reservedCount, icon: Clock },
         ].map((stat, idx) => (
-          <div key={idx} className="relative bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300">
+          <div key={idx} className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs text-gray-400">{stat.label}</p>
                 <p className="text-2xl font-bold text-white mt-1">{stat.value}</p>
               </div>
-              <div className={`p-2 bg-${stat.color}-500/20 rounded-lg border border-${stat.color}-500/30`}>
-                <stat.icon className={`w-4 h-4 text-${stat.color}-400`} />
+              <div className="p-2 bg-white/10 rounded-lg border border-white/20">
+                <stat.icon className="w-4 h-4 text-blue-400" />
               </div>
             </div>
           </div>
@@ -213,9 +202,6 @@ export default function ExhibitionFloorPlanningManagement() {
 
       {/* Floor Plan Controls */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          
-        </div>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-emerald-500" />
@@ -234,14 +220,14 @@ export default function ExhibitionFloorPlanningManagement() {
 
       {/* Floor Plan Grid */}
       <div
-        className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden transition-all duration-300"
+        className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-blue-500/30"
         style={{ transform: `scale(${zoom})`, transformOrigin: "top left" }}
       >
         <div className="p-6">
           {/* Hall Label */}
           <div className="mb-4 pb-2 border-b border-white/10">
             <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-              <Map className="w-5 h-5 text-indigo-400" />
+              <Map className="w-5 h-5 text-blue-400" />
               {hallStats?.name} Floor Plan
             </h3>
             <p className="text-xs text-gray-400 mt-1">Grid layout with booth positions</p>
@@ -262,7 +248,7 @@ export default function ExhibitionFloorPlanningManagement() {
                     key={booth.id}
                     onClick={() => handleBoothClick(booth)}
                     className={`
-                      relative group p-3 rounded-lg border transition-all duration-300
+                      relative group p-3 rounded-xl border transition-all duration-300
                       ${statusStyle.bg} ${statusStyle.border}
                       hover:scale-105 hover:shadow-lg hover:z-10
                       ${booth.size === "premium" ? "col-span-2 row-span-2" : ""}
@@ -289,7 +275,7 @@ export default function ExhibitionFloorPlanningManagement() {
                     </div>
                     
                     {/* Hover Tooltip */}
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900/90 backdrop-blur-xl rounded text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 border border-white/10">
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900/90 backdrop-blur-xl rounded-lg text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 border border-white/10">
                       {booth.id} - {statusStyle.label}
                       {booth.exhibitor && ` - ${booth.exhibitor}`}
                     </div>
@@ -303,19 +289,19 @@ export default function ExhibitionFloorPlanningManagement() {
           <div className="mt-6 pt-4 border-t border-white/10">
             <div className="flex flex-wrap gap-4 text-xs text-gray-400">
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-white/5 rounded border border-white/10 flex items-center justify-center">
+                <div className="w-6 h-6 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center">
                   <span className="text-[10px]">A01</span>
                 </div>
                 <span>Standard Booth (3x3m)</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-12 h-6 bg-white/5 rounded border border-white/10 flex items-center justify-center">
+                <div className="w-12 h-6 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center">
                   <span className="text-[10px]">Premium</span>
                 </div>
                 <span>Premium Booth (6x6m)</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-white/5 rounded border-l-4 border-t-4 border-white/20 flex items-center justify-center">
+                <div className="w-6 h-6 bg-white/5 rounded-lg border-l-4 border-t-4 border-white/20 flex items-center justify-center">
                   <span className="text-[10px]">C01</span>
                 </div>
                 <span>Corner Booth</span>
@@ -327,11 +313,11 @@ export default function ExhibitionFloorPlanningManagement() {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <button className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 text-left">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl" />
+        <button className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-1 text-left">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-xl" />
           <div className="relative flex items-center gap-3">
-            <div className="p-2 bg-indigo-500/20 rounded-lg">
-              <Plus className="w-5 h-5 text-indigo-400" />
+            <div className="p-2 bg-white/10 rounded-lg border border-white/20">
+              <Plus className="w-5 h-5 text-blue-400" />
             </div>
             <div>
               <p className="text-sm font-medium text-white">Add New Booth</p>
@@ -340,11 +326,11 @@ export default function ExhibitionFloorPlanningManagement() {
           </div>
         </button>
 
-        <button className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 text-left">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl" />
+        <button className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-1 text-left">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-xl" />
           <div className="relative flex items-center gap-3">
-            <div className="p-2 bg-emerald-500/20 rounded-lg">
-              <RefreshCw className="w-5 h-5 text-emerald-400" />
+            <div className="p-2 bg-white/10 rounded-lg border border-white/20">
+              <RefreshCw className="w-5 h-5 text-blue-400" />
             </div>
             <div>
               <p className="text-sm font-medium text-white">Bulk Assign</p>
@@ -353,11 +339,11 @@ export default function ExhibitionFloorPlanningManagement() {
           </div>
         </button>
 
-        <button className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 text-left">
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-orange-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl" />
+        <button className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-1 text-left">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-xl" />
           <div className="relative flex items-center gap-3">
-            <div className="p-2 bg-amber-500/20 rounded-lg">
-              <Layers className="w-5 h-5 text-amber-400" />
+            <div className="p-2 bg-white/10 rounded-lg border border-white/20">
+              <Layers className="w-5 h-5 text-blue-400" />
             </div>
             <div>
               <p className="text-sm font-medium text-white">Export Layout</p>
@@ -411,13 +397,13 @@ const BoothDetailsModal = ({ booth, onClose, onAssign, onUpdateStatus }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-white/20 animate-in zoom-in-95 duration-300">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl" />
+      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-blue-500/20 animate-in zoom-in-95 duration-300">
+        <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl" />
 
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
               Booth Details
             </h2>
             <button onClick={onClose} className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all">
@@ -460,7 +446,7 @@ const BoothDetailsModal = ({ booth, onClose, onAssign, onUpdateStatus }) => {
             {booth.status === "available" && (
               <button
                 onClick={onAssign}
-                className="flex-1 px-4 py-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-500/30 transition-all"
+                className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all"
               >
                 Assign Exhibitor
               </button>
@@ -468,7 +454,7 @@ const BoothDetailsModal = ({ booth, onClose, onAssign, onUpdateStatus }) => {
             {booth.status === "booked" && (
               <button
                 onClick={() => onUpdateStatus("available")}
-                className="flex-1 px-4 py-2 border border-amber-500/30 rounded-lg text-amber-400 hover:bg-amber-500/10 transition-all"
+                className="flex-1 px-4 py-2 border border-amber-500/30 rounded-xl text-amber-400 hover:bg-amber-500/10 transition-all"
               >
                 Make Available
               </button>
@@ -477,13 +463,13 @@ const BoothDetailsModal = ({ booth, onClose, onAssign, onUpdateStatus }) => {
               <>
                 <button
                   onClick={() => onUpdateStatus("available")}
-                  className="flex-1 px-4 py-2 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all"
+                  className="flex-1 px-4 py-2 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all"
                 >
                   Cancel Reservation
                 </button>
                 <button
                   onClick={onAssign}
-                  className="flex-1 px-4 py-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-500/30 transition-all"
+                  className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all"
                 >
                   Confirm Booking
                 </button>
@@ -519,10 +505,10 @@ const AssignBoothModal = ({ booth, onClose, onAssign }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-white/20 animate-in zoom-in-95 duration-300">
+      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-blue-500/20 animate-in zoom-in-95 duration-300">
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
               Assign Booth {booth.id}
             </h2>
             <button onClick={onClose} className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all">
@@ -541,7 +527,7 @@ const AssignBoothModal = ({ booth, onClose, onAssign }) => {
                 placeholder="Type exhibitor name..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 transition-all"
+                className="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/50 transition-all"
               />
             </div>
           </div>
@@ -568,21 +554,21 @@ const AssignBoothModal = ({ booth, onClose, onAssign }) => {
               placeholder="Exhibitor name"
               value={exhibitorName}
               onChange={(e) => setExhibitorName(e.target.value)}
-              className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 transition-all"
+              className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/50 transition-all"
             />
           </div>
 
           <div className="flex gap-3 pt-4">
             <button
               onClick={onClose}
-              className="flex-1 px-4 py-2 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all"
+              className="flex-1 px-4 py-2 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all"
             >
               Cancel
             </button>
             <button
               onClick={() => exhibitorName && onAssign(exhibitorName)}
               disabled={!exhibitorName}
-              className="flex-1 px-4 py-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Assign Booth
             </button>

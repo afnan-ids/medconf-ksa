@@ -13,6 +13,7 @@ import {
   X,
   Diamond,
   Shield,
+  Sparkles,
 } from "lucide-react";
 import { menuItems } from "../../../Data/sponsor-data";
 
@@ -25,6 +26,7 @@ import PaymentsContent from "../../../Components/SponsorPortal/PaymentsContent";
 import EventsContent from "../../../Components/SponsorPortal/EventsContent";
 import SupportContent from "../../../Components/SponsorPortal/SupportContent";
 import PortalIntro from "../../../Layout/PortalsAnimation";
+import Link from "next/link";
 
 // Component mapping based on route id
 const componentMap = {
@@ -312,6 +314,17 @@ export default function SponsorPortalLayout({ children }) {
       {showProfileModal && (
         <ProfileModal onClose={() => setShowProfileModal(false)} />
       )}
+
+      {/* Simple Temporary Register Button */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <Link
+          href="/Forms/SponsorRegisterationForm"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs font-medium rounded-lg shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300"
+        >
+          <Sparkles className="w-3 h-3" />
+          <span>Register</span>
+        </Link>
+      </div>
     </div>
   );
 }

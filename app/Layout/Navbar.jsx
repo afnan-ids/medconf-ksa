@@ -40,7 +40,7 @@ const navlinks = [
       },
     ],
   },
-  { label: "Events", href: "/pages/NavBar-Links/NavEvents" },
+  { label: "Events", href: "/pages/Events" },
   {
   label: "Portals",
   href: "/pages/Portals",
@@ -187,12 +187,6 @@ export default function Navbar() {
             : "bg-gray-900/80 backdrop-blur-sm border-b border-white/5"
         }`}
       >
-        {/* Floating Orbs Background - Same as Footer */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/3 w-48 h-48 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-        </div>
 
         {/* Top Gradient Line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>

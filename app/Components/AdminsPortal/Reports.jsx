@@ -39,12 +39,12 @@ export default function Reports() {
 
   // Report types
   const reportTypes = [
-    { id: "bookings", name: "Bookings Report", icon: FileText, color: "indigo" },
-    { id: "revenue", name: "Revenue Report", icon: DollarSign, color: "emerald" },
-    { id: "exhibitors", name: "Exhibitors Report", icon: Building2, color: "cyan" },
-    { id: "sponsors", name: "Sponsors Report", icon: Users, color: "purple" },
-    { id: "users", name: "Users Activity Report", icon: TrendingUp, color: "amber" },
-    { id: "floorplan", name: "Floor Plan Report", icon: BarChart3, color: "blue" },
+    { id: "bookings", name: "Bookings Report", icon: FileText },
+    { id: "revenue", name: "Revenue Report", icon: DollarSign },
+    { id: "exhibitors", name: "Exhibitors Report", icon: Building2 },
+    { id: "sponsors", name: "Sponsors Report", icon: Users },
+    { id: "users", name: "Users Activity Report", icon: TrendingUp },
+    { id: "floorplan", name: "Floor Plan Report", icon: BarChart3 },
   ];
 
   // Saved reports
@@ -167,27 +167,27 @@ export default function Reports() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             Reports
           </h1>
           <p className="text-sm text-gray-400 mt-1">
             Generate and download system reports
           </p>
         </div>
-        <button className="relative px-5 py-2.5 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+        <button className="relative px-5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
           <RefreshCw className="w-4 h-4" />
           <span>Sync Data</span>
         </button>
       </div>
 
       {/* Report Generation Card */}
-      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-300">
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
 
         <div className="relative p-6 border-b border-white/10">
           <h2 className="text-lg font-semibold text-white flex items-center gap-2">
-            <FileBarChart className="w-5 h-5 text-indigo-400" />
+            <FileBarChart className="w-5 h-5 text-blue-400" />
             Generate New Report
           </h2>
           <p className="text-sm text-gray-400 mt-1">
@@ -209,12 +209,12 @@ export default function Reports() {
                     onClick={() => setReportType(type.id)}
                     className={`p-3 rounded-xl border transition-all duration-300 ${
                       isActive
-                        ? `bg-${type.color}-500/20 border-${type.color}-500/30 shadow-lg shadow-${type.color}-500/20`
+                        ? "bg-blue-500/20 border-blue-500/30 shadow-lg shadow-blue-500/20"
                         : "bg-white/5 border-white/10 hover:bg-white/10"
                     }`}
                   >
-                    <Icon className={`w-5 h-5 mx-auto mb-1 ${isActive ? `text-${type.color}-400` : "text-gray-400"}`} />
-                    <p className={`text-xs font-medium ${isActive ? `text-${type.color}-400` : "text-gray-300"}`}>
+                    <Icon className={`w-5 h-5 mx-auto mb-1 ${isActive ? "text-blue-400" : "text-gray-400"}`} />
+                    <p className={`text-xs font-medium ${isActive ? "text-blue-400" : "text-gray-300"}`}>
                       {type.name}
                     </p>
                   </button>
@@ -227,14 +227,14 @@ export default function Reports() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">Date Range</label>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 {["day", "week", "month", "quarter", "year"].map((range) => (
                   <button
                     key={range}
                     onClick={() => setDateRange(range)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
                       dateRange === range
-                        ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30"
+                        ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30"
                         : "bg-white/5 border border-white/10 text-gray-400 hover:bg-white/10"
                     }`}
                   >
@@ -250,7 +250,7 @@ export default function Reports() {
                   type="date"
                   value={startDate}
                   onChange={(e) => setStartDate(e.target.value)}
-                  className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50 transition-all"
+                  className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 transition-all"
                 />
               </div>
               <div>
@@ -259,7 +259,7 @@ export default function Reports() {
                   type="date"
                   value={endDate}
                   onChange={(e) => setEndDate(e.target.value)}
-                  className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50 transition-all"
+                  className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 transition-all"
                 />
               </div>
             </div>
@@ -269,7 +269,7 @@ export default function Reports() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <div>
               <label className="block text-xs text-gray-400 mb-1">Event</label>
-              <select className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50">
+              <select className="w-full px-3 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 transition-all">
                 <option>All Events</option>
                 <option>Global Health Exhibition 2026</option>
                 <option>Cardiology Summit 2026</option>
@@ -278,7 +278,7 @@ export default function Reports() {
             </div>
             <div>
               <label className="block text-xs text-gray-400 mb-1">Status</label>
-              <select className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50">
+              <select className="w-full px-3 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 transition-all">
                 <option>All Status</option>
                 <option>Confirmed</option>
                 <option>Pending</option>
@@ -287,7 +287,7 @@ export default function Reports() {
             </div>
             <div>
               <label className="block text-xs text-gray-400 mb-1">Format</label>
-              <select className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50">
+              <select className="w-full px-3 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 transition-all">
                 <option>PDF</option>
                 <option>Excel (.xlsx)</option>
                 <option>CSV</option>
@@ -300,7 +300,7 @@ export default function Reports() {
           <button
             onClick={handleGenerateReport}
             disabled={isGenerating}
-            className="relative w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30 disabled:opacity-50"
+            className="relative w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-50"
           >
             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             <span className="relative flex items-center justify-center gap-2">
@@ -322,11 +322,11 @@ export default function Reports() {
 
       {/* Report Preview */}
       {showPreview && (
-        <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden animate-in fade-in duration-300">
+        <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-300 animate-in fade-in duration-300">
           <div className="relative p-6 border-b border-white/10">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold text-white flex items-center gap-2">
-                <Eye className="w-5 h-5 text-indigo-400" />
+                <Search className="w-5 h-5 text-blue-400" />
                 Report Preview
               </h2>
               <div className="flex items-center gap-2">
@@ -368,7 +368,7 @@ export default function Reports() {
               {previewData.summary.split(" | ").map((stat, idx) => {
                 const [label, value] = stat.split(": ");
                 return (
-                  <div key={idx} className="p-3 bg-white/5 rounded-lg border border-white/10">
+                  <div key={idx} className="p-3 bg-white/5 rounded-xl border border-white/10">
                     <p className="text-xs text-gray-400">{label}</p>
                     <p className="text-lg font-bold text-white">{value}</p>
                   </div>
@@ -406,15 +406,15 @@ export default function Reports() {
 
             {/* Export Actions */}
             <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap gap-3 justify-end">
-              <button className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all flex items-center gap-2">
+              <button className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all flex items-center gap-2">
                 <Printer className="w-4 h-4" />
                 Print
               </button>
-              <button className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all flex items-center gap-2">
+              <button className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 Email Report
               </button>
-              <button className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-indigo-500/30 transition-all flex items-center gap-2">
+              <button className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center gap-2">
                 <Download className="w-4 h-4" />
                 Download
               </button>
@@ -424,10 +424,10 @@ export default function Reports() {
       )}
 
       {/* Saved Reports */}
-      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-300">
         <div className="relative p-6 border-b border-white/10">
           <h2 className="text-lg font-semibold text-white flex items-center gap-2">
-            <Clock className="w-5 h-5 text-indigo-400" />
+            <Clock className="w-5 h-5 text-blue-400" />
             Saved Reports
           </h2>
           <p className="text-sm text-gray-400 mt-1">
@@ -455,7 +455,7 @@ export default function Reports() {
                   <tr key={report.id} className="border-b border-white/5 hover:bg-white/5 transition-all duration-300">
                     <td className="p-4">
                       <div className="flex items-center gap-2">
-                        <Icon className="w-4 h-4 text-indigo-400" />
+                        <Icon className="w-4 h-4 text-blue-400" />
                         <span className="text-sm font-medium text-white">{report.name}</span>
                       </div>
                     </td>
@@ -484,7 +484,7 @@ export default function Reports() {
                           className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
                           title="Download"
                         >
-                          <Download className="w-4 h-4 text-indigo-400" />
+                          <Download className="w-4 h-4 text-blue-400" />
                         </button>
                         <button
                           className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
@@ -508,17 +508,17 @@ export default function Reports() {
           </p>
           <div className="flex gap-1">
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">Previous</button>
-            <button className="px-3 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg text-xs text-white shadow-lg shadow-indigo-500/30">1</button>
+            <button className="px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg text-xs text-white shadow-lg shadow-blue-500/30">1</button>
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">Next</button>
           </div>
         </div>
       </div>
 
       {/* Schedule Reports Card */}
-      <div className="relative bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-xl rounded-xl p-5 border border-indigo-500/30 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5" />
+      <div className="relative bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-5 border border-blue-500/30 overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5" />
         <div className="relative flex items-start gap-3">
-          <Calendar className="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5" />
+          <Calendar className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
           <div>
             <p className="text-sm font-semibold text-white mb-1">Schedule Automated Reports</p>
             <p className="text-xs text-gray-300">

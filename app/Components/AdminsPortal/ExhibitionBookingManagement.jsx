@@ -252,14 +252,14 @@ export default function ExhibitionBookingManagement() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             Exhibition Booking Management
           </h1>
           <p className="text-sm text-gray-400 mt-1">
             Manage exhibition bookings, approvals, and allocations
           </p>
         </div>
-        <button className="relative px-5 py-2.5 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+        <button className="relative px-5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
           <Download className="w-4 h-4" />
           <span>Export Report</span>
         </button>
@@ -268,19 +268,19 @@ export default function ExhibitionBookingManagement() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         {[
-          { label: "Total Bookings", value: stats.total, icon: CalendarCheck, color: "indigo" },
-          { label: "Pending Approval", value: stats.pending, icon: Clock, color: "amber" },
-          { label: "Confirmed", value: stats.confirmed, icon: CheckCircle, color: "emerald" },
-          { label: "Total Revenue", value: `$${stats.totalRevenue.toLocaleString()}`, icon: DollarSign, color: "green" },
+          { label: "Total Bookings", value: stats.total, icon: CalendarCheck },
+          { label: "Pending Approval", value: stats.pending, icon: Clock },
+          { label: "Confirmed", value: stats.confirmed, icon: CheckCircle },
+          { label: "Total Revenue", value: `$${stats.totalRevenue.toLocaleString()}`, icon: DollarSign },
         ].map((stat, idx) => (
-          <div key={idx} className="relative bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300">
+          <div key={idx} className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs text-gray-400">{stat.label}</p>
                 <p className="text-2xl font-bold text-white mt-1">{stat.value}</p>
               </div>
-              <div className={`p-2 bg-${stat.color}-500/20 rounded-lg border border-${stat.color}-500/30`}>
-                <stat.icon className={`w-4 h-4 text-${stat.color}-400`} />
+              <div className="p-2 bg-white/10 rounded-lg border border-white/20">
+                <stat.icon className="w-4 h-4 text-blue-400" />
               </div>
             </div>
           </div>
@@ -288,7 +288,7 @@ export default function ExhibitionBookingManagement() {
       </div>
 
       {/* Filters and Search */}
-      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-300">
         <div className="p-5 border-b border-white/10">
           <div className="flex flex-col sm:flex-row gap-4">
             {/* Search */}
@@ -299,7 +299,7 @@ export default function ExhibitionBookingManagement() {
                 placeholder="Search by booking ID, exhibitor, or booth..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 transition-all"
+                className="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/50 transition-all"
               />
             </div>
 
@@ -309,7 +309,7 @@ export default function ExhibitionBookingManagement() {
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="w-full pl-10 pr-8 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50 appearance-none cursor-pointer"
+                className="w-full pl-10 pr-8 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 appearance-none cursor-pointer"
               >
                 {statusOptions.map((opt) => (
                   <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -319,7 +319,7 @@ export default function ExhibitionBookingManagement() {
             </div>
 
             {/* Refresh Button */}
-            <button className="p-2 bg-white/5 border border-white/10 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+            <button className="p-2 bg-white/5 border border-white/10 rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-all">
               <RefreshCw className="w-5 h-5" />
             </button>
           </div>
@@ -385,7 +385,7 @@ export default function ExhibitionBookingManagement() {
                       </span>
                     </td>
                     <td className="p-4">
-                      <div className="flex items-center gap-1 justify-center">
+                      <div className="flex items-center gap-1">
                         <button
                           onClick={() => {
                             setSelectedBooking(booking);
@@ -394,11 +394,10 @@ export default function ExhibitionBookingManagement() {
                           className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
                           title="View Details"
                         >
-                          <Search className="w-4 h-4 text-indigo-400" />
+                          <Search className="w-4 h-4 text-blue-400" />
                         </button>
                         {booking.status === "pending" && (
                           <>
-                            
                             <button
                               onClick={() => {
                                 setSelectedBooking(booking);
@@ -437,7 +436,7 @@ export default function ExhibitionBookingManagement() {
           </p>
           <div className="flex gap-1">
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">Previous</button>
-            <button className="px-3 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg text-xs text-white shadow-lg shadow-indigo-500/30">1</button>
+            <button className="px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg text-xs text-white shadow-lg shadow-blue-500/30">1</button>
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">2</button>
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">Next</button>
           </div>
@@ -497,14 +496,14 @@ const BookingDetailsModal = ({ booking, onClose, onApprove, onReject }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-2xl shadow-2xl border border-white/20 animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl" />
+      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-2xl shadow-2xl border border-blue-500/20 animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
+        <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl" />
 
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+              <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                 Booking Details
               </h2>
               <p className="text-xs text-gray-400 mt-1">ID: {booking.id}</p>
@@ -517,9 +516,9 @@ const BookingDetailsModal = ({ booking, onClose, onApprove, onReject }) => {
 
         <div className="relative p-6 space-y-6">
           {/* Exhibitor Info */}
-          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+          <div className="p-4 bg-white/5 rounded-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300">
             <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-              <Building2 className="w-4 h-4 text-indigo-400" />
+              <Building2 className="w-4 h-4 text-blue-400" />
               Exhibitor Information
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -534,14 +533,14 @@ const BookingDetailsModal = ({ booking, onClose, onApprove, onReject }) => {
               <div>
                 <p className="text-xs text-gray-400">Email</p>
                 <p className="text-sm text-white flex items-center gap-1">
-                  <Mail className="w-3 h-3 text-gray-400" />
+                  <Mail className="w-3 h-3 text-blue-400" />
                   {booking.exhibitor.email}
                 </p>
               </div>
               <div>
                 <p className="text-xs text-gray-400">Phone</p>
                 <p className="text-sm text-white flex items-center gap-1">
-                  <Phone className="w-3 h-3 text-gray-400" />
+                  <Phone className="w-3 h-3 text-blue-400" />
                   {booking.exhibitor.phone}
                 </p>
               </div>
@@ -549,9 +548,9 @@ const BookingDetailsModal = ({ booking, onClose, onApprove, onReject }) => {
           </div>
 
           {/* Booth Info */}
-          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+          <div className="p-4 bg-white/5 rounded-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300">
             <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-              <MapPin className="w-4 h-4 text-purple-400" />
+              <MapPin className="w-4 h-4 text-blue-400" />
               Booth Information
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -575,9 +574,9 @@ const BookingDetailsModal = ({ booking, onClose, onApprove, onReject }) => {
           </div>
 
           {/* Event Info */}
-          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+          <div className="p-4 bg-white/5 rounded-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300">
             <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-              <Calendar className="w-4 h-4 text-cyan-400" />
+              <Calendar className="w-4 h-4 text-blue-400" />
               Event Information
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -602,9 +601,9 @@ const BookingDetailsModal = ({ booking, onClose, onApprove, onReject }) => {
 
           {/* Requirements & Notes */}
           {booking.requirements.length > 0 && (
-            <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300">
               <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-                <MessageSquare className="w-4 h-4 text-amber-400" />
+                <MessageSquare className="w-4 h-4 text-blue-400" />
                 Special Requirements
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -629,13 +628,13 @@ const BookingDetailsModal = ({ booking, onClose, onApprove, onReject }) => {
             <div className="flex gap-3 pt-4">
               <button
                 onClick={onReject}
-                className="flex-1 px-4 py-2 border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 transition-all"
+                className="flex-1 px-4 py-2 border border-red-500/30 rounded-xl text-red-400 hover:bg-red-500/10 transition-all"
               >
                 Reject Booking
               </button>
               <button
                 onClick={onApprove}
-                className="flex-1 px-4 py-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-500/30 transition-all"
+                className="flex-1 px-4 py-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-emerald-500/30 transition-all"
               >
                 Approve Booking
               </button>
@@ -655,7 +654,7 @@ const ApproveRejectModal = ({ type, booking, onConfirm, onCancel }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onCancel} />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-white/20 animate-in zoom-in-95 duration-300">
+      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-blue-500/20 animate-in zoom-in-95 duration-300">
         <div className="relative p-6 text-center">
           <div className={`w-16 h-16 mx-auto mb-4 ${isApprove ? "bg-emerald-500/20" : "bg-red-500/20"} rounded-full flex items-center justify-center border ${isApprove ? "border-emerald-500/30" : "border-red-500/30"}`}>
             {isApprove ? (
@@ -682,7 +681,7 @@ const ApproveRejectModal = ({ type, booking, onConfirm, onCancel }) => {
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 rows={3}
-                className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 transition-all resize-none"
+                className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/50 transition-all resize-none"
                 placeholder="Enter reason..."
               />
             </div>
@@ -691,13 +690,13 @@ const ApproveRejectModal = ({ type, booking, onConfirm, onCancel }) => {
           <div className="flex gap-3">
             <button
               onClick={onCancel}
-              className="flex-1 px-4 py-2 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all"
+              className="flex-1 px-4 py-2 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all"
             >
               Cancel
             </button>
             <button
               onClick={onConfirm}
-              className={`flex-1 px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`flex-1 px-4 py-2 rounded-xl font-medium transition-all ${
                 isApprove
                   ? "bg-gradient-to-r from-emerald-600 to-green-600 text-white hover:shadow-lg hover:shadow-emerald-500/30"
                   : "bg-gradient-to-r from-red-600 to-red-500 text-white hover:shadow-lg hover:shadow-red-500/30"

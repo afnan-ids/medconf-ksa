@@ -91,7 +91,7 @@ export default function PortalManagement() {
       email: "nora@diagnosticlabs.com",
       phone: "+966 56 789 0123",
       boothAllocated: "D14",
-      status: "pending",
+      status: "inactive",
       package: "Standard",
       amount: "$2,800",
       joinDate: "2024-02-05",
@@ -176,7 +176,7 @@ export default function PortalManagement() {
       phone: "+966 55 987 6543",
       specialization: "Oncology",
       licenseId: "SCH-2024-22222",
-      status: "pending",
+      status: "inactive",
       cpdPoints: 12,
       eventsAttended: 0,
       joinDate: "2024-02-20",
@@ -200,7 +200,6 @@ export default function PortalManagement() {
   const statusOptions = [
     { value: "all", label: "All Status" },
     { value: "active", label: "Active", color: "emerald" },
-    { value: "pending", label: "Pending", color: "amber" },
     { value: "inactive", label: "Inactive", color: "red" },
   ];
 
@@ -208,8 +207,6 @@ export default function PortalManagement() {
     switch (status) {
       case "active":
         return "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
-      case "pending":
-        return "bg-amber-500/20 text-amber-400 border border-amber-500/30";
       case "inactive":
         return "bg-red-500/20 text-red-400 border border-red-500/30";
       default:
@@ -220,36 +217,45 @@ export default function PortalManagement() {
   const getPackageBadge = (pkg) => {
     switch (pkg) {
       case "Premium":
-        return "bg-indigo-500/20 text-indigo-400 border border-indigo-500/30";
+        return "bg-blue-500/20 text-blue-400 border border-blue-500/30";
       case "Corner":
-        return "bg-purple-500/20 text-purple-400 border border-purple-500/30";
-      default:
         return "bg-cyan-500/20 text-cyan-400 border border-cyan-500/30";
+      default:
+        return "bg-blue-500/20 text-blue-400 border border-blue-500/30";
     }
   };
 
   const filteredExhibitors = exhibitors.filter((ex) => {
-    const matchesSearch = ex.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          ex.contactPerson.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          ex.email.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch =
+      ex.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      ex.contactPerson.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      ex.email.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = statusFilter === "all" || ex.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
 
   const filteredPractitioners = practitioners.filter((prac) => {
-    const matchesSearch = prac.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          prac.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          prac.specialization.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = statusFilter === "all" || prac.status === statusFilter;
+    const matchesSearch =
+      prac.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      prac.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      prac.specialization.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStatus =
+      statusFilter === "all" || prac.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
 
   const handleStatusToggle = (id, currentStatus, type) => {
     const newStatus = currentStatus === "active" ? "inactive" : "active";
     if (type === "exhibitor") {
-      setExhibitors(exhibitors.map((e) => e.id === id ? { ...e, status: newStatus } : e));
+      setExhibitors(
+        exhibitors.map((e) => (e.id === id ? { ...e, status: newStatus } : e)),
+      );
     } else {
-      setPractitioners(practitioners.map((p) => p.id === id ? { ...p, status: newStatus } : p));
+      setPractitioners(
+        practitioners.map((p) =>
+          p.id === id ? { ...p, status: newStatus } : p,
+        ),
+      );
     }
   };
 
@@ -257,9 +263,13 @@ export default function PortalManagement() {
     totalExhibitors: exhibitors.length,
     activeExhibitors: exhibitors.filter((e) => e.status === "active").length,
     totalPractitioners: practitioners.length,
-    activePractitioners: practitioners.filter((p) => p.status === "active").length,
+    activePractitioners: practitioners.filter((p) => p.status === "active")
+      .length,
     totalBoothsAllocated: exhibitors.filter((e) => e.boothAllocated).length,
-    totalRevenue: exhibitors.reduce((sum, e) => sum + parseInt(e.amount.replace("$", "").replace(",", "")), 0),
+    totalRevenue: exhibitors.reduce(
+      (sum, e) => sum + parseInt(e.amount.replace("$", "").replace(",", "")),
+      0,
+    ),
   };
 
   return (
@@ -267,7 +277,7 @@ export default function PortalManagement() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             Portal Management
           </h1>
           <p className="text-sm text-gray-400 mt-1">
@@ -275,13 +285,13 @@ export default function PortalManagement() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <button className="relative px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+          <button className="relative px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
             <Download className="w-4 h-4" />
             <span>Export</span>
           </button>
           <button
             onClick={() => setShowAddModal(true)}
-            className="relative px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium flex items-center gap-2 overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30"
+            className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-medium flex items-center gap-2 overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30"
           >
             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             <UserPlus className="w-4 h-4" />
@@ -293,21 +303,50 @@ export default function PortalManagement() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
         {[
-          { label: "Total Exhibitors", value: stats.totalExhibitors, icon: Building2, color: "indigo" },
-          { label: "Active Exhibitors", value: stats.activeExhibitors, icon: UserCheck, color: "emerald" },
-          { label: "Total Practitioners", value: stats.totalPractitioners, icon: Stethoscope, color: "purple" },
-          { label: "Active Practitioners", value: stats.activePractitioners, icon: UserCheck, color: "emerald" },
-          { label: "Booths Allocated", value: stats.totalBoothsAllocated, icon: MapPin, color: "cyan" },
-          { label: "Total Revenue", value: `$${(stats.totalRevenue / 1000).toFixed(0)}K`, icon: DollarSign, color: "amber" },
+          {
+            label: "Total Exhibitors",
+            value: stats.totalExhibitors,
+            icon: Building2,
+          },
+          {
+            label: "Active Exhibitors",
+            value: stats.activeExhibitors,
+            icon: UserCheck,
+          },
+          {
+            label: "Total Practitioners",
+            value: stats.totalPractitioners,
+            icon: Stethoscope,
+          },
+          {
+            label: "Active Practitioners",
+            value: stats.activePractitioners,
+            icon: UserCheck,
+          },
+          {
+            label: "Booths Allocated",
+            value: stats.totalBoothsAllocated,
+            icon: MapPin,
+          },
+          {
+            label: "Total Revenue",
+            value: `$${(stats.totalRevenue / 1000).toFixed(0)}K`,
+            icon: DollarSign,
+          },
         ].map((stat, idx) => (
-          <div key={idx} className="relative bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300">
+          <div
+            key={idx}
+            className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 hover:border-blue-500/30 transition-all duration-300"
+          >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs text-gray-400">{stat.label}</p>
-                <p className="text-xl font-bold text-white mt-1">{stat.value}</p>
+                <p className="text-xl font-bold text-white mt-1">
+                  {stat.value}
+                </p>
               </div>
-              <div className={`p-2 bg-${stat.color}-500/20 rounded-lg border border-${stat.color}-500/30`}>
-                <stat.icon className={`w-4 h-4 text-${stat.color}-400`} />
+              <div className="p-2 bg-white/10 rounded-lg border border-white/20">
+                <stat.icon className="w-4 h-4 text-blue-400" />
               </div>
             </div>
           </div>
@@ -318,32 +357,36 @@ export default function PortalManagement() {
       <div className="flex gap-2 border-b border-white/10 pb-4">
         <button
           onClick={() => setActiveTab("exhibitors")}
-          className={`px-5 py-2.5 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 ${
+          className={`px-5 py-2.5 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
             activeTab === "exhibitors"
-              ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30"
+              ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30"
               : "bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10"
           }`}
         >
           <Building2 className="w-4 h-4" />
           Exhibitors
-          <span className="ml-1 text-xs opacity-80">({stats.totalExhibitors})</span>
+          <span className="ml-1 text-xs opacity-80">
+            ({stats.totalExhibitors})
+          </span>
         </button>
         <button
           onClick={() => setActiveTab("practitioners")}
-          className={`px-5 py-2.5 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 ${
+          className={`px-5 py-2.5 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
             activeTab === "practitioners"
-              ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30"
+              ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30"
               : "bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10"
           }`}
         >
           <Stethoscope className="w-4 h-4" />
           Healthcare Practitioners
-          <span className="ml-1 text-xs opacity-80">({stats.totalPractitioners})</span>
+          <span className="ml-1 text-xs opacity-80">
+            ({stats.totalPractitioners})
+          </span>
         </button>
       </div>
 
       {/* Filters */}
-      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-300">
         <div className="p-5 border-b border-white/10">
           <div className="flex flex-col sm:flex-row gap-4">
             {/* Search */}
@@ -354,7 +397,7 @@ export default function PortalManagement() {
                 placeholder={`Search ${activeTab === "exhibitors" ? "company or contact..." : "name or specialization..."}`}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 transition-all"
+                className="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/50 transition-all"
               />
             </div>
 
@@ -364,17 +407,19 @@ export default function PortalManagement() {
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="w-full pl-10 pr-8 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50 appearance-none cursor-pointer"
+                className="w-full pl-10 pr-8 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 appearance-none cursor-pointer"
               >
                 {statusOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
                 ))}
               </select>
               <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
             </div>
 
             {/* Refresh Button */}
-            <button className="p-2 bg-white/5 border border-white/10 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+            <button className="p-2 bg-white/5 border border-white/10 rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-all">
               <RefreshCw className="w-5 h-5" />
             </button>
           </div>
@@ -386,13 +431,27 @@ export default function PortalManagement() {
             <table className="w-full">
               <thead className="border-b border-white/10 bg-white/5">
                 <tr>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Company</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Contact</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Booth</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Package</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Amount</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Actions</th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Company
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Contact
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Booth
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Package
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Amount
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Status
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -405,17 +464,28 @@ export default function PortalManagement() {
                   </tr>
                 ) : (
                   filteredExhibitors.map((exhibitor) => (
-                    <tr key={exhibitor.id} className="border-b border-white/5 hover:bg-white/5 transition-all duration-300">
+                    <tr
+                      key={exhibitor.id}
+                      className="border-b border-white/5 hover:bg-white/5 transition-all duration-300"
+                    >
                       <td className="p-4">
                         <div>
-                          <p className="text-sm font-semibold text-white">{exhibitor.companyName}</p>
-                          <p className="text-xs text-gray-400">{exhibitor.country}</p>
+                          <p className="text-sm font-semibold text-white">
+                            {exhibitor.companyName}
+                          </p>
+                          <p className="text-xs text-gray-400">
+                            {exhibitor.country}
+                          </p>
                         </div>
                       </td>
                       <td className="p-4">
                         <div>
-                          <p className="text-sm text-gray-300">{exhibitor.contactPerson}</p>
-                          <p className="text-xs text-gray-400">{exhibitor.email}</p>
+                          <p className="text-sm text-gray-300">
+                            {exhibitor.contactPerson}
+                          </p>
+                          <p className="text-xs text-gray-400">
+                            {exhibitor.email}
+                          </p>
                         </div>
                       </td>
                       <td className="p-4">
@@ -424,16 +494,23 @@ export default function PortalManagement() {
                         </span>
                       </td>
                       <td className="p-4">
-                        <span className={`px-2 py-1 text-xs font-medium rounded-full ${getPackageBadge(exhibitor.package)}`}>
+                        <span
+                          className={`px-2 py-1 text-xs font-medium rounded-full ${getPackageBadge(exhibitor.package)}`}
+                        >
                           {exhibitor.package}
                         </span>
                       </td>
                       <td className="p-4">
-                        <p className="text-sm font-semibold text-white">{exhibitor.amount}</p>
+                        <p className="text-sm font-semibold text-white">
+                          {exhibitor.amount}
+                        </p>
                       </td>
                       <td className="p-4">
-                        <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusBadge(exhibitor.status)}`}>
-                          {exhibitor.status.charAt(0).toUpperCase() + exhibitor.status.slice(1)}
+                        <span
+                          className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusBadge(exhibitor.status)}`}
+                        >
+                          {exhibitor.status.charAt(0).toUpperCase() +
+                            exhibitor.status.slice(1)}
                         </span>
                       </td>
                       <td className="p-4">
@@ -446,28 +523,28 @@ export default function PortalManagement() {
                             className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
                             title="View Details"
                           >
-                            <Search className="w-4 h-4 text-indigo-400" />
+                            <Search className="w-4 h-4 text-blue-400" />
                           </button>
                           <button
-                            onClick={() => handleStatusToggle(exhibitor.id, exhibitor.status, "exhibitor")}
+                            onClick={() =>
+                              handleStatusToggle(
+                                exhibitor.id,
+                                exhibitor.status,
+                                "exhibitor",
+                              )
+                            }
                             className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
-                            title={exhibitor.status === "active" ? "Deactivate" : "Activate"}
+                            title={
+                              exhibitor.status === "active"
+                                ? "Deactivate"
+                                : "Activate"
+                            }
                           >
                             {exhibitor.status === "active" ? (
                               <XCircle className="w-4 h-4 text-red-400" />
                             ) : (
                               <CheckCircle className="w-4 h-4 text-emerald-400" />
                             )}
-                          </button>
-                          <button
-                            onClick={() => {
-                              setSelectedItem(exhibitor);
-                              setShowAssignModal(true);
-                            }}
-                            className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
-                            title="Assign Booth"
-                          >
-                            <MapPin className="w-4 h-4 text-cyan-400" />
                           </button>
                         </div>
                       </td>
@@ -485,13 +562,27 @@ export default function PortalManagement() {
             <table className="w-full">
               <thead className="border-b border-white/10 bg-white/5">
                 <tr>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Name</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Contact</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Specialization</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">License ID</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">CPD Points</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
-                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Actions</th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Name
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Contact
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Specialization
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    License ID
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    CPD Points
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Status
+                  </th>
+                  <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -504,17 +595,28 @@ export default function PortalManagement() {
                   </tr>
                 ) : (
                   filteredPractitioners.map((practitioner) => (
-                    <tr key={practitioner.id} className="border-b border-white/5 hover:bg-white/5 transition-all duration-300">
+                    <tr
+                      key={practitioner.id}
+                      className="border-b border-white/5 hover:bg-white/5 transition-all duration-300"
+                    >
                       <td className="p-4">
                         <div>
-                          <p className="text-sm font-semibold text-white">{practitioner.name}</p>
-                          <p className="text-xs text-gray-400">{practitioner.hospital}</p>
+                          <p className="text-sm font-semibold text-white">
+                            {practitioner.name}
+                          </p>
+                          <p className="text-xs text-gray-400">
+                            {practitioner.hospital}
+                          </p>
                         </div>
                       </td>
                       <td className="p-4">
                         <div>
-                          <p className="text-sm text-gray-300">{practitioner.email}</p>
-                          <p className="text-xs text-gray-400">{practitioner.phone}</p>
+                          <p className="text-sm text-gray-300">
+                            {practitioner.email}
+                          </p>
+                          <p className="text-xs text-gray-400">
+                            {practitioner.phone}
+                          </p>
                         </div>
                       </td>
                       <td className="p-4">
@@ -523,17 +625,24 @@ export default function PortalManagement() {
                         </span>
                       </td>
                       <td className="p-4">
-                        <p className="text-sm font-mono text-gray-300">{practitioner.licenseId}</p>
+                        <p className="text-sm font-mono text-gray-300">
+                          {practitioner.licenseId}
+                        </p>
                       </td>
                       <td className="p-4">
                         <div className="flex items-center gap-1">
-                          <span className="text-sm font-semibold text-white">{practitioner.cpdPoints}</span>
+                          <span className="text-sm font-semibold text-white">
+                            {practitioner.cpdPoints}
+                          </span>
                           <span className="text-xs text-gray-400">pts</span>
                         </div>
                       </td>
                       <td className="p-4">
-                        <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusBadge(practitioner.status)}`}>
-                          {practitioner.status.charAt(0).toUpperCase() + practitioner.status.slice(1)}
+                        <span
+                          className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusBadge(practitioner.status)}`}
+                        >
+                          {practitioner.status.charAt(0).toUpperCase() +
+                            practitioner.status.slice(1)}
                         </span>
                       </td>
                       <td className="p-4">
@@ -546,12 +655,22 @@ export default function PortalManagement() {
                             className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
                             title="View Details"
                           >
-                            <Search className="w-4 h-4 text-indigo-400" />
+                            <Search className="w-4 h-4 text-blue-400" />
                           </button>
                           <button
-                            onClick={() => handleStatusToggle(practitioner.id, practitioner.status, "practitioner")}
+                            onClick={() =>
+                              handleStatusToggle(
+                                practitioner.id,
+                                practitioner.status,
+                                "practitioner",
+                              )
+                            }
                             className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
-                            title={practitioner.status === "active" ? "Deactivate" : "Activate"}
+                            title={
+                              practitioner.status === "active"
+                                ? "Deactivate"
+                                : "Activate"
+                            }
                           >
                             {practitioner.status === "active" ? (
                               <XCircle className="w-4 h-4 text-red-400" />
@@ -572,32 +691,50 @@ export default function PortalManagement() {
         {/* Pagination */}
         <div className="p-5 border-t border-white/10 flex items-center justify-between">
           <p className="text-xs text-gray-400">
-            Showing {activeTab === "exhibitors" ? filteredExhibitors.length : filteredPractitioners.length} of{" "}
-            {activeTab === "exhibitors" ? exhibitors.length : practitioners.length} entries
+            Showing{" "}
+            {activeTab === "exhibitors"
+              ? filteredExhibitors.length
+              : filteredPractitioners.length}{" "}
+            of{" "}
+            {activeTab === "exhibitors"
+              ? exhibitors.length
+              : practitioners.length}{" "}
+            entries
           </p>
           <div className="flex gap-1">
-            <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">Previous</button>
-            <button className="px-3 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg text-xs text-white shadow-lg shadow-indigo-500/30">1</button>
-            <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">2</button>
-            <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">Next</button>
+            <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">
+              Previous
+            </button>
+            <button className="px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg text-xs text-white shadow-lg shadow-blue-500/30">
+              1
+            </button>
+            <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">
+              2
+            </button>
+            <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">
+              Next
+            </button>
           </div>
         </div>
       </div>
 
       {/* Quick Allocation Summary */}
-      <div className="relative bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-xl rounded-xl p-5 border border-indigo-500/30 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5" />
+      <div className="relative bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-xl rounded-2xl p-5 border border-blue-500/30 overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5" />
         <div className="relative flex items-start justify-between flex-wrap gap-4">
           <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5" />
+            <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-sm font-semibold text-white mb-1">Booth Allocation Summary</p>
+              <p className="text-sm font-semibold text-white mb-1">
+                Booth Allocation Summary
+              </p>
               <p className="text-xs text-gray-300">
-                {stats.totalBoothsAllocated} booths allocated • {stats.totalExhibitors - stats.totalBoothsAllocated} exhibitors pending allocation
+                {stats.totalBoothsAllocated} booths allocated •{" "}
+                {stats.totalExhibitors - stats.totalBoothsAllocated} exhibitors
+                pending allocation
               </p>
             </div>
           </div>
-          
         </div>
       </div>
 
@@ -613,24 +750,6 @@ export default function PortalManagement() {
         />
       )}
 
-      {/* Assign Booth Modal */}
-      {showAssignModal && selectedItem && (
-        <AssignBoothModal
-          exhibitor={selectedItem}
-          onClose={() => {
-            setShowAssignModal(false);
-            setSelectedItem(null);
-          }}
-          onAssign={(boothId) => {
-            setExhibitors(exhibitors.map((e) =>
-              e.id === selectedItem.id ? { ...e, boothAllocated: boothId } : e
-            ));
-            setShowAssignModal(false);
-            setSelectedItem(null);
-          }}
-        />
-      )}
-
       {/* Add New Modal */}
       {showAddModal && (
         <AddNewModal
@@ -638,9 +757,15 @@ export default function PortalManagement() {
           onClose={() => setShowAddModal(false)}
           onAdd={(newItem) => {
             if (activeTab === "exhibitors") {
-              setExhibitors([{ ...newItem, id: exhibitors.length + 1 }, ...exhibitors]);
+              setExhibitors([
+                { ...newItem, id: exhibitors.length + 1 },
+                ...exhibitors,
+              ]);
             } else {
-              setPractitioners([{ ...newItem, id: practitioners.length + 1 }, ...practitioners]);
+              setPractitioners([
+                { ...newItem, id: practitioners.length + 1 },
+                ...practitioners,
+              ]);
             }
             setShowAddModal(false);
           }}
@@ -654,17 +779,25 @@ export default function PortalManagement() {
 const DetailsModal = ({ item, type, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-white/20 animate-in zoom-in-95 duration-300">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl" />
+      <div
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-blue-500/20 animate-in zoom-in-95 duration-300">
+        <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl" />
 
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
-              {type === "exhibitor" ? "Exhibitor Details" : "Practitioner Details"}
+            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+              {type === "exhibitor"
+                ? "Exhibitor Details"
+                : "Practitioner Details"}
             </h2>
-            <button onClick={onClose} className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all">
+            <button
+              onClick={onClose}
+              className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all"
+            >
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -674,17 +807,21 @@ const DetailsModal = ({ item, type, onClose }) => {
           {type === "exhibitor" ? (
             <>
               <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
                   <Building2 className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mt-3">{item.companyName}</h3>
+                <h3 className="text-lg font-bold text-white mt-3">
+                  {item.companyName}
+                </h3>
                 <p className="text-sm text-gray-400">{item.country}</p>
               </div>
 
               <div className="space-y-2">
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">Contact Person</span>
-                  <span className="text-sm text-white">{item.contactPerson}</span>
+                  <span className="text-sm text-white">
+                    {item.contactPerson}
+                  </span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">Email</span>
@@ -696,7 +833,9 @@ const DetailsModal = ({ item, type, onClose }) => {
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">Booth Allocated</span>
-                  <span className="text-sm font-mono text-white">{item.boothAllocated || "Not assigned"}</span>
+                  <span className="text-sm font-mono text-white">
+                    {item.boothAllocated || "Not assigned"}
+                  </span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">Package</span>
@@ -704,7 +843,9 @@ const DetailsModal = ({ item, type, onClose }) => {
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">Amount</span>
-                  <span className="text-sm font-semibold text-white">{item.amount}</span>
+                  <span className="text-sm font-semibold text-white">
+                    {item.amount}
+                  </span>
                 </div>
                 <div className="flex justify-between py-2">
                   <span className="text-sm text-gray-400">Join Date</span>
@@ -715,10 +856,12 @@ const DetailsModal = ({ item, type, onClose }) => {
           ) : (
             <>
               <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
                   <Stethoscope className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mt-3">{item.name}</h3>
+                <h3 className="text-lg font-bold text-white mt-3">
+                  {item.name}
+                </h3>
                 <p className="text-sm text-gray-400">{item.specialization}</p>
               </div>
 
@@ -733,7 +876,9 @@ const DetailsModal = ({ item, type, onClose }) => {
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">License ID</span>
-                  <span className="text-sm font-mono text-white">{item.licenseId}</span>
+                  <span className="text-sm font-mono text-white">
+                    {item.licenseId}
+                  </span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">Hospital</span>
@@ -741,11 +886,15 @@ const DetailsModal = ({ item, type, onClose }) => {
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">CPD Points</span>
-                  <span className="text-sm font-semibold text-white">{item.cpdPoints} pts</span>
+                  <span className="text-sm font-semibold text-white">
+                    {item.cpdPoints} pts
+                  </span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-sm text-gray-400">Events Attended</span>
-                  <span className="text-sm text-white">{item.eventsAttended}</span>
+                  <span className="text-sm text-white">
+                    {item.eventsAttended}
+                  </span>
                 </div>
                 <div className="flex justify-between py-2">
                   <span className="text-sm text-gray-400">Join Date</span>
@@ -760,74 +909,28 @@ const DetailsModal = ({ item, type, onClose }) => {
   );
 };
 
-// Assign Booth Modal Component
-const AssignBoothModal = ({ exhibitor, onClose, onAssign }) => {
-  const [selectedBooth, setSelectedBooth] = useState("");
-  
-  const availableBooths = ["A12", "B07", "C21", "D14", "E09", "F03", "G11", "H05", "I08", "J15"];
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-white/20 animate-in zoom-in-95 duration-300">
-        <div className="relative p-6 border-b border-white/10">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
-              Assign Booth
-            </h2>
-            <button onClick={onClose} className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all">
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        <div className="relative p-6 space-y-4">
-          <div className="text-center p-3 bg-white/5 rounded-lg">
-            <p className="text-sm text-gray-400">Assigning booth for</p>
-            <p className="text-lg font-semibold text-white">{exhibitor.companyName}</p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">Select Booth</label>
-            <select
-              value={selectedBooth}
-              onChange={(e) => setSelectedBooth(e.target.value)}
-              className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50 transition-all"
-            >
-              <option value="">Choose a booth...</option>
-              {availableBooths.map((booth) => (
-                <option key={booth} value={booth}>{booth}</option>
-              ))}
-            </select>
-          </div>
-
-          <div className="flex gap-3 pt-4">
-            <button
-              onClick={onClose}
-              className="flex-1 px-4 py-2 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={() => selectedBooth && onAssign(selectedBooth)}
-              disabled={!selectedBooth}
-              className="flex-1 px-4 py-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-500/30 transition-all disabled:opacity-50"
-            >
-              Assign Booth
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 // Add New Modal Component
 const AddNewModal = ({ type, onClose, onAdd }) => {
   const [formData, setFormData] = useState(
     type === "exhibitors"
-      ? { companyName: "", contactPerson: "", email: "", phone: "", country: "Saudi Arabia", package: "Standard", status: "pending" }
-      : { name: "", email: "", phone: "", specialization: "", licenseId: "", hospital: "", status: "pending" }
+      ? {
+          companyName: "",
+          contactPerson: "",
+          email: "",
+          phone: "",
+          country: "Saudi Arabia",
+          package: "Standard",
+          status: "active",
+        }
+      : {
+          name: "",
+          email: "",
+          phone: "",
+          specialization: "",
+          licenseId: "",
+          hospital: "",
+          status: "active",
+        },
   );
 
   const handleSubmit = (e) => {
@@ -837,14 +940,20 @@ const AddNewModal = ({ type, onClose, onAdd }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-md shadow-2xl border border-white/20 animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
+      <div
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-2xl shadow-2xl border border-blue-500/20 animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
               Add New {type === "exhibitors" ? "Exhibitor" : "Practitioner"}
             </h2>
-            <button onClick={onClose} className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all">
+            <button
+              onClick={onClose}
+              className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all"
+            >
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -853,157 +962,232 @@ const AddNewModal = ({ type, onClose, onAdd }) => {
         <form onSubmit={handleSubmit} className="relative p-6 space-y-4">
           {type === "exhibitors" ? (
             <>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Company Name</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.companyName}
-                  onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
+              {/* Row 1: Company Name, Contact Person, Email */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.companyName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, companyName: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Contact Person
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.contactPerson}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        contactPerson: e.target.value,
+                      })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
               </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Contact Person</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.contactPerson}
-                  onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Email</label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Phone</label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Country</label>
-                <input
-                  type="text"
-                  value={formData.country}
-                  onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Package</label>
-                <select
-                  value={formData.package}
-                  onChange={(e) => setFormData({ ...formData, package: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                >
-                  <option value="Standard">Standard - $2,500</option>
-                  <option value="Premium">Premium - $5,000</option>
-                  <option value="Corner">Corner - $3,500</option>
-                </select>
+
+              {/* Row 2: Phone, Country, Package */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Country
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.country}
+                    onChange={(e) =>
+                      setFormData({ ...formData, country: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Package
+                  </label>
+                  <select
+                    value={formData.package}
+                    onChange={(e) =>
+                      setFormData({ ...formData, package: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  >
+                    <option value="Standard">Standard - $2,500</option>
+                    <option value="Premium">Premium - $5,000</option>
+                    <option value="Corner">Corner - $3,500</option>
+                  </select>
+                </div>
               </div>
             </>
           ) : (
             <>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Full Name</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
+              {/* Row 1: Full Name, Email, Phone */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
               </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Email</label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Phone</label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Specialization</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.specialization}
-                  onChange={(e) => setFormData({ ...formData, specialization: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">License ID</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.licenseId}
-                  onChange={(e) => setFormData({ ...formData, licenseId: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Hospital/Clinic</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.hospital}
-                  onChange={(e) => setFormData({ ...formData, hospital: e.target.value })}
-                  className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-                />
+
+              {/* Row 2: Specialization, License ID, Hospital */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Specialization
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.specialization}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        specialization: e.target.value,
+                      })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    License ID
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.licenseId}
+                    onChange={(e) =>
+                      setFormData({ ...formData, licenseId: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
+                    Hospital/Clinic
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.hospital}
+                    onChange={(e) =>
+                      setFormData({ ...formData, hospital: e.target.value })
+                    }
+                    className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+                  />
+                </div>
               </div>
             </>
           )}
 
-          <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1">Status</label>
-            <select
-              value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-              className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50"
-            >
-              <option value="active">Active</option>
-              <option value="pending">Pending</option>
-              <option value="inactive">Inactive</option>
-            </select>
+          {/* Row 3: Status - Full width or 1/3 width */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-xs font-medium text-gray-400 mb-1">
+                Status
+              </label>
+              <select
+                value={formData.status}
+                onChange={(e) =>
+                  setFormData({ ...formData, status: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50"
+              >
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
           </div>
 
+          {/* Buttons Row */}
           <div className="flex gap-3 pt-4">
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-4 py-2 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all"
+              className="flex-1 px-4 py-2 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-indigo-500/30 transition-all"
+              className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all"
             >
               Add {type === "exhibitors" ? "Exhibitor" : "Practitioner"}
             </button>

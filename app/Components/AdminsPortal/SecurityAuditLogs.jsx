@@ -40,7 +40,6 @@ import {
 export default function SecurityAuditLogs() {
   const [searchTerm, setSearchTerm] = useState("");
   const [actionFilter, setActionFilter] = useState("all");
-  const [severityFilter, setSeverityFilter] = useState("all");
   const [userFilter, setUserFilter] = useState("all");
   const [selectedLog, setSelectedLog] = useState(null);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
@@ -54,7 +53,7 @@ export default function SecurityAuditLogs() {
       user: {
         name: "Admin User",
         email: "admin@medconf.com",
-        role: "super_admin",
+        role: "admin",
         ip: "192.168.1.101",
       },
       action: "user_login",
@@ -72,7 +71,7 @@ export default function SecurityAuditLogs() {
       user: {
         name: "Admin User",
         email: "admin@medconf.com",
-        role: "super_admin",
+        role: "admin",
         ip: "192.168.1.101",
       },
       action: "booking_approved",
@@ -125,7 +124,7 @@ export default function SecurityAuditLogs() {
       user: {
         name: "Admin User",
         email: "admin@medconf.com",
-        role: "super_admin",
+        role: "admin",
         ip: "192.168.1.101",
       },
       action: "user_role_changed",
@@ -160,7 +159,7 @@ export default function SecurityAuditLogs() {
       user: {
         name: "Admin User",
         email: "admin@medconf.com",
-        role: "super_admin",
+        role: "admin",
         ip: "192.168.1.101",
       },
       action: "payment_refunded",
@@ -195,7 +194,7 @@ export default function SecurityAuditLogs() {
       user: {
         name: "Admin User",
         email: "admin@medconf.com",
-        role: "super_admin",
+        role: "admin",
         ip: "192.168.1.101",
       },
       action: "settings_updated",
@@ -239,15 +238,6 @@ export default function SecurityAuditLogs() {
     { value: "document", label: "Documents", icon: FileText },
   ];
 
-  const severityLevels = [
-    { value: "all", label: "All Severities", color: "gray" },
-    { value: "info", label: "Info", color: "blue", icon: Info },
-    { value: "warning", label: "Warning", color: "amber", icon: AlertTriangle },
-    { value: "medium", label: "Medium", color: "orange", icon: AlertTriangle },
-    { value: "high", label: "High", color: "red", icon: AlertTriangle },
-    { value: "critical", label: "Critical", color: "red", icon: XCircle },
-  ];
-
   const usersList = [
     { value: "all", label: "All Users" },
     { value: "admin", label: "Admin User" },
@@ -255,23 +245,6 @@ export default function SecurityAuditLogs() {
     { value: "omar", label: "Omar Al-Jabri" },
     { value: "fatima", label: "Fatima Al-Zahrani" },
   ];
-
-  const getSeverityBadge = (severity) => {
-    switch (severity) {
-      case "info":
-        return "bg-blue-500/20 text-blue-400 border border-blue-500/30";
-      case "warning":
-        return "bg-amber-500/20 text-amber-400 border border-amber-500/30";
-      case "medium":
-        return "bg-orange-500/20 text-orange-400 border border-orange-500/30";
-      case "high":
-        return "bg-red-500/20 text-red-400 border border-red-500/30";
-      case "critical":
-        return "bg-red-500/30 text-red-300 border border-red-500/40 animate-pulse";
-      default:
-        return "bg-white/10 text-gray-300 border border-white/10";
-    }
-  };
 
   const getActionIcon = (actionType) => {
     switch (actionType) {
@@ -305,13 +278,12 @@ export default function SecurityAuditLogs() {
       log.action.toLowerCase().includes(searchTerm.toLowerCase()) ||
       log.details.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesAction = actionFilter === "all" || log.actionType === actionFilter;
-    const matchesSeverity = severityFilter === "all" || log.severity === severityFilter;
     const matchesUser = userFilter === "all" || 
-      (userFilter === "admin" && log.user.role === "super_admin") ||
+      (userFilter === "admin" && log.user.role === "admin") ||
       (userFilter === "sarah" && log.user.name === "Sarah Al-Omari") ||
       (userFilter === "omar" && log.user.name === "Omar Al-Jabri") ||
       (userFilter === "fatima" && log.user.name === "Fatima Al-Zahrani");
-    return matchesSearch && matchesAction && matchesSeverity && matchesUser;
+    return matchesSearch && matchesAction && matchesUser;
   });
 
   const stats = {
@@ -326,7 +298,7 @@ export default function SecurityAuditLogs() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             Security & Audit Logs
           </h1>
           <p className="text-sm text-gray-400 mt-1">
@@ -334,32 +306,31 @@ export default function SecurityAuditLogs() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <button className="relative px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+          <button className="relative px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-gray-300 hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
             <Download className="w-4 h-4" />
             <span>Export Logs</span>
           </button>
-          <button className="p-2 bg-white/5 border border-white/10 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+          <button className="p-2 bg-white/5 border border-white/10 rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-all">
             <RefreshCw className="w-5 h-5" />
           </button>
         </div>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
-          { label: "Total Events", value: stats.total, icon: Activity, color: "indigo" },
-          { label: "Critical", value: stats.critical, icon: XCircle, color: "red" },
-          { label: "High Severity", value: stats.high, icon: AlertTriangle, color: "orange" },
-          { label: "Warnings", value: stats.warnings, icon: AlertTriangle, color: "amber" },
+          { label: "Total Events", value: stats.total, icon: Activity },
+          { label: "Critical", value: stats.critical, icon: XCircle },
+          { label: "Warnings", value: stats.warnings, icon: AlertTriangle },
         ].map((stat, idx) => (
-          <div key={idx} className="relative bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 hover:border-white/20 transition-all duration-300">
+          <div key={idx} className="relative bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs text-gray-400">{stat.label}</p>
                 <p className="text-2xl font-bold text-white mt-1">{stat.value}</p>
               </div>
-              <div className={`p-2 bg-${stat.color}-500/20 rounded-lg border border-${stat.color}-500/30`}>
-                <stat.icon className={`w-4 h-4 text-${stat.color}-400`} />
+              <div className="p-2 bg-white/10 rounded-lg border border-white/20">
+                <stat.icon className="w-4 h-4 text-blue-400" />
               </div>
             </div>
           </div>
@@ -367,9 +338,9 @@ export default function SecurityAuditLogs() {
       </div>
 
       {/* Filters */}
-      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
+      <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-300">
         <div className="p-5 border-b border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Search */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -378,7 +349,7 @@ export default function SecurityAuditLogs() {
                 placeholder="Search logs..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-indigo-500/50 transition-all"
+                className="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/50 transition-all"
               />
             </div>
 
@@ -388,25 +359,10 @@ export default function SecurityAuditLogs() {
               <select
                 value={actionFilter}
                 onChange={(e) => setActionFilter(e.target.value)}
-                className="w-full pl-10 pr-8 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50 appearance-none cursor-pointer"
+                className="w-full pl-10 pr-8 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 appearance-none cursor-pointer"
               >
                 {actionCategories.map((cat) => (
                   <option key={cat.value} value={cat.value}>{cat.label}</option>
-                ))}
-              </select>
-              <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
-            </div>
-
-            {/* Severity Filter */}
-            <div className="relative">
-              <AlertTriangle className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <select
-                value={severityFilter}
-                onChange={(e) => setSeverityFilter(e.target.value)}
-                className="w-full pl-10 pr-8 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50 appearance-none cursor-pointer"
-              >
-                {severityLevels.map((level) => (
-                  <option key={level.value} value={level.value}>{level.label}</option>
                 ))}
               </select>
               <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -418,7 +374,7 @@ export default function SecurityAuditLogs() {
               <select
                 value={userFilter}
                 onChange={(e) => setUserFilter(e.target.value)}
-                className="w-full pl-10 pr-8 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500/50 appearance-none cursor-pointer"
+                className="w-full pl-10 pr-8 py-2 bg-slate-800 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 appearance-none cursor-pointer"
               >
                 {usersList.map((user) => (
                   <option key={user.value} value={user.value}>{user.label}</option>
@@ -436,7 +392,7 @@ export default function SecurityAuditLogs() {
                 onClick={() => setDateRange(range)}
                 className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300 ${
                   dateRange === range
-                    ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30"
+                    ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30"
                     : "bg-white/5 border border-white/10 text-gray-400 hover:bg-white/10"
                 }`}
               >
@@ -455,7 +411,6 @@ export default function SecurityAuditLogs() {
                 <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">User</th>
                 <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Action</th>
                 <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Resource</th>
-                <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Severity</th>
                 <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider">Details</th>
                 <th className="text-left p-4 text-xs font-medium text-gray-400 uppercase tracking-wider"></th>
               </tr>
@@ -473,19 +428,19 @@ export default function SecurityAuditLogs() {
                   <tr key={log.id} className="border-b border-white/5 hover:bg-white/5 transition-all duration-300">
                     <td className="p-4">
                       <div className="flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-gray-500" />
+                        <Clock className="w-3 h-3 text-blue-400" />
                         <span className="text-xs text-gray-300">{log.timestamp}</span>
                       </div>
                     </td>
                     <td className="p-4">
                       <div>
                         <p className="text-sm font-medium text-white">{log.user.name}</p>
-                        <p className="text-xs text-gray-400">{log.user.role.replace("_", " ")}</p>
+                        <p className="text-xs text-gray-400 capitalize">{log.user.role.replace("_", " ")}</p>
                       </div>
                     </td>
                     <td className="p-4">
                       <div className="flex items-center gap-2">
-                        <div className="p-1 bg-white/10 rounded-lg">
+                        <div className="p-1 bg-white/10 rounded-lg border border-white/20">
                           {getActionIcon(log.actionType)}
                         </div>
                         <span className="text-sm text-gray-300 capitalize">
@@ -502,11 +457,6 @@ export default function SecurityAuditLogs() {
                       </div>
                     </td>
                     <td className="p-4">
-                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${getSeverityBadge(log.severity)}`}>
-                        {log.severity.charAt(0).toUpperCase() + log.severity.slice(1)}
-                      </span>
-                    </td>
-                    <td className="p-4">
                       <p className="text-sm text-gray-300 max-w-md truncate">{log.details}</p>
                     </td>
                     <td className="p-4">
@@ -518,7 +468,7 @@ export default function SecurityAuditLogs() {
                         className="p-1.5 hover:bg-white/10 rounded-lg transition-all"
                         title="View Details"
                       >
-                        <Search className="w-4 h-4 text-indigo-400" />
+                        <Search className="w-4 h-4 text-blue-400" />
                       </button>
                     </td>
                   </tr>
@@ -535,7 +485,7 @@ export default function SecurityAuditLogs() {
           </p>
           <div className="flex gap-1">
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">Previous</button>
-            <button className="px-3 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg text-xs text-white shadow-lg shadow-indigo-500/30">1</button>
+            <button className="px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg text-xs text-white shadow-lg shadow-blue-500/30">1</button>
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">2</button>
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">3</button>
             <button className="px-3 py-1 bg-white/5 rounded-lg text-xs text-gray-400 hover:bg-white/10 transition-all">Next</button>
@@ -546,10 +496,10 @@ export default function SecurityAuditLogs() {
       {/* Security Overview Card */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Security Events */}
-        <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
+        <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-300">
           <div className="relative p-5 border-b border-white/10">
             <h3 className="font-semibold text-white flex items-center gap-2">
-              <Shield className="w-4 h-4 text-red-400" />
+              <Shield className="w-4 h-4 text-blue-400" />
               Recent Security Events
             </h3>
           </div>
@@ -570,10 +520,10 @@ export default function SecurityAuditLogs() {
         </div>
 
         {/* Session & IP Info */}
-        <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
+        <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-300">
           <div className="relative p-5 border-b border-white/10">
             <h3 className="font-semibold text-white flex items-center gap-2">
-              <Globe className="w-4 h-4 text-indigo-400" />
+              <Globe className="w-4 h-4 text-blue-400" />
               Active Sessions & Locations
             </h3>
           </div>
@@ -583,7 +533,7 @@ export default function SecurityAuditLogs() {
               { user: "Sarah Al-Omari", ip: "192.168.1.156", location: "Jeddah, SA", device: "Firefox / Mac", lastActive: "5 min ago" },
               { user: "Omar Al-Jabri", ip: "192.168.1.234", location: "Dubai, UAE", device: "Safari / iPhone", lastActive: "15 min ago" },
             ].map((session, idx) => (
-              <div key={idx} className="flex items-center justify-between p-2 bg-white/5 rounded-lg border border-white/10">
+              <div key={idx} className="flex items-center justify-between p-2 bg-white/5 rounded-xl border border-white/10">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <div>
@@ -631,13 +581,13 @@ const LogDetailsModal = ({ log, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-2xl shadow-2xl border border-white/20 animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl" />
+      <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl w-full max-w-2xl shadow-2xl border border-blue-500/20 animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
+        <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl" />
 
         <div className="relative p-6 border-b border-white/10">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-300 bg-clip-text text-transparent">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
               Log Details
             </h2>
             <button onClick={onClose} className="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-all">
@@ -660,7 +610,7 @@ const LogDetailsModal = ({ log, onClose }) => {
             <div>
               <p className="text-xs text-gray-400">Severity</p>
               <span className={`px-2 py-1 text-xs font-medium rounded-full ${severityBadge}`}>
-                {log.severity.charAt(0).toUpperCase() + log.severity.slice(1)}
+                {log.severity.toUpperCase()}
               </span>
             </div>
           </div>
@@ -668,7 +618,7 @@ const LogDetailsModal = ({ log, onClose }) => {
           {/* User Info */}
           <div className="p-4 bg-white/5 rounded-xl border border-white/10">
             <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-              <User className="w-4 h-4 text-indigo-400" />
+              <User className="w-4 h-4 text-blue-400" />
               User Information
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -694,7 +644,7 @@ const LogDetailsModal = ({ log, onClose }) => {
           {/* Action Details */}
           <div className="p-4 bg-white/5 rounded-xl border border-white/10">
             <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-              <Activity className="w-4 h-4 text-purple-400" />
+              <Activity className="w-4 h-4 text-blue-400" />
               Action Details
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -722,7 +672,7 @@ const LogDetailsModal = ({ log, onClose }) => {
           {/* Description */}
           <div className="p-4 bg-white/5 rounded-xl border border-white/10">
             <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-              <FileText className="w-4 h-4 text-cyan-400" />
+              <FileText className="w-4 h-4 text-blue-400" />
               Description
             </h3>
             <p className="text-sm text-gray-300">{log.details}</p>
@@ -732,8 +682,8 @@ const LogDetailsModal = ({ log, onClose }) => {
           {log.userAgent && (
             <div className="p-4 bg-white/5 rounded-xl border border-white/10">
               <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-                <Terminal className="w-4 h-4 text-amber-400" />
-              Technical Details
+                <Terminal className="w-4 h-4 text-blue-400" />
+                Technical Details
               </h3>
               <div className="space-y-2">
                 <div>
@@ -754,7 +704,7 @@ const LogDetailsModal = ({ log, onClose }) => {
           {(log.oldValue || log.newValue) && (
             <div className="p-4 bg-white/5 rounded-xl border border-white/10">
               <h3 className="text-sm font-semibold text-white flex items-center gap-2 mb-3">
-                <RefreshCw className="w-4 h-4 text-emerald-400" />
+                <RefreshCw className="w-4 h-4 text-blue-400" />
                 Value Changes
               </h3>
               <div className="grid grid-cols-2 gap-4">

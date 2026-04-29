@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Sparkles, Calendar, MapPin, Download, ArrowRight } from "lucide-react";
-import BreadCrumb from "../../../Components/BreadCrum";
+import BreadCrumb from "../../Components/BreadCrum";
 import { MdEmojiEvents } from "react-icons/md";
 
 const EventsSection = () => {
