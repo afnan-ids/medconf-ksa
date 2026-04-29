@@ -310,7 +310,6 @@ export default function ExhibitorRegisterPage() {
                   </span>
                 </h1>
 
-
                 <p className="text-gray-300 text-lg max-w-2xl mx-auto">
                   Secure your booth at the region's largest healthcare
                   exhibition. Connect with{" "}
@@ -356,140 +355,130 @@ export default function ExhibitorRegisterPage() {
 
           {/* Main Form Container */}
           <div
-            className="bg-white/5 backdrop-blur-md rounded-3xl shadow-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-700"
+            className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden"
             id="form"
           >
             {/* Form Header */}
-            <div className="relative text-center py-10 px-6 border-b border-white/10 overflow-hidden">
-              {/* Background Glow */}
-              <div className="absolute inset-0 flex justify-center">
-                <div className="w-72 h-72 bg-blue-500/20 blur-3xl rounded-full opacity-30"></div>
+            <div className="px-6 py-5 border-b border-white/10 bg-gradient-to-r from-blue-600/5 to-cyan-500/5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-2">
+                    <Sparkles className="w-3 h-3 text-blue-400" />
+                    <span className="text-xs text-white/80">
+                      MedConf KSA 2026
+                    </span>
+                  </div>
+                  <h2 className="text-xl font-bold text-white">
+                    Exhibitor Registration
+                  </h2>
+                  <p className="text-gray-400 text-xs mt-0.5">
+                    Showcase your innovation to industry leaders
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1 px-2 py-1 bg-white/5 rounded-full">
+                    <Lock className="w-3 h-3 text-cyan-400" />
+                    <span className="text-xs text-gray-400">Secure</span>
+                  </div>
+                </div>
               </div>
-
-              {/* Badge */}
-              <div className="relative inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs text-blue-300">
-                <Sparkles className="w-3 h-3" />
-                MedConf KSA 2026
-              </div>
-
-              {/* Heading */}
-              <h2 className="relative text-3xl md:text-4xl font-bold mb-3">
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Exhibitor Registration
-                </span>
-              </h2>
-
-              {/* Subtext */}
-              <p className="relative text-gray-300 text-sm md:text-base max-w-md mx-auto">
-                Join the region’s premier healthcare exhibition and showcase
-                your innovation to industry leaders.
-              </p>
-
-              {/* Divider Accent */}
-              <div className="relative mt-5 flex justify-center">
-                <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
-              </div>
-
-              {/* Security Note */}
-              <p className="relative text-xs text-gray-500 mt-4 flex items-center justify-center gap-1">
-                <Lock className="w-3 h-3 text-blue-400" />
-                Your information is secure and confidential
-              </p>
             </div>
 
-            <form
-              onSubmit={handleSubmit}
-              className="p-6 md:p-8 lg:p-10 space-y-8"
-            >
+            <form onSubmit={handleSubmit} className="p-5 space-y-5">
               {/* ACCOUNT SECTION */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 transition-all hover:border-blue-500/30">
-                <div className="flex items-center gap-3 mb-6 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl shadow-lg">
-                    <Lock className="w-5 h-5 text-white" />
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
+                  <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg">
+                    <Lock className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
-                    Account Information
-                  </h3>
+                  <div>
+                    <h3 className="text-base font-semibold text-white">
+                      Account Information
+                    </h3>
+                    <p className="text-gray-400 text-xs">
+                      Create your secure account
+                    </p>
+                  </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="group">
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Email Address <span className="text-red-400">*</span>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      Email Address *
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover:text-blue-400" />
+                      <Mail className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
                       <input
                         name="email"
                         type="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-12`}
+                        className={`${inputStyle} pl-9`}
                         placeholder="company@example.com"
                         required
                       />
                     </div>
                   </div>
 
-                  <div className="group">
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Phone Number <span className="text-red-400">*</span>
+                  <div>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      Phone Number *
                     </label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover:text-blue-400" />
+                      <Phone className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
                       <input
                         name="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-12`}
+                        className={`${inputStyle} pl-9`}
                         placeholder="+966 XX XXX XXXX"
                         required
                       />
                     </div>
                   </div>
 
-                  <div className="group">
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Password <span className="text-red-400">*</span>
+                  <div>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      Password *
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover:text-blue-400" />
+                      <Lock className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
                       <input
                         name="password"
                         type={showPassword ? "text" : "password"}
                         value={formData.password}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-12 pr-12`}
+                        className={`${inputStyle} pl-9 pr-9`}
                         placeholder="Create a strong password"
                         required
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-3.5 text-gray-400 hover:text-gray-300 transition-colors"
+                        className="absolute right-3 top-2 text-gray-500 hover:text-blue-400"
                       >
                         {showPassword ? (
-                          <EyeOff className="w-5" />
+                          <EyeOff className="w-4 h-4" />
                         ) : (
-                          <Eye className="w-5" />
+                          <Eye className="w-4 h-4" />
                         )}
                       </button>
                     </div>
                   </div>
 
-                  <div className="group">
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Confirm Password <span className="text-red-400">*</span>
+                  <div>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      Confirm Password *
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover:text-blue-400" />
+                      <Lock className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
                       <input
                         name="confirmPassword"
                         type={showConfirmPassword ? "text" : "password"}
                         value={formData.confirmPassword}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-12 pr-12`}
+                        className={`${inputStyle} pl-9 pr-9`}
                         placeholder="Confirm your password"
                         required
                       />
@@ -498,12 +487,12 @@ export default function ExhibitorRegisterPage() {
                         onClick={() =>
                           setShowConfirmPassword(!showConfirmPassword)
                         }
-                        className="absolute right-3 top-3.5 text-gray-400 hover:text-gray-300 transition-colors"
+                        className="absolute right-3 top-2 text-gray-500 hover:text-blue-400"
                       >
                         {showConfirmPassword ? (
-                          <EyeOff className="w-5" />
+                          <EyeOff className="w-4 h-4" />
                         ) : (
-                          <Eye className="w-5" />
+                          <Eye className="w-4 h-4" />
                         )}
                       </button>
                     </div>
@@ -512,20 +501,25 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* COMPANY SECTION */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 transition-all hover:border-emerald-500/30">
-                <div className="flex items-center gap-3 mb-6 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-xl shadow-lg">
-                    <Building2 className="w-5 h-5 text-white" />
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
+                  <div className="p-2 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-lg">
+                    <Building2 className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
-                    Company Information
-                  </h3>
+                  <div>
+                    <h3 className="text-base font-semibold text-white">
+                      Company Information
+                    </h3>
+                    <p className="text-gray-400 text-xs">
+                      Tell us about your organization
+                    </p>
+                  </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Company Name <span className="text-red-400">*</span>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      Company Name *
                     </label>
                     <input
                       name="companyName"
@@ -537,24 +531,24 @@ export default function ExhibitorRegisterPage() {
                     />
                   </div>
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                    <label className="text-gray-300 text-xs mb-1 block">
                       Company Website
                     </label>
                     <div className="relative">
-                      <Globe className="absolute left-3 top-3.5 text-gray-400 w-5" />
+                      <Globe className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
                       <input
                         name="companyWebsite"
                         value={formData.companyWebsite}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-12`}
+                        className={`${inputStyle} pl-9`}
                         placeholder="www.yourcompany.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Country <span className="text-red-400">*</span>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      Country *
                     </label>
                     <select
                       name="country"
@@ -579,17 +573,17 @@ export default function ExhibitorRegisterPage() {
                   </div>
 
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      City <span className="text-red-400">*</span>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      City *
                     </label>
                     <div className="relative">
-                      <MapPin className="absolute left-3 top-3.5 text-gray-400 w-5" />
+                      <MapPin className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
                       <input
                         name="city"
                         value={formData.city}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-12`}
-                        placeholder="e.g., Riyadh, Jeddah, Dubai"
+                        className={`${inputStyle} pl-9`}
+                        placeholder="e.g., Riyadh"
                         required
                       />
                     </div>
@@ -598,20 +592,25 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* CONTACT PERSON SECTION */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 transition-all hover:border-purple-500/30">
-                <div className="flex items-center gap-3 mb-6 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-xl shadow-lg">
-                    <User className="w-5 h-5 text-white" />
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
+                  <div className="p-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg">
+                    <User className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
-                    Contact Person Information
-                  </h3>
+                  <div>
+                    <h3 className="text-base font-semibold text-white">
+                      Contact Person Information
+                    </h3>
+                    <p className="text-gray-400 text-xs">
+                      Who should we contact?
+                    </p>
+                  </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      First Name <span className="text-red-400">*</span>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      First Name *
                     </label>
                     <input
                       name="contactPersonFirstName"
@@ -623,8 +622,8 @@ export default function ExhibitorRegisterPage() {
                     />
                   </div>
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Last Name <span className="text-red-400">*</span>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      Last Name *
                     </label>
                     <input
                       name="contactPersonLastName"
@@ -636,15 +635,15 @@ export default function ExhibitorRegisterPage() {
                     />
                   </div>
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Job Title <span className="text-red-400">*</span>
+                    <label className="text-gray-300 text-xs mb-1 block">
+                      Job Title *
                     </label>
                     <input
                       name="jobTitle"
                       value={formData.jobTitle}
                       onChange={handleInputChange}
                       className={inputStyle}
-                      placeholder="e.g., Marketing Manager, CEO"
+                      placeholder="e.g., Marketing Manager"
                       required
                     />
                   </div>
@@ -652,19 +651,24 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* EXHIBITION REQUIREMENTS SECTION */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 transition-all hover:border-orange-500/30">
-                <div className="flex items-center gap-3 mb-6 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-orange-600 to-red-500 rounded-xl shadow-lg">
-                    <Store className="w-5 h-5 text-white" />
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
+                  <div className="p-2 bg-gradient-to-r from-orange-600 to-red-500 rounded-lg">
+                    <Store className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
-                    Exhibition Requirements
-                  </h3>
+                  <div>
+                    <h3 className="text-base font-semibold text-white">
+                      Exhibition Requirements
+                    </h3>
+                    <p className="text-gray-400 text-xs">
+                      Tell us your booth preferences
+                    </p>
+                  </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                    <label className="text-gray-300 text-xs mb-1 block">
                       Booth Preference
                     </label>
                     <select
@@ -684,65 +688,51 @@ export default function ExhibitorRegisterPage() {
                   </div>
 
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                    <label className="text-gray-300 text-xs mb-1 block">
                       Booth Size (sqm)
                     </label>
-                    <div className="relative">
-                      <Ruler className="absolute left-3 top-3.5 text-gray-400 w-5" />
-                      <select
-                        name="boothSize"
-                        value={formData.boothSize}
-                        onChange={handleInputChange}
-                        className={`${selectStyle} pl-12`}
-                      >
-                        <option value="" className="bg-gray-800">
-                          Select booth size
-                        </option>
-                        <option className="bg-gray-800">9 sqm (3x3)</option>
-                        <option className="bg-gray-800">12 sqm (3x4)</option>
-                        <option className="bg-gray-800">18 sqm (3x6)</option>
-                        <option className="bg-gray-800">24 sqm (4x6)</option>
-                        <option className="bg-gray-800">
-                          36+ sqm (Custom)
-                        </option>
-                      </select>
-                    </div>
+                    <select
+                      name="boothSize"
+                      value={formData.boothSize}
+                      onChange={handleInputChange}
+                      className={selectStyle}
+                    >
+                      <option value="" className="bg-gray-800">
+                        Select booth size
+                      </option>
+                      <option className="bg-gray-800">9 sqm (3x3)</option>
+                      <option className="bg-gray-800">12 sqm (3x4)</option>
+                      <option className="bg-gray-800">18 sqm (3x6)</option>
+                      <option className="bg-gray-800">24 sqm (4x6)</option>
+                      <option className="bg-gray-800">36+ sqm (Custom)</option>
+                    </select>
                   </div>
 
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                    <label className="text-gray-300 text-xs mb-1 block">
                       Estimated Budget (USD)
                     </label>
-                    <div className="relative">
-                      <DollarSign className="absolute left-3 top-3.5 text-gray-400 w-5" />
-                      <select
-                        name="estimatedBudget"
-                        value={formData.estimatedBudget}
-                        onChange={handleInputChange}
-                        className={`${selectStyle} pl-12`}
-                      >
-                        <option value="" className="bg-gray-800">
-                          Select budget range
-                        </option>
-                        <option className="bg-gray-800">
-                          $5,000 - $10,000
-                        </option>
-                        <option className="bg-gray-800">
-                          $10,000 - $25,000
-                        </option>
-                        <option className="bg-gray-800">
-                          $25,000 - $50,000
-                        </option>
-                        <option className="bg-gray-800">
-                          $50,000 - $100,000
-                        </option>
-                        <option className="bg-gray-800">$100,000+</option>
-                      </select>
-                    </div>
+                    <select
+                      name="estimatedBudget"
+                      value={formData.estimatedBudget}
+                      onChange={handleInputChange}
+                      className={selectStyle}
+                    >
+                      <option value="" className="bg-gray-800">
+                        Select budget range
+                      </option>
+                      <option className="bg-gray-800">$5,000 - $10,000</option>
+                      <option className="bg-gray-800">$10,000 - $25,000</option>
+                      <option className="bg-gray-800">$25,000 - $50,000</option>
+                      <option className="bg-gray-800">
+                        $50,000 - $100,000
+                      </option>
+                      <option className="bg-gray-800">$100,000+</option>
+                    </select>
                   </div>
 
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                    <label className="text-gray-300 text-xs mb-1 block">
                       Number of Staff
                     </label>
                     <select
@@ -763,7 +753,7 @@ export default function ExhibitorRegisterPage() {
                   </div>
 
                   <div>
-                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                    <label className="text-gray-300 text-xs mb-1 block">
                       Previous Participation at MedConf
                     </label>
                     <select
@@ -788,17 +778,22 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* DOCUMENTS SECTION */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 transition-all hover:border-cyan-500/30">
-                <div className="flex items-center gap-3 mb-6 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-cyan-600 to-blue-500 rounded-xl shadow-lg">
-                    <FileText className="w-5 h-5 text-white" />
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
+                  <div className="p-2 bg-gradient-to-r from-cyan-600 to-blue-500 rounded-lg">
+                    <FileText className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
-                    Upload Documents
-                  </h3>
+                  <div>
+                    <h3 className="text-base font-semibold text-white">
+                      Upload Documents
+                    </h3>
+                    <p className="text-gray-400 text-xs">
+                      Supporting documents for your application
+                    </p>
+                  </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
                   {[
                     {
                       name: "Company Registration",
@@ -833,10 +828,10 @@ export default function ExhibitorRegisterPage() {
                       key={idx}
                       onMouseEnter={() => setHoveredDoc(idx)}
                       onMouseLeave={() => setHoveredDoc(null)}
-                      className={`relative border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 transform ${
+                      className={`relative border-2 border-dashed rounded-xl p-3 text-center cursor-pointer transition-all duration-200 ${
                         hoveredDoc === idx
-                          ? `border-transparent bg-gradient-to-br ${doc.color} shadow-2xl scale-105`
-                          : "border-white/20 hover:border-white/40 bg-white/5"
+                          ? `border-blue-500 bg-blue-500/10`
+                          : "border-white/20 hover:border-white/40"
                       }`}
                     >
                       <input
@@ -845,65 +840,63 @@ export default function ExhibitorRegisterPage() {
                         accept={doc.accept}
                         onChange={(e) => handleFileChange(e, doc.key)}
                       />
-                      <div
-                        className={`transition-all duration-300 ${hoveredDoc === idx ? "text-white" : "text-gray-400"}`}
-                      >
-                        <doc.icon className="mx-auto mb-3 w-10 h-10" />
-                      </div>
+                      <doc.icon
+                        className={`mx-auto mb-1 w-6 h-6 ${hoveredDoc === idx ? "text-blue-400" : "text-gray-500"}`}
+                      />
                       <p
-                        className={`text-sm font-medium transition-all duration-300 ${hoveredDoc === idx ? "text-white" : "text-gray-300"}`}
+                        className={`text-xs font-medium ${hoveredDoc === idx ? "text-blue-300" : "text-gray-400"}`}
                       >
                         {doc.name}
                       </p>
                       {formData[doc.key] && (
-                        <p
-                          className={`text-xs mt-2 truncate px-2 ${hoveredDoc === idx ? "text-white/80" : "text-cyan-400"}`}
-                        >
+                        <p className="text-[10px] mt-1 text-cyan-400 truncate">
                           ✓ {formData[doc.key].name}
                         </p>
                       )}
-                      <Upload
-                        className={`absolute bottom-3 right-3 w-4 h-4 transition-all duration-300 ${hoveredDoc === idx ? "text-white opacity-100" : "opacity-0"}`}
-                      />
                     </label>
                   ))}
                 </div>
-                <p className="text-xs text-gray-500 mt-4 text-center">
-                  Accepted formats: PDF, JPG, PNG, DOC. Max size: 5MB per file
+                <p className="text-[10px] text-gray-500 mt-3 text-center">
+                  Accepted: PDF, JPG, PNG, DOC. Max 5MB per file
                 </p>
               </div>
 
               {/* ADDITIONAL QUESTIONS SECTION */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
-                <div className="flex items-center gap-3 mb-6 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl shadow-lg">
-                    <Send className="w-5 h-5 text-white" />
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
+                  <div className="p-2 bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg">
+                    <Send className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
-                    Additional Information
-                  </h3>
+                  <div>
+                    <h3 className="text-base font-semibold text-white">
+                      Additional Information
+                    </h3>
+                    <p className="text-gray-400 text-xs">
+                      Help us understand your needs
+                    </p>
+                  </div>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-4">
                   {/* Announcements */}
                   <div>
-                    <h4 className="font-semibold text-gray-300 mb-3">
+                    <p className="text-gray-300 text-sm mb-2">
                       Do you plan on making any announcements at MedConf?
-                    </h4>
-                    <div className="flex flex-wrap gap-6">
+                    </p>
+                    <div className="flex gap-4">
                       {["yes", "no", "maybe"].map((value) => (
                         <label
                           key={value}
-                          className="flex items-center gap-2 cursor-pointer"
+                          className="flex items-center gap-1.5 cursor-pointer"
                         >
                           <input
                             type="radio"
                             name="announcement"
                             value={value}
                             onChange={(e) => setAnnouncement(e.target.value)}
-                            className="w-4 h-4 text-blue-500 bg-white/10 border-white/20"
+                            className="w-3.5 h-3.5 text-blue-500"
                           />
-                          <span className="text-gray-300 capitalize">
+                          <span className="text-gray-400 text-sm capitalize">
                             {value}
                           </span>
                         </label>
@@ -913,28 +906,30 @@ export default function ExhibitorRegisterPage() {
 
                   {/* Sponsorship */}
                   <div>
-                    <h4 className="font-semibold text-gray-300 mb-3">
+                    <p className="text-gray-300 text-sm mb-2">
                       Are you interested in additional sponsorship
                       opportunities?
-                    </h4>
-                    <div className="flex flex-wrap gap-6">
+                    </p>
+                    <div className="flex flex-wrap gap-4">
                       {[
-                        { value: "yes", label: "Yes, please contact me" },
+                        { value: "yes", label: "Yes, contact me" },
                         { value: "no", label: "Not at this time" },
-                        { value: "maybe", label: "Maybe, send me information" },
+                        { value: "maybe", label: "Maybe, send info" },
                       ].map((option) => (
                         <label
                           key={option.value}
-                          className="flex items-center gap-2 cursor-pointer"
+                          className="flex items-center gap-1.5 cursor-pointer"
                         >
                           <input
                             type="radio"
                             name="sponsorship"
                             value={option.value}
                             onChange={(e) => setSponsorship(e.target.value)}
-                            className="w-4 h-4 text-blue-500 bg-white/10 border-white/20"
+                            className="w-3.5 h-3.5 text-blue-500"
                           />
-                          <span className="text-gray-300">{option.label}</span>
+                          <span className="text-gray-400 text-sm">
+                            {option.label}
+                          </span>
                         </label>
                       ))}
                     </div>
@@ -942,10 +937,10 @@ export default function ExhibitorRegisterPage() {
 
                   {/* Information Request */}
                   <div>
-                    <h4 className="font-semibold text-gray-300 mb-3">
+                    <p className="text-gray-300 text-sm mb-2">
                       What information would you like to receive?
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                       {[
                         "Exhibitor Prospectus",
                         "Floor Plan",
@@ -953,40 +948,37 @@ export default function ExhibitorRegisterPage() {
                         "Visitor Demographics",
                         "Previous Event Report",
                         "Custom Quote",
-                      ].map((item, i) => (
+                      ].map((item) => (
                         <label
-                          key={i}
-                          className="flex items-center gap-2 cursor-pointer"
+                          key={item}
+                          className="flex items-center gap-1.5 cursor-pointer"
                         >
                           <input
                             type="checkbox"
                             value={item}
                             onChange={() => handleInfoRequestChange(item)}
-                            className="w-4 h-4 text-blue-500 rounded bg-white/10 border-white/20"
+                            className="w-3.5 h-3.5 text-blue-500 rounded"
                           />
-                          <span className="text-sm text-gray-300">{item}</span>
+                          <span className="text-gray-400 text-xs">{item}</span>
                         </label>
                       ))}
                     </div>
                   </div>
 
                   {/* Organizer Communication */}
-                  <div className="bg-white/5 rounded-xl p-5 border border-white/10">
-                    <p className="text-sm text-gray-300 mb-4 font-medium">
-                      I would like to receive tailored information, including
-                      exhibition updates, exclusive networking opportunities and
-                      access to offers from MedConf and Tahaluf.
+                  <div className="bg-white/5 rounded-lg p-3">
+                    <p className="text-gray-400 text-xs mb-2">
+                      Receive event updates, networking opportunities and offers
+                      from MedConf.
                     </p>
-                    <div className="flex flex-wrap gap-6 text-sm">
+                    <div className="flex flex-wrap gap-3 text-xs">
                       {["Email", "Phone", "SMS"].map((type) => (
-                        <div key={type} className="flex items-center gap-3">
-                          <span className="text-gray-400 font-medium w-12">
-                            {type}:
-                          </span>
+                        <div key={type} className="flex items-center gap-1.5">
+                          <span className="text-gray-400 w-10">{type}:</span>
                           {["yes", "no"].map((option) => (
                             <label
                               key={option}
-                              className="flex items-center gap-1 cursor-pointer"
+                              className="flex items-center gap-0.5 cursor-pointer"
                             >
                               <input
                                 type="radio"
@@ -998,9 +990,9 @@ export default function ExhibitorRegisterPage() {
                                     [type.toLowerCase()]: option,
                                   })
                                 }
-                                className="w-3.5 h-3.5 text-blue-500 bg-white/10"
+                                className="w-3 h-3 text-blue-500"
                               />
-                              <span className="text-gray-400 text-sm capitalize">
+                              <span className="text-gray-400 text-xs capitalize">
                                 {option}
                               </span>
                             </label>
@@ -1011,21 +1003,19 @@ export default function ExhibitorRegisterPage() {
                   </div>
 
                   {/* Exhibitor Communication */}
-                  <div className="bg-white/5 rounded-xl p-5 border border-white/10">
-                    <p className="text-sm text-gray-300 mb-4 font-medium">
-                      I would like to receive information about networking
-                      opportunities and exhibitor benefits.
+                  <div className="bg-white/5 rounded-lg p-3">
+                    <p className="text-gray-400 text-xs mb-2">
+                      Receive information about networking opportunities and
+                      exhibitor benefits.
                     </p>
-                    <div className="flex flex-wrap gap-6 text-sm">
+                    <div className="flex flex-wrap gap-3 text-xs">
                       {["Email", "Phone", "SMS"].map((type) => (
-                        <div key={type} className="flex items-center gap-3">
-                          <span className="text-gray-400 font-medium w-12">
-                            {type}:
-                          </span>
+                        <div key={type} className="flex items-center gap-1.5">
+                          <span className="text-gray-400 w-10">{type}:</span>
                           {["yes", "no"].map((option) => (
                             <label
                               key={option}
-                              className="flex items-center gap-1 cursor-pointer"
+                              className="flex items-center gap-0.5 cursor-pointer"
                             >
                               <input
                                 type="radio"
@@ -1037,9 +1027,9 @@ export default function ExhibitorRegisterPage() {
                                     [type.toLowerCase()]: option,
                                   })
                                 }
-                                className="w-3.5 h-3.5 text-blue-500 bg-white/10"
+                                className="w-3 h-3 text-blue-500"
                               />
-                              <span className="text-gray-400 text-sm capitalize">
+                              <span className="text-gray-400 text-xs capitalize">
                                 {option}
                               </span>
                             </label>
@@ -1052,36 +1042,28 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* Submit Button */}
-              <div className="pt-6">
-                <button
-                  type="submit"
-                  className="relative inline-flex items-center justify-center gap-2 w-full group/btn overflow-hidden transition-all duration-300"
-                >
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur-xl opacity-0 group-hover/btn:opacity-40 transition-all duration-500"></div>
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-xl font-semibold text-base hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Store className="w-4 h-4" />
+                <span>Register as Exhibitor</span>
+                <CheckCircle className="w-4 h-4" />
+              </button>
 
-                  {/* Button */}
-                  <div className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 flex items-center justify-center gap-2 w-full">
-                    Register as Exhibitor
-                    <CheckCircle className="w-5 h-5 group-hover/btn:scale-110 transition-transform duration-300" />
-                    {/* Shine overlay */}
-                    <div className="absolute inset-0 rounded-xl bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
-                  </div>
-                </button>
-                <p className="text-xs text-gray-500 text-center mt-4">
-                  By submitting, you agree to our Terms of Service and Privacy
-                  Policy
-                </p>
-              </div>
+              <p className="text-center text-gray-500 text-xs">
+                By submitting, you agree to our Terms of Service and Privacy
+                Policy
+              </p>
             </form>
 
             {/* Footer */}
-            <div className="text-center py-6 border-t border-white/10 bg-white/5">
+            <div className="text-center py-3 border-t border-white/10 bg-white/5">
               <p className="text-gray-400 text-sm">
                 Already have an account?{" "}
                 <Link
                   href="/Forms/Login"
-                  className="text-blue-400 font-semibold hover:text-blue-600 transition-colors"
+                  className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text font-semibold"
                 >
                   Sign in here
                 </Link>
