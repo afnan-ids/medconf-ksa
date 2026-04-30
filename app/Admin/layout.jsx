@@ -34,17 +34,62 @@ import PortalIntro from "../Layout/PortalsAnimation";
 // Admin menu items with consistent blue-cyan gradient
 const adminMenuItems = [
   { id: "Dashboard", label: "Dashboard", icon: LayoutDashboard, badge: null },
-  { id: "UsersManagement", label: "Users Management", icon: Users, badge: null },
-  { id: "ExhibitionBookingManagement", label: "Exhibition Booking", icon: CalendarCheck, badge: null },
-  { id: "FloorPlanningManagement", label: "Floor Planning", icon: Map, badge: null },
+  {
+    id: "UsersManagement",
+    label: "Users Management",
+    icon: Users,
+    badge: null,
+  },
+  {
+    id: "ExhibitionBookingManagement",
+    label: "Exhibition Booking",
+    icon: CalendarCheck,
+    badge: null,
+  },
+  {
+    id: "FloorPlanningManagement",
+    label: "Floor Planning",
+    icon: Map,
+    badge: null,
+  },
   { id: "Reports", label: "Reports", icon: FileText, badge: null },
-  { id: "SecurityAuditLogs", label: "Security & Audit", icon: Activity, badge: null },
-  { id: "PortalManagement", label: "Portal Management", icon: Shield, badge: null },
-  { id: "SponsorManagement", label: "Sponsor Management", icon: Briefcase, badge: null },
-  { id: "PaymentsInvoiceManagement", label: "Payments & Invoices", icon: CreditCard, badge: null },
-  { id: "NotificationsAnnouncements", label: "Notifications", icon: Megaphone, badge: "3" },
+  {
+    id: "SecurityAuditLogs",
+    label: "Security & Audit",
+    icon: Activity,
+    badge: null,
+  },
+  {
+    id: "PortalManagement",
+    label: "Portal Management",
+    icon: Shield,
+    badge: null,
+  },
+  {
+    id: "SponsorManagement",
+    label: "Sponsor Management",
+    icon: Briefcase,
+    badge: null,
+  },
+  {
+    id: "PaymentsInvoiceManagement",
+    label: "Payments & Invoices",
+    icon: CreditCard,
+    badge: null,
+  },
+  {
+    id: "NotificationsAnnouncements",
+    label: "Notifications",
+    icon: Megaphone,
+    badge: "3",
+  },
   { id: "Settings", label: "Settings", icon: Settings, badge: null },
-  { id: "SupportHelpDesk", label: "Support Desk", icon: Headphones, badge: null },
+  {
+    id: "SupportHelpDesk",
+    label: "Support Desk",
+    icon: Headphones,
+    badge: null,
+  },
 ];
 
 export default function AdminLayout({ children }) {
@@ -56,8 +101,18 @@ export default function AdminLayout({ children }) {
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [notifications, setNotifications] = useState([
     { id: 1, title: "New user registered", time: "5 min ago", read: false },
-    { id: 2, title: "Booking payment received", time: "1 hour ago", read: false },
-    { id: 3, title: "System update completed", time: "3 hours ago", read: true },
+    {
+      id: 2,
+      title: "Booking payment received",
+      time: "1 hour ago",
+      read: false,
+    },
+    {
+      id: 3,
+      title: "System update completed",
+      time: "3 hours ago",
+      read: true,
+    },
   ]);
   const [showNotifications, setShowNotifications] = useState(false);
   const router = useRouter();
@@ -79,7 +134,7 @@ export default function AdminLayout({ children }) {
     setIsMobileMenuOpen(false);
   };
 
-  const unreadCount = notifications.filter(n => !n.read).length;
+  const unreadCount = notifications.filter((n) => !n.read).length;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
@@ -88,11 +143,8 @@ export default function AdminLayout({ children }) {
           onFinish={() => setShowIntro(false)}
           title={"ADMIN"}
           subtitle={"ADMIN DASHBOARD"}
-          titlecolor={"from-blue-500 to-cyan-500"}
-          portalcolor={"from-blue-500 to-cyan-500"}
         />
       )}
-      
 
       {/* Top Navigation Bar */}
       <nav className="fixed top-0 left-0 right-0 z-40 bg-white/5 backdrop-blur-2xl border-b border-white/10  h-16 shadow-2xl">
@@ -115,7 +167,7 @@ export default function AdminLayout({ children }) {
                 <ChevronLeft className="w-4 h-4" />
               )}
             </button>
-            
+
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
@@ -137,8 +189,8 @@ export default function AdminLayout({ children }) {
           {/* Search Bar */}
           <div
             className={`hidden md:flex items-center gap-2 px-4 py-2 bg-gray-800/50 backdrop-blur-xl rounded-xl border transition-all duration-300 min-w-[300px] ${
-              searchFocused 
-                ? "border-blue-500/50 shadow-lg shadow-blue-500/20 bg-gray-800/70" 
+              searchFocused
+                ? "border-blue-500/50 shadow-lg shadow-blue-500/20 bg-gray-800/70"
                 : "border-blue-500/20 hover:bg-gray-800/70"
             }`}
           >
@@ -161,7 +213,7 @@ export default function AdminLayout({ children }) {
           <div className="flex items-center gap-2">
             {/* Notifications */}
             <div className="relative">
-              <button 
+              <button
                 onClick={() => setShowNotifications(!showNotifications)}
                 className="p-2 rounded-xl transition-all duration-300 hover:bg-blue-500/10 text-gray-300 hover:text-white relative group"
               >
@@ -172,15 +224,20 @@ export default function AdminLayout({ children }) {
                   </span>
                 )}
               </button>
-              
+
               {/* Notifications dropdown */}
               {showNotifications && (
                 <>
-                  <div className="fixed inset-0 z-40" onClick={() => setShowNotifications(false)}></div>
+                  <div
+                    className="fixed inset-0 z-40"
+                    onClick={() => setShowNotifications(false)}
+                  ></div>
                   <div className="absolute right-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl rounded-xl border border-blue-500/20 shadow-2xl z-50 overflow-hidden animate-in slide-in-from-top-2 duration-200">
                     <div className="p-3 border-b border-blue-500/20">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-sm font-semibold text-white">Notifications</h3>
+                        <h3 className="text-sm font-semibold text-white">
+                          Notifications
+                        </h3>
                         <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
                           Mark all read
                         </button>
@@ -188,12 +245,21 @@ export default function AdminLayout({ children }) {
                     </div>
                     <div className="max-h-96 overflow-y-auto">
                       {notifications.map((notif) => (
-                        <div key={notif.id} className={`p-3 border-b border-blue-500/10 hover:bg-blue-500/5 transition-colors cursor-pointer ${!notif.read ? 'bg-blue-500/5' : ''}`}>
+                        <div
+                          key={notif.id}
+                          className={`p-3 border-b border-blue-500/10 hover:bg-blue-500/5 transition-colors cursor-pointer ${!notif.read ? "bg-blue-500/5" : ""}`}
+                        >
                           <div className="flex items-start gap-2">
-                            <div className={`w-2 h-2 rounded-full mt-1.5 ${!notif.read ? 'bg-blue-400' : 'bg-gray-600'}`}></div>
+                            <div
+                              className={`w-2 h-2 rounded-full mt-1.5 ${!notif.read ? "bg-blue-400" : "bg-gray-600"}`}
+                            ></div>
                             <div>
-                              <p className="text-sm font-medium text-white">{notif.title}</p>
-                              <p className="text-xs text-gray-400 mt-1">{notif.time}</p>
+                              <p className="text-sm font-medium text-white">
+                                {notif.title}
+                              </p>
+                              <p className="text-xs text-gray-400 mt-1">
+                                {notif.time}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -269,14 +335,17 @@ export default function AdminLayout({ children }) {
                     className={`
                       group relative w-full flex items-center gap-3 px-3 py-2.5 rounded-xl
                       transition-all duration-300
-                      ${isActive 
-                        ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30" 
-                        : "text-gray-300 hover:bg-blue-500/10 hover:text-white"
+                      ${
+                        isActive
+                          ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30"
+                          : "text-gray-300 hover:bg-blue-500/10 hover:text-white"
                       }
                       ${isCollapsed ? "justify-center" : ""}
                     `}
                   >
-                    <Icon className={`w-5 h-5 flex-shrink-0 transition-transform group-hover:scale-110 ${isActive ? "text-white" : ""}`} />
+                    <Icon
+                      className={`w-5 h-5 flex-shrink-0 transition-transform group-hover:scale-110 ${isActive ? "text-white" : ""}`}
+                    />
 
                     {!isCollapsed && (
                       <>
@@ -284,11 +353,13 @@ export default function AdminLayout({ children }) {
                           {label}
                         </span>
                         {badge && (
-                          <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                            isActive 
-                              ? "bg-white/20 text-white" 
-                              : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
-                          }`}>
+                          <span
+                            className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                              isActive
+                                ? "bg-white/20 text-white"
+                                : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+                            }`}
+                          >
                             {badge}
                           </span>
                         )}
@@ -308,7 +379,6 @@ export default function AdminLayout({ children }) {
 
             {/* Bottom Section */}
             <div className="border-t border-blue-500/20 pt-4 mt-4 px-3 pb-6">
-             
               <button
                 onClick={() => setShowProfileModal(true)}
                 className={`group w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-blue-500/10 text-gray-300 hover:text-white transition-all duration-300 ${
@@ -356,15 +426,16 @@ export default function AdminLayout({ children }) {
             ml-0
           `}
         >
-          <div className="p-4 lg:p-6">
-            {children}
-          </div>
+          <div className="p-4 lg:p-6">{children}</div>
         </main>
       </div>
 
       {/* Profile Modal */}
       {showProfileModal && (
-        <AdminProfileModal isOpen={showProfileModal} onClose={() => setShowProfileModal(false)} />
+        <AdminProfileModal
+          isOpen={showProfileModal}
+          onClose={() => setShowProfileModal(false)}
+        />
       )}
     </div>
   );
@@ -382,12 +453,12 @@ const AdminProfileModal = ({ isOpen, onClose }) => {
         className="absolute inset-0 bg-black/70 backdrop-blur-md animate-in fade-in duration-200"
         onClick={onClose}
       />
-      
+
       <div className="relative bg-gradient-to-b from-gray-900 to-gray-900 backdrop-blur-2xl rounded-2xl w-full max-w-lg shadow-2xl border border-blue-500/20 animate-in zoom-in-95 duration-300 overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute -top-32 -right-32 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl"></div>
-        
+
         {/* Header */}
         <div className="relative p-6 border-b border-blue-500/20">
           <div className="flex items-center justify-between">
@@ -448,18 +519,24 @@ const AdminProfileModal = ({ isOpen, onClose }) => {
               <div className="space-y-3">
                 <div className="p-3 bg-gray-800/50 rounded-xl border border-blue-500/20 hover:bg-gray-800/70 transition-colors">
                   <p className="text-xs text-gray-400 mb-1">Email Address</p>
-                  <p className="text-sm font-medium text-white">admin@medconf.com</p>
+                  <p className="text-sm font-medium text-white">
+                    admin@medconf.com
+                  </p>
                 </div>
                 <div className="p-3 bg-gray-800/50 rounded-xl border border-blue-500/20 hover:bg-gray-800/70 transition-colors">
                   <p className="text-xs text-gray-400 mb-1">Role</p>
                   <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-blue-400" />
-                    <p className="text-sm font-medium text-white">Administrator</p>
+                    <p className="text-sm font-medium text-white">
+                      Administrator
+                    </p>
                   </div>
                 </div>
                 <div className="p-3 bg-gray-800/50 rounded-xl border border-blue-500/20 hover:bg-gray-800/70 transition-colors">
                   <p className="text-xs text-gray-400 mb-1">Last Login</p>
-                  <p className="text-sm font-medium text-white">Today, 09:42 AM</p>
+                  <p className="text-sm font-medium text-white">
+                    Today, 09:42 AM
+                  </p>
                   <p className="text-xs text-gray-500 mt-1">IP: 192.168.1.1</p>
                 </div>
               </div>
@@ -469,15 +546,23 @@ const AdminProfileModal = ({ isOpen, onClose }) => {
           {activeTab === "security" && (
             <div className="space-y-4">
               <div className="p-4 bg-gray-800/50 rounded-xl border border-blue-500/20">
-                <p className="text-sm font-medium text-white mb-2">Two-Factor Authentication</p>
-                <p className="text-xs text-gray-400 mb-3">Add an extra layer of security to your account</p>
+                <p className="text-sm font-medium text-white mb-2">
+                  Two-Factor Authentication
+                </p>
+                <p className="text-xs text-gray-400 mb-3">
+                  Add an extra layer of security to your account
+                </p>
                 <button className="w-full py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all">
                   Enable 2FA
                 </button>
               </div>
               <div className="p-4 bg-gray-800/50 rounded-xl border border-blue-500/20">
-                <p className="text-sm font-medium text-white mb-2">Change Password</p>
-                <p className="text-xs text-gray-400 mb-3">Update your password regularly</p>
+                <p className="text-sm font-medium text-white mb-2">
+                  Change Password
+                </p>
+                <p className="text-xs text-gray-400 mb-3">
+                  Update your password regularly
+                </p>
                 <button className="w-full py-2 bg-gray-700 rounded-lg text-white text-sm font-medium hover:bg-gray-600 transition-all">
                   Change Password
                 </button>
@@ -492,7 +577,9 @@ const AdminProfileModal = ({ isOpen, onClose }) => {
                   <Activity className="w-4 h-4 text-blue-400" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm text-white">Logged in from new device</p>
+                  <p className="text-sm text-white">
+                    Logged in from new device
+                  </p>
                   <p className="text-xs text-gray-400">2 hours ago</p>
                 </div>
               </div>
@@ -501,7 +588,9 @@ const AdminProfileModal = ({ isOpen, onClose }) => {
                   <Shield className="w-4 h-4 text-blue-400" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm text-white">Security settings updated</p>
+                  <p className="text-sm text-white">
+                    Security settings updated
+                  </p>
                   <p className="text-xs text-gray-400">Yesterday</p>
                 </div>
               </div>
@@ -520,8 +609,23 @@ const AdminProfileModal = ({ isOpen, onClose }) => {
 
 // Camera icon component
 const Camera = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+    />
   </svg>
 );

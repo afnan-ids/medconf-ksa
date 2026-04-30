@@ -353,132 +353,159 @@ export default function ExhibitorRegisterPage() {
             </div>
           </div>
 
+        
           {/* Main Form Container */}
           <div
-            className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden"
+            className="relative bg-gradient-to-br from-gray-900/80 via-indigo-950/80 to-gray-900/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-700"
             id="form"
           >
+            {/* Animated gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-cyan-500/5 to-blue-600/5 opacity-0 hover:opacity-100 transition-opacity duration-700"></div>
+
+            {/* Decorative corner elements */}
+            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-br-3xl blur-2xl"></div>
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-blue-500/20 to-cyan-500/20 rounded-tl-3xl blur-2xl"></div>
+
             {/* Form Header */}
-            <div className="px-6 py-5 border-b border-white/10 bg-gradient-to-r from-blue-600/5 to-cyan-500/5">
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-2">
-                    <Sparkles className="w-3 h-3 text-blue-400" />
-                    <span className="text-xs text-white/80">
-                      MedConf KSA 2026
+            <div className="relative text-center py-10 px-4 border-b border-white/10 bg-gradient-to-r from-blue-600/10 via-cyan-500/10 to-blue-600/10">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+              <div className="relative">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 mb-4">
+                  <Store className="w-4 h-4 text-blue-400" />
+                  <span className="text-xs text-blue-300 font-medium">
+                    Exhibition Opportunity
+                  </span>
+                </div>
+                <h2 className="pb-2 text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
+                  Exhibitor Registration
+                </h2>
+                <p className="text-gray-300 mt-3 text-lg">
+                  Showcase your innovation to industry leaders
+                </p>
+                <div className="flex items-center justify-center gap-2 mt-4">
+                  <div className="flex items-center gap-1 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
+                    <Lock className="w-3 h-3 text-cyan-400" />
+                    <span className="text-xs text-gray-400">
+                      256-bit SSL Secure
                     </span>
                   </div>
-                  <h2 className="text-xl font-bold text-white">
-                    Exhibitor Registration
-                  </h2>
-                  <p className="text-gray-400 text-xs mt-0.5">
-                    Showcase your innovation to industry leaders
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1 px-2 py-1 bg-white/5 rounded-full">
-                    <Lock className="w-3 h-3 text-cyan-400" />
-                    <span className="text-xs text-gray-400">Secure</span>
+                  <div className="flex items-center gap-1 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
+                    <Shield className="w-3 h-3 text-blue-400" />
+                    <span className="text-xs text-gray-400">
+                      GDPR Compliant
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-5 space-y-5">
+            <form
+              onSubmit={handleSubmit}
+              className="relative p-6 md:p-8 lg:p-10 space-y-8"
+            >
               {/* ACCOUNT SECTION */}
-              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg">
-                    <Lock className="w-4 h-4 text-white" />
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10">
+                <div className="absolute -inset-px bg-gradient-to-r from-blue-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/10 group-hover:via-blue-500/10 group-hover:to-cyan-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
+
+                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
+                    <div className="relative p-3 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl shadow-lg">
+                      <Lock className="w-6 h-6 text-white" />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Account Information
                     </h3>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-gray-400 text-sm mt-1">
                       Create your secure account
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      Email Address *
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
+                      <Mail className="w-4 h-4 text-blue-400" />
+                      Email Address <span className="text-red-400">*</span>
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
+                      <Mail className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover/field:text-blue-400" />
                       <input
                         name="email"
                         type="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-9`}
+                        className={`${inputStyle} pl-12`}
                         placeholder="company@example.com"
                         required
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      Phone Number *
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
+                      <Phone className="w-4 h-4 text-cyan-400" />
+                      Phone Number <span className="text-red-400">*</span>
                     </label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
+                      <Phone className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover/field:text-cyan-400" />
                       <input
                         name="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-9`}
+                        className={`${inputStyle} pl-12`}
                         placeholder="+966 XX XXX XXXX"
                         required
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      Password *
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
+                      <Lock className="w-4 h-4 text-blue-400" />
+                      Password <span className="text-red-400">*</span>
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
+                      <Lock className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover/field:text-blue-400" />
                       <input
                         name="password"
                         type={showPassword ? "text" : "password"}
                         value={formData.password}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-9 pr-9`}
+                        className={`${inputStyle} pl-12 pr-12`}
                         placeholder="Create a strong password"
                         required
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-2 text-gray-500 hover:text-blue-400"
+                        className="absolute right-3 top-3.5 text-gray-400 hover:text-blue-400 transition-colors"
                       >
                         {showPassword ? (
-                          <EyeOff className="w-4 h-4" />
+                          <EyeOff className="w-5" />
                         ) : (
-                          <Eye className="w-4 h-4" />
+                          <Eye className="w-5" />
                         )}
                       </button>
                     </div>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      Confirm Password *
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
+                      <Lock className="w-4 h-4 text-cyan-400" />
+                      Confirm Password <span className="text-red-400">*</span>
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
+                      <Lock className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover/field:text-cyan-400" />
                       <input
                         name="confirmPassword"
                         type={showConfirmPassword ? "text" : "password"}
                         value={formData.confirmPassword}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-9 pr-9`}
+                        className={`${inputStyle} pl-12 pr-12`}
                         placeholder="Confirm your password"
                         required
                       />
@@ -487,12 +514,12 @@ export default function ExhibitorRegisterPage() {
                         onClick={() =>
                           setShowConfirmPassword(!showConfirmPassword)
                         }
-                        className="absolute right-3 top-2 text-gray-500 hover:text-blue-400"
+                        className="absolute right-3 top-3.5 text-gray-400 hover:text-cyan-400 transition-colors"
                       >
                         {showConfirmPassword ? (
-                          <EyeOff className="w-4 h-4" />
+                          <EyeOff className="w-5" />
                         ) : (
-                          <Eye className="w-4 h-4" />
+                          <Eye className="w-5" />
                         )}
                       </button>
                     </div>
@@ -501,25 +528,31 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* COMPANY SECTION */}
-              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-lg">
-                    <Building2 className="w-4 h-4 text-white" />
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-emerald-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/10">
+                <div className="absolute -inset-px bg-gradient-to-r from-emerald-500/0 via-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/10 group-hover:via-emerald-500/10 group-hover:to-teal-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
+
+                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
+                    <div className="relative p-3 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-xl shadow-lg">
+                      <Building2 className="w-6 h-6 text-white" />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Company Information
                     </h3>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-gray-400 text-sm mt-1">
                       Tell us about your organization
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      Company Name *
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
+                      <Building2 className="w-4 h-4 text-emerald-400" />
+                      Company Name <span className="text-red-400">*</span>
                     </label>
                     <input
                       name="companyName"
@@ -530,25 +563,28 @@ export default function ExhibitorRegisterPage() {
                       required
                     />
                   </div>
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
+
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
+                      <Globe className="w-4 h-4 text-teal-400" />
                       Company Website
                     </label>
                     <div className="relative">
-                      <Globe className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
+                      <Globe className="absolute left-3 top-3.5 text-gray-400 w-5" />
                       <input
                         name="companyWebsite"
                         value={formData.companyWebsite}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-9`}
+                        className={`${inputStyle} pl-12`}
                         placeholder="www.yourcompany.com"
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      Country *
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
+                      <Globe className="w-4 h-4 text-emerald-400" />
+                      Country <span className="text-red-400">*</span>
                     </label>
                     <select
                       name="country"
@@ -572,17 +608,18 @@ export default function ExhibitorRegisterPage() {
                     </select>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      City *
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
+                      <MapPin className="w-4 h-4 text-teal-400" />
+                      City <span className="text-red-400">*</span>
                     </label>
                     <div className="relative">
-                      <MapPin className="absolute left-3 top-2 text-gray-500 w-4 h-4" />
+                      <MapPin className="absolute left-3 top-3.5 text-gray-400 w-5" />
                       <input
                         name="city"
                         value={formData.city}
                         onChange={handleInputChange}
-                        className={`${inputStyle} pl-9`}
+                        className={`${inputStyle} pl-12`}
                         placeholder="e.g., Riyadh"
                         required
                       />
@@ -592,25 +629,30 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* CONTACT PERSON SECTION */}
-              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg">
-                    <User className="w-4 h-4 text-white" />
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-purple-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10">
+                <div className="absolute -inset-px bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
+
+                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
+                    <div className="relative p-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-xl shadow-lg">
+                      <User className="w-6 h-6 text-white" />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Contact Person Information
                     </h3>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-gray-400 text-sm mt-1">
                       Who should we contact?
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      First Name *
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                      First Name <span className="text-red-400">*</span>
                     </label>
                     <input
                       name="contactPersonFirstName"
@@ -621,9 +663,10 @@ export default function ExhibitorRegisterPage() {
                       required
                     />
                   </div>
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      Last Name *
+
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                      Last Name <span className="text-red-400">*</span>
                     </label>
                     <input
                       name="contactPersonLastName"
@@ -634,9 +677,10 @@ export default function ExhibitorRegisterPage() {
                       required
                     />
                   </div>
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
-                      Job Title *
+
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
+                      Job Title <span className="text-red-400">*</span>
                     </label>
                     <input
                       name="jobTitle"
@@ -651,24 +695,29 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* EXHIBITION REQUIREMENTS SECTION */}
-              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-orange-600 to-red-500 rounded-lg">
-                    <Store className="w-4 h-4 text-white" />
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-orange-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/10">
+                <div className="absolute -inset-px bg-gradient-to-r from-orange-500/0 via-orange-500/0 to-red-500/0 group-hover:from-orange-500/10 group-hover:via-orange-500/10 group-hover:to-red-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
+
+                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
+                    <div className="relative p-3 bg-gradient-to-r from-orange-600 to-red-500 rounded-xl shadow-lg">
+                      <Store className="w-6 h-6 text-white" />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Exhibition Requirements
                     </h3>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-gray-400 text-sm mt-1">
                       Tell us your booth preferences
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Booth Preference
                     </label>
                     <select
@@ -687,8 +736,8 @@ export default function ExhibitorRegisterPage() {
                     </select>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Booth Size (sqm)
                     </label>
                     <select
@@ -708,31 +757,40 @@ export default function ExhibitorRegisterPage() {
                     </select>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Estimated Budget (USD)
                     </label>
-                    <select
-                      name="estimatedBudget"
-                      value={formData.estimatedBudget}
-                      onChange={handleInputChange}
-                      className={selectStyle}
-                    >
-                      <option value="" className="bg-gray-800">
-                        Select budget range
-                      </option>
-                      <option className="bg-gray-800">$5,000 - $10,000</option>
-                      <option className="bg-gray-800">$10,000 - $25,000</option>
-                      <option className="bg-gray-800">$25,000 - $50,000</option>
-                      <option className="bg-gray-800">
-                        $50,000 - $100,000
-                      </option>
-                      <option className="bg-gray-800">$100,000+</option>
-                    </select>
+                    <div className="relative">
+                      <DollarSign className="absolute left-3 top-3.5 text-gray-400 w-5" />
+                      <select
+                        name="estimatedBudget"
+                        value={formData.estimatedBudget}
+                        onChange={handleInputChange}
+                        className={`${selectStyle} pl-12`}
+                      >
+                        <option value="" className="bg-gray-800">
+                          Select budget range
+                        </option>
+                        <option className="bg-gray-800">
+                          $5,000 - $10,000
+                        </option>
+                        <option className="bg-gray-800">
+                          $10,000 - $25,000
+                        </option>
+                        <option className="bg-gray-800">
+                          $25,000 - $50,000
+                        </option>
+                        <option className="bg-gray-800">
+                          $50,000 - $100,000
+                        </option>
+                        <option className="bg-gray-800">$100,000+</option>
+                      </select>
+                    </div>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Number of Staff
                     </label>
                     <select
@@ -752,8 +810,8 @@ export default function ExhibitorRegisterPage() {
                     </select>
                   </div>
 
-                  <div>
-                    <label className="text-gray-300 text-xs mb-1 block">
+                  <div className="group/field">
+                    <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Previous Participation at MedConf
                     </label>
                     <select
@@ -778,49 +836,50 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* DOCUMENTS SECTION */}
-              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-cyan-600 to-blue-500 rounded-lg">
-                    <FileText className="w-4 h-4 text-white" />
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-cyan-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10">
+                <div className="absolute -inset-px bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-blue-500/0 group-hover:from-cyan-500/10 group-hover:via-cyan-500/10 group-hover:to-blue-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
+
+                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
+                    <div className="relative p-3 bg-gradient-to-r from-cyan-600 to-blue-500 rounded-xl shadow-lg">
+                      <FileText className="w-6 h-6 text-white" />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Upload Documents
                     </h3>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-gray-400 text-sm mt-1">
                       Supporting documents for your application
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {[
                     {
                       name: "Company Registration",
                       icon: Building2,
                       key: "companyRegistration",
-                      color: "from-blue-500 to-cyan-500",
                       accept: ".pdf,.jpg,.png",
                     },
                     {
                       name: "Tax Certificate",
                       icon: FileText,
                       key: "taxCertificate",
-                      color: "from-emerald-500 to-teal-500",
                       accept: ".pdf,.jpg,.png",
                     },
                     {
                       name: "Company Logo",
                       icon: Camera,
                       key: "companyLogo",
-                      color: "from-purple-500 to-pink-500",
                       accept: "image/*",
                     },
                     {
                       name: "Product Brochure",
                       icon: FileText,
                       key: "productBrochure",
-                      color: "from-orange-500 to-red-500",
                       accept: ".pdf,.doc,.docx",
                     },
                   ].map((doc, idx) => (
@@ -828,10 +887,10 @@ export default function ExhibitorRegisterPage() {
                       key={idx}
                       onMouseEnter={() => setHoveredDoc(idx)}
                       onMouseLeave={() => setHoveredDoc(null)}
-                      className={`relative border-2 border-dashed rounded-xl p-3 text-center cursor-pointer transition-all duration-200 ${
+                      className={`relative border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 transform ${
                         hoveredDoc === idx
-                          ? `border-blue-500 bg-blue-500/10`
-                          : "border-white/20 hover:border-white/40"
+                          ? "border-transparent bg-gradient-to-br from-cyan-500 to-blue-500 shadow-2xl scale-105"
+                          : "border-white/20 hover:border-white/40 bg-white/5"
                       }`}
                     >
                       <input
@@ -840,63 +899,80 @@ export default function ExhibitorRegisterPage() {
                         accept={doc.accept}
                         onChange={(e) => handleFileChange(e, doc.key)}
                       />
-                      <doc.icon
-                        className={`mx-auto mb-1 w-6 h-6 ${hoveredDoc === idx ? "text-blue-400" : "text-gray-500"}`}
-                      />
+                      <div
+                        className={`transition-all duration-300 ${hoveredDoc === idx ? "text-white" : "text-gray-400"}`}
+                      >
+                        <doc.icon className="mx-auto mb-3 w-10 h-10" />
+                      </div>
                       <p
-                        className={`text-xs font-medium ${hoveredDoc === idx ? "text-blue-300" : "text-gray-400"}`}
+                        className={`text-sm font-medium transition-all duration-300 ${hoveredDoc === idx ? "text-white" : "text-gray-300"}`}
                       >
                         {doc.name}
                       </p>
                       {formData[doc.key] && (
-                        <p className="text-[10px] mt-1 text-cyan-400 truncate">
+                        <p
+                          className={`text-xs mt-2 truncate px-2 ${hoveredDoc === idx ? "text-white/80" : "text-cyan-400"}`}
+                        >
                           ✓ {formData[doc.key].name}
                         </p>
                       )}
+                      <Upload
+                        className={`absolute bottom-4 right-4 w-5 h-5 transition-all duration-300 ${hoveredDoc === idx ? "text-white opacity-100" : "opacity-0"}`}
+                      />
                     </label>
                   ))}
                 </div>
-                <p className="text-[10px] text-gray-500 mt-3 text-center">
-                  Accepted: PDF, JPG, PNG, DOC. Max 5MB per file
+                <p className="text-xs text-gray-500 mt-4 text-center">
+                  Accepted formats: PDF, JPG, PNG, DOC. Max size: 5MB per file
                 </p>
               </div>
 
               {/* ADDITIONAL QUESTIONS SECTION */}
-              <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                <div className="flex items-center gap-3 mb-4 pb-2 border-b border-white/10">
-                  <div className="p-2 bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg">
-                    <Send className="w-4 h-4 text-white" />
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
+                <div className="absolute -inset-px bg-gradient-to-r from-gray-500/0 via-gray-500/0 to-gray-600/0 group-hover:from-gray-500/10 group-hover:via-gray-500/10 group-hover:to-gray-600/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
+
+                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-gray-600 rounded-xl blur-lg opacity-50 animate-pulse"></div>
+                    <div className="relative p-3 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl shadow-lg">
+                      <Send className="w-6 h-6 text-white" />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Additional Information
                     </h3>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-gray-400 text-sm mt-1">
                       Help us understand your needs
                     </p>
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {/* Announcements */}
                   <div>
-                    <p className="text-gray-300 text-sm mb-2">
+                    <h4 className="font-semibold text-gray-300 mb-3 text-lg">
                       Do you plan on making any announcements at MedConf?
-                    </p>
-                    <div className="flex gap-4">
+                    </h4>
+                    <div className="flex flex-wrap gap-6">
                       {["yes", "no", "maybe"].map((value) => (
                         <label
                           key={value}
-                          className="flex items-center gap-1.5 cursor-pointer"
+                          className="flex items-center gap-2 cursor-pointer group/radio"
                         >
-                          <input
-                            type="radio"
-                            name="announcement"
-                            value={value}
-                            onChange={(e) => setAnnouncement(e.target.value)}
-                            className="w-3.5 h-3.5 text-blue-500"
-                          />
-                          <span className="text-gray-400 text-sm capitalize">
+                          <div className="relative">
+                            <input
+                              type="radio"
+                              name="announcement"
+                              value={value}
+                              onChange={(e) => setAnnouncement(e.target.value)}
+                              className="w-4 h-4 text-blue-500 bg-white/10 border-white/20 peer hidden"
+                            />
+                            <div className="w-5 h-5 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
+                              <div className="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                          </div>
+                          <span className="text-gray-300 capitalize group-hover/radio:text-white transition-colors duration-300">
                             {value}
                           </span>
                         </label>
@@ -906,28 +982,33 @@ export default function ExhibitorRegisterPage() {
 
                   {/* Sponsorship */}
                   <div>
-                    <p className="text-gray-300 text-sm mb-2">
+                    <h4 className="font-semibold text-gray-300 mb-3 text-lg">
                       Are you interested in additional sponsorship
                       opportunities?
-                    </p>
-                    <div className="flex flex-wrap gap-4">
+                    </h4>
+                    <div className="flex flex-wrap gap-6">
                       {[
-                        { value: "yes", label: "Yes, contact me" },
+                        { value: "yes", label: "Yes, please contact me" },
                         { value: "no", label: "Not at this time" },
-                        { value: "maybe", label: "Maybe, send info" },
+                        { value: "maybe", label: "Maybe, send me information" },
                       ].map((option) => (
                         <label
                           key={option.value}
-                          className="flex items-center gap-1.5 cursor-pointer"
+                          className="flex items-center gap-2 cursor-pointer group/radio"
                         >
-                          <input
-                            type="radio"
-                            name="sponsorship"
-                            value={option.value}
-                            onChange={(e) => setSponsorship(e.target.value)}
-                            className="w-3.5 h-3.5 text-blue-500"
-                          />
-                          <span className="text-gray-400 text-sm">
+                          <div className="relative">
+                            <input
+                              type="radio"
+                              name="sponsorship"
+                              value={option.value}
+                              onChange={(e) => setSponsorship(e.target.value)}
+                              className="w-4 h-4 text-blue-500 bg-white/10 border-white/20 peer hidden"
+                            />
+                            <div className="w-5 h-5 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
+                              <div className="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                          </div>
+                          <span className="text-gray-300 group-hover/radio:text-white transition-colors duration-300">
                             {option.label}
                           </span>
                         </label>
@@ -937,10 +1018,10 @@ export default function ExhibitorRegisterPage() {
 
                   {/* Information Request */}
                   <div>
-                    <p className="text-gray-300 text-sm mb-2">
+                    <h4 className="font-semibold text-gray-300 mb-3 text-lg">
                       What information would you like to receive?
-                    </p>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       {[
                         "Exhibitor Prospectus",
                         "Floor Plan",
@@ -948,51 +1029,66 @@ export default function ExhibitorRegisterPage() {
                         "Visitor Demographics",
                         "Previous Event Report",
                         "Custom Quote",
-                      ].map((item) => (
+                      ].map((item, i) => (
                         <label
-                          key={item}
-                          className="flex items-center gap-1.5 cursor-pointer"
+                          key={i}
+                          className="flex items-center gap-2 cursor-pointer group/checkbox"
                         >
-                          <input
-                            type="checkbox"
-                            value={item}
-                            onChange={() => handleInfoRequestChange(item)}
-                            className="w-3.5 h-3.5 text-blue-500 rounded"
-                          />
-                          <span className="text-gray-400 text-xs">{item}</span>
+                          <div className="relative">
+                            <input
+                              type="checkbox"
+                              value={item}
+                              onChange={() => handleInfoRequestChange(item)}
+                              className="w-4 h-4 text-blue-500 rounded bg-white/10 border-white/20 peer hidden"
+                            />
+                            <div className="w-5 h-5 rounded border-2 border-gray-400 group-hover/checkbox:border-blue-400 transition-all duration-300 peer-checked:bg-blue-500 peer-checked:border-blue-500 flex items-center justify-center">
+                              <CheckCircle className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300" />
+                            </div>
+                          </div>
+                          <span className="text-sm text-gray-300 group-hover/checkbox:text-white transition-colors duration-300">
+                            {item}
+                          </span>
                         </label>
                       ))}
                     </div>
                   </div>
 
                   {/* Organizer Communication */}
-                  <div className="bg-white/5 rounded-lg p-3">
-                    <p className="text-gray-400 text-xs mb-2">
-                      Receive event updates, networking opportunities and offers
-                      from MedConf.
+                  <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                    <p className="text-sm text-gray-300 mb-4 font-medium">
+                      I would like to receive tailored information, including
+                      exhibition updates, exclusive networking opportunities and
+                      access to offers from MedConf and Tahaluf.
                     </p>
-                    <div className="flex flex-wrap gap-3 text-xs">
+                    <div className="flex flex-wrap gap-6 text-sm">
                       {["Email", "Phone", "SMS"].map((type) => (
-                        <div key={type} className="flex items-center gap-1.5">
-                          <span className="text-gray-400 w-10">{type}:</span>
+                        <div key={type} className="flex items-center gap-3">
+                          <span className="text-gray-400 font-medium w-12">
+                            {type}:
+                          </span>
                           {["yes", "no"].map((option) => (
                             <label
                               key={option}
-                              className="flex items-center gap-0.5 cursor-pointer"
+                              className="flex items-center gap-1 cursor-pointer group/radio"
                             >
-                              <input
-                                type="radio"
-                                name={`org-${type}`}
-                                value={option}
-                                onChange={() =>
-                                  setOrgComm({
-                                    ...orgComm,
-                                    [type.toLowerCase()]: option,
-                                  })
-                                }
-                                className="w-3 h-3 text-blue-500"
-                              />
-                              <span className="text-gray-400 text-xs capitalize">
+                              <div className="relative">
+                                <input
+                                  type="radio"
+                                  name={`org-${type}`}
+                                  value={option}
+                                  onChange={() =>
+                                    setOrgComm({
+                                      ...orgComm,
+                                      [type.toLowerCase()]: option,
+                                    })
+                                  }
+                                  className="w-3.5 h-3.5 text-blue-500 bg-white/10 border-white/20 peer hidden"
+                                />
+                                <div className="w-4 h-4 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                              </div>
+                              <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
                                 {option}
                               </span>
                             </label>
@@ -1003,33 +1099,40 @@ export default function ExhibitorRegisterPage() {
                   </div>
 
                   {/* Exhibitor Communication */}
-                  <div className="bg-white/5 rounded-lg p-3">
-                    <p className="text-gray-400 text-xs mb-2">
-                      Receive information about networking opportunities and
-                      exhibitor benefits.
+                  <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                    <p className="text-sm text-gray-300 mb-4 font-medium">
+                      I would like to receive information about networking
+                      opportunities and exhibitor benefits.
                     </p>
-                    <div className="flex flex-wrap gap-3 text-xs">
+                    <div className="flex flex-wrap gap-6 text-sm">
                       {["Email", "Phone", "SMS"].map((type) => (
-                        <div key={type} className="flex items-center gap-1.5">
-                          <span className="text-gray-400 w-10">{type}:</span>
+                        <div key={type} className="flex items-center gap-3">
+                          <span className="text-gray-400 font-medium w-12">
+                            {type}:
+                          </span>
                           {["yes", "no"].map((option) => (
                             <label
                               key={option}
-                              className="flex items-center gap-0.5 cursor-pointer"
+                              className="flex items-center gap-1 cursor-pointer group/radio"
                             >
-                              <input
-                                type="radio"
-                                name={`expo-${type}`}
-                                value={option}
-                                onChange={() =>
-                                  setExhibitorComm({
-                                    ...exhibitorComm,
-                                    [type.toLowerCase()]: option,
-                                  })
-                                }
-                                className="w-3 h-3 text-blue-500"
-                              />
-                              <span className="text-gray-400 text-xs capitalize">
+                              <div className="relative">
+                                <input
+                                  type="radio"
+                                  name={`expo-${type}`}
+                                  value={option}
+                                  onChange={() =>
+                                    setExhibitorComm({
+                                      ...exhibitorComm,
+                                      [type.toLowerCase()]: option,
+                                    })
+                                  }
+                                  className="w-3.5 h-3.5 text-blue-500 bg-white/10 border-white/20 peer hidden"
+                                />
+                                <div className="w-4 h-4 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                              </div>
+                              <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
                                 {option}
                               </span>
                             </label>
@@ -1042,28 +1145,40 @@ export default function ExhibitorRegisterPage() {
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-xl font-semibold text-base hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <Store className="w-4 h-4" />
-                <span>Register as Exhibitor</span>
-                <CheckCircle className="w-4 h-4" />
-              </button>
+              <div className="pt-6">
+                <button
+                  type="submit"
+                  className="relative group/btn w-full overflow-hidden transition-all duration-500"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-2xl animate-gradient-x"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur-xl opacity-0 group-hover/btn:opacity-60 transition-opacity duration-500"></div>
+                  <div className="relative bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-10 py-4 rounded-2xl text-lg font-bold hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 w-full">
+                    <Store className="w-5 h-5" />
+                    <span>Register as Exhibitor</span>
+                    <CheckCircle className="w-5 h-5 group-hover/btn:scale-125 transition-transform duration-300" />
+                    <div className="absolute inset-0 rounded-2xl bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                    <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                  </div>
+                </button>
 
-              <p className="text-center text-gray-500 text-xs">
-                By submitting, you agree to our Terms of Service and Privacy
-                Policy
-              </p>
+                <div className="flex items-center justify-center gap-4 mt-6">
+                  <p className="text-xs text-gray-500 text-center">
+                    By submitting, you agree to our Terms of Service and Privacy
+                    Policy
+                  </p>
+                </div>
+              </div>
             </form>
 
             {/* Footer */}
-            <div className="text-center py-3 border-t border-white/10 bg-white/5">
+            <div className="relative text-center py-6 border-t border-white/10 bg-gradient-to-r from-blue-600/5 via-cyan-500/5 to-blue-600/5">
               <p className="text-gray-400 text-sm">
                 Already have an account?{" "}
                 <Link
                   href="/Forms/Login"
-                  className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text font-semibold"
+                  className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text font-semibold hover:from-blue-300 hover:to-cyan-200 transition-all duration-300"
                 >
                   Sign in here
                 </Link>

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { menuItems } from "../../../Data/hcp-data";
 import PortalIntro from "../../../Layout/PortalsAnimation";
+import Link from "next/link";
 export default function HCPLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -273,6 +274,17 @@ export default function HCPLayout({ children }) {
           onClose={() => setShowProfileModal(false)}
         />
       )}
+
+      {/* Simple Temporary Register Button */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <Link
+          href="/Forms/PractitionerRegistrationForm"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs font-medium rounded-lg shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300"
+        >
+          <Sparkles className="w-3 h-3" />
+          <span>Register</span>
+        </Link>
+      </div>
     </div>
   );
 }

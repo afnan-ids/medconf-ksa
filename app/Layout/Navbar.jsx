@@ -67,7 +67,7 @@ const navlinks = [
     },
     {
       label: "Admin Portal",
-      href: "/AdminPortal/Dashboard",
+      href: "/Admin/Dashboard",
       icon: Shield, 
     },
     { label: "View All Portals", href: "/pages/Portals/", isViewAll: true, icon: Eye },

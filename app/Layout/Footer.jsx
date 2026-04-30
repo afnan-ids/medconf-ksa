@@ -22,7 +22,7 @@ export default function Footer() {
   const quickLinks = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/Services" },
-    { label: "Events", href: "/pages/NavBar-Links/NavEvents" },
+    { label: "Events", href: "/pages/Events" },
     { label: "Portals", href: "/pages/Portals" },
     // { label: "Whats On ?", href: "#" },
     { label: "About", href: "/pages/AboutUs" },
@@ -89,7 +89,7 @@ export default function Footer() {
       label: "Guided Exhibition Tours",
       href: "/pages/WhatsOn/GuidedExhibitionTours",
     },
-    { label: "View All Events", href: "#", isViewAll: true },
+    { label: "View All Events", href: "#", isViewAll: false },
   ];
 
   // Column 5: Resources
