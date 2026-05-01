@@ -777,7 +777,7 @@ export default function SponsorRegisterPage() {
                       event updates, exclusive networking opportunities and
                       access to offers from MedConf and Tahaluf.
                     </p>
-                    <div className="flex flex-wrap gap-6 text-sm">
+                    <div className="flex flex-wrap gap-6 text-sm justify-between">
                       {["Email", "Phone", "SMS"].map((type) => (
                         <div key={type} className="flex items-center gap-3">
                           <span className="text-gray-400 font-medium w-12">
@@ -821,7 +821,7 @@ export default function SponsorRegisterPage() {
                       I would like to receive information about innovations,
                       products and services from exhibitors and sponsors.
                     </p>
-                    <div className="flex flex-wrap gap-6 text-sm">
+                    <div className="flex flex-wrap gap-6 text-sm justify-between">
                       {["Email", "Phone", "SMS"].map((type) => (
                         <div key={type} className="flex items-center gap-3">
                           <span className="text-gray-400 font-medium w-12">

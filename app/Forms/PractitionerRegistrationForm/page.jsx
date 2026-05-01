@@ -926,7 +926,7 @@ export default function PractitionerRegisterPage() {
                       industry insights, exclusive networking opportunities and
                       access to offers from MedConf and Tahaluf.
                     </p>
-                    <div className="flex flex-wrap gap-6 text-sm">
+                    <div className="flex flex-wrap gap-6 text-sm justify-between">
                       {["Email", "Phone", "SMS"].map((type) => (
                         <div key={type} className="flex items-center gap-3">
                           <span className="text-gray-400 font-medium w-12">
@@ -970,7 +970,7 @@ export default function PractitionerRegisterPage() {
                       I would like to receive information about innovations,
                       products and services from exhibitors and sponsors.
                     </p>
-                    <div className="flex flex-wrap gap-6 text-sm">
+                    <div className="flex flex-wrap gap-6 text-sm justify-between">
                       {["Email", "Phone", "SMS"].map((type) => (
                         <div key={type} className="flex items-center gap-3">
                           <span className="text-gray-400 font-medium w-12">
@@ -979,7 +979,7 @@ export default function PractitionerRegisterPage() {
                           {["yes", "no"].map((option) => (
                             <label
                               key={option}
-                              className="flex items-center gap-1 cursor-pointer group/radio"
+                              className="flex items-center justify-between gap-1 cursor-pointer group/radio"
                             >
                               <div className="relative">
                                 <input
@@ -995,9 +995,11 @@ export default function PractitionerRegisterPage() {
                                   className="w-3.5 h-3.5 text-blue-500 bg-white/10 border-white/20 peer hidden"
                                 />
                                 <div className="w-4 h-4 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
+
                                   <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                               </div>
+                              
                               <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
                                 {option}
                               </span>
