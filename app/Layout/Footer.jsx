@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from 'next/image';
 import {
   Stethoscope,
   Mail,
@@ -147,22 +148,26 @@ export default function Footer() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl hidden lg:block"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl hidden lg:block"></div>
 
-            {/* 6 Column Grid - Desktop: 6 cols, Tablet: 3 cols, Mobile: 1 col */}
+            {/* 6 Column Grid*/}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-x-6 gap-y-8 relative z-10">
               {/* Column 1 - Brand */}
               <div className="group lg:w-62">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-50 rounded-xl group-hover:opacity-70 transition-opacity duration-500"></div>
-                    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                      <Stethoscope className="w-6 h-6 text-white" />
+                    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <Image
+                        src="/Images/Logo.png"
+                        alt="HPQL Logo"
+                        width={40}
+                        height={40}
+                      />
                     </div>
                   </div>
                   <div>
                     <h2 className="text-xl font-extrabold text-white">
-                      MedConf
                       <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent ml-1">
-                        KSA
+                        HPQL
                       </span>
                     </h2>
                     <p className="text-xs text-gray-400 -mt-1">
