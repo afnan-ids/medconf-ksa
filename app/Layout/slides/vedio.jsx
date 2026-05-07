@@ -1,0 +1,92 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+const SlideVideo = () => {
+  const [mounted, setMounted] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
+    videoRef.current?.play().catch(() => {});
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <div className="relative w-full h-full">
+      {/* Video Background */}
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/Vedeos/sliderdemovedeo-trimed.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Content Wrapper */}
+      <div className="relative w-full h-full flex items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
+          <div className="max-w-2xl sm:max-w-3xl">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-medium  drop-shadow-xl">
+              <span
+                className="block xs:inline font-bold mt-1 xs:mt-0 tracking-tight transition-all duration-500 bg-gradient-to-r from-cyan-400 via-purple-500 to-purple-600 bg-clip-text text-transparent"
+              >
+                HPQL
+              </span>
+            </h1>
+
+            <div className="w-16 sm:w-20 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-cyan-300 mt-4 sm:mt-6 mb-4 sm:mb-8 rounded-full"></div>
+
+            <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-white/90 max-w-xl leading-relaxed mb-6 sm:mb-8 md:mb-10">
+              Leading Medical Conferences & Exhibitions in the Kingdom of Saudi Arabia
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Bar at Bottom */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full px-3 sm:px-4 md:px-6">
+        <div className="max-w-6xl mx-auto bg-gradient-to-r from-blue-600 to-purple-600 border border-white/10 rounded-t-xl sm:rounded-t-2xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 text-center divide-x divide-white/20 [&>*:nth-child(1)]:border-r [&>*:nth-child(2)]:border-r md:[&>*:nth-child(2)]:border-r-0 [&>*:nth-child(3)]:border-r [&>*:nth-child(4)]:border-r-0 border-b border-white/20 md:border-b-0">
+            <div className="px-2 sm:px-3 md:px-4 lg:px-6 py-3 sm:py-4 md:py-5 lg:py-6">
+              <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-white">250+</div>
+              <div className="text-[10px] xs:text-xs sm:text-sm text-white/70 mt-0.5 sm:mt-1">Global Speakers</div>
+            </div>
+            <div className="px-2 sm:px-3 md:px-4 lg:px-6 py-3 sm:py-4 md:py-5 lg:py-6">
+              <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-white">3 Days</div>
+              <div className="text-[10px] xs:text-xs sm:text-sm text-white/70 mt-0.5 sm:mt-1">Exhibition</div>
+            </div>
+            <div className="px-2 sm:px-3 md:px-4 lg:px-6 py-3 sm:py-4 md:py-5 lg:py-6">
+              <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-white">15K+</div>
+              <div className="text-[10px] xs:text-xs sm:text-sm text-white/70 mt-0.5 sm:mt-1">Expected Visitors</div>
+            </div>
+            <div className="px-2 sm:px-3 md:px-4 lg:px-6 py-3 sm:py-4 md:py-5 lg:py-6">
+              <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-white">12+</div>
+              <div className="text-[10px] xs:text-xs sm:text-sm text-white/70 mt-0.5 sm:mt-1">Years Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        .stroke-text {
+          -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+        }
+        @media (max-width: 640px) {
+          .stroke-text {
+            -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.5);
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default SlideVideo;

@@ -7,6 +7,9 @@ import SpeakersSection from "@/app/Components/Home/Speakers"
 import MediaPartnersSection from "@/app/Components/Home/Partners"
 import WhyAttend from "@/app/Components/Home/WhytoAttend"
 import HealthSectors from "@/app/Components/Home/HealthSectors"
+import StrategicObjectives from "@/app/Components/Home/StrategicObjectives"
+import EventIndicators from "@/app/Components/Home/EventIndicators"
+import ConferenceActivities from "@/app/Components/Home/ConferenceActivities"
 
 export default function Home() {
   return (
@@ -15,9 +18,13 @@ export default function Home() {
     <SpeakersSection/>
      <Services/>
      <Portals/>
+     <StrategicObjectives/>
+     <EventIndicators/>
+     <ConferenceActivities/>
+     <HealthSectors/>
      <UpcomingEvents/>
      <WhyAttend/>
-     <HealthSectors/>
+     
      <Testimonials/>
      <MediaPartnersSection/>
     </>

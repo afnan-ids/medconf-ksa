@@ -10,6 +10,7 @@ import {
   UsersRound, Landmark, BookOpen, ArrowRight,
   Shield
 } from "lucide-react";
+import Image from "next/image";
 
 const navlinks = [
   { label: "Home", href: "/" },
@@ -184,7 +185,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
           scrolled
             ? "bg-gray-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl"
-            : "bg-gray-900/80 backdrop-blur-sm border-b border-white/5"
+            : "bg-gray-900/95 backdrop-blur-sm border-b border-white/5"
         }`}
       >
 
@@ -201,12 +202,17 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="group relative">
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-              <span className={`relative text-3xl font-black tracking-tight transition-all duration-500 text-white`}>
-                Medconf
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent ml-1">
-                  KSA
-                </span>
+              <div className="flex items-center">
+                <Image
+                src="/Images/Logo.png"
+                alt="HPQL Logo"
+                width={40}
+                height={40}
+              />
+              <span className={`relative text-3xl font-black tracking-tight transition-all duration-500 bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent ml-1`}>
+                HPQL
               </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}

@@ -12,7 +12,6 @@ export default function LayoutWrapper({ children }) {
     "/Admin/"
   ];
 
-
   const hideLayout = hiddenRoutes.some(route =>
     pathname.startsWith(route)
   );
@@ -20,7 +19,11 @@ export default function LayoutWrapper({ children }) {
   return (
     <>
       {!hideLayout && <Navbar />}
-      {children}
+
+      <main >
+        {children}
+      </main>
+
       {!hideLayout && <Footer />}
     </>
   );
