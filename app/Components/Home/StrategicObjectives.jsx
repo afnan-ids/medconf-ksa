@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   Globe,
   Zap,
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -254,9 +255,10 @@ export default function StrategicObjectives() {
                 <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 sm:gap-3">
                   <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span>Discover Our Vision</span>
-                  <span className="hidden sm:inline">•</span>
-                  <span className="text-sm">اكتشف رؤيتنا</span>
+                  {/* <span className="hidden sm:inline">•</span> */}
+                  {/* <span className="text-sm">اكتشف رؤيتنا</span> */}
                   <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover/cta:opacity-20 transition-opacity"></div>
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             </div>

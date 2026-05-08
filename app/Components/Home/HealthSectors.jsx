@@ -325,8 +325,8 @@ export default function TargetedSectors() {
                 <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 md:px-8 py-3 rounded-full text-sm font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3">
                   <Sparkles className="w-4 h-4" />
                   <span>Explore All Sectors</span>
-                  <span className="text-white/30">•</span>
-                  <span className="text-sm">استكشف القطاعات</span>
+                  {/* <span className="text-white/30">•</span> */}
+                  {/* <span className="text-sm">استكشف القطاعات</span> */}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
