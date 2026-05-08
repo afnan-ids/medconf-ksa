@@ -1,7 +1,15 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronRight, Sparkles, Mic, Star, MapPin, Calendar } from "lucide-react";
+import {
+  ChevronRight,
+  Sparkles,
+  Mic,
+  Star,
+  MapPin,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
 
 const SpeakersSection = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -104,7 +112,8 @@ const SpeakersSection = () => {
     if (container) {
       setCanScrollLeft(container.scrollLeft > 0);
       setCanScrollRight(
-        container.scrollLeft < container.scrollWidth - container.clientWidth - 10
+        container.scrollLeft <
+          container.scrollWidth - container.clientWidth - 10,
       );
     }
   };
@@ -146,10 +155,9 @@ const SpeakersSection = () => {
       {/* Glass container - matching footer style */}
       <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4">
         <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(79,70,229,0.3)] transition-all duration-700">
-          
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
-          
+
           <div className="p-4 sm:p-8 lg:p-12 relative">
             {/* Decorative orbs inside - hidden on mobile */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
@@ -184,7 +192,8 @@ const SpeakersSection = () => {
               </div>
 
               <p className="text-xs sm:text-sm md:text-lg text-gray-300 mt-3 sm:mt-6 max-w-2xl mx-auto px-4">
-                Industry leaders shaping the future of technology and innovation.
+                Industry leaders shaping the future of technology and
+                innovation.
               </p>
             </div>
 
@@ -212,31 +221,36 @@ const SpeakersSection = () => {
                 </button>
               )}
 
-              {/* Horizontal Scrolling Container - NEW CARD DESIGN */}
+              {/* Horizontal*/}
               <div
                 ref={scrollContainerRef}
-                className="flex overflow-x-auto scrollbar-hide gap-3 sm:gap-4 md:gap-6 pb-4 sm:pb-8 px-1 sm:px-2 lg:p-2"
+                className="flex overflow-x-auto scrollbar-hide gap-3 sm:gap-4 md:gap-6  sm:pb-8 px-1 sm:px-2 lg:p-6"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {speakers.map((speaker, index) => (
                   <div
                     key={index}
-                    className="flex-none w-[240px] sm:w-72 md:w-80 group relative"
+                    className="flex-none w-[240px] sm:w-72 md:w-80 group relative pb-1"
                   >
-                    {/* Card with glass effect - NEW DESIGN */}
-                    <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 sm:hover:-translate-y-2">
-                      
+                    {/* Card with glass effect  */}
+                    <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 sm:hover:-translate-y-2">
                       {/* Gradient overlay on hover */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${speaker.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
-                      
-                      {/* Top colored bar */}
-                      <div className={`absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r ${speaker.gradient}`}></div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${speaker.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}
+                      ></div>
 
-                      {/* Image container - circular design */}
+                      {/* Top colored bar */}
+                      <div
+                        className={`absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r ${speaker.gradient}`}
+                      ></div>
+
+                      {/* Image container */}
                       <div className="relative pt-4 sm:pt-8 px-4 sm:px-8 pb-2 sm:pb-4">
                         {/* Glow effect behind image */}
-                        <div className={`absolute top-8 sm:top-12 left-1/2 -translate-x-1/2 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gradient-to-r ${speaker.gradient} rounded-full blur-xl sm:blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-500`}></div>
-                        
+                        <div
+                          className={`absolute top-8 sm:top-12 left-1/2 -translate-x-1/2 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gradient-to-r ${speaker.gradient} rounded-full blur-xl sm:blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-500`}
+                        ></div>
+
                         {/* Circular image */}
                         <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-2 sm:border-4 border-white/10 group-hover:border-white/20 transition-all duration-500 ring-1 sm:ring-2 ring-transparent group-hover:ring-blue-500/50">
                           <img
@@ -245,9 +259,11 @@ const SpeakersSection = () => {
                             className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                           />
                         </div>
-                        
+
                         {/* Speaker number badge - smaller on mobile */}
-                        <div className={`absolute top-2 right-2 sm:top-6 sm:right-6 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r ${speaker.gradient} flex items-center justify-center text-[10px] sm:text-xs md:text-sm font-bold text-white shadow-lg`}>
+                        <div
+                          className={`absolute top-2 right-2 sm:top-6 sm:right-6 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r ${speaker.gradient} flex items-center justify-center text-[10px] sm:text-xs md:text-sm font-bold text-white shadow-lg`}
+                        >
                           #{index + 1}
                         </div>
                       </div>
@@ -265,7 +281,9 @@ const SpeakersSection = () => {
                         </p>
 
                         {/* Company badge */}
-                        <div className={`inline-block px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-1.5 rounded-full bg-white/5 border border-white/10 mb-2 sm:mb-3 md:mb-4 group-hover:border-${speaker.gradient.split(' ')[0].replace('from-', '')}/30 transition-all duration-300`}>
+                        <div
+                          className={`inline-block px-2 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-1.5 rounded-full bg-white/5 border border-white/10 mb-2 sm:mb-3 md:mb-4 group-hover:border-${speaker.gradient.split(" ")[0].replace("from-", "")}/30 transition-all duration-300`}
+                        >
                           <span className="text-[10px] sm:text-xs font-medium text-gray-300">
                             {speaker.company}
                           </span>
@@ -274,7 +292,9 @@ const SpeakersSection = () => {
                         {/* Topic chip */}
                         <div className="flex items-center justify-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs text-cyan-300">
                           <Mic className="w-2 h-2 sm:w-3 sm:h-3" />
-                          <span className="truncate max-w-[120px] sm:max-w-none">{speaker.topic}</span>
+                          <span className="truncate max-w-[120px] sm:max-w-none">
+                            {speaker.topic}
+                          </span>
                         </div>
                       </div>
 
@@ -283,7 +303,7 @@ const SpeakersSection = () => {
                     </div>
 
                     {/* Floating dots indicator - hidden on mobile */}
-                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 hidden sm:flex">
+                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 gap-1 opacity-0 group-hover:opacity-100 transition-all duration-500 hidden sm:flex ">
                       {[0, 1, 2].map((i) => (
                         <div
                           key={i}
@@ -295,7 +315,7 @@ const SpeakersSection = () => {
                   </div>
                 ))}
               </div>
-              
+
               {/* Scroll indicator dots for mobile */}
               <div className="flex justify-center gap-1 mt-2 sm:hidden">
                 {speakers.map((_, index) => (
@@ -307,21 +327,23 @@ const SpeakersSection = () => {
               </div>
             </div>
 
-            {/* Bottom CTA - matching footer style */}
-            <div className="text-center mt-6 sm:mt-8 md:mt-12 relative z-10">
+            {/* Bottom CTA  */}
+            <div className="text-center mt-6 sm:mt-8 relative z-10">
               <Link
                 href="#"
-                className="relative inline-flex items-center gap-2 sm:gap-3 group/cta"
+                className="group relative inline-flex items-center"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-0 group-hover/cta:opacity-60 transition-opacity duration-500"></div>
-                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 sm:gap-3">
+                {/* Glow */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-50"></div>
+
+                {/* Button */}
+                <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <span>View All Speakers</span>
-                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/cta:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover/cta:opacity-20 transition-opacity"></div>
+
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
               </Link>
             </div>
-
           </div>
         </div>
       </div>

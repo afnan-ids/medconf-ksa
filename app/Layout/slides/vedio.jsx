@@ -28,13 +28,13 @@ const SlideVideo = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Content Wrapper */}
       <div className="relative w-full h-full flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-20">
           <div className="max-w-2xl sm:max-w-3xl">
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-medium  drop-shadow-xl">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-medium drop-shadow-xl">
               <span
                 className="block xs:inline font-bold mt-1 xs:mt-0 tracking-tight transition-all duration-500 bg-gradient-to-r from-cyan-400 via-purple-500 to-purple-600 bg-clip-text text-transparent"
               >

@@ -10,6 +10,8 @@ import HealthSectors from "@/app/Components/Home/HealthSectors"
 import StrategicObjectives from "@/app/Components/Home/StrategicObjectives"
 import EventIndicators from "@/app/Components/Home/EventIndicators"
 import ConferenceActivities from "@/app/Components/Home/ConferenceActivities"
+import WomenAndHealth from "@/app/Components/Home/WomenHealth"
+import EnablingPartners from "@/app/Components/Home/EnablingPartners"
 
 export default function Home() {
   return (
@@ -22,11 +24,14 @@ export default function Home() {
      <EventIndicators/>
      <ConferenceActivities/>
      <HealthSectors/>
+     <WomenAndHealth/>
      <UpcomingEvents/>
      <WhyAttend/>
      
      <Testimonials/>
+     <EnablingPartners/>
      <MediaPartnersSection/>
+     
     </>
   );
 }

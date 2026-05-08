@@ -34,8 +34,8 @@ const activityGroups = [
     titleEn: "Scientific Conference",
     listAr: [
       "جلســــــــــــات حواريــــــــــــة",
-      "أوراق علميــــــة وتجـــــــارب تطبيقيــــــة",
-      "نقاشــــــات تفاعليــــــة مــــــع الخبــــــراء",
+      "أوراق علميــة وتجــارب تطبيقيــة",
+      "نقاشــات تفاعليــة مــع الخبــراء",
     ],
     listEn: [
       "Panel Discussions",
@@ -48,6 +48,7 @@ const activityGroups = [
       "A knowledge platform bringing together elite experts to showcase the latest medical research and innovations, while exchanging scientific insights to enhance healthcare efficiency in line with global standards",
     color: "blue",
     gradient: "from-blue-600 to-cyan-400",
+    stats: "50+ Speakers | 30+ Sessions",
   },
   {
     id: 2,
@@ -76,6 +77,7 @@ const activityGroups = [
       "Bringing all companies to showcase the latest healthcare technologies and solutions. The exhibition serves as an interactive environment to foster partnerships and explore the future of the medical industry.",
     color: "purple",
     gradient: "from-purple-600 to-pink-500",
+    stats: "100+ Exhibitors | 20+ Countries",
   },
   {
     id: 3,
@@ -98,6 +100,7 @@ const activityGroups = [
       "These activities aim to enrich the visitor experience through live workshops, wellness activities, and hands-on demonstrations that reflect the reality of modern healthcare.",
     color: "emerald",
     gradient: "from-emerald-600 to-teal-500",
+    stats: "15+ Workshops | 2000+ Visitors",
   },
 ];
 
@@ -154,7 +157,10 @@ export default function ConferenceActivities() {
   };
 
   return (
-    <section className="relative w-full mx-auto overflow-hidden" ref={containerRef}>
+    <section
+      className="relative w-full mx-auto overflow-hidden"
+      ref={containerRef}
+    >
       {/* Dark themed background - optimized with will-change */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
         <div className="absolute top-10 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse will-change-transform"></div>
@@ -221,8 +227,8 @@ export default function ConferenceActivities() {
                         bg-white/[0.03]
                         backdrop-blur-xl
                         cursor-pointer
-                        ${isMobile ? 'min-h-[80px]' : 'hover:md:flex-[4]'}
-                        ${isMobile && isHovered ? 'flex-[4] min-h-[400px]' : ''}
+                        ${isMobile ? "min-h-[80px]" : "hover:md:flex-[4]"}
+                        ${isMobile && isHovered ? "flex-[4] min-h-[400px]" : ""}
                       `}
                       onMouseEnter={() => !isMobile && setHoveredIndex(idx)}
                       onMouseLeave={() => !isMobile && setHoveredIndex(null)}
@@ -231,49 +237,123 @@ export default function ConferenceActivities() {
                       {/* Background Glow */}
                       <div
                         className={`absolute inset-0 opacity-0 transition-opacity duration-700 ${
-                          isHovered ? 'opacity-20' : 'opacity-0'
+                          isHovered ? "opacity-20" : "opacity-0"
                         } bg-gradient-to-br ${colors.gradient}`}
                       />
 
                       {/* Persistent subtle gradient */}
-                      <div className={`absolute inset-0 opacity-5 bg-gradient-to-br ${colors.gradient}`} />
+                      <div
+                        className={`absolute inset-0 opacity-5 bg-gradient-to-br ${colors.gradient}`}
+                      />
 
                       {/* CLOSED STATE */}
                       <div
                         className={`
-                          absolute inset-0
-                          flex items-center justify-center
-                          transition-all duration-500 ease-out
-                          ${!isMobile && 'group-hover:opacity-0 group-hover:scale-95'}
-                          ${isMobile && !isHovered ? 'opacity-100' : 'opacity-0 scale-95'}
-                        `}
+                        absolute inset-0
+                        flex flex-col items-center justify-center
+                        transition-all duration-500 ease-out
+                        ${!isMobile ? "opacity-100 scale-100 group-hover:opacity-0 group-hover:scale-95" : ""}
+                        ${isMobile && !isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"}
+                      `}
                       >
-                        <div className="flex flex-col items-center gap-4 sm:gap-6">
-                          {/* Icon */}
-                          <div
-                            className={`flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-lg`}
-                          >
-                            <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                        {/* Main content container with more padding */}
+                        <div className="flex flex-col items-center gap-6 p-8 w-full max-w-[280px] mx-auto">
+                          {/* Glass card background effect */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl border border-white/10 -z-10"></div>
+
+                          {/* Icon with premium styling */}
+                          <div className="relative">
+                            {/* Animated rings */}
+                            <div
+                              className={`absolute -inset-3 rounded-full border border-${activity.color}-500/20 animate-pulse`}
+                            ></div>
+                            <div
+                              className={`absolute -inset-2 rounded-full border border-${activity.color}-500/30`}
+                            ></div>
+
+                            <div
+                              className={`relative flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}
+                            >
+                              <Icon className="w-10 h-10 sm:w-11 sm:h-11 text-white" />
+                            </div>
                           </div>
 
-                          {/* Rotated Text - Hidden on mobile */}
-                          {!isMobile && (
-                            <div className="-rotate-90 whitespace-nowrap">
-                              <h3
-                                className="text-lg sm:text-xl font-semibold text-white tracking-widest"
-                                dir="rtl"
+                          {/* Title section - more prominent */}
+                          <div className="text-center space-y-3">
+                            <h3
+                              className="text-xl sm:text-2xl font-black text-white tracking-wide"
+                              dir="rtl"
+                            >
+                              {activity.titleAr}
+                            </h3>
+
+                            <div className="flex items-center justify-center gap-3">
+                              <div
+                                className={`h-px w-8 bg-gradient-to-r ${colors.gradient}`}
+                              ></div>
+                              <p className="text-sm sm:text-base text-gray-200 font-semibold">
+                                {activity.titleEn}
+                              </p>
+                              <div
+                                className={`h-px w-8 bg-gradient-to-l ${colors.gradient}`}
+                              ></div>
+                            </div>
+
+                            <div
+                              className={`h-0.5 w-20 mx-auto bg-gradient-to-r ${colors.gradient} rounded-full`}
+                            ></div>
+                          </div>
+
+                          {/* Stats - Clean and highly visible */}
+                          <div className="w-full mt-2">
+                            <div
+                              className={`text-center p-3 rounded-xl bg-gradient-to-r ${colors.gradientLight} backdrop-blur-sm border ${colors.border}`}
+                            >
+                              <p
+                                className={`text-sm sm:text-base font-bold text-white drop-shadow-md`}
                               >
-                                {activity.titleAr}
-                              </h3>
+                                {activity.stats}
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Mobile hint with style */}
+                          {isMobile && !isHovered && (
+                            <div className="absolute -bottom-7 left-0 right-0 flex justify-center">
+                              <div className="bg-white/15 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 shadow-lg">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-[10px] text-gray-200 font-medium">
+                                    اضغط للتفاصيل
+                                  </span>
+                                  <ArrowRight className="w-3 h-3 text-gray-200 rotate-90" />
+                                </div>
+                              </div>
                             </div>
                           )}
 
-                          {/* Simple title for mobile collapsed state */}
-                          {isMobile && !isHovered && (
-                            <h3 className="text-base font-semibold text-white text-center px-2">
-                              {activity.titleAr}
-                            </h3>
-                          )}
+                          {/* Decorative elements */}
+                          <div
+                            className={`absolute top-5 right-5 w-8 h-8 opacity-40`}
+                          >
+                            <div
+                              className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 ${colors.border}`}
+                            ></div>
+                          </div>
+                          <div
+                            className={`absolute bottom-5 left-5 w-8 h-8 opacity-40`}
+                          >
+                            <div
+                              className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 ${colors.border}`}
+                            ></div>
+                          </div>
+
+                          {/* Background decorative circle */}
+                          <div
+                            className={`absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-gradient-to-br ${colors.gradient} opacity-10 blur-2xl -z-20`}
+                          ></div>
+                          <div
+                            className={`absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br ${colors.gradient} opacity-10 blur-2xl -z-20`}
+                          ></div>
                         </div>
                       </div>
 
@@ -283,11 +363,12 @@ export default function ConferenceActivities() {
                           absolute inset-0 py-4 px-1
                           overflow-y-auto
                           transition-all duration-500 ease-out
-                          ${!isMobile 
-                            ? 'opacity-0 translate-x-8 group-hover:opacity-100 group-hover:translate-x-0' 
-                            : isHovered 
-                              ? 'opacity-100 translate-x-0' 
-                              : 'opacity-0 translate-x-8 pointer-events-none'
+                          ${
+                            !isMobile
+                              ? "opacity-0 translate-x-8 group-hover:opacity-100 group-hover:translate-x-0"
+                              : isHovered
+                                ? "opacity-100 translate-x-0"
+                                : "opacity-0 translate-x-8 pointer-events-none"
                           }
                         `}
                       >
@@ -311,7 +392,6 @@ export default function ConferenceActivities() {
                               >
                                 {activity.titleAr}
                               </span>
-                              
                             </div>
                           </div>
 
@@ -335,7 +415,6 @@ export default function ConferenceActivities() {
                                   >
                                     {item}
                                   </span>
-                                  
                                 </div>
                               </div>
                             ))}
@@ -354,6 +433,13 @@ export default function ConferenceActivities() {
                               {activity.descriptionEn}
                             </p>
                           </div>
+
+                          {/* Stats badge in open state */}
+                          <div className="mt-4 text-center">
+                            <span className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-xs text-gray-400">
+                              {activity.stats}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -369,12 +455,11 @@ export default function ConferenceActivities() {
                 className="group relative inline-flex items-center gap-2 sm:gap-3"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
+
                 <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 sm:gap-3">
                   <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span className="hidden xs:inline">View Full Agenda</span>
                   <span className="inline xs:hidden">Agenda</span>
-                  {/* <span className="text-white/30">•</span>
-                  <span className="text-xs sm:text-sm">عرض الجدول الكامل</span> */}
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>

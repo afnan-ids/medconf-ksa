@@ -83,10 +83,9 @@ export default function Services() {
       {/* Glass container */}
       <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4">
         <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(79,70,229,0.3)] transition-all duration-700">
-          
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
-          
+
           <div className="p-4 sm:p-8 lg:p-12 max-w-7xl mx-auto relative">
             {/* Decorative orbs inside - hidden on mobile */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
@@ -138,15 +137,23 @@ export default function Services() {
                     className="group relative rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 sm:p-6 md:p-8 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 sm:hover:-translate-y-2 overflow-hidden"
                   >
                     {/* Hover glow effect */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`} />
-                    
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}
+                    />
+
                     {/* Corner accent  */}
-                    <div className={`absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 ${colors.bgLight} rounded-bl-[40px] sm:rounded-bl-[60px] rounded-tr-xl sm:rounded-tr-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 group-hover:opacity-100`} />
+                    <div
+                      className={`absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 ${colors.bgLight} rounded-bl-[40px] sm:rounded-bl-[60px] rounded-tr-xl sm:rounded-tr-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 group-hover:opacity-100`}
+                    />
 
                     {/* Icon container  */}
                     <div className="relative mb-4 sm:mb-5 md:mb-6">
-                      <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 rounded-xl sm:rounded-2xl`} />
-                      <div className={`relative w-11 h-11 sm:w-13 sm:h-13 md:w-15 md:h-15 flex items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 rounded-xl sm:rounded-2xl`}
+                      />
+                      <div
+                        className={`relative w-11 h-11 sm:w-13 sm:h-13 md:w-15 md:h-15 flex items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-lg group-hover:scale-110 transition-transform duration-500`}
+                      >
                         <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                       </div>
                     </div>
@@ -162,9 +169,13 @@ export default function Services() {
 
                     {/* Stats badge  */}
                     <div className="relative inline-block group/stat mb-4 sm:mb-5 md:mb-6">
-                      <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} rounded-full blur-md opacity-0 group-hover/stat:opacity-50 transition-opacity duration-500`}></div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} rounded-full blur-md opacity-0 group-hover/stat:opacity-50 transition-opacity duration-500`}
+                      ></div>
                       <div className="relative inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-[10px] sm:text-xs">
-                        <Zap className={`w-2 h-2 sm:w-3 sm:h-3 ${colors.text}`} />
+                        <Zap
+                          className={`w-2 h-2 sm:w-3 sm:h-3 ${colors.text}`}
+                        />
                         <span className="text-gray-300">{service.stats}</span>
                       </div>
                     </div>
@@ -175,19 +186,25 @@ export default function Services() {
                       className={`relative inline-flex items-center justify-center gap-1 sm:gap-2 w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs md:text-sm font-medium group/btn overflow-hidden transition-all duration-300 border ${colors.border} hover:border-transparent`}
                     >
                       {/* Gradient background on hover */}
-                      <span className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500`} />
-                      
+                      <span
+                        className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500`}
+                      />
+
                       {/* Glow effect */}
-                      <span className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover/btn:opacity-40 blur-xl transition-opacity duration-500`} />
-                      
+                      <span
+                        className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover/btn:opacity-40 blur-xl transition-opacity duration-500`}
+                      />
+
                       {/* Button text */}
                       <span className="relative z-10 flex items-center gap-1 sm:gap-2 text-gray-300 group-hover/btn:text-white transition-colors duration-300">
                         Explore service
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 sm:group-hover/btn:translate-x-2 transition-transform duration-300" />
                       </span>
-                      
+
                       {/* Bottom line animation */}
-                      <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r ${colors.gradient} group-hover/btn:w-full transition-all duration-500`} />
+                      <span
+                        className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r ${colors.gradient} group-hover/btn:w-full transition-all duration-500`}
+                      />
                     </Link>
                   </div>
                 );
@@ -195,20 +212,22 @@ export default function Services() {
             </div>
 
             {/* Bottom CTA  */}
-            <div className="text-center mt-8 sm:mt-10 md:mt-12 relative z-10">
+            <div className="text-center mt-8 sm:mt-10 relative z-10">
               <Link
                 href="#"
-                className="relative inline-flex items-center gap-2 sm:gap-3 group/cta"
+                className="group relative inline-flex items-center"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-0 group-hover/cta:opacity-60 transition-opacity duration-500"></div>
-                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 sm:gap-3">
+                {/* Glow */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-50"></div>
+
+                {/* Button */}
+                <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <span>View all services</span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/cta:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover/cta:opacity-20 transition-opacity"></div>
+
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
               </Link>
             </div>
-
           </div>
         </div>
       </div>

@@ -18,43 +18,55 @@ import Link from "next/link";
 const objectives = [
   {
     id: 1,
-    titleAr: "دعم برامج جودة الحياة والتحول الصحي الشامل بما يتوافق مع مستهدفات 2030",
-    titleEn: "Supporting Quality of Life programs and comprehensive health transformation in alignment with the 2030 targets",
+    titleAr:
+      "دعم برامج جودة الحياة والتحول الصحي الشامل بما يتوافق مع مستهدفات 2030",
+    titleEn:
+      "Supporting Quality of Life programs and comprehensive health transformation in alignment with the 2030 targets",
     icon: Heart,
     color: "blue",
   },
   {
     id: 2,
-    titleAr: "بناء منظومة وعي مجتمعي ترتكز على السلوكيات الوقائية ونمط الحياة المستدام",
-    titleEn: "Establishing a societal awareness ecosystem rooted in preventive behaviors and sustainable lifestyles",
+    titleAr:
+      "بناء منظومة وعي مجتمعي ترتكز على السلوكيات الوقائية ونمط الحياة المستدام",
+    titleEn:
+      "Establishing a societal awareness ecosystem rooted in preventive behaviors and sustainable lifestyles",
     icon: Users,
     color: "purple",
   },
   {
     id: 3,
-    titleAr: "تطوير الكوادر الوطنية عبر محتوى معرفي وتدريبي يواكب التطورات العالمية في الصحة",
-    titleEn: "Empowering national talent through high-caliber educational and training content in health",
+    titleAr:
+      "تطوير الكوادر الوطنية عبر محتوى معرفي وتدريبي يواكب التطورات العالمية في الصحة",
+    titleEn:
+      "Empowering national talent through high-caliber educational and training content in health",
     icon: GraduationCap,
     color: "cyan",
   },
   {
     id: 4,
-    titleAr: "تحفيز الاقتصاد الصحي عبر خلق منصة للفرص الاستثمارية والشراكات الاستراتيجية",
-    titleEn: "Stimulating the health economy by providing a prime platform for investment and strategic partnerships",
+    titleAr:
+      "تحفيز الاقتصاد الصحي عبر خلق منصة للفرص الاستثمارية والشراكات الاستراتيجية",
+    titleEn:
+      "Stimulating the health economy by providing a prime platform for investment and strategic partnerships",
     icon: TrendingUp,
     color: "emerald",
   },
   {
     id: 5,
-    titleAr: "يعمل المؤتمر كملتقى للقطاعات المختلفة في مساحة واحدة لتوحيد الرسائل وتكامل المبادرات",
-    titleEn: "The conference serves as a cross-sector hub, aligning messages and integrating initiatives within a unified space",
+    titleAr:
+      "يعمل المؤتمر كملتقى للقطاعات المختلفة في مساحة واحدة لتوحيد الرسائل وتكامل المبادرات",
+    titleEn:
+      "The conference serves as a cross-sector hub, aligning messages and integrating initiatives within a unified space",
     icon: GitBranch,
     color: "amber",
   },
   {
     id: 6,
-    titleAr: "المعرض المصاحب يفتح نافذة على أحدث الحلول والتقنيات في الرعاية الصحية والتأهيل",
-    titleEn: "The exhibition offers a direct window into the latest healthcare and rehabilitation solutions and technologies",
+    titleAr:
+      "المعرض المصاحب يفتح نافذة على أحدث الحلول والتقنيات في الرعاية الصحية والتأهيل",
+    titleEn:
+      "The exhibition offers a direct window into the latest healthcare and rehabilitation solutions and technologies",
     icon: Globe,
     color: "rose",
   },
@@ -119,10 +131,9 @@ export default function StrategicObjectives() {
       {/* Glass container */}
       <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4">
         <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(79,70,229,0.3)] transition-all duration-700">
-          
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
-          
+
           <div className="p-4 sm:p-8 lg:p-12 max-w-7xl mx-auto relative">
             {/* Decorative orbs inside */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
@@ -157,9 +168,9 @@ export default function StrategicObjectives() {
                 </div>
 
                 <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
-                  A mission to transform the conference into a
-                  catalyst for impact across society, the healthcare
-                  sector, and the health economy.
+                  A mission to transform the conference into a catalyst for
+                  impact across society, the healthcare sector, and the health
+                  economy.
                 </p>
               </div>
 
@@ -208,22 +219,32 @@ export default function StrategicObjectives() {
                     className="group relative rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-7 lg:p-8 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 sm:hover:-translate-y-2 overflow-hidden"
                   >
                     {/* Hover glow effect */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`} />
-                    
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}
+                    />
+
                     {/* Corner accent */}
-                    <div className={`absolute top-0 right-0 w-24 h-24 sm:w-28 sm:h-28 ${colors.bgLight} rounded-bl-[60px] sm:rounded-bl-[80px] rounded-tr-xl sm:rounded-tr-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 group-hover:opacity-100`} />
+                    <div
+                      className={`absolute top-0 right-0 w-24 h-24 sm:w-28 sm:h-28 ${colors.bgLight} rounded-bl-[60px] sm:rounded-bl-[80px] rounded-tr-xl sm:rounded-tr-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 group-hover:opacity-100`}
+                    />
 
                     {/* ID Number Badge - LARGER */}
                     <div className="absolute top-4 right-4 sm:top-5 sm:right-5 z-10">
-                      <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-r ${colors.gradient} flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-lg`}>
+                      <div
+                        className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-r ${colors.gradient} flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-lg`}
+                      >
                         {objective.id}
                       </div>
                     </div>
 
                     {/* Icon container - LARGER */}
                     <div className="relative mb-5 sm:mb-6 md:mb-7">
-                      <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 rounded-xl sm:rounded-2xl`} />
-                      <div className={`relative w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 rounded-xl sm:rounded-2xl`}
+                      />
+                      <div
+                        className={`relative w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-lg group-hover:scale-110 transition-transform duration-500`}
+                      >
                         <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                       </div>
                     </div>
@@ -234,10 +255,15 @@ export default function StrategicObjectives() {
                     </p>
 
                     {/* Divider */}
-                    <div className={`w-16 h-0.5 bg-gradient-to-r ${colors.gradient} mb-4 sm:mb-5`}></div>
+                    <div
+                      className={`w-16 h-0.5 bg-gradient-to-r ${colors.gradient} mb-4 sm:mb-5`}
+                    ></div>
 
                     {/* Arabic Text - LARGER */}
-                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed" dir="rtl">
+                    <p
+                      className="text-base sm:text-lg text-gray-300 leading-relaxed"
+                      dir="rtl"
+                    >
                       {objective.titleAr}
                     </p>
                   </div>
@@ -249,16 +275,18 @@ export default function StrategicObjectives() {
             <div className="text-center relative z-10">
               <Link
                 href="#"
-                className="relative inline-flex items-center gap-2 sm:gap-3 group/cta"
+                className="group relative inline-flex items-center"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-0 group-hover/cta:opacity-60 transition-opacity duration-500"></div>
-                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 sm:gap-3">
-                  <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
+                {/* Glow */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-50"></div>
+
+                {/* Button */}
+                <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                  <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+
                   <span>Discover Our Vision</span>
-                  {/* <span className="hidden sm:inline">•</span> */}
-                  {/* <span className="text-sm">اكتشف رؤيتنا</span> */}
-                  <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover/cta:opacity-20 transition-opacity"></div>
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
+
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
               </Link>
             </div>

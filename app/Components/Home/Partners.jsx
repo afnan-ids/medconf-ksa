@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ArrowRight,
   Award,
   ChevronRight,
   Compass,
@@ -156,15 +157,20 @@ export default function PartnersGrid() {
           </div>
 
           {/* CTA - responsive */}
-          <div className="text-center mt-8 sm:mt-10 md:mt-12 lg:mt-16">
-            <Link
-              href="#"
-              className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 md:px-6 lg:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm sm:text-base md:text-lg font-medium hover:scale-105 transition"
-            >
-              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span className="hidden xs:inline">Become a Partner</span>
-              <span className="inline xs:hidden">Join</span>
-              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="text-center mt-8 sm:mt-10 md:mt-12 relative z-10">
+            <Link href="#" className="group relative inline-flex items-center">
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-50"></div>
+
+              {/* Button */}
+              <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+
+                <span className="hidden xs:inline">Become a Partner</span>
+                <span className="inline xs:hidden">Join</span>
+
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
             </Link>
           </div>
         </div>
