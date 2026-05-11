@@ -5,7 +5,7 @@ import { Home, ChevronRight, Sparkles } from "lucide-react";
 const BreadCrumb = ({ title, backgroundImage, path }) => {
   return (
     <div
-      className="relative h-[36vh] w-full overflow-hidden "
+      className="relative h-[38vh] w-full overflow-hidden "
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",

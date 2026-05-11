@@ -5,9 +5,9 @@ import { Crown, Award, Star } from "lucide-react";
 
 const SlidePatronage = () => {
   return (
-    <div className="relative w-full h-full bg-[url('/Images/Home/LongivityBgSlider.jpg')] bg-cover bg-center mt-8">
+    <div className="relative w-full h-full bg-[url('/Images/Home/slider/healbkg.png')] bg-cover bg-center mt-8">
       {/* Enhanced overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/85 to-white/90" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/85 to-white/90" /> */}
       
       {/* Decorative subtle elements */}
       <div className="absolute top-10 right-20 w-56 h-56 bg-blue-100/40 rounded-full blur-3xl" />
