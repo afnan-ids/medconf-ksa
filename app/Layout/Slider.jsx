@@ -1,159 +1,131 @@
 "use client";
+
 import { useState, useEffect, useCallback } from "react";
 import SlidePatronage from "./slides/SlidePatronage";
 import SlideVexora from "./slides/SlideVexora";
-import VexoraSolutions from "./slides/VeroxaSolutions";
-import PrinceFaisal from "./slides/PrinceFaisal";
-import SlideVideo from "./slides/vedio"; 
-import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+import HealthTransformation from "./slides/HealthTransformation";
+import SlideVideo from "./slides/vedio";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const slides = [
     {
       id: 1,
       component: SlideVideo,
-      bgColor: "dark",
     },
     {
       id: 2,
       component: SlideVexora,
-      bgColor: "dark",
-    },{
+    },
+    {
       id: 3,
-      component: VexoraSolutions,
-      bgColor: "dark",
+      component: SlidePatronage,
     },
     {
       id: 4,
-      component: SlidePatronage,
-      bgColor: "light",
-    },
-    {
-      id: 5,
-      component: PrinceFaisal,
-      bgColor: "light",
+      component: HealthTransformation,
     },
   ];
 
   const nextSlide = useCallback(() => {
     if (isTransitioning) return;
+
     setIsTransitioning(true);
+
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+
     setTimeout(() => setIsTransitioning(false), 500);
   }, [isTransitioning, slides.length]);
 
   const prevSlide = useCallback(() => {
     if (isTransitioning) return;
+
     setIsTransitioning(true);
+
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
     setTimeout(() => setIsTransitioning(false), 500);
   }, [isTransitioning, slides.length]);
 
-  // Auto-slide functionality
+  // Auto Slide
   useEffect(() => {
-    if (!isAutoPlaying) return;
-    
     const interval = setInterval(() => {
       nextSlide();
-    }, 50000); // Change slide every 5 seconds
+    }, 80000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, nextSlide]);
-
-  // Pause auto-slide when user interacts
-  const handleManualNavigation = (callback) => {
-    setIsAutoPlaying(false);
-    callback();
-    // Resume auto-slide after 10 seconds of inactivity
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
+  }, [nextSlide]);
 
   const CurrentSlideComponent = slides[currentSlide].component;
-  const currentBgType = slides[currentSlide].bgColor;
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
+      
       {/* Slide Content */}
       <div className="w-full h-full transition-opacity duration-500">
         <CurrentSlideComponent />
       </div>
 
-     
-
       {/* Left Arrow */}
       <button
-        onClick={() => handleManualNavigation(prevSlide)}
-        className={`
-          absolute left-5 top-1/2 -translate-y-1/2 z-20 
-          w-10 h-10 md:w-12 md:h-12 rounded-full 
-          flex items-center justify-center 
-          shadow-lg hover:scale-105 transition-all duration-300 
-          ${currentBgType === 'light' 
-            ? 'bg-white/80 hover:bg-white text-gray-800 backdrop-blur-sm border border-gray-200' 
-            : 'bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm'
-          }
-        `}
+        onClick={prevSlide}
+        className="absolute left-5 top-1/2 -translate-y-1/2 z-20 
+        w-10 h-10 md:w-12 md:h-12 rounded-full 
+        flex items-center justify-center 
+        bg-white/20 hover:bg-white/30 text-white 
+        backdrop-blur-sm shadow-lg 
+        transition-all duration-300 hover:scale-105"
       >
         <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
       </button>
 
       {/* Right Arrow */}
       <button
-        onClick={() => handleManualNavigation(nextSlide)}
-        className={`
-          absolute right-5 top-1/2 -translate-y-1/2 z-20 
-          w-10 h-10 md:w-12 md:h-12 rounded-full 
-          flex items-center justify-center 
-          shadow-lg hover:scale-105 transition-all duration-300 
-          ${currentBgType === 'light' 
-            ? 'bg-white/80 hover:bg-white text-gray-800 backdrop-blur-sm border border-gray-200' 
-            : 'bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm'
-          }
-        `}
+        onClick={nextSlide}
+        className="absolute right-5 top-1/2 -translate-y-1/2 z-20 
+        w-10 h-10 md:w-12 md:h-12 rounded-full 
+        flex items-center justify-center 
+        bg-white/20 hover:bg-white/30 text-white 
+        backdrop-blur-sm shadow-lg 
+        transition-all duration-300 hover:scale-105"
       >
         <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
       </button>
 
       {/* Dots Navigation */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3 px-4 py-2 rounded-full">
+        
         {slides.map((_, index) => (
           <button
             key={index}
-            onClick={() => handleManualNavigation(() => {
+            onClick={() => {
               if (isTransitioning) return;
+
               setIsTransitioning(true);
+
               setCurrentSlide(index);
+
               setTimeout(() => setIsTransitioning(false), 500);
-            })}
-            className={`
-              transition-all duration-300 
-              ${index === currentSlide 
-                ? `w-8 h-2 rounded-full ${currentBgType === 'light' ? 'bg-blue-600' : 'bg-white'} shadow-md` 
-                : `w-2 h-2 rounded-full ${currentBgType === 'light' ? 'bg-gray-400/60 hover:bg-gray-500' : 'bg-white/40 hover:bg-white/60'}`
-              }
-            `}
+            }}
+            className={`transition-all duration-300 ${
+              index === currentSlide
+                ? "w-8 h-2 rounded-full bg-white shadow-md"
+                : "w-2 h-2 rounded-full bg-white/40 hover:bg-white/60"
+            }`}
           />
         ))}
       </div>
 
       {/* Slide Counter */}
-      <div className={`
-        absolute bottom-8 right-8 z-20 
-        text-xs font-medium px-3 py-1.5 rounded-full 
-        backdrop-blur-md transition-all duration-300
-        ${currentBgType === 'light' 
-          ? 'bg-white/70 text-gray-700 border border-gray-200' 
-          : 'bg-black/30 text-white'
-        }
-      `}>
-        {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+      <div className="absolute bottom-8 right-8 z-20 text-xs font-medium px-3 py-1.5 rounded-full bg-black/30 text-white backdrop-blur-md">
+        
+        {String(currentSlide + 1).padStart(2, "0")} /{" "}
+        {String(slides.length).padStart(2, "0")}
       </div>
-
-
     </div>
   );
 };
