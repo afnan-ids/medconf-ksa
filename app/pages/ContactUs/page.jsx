@@ -435,7 +435,7 @@ export default function ContactPage() {
 
                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Link
-                href="/pages/NavBar-Links/NavEvents"
+                href="/pages/Events"
                 className="group bg-white text-gray-900 px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
               >
                 Explore Events

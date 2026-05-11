@@ -2,6 +2,8 @@
 import { useState, useEffect, useCallback } from "react";
 import SlidePatronage from "./slides/SlidePatronage";
 import SlideVexora from "./slides/SlideVexora";
+import VexoraSolutions from "./slides/VeroxaSolutions";
+import PrinceFaisal from "./slides/PrinceFaisal";
 import SlideVideo from "./slides/vedio"; 
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
@@ -20,10 +22,19 @@ const HeroSlider = () => {
       id: 2,
       component: SlideVexora,
       bgColor: "dark",
+    },{
+      id: 3,
+      component: VexoraSolutions,
+      bgColor: "dark",
     },
     {
-      id: 3,
+      id: 4,
       component: SlidePatronage,
+      bgColor: "light",
+    },
+    {
+      id: 5,
+      component: PrinceFaisal,
       bgColor: "light",
     },
   ];
@@ -48,7 +59,7 @@ const HeroSlider = () => {
     
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 50000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, nextSlide]);
@@ -71,22 +82,7 @@ const HeroSlider = () => {
         <CurrentSlideComponent />
       </div>
 
-      {/* Play/Pause Button */}
-      <button
-        onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-        className={`
-          absolute left-5 bottom-8 z-20 
-          w-8 h-8 md:w-10 md:h-10 rounded-full 
-          flex items-center justify-center 
-          shadow-lg hover:scale-105 transition-all duration-300
-          ${currentBgType === 'light' 
-            ? 'bg-white/80 hover:bg-white text-gray-800 backdrop-blur-sm border border-gray-200' 
-            : 'bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm'
-          }
-        `}
-      >
-        {isAutoPlaying ? <Pause className="w-3 h-3 md:w-4 md:h-4" /> : <Play className="w-3 h-3 md:w-4 md:h-4" />}
-      </button>
+     
 
       {/* Left Arrow */}
       <button
@@ -157,16 +153,6 @@ const HeroSlider = () => {
         {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
       </div>
 
-
-      {/* Inactive progress bar when paused */}
-      {!isAutoPlaying && (
-        <div className="absolute bottom-0 left-0 right-0 z-20">
-          <div 
-            className="h-1 bg-gray-500/50"
-            style={{ width: '100%' }}
-          />
-        </div>
-      )}
 
     </div>
   );

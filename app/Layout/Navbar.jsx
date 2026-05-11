@@ -3,13 +3,27 @@
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { 
-  Menu, X, LogIn, ChevronDown, 
-  Calendar, Building, UserPlus, Eye, 
-  Stethoscope, Trophy, Lightbulb, Microscope, Cpu, 
-  UsersRound, Landmark, BookOpen, ArrowRight,
-  Shield
+import {
+  Menu,
+  X,
+  LogIn,
+  ChevronDown,
+  Calendar,
+  Building,
+  UserPlus,
+  Eye,
+  Stethoscope,
+  Trophy,
+  Lightbulb,
+  Microscope,
+  Cpu,
+  UsersRound,
+  Landmark,
+  BookOpen,
+  ArrowRight,
+  Shield,
 } from "lucide-react";
+import { Handshake, Building2, TrendingUp } from "lucide-react"
 import Image from "next/image";
 
 const navlinks = [
@@ -43,38 +57,51 @@ const navlinks = [
   },
   { label: "Events", href: "/pages/Events" },
   {
-  label: "Portals",
-  href: "/pages/Portals",
+    label: "Portals",
+    href: "/pages/Portals",
+    submenus: [
+      {
+        label: "Sponsor Portal",
+        href: "/pages/Portals/SponcerPortal/dashboard",
+        icon: Trophy,
+      },
+      {
+        label: "Exhibitor Portal",
+        href: "/pages/Portals/ExhibitorPortal/dashboard",
+        icon: Building,
+      },
+      {
+        label: "Visitor Portal",
+        href: "/pages/Portals/VisitorPortal/dashboard",
+        icon: Eye,
+      },
+      {
+        label: "Health Care Portal",
+        href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
+        icon: Stethoscope,
+      },
+      {
+        label: "Admin Portal",
+        href: "/Admin/Dashboard",
+        icon: Shield,
+      },
+      {
+        label: "View All Portals",
+        href: "/pages/Portals/",
+        isViewAll: true,
+        icon: Eye,
+      },
+    ],
+  },
+  {
+  label: "About",
+  href: "/pages/AboutUs",
   submenus: [
-    {
-      label: "Sponsor Portal",
-      href: "/pages/Portals/SponcerPortal/dashboard",
-      icon: Trophy,
-    },
-    {
-      label: "Exhibitor Portal",
-      href: "/pages/Portals/ExhibitorPortal/dashboard",
-      icon: Building,
-    },
-    {
-      label: "Visitor Portal",
-      href: "/pages/Portals/VisitorPortal/dashboard",
-      icon: Eye,
-    },
-    {
-      label: "Health Care Portal",
-      href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
-      icon: Stethoscope,
-    },
-    {
-      label: "Admin Portal",
-      href: "/Admin/Dashboard",
-      icon: Shield, 
-    },
-    { label: "View All Portals", href: "/pages/Portals/", isViewAll: true, icon: Eye },
+    { label: "Who We Are", href: "/pages/AboutUs", icon: Building2 },
+    { label: "Our Journey", href: "/pages/ExhibitionJourney", icon: TrendingUp },
+    { label: "Partnership Opportunities", href: "/pages/SponsorshipPartnershipOpportunities", icon: Handshake },
   ],
 },
-  { label: "About", href: "/pages/AboutUs" },
   { label: "Contact", href: "/pages/ContactUs" },
   { label: "News & Blogs", href: "/pages/NewsBlogPage" },
   { label: "FAQ", href: "/pages/FAQ" },
@@ -155,13 +182,13 @@ export default function Navbar() {
 
   const isActive = (href, submenus = null) => {
     if (href === "/") return pathname === "/";
-    
+
     if (href !== "#" && pathname?.startsWith(href)) return true;
-    
+
     if (submenus && submenus.length > 0) {
-      return submenus.some(submenu => pathname?.startsWith(submenu.href));
+      return submenus.some((submenu) => pathname?.startsWith(submenu.href));
     }
-    
+
     return false;
   };
 
@@ -184,14 +211,13 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
           scrolled
-            ? "bg-gray-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl"
+            ? "bg-gray-900/80 backdrop-blur-xl border-b border-white/10 shadow-2xl"
             : "bg-gray-900/95 backdrop-blur-sm border-b border-white/5"
         }`}
       >
-
         {/* Top Gradient Line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
-        
+
         {/* Bottom Gradient Line when scrolled */}
         {scrolled && (
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
@@ -204,14 +230,16 @@ export default function Navbar() {
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
               <div className="flex items-center">
                 <Image
-                src="/Images/Logo.png"
-                alt="HPQL Logo"
-                width={40}
-                height={40}
-              />
-              <span className={`relative text-3xl font-black tracking-tight transition-all duration-500 bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent ml-1`}>
-                HPQL
-              </span>
+                  src="/Images/Logo.png"
+                  alt="HPQL Logo"
+                  width={40}
+                  height={40}
+                />
+                <span
+                  className={`relative text-3xl font-black tracking-tight transition-all duration-500 bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent ml-1`}
+                >
+                  HPQL
+                </span>
               </div>
             </Link>
 
@@ -260,7 +288,7 @@ export default function Navbar() {
                         {/* Floating Orbs inside dropdown */}
                         <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
                         <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-                        
+
                         {/* Top gradient line */}
                         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
@@ -286,7 +314,9 @@ export default function Navbar() {
                                         <IconComponent className="w-4 h-4 text-gray-400 group-hover/item:text-blue-400 transition-colors duration-300" />
                                       </div>
                                     )}
-                                    <span className="flex-1">{submenu.label}</span>
+                                    <span className="flex-1">
+                                      {submenu.label}
+                                    </span>
                                     <ArrowRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 transition-all duration-300 -translate-x-2 group-hover/item:translate-x-0" />
                                   </Link>
                                 );
@@ -357,7 +387,11 @@ export default function Navbar() {
               }`}
               aria-label="Toggle Menu"
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -377,7 +411,7 @@ export default function Navbar() {
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl"></div>
-            
+
             {/* Top gradient line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
@@ -387,7 +421,9 @@ export default function Navbar() {
                   <button
                     onClick={() => {
                       if (link.submenus) {
-                        setOpenDropdown(openDropdown === link.label ? null : link.label);
+                        setOpenDropdown(
+                          openDropdown === link.label ? null : link.label,
+                        );
                       } else {
                         setMobileOpen(false);
                         window.location.href = link.href;
@@ -427,7 +463,9 @@ export default function Navbar() {
                                 : "text-gray-400 hover:text-white hover:bg-white/5"
                             }`}
                           >
-                            {IconComponent && <IconComponent className="w-4 h-4" />}
+                            {IconComponent && (
+                              <IconComponent className="w-4 h-4" />
+                            )}
                             <span>{submenu.label}</span>
                             {submenu.isViewAll && (
                               <ArrowRight className="w-3 h-3 ml-auto opacity-70" />
