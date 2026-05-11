@@ -5,63 +5,67 @@ import { Crown, Award, Star } from "lucide-react";
 
 const SlidePatronage = () => {
   return (
-    <div className="relative w-full h-full bg-[url('/Images/Home/slider/healbkg.png')] bg-cover bg-center mt-8">
-      {/* Enhanced overlay */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/85 to-white/90" /> */}
-      
-      {/* Decorative subtle elements */}
-      <div className="absolute top-10 right-20 w-56 h-56 bg-blue-100/40 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 left-20 w-64 h-64 bg-cyan-100/30 rounded-full blur-3xl" />
-
-      {/* Content Wrapper */}
-      <div className="relative z-10 w-full h-full flex items-center justify-center px-6 md:px-12 lg:px-20 overflow-y-auto">
-        <div className="w-full max-w-7xl mx-auto py-6">
-          
-          {/* Top Bar - Compact */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-2 pb-4 mb-2 border-b border-blue-100">
-            <p className="text-[10px] md:text-[11px] text-blue-800/50 font-medium tracking-wider">
-              HEALTH • EMPOWERMENT • AWARENESS • LONGEVITY
+    <div className="relative w-full h-full bg-[url('/Images/Home/slider/healbkg.png')] bg-cover bg-center">
+      <div className="relative z-10 w-full h-full flex items-center justify-center px-5 md:px-8 lg:px-14 overflow-y-auto">
+        <div className="w-full max-w-7xl mx-auto py-3">
+          {/* Top Bar */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-1 pb-10 mb-1 ">
+            <p className="text-[10px] flex md:text-xs text-white/90 font-medium items-center ms-3 text-center">
+              <span className="font-extrabold me-3 p-4">HEAL</span> HEALTH •
+              EMPOWERMENT • AWARENESS • LONGEVITY
             </p>
-            <p className="text-[10px] md:text-[11px] text-blue-800/50 font-medium tracking-wider" dir="rtl">
+
+            <p
+              className="text-[10px] md:text-xs text-white/90 font-medium tracking-[0.10em]"
+              dir="rtl"
+            >
               صحة • تمكين • توعية • عمر مديد
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
-            
-            {/* Left Side - Content */}
-            <div className="w-full lg:w-1/2 space-y-4">
-              
-              {/* Patronage Badge - Compact */}
-              <div className="relative bg-gradient-to-r from-blue-900 to-blue-800 rounded-xl p-3 text-white shadow-lg">
-                <Crown className="absolute top-2 right-2 w-6 h-6 opacity-20" />
-                <p className="text-sm md:text-base lg:text-lg font-bold text-center" dir="rtl">
+          <div className="flex flex-col lg:flex-row gap-5 lg:gap-8">
+            {/* Left Side */}
+            <div className="w-full lg:w-1/2 space-y-3">
+              {/* Patronage Badge */}
+              <div className="relative bg-white/95 rounded-xl px-4 py-3 shadow-2xl border border-white/20">
+                <p
+                  className="text-sm md:text-base lg:text-xl font-extrabold text-center text-blue-950 leading-snug"
+                  dir="rtl"
+                >
                   برعاية كريمة من صاحب السمو الملكي
                 </p>
-                <p className="text-xs md:text-sm text-center text-blue-200">
+
+                <p className="text-xs md:text-sm lg:text-base text-center text-blue-950 mt-1 font-medium">
                   Under the gracious patronage of His Royal Highness
                 </p>
               </div>
 
-              {/* Name Section - Compact */}
-              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-blue-100">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-3">
-                  <p className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900">
+              {/* Name Section */}
+              <div className="rounded-xl px-4 py-2 backdrop-blur-[2px]">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+                  <p className="text-lg md:text-2xl lg:text-[28px] font-extrabold text-white tracking-tight">
                     Prince Khalid AL Faisal
                   </p>
-                  <div className="w-px h-6 bg-blue-200 hidden md:block" />
-                  <p className="text-lg md:text-xl lg:text-2xl font-bold text-blue-900" dir="rtl">
+
+                  <p
+                    className="text-lg md:text-2xl lg:text-[28px] font-extrabold text-white tracking-tight"
+                    dir="rtl"
+                  >
                     الأمير خالد الفيصل
                   </p>
                 </div>
-                
-                <div className="flex flex-col md:flex-row justify-between items-start gap-2 mt-3 pt-2 border-t border-blue-100">
-                  <p className="text-xs md:text-sm text-gray-600">
+
+                <div className="flex flex-col md:flex-row justify-between items-start gap-2 mt-2 pt-2 border-t border-white/10">
+                  <p className="text-xs md:text-sm lg:text-[15px] text-white/90 leading-relaxed">
                     Advisor to the Custodian of the Two Holy Mosques,
                     <br />
                     Governor of Makkah Region
                   </p>
-                  <p className="text-xs md:text-sm text-gray-600 text-right" dir="rtl">
+
+                  <p
+                    className="text-xs md:text-sm lg:text-[15px] text-white/90 text-right leading-relaxed"
+                    dir="rtl"
+                  >
                     مستشار خادم الحرمين الشريفين
                     <br />
                     أمير منطقة مكة المكرمة
@@ -70,63 +74,70 @@ const SlidePatronage = () => {
               </div>
 
               {/* Conference Name */}
-              <div className="text-center">
-                <p className="text-sm md:text-base lg:text-xl font-bold text-gray-800" dir="rtl">
+              <div className="text-center space-y-0.5">
+                <p
+                  className="text-sm md:text-lg lg:text-2xl font-bold text-white leading-snug"
+                  dir="rtl"
+                >
                   مؤتمر ومعرض تعزيز الصحة وجودة الحياة
                 </p>
-                <p className="text-xs md:text-sm lg:text-base text-gray-600">
+
+                <p className="text-xs md:text-sm lg:text-xl text-white/90 tracking-wide">
                   Health Promotion & Quality of Life Conference and Exhibition
                 </p>
               </div>
 
-              {/* Description - Compact */}
-              <div className="bg-blue-50/50 rounded-lg p-3 space-y-1">
-                <p className="text-xs md:text-sm lg:text-base leading-relaxed text-gray-700 text-center" dir="rtl">
-                  يقام أضخم حدث من نوعه في المنطقة الغربية يهدف إلى تحسين جودة الحياة تحت شعار
+              {/* Description */}
+              <div className="rounded-xl px-2 py-1 space-y-1">
+                <p
+                  className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/95 text-center"
+                  dir="rtl"
+                >
+                  يقام أضخم حدث من نوعه في المنطقة الغربية يهدف إلى تحسين جودة
+                  الحياة تحت شعار
                 </p>
-                <p className="text-xs md:text-sm leading-relaxed text-gray-600 text-center">
-                  The largest event of its kind in the Western Region is being held, aiming to improve the quality of life under the slogan
+
+                <p className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/90 text-center">
+                  The largest event of its kind in the Western Region is being
+                  held, aiming to improve the quality of life under the slogan
                 </p>
               </div>
 
-              {/* Slogan - Compact Highlight */}
-              <div className="text-center py-2 px-4 bg-gradient-to-r from-blue-100 via-white to-blue-100 rounded-lg border border-blue-200">
-                <p className="text-base md:text-lg lg:text-2xl font-bold text-blue-900" dir="rtl">
-                  صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
+              {/* Slogan */}
+              <div className="text-center py-1 px-2 rounded-xl">
+                <p
+                  className="text-base md:text-xl lg:text-2xl font-extrabold text-white tracking-tight"
+                  dir="rtl"
+                >
+                  صحـــة . تمكيــن . توعيـــة . عمـر مديـــد
                 </p>
-                <p className="text-xs md:text-sm lg:text-base font-semibold text-blue-700">
-                  HEALTH. EMPOWERMENT . AWARENESS . LONGEVITY
+
+                <p className="text-xs md:text-sm lg:text-base font-semibold text-white/90 tracking-[0.10em] uppercase mt-1">
+                  HEALTH . EMPOWERMENT . AWARENESS . LONGEVITY
                 </p>
               </div>
             </div>
 
-            {/* Right Side - Image */}
-            <div className="w-full lg:w-1/2 flex items-end justify-center lg:justify-end ">
-              <div className=" bg-gradient-to-br from-blue-100/40 to-cyan-100/30 rounded-full blur-2xl" />
-              
-              <div className="abosolute bottom-0 flex justify-center lg:justify-end">
-                <Image
-                  src="/Images/Home/PrinceKhalidAlFaisal.png"
-                  alt="Prince Khalid AL Faisal"
-                  width={450}
-                  height={450}
-                  className="object-contain drop-shadow-xl"
-                  priority
-                />
-                
-              </div>
-            </div>
-          </div>
-          
-          {/* Bottom decoration - Minimal */}
-          <div className="mt-4 pt-3 text-center">
-            <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-px bg-gradient-to-r from-transparent to-blue-300" />
-              <Award className="w-3 h-3 text-blue-400" />
-              <div className="w-6 h-px bg-gradient-to-l from-transparent to-blue-300" />
+            {/* Right Side */}
+            <div className="w-full lg:w-1/2 flex items-end justify-center">
+              <div className="bg-gradient-to-br from-blue-100/30 to-cyan-100/20 rounded-full blur-3xl" />
+
+              <div className="hidden text-7xl">Hi</div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Prince Image */}
+      <div className="absolute bottom-0 right-24">
+        <Image
+          src="/Images/Home/PrinceKhalidAlFaisal.png"
+          alt="Prince Khalid AL Faisal"
+          width={560}
+          height={560}
+          className="object-contain drop-shadow-2xl"
+          priority
+        />
       </div>
     </div>
   );
