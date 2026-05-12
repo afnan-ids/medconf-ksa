@@ -11,12 +11,12 @@ const HealthTransformation = () => {
         <div className="absolute top-30 w-full">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1 pb-10 mb-1">
             <div className="flex items-center">
-              <p className="text-[10px] md:text-xs text-blue-950 font-extrabold tracking-[0.16em] uppercase whitespace-nowrap">
-                HEAL
+              <p className="text-xs text-blue-950 font-bold whitespace-nowrap">
+                HPQL
               </p>
 
-              <p className="text-[10px] md:text-xs text-blue-900 font-semibold tracking-[0.16em] uppercase ms-2 whitespace-nowrap">
-                HEALTH • EMPOWERMENT • AWARENESS • LONGEVITY
+              <p className="text-xs text-blue-900 font-bold   ms-2 whitespace-nowrap">
+                 HEALTH PROMOTION & QUALITY OF LIFE
               </p>
             </div>
 

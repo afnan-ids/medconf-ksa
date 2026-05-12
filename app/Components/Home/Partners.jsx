@@ -99,6 +99,7 @@ export default function PartnersGrid() {
 
       <div className="relative z-10 px-4 sm:px-6">
         <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-14">
+            <div className="max-w-7xl mx-auto px-3 lg:p-0">
           {/* Header */}
           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
             {/* Badge - responsive */}
@@ -173,6 +174,7 @@ export default function PartnersGrid() {
               </div>
             </Link>
           </div>
+</div>
         </div>
       </div>
     </section>

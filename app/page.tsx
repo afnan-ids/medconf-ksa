@@ -22,8 +22,9 @@ export default function Home() {
       <Portals />
       <StrategicObjectives />
       <EventIndicators />
-      <ConferenceActivities />
       <HealthSectors />
+      <ConferenceActivities />
+
       <WomenAndHealth />
       {/* <UpcomingEvents /> */}
       {/* <WhyAttend /> */}

@@ -53,83 +53,100 @@ export default function EventIndicators() {
     },
     {
       value: "25K+",
-      labelAr: "زائــــر مستهــــدف",
-      labelEn: "Target Visitors",
-      icon: Users,
+      labelAr: "ائــــر مستهــــدف",
+      labelEn: "CME Hours",
+      icon: Clock,
       color: "amber",
     },
     {
       value: "20M+",
-      labelAr: "مشاهدة للمحتوى الرقمي",
-      labelEn: "Digital Content Views",
-      icon: Share2,
+      labelAr: "مشاهدة للمحتوى رقمي",
+      labelEn: "Exhibitors",
+      icon: Building2,
       color: "rose",
     },
   ];
 
   const colorVariants = {
     blue: {
-      gradient: "from-blue-600 to-cyan-400",
-      bgLight: "bg-blue-500/20",
-      border: "border-blue-500/30",
+      gradient: "from-blue-500 to-indigo-500",
+      gradientLight: "from-blue-400 to-indigo-400",
+      bgLight: "bg-blue-500/10",
+      border: "border-blue-500/20",
       text: "text-blue-400",
       numberBg: "bg-blue-500/10",
+      glow: "shadow-blue-500/20",
     },
     purple: {
-      gradient: "from-purple-600 to-pink-500",
-      bgLight: "bg-purple-500/20",
-      border: "border-purple-500/30",
+      gradient: "from-purple-500 to-pink-500",
+      gradientLight: "from-purple-400 to-pink-400",
+      bgLight: "bg-purple-500/10",
+      border: "border-purple-500/20",
       text: "text-purple-400",
       numberBg: "bg-purple-500/10",
+      glow: "shadow-purple-500/20",
     },
     cyan: {
       gradient: "from-cyan-500 to-blue-500",
-      bgLight: "bg-cyan-500/20",
-      border: "border-cyan-500/30",
+      gradientLight: "from-cyan-400 to-blue-400",
+      bgLight: "bg-cyan-500/10",
+      border: "border-cyan-500/20",
       text: "text-cyan-400",
       numberBg: "bg-cyan-500/10",
+      glow: "shadow-cyan-500/20",
     },
     emerald: {
-      gradient: "from-emerald-600 to-teal-500",
-      bgLight: "bg-emerald-500/20",
-      border: "border-emerald-500/30",
+      gradient: "from-emerald-500 to-teal-500",
+      gradientLight: "from-emerald-400 to-teal-400",
+      bgLight: "bg-emerald-500/10",
+      border: "border-emerald-500/20",
       text: "text-emerald-400",
       numberBg: "bg-emerald-500/10",
+      glow: "shadow-emerald-500/20",
     },
     amber: {
-      gradient: "from-amber-600 to-orange-500",
-      bgLight: "bg-amber-500/20",
-      border: "border-amber-500/30",
+      gradient: "from-amber-500 to-orange-500",
+      gradientLight: "from-amber-400 to-orange-400",
+      bgLight: "bg-amber-500/10",
+      border: "border-amber-500/20",
       text: "text-amber-400",
       numberBg: "bg-amber-500/10",
+      glow: "shadow-amber-500/20",
     },
     rose: {
-      gradient: "from-rose-600 to-pink-500",
-      bgLight: "bg-rose-500/20",
-      border: "border-rose-500/30",
+      gradient: "from-rose-500 to-pink-500",
+      gradientLight: "from-rose-400 to-pink-400",
+      bgLight: "bg-rose-500/10",
+      border: "border-rose-500/20",
       text: "text-rose-400",
       numberBg: "bg-rose-500/10",
+      glow: "shadow-rose-500/20",
     },
   };
 
   return (
     <section className="relative w-full mx-auto overflow-hidden">
-      {/* Dark themed background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
-        <div className="absolute top-10 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/3 left-1/3 w-48 h-48 sm:w-96 sm:h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a2a] via-[#1a1a4a] to-[#0a0a2a]">
+        {/* Animated glowing orbs */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl animate-pulse-slower"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-1/4 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+
+        {/* Grid pattern overlay */}
       </div>
 
-      {/* Glass container */}
-      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4">
-        <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden">
-          
-          <div className="p-4 sm:p-8 lg:p-12 max-w-7xl mx-auto relative">
-            
-            {/* Header Section */}
-            <div className="text-center mb-12 sm:mb-16 relative z-10">
-              <div className="relative inline-block group/badge mb-6">
+      {/* Main glass container with enhanced blur */}
+      <div className="relative z-10 mx-auto px-4 sm:px-6 py-6 md:py-10">
+        <div className="rounded-3xl sm:rounded-[3rem] border border-white/15 bg-white/5 backdrop-blur-xl shadow-2xl overflow-hidden">
+          {/* Inner gradient border highlight */}
+          <div className="absolute inset-0 rounded-3xl sm:rounded-[3rem] pointer-events-none bg-gradient-to-r from-white/5 via-transparent to-white/5"></div>
+
+          <div className="py-6 px-4 sm:py-10 lg:py-16 lg:px-8 max-w-7xl mx-auto relative">
+            {/* Header Section with enhanced typography */}
+            <div className="text-center mb-12 sm:mb-20 relative z-10">
+              <div className="relative inline-block group/badge mb-8">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
                 <div className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
                   <TrendingUp className="w-4 h-4 text-blue-400" />
@@ -140,141 +157,293 @@ export default function EventIndicators() {
                 </div>
               </div>
 
-              {/* Bilingual Headers */}
-              <div className="space-y-3 mb-6">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" dir="rtl">
+              {/* Bilingual Headers with enhanced gradients */}
+              <div className="space-y-4 mb-8">
+                <h2
+                  className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight"
+                  dir="rtl"
+                >
                   مؤشـــــرات التأثيـــــر في المؤتمر
                 </h2>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+                  <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
                     Event Scale Indicators
                   </span>
                 </h2>
               </div>
 
-              <div className="relative w-20 h-1 mx-auto my-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
+              {/* Decorative divider with enhanced animation */}
+              <div className="relative w-24 h-1 mx-auto my-8">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full blur-sm animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 rounded-full"></div>
               </div>
 
-              <div className="max-w-2xl mx-auto space-y-3">
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed" dir="rtl">
-                  يهـــدف المؤتمر والمعـــرض المصاحب له
-                  إلى حضور استثنائي في قلــــب اقتصاد
-                  صحـــــي واعـــــد.
+              {/* Description text with improved readability */}
+              <div className="max-w-3xl mx-auto space-y-4">
+                <p
+                  className="text-base md:text-lg text-gray-200/90 leading-relaxed font-light"
+                  dir="rtl"
+                >
+                  يهـــدف المؤتمر والمعـــرض المصاحب له إلى حضور استثنائي في
+                  قلــــب اقتصاد صحـــــي واعـــــد
                 </p>
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                  The conference and exhibition aim
-                  for an exceptional presence in a
-                  promising health economy
+                <p className="text-base md:text-lg text-gray-300/80 leading-relaxed font-light">
+                  The conference and exhibition aim for an exceptional presence
+                  in a promising health economy
                 </p>
               </div>
             </div>
 
-            {/* Main Metrics Row - 3 Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 mb-12 sm:mb-16 relative z-10">
-              {mainMetrics.map((metric) => {
+            {/* Main Metrics with enhanced glass morphism cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-20">
+              {mainMetrics.map((metric, index) => {
                 const Icon = metric.icon;
                 const colors = colorVariants[metric.color];
 
                 return (
                   <div
                     key={metric.labelEn}
-                    className="group relative rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-8 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 overflow-hidden text-center"
+                    className="relative group animate-fade-in-up"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`} />
-                    <div className={`absolute top-0 right-0 w-20 h-20 ${colors.bgLight} rounded-bl-[50px] rounded-tr-xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 group-hover:opacity-100`} />
-
-                    {/* Icon */}
-                    <div className="relative mb-4 flex justify-center">
-                      <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 rounded-full`} />
-                      <div className={`relative w-14 h-14 rounded-full bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                        <Icon className="w-7 h-7 text-white" />
+                    {/* Floating element */}
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+                      <div className="flex flex-col items-center">
+                        {/* Number bubble with enhanced glass effect */}
+                        <div
+                          className={`
+                            px-6 py-2.5 rounded-2xl
+                            border border-white/20
+                            bg-white/10 backdrop-blur-md
+                            shadow-lg
+                            transition-all duration-300
+                            group-hover:scale-105
+                            group-hover:shadow-xl
+                          `}
+                        >
+                          <p
+                            className={`
+                              text-2xl md:text-3xl lg:text-4xl
+                              font-bold
+                              bg-gradient-to-r ${colors.gradient}
+                              bg-clip-text text-transparent
+                            `}
+                          >
+                            {metric.value}
+                          </p>
+                        </div>
+                        <div className="w-px h-5 bg-gradient-to-b from-white/40 to-transparent" />
                       </div>
                     </div>
 
-                    {/* Value */}
-                    <div className="space-y-2">
-                      <p className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r ${colors.gradient} bg-clip-text text-transparent`}>
-                        {metric.value}
-                      </p>
-                      <p className="text-sm md:text-base text-gray-300" dir="rtl">
-                        {metric.labelAr}
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        {metric.labelEn}
-                      </p>
+                    {/* Main Card with enhanced glass morphism */}
+                    <div
+                      className={`
+                        relative overflow-hidden
+                        rounded-2xl lg:rounded-3xl
+                        border border-white/15
+                        bg-white/5 backdrop-blur-xl
+                        p-6 pt-20
+                        text-center
+                        transition-all duration-500
+                        group-hover:-translate-y-2
+                        group-hover:border-white/30
+                        group-hover:shadow-2xl
+                        group-hover:shadow-${metric.color}-500/10
+                      `}
+                    >
+                      {/* Animated gradient background on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                      {/* Icon orb with improved design */}
+                      <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full blur-2xl bg-gradient-to-br from-white/5 to-transparent"></div>
+                      <div
+                        className={`
+                          absolute top-4 right-4
+                          w-20 h-20 rounded-full
+                          blur-2xl opacity-30
+                          bg-gradient-to-br ${colors.gradient}
+                          transition-all duration-500
+                          group-hover:opacity-50
+                          group-hover:scale-150
+                        `}
+                      ></div>
+
+                      {/* Content */}
+                      <div className="relative z-10 flex flex-col items-center">
+                        {/* Icon container with enhanced gradient */}
+                        <div
+                          className={`
+                            w-16 h-16 lg:w-20 lg:h-20
+                            rounded-2xl
+                            bg-gradient-to-br ${colors.gradient}
+                            flex items-center justify-center
+                            shadow-lg
+                            mb-5
+                            transition-all duration-300
+                            group-hover:scale-110
+                            group-hover:shadow-xl
+                          `}
+                        >
+                          <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
+                        </div>
+
+                        {/* Labels with improved typography */}
+                        <p
+                          className="text-lg lg:text-xl font-semibold text-white mb-1.5"
+                          dir="rtl"
+                        >
+                          {metric.labelAr}
+                        </p>
+                        <p className="text-sm text-gray-300/80 font-medium tracking-wide">
+                          {metric.labelEn}
+                        </p>
+                      </div>
+
+                      {/* Bottom decorative line */}
+                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-white/50 to-transparent group-hover:w-3/4 transition-all duration-500"></div>
                     </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* Audience Reach Section */}
-            <div className="relative z-10 mb-8">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/20 backdrop-blur-xl mb-4">
+            {/* Audience Reach Section with enhanced design */}
+            <div className="relative z-10 mb-12">
+              <div className="text-center mb-10">
+                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-xl mb-6 shadow-lg">
                   <Globe className="w-4 h-4 text-blue-400" />
-                  <span className="text-xs text-gray-300">Digital Reach</span>
+                  <span className="text-xs md:text-sm text-gray-200 font-medium">
+                    Digital Reach
+                  </span>
                 </div>
-                
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2" dir="rtl">
+
+                <h3
+                  className="text-2xl md:text-4xl font-bold text-white mb-3"
+                  dir="rtl"
+                >
                   وصـــــول عالـــــي للجـــــمهور
                 </h3>
-                <h3 className="text-xl md:text-2xl font-bold">
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                <h3 className="text-xl md:text-3xl font-bold">
+                  <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
                     High reach to audiences
                   </span>
                 </h3>
               </div>
 
-              {/* Description */}
-              <div className="max-w-3xl mx-auto text-center mb-10 space-y-3">
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed" dir="rtl">
-                  مـــن خلال المحتـــوى الرقمـــــي للمؤتمر
-                  نهدف للوصـــول إلى كافـــة الجمهور عبر
-                  النشر على وسائــــــل الإعـلام الرقمي
+              {/* Description with improved styling */}
+              <div className="max-w-3xl mx-auto text-center mb-12 space-y-4">
+                <p
+                  className="text-base md:text-lg text-gray-200/90 leading-relaxed font-light"
+                  dir="rtl"
+                >
+                  مـــن خلال المحتـــوى الرقمـــــي للمؤتمر نهدف للوصـــول إلى
+                  كافـــة الجمهور عبر النشر على وسائــــــل الإعـلام الرقمي
                 </p>
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                  Our digital strategy ensures
-                  maximum reach to all audiences
-                  through targeted content across
-                  all digital media channels
+                <p className="text-base md:text-lg text-gray-300/80 leading-relaxed font-light">
+                  Our digital strategy ensures maximum reach to all audiences
+                  through targeted content across all digital media channels
                 </p>
               </div>
 
-              {/* Audience Metrics - 3 Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
-                {audienceMetrics.map((metric) => {
+              {/* Audience Metrics - Enhanced 3 Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                {audienceMetrics.map((metric, index) => {
                   const Icon = metric.icon;
                   const colors = colorVariants[metric.color];
 
                   return (
                     <div
                       key={metric.labelEn}
-                      className="group relative rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 md:p-8 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 overflow-hidden text-center"
+                      className="relative group animate-fade-in-up"
+                      style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                     >
-                      <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`} />
-                      <div className={`absolute bottom-0 left-0 w-20 h-20 ${colors.bgLight} rounded-tr-[50px] rounded-bl-xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50 group-hover:opacity-100`} />
-
-                      {/* Icon */}
-                      <div className="relative mb-4 flex justify-center">
-                        <div className={`relative w-12 h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                          <Icon className="w-6 h-6 text-white" />
+                      {/* Floating header */}
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+                        <div className="flex flex-col items-center">
+                          <div
+                            className={`
+                              px-6 py-2.5 rounded-2xl
+                              border border-white/20
+                              bg-white/10 backdrop-blur-md
+                              shadow-lg
+                              transition-all duration-300
+                              group-hover:scale-105
+                            `}
+                          >
+                            <p
+                              className={`
+                                text-2xl md:text-3xl lg:text-4xl
+                                font-bold
+                                bg-gradient-to-r ${colors.gradient}
+                                bg-clip-text text-transparent
+                              `}
+                            >
+                              {metric.value}
+                            </p>
+                          </div>
+                          <div className="w-px h-5 bg-gradient-to-b from-white/40 to-transparent" />
                         </div>
                       </div>
 
-                      {/* Value */}
-                      <div className="space-y-2">
-                        <p className={`text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r ${colors.gradient} bg-clip-text text-transparent`}>
-                          {metric.value}
-                        </p>
-                        <p className="text-sm md:text-base text-gray-300" dir="rtl">
-                          {metric.labelAr}
-                        </p>
-                        <p className="text-xs text-gray-400">
-                          {metric.labelEn}
-                        </p>
+                      {/* Main Card with enhanced glass effect */}
+                      <div
+                        className={`
+                          relative overflow-hidden
+                          rounded-2xl lg:rounded-3xl
+                          border border-white/15
+                          bg-white/5 backdrop-blur-xl
+                          p-6 pt-20
+                          text-center
+                          transition-all duration-500
+                          group-hover:-translate-y-2
+                          group-hover:border-white/30
+                          group-hover:shadow-2xl
+                        `}
+                      >
+                        {/* Glow effect */}
+                        <div
+                          className={`
+                            absolute -top-10 -right-10
+                            w-40 h-40 rounded-full
+                            blur-3xl opacity-20
+                            bg-gradient-to-br ${colors.gradient}
+                            transition-all duration-500
+                            group-hover:opacity-40
+                            group-hover:scale-150
+                          `}
+                        ></div>
+
+                        <div className="relative z-10 flex flex-col items-center">
+                          {/* Icon with enhanced styling */}
+                          <div
+                            className={`
+                              w-16 h-16 lg:w-20 lg:h-20
+                              rounded-2xl
+                              bg-gradient-to-br ${colors.gradient}
+                              flex items-center justify-center
+                              shadow-lg
+                              mb-5
+                              transition-all duration-300
+                              group-hover:scale-110
+                              group-hover:rotate-3
+                            `}
+                          >
+                            <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
+                          </div>
+
+                          <p
+                            className="text-lg lg:text-xl font-semibold text-white mb-1.5"
+                            dir="rtl"
+                          >
+                            {metric.labelAr}
+                          </p>
+                          <p className="text-sm text-gray-300/80 font-medium tracking-wide">
+                            {metric.labelEn}
+                          </p>
+                        </div>
+
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-white/50 to-transparent group-hover:w-3/4 transition-all duration-500"></div>
                       </div>
                     </div>
                   );
@@ -282,15 +451,57 @@ export default function EventIndicators() {
               </div>
             </div>
 
-            {/* Bottom Decorative Note */}
-            <div className="text-center mt-12 relative z-10">
-              <p className="text-xs text-gray-500">
-                * Based on projected metrics for 2026 conference season
-              </p>
+            {/* Enhanced Bottom Decorative Note */}
+            <div className="text-center mt-16 relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                <p className="text-xs text-gray-400">
+                  Based on projected metrics for 2026 conference season
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+          opacity: 0;
+        }
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% auto;
+          animation: gradient 3s linear infinite;
+        }
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.05); }
+        }
+        @keyframes pulse-slower {
+          0%, 100% { opacity: 0.2; transform: scale(1); }
+          50% { opacity: 0.35; transform: scale(1.1); }
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+        .animate-pulse-slower {
+          animation: pulse-slower 6s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }

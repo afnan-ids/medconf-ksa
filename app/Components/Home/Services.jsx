@@ -81,12 +81,13 @@ export default function Services() {
       </div>
 
       {/* Glass container */}
-      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4">
+      <div className="relative z-10 mx-auto py-4 px-4 sm:px-6 lg:px-4">
         <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(79,70,229,0.3)] transition-all duration-700">
+        
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
-          <div className="p-4 sm:p-8 lg:p-12 max-w-7xl mx-auto relative">
+          <div className="py-4 px-3 sm:py-8 lg:py-12 lg:px-0 max-w-7xl mx-auto relative">
             {/* Decorative orbs inside - hidden on mobile */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl hidden sm:block"></div>
