@@ -11,8 +11,7 @@ const SlidePatronage = () => {
           {/* Top Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-1 pb-10 mb-1 ">
             <p className="text-[10px] flex md:text-xs text-white/90 font-medium items-center ms-3 text-center">
-              <span className="font-extrabold me-3 p-4">HEAL</span> HEALTH •
-              EMPOWERMENT • AWARENESS • LONGEVITY
+              <span className="font-extrabold me-3 p-4">HPQL</span> HEALTH PROMOTION & QUALITY OF LIFE
             </p>
 
             <p
@@ -27,15 +26,15 @@ const SlidePatronage = () => {
             {/* Left Side */}
             <div className="w-full lg:w-1/2 space-y-3">
               {/* Patronage Badge */}
-              <div className="relative bg-white/95 rounded-xl px-4 py-3 shadow-2xl border border-white/20">
+              <div className="relative px-4 py-3 shadow-2xl  bg-cyan-500 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden">
                 <p
-                  className="text-sm md:text-base lg:text-xl font-extrabold text-center text-blue-950 leading-snug"
+                  className="text-sm md:text-base lg:text-xl font-extrabold text-center text-blue-900 leading-snug"
                   dir="rtl"
                 >
                   برعاية كريمة من صاحب السمو الملكي
                 </p>
 
-                <p className="text-xs md:text-sm lg:text-base text-center text-blue-950 mt-1 font-medium">
+                <p className="text-xs md:text-sm lg:text-base text-center text-blue-900 mt-1 font-medium">
                   Under the gracious patronage of His Royal Highness
                 </p>
               </div>
@@ -113,7 +112,7 @@ const SlidePatronage = () => {
                 </p>
 
                 <p className="text-xs md:text-sm lg:text-base font-semibold text-white/90 tracking-[0.10em] uppercase mt-1">
-                  HEALTH . EMPOWERMENT . AWARENESS . LONGEVITY
+                  HEALTH PROMOTION & QUALITY OF LIFE
                 </p>
               </div>
             </div>

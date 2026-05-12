@@ -81,7 +81,7 @@ export default function EnablingPartners() {
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
-          <div className="p-4 sm:p-8 lg:p-12 max-w-7xl mx-auto relative">
+          <div className="py-4 px-3 sm:py-8 lg:py-12 lg:px-0 max-w-7xl mx-auto relative">
             {/* Decorative orbs inside */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl hidden sm:block"></div>

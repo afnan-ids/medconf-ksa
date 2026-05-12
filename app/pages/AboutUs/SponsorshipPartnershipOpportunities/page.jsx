@@ -32,7 +32,7 @@ import {
   Clock,
   ChevronRight,
 } from "lucide-react";
-import BreadCrumb from "../../Components/BreadCrum";
+import BreadCrumb from "../../../Components/BreadCrum";
 import Link from "next/link";
 
 export default function SponsorshipPage() {
@@ -220,7 +220,7 @@ export default function SponsorshipPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto ">
           {/* Hero Section */}
           <div className="relative text-center mb-20">
             <div className="relative max-w-5xl mx-auto">
@@ -395,12 +395,12 @@ export default function SponsorshipPage() {
                      {/* Badge */}
                     {tier.popular && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-100">
-                        <zdiv
+                        <div
                           className={`bg-gradient-to-r ${getIconColor()} text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1 whitespace-nowrap`}
                         >
                           <Star className="w-2.5 h-2.5 fill-white" />
                           RECOMMENDED
-                        </zdiv>
+                        </div>
                       </div>
                     )}
                   <div

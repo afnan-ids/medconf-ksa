@@ -171,7 +171,7 @@ export default function ConferenceActivities() {
       {/* Glass container */}
       <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4 sm:py-8">
         <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden">
-          <div className="p-4 sm:p-8 lg:p-12 max-w-7xl mx-auto relative">
+          <div className="py-4 px-3 sm:py-8 lg:py-12 lg:px-0 max-w-7xl mx-auto relative">
             {/* Header Section */}
             <div className="text-center mb-12 sm:mb-16 relative z-10">
               <div className="relative inline-block group/badge mb-6">

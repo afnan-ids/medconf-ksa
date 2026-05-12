@@ -14,7 +14,7 @@ const SlideVideo = () => {
   if (!mounted) return null;
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full ">
       {/* Video Background */}
       <video
         ref={videoRef}
@@ -31,8 +31,8 @@ const SlideVideo = () => {
       <div className="absolute inset-0 bg-black/20" />
 
       {/* Content Wrapper */}
-      <div className="relative w-full h-full flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-20">
+      <div className="relative w-full max-w-7xl mx-auto h-full flex items-center">
+        <div className="container mx-auto">
           <div className="max-w-2xl sm:max-w-3xl">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-medium drop-shadow-xl">
               <span

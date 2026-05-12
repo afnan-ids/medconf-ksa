@@ -98,8 +98,8 @@ const navlinks = [
   href: "/pages/AboutUs",
   submenus: [
     { label: "Who We Are", href: "/pages/AboutUs", icon: Building2 },
-    { label: "Our Journey", href: "/pages/ExhibitionJourney", icon: TrendingUp },
-    { label: "Partnership Opportunities", href: "/pages/SponsorshipPartnershipOpportunities", icon: Handshake },
+    { label: "Our Journey", href: "/pages/AboutUs/ExhibitionJourney", icon: TrendingUp },
+    { label: "Partnership Opportunities", href: "/pages/AboutUs/SponsorshipPartnershipOpportunities", icon: Handshake },
   ],
 },
   { label: "Contact", href: "/pages/ContactUs" },
@@ -223,7 +223,7 @@ export default function Navbar() {
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
         )}
 
-        <div className="max-w-[1300px] mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="group relative">
