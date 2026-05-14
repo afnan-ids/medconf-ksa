@@ -178,6 +178,7 @@ export default function ContactPage() {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </div>
 
+
                   {/* Icon */}
                   <div className="relative mb-3 sm:mb-4 md:mb-5 lg:mb-6">
                     <div className={`absolute inset-0 bg-gradient-to-r ${info.color} rounded-lg sm:rounded-xl blur-md sm:blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
