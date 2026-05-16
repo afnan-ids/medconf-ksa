@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import Image from "next/image";
+import { FaArrowAltCircleLeft, FaCaretLeft } from "react-icons/fa";
 
 // DATA
 
@@ -83,7 +84,7 @@ export default function WomenAndHealth() {
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-indigo-950 to-black" />
 
       {/* ambient floating lights */}
-      <div className="pointer-events-none absolute top-[10%] left-[5%] h-96 w-96 bg-emerald-300/60 blur-[140px] rounded-full" />
+      <div className="pointer-events-none absolute top-[1%] left-[5%] h-96 w-96 bg-emerald-400/30 blur-[140px] rounded-full" />
 
       <div className="pointer-events-none absolute bottom-[10%] right-[5%] h-[30rem] w-[30rem] bg-green-300/60 blur-[160px] rounded-full" />
 
@@ -132,7 +133,7 @@ export default function WomenAndHealth() {
         </div>
 
         {/* SECTION 1 */}
-        <section className="relative overflow-hidden ">
+        <section className="relative overflow-hidden">
           <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-4">
             <div
               className="
@@ -170,18 +171,18 @@ export default function WomenAndHealth() {
               {/* top line */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
 
-              <div className="relative p-4 sm:p-6 lg:p-8">
+              <div className="relative flex flex-col justify-between p-6 sm:p-8 lg:p-10 min-h-[600px] lg:min-h-[700px]">
                 {/* Top bar */}
-                <div className="max-w-7xl mx-auto flex items-center justify-between text-white/80 text-[10px] sm:text-xs mb-5">
+                <div className="max-w-7xl mx-auto w-full flex items-center justify-between text-white/80 text-[10px] sm:text-xs mb-10">
                   <span>
                     <span className="font-semibold text-white">HPQL</span>{" "}
                     HEALTH PROMOTION & QUALITY OF LIFE
                   </span>
 
-                  <span dir="rtl">صحة . تمكين . توعية . عمر مديد</span>
+                  <span dir="rtl">تعزيز الصحة وجودة الحياة</span>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] max-w-7xl mx-auto flex-1 w-full mt-6">
                   {/* LEFT */}
                   <div className="relative z-10">
                     <div className="grid grid-cols-2 gap-4">
@@ -232,11 +233,11 @@ export default function WomenAndHealth() {
                   </div>
 
                   {/* RIGHT */}
-                  <div className="relative flex justify-end">
+                  <div className="relative flex items-start justify-end mt-3">
                     <div className="absolute w-64 h-64 bg-cyan-500/20 blur-3xl rounded-full" />
 
                     <div className="relative text-center lg:text-right">
-                      <h2 className="text-2xl sm:text-3xl lg:text-[35px] font-bold text-white leading-tight mt-2">
+                      <h2 className="text-2xl sm:text-3xl lg:text-[35px] font-bold text-white leading-tight">
                         المــــــرأة والصحــــــة
                       </h2>
 
@@ -248,7 +249,7 @@ export default function WomenAndHealth() {
                 </div>
 
                 {/* Woman Image */}
-                <div className="pointer-events-none absolute -bottom-10 -right-13">
+                <div className="pointer-events-none absolute bottom-0 right-0 lg:right-[-40px]">
                   <div className="absolute bottom-10 right-10 w-72 h-72 bg-green-500/20 blur-3xl rounded-full" />
 
                   <Image
@@ -315,13 +316,18 @@ export default function WomenAndHealth() {
               {/* top glow line */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] min-h-screen">
+              <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] min-h-[600px] lg:min-h-[700px]">
                 {/* LEFT PANEL */}
-                <div className="relative z-10 flex flex-col justify-between">
-                  <div className="w-full max-w-7xl mx-auto h-full flex flex-col justify-between">
+                <div className="relative z-10 flex flex-col">
+                  <div className="w-full max-w-4xl mx-auto h-full flex flex-col">
                     {/* top text */}
                     <div className="px-6 sm:px-8 lg:px-10 pt-8">
-                      <div className="flex items-center text-white/80 text-[10px] sm:text-xs tracking-[0.2em]">
+                      <div
+                        className="flex items-center text-white/80 text-[10px] sm:text-xs tracking-[0.2em] inline-flex
+                        px-4
+                        py-2
+                      "
+                      >
                         <span>
                           <span className="font-semibold text-white">HPQL</span>{" "}
                           HEALTH PROMOTION & QUALITY OF LIFE
@@ -341,8 +347,8 @@ export default function WomenAndHealth() {
                     </div>
 
                     {/* CENTER CONTENT */}
-                    <div className="flex items-end flex-1 px-6 sm:px-10 lg:px-14 pb-10">
-                      <div className="w-full p-6 sm:p-8">
+                    <div className="flex flex-1 items-end px-6 sm:px-10 lg:px-14 py-10">
+                      <div className="w-full py-6 sm:py-8">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                           {highlightsData.map((highlight, index) => (
                             <div
@@ -368,7 +374,7 @@ export default function WomenAndHealth() {
                                   text-end
                                   font-semibold
                                   text-sm
-                                  md:text-md
+                                  md:text-lg
                                   leading-relaxed
                                 "
                               >
@@ -400,13 +406,13 @@ export default function WomenAndHealth() {
                 {/* RIGHT PANEL */}
                 <div
                   className="
-                    relative
-                    z-20
-                    bg-[url('/Images/Home/WomenAndHealth/womenandHealthBG.png')]
-                    bg-center
-                    bg-cover
-                    overflow-hidden
-                  "
+                  relative
+                  z-20
+                  bg-[url('/Images/Home/WomenAndHealth/womenandHealthBG.png')]
+                  bg-center
+                  bg-cover
+                  overflow-hidden
+                "
                 >
                   <div className="absolute inset-0 bg-black/20" />
 
@@ -414,30 +420,30 @@ export default function WomenAndHealth() {
 
                   <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-500/10 blur-3xl rounded-full" />
 
-                  <div className="relative z-10 w-full max-w-7xl mx-auto h-full flex flex-col justify-between">
+                  <div className="relative z-10 w-full max-w-7xl mx-auto h-full flex flex-col">
                     {/* top arabic text */}
-                    <div className="flex justify-end px-6 sm:px-8 lg:px-10 pt-8">
+                    <div className="flex justify-end pt-8 max-w-2xl mx-auto lg:ps-23">
                       <span
                         dir="rtl"
                         className="
-                          text-white
-                          text-[10px]
-                          sm:text-xs
-                          tracking-[0.2em]
-                        "
+                        text-white
+                        text-[10px]
+                        sm:text-xs
+                        tracking-[0.2em]
+                      "
                       >
                         تعزيز الصحة وجودة الحياة
                       </span>
                     </div>
 
                     {/* CENTER CONTENT */}
-                    <div className="flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-10">
+                    <div className="flex-1 flex items-center justify-center px-6 py-12 lg:pe-30">
                       <div className="w-full text-center lg:text-right">
                         <h2
                           className="
-                            text-2xl
-                            sm:text-3xl
-                            lg:text-[38px]
+                            text-xl
+                            sm:text-2xl
+                            lg:text-[30px]
                             font-bold
                             text-white
                             leading-[1.1]
@@ -451,14 +457,39 @@ export default function WomenAndHealth() {
                           Woman & Health
                         </p>
 
-                        <div className="mt-14 text-right">
-                          <p className="text-white text-lg font-semibold">
-                            أبرز المواضيع
-                          </p>
+                        <div className="mt-8 flex justify-between items-center">
+                          {/* Modern Glass Indicator */}
+                          <div className="relative flex items-center justify-center h-10 w-10">
+                            
+                            {/* inner glass circle */}
+                            <div
+                              className="
+                                relative
+                                h-7
+                                w-7
+                                rounded-full
+                                backdrop-blur-xl
+                                flex
+                                items-center
+                                justify-center
+                                shadow-[0_0_25px_rgba(34,211,238,0.25)]
+                                transition-all
+                                duration-500
+                                hover:scale-110
+                              "
+                            >
+                              <FaCaretLeft className="h-6 w-6 text-cyan-300" />
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-white text-lg font-semibold">
+                              أبرز المواضيع
+                            </p>
 
-                          <span className="text-white/70 text-sm tracking-wide">
-                            Key Highlights
-                          </span>
+                            <span className="text-white/70 text-sm tracking-wide">
+                              Key Highlights
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
