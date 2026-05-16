@@ -156,147 +156,218 @@ const targetSectors = [
     color: "white",
   },
 ];
-
 export default function TargetedSectors() {
   return (
-    <section className="relative w-full mx-auto overflow-hidden">
-      {/* Dark themed background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
-        <div className="absolute top-10 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/3 left-1/3 w-48 h-48 sm:w-96 sm:h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative w-full overflow-hidden py-6 sm:py-10 bg-white/70">
+      <div className="relative z-10 px-4 sm:px-6">
+        {/* Main Glass Card */}
+        <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-white/20 bg-white/80 backdrop-blur-2xl shadow-[0_20px_80px_rgba(0,0,0,0.15)]">
+          {/* Top Accent Line - Green */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent"></div>
 
-      {/* Glass container */}
-      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4">
-        <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden">
-          <div className="py-4 px-3 sm:py-8 lg:py-12 lg:px-0 max-w-7xl mx-auto relative">
+          {/* Subtle overlays for depth - Green tones */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.06),transparent_25%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(5,150,105,0.06),transparent_25%)]"></div>
+
+          <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12  bg-[url('/Images/Home/HealthCareSectors/WhiteBackground.jpg')] bg-cover bg-center">
+            
             {/* Header Section */}
-            <div className="text-center mb-12 sm:mb-16 relative z-10">
-              <div className="relative inline-block group/badge mb-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
-                <div className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
-                  <Target className="w-4 h-4 text-blue-400" />
-                  <span>Our Focus</span>
-                  <span className="w-0.5 h-0.5 bg-white/30 rounded-full"></span>
-                  <Globe className="w-4 h-4 text-cyan-400" />
-                  <span>Healthcare Ecosystem</span>
+            <div className="text-center mb-10 sm:mb-12 relative z-10">
+              
+              {/* Enhanced Badge - Green Glass Style */}
+              <div className="relative inline-block group/badge mb-5">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full blur-xl opacity-0 group-hover/badge:opacity-40 transition-opacity duration-500"></div>
+
+                <div
+                  className="
+                    relative inline-flex items-center gap-2
+                    px-5 py-2 rounded-full
+                    border border-emerald-200/50
+                    bg-white/80
+                    backdrop-blur-xl
+                    text-emerald-700
+                    text-xs sm:text-sm
+                    shadow-md
+                    hover:shadow-emerald-500/20
+                    transition-all
+                    duration-300
+                  "
+                >
+                  <Target className="w-4 h-4 text-emerald-600" />
+
+                  <span className="font-medium">Our Focus</span>
+
+                  <span className="w-1 h-1 rounded-full bg-emerald-400"></span>
+
+                  <Globe className="w-4 h-4 text-emerald-600" />
+
+                  <span className="font-medium">Healthcare Ecosystem</span>
                 </div>
               </div>
 
-              {/* Bilingual Headers */}
-              <div className="space-y-3 mb-6">
+              {/* Bilingual Headers - Green tones */}
+              <div className="space-y-2 mb-5">
                 <h2
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-white"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 tracking-tight"
                   dir="rtl"
                 >
                   القطاعات المستهدفة
                 </h2>
+
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 bg-clip-text text-transparent">
                     Target Sectors
                   </span>
                 </h2>
               </div>
 
-              <div className="relative w-20 h-1 mx-auto my-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
+              {/* Enhanced Divider - Green */}
+              <div className="relative w-24 h-0.5 mx-auto my-5">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 rounded-full blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 rounded-full"></div>
               </div>
 
-              <p className="text-sm md:text-base text-gray-400 max-w-2xl mx-auto">
+              {/* Description */}
+              <p className="text-sm md:text-base text-slate-500 max-w-2xl mx-auto font-light">
                 Connecting key players across the healthcare ecosystem
               </p>
             </div>
 
-            {/* Sectors Grid */}
+            {/* Sectors Grid - Green Glass Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5 lg:gap-6">
               {targetSectors.map((sector, index) => {
                 return (
                   <div
                     key={index}
-                    className={`
-                      group relative rounded-2xl p-5 transition-all duration-300
-                      backdrop-blur-sm border
-                      border-green-500/30
-                      hover:bg-green-500/5
-                      hover:-translate-y-2 hover:shadow-xl
-                      'bg-white/5' 
-                    `}
+                    className="
+                      group relative rounded-2xl p-5
+                      transition-all duration-500
+                      border border-emerald-100/30
+                      bg-white/90
+                      backdrop-blur-sm
+                      shadow-[0_4px_15px_rgba(0,0,0,0.04)]
+                      hover:border-emerald-300/50
+                      hover:bg-white
+                      hover:-translate-y-2
+                      hover:shadow-[0_15px_35px_rgba(16,185,129,0.12)]
+                      cursor-pointer
+                      overflow-hidden
+                    "
                   >
-                    {/* Hover Gradient Overlay */}
+                    {/* Hover  */}
                     <div
-                      className={`
-                        absolute inset-0 rounded-2xl bg-gradient-to-br from-green-500 to-cyan-400 
-                        opacity-0 group-hover:opacity-10 transition-opacity duration-500
-                      `}
+                      className="
+                        absolute inset-0 rounded-2xl
+                        bg-gradient-to-br from-emerald-500/10 via-green-500/10 to-teal-500/10
+                        opacity-0 group-hover:opacity-100
+                        transition-opacity duration-500
+                      "
                     />
+                    
+                    {/* Inner */}
+                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 blur-2xl rounded-full" />
+                      <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-teal-500/20 blur-2xl rounded-full" />
+                    </div>
 
-                    {/* Content Container  */}
-                    <div className="relative flex items-center  gap-3">
+                    {/* Top accent line on hover - Green */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 group-hover:w-12 transition-all duration-500 rounded-full" />
+
+                    {/* Content Container */}
+                    <div className="relative flex items-center gap-3">
+                      
                       {/* Text Content */}
-                      <div className="space-y-1.5">
+                      <div className="space-y-1.5 flex-1">
                         <p
-                          className="text-xs sm:text-sm text-gray-200 font-medium leading-relaxed"
+                          className="
+                            text-xs sm:text-sm
+                            text-slate-700
+                            
+                            leading-relaxed
+                            group-hover:text-slate-800
+                            transition-colors
+                          "
                           dir="rtl"
                         >
                           {sector.nameAr}
                         </p>
-                        <p className="text-[11px] sm:text-xs text-gray-400 text-end">
+
+                        <p className="text-[11px] sm:text-xs text-slate-500 text-end group-hover:text-slate-600 transition-colors">
                           {sector.nameEn}
                         </p>
                       </div>
 
-                      {/* Icon Container */}
+                      {/* Icon Container - White/Green Glass Style */}
                       <div
-                        className={`
+                        className="
                           w-14 h-14 md:w-16 md:h-16 rounded-2xl
                           flex items-center justify-center
-                          transition-all duration-300
-                          group-hover:scale-110 group-hover:rotate-3
-                           bg-white/15 border-white/30 border
-                          backdrop-blur-sm
-                        `}
+                          transition-all duration-500
+                          group-hover:scale-110
+                          group-hover:rotate-3
+                          border border-emerald-100
+                          bg-gradient-to-br from-white to-emerald-50/50
+                          shadow-sm
+                          group-hover:shadow-md
+                          group-hover:border-emerald-200
+                        "
                       >
-                        <div className="relative w-8 h-8 md:w-9 md:h-9">
+                        <div className="relative w-8 h-8 md:w-9 md:h-9 transition-transform duration-500 group-hover:scale-110">
                           <Image
                             src={sector.icon}
                             alt={sector.nameEn}
                             fill
                             className="object-contain"
-                            
                           />
                         </div>
                       </div>
                     </div>
-
-                    {/* Bottom Hover Indicator */}
-                    <div
-                      className={`
-                        absolute bottom-0 left-1/2 -translate-x-1/2
-                        w-0 h-0.5 bg-gradient-to-r from-green-500 to-cyan-400
-                        group-hover:w-12 transition-all duration-500 rounded-full
-                      `}
-                    />
                   </div>
                 );
               })}
             </div>
 
-            {/* Bottom CTA */}
+            {/* Bottom CTA - Green Glass Button */}
             <div className="text-center mt-10 sm:mt-12 relative z-10">
               <Link
                 href="#"
                 className="group relative inline-flex items-center gap-3"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
-                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 md:px-8 py-3 rounded-full text-sm font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3">
-                  <Sparkles className="w-4 h-4" />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-all duration-500 group-hover:scale-110"></div>
+
+                <div
+                  className="
+                    relative
+                    border border-emerald-200/50
+                    bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-teal-500/10
+                    backdrop-blur-sm
+                    text-slate-700
+                    px-6 md:px-8 py-3
+                    rounded-full
+                    text-sm font-medium
+                    hover:shadow-xl
+                    hover:scale-105
+                    hover:text-slate-800
+                    transition-all
+                    duration-300
+                    flex items-center gap-3
+                    overflow-hidden
+                  "
+                >
+                  {/* Shine effect on hover */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-12" />
+                  
+                  <Sparkles className="w-4 h-4 text-emerald-600 group-hover:rotate-12 transition-transform duration-300" />
+
                   <span>Explore All Sectors</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-emerald-600" />
                 </div>
               </Link>
             </div>
+
+            {/* Bottom Decorative Line - Green */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent"></div>
           </div>
         </div>
       </div>
