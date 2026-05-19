@@ -41,7 +41,7 @@ const EventsSection = () => {
     <>
       <BreadCrumb
         title="Events"
-        backgroundImage="/Images/Home/Bread-crum-1.avif"
+        // backgroundImage="/Images/Home/Bread-crum-1.avif"
         path={[{ label: "Events" }]}
       />
       <section id="events" className="relative py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden">

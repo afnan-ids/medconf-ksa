@@ -158,79 +158,48 @@ const targetSectors = [
 ];
 export default function TargetedSectors() {
   return (
-    <section className="relative w-full overflow-hidden py-6 sm:py-10 bg-white/70">
+    <section className="relative w-full overflow-hidden py-6 sm:py-10 bg-gray-50">
       <div className="relative z-10 px-4 sm:px-6">
         {/* Main Glass Card */}
         <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-white/20 bg-white/80 backdrop-blur-2xl shadow-[0_20px_80px_rgba(0,0,0,0.15)]">
-          {/* Top Accent Line - Green */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent"></div>
+          {/* <div className="absolute bottom-0 z-100">
+            <Image
+              src="/Images/Home/HealthCareSectors/TransperentLogo.png"
+              alt="logo img"
+              height={1500}
+              width={1500}
+            />
+          </div> */}
 
-          {/* Subtle overlays for depth - Green tones */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.06),transparent_25%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(5,150,105,0.06),transparent_25%)]"></div>
-
-          <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12  bg-[url('/Images/Home/HealthCareSectors/WhiteBackground.jpg')] bg-cover bg-center">
-            
+          <div className="relative max-w-7xl mx-auto py-8 sm:py-10 lg:py-12  bg-[url('/Images/Home/HealthCareSectors/WhiteBackground.jpg')] bg-cover bg-center">
             {/* Header Section */}
             <div className="text-center mb-10 sm:mb-12 relative z-10">
-              
-              {/* Enhanced Badge - Green Glass Style */}
-              <div className="relative inline-block group/badge mb-5">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full blur-xl opacity-0 group-hover/badge:opacity-40 transition-opacity duration-500"></div>
-
-                <div
-                  className="
-                    relative inline-flex items-center gap-2
-                    px-5 py-2 rounded-full
-                    border border-emerald-200/50
-                    bg-white/80
-                    backdrop-blur-xl
-                    text-emerald-700
-                    text-xs sm:text-sm
-                    shadow-md
-                    hover:shadow-emerald-500/20
-                    transition-all
-                    duration-300
-                  "
-                >
-                  <Target className="w-4 h-4 text-emerald-600" />
-
-                  <span className="font-medium">Our Focus</span>
-
-                  <span className="w-1 h-1 rounded-full bg-emerald-400"></span>
-
-                  <Globe className="w-4 h-4 text-emerald-600" />
-
-                  <span className="font-medium">Healthcare Ecosystem</span>
-                </div>
-              </div>
+             
 
               {/* Bilingual Headers - Green tones */}
-              <div className="space-y-2 mb-5">
+              <div className="flex mb-5 justify-between">
+                
+
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+                  <span className="text-blue-900 tracking-tight">
+                    Target Sectors
+                  </span>
+                </h2>
                 <h2
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 tracking-tight"
+                  className="text-3xl md:text-3xl lg:text-4xl font-bold text-blue-900 tracking-tight"
                   dir="rtl"
                 >
                   القطاعات المستهدفة
                 </h2>
-
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                  <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 bg-clip-text text-transparent">
-                    Target Sectors
-                  </span>
-                </h2>
               </div>
 
-              {/* Enhanced Divider - Green */}
-              <div className="relative w-24 h-0.5 mx-auto my-5">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 rounded-full blur-sm"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 rounded-full"></div>
-              </div>
+              {/* Decorative line  */}
+              {/* <div className="relative w-20 sm:w-32 h-1 mx-auto my-3 sm:my-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
+              </div> */}
 
-              {/* Description */}
-              <p className="text-sm md:text-base text-slate-500 max-w-2xl mx-auto font-light">
-                Connecting key players across the healthcare ecosystem
-              </p>
+              
             </div>
 
             {/* Sectors Grid - Green Glass Cards */}
@@ -263,7 +232,7 @@ export default function TargetedSectors() {
                         transition-opacity duration-500
                       "
                     />
-                    
+
                     {/* Inner */}
                     <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                       <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 blur-2xl rounded-full" />
@@ -275,14 +244,12 @@ export default function TargetedSectors() {
 
                     {/* Content Container */}
                     <div className="relative flex items-center gap-3">
-                      
                       {/* Text Content */}
                       <div className="space-y-1.5 flex-1">
                         <p
                           className="
                             text-xs sm:text-sm
-                            text-slate-700
-                            
+                            text-blue-900
                             leading-relaxed
                             group-hover:text-slate-800
                             transition-colors
@@ -292,7 +259,7 @@ export default function TargetedSectors() {
                           {sector.nameAr}
                         </p>
 
-                        <p className="text-[11px] sm:text-xs text-slate-500 text-end group-hover:text-slate-600 transition-colors">
+                        <p className="text-[11px] sm:text-xs text-blue-900  text-end group-hover:text-slate-600 transition-colors">
                           {sector.nameEn}
                         </p>
                       </div>
@@ -356,7 +323,7 @@ export default function TargetedSectors() {
                 >
                   {/* Shine effect on hover */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-12" />
-                  
+
                   <Sparkles className="w-4 h-4 text-emerald-600 group-hover:rotate-12 transition-transform duration-300" />
 
                   <span>Explore All Sectors</span>
