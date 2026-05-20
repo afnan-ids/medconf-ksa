@@ -251,7 +251,7 @@ export default function SupportHelpDesk() {
       id: 6,
       question: "How to contact event organizers?",
       answer:
-        "You can submit a support ticket through this Help Desk, email support@medconf.com, or call +966 800 123 4567 during business hours (9 AM - 6 PM, Sunday-Thursday).",
+        "You can submit a support ticket through this Help Desk, email support@Hpql.com, or call +966 800 123 4567 during business hours (9 AM - 6 PM, Sunday-Thursday).",
       category: "general",
       helpful: 76,
       notHelpful: 4,
@@ -764,10 +764,10 @@ export default function SupportHelpDesk() {
                 Send us an email and we'll respond within 24 hours
               </p>
               <a
-                href="mailto:support@medconf.com"
+                href="mailto:support@Hpql.com"
                 className="text-blue-400 hover:text-blue-300 font-medium"
               >
-                support@medconf.com
+                support@Hpql.com
               </a>
             </div>
           </div>
@@ -894,7 +894,7 @@ const CreateTicketModal = ({ onClose, onSave }) => {
     category: "general",
     priority: "medium",
     createdBy: "Admin User",
-    userEmail: "admin@medconf.com",
+    userEmail: "admin@Hpql.com",
     userType: "admin",
   });
 

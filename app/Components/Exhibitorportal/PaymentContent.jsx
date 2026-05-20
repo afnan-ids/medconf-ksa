@@ -284,7 +284,7 @@ const PaymentContent = () => {
                   For payment-related questions or issues:
                 </p>
                 <div className="text-xs text-gray-300">
-                  <p>📧 finance@medconfksa.com</p>
+                  <p>📧 finance@Hpql.com</p>
                   <p className="mt-1">📞 +966 55 123 4567</p>
                 </div>
               </div>
@@ -404,7 +404,7 @@ const PaymentContent = () => {
                     <p className="text-xs text-gray-300 mb-2">Bank Account Details:</p>
                     <div className="space-y-1 text-xs">
                       <p><span className="text-gray-400">Bank:</span> Saudi National Bank (SNB)</p>
-                      <p><span className="text-gray-400">Account Name:</span> MedConf KSA</p>
+                      <p><span className="text-gray-400">Account Name:</span>HPQL</p>
                       <p><span className="text-gray-400">IBAN:</span> SA03 5000 0000 0000 0000 1234</p>
                       <p><span className="text-gray-400">Reference:</span> Booth A12 - PharmaCo</p>
                     </div>

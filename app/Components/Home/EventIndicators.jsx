@@ -214,7 +214,7 @@ export default function EventIndicators() {
                           className={`
                             px-6 py-2.5 rounded-2xl
                             border border-white/20
-                            bg-white/10 backdrop-blur-md
+                            bg-white backdrop-blur-md
                             shadow-lg
                             transition-all duration-300
                             group-hover:scale-105
@@ -255,7 +255,7 @@ export default function EventIndicators() {
                       {/* Animated gradient background on hover */}
                       <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                      {/* Icon orb with improved design */}
+                      {/* Icon orb with  */}
                       <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full blur-2xl bg-gradient-to-br from-white/5 to-transparent"></div>
                       <div
                         className={`
@@ -365,7 +365,7 @@ export default function EventIndicators() {
                             className={`
                               px-6 py-2.5 rounded-2xl
                               border border-white/20
-                              bg-white/10 backdrop-blur-md
+                              bg-white backdrop-blur-md
                               shadow-lg
                               transition-all duration-300
                               group-hover:scale-105

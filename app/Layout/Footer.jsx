@@ -188,7 +188,7 @@ export default function Footer() {
                     <span>SCFHS & PDPL Compliant</span>
                     <span className="w-0.5 h-0.5 bg-white/30 rounded-full"></span>
                     <Globe className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Hosted in KSA</span>
+                    <span>Hosted in HPQL</span>
                   </div>
                 </div>
               </div>
@@ -342,13 +342,13 @@ export default function Footer() {
                     <span>+966 000 000 000</span>
                   </Link>
                   <Link
-                    href="mailto:info@medconfksa.com"
+                    href="mailto:info@Hpql.com"
                     className="flex items-center gap-3 text-sm text-gray-300 hover:text-white transition-colors group"
                   >
                     <div className="p-1.5 bg-white/5 rounded-lg border border-white/10 group-hover:bg-white/10 transition-colors">
                       <Mail className="w-3.5 h-3.5 text-blue-400" />
                     </div>
-                    <span className="truncate">info@medconfksa.com</span>
+                    <span className="truncate">info@Hpql.com</span>
                   </Link>
                   <div className="flex items-center gap-3 text-sm text-gray-300 group">
                     <div className="p-1.5 bg-white/5 rounded-lg border border-white/10 group-hover:bg-white/10 transition-colors">
@@ -389,10 +389,7 @@ export default function Footer() {
             {/* Bottom Bar */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-sm text-gray-400 text-center md:text-left">
-                © {currentYear} MedConf KSA. All rights reserved <br />
-                Made with{" "}
-                <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" />{" "}
-                in Saudi Arabia
+                © {currentYear} HPQL. All rights reserved 
               </p>
 
               {/* Social Links */}

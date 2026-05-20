@@ -407,7 +407,7 @@ export default function WhyAttend() {
                           ))}
                         </div>
                         <p className="text-sm sm:text-base italic text-gray-200 leading-relaxed">
-                          "What sets Medconf apart isn't just the quality of
+                          "What sets Hpql apart isn't just the quality of
                           speakers — it's how they make complex topics
                           practical. I left with protocols I implemented the
                           very next week."

@@ -21,7 +21,7 @@ const testimonials = [
     name: "Dr. Sarah Al-Hassan",
     title: "CEO, Riyadh Cardiology Center",
     quote:
-      "MedConf KSA transformed our event engagement — registrations skyrocketed and feedback has been outstanding.",
+      "HPQL transformed our event engagement — registrations skyrocketed and feedback has been outstanding.",
     rating: 5,
     role: "Organizer",
     yearsAttended: "5 years",

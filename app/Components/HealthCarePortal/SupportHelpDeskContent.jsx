@@ -78,7 +78,7 @@ const SupportHelpDeskContent = ({ getColorClasses }) => {
     {
       icon: Mail,
       title: "Email Support",
-      desc: "support@medconf.com",
+      desc: "support@Hpql.com",
       availability: "Response within 24h",
       action: "Send Email",
       color: "blue",

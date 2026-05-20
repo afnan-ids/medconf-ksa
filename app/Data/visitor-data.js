@@ -87,7 +87,7 @@ export const scheduleData = [
       { time: "09:00 - 10:30", title: "Keynote: Future of Medical Education", location: "Main Hall" },
       { time: "10:30 - 12:00", title: "Live Clinical Workshops", location: "Workshop Rooms" },
       { time: "12:00 - 13:30", title: "Exhibition & Product Demos", location: "Exhibition Hall" },
-      { time: "13:30 - 15:00", title: "Panel: Healthcare Innovation in KSA", location: "Conference Room B" },
+      { time: "13:30 - 15:00", title: "Panel: Healthcare Innovation in HPQL", location: "Conference Room B" },
       { time: "15:00 - 17:00", title: "Networking Reception", location: "VIP Lounge" },
     ],
   },
@@ -215,7 +215,7 @@ export const contactOptions = [
   {
     icon: "Mail",
     title: "Email Support",
-    desc: "visitors@medconf.com",
+    desc: "visitors@Hpql.com",
     availability: "Response within 24h",
     action: "Send Email",
     color: "blue",

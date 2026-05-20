@@ -312,7 +312,7 @@ const ContractContent = () => {
                   For contract-related questions, contact our legal team.
                 </p>
                 <div className="text-[11px] sm:text-xs text-gray-300 space-y-1">
-                  <p>📧 legal@medconfksa.com</p>
+                  <p>📧 legal@Hpql.com</p>
                   <p>📞 +966 55 123 4567</p>
                 </div>
               </div>

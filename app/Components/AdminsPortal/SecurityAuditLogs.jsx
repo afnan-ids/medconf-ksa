@@ -52,7 +52,7 @@ export default function SecurityAuditLogs() {
       timestamp: "2024-03-15 09:32:45",
       user: {
         name: "Admin User",
-        email: "admin@medconf.com",
+        email: "admin@Hpql.com",
         role: "admin",
         ip: "192.168.1.101",
       },
@@ -70,7 +70,7 @@ export default function SecurityAuditLogs() {
       timestamp: "2024-03-15 09:28:12",
       user: {
         name: "Admin User",
-        email: "admin@medconf.com",
+        email: "admin@Hpql.com",
         role: "admin",
         ip: "192.168.1.101",
       },
@@ -105,7 +105,7 @@ export default function SecurityAuditLogs() {
       timestamp: "2024-03-14 22:15:03",
       user: {
         name: "System",
-        email: "system@medconf.com",
+        email: "system@Hpql.com",
         role: "system",
         ip: "127.0.0.1",
       },
@@ -123,7 +123,7 @@ export default function SecurityAuditLogs() {
       timestamp: "2024-03-14 18:30:15",
       user: {
         name: "Admin User",
-        email: "admin@medconf.com",
+        email: "admin@Hpql.com",
         role: "admin",
         ip: "192.168.1.101",
       },
@@ -158,7 +158,7 @@ export default function SecurityAuditLogs() {
       timestamp: "2024-03-14 11:45:33",
       user: {
         name: "Admin User",
-        email: "admin@medconf.com",
+        email: "admin@Hpql.com",
         role: "admin",
         ip: "192.168.1.101",
       },
@@ -175,7 +175,7 @@ export default function SecurityAuditLogs() {
       timestamp: "2024-03-13 20:10:22",
       user: {
         name: "System",
-        email: "system@medconf.com",
+        email: "system@Hpql.com",
         role: "system",
         ip: "127.0.0.1",
       },
@@ -193,7 +193,7 @@ export default function SecurityAuditLogs() {
       timestamp: "2024-03-13 14:22:18",
       user: {
         name: "Admin User",
-        email: "admin@medconf.com",
+        email: "admin@Hpql.com",
         role: "admin",
         ip: "192.168.1.101",
       },
