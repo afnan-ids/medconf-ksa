@@ -171,7 +171,7 @@ export default function ConferenceActivities() {
       {/* Glass container - Mobile optimized */}
       <div className="relative z-10 mx-auto px-3 xs:px-4 sm:px-6 lg:px-4 py-3 xs:py-4 sm:py-8">
         <div className="rounded-xl xs:rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden">
-          <div className="py-3 xs:py-4 sm:py-6 md:py-8 lg:py-12 px-3 xs:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+          <div className="py-3 xs:py-4 sm:py-6 md:py-8 lg:py-12  max-w-7xl mx-auto relative">
             
             {/* Header Section - Mobile optimized */}
             <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16 relative z-10">

@@ -19,6 +19,7 @@ const services = [
     description: "Full planning, live workshops, international streaming",
     stats: "50+ events yearly",
     color: "blue",
+    link:'/Services/conferenceorganization'
   },
   {
     icon: MapPin,
@@ -26,6 +27,7 @@ const services = [
     description: "Interactive maps, dynamic pricing, PDF contracts",
     stats: "100k+ sqm managed",
     color: "purple",
+    link:'/Services/exhibitionspacebooking'
   },
   {
     icon: UserCheck,
@@ -33,6 +35,7 @@ const services = [
     description: "SCFHS license verification & compliance",
     stats: "15k+ verified",
     color: "cyan",
+    link:'/Services/practitionerregistration'
   },
 ];
 
@@ -183,7 +186,7 @@ export default function Services() {
 
                     {/* Button - responsive sizing */}
                     <Link
-                      href="#"
+                      href={service.link}
                       className={`relative inline-flex items-center justify-center gap-1 sm:gap-2 w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl text-[10px] sm:text-xs md:text-sm font-medium group/btn overflow-hidden transition-all duration-300 border ${colors.border} hover:border-transparent`}
                     >
                       {/* Gradient background on hover */}

@@ -210,7 +210,7 @@ export default function WomenAndHealth() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] max-w-7xl mx-auto flex-1 w-full mt-2 xs:mt-3 sm:mt-4 gap-3 xs:gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] max-w-7xl mx-auto flex-1 w-full mt-2 xs:mt-3 sm:mt-4">
                 {/* LEFT  */}
                 <div className="relative z-10 order-2 md:order-1">
                   <div className="grid grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
@@ -500,7 +500,7 @@ export default function WomenAndHealth() {
                   </div>
 
                   {/* CENTER CONTENT - Mobile optimized */}
-                  <div className="flex-1 flex items-center justify-center px-3 xs:px-4 py-6 xs:py-8 lg:pe-24">
+                  <div className="flex-1 flex items-center justify-center px-3 xs:px-4 py-6 xs:py-8 lg:pe-26">
                     <div className="w-full text-center lg:text-right backdrop-blur-sm bg-white/5 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-5 border border-white/10">
                       <h2
                         className="

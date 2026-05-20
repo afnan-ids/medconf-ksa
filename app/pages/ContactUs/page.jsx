@@ -391,7 +391,7 @@ export default function ContactPage() {
         {/* Stats/Credibility Section */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mb-12 sm:mb-16 md:mb-20">
           {[
-            { icon: HeadphonesIcon, label: "24/7 Support", value: "Live Chat" },
+            { icon: HeadphonesIcon, label: "24/7 Support", value: "Submit Ticket" },
             { icon: Globe, label: "Global Events", value: "15+ Countries" },
             { icon: Users, label: "Happy Clients", value: "5000+" },
             { icon: Award, label: "Years of Excellence", value: "10+ Years" },

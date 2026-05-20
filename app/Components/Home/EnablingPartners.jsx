@@ -41,7 +41,7 @@ export default function EnablingPartners() {
             {/* Top gradient line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
-            <div className="py-3 xs:py-4 sm:py-6 md:py-8 lg:py-12 px-3 xs:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+            <div className="py-3 xs:py-4 sm:py-6 md:py-8 lg:py-12  max-w-7xl mx-auto relative">
               <div className="absolute top-0 right-0 w-32 h-32 xs:w-48 xs:h-48 sm:w-64 sm:h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 xs:w-48 xs:h-48 sm:w-64 sm:h-64 bg-purple-500/10 rounded-full blur-3xl hidden sm:block"></div>
 
@@ -284,7 +284,7 @@ export default function EnablingPartners() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_25%)]"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(168,85,247,0.08),transparent_25%)]"></div>
 
-            <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12">
+            <div className="relative max-w-7xl mx-auto py-8 sm:py-10 lg:py-12">
               {/* TOP HEADER  */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-white/10">
                 {/* Left */}
