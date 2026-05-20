@@ -168,47 +168,49 @@ export default function ConferenceActivities() {
         <div className="absolute top-1/3 left-1/3 w-48 h-48 sm:w-96 sm:h-96 bg-emerald-500/10 rounded-full blur-3xl will-change-transform"></div>
       </div>
 
-      {/* Glass container */}
-      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4 sm:py-8">
-        <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden">
-          <div className="py-4 px-3 sm:py-8 lg:py-12 lg:px-0 max-w-7xl mx-auto relative">
-            {/* Header Section */}
-            <div className="text-center mb-12 sm:mb-16 relative z-10">
-              <div className="relative inline-block group/badge mb-6">
+      {/* Glass container - Mobile optimized */}
+      <div className="relative z-10 mx-auto px-3 xs:px-4 sm:px-6 lg:px-4 py-3 xs:py-4 sm:py-8">
+        <div className="rounded-xl xs:rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden">
+          <div className="py-3 xs:py-4 sm:py-6 md:py-8 lg:py-12  max-w-7xl mx-auto relative">
+            
+            {/* Header Section - Mobile optimized */}
+            <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16 relative z-10">
+              <div className="relative inline-block group/badge mb-4 xs:mb-5 sm:mb-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
-                <div className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs sm:text-sm">
-                  <Calendar className="w-4 h-4 text-blue-400" />
-                  <span>Event Highlights</span>
-                  <span className="w-0.5 h-0.5 bg-white/30 rounded-full"></span>
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span>3-in-1 Experience</span>
+                <div className="relative inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] xs:text-xs sm:text-sm">
+                  <Calendar className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 text-blue-400" />
+                  <span className="hidden xs:inline">Event Highlights</span>
+                  <span className="inline xs:hidden">Highlights</span>
+                  <span className="w-0.5 h-0.5 bg-white/30 rounded-full hidden xs:block"></span>
+                  <Sparkles className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 text-cyan-400 hidden xs:block" />
+                  <span className="hidden xs:inline">3-in-1 Experience</span>
                 </div>
               </div>
 
-              {/* Bilingual Headers */}
-              <div className="space-y-3 mb-6">
+              {/* Bilingual Headers - Mobile optimized */}
+              <div className="space-y-2 xs:space-y-3 mb-4 xs:mb-6">
                 <h2
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white"
+                  className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white px-2"
                   dir="rtl"
                 >
                   فعاليـــــــات المؤتمـــــــــــــر
                 </h2>
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+                <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                     Conference Activities
                   </span>
                 </h2>
               </div>
 
-              <div className="relative w-20 h-1 mx-auto my-6">
+              <div className="relative w-16 xs:w-20 h-0.5 xs:h-1 mx-auto my-4 xs:my-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
               </div>
             </div>
 
-            {/* Activities Grid */}
+            {/* Activities Grid - Mobile Optimized */}
             <div className="relative z-10">
-              <div className="flex flex-col md:flex-row gap-4 min-h-[500px] md:h-[480px]">
+              <div className="flex flex-col md:flex-row gap-3 xs:gap-4 min-h-[400px] md:min-h-[500px] md:h-[480px]">
                 {activityGroups.map((activity, idx) => {
                   const colors = colorVariants[activity.color];
                   const Icon = activity.icon;
@@ -222,13 +224,13 @@ export default function ConferenceActivities() {
                         relative group
                         w-full md:flex-1
                         transition-all duration-500 ease-out
-                        overflow-hidden rounded-2xl sm:rounded-3xl
+                        overflow-hidden rounded-xl xs:rounded-2xl sm:rounded-3xl
                         border border-white/10
                         bg-white/[0.03]
                         backdrop-blur-xl
                         cursor-pointer
                         ${isMobile ? "min-h-[80px]" : "hover:md:flex-[4]"}
-                        ${isMobile && isHovered ? "flex-[4] min-h-[400px]" : ""}
+                        ${isMobile && isHovered ? "flex-[4] min-h-[420px] xs:min-h-[400px] sm:min-h-[380px]" : ""}
                       `}
                       onMouseEnter={() => !isMobile && setHoveredIndex(idx)}
                       onMouseLeave={() => !isMobile && setHoveredIndex(null)}
@@ -246,7 +248,7 @@ export default function ConferenceActivities() {
                         className={`absolute inset-0 opacity-5 bg-gradient-to-br ${colors.gradient}`}
                       />
 
-                      {/* CLOSED STATE */}
+                      {/* CLOSED STATE - Mobile Optimized */}
                       <div
                         className={`
                         absolute inset-0
@@ -256,61 +258,61 @@ export default function ConferenceActivities() {
                         ${isMobile && !isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"}
                       `}
                       >
-                        {/* Main content container with more padding */}
-                        <div className="flex flex-col items-center gap-6 p-8 w-full max-w-[280px] mx-auto">
+                        {/* Main content container - Mobile optimized */}
+                        <div className="flex flex-col items-center gap-3 xs:gap-4 sm:gap-6 p-4 xs:p-5 sm:p-6 md:p-8 w-full max-w-[260px] xs:max-w-[280px] sm:max-w-[300px] mx-auto">
                           {/* Glass card background effect */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl border border-white/10 -z-10"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-xl xs:rounded-2xl border border-white/10 -z-10"></div>
 
-                          {/* Icon with premium styling */}
+                          {/* Icon with premium styling - Mobile optimized */}
                           <div className="relative">
-                            {/* Animated rings */}
+                            {/* Animated rings - scaled for mobile */}
                             <div
-                              className={`absolute -inset-3 rounded-full border border-${activity.color}-500/20 animate-pulse`}
+                              className={`absolute -inset-2 xs:-inset-3 rounded-full border border-${activity.color}-500/20 animate-pulse`}
                             ></div>
                             <div
-                              className={`absolute -inset-2 rounded-full border border-${activity.color}-500/30`}
+                              className={`absolute -inset-1 xs:-inset-2 rounded-full border border-${activity.color}-500/30`}
                             ></div>
 
                             <div
-                              className={`relative flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}
+                              className={`relative flex h-14 w-14 xs:h-16 xs:w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 items-center justify-center rounded-xl xs:rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}
                             >
-                              <Icon className="w-10 h-10 sm:w-11 sm:h-11 text-white" />
+                              <Icon className="w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 md:w-11 md:h-11 text-white" />
                             </div>
                           </div>
 
-                          {/* Title section - more prominent */}
-                          <div className="text-center space-y-3">
+                          {/* Title section - Mobile optimized */}
+                          <div className="text-center space-y-1 xs:space-y-2 sm:space-y-3">
                             <h3
-                              className="text-xl sm:text-2xl font-black text-white tracking-wide"
+                              className="text-base xs:text-lg sm:text-xl md:text-2xl font-black text-white tracking-wide px-1"
                               dir="rtl"
                             >
                               {activity.titleAr}
                             </h3>
 
-                            <div className="flex items-center justify-center gap-3">
+                            <div className="flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-3">
                               <div
-                                className={`h-px w-8 bg-gradient-to-r ${colors.gradient}`}
+                                className={`h-px w-4 xs:w-5 sm:w-8 bg-gradient-to-r ${colors.gradient}`}
                               ></div>
-                              <p className="text-sm sm:text-base text-gray-200 font-semibold">
+                              <p className="text-[10px] xs:text-xs sm:text-sm md:text-base text-gray-200 font-semibold">
                                 {activity.titleEn}
                               </p>
                               <div
-                                className={`h-px w-8 bg-gradient-to-l ${colors.gradient}`}
+                                className={`h-px w-4 xs:w-5 sm:w-8 bg-gradient-to-l ${colors.gradient}`}
                               ></div>
                             </div>
 
                             <div
-                              className={`h-0.5 w-20 mx-auto bg-gradient-to-r ${colors.gradient} rounded-full`}
+                              className={`h-0.5 w-12 xs:w-14 sm:w-20 mx-auto bg-gradient-to-r ${colors.gradient} rounded-full`}
                             ></div>
                           </div>
 
-                          {/* Stats - Clean and highly visible */}
-                          <div className="w-full mt-2">
+                          {/* Stats - Mobile optimized */}
+                          <div className="w-full mt-1 xs:mt-2">
                             <div
-                              className={`text-center p-3 rounded-xl bg-gradient-to-r ${colors.gradientLight} backdrop-blur-sm border ${colors.border}`}
+                              className={`text-center p-1.5 xs:p-2 sm:p-3 rounded-lg xs:rounded-xl bg-gradient-to-r ${colors.gradientLight} backdrop-blur-sm border ${colors.border}`}
                             >
                               <p
-                                className={`text-sm sm:text-base font-bold text-white drop-shadow-md`}
+                                className={`text-[10px] xs:text-xs sm:text-sm md:text-base font-bold text-white drop-shadow-md`}
                               >
                                 {activity.stats}
                               </p>
@@ -319,48 +321,48 @@ export default function ConferenceActivities() {
 
                           {/* Mobile hint with style */}
                           {isMobile && !isHovered && (
-                            <div className="absolute -bottom-7 left-0 right-0 flex justify-center">
-                              <div className="bg-white/15 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 shadow-lg">
-                                <div className="flex items-center gap-2">
-                                  <span className="text-[10px] text-gray-200 font-medium">
+                            <div className="absolute -bottom-6 xs:-bottom-7 left-0 right-0 flex justify-center">
+                              <div className="bg-white/15 backdrop-blur-md px-3 xs:px-4 py-1 xs:py-1.5 rounded-full border border-white/20 shadow-lg">
+                                <div className="flex items-center gap-1.5 xs:gap-2">
+                                  <span className="text-[8px] xs:text-[10px] text-gray-200 font-medium">
                                     اضغط للتفاصيل
                                   </span>
-                                  <ArrowRight className="w-3 h-3 text-gray-200 rotate-90" />
+                                  <ArrowRight className="w-2.5 h-2.5 xs:w-3 xs:h-3 text-gray-200 rotate-90" />
                                 </div>
                               </div>
                             </div>
                           )}
 
-                          {/* Decorative elements */}
+                          {/* Decorative elements - scaled for mobile */}
                           <div
-                            className={`absolute top-5 right-5 w-8 h-8 opacity-40`}
+                            className={`absolute top-3 xs:top-5 right-3 xs:right-5 w-4 xs:w-6 sm:w-8 h-4 xs:h-6 sm:h-8 opacity-40`}
                           >
                             <div
-                              className={`absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 ${colors.border}`}
+                              className={`absolute top-0 right-0 w-1 xs:w-1.5 sm:w-2 h-1 xs:h-1.5 sm:h-2 border-t border-r ${colors.border}`}
                             ></div>
                           </div>
                           <div
-                            className={`absolute bottom-5 left-5 w-8 h-8 opacity-40`}
+                            className={`absolute bottom-3 xs:bottom-5 left-3 xs:left-5 w-4 xs:w-6 sm:w-8 h-4 xs:h-6 sm:h-8 opacity-40`}
                           >
                             <div
-                              className={`absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 ${colors.border}`}
+                              className={`absolute bottom-0 left-0 w-1 xs:w-1.5 sm:w-2 h-1 xs:h-1.5 sm:h-2 border-b border-l ${colors.border}`}
                             ></div>
                           </div>
 
-                          {/* Background decorative circle */}
+                          {/* Background decorative circles */}
                           <div
-                            className={`absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-gradient-to-br ${colors.gradient} opacity-10 blur-2xl -z-20`}
+                            className={`absolute -bottom-8 xs:-bottom-10 -left-8 xs:-left-10 w-24 xs:w-28 sm:w-32 h-24 xs:h-28 sm:h-32 rounded-full bg-gradient-to-br ${colors.gradient} opacity-10 blur-2xl -z-20`}
                           ></div>
                           <div
-                            className={`absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br ${colors.gradient} opacity-10 blur-2xl -z-20`}
+                            className={`absolute -top-8 xs:-top-10 -right-8 xs:-right-10 w-24 xs:w-28 sm:w-32 h-24 xs:h-28 sm:h-32 rounded-full bg-gradient-to-br ${colors.gradient} opacity-10 blur-2xl -z-20`}
                           ></div>
                         </div>
                       </div>
 
-                      {/* OPEN STATE  */}
+                      {/* OPEN STATE - Mobile Optimized */}
                       <div
                         className={`
-                          absolute inset-0 py-4 px-1
+                          absolute inset-0 py-3 xs:py-4 px-2 xs:px-3
                           overflow-y-auto
                           transition-all duration-500 ease-out
                           ${
@@ -373,21 +375,21 @@ export default function ConferenceActivities() {
                         `}
                       >
                         {/* Scrollable content with custom scrollbar */}
-                        <div className="h-full overflow-y-auto custom-scrollbar px-3">
-                          {/* Header */}
-                          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                        <div className="h-full overflow-y-auto custom-scrollbar px-2 xs:px-3">
+                          {/* Header - Mobile optimized */}
+                          <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 mb-3 xs:mb-4 sm:mb-6">
                             <div
-                              className={`flex h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-lg`}
+                              className={`flex h-10 w-10 xs:h-12 xs:w-12 sm:h-14 sm:w-14 flex-shrink-0 items-center justify-center rounded-lg xs:rounded-xl sm:rounded-2xl bg-gradient-to-br ${colors.gradient} shadow-lg`}
                             >
-                              <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                              <Icon className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
 
-                            <div className="min-w-0 flex justify-between items-center w-full">
-                              <span className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mt-0.5 sm:mt-1 truncate">
+                            <div className="min-w-0 flex justify-between items-center w-full gap-2 xs:gap-3">
+                              <span className="text-xs xs:text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-white mt-0.5 truncate">
                                 {activity.titleEn}
                               </span>
                               <span
-                                className="text-lg sm:text-2xl lg:text-3xl font-bold text-white truncate"
+                                className="text-xs xs:text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-white truncate"
                                 dir="rtl"
                               >
                                 {activity.titleAr}
@@ -395,22 +397,22 @@ export default function ConferenceActivities() {
                             </div>
                           </div>
 
-                          {/* List Items */}
-                          <div className="space-y-3 sm:space-y-4">
+                          {/* List Items - Mobile optimized */}
+                          <div className="space-y-2 xs:space-y-3 sm:space-y-4">
                             {activity.listAr.map((item, listIdx) => (
                               <div
                                 key={listIdx}
-                                className="flex items-start gap-2 sm:gap-3 rounded-xl border border-white/5 bg-black/20 p-2 sm:p-3 hover:bg-black/30 transition-colors"
+                                className="flex items-start gap-1.5 xs:gap-2 sm:gap-3 rounded-lg xs:rounded-xl border border-white/5 bg-black/20 p-1.5 xs:p-2 sm:p-3 hover:bg-black/30 transition-colors"
                               >
                                 <div
-                                  className={`mt-1.5 sm:mt-2 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full flex-shrink-0 bg-gradient-to-r ${colors.gradient}`}
+                                  className={`mt-1 xs:mt-1.5 sm:mt-2 h-1 w-1 xs:h-1.5 xs:w-1.5 sm:h-2 sm:w-2 rounded-full flex-shrink-0 bg-gradient-to-r ${colors.gradient}`}
                                 />
-                                <div className="w-full flex justify-between items-center min-w-0">
-                                  <span className="text-[11px] sm:text-xs text-gray-100 mt-0.5 sm:mt-1 break-words">
+                                <div className="w-full flex justify-between items-center min-w-0 gap-1 xs:gap-2">
+                                  <span className="text-[9px] xs:text-[10px] sm:text-xs text-gray-100 mt-0.5 break-words flex-1">
                                     {activity.listEn[listIdx]}
                                   </span>
                                   <span
-                                    className="text-xs sm:text-sm font-medium text-gray-100 break-words"
+                                    className="text-[10px] xs:text-xs sm:text-sm font-medium text-gray-100 break-words text-right"
                                     dir="rtl"
                                   >
                                     {item}
@@ -420,23 +422,23 @@ export default function ConferenceActivities() {
                             ))}
                           </div>
 
-                          {/* Description */}
-                          <div className="mt-4 sm:mt-6 rounded-xl sm:rounded-2xl border border-white/10 bg-black/20 p-3 sm:p-5">
+                          {/* Description - Mobile optimized */}
+                          <div className="mt-3 xs:mt-4 sm:mt-6 rounded-lg xs:rounded-xl sm:rounded-2xl border border-white/10 bg-black/20 p-2 xs:p-3 sm:p-5">
                             <p
-                              className="text-xs sm:text-sm leading-6 sm:leading-7 text-gray-300 break-words"
+                              className="text-[10px] xs:text-xs sm:text-sm leading-5 xs:leading-6 sm:leading-7 text-gray-300 break-words"
                               dir="rtl"
                             >
                               {activity.descriptionAr}
                             </p>
-                            <div className="my-3 sm:my-4 h-px bg-white/10" />
-                            <p className="text-[11px] sm:text-xs leading-5 sm:leading-6 text-gray-300 break-words">
+                            <div className="my-2 xs:my-3 sm:my-4 h-px bg-white/10" />
+                            <p className="text-[9px] xs:text-[10px] sm:text-xs leading-4 xs:leading-5 sm:leading-6 text-gray-300 break-words">
                               {activity.descriptionEn}
                             </p>
                           </div>
 
-                          {/* Stats badge in open state */}
-                          <div className="mt-4 text-center">
-                            <span className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-xs text-gray-400">
+                          {/* Stats badge in open state - Mobile optimized */}
+                          <div className="mt-3 xs:mt-4 text-center">
+                            <span className="inline-block px-2 xs:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[8px] xs:text-[10px] sm:text-xs text-gray-400">
                               {activity.stats}
                             </span>
                           </div>
@@ -448,19 +450,19 @@ export default function ConferenceActivities() {
               </div>
             </div>
 
-            {/* Bottom CTA */}
-            <div className="text-center mt-10 sm:mt-12 relative z-10">
+            {/* Bottom CTA - Mobile optimized */}
+            <div className="text-center mt-8 xs:mt-10 sm:mt-12 relative z-10">
               <Link
                 href="#"
-                className="group relative inline-flex items-center gap-2 sm:gap-3"
+                className="group relative inline-flex items-center gap-1.5 xs:gap-2 sm:gap-3"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
 
-                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 sm:gap-3">
-                  <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 xs:px-5 sm:px-6 md:px-8 py-2 xs:py-2.5 sm:py-3 rounded-full text-[10px] xs:text-xs sm:text-sm font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-1.5 xs:gap-2 sm:gap-3">
+                  <Briefcase className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4" />
                   <span className="hidden xs:inline">View Full Agenda</span>
                   <span className="inline xs:hidden">Agenda</span>
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             </div>
@@ -471,7 +473,12 @@ export default function ConferenceActivities() {
       {/* Custom Scrollbar Styles */}
       <style jsx>{`
         .custom-scrollbar::-webkit-scrollbar {
-          width: 4px;
+          width: 3px;
+        }
+        @media (min-width: 640px) {
+          .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+          }
         }
         .custom-scrollbar::-webkit-scrollbar-track {
           background: rgba(255, 255, 255, 0.05);

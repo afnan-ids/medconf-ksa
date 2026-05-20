@@ -106,7 +106,7 @@ const faqData = {
     {
       question: "What is your cancellation policy?",
       answer:
-        "30+ days: 80% refund | 15-29 days: 50% refund | Less than 14 days: No refund. Submit cancellation requests in writing to support@medconf.com.",
+        "30+ days: 80% refund | 15-29 days: 50% refund | Less than 14 days: No refund. Submit cancellation requests in writing to support@Hpql.com.",
       helpful: 123,
     },
   ],
@@ -231,9 +231,9 @@ const contactCards = [
   {
     icon: Mail,
     title: "Email Support",
-    value: "support@medconf.com",
+    value: "support@Hpql.com",
     action: "Send Email",
-    link: "mailto:support@medconf.com",
+    link: "mailto:support@Hpql.com",
     gradient: "from-blue-500 to-cyan-400",
     bgGradient: "from-blue-500/10 to-cyan-500/10",
   },

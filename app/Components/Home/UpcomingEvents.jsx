@@ -58,7 +58,7 @@ export default function UpcomingEvents() {
                   <span>Upcoming Gatherings</span>
                   <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
                   <Compass className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
-                  <span>KSA 2026</span>
+                  <span>HPQL 2026</span>
                 </div>
               </div>
 

@@ -6,7 +6,7 @@ import { Calendar, MapPin, Sparkles } from "lucide-react";
 const SlideVexora = () => {
   return (
     <div className="relative w-full h-full bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
-      <div className="relative z-10 w-full max-w-7xl mx-auto h-full grid grid-cols-1 lg:grid-cols-[45%_55%]  text-white lg:mt-20 pt-10">
+      <div className="relative z-10 w-full max-w-7xl mx-auto h-full md:grid grid-cols-1 lg:grid-cols-[45%_55%] flex text-white lg:mt-20 pt-10 px-4 md:px-0">
         {/* Left Column */}
         <div className="text-center lg:text-left mb-8 lg:mb-0">
           <Image
@@ -14,7 +14,7 @@ const SlideVexora = () => {
             alt="Logo"
             width={180}
             height={150}
-            className="opacity-90"
+            className="opacity-90 h-10 w-20 md:h-22 md:w-45 "
           />
         </div>
 
@@ -28,7 +28,7 @@ const SlideVexora = () => {
                 alt="Logo"
                 width={250}
                 height={200}
-                className="opacity-90"
+                className="opacity-90 h-10 w-20 md:h-20 md:w-65"
               />
             </div>
 
@@ -88,7 +88,7 @@ const SlideVexora = () => {
 
                 {/* Date - Arabic */}
                 <div className="flex text-center">
-                  <p className="text-2xl font-bold text-blue-900">9 - 11</p>
+                  <p className="text-3xl font-bold text-blue-900">9 - 11</p>
                 </div>
 
                 <div className="w-px h-10 bg-white/15" />

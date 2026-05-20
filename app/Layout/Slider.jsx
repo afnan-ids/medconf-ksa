@@ -63,7 +63,7 @@ const HeroSlider = () => {
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden mt-15 md:mt-0">
       
       {/* Slide Content */}
       <div className="w-full h-full transition-opacity duration-500">

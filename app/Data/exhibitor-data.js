@@ -132,7 +132,7 @@ export const contractData = {
   signedDate: "Jan 15, 2026",
   status: "signed",
   parties: {
-    organizer: "MedConf KSA Exhibition Organizer",
+    organizer: "HPQL Exhibition Organizer",
     exhibitor: "PharmaCo Exhibitions",
   },
   boothDetails: {
@@ -311,14 +311,14 @@ export const exhibitorContactOptions = [
     desc: "Invoice questions, payment issues",
     icon: "CreditCard",
     availability: "Sat-Thu, 9AM-6PM",
-    contact: "finance@medconfksa.com",
+    contact: "finance@Hpql.com",
   },
   {
     title: "Logistics",
     desc: "Shipping, material handling, storage",
     icon: "Truck",
     availability: "Sat-Thu, 8AM-8PM",
-    contact: "logistics@medconfksa.com",
+    contact: "logistics@Hpql.com",
   },
 ];
 

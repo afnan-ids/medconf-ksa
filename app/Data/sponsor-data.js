@@ -432,7 +432,7 @@ export const faqs = [
   },
   {
     question: "Can I upgrade my sponsorship package?",
-    answer: "Upgrades are subject to availability. Please contact sponsor relations team at sponsors@medconfksa.com",
+    answer: "Upgrades are subject to availability. Please contact sponsor relations team at sponsors@Hpql.com",
     category: "Package",
     helpful: 67,
   },

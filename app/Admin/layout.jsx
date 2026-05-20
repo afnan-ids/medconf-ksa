@@ -391,7 +391,7 @@ export default function AdminLayout({ children }) {
                 {!isCollapsed && (
                   <div className="flex-1 text-left">
                     <p className="text-sm font-medium text-white">Admin User</p>
-                    <p className="text-xs text-gray-400">admin@medconf.com</p>
+                    <p className="text-xs text-gray-400">admin@Hpql.com</p>
                   </div>
                 )}
               </button>
@@ -520,7 +520,7 @@ const AdminProfileModal = ({ isOpen, onClose }) => {
                 <div className="p-3 bg-gray-800/50 rounded-xl border border-blue-500/20 hover:bg-gray-800/70 transition-colors">
                   <p className="text-xs text-gray-400 mb-1">Email Address</p>
                   <p className="text-sm font-medium text-white">
-                    admin@medconf.com
+                    admin@Hpql.com
                   </p>
                 </div>
                 <div className="p-3 bg-gray-800/50 rounded-xl border border-blue-500/20 hover:bg-gray-800/70 transition-colors">

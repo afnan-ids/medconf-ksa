@@ -62,10 +62,10 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      details: "info@medconfksa.sa",
-      subdetails: "support@medconfksa.sa",
+      details: "info@Hpql.sa",
+      subdetails: "support@Hpql.sa",
       color: "from-purple-500 to-pink-400",
-      action: "mailto:info@medconfksa.sa",
+      action: "mailto:info@Hpql.sa",
     },
     {
       icon: MapPin,
@@ -81,21 +81,21 @@ export default function ContactPage() {
     {
       name: "Dr. Abdullah Al-Saud",
       role: "Conference Director",
-      email: "a.alsaud@medconfksa.sa",
+      email: "a.alsaud@Hpql.sa",
       phone: "+966 50 123 4567",
       image: "/Images/team/placeholder-1.jpg", 
     },
     {
       name: "Sarah Al-Otaibi",
       role: "Exhibitor Relations",
-      email: "s.alotaibi@medconfksa.sa",
+      email: "s.alotaibi@Hpql.sa",
       phone: "+966 50 234 5678",
       image: "/Images/team/placeholder-2.jpg", 
     },
     {
       name: "Mohammed Al-Qahtani",
       role: "Technical Support",
-      email: "m.alqahtani@medconfksa.sa",
+      email: "m.alqahtani@Hpql.sa",
       phone: "+966 50 345 6789",
       image: "/Images/team/placeholder-3.jpg", 
     },
@@ -392,7 +392,7 @@ export default function ContactPage() {
         {/* Stats/Credibility Section */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mb-12 sm:mb-16 md:mb-20">
           {[
-            { icon: HeadphonesIcon, label: "24/7 Support", value: "Live Chat" },
+            { icon: HeadphonesIcon, label: "24/7 Support", value: "Submit Ticket" },
             { icon: Globe, label: "Global Events", value: "15+ Countries" },
             { icon: Users, label: "Happy Clients", value: "5000+" },
             { icon: Award, label: "Years of Excellence", value: "10+ Years" },

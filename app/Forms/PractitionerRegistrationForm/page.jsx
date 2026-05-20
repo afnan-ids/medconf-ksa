@@ -282,7 +282,7 @@ export default function PractitionerRegisterPage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
                   <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
                     <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                    <span>MedConf KSA 2026 • Riyadh, Saudi Arabia</span>
+                    <span>Hpql 2026 • Riyadh, Saudi Arabia</span>
                   </div>
                 </div>
 
@@ -293,7 +293,7 @@ export default function PractitionerRegisterPage() {
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Let's Talk MedConf
+                    Let's Talk Hpql
                   </span>
                 </h1>
 
@@ -314,7 +314,7 @@ export default function PractitionerRegisterPage() {
                   Complete the form to connect with our commercial team and
                   explore how{" "}
                   <span className="font-semibold text-blue-400">
-                    MedConf KSA
+                    HPQL
                   </span>{" "}
                   can deliver
                   <span className="font-semibold text-blue-400">
@@ -330,7 +330,7 @@ export default function PractitionerRegisterPage() {
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                   <Target className="w-5 h-5 text-cyan-400" />
-                  Why exhibit at MedConf KSA?
+                  Why exhibit at HPQL?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                   {[
@@ -819,7 +819,7 @@ export default function PractitionerRegisterPage() {
                   {/* Announcements */}
                   <div>
                     <h4 className="font-semibold text-gray-300 mb-3 text-lg">
-                      Do you plan on making any announcements at MedConf?
+                      Do you plan on making any announcements at HPQL?
                     </h4>
                     <div className="flex flex-wrap gap-6">
                       {["yes", "no", "maybe"].map((value) => (
@@ -924,7 +924,7 @@ export default function PractitionerRegisterPage() {
                     <p className="text-sm text-gray-300 mb-4 font-medium">
                       I would like to receive tailored information, including
                       industry insights, exclusive networking opportunities and
-                      access to offers from MedConf and Tahaluf.
+                      access to offers from Hpql
                     </p>
                     <div className="flex flex-wrap gap-6 text-sm justify-between">
                       {["Email", "Phone", "SMS"].map((type) => (

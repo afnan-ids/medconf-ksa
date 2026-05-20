@@ -217,14 +217,14 @@ export default function VisitorRegisterPage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
                   <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
                     <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                    <span>MedConf KSA 2026 • Riyadh, Saudi Arabia</span>
+                    <span>Hpql 2026 • Riyadh, Saudi Arabia</span>
                   </div>
                 </div>
 
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                   Register for{" "}
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    MedConf KSA 2026
+                    Hpql  2026
                   </span>
                   <br />
                   <span className="text-white bg-clip-text text-transparent">
@@ -247,7 +247,7 @@ export default function VisitorRegisterPage() {
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                   <Target className="w-5 h-5 text-blue-400" />
-                  Why visit MedConf KSA?
+                  Why visit Hpql ?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                   {[
@@ -714,7 +714,7 @@ export default function VisitorRegisterPage() {
                   {/* Announcements - Radio Buttons */}
                   <div>
                     <h4 className="font-semibold text-gray-300 mb-3 text-lg">
-                      Do you plan on making any announcements at MedConf?
+                      Do you plan on making any announcements at Hpql?
                     </h4>
                     <div className="flex flex-wrap gap-6">
                       {["yes", "no", "maybe"].map((value) => (
@@ -804,7 +804,7 @@ export default function VisitorRegisterPage() {
                     <p className="text-sm text-gray-300 mb-4 font-medium">
                       I would like to receive tailored information, including
                       event updates, exclusive networking opportunities and
-                      access to offers from MedConf and Tahaluf.
+                      access to offers from Hpql and Tahaluf.
                     </p>
                     <div className="flex flex-wrap gap-6 text-sm justify-between">
                       {["Email", "Phone", "SMS"].map((type) => (

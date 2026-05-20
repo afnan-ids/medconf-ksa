@@ -81,7 +81,7 @@ const topStories = [
   },
   {
     id: 2,
-    title: "Medconf KSA Announces 100+ International Speakers",
+    title: "Hpql Announces 100+ International Speakers",
     excerpt:
       "World-renowned experts from Harvard, Mayo Clinic, and WHO to headline the event.",
     author: "Ahmed Al-Jabri",
@@ -111,7 +111,7 @@ const recentArticles = [
     id: 4,
     title: "Exhibition Space Sellout Expected Before Deadline",
     excerpt:
-      "Over 70% of exhibition booths already booked for Medconf KSA 2024.",
+      "Over 70% of exhibition booths already booked for Hpql 2024.",
     date: "Dec 5, 2024",
     readTime: "3 min",
     category: "Exhibition News",

@@ -143,7 +143,7 @@ export default function EventIndicators() {
           {/* Inner gradient border highlight */}
           <div className="absolute inset-0 rounded-3xl sm:rounded-[3rem] pointer-events-none bg-gradient-to-r from-white/5 via-transparent to-white/5"></div>
 
-          <div className="py-6 px-4 sm:py-10 lg:py-16 lg:px-8 max-w-7xl mx-auto relative">
+          <div className="py-6 sm:py-10 lg:py-16 max-w-7xl mx-auto relative">
             {/* Header Section with enhanced typography */}
             <div className="text-center mb-12 sm:mb-20 relative z-10">
               <div className="relative inline-block group/badge mb-8">
@@ -214,7 +214,7 @@ export default function EventIndicators() {
                           className={`
                             px-6 py-2.5 rounded-2xl
                             border border-white/20
-                            bg-white/10 backdrop-blur-md
+                            bg-white backdrop-blur-md
                             shadow-lg
                             transition-all duration-300
                             group-hover:scale-105
@@ -255,7 +255,7 @@ export default function EventIndicators() {
                       {/* Animated gradient background on hover */}
                       <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                      {/* Icon orb with improved design */}
+                      {/* Icon orb with  */}
                       <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full blur-2xl bg-gradient-to-br from-white/5 to-transparent"></div>
                       <div
                         className={`
@@ -365,7 +365,7 @@ export default function EventIndicators() {
                             className={`
                               px-6 py-2.5 rounded-2xl
                               border border-white/20
-                              bg-white/10 backdrop-blur-md
+                              bg-white backdrop-blur-md
                               shadow-lg
                               transition-all duration-300
                               group-hover:scale-105

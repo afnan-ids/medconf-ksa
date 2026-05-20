@@ -73,7 +73,7 @@ export default function AboutPage() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "a.alsaud@medconfksa.sa",
+        email: "a.alsaud@Hpql.sa",
       },
     },
     {
@@ -84,7 +84,7 @@ export default function AboutPage() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "n.alqahtani@medconfksa.sa",
+        email: "n.alqahtani@Hpql.sa",
       },
     },
     {
@@ -95,7 +95,7 @@ export default function AboutPage() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "f.alotaibi@medconfksa.sa",
+        email: "f.alotaibi@Hpql.sa",
       },
     },
     {
@@ -106,7 +106,7 @@ export default function AboutPage() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "l.alghamdi@medconfksa.sa",
+        email: "l.alghamdi@Hpql.sa",
       },
     },
   ];
@@ -116,7 +116,7 @@ export default function AboutPage() {
       year: "2014",
       title: "Foundation",
       description:
-        "Medconf KSA was established with a vision to transform medical education.",
+        "Hpql was established with a vision to transform medical education.",
     },
     {
       year: "2016",
@@ -261,7 +261,7 @@ export default function AboutPage() {
             <div className="relative max-w-3xl mx-auto">
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
-                Since 2014, Medconf KSA has been at the forefront of medical
+                Since 2014, Hpql has been at the forefront of medical
                 education and healthcare events in Saudi Arabia, bringing
                 together world-class experts and innovative solutions.
               </p>
@@ -603,7 +603,7 @@ export default function AboutPage() {
               </div>
 
               <h4 className="text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                "Medconf KSA has been instrumental in advancing medical
+                "Hpql has been instrumental in advancing medical
                 education in Saudi Arabia. Their conferences bring world-class
                 expertise to our healthcare professionals, directly contributing
                 to Vision 2030's healthcare transformation goals"

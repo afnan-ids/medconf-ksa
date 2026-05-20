@@ -19,7 +19,7 @@ import {
   Handshake,
   BarChart3,
   LucideIcon,
-  Star
+  Star,
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
 import Link from "next/link";
@@ -34,85 +34,138 @@ export default function ExhibitionJourney() {
       id: "campaign",
       titleAr: "حمــــــلة جلـــــــــب الرعــــــــاة",
       titleEn: "Sponsorship Campaign",
-      timeline: "قبل 6 أشهر • 6 Months Before",
+      timeline: "6 Months Before",
       icon: Megaphone,
       color: "from-blue-500 to-cyan-400",
       gradient: "blue",
       points: [
-        { icon: Trophy, textAr: "إبــــــراز الجهــــات الداعــــــمة", textEn: "Supporting Entities" },
-        { icon: Share2, textAr: "نشـــر المحتـــوى التعريفــي", textEn: "Introductory Content" },
+        {
+          icon: Trophy,
+          textAr: "إبــــــراز الجهــــات الداعــــــمة",
+          textEn: "Supporting Entities",
+        },
+        {
+          icon: Share2,
+          textAr: "نشـــر المحتـــوى التعريفــي",
+          textEn: "Introductory Content",
+        },
       ],
-      description: "Launch comprehensive outreach to secure strategic partners and sponsors for the exhibition.",
-      stats: { partners: "15+", reach: "100K+" }
+      description:
+        "Launch comprehensive outreach to secure strategic partners and sponsors for the exhibition.",
+      stats: { partners: "15+", reach: "100K+" },
     },
     {
       id: "registration",
       titleAr: "التسويـــــــــق للتسجيــــــــــل",
       titleEn: "Registration Campaign",
-      timeline: "قبل شهرين • 2 Months Before",
+      timeline: "2 Months Before",
       icon: Users,
       color: "from-purple-500 to-pink-400",
       gradient: "purple",
       points: [
-        { icon: Users, textAr: "إبــــــــــــراز المتحدثيـــــــــــــــن", textEn: "Speakers & Sessions" },
-        { icon: Trophy, textAr: "إبــــــــــــراز الرعـــــــــــــــــــــــــاة", textEn: "Sponsor Recognition" },
+        {
+          icon: Users,
+          textAr: "إبــــــــــــراز المتحدثيـــــــــــــــن",
+          textEn: "Speakers & Sessions",
+        },
+        {
+          icon: Trophy,
+          textAr: "إبــــــــــــراز الرعـــــــــــــــــــــــــاة",
+          textEn: "Sponsor Recognition",
+        },
       ],
-      description: "Drive attendee registrations through targeted marketing and speaker highlights.",
-      stats: { registrations: "2500+", speakers: "40+" }
+      description:
+        "Drive attendee registrations through targeted marketing and speaker highlights.",
+      stats: { registrations: "2500+", speakers: "40+" },
     },
     {
       id: "digital",
       titleAr: "تكثيـــف التسجـــيل الرقمي",
       titleEn: "Digital Registration",
-      timeline: "قبل أسبوعين • 2 Weeks Before",
+      timeline: "2 Weeks Before",
       icon: Monitor,
       color: "from-amber-500 to-orange-400",
       gradient: "amber",
       points: [
-        { icon: Newspaper, textAr: "الإعلانـــــــــات التقليديـــــــــة", textEn: "Traditional Ads" },
-        { icon: Calendar, textAr: "ترويـــــــــج جـــدول الأعمـــال", textEn: "Agenda Promotion" },
+        {
+          icon: Newspaper,
+          textAr: "الإعلانـــــــــات التقليديـــــــــة",
+          textEn: "Traditional Ads",
+        },
+        {
+          icon: Calendar,
+          textAr: "ترويـــــــــج جـــدول الأعمـــال",
+          textEn: "Agenda Promotion",
+        },
       ],
-      description: "Intensify digital campaigns and promote the final agenda to maximize attendance.",
-      stats: { impressions: "500K+", clicks: "25K+" }
+      description:
+        "Intensify digital campaigns and promote the final agenda to maximize attendance.",
+      stats: { impressions: "500K+", clicks: "25K+" },
     },
     {
       id: "during",
       titleAr: "أثنــــــاء المؤتمـــــــــر",
       titleEn: "During Event",
-      timeline: "أثناء المؤتمر • During Conference",
+      timeline: "During Conference",
       icon: Radio,
       color: "from-green-500 to-emerald-400",
       gradient: "green",
       points: [
-        { icon: Clapperboard, textAr: "بــــــث وتغطيـــــــــة يوميـــــة", textEn: "Daily Coverage" },
-        { icon: Users, textAr: "لقـــــــــــاءات المتحدثيـــــــــن", textEn: "Insights/Interviews" },
-        { icon: Handshake, textAr: "دعــــــــــــــــم العارضــــــــــــين", textEn: "Sponsor Support" },
+        {
+          icon: Clapperboard,
+          textAr: "بــــــث وتغطيـــــــــة يوميـــــة",
+          textEn: "Daily Coverage",
+        },
+        {
+          icon: Users,
+          textAr: "لقـــــــــــاءات المتحدثيـــــــــن",
+          textEn: "Insights/Interviews",
+        },
+        {
+          icon: Handshake,
+          textAr: "دعــــــــــــــــم العارضــــــــــــين",
+          textEn: "Sponsor Support",
+        },
       ],
-      description: "Live coverage, speaker interviews, and dedicated sponsor support throughout the event.",
-      stats: { sessions: "60+", attendees: "3000+" }
+      description:
+        "Live coverage, speaker interviews, and dedicated sponsor support throughout the event.",
+      stats: { sessions: "60+", attendees: "3000+" },
     },
     {
       id: "after",
       titleAr: "بعــــــــد المؤتمـــــــــر",
       titleEn: "After Event",
-      timeline: "بعد المؤتمر • Post Event",
+      timeline: "Post Event",
       icon: Video,
       color: "from-red-500 to-rose-400",
       gradient: "red",
       points: [
-        { icon: Video, textAr: "فيديـــــــــو الحصـــــــــــــــــــاد", textEn: "Highlight Video" },
-        { icon: Handshake, textAr: "شكـــــــــر الشركــــــــــــــــــــاء", textEn: "Partner Thanks" },
-        { icon: BarChart3, textAr: "إحصائيـــــــــات التأثيـــــــــــــــر", textEn: "Event Statistics" },
+        {
+          icon: Video,
+          textAr: "فيديـــــــــو الحصـــــــــــــــــــاد",
+          textEn: "Highlight Video",
+        },
+        {
+          icon: Handshake,
+          textAr: "شكـــــــــر الشركــــــــــــــــــــاء",
+          textEn: "Partner Thanks",
+        },
+        {
+          icon: BarChart3,
+          textAr: "إحصائيـــــــــات التأثيـــــــــــــــر",
+          textEn: "Event Statistics",
+        },
       ],
-      description: "Celebrate success with highlight reels, partner appreciation, and impact metrics.",
-      stats: { reach: "1M+", satisfaction: "96%" }
+      description:
+        "Celebrate success with highlight reels, partner appreciation, and impact metrics.",
+      stats: { reach: "1M+", satisfaction: "96%" },
     },
   ];
 
   useEffect(() => {
     const observers = sectionRefs.current.map((ref, index) => {
       if (!ref) return null;
-      
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -121,13 +174,13 @@ export default function ExhibitionJourney() {
             }
           });
         },
-        { threshold: 0.3, rootMargin: "0px 0px -100px 0px" }
+        { threshold: 0.3, rootMargin: "0px 0px -100px 0px" },
       );
-      
+
       observer.observe(ref);
       return observer;
     });
-    
+
     return () => {
       observers.forEach((observer) => observer?.disconnect());
     };
@@ -151,7 +204,7 @@ export default function ExhibitionJourney() {
         backgroundImage="/Images/Home/Bread-crum-1.avif"
         path={[{ label: "Exhibition Journey" }]}
       />
-      
+
       <section className="relative min-h-screen py-10 sm:py-12 md:py-20 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
@@ -164,20 +217,23 @@ export default function ExhibitionJourney() {
           {/* Header Section */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-              <Sparkles className="w-4 h-4 text-yellow-300" />
-              <span className="text-sm font-medium text-gray-300">Your Path to Success</span>
+              <TrendingUp className="w-4 h-4 text-yellow-300" />
+              <span className="text-sm font-medium text-gray-300">
+                Your Path to Success
+              </span>
             </div>
-            
+
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="text-white">Exhibition </span>
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                 Journey Milestones
               </span>
             </h1>
-            
+
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Follow our strategic roadmap from planning to post-event success — 
-              every milestone brings us closer to an exceptional exhibition experience.
+              Follow our strategic roadmap from planning to post-event success —
+              every milestone brings us closer to an exceptional exhibition
+              experience.
             </p>
           </div>
 
@@ -191,20 +247,24 @@ export default function ExhibitionJourney() {
               const Icon = step.icon;
               const isActive = activeStep === index;
               const visible = isVisible[index];
-              
+
               return (
                 <div
                   key={step.id}
                   ref={(el) => (sectionRefs.current[index] = el)}
                   className={`relative mb-16 lg:mb-24 transition-all duration-700 transform ${
-                    visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                    visible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-10 opacity-0"
                   }`}
                 >
                   {/* Desktop Layout - Alternating Cards */}
                   <div className="hidden lg:flex items-center">
                     {/* Left Side */}
-                    <div className={`w-1/2 ${index % 2 === 0 ? "pr-16" : "pl-16 order-2"}`}>
-                      <div 
+                    <div
+                      className={`w-1/2 ${index % 2 === 0 ? "pr-16" : "pl-16 order-2"}`}
+                    >
+                      <div
                         className={`bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 cursor-pointer group ${
                           isActive ? "ring-2 ring-blue-500/50" : ""
                         }`}
@@ -212,59 +272,90 @@ export default function ExhibitionJourney() {
                       >
                         {/* Gradient Icon Background */}
                         <div className="relative mb-4">
-                          <div className={`absolute inset-0 bg-gradient-to-r ${step.color} rounded-xl blur-md opacity-20 group-hover:opacity-40 transition-opacity`}></div>
-                          <div className={`relative w-14 h-14 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center`}>
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-r ${step.color} rounded-xl blur-md opacity-20 group-hover:opacity-40 transition-opacity`}
+                          ></div>
+                          <div
+                            className={`relative w-14 h-14 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center`}
+                          >
                             <Icon className="w-7 h-7 text-white" />
                           </div>
                         </div>
-                        
-                        <h3 className="text-2xl font-bold text-white mb-1">{step.titleEn}</h3>
-                        <p className="text-lg text-gray-400 mb-3" dir="rtl">{step.titleAr}</p>
-                        
+
+                        <h3 className="text-2xl font-bold text-white mb-1">
+                          {step.titleEn}
+                        </h3>
+                        <p className="text-lg text-gray-200 mb-3" dir="rtl">
+                          {step.titleAr}
+                        </p>
+
                         <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 mb-4">
                           <Calendar className="w-3 h-3 text-blue-400" />
-                          <span className="text-xs text-gray-300">{step.timeline}</span>
+                          <span className="text-xs text-gray-300">
+                            {step.timeline}
+                          </span>
                         </div>
-                        
-                        <p className="text-gray-400 mb-4">{step.description}</p>
-                        
+
+                        <p className="text-gray-200 mb-4">{step.description}</p>
+
                         {/* Key Points */}
                         <div className="space-y-2">
                           {step.points.map((point, idx) => {
                             const PointIcon = point.icon;
                             return (
-                              <div key={idx} className="flex items-center gap-2 text-sm">
+                              <div
+                                key={idx}
+                                className="flex items-center gap-2 text-sm"
+                              >
                                 <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                                <span className="text-gray-300">{point.textEn}</span>
-                                <span className="text-gray-500 text-xs" dir="rtl">• {point.textAr}</span>
+                                <div className="flex w-full justify-between">
+                                  <span className="text-gray-300">
+                                    {point.textEn}
+                                  </span>
+                                  <span
+                                    className="text-gray-200 text-xs"
+                                    dir="rtl"
+                                  >
+                                    {" "}
+                                    {point.textAr}
+                                  </span>
+                                </div>
                               </div>
                             );
                           })}
                         </div>
-                        
+
                         {/* Stats */}
-                        <div className="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-white/10">
+                        <div className="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-white/10 ">
                           {Object.entries(step.stats).map(([key, value]) => (
-                            <div key={key}>
-                              <p className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                            <div key={key} className="justify-self-center ">
+                              <p className="text-xl font-bold text-blue-400 justify-self-center w-full" >
                                 {value}
                               </p>
-                              <p className="text-xs text-gray-500 capitalize">{key}</p>
+                              <p className="text-xs text-gray-500 capitalize justify-self-center ">
+                                {key}
+                              </p>
                             </div>
                           ))}
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Center Dot */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
-                      <div className={`relative w-12 h-12 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center border-4 border-gray-900 transition-all duration-300 ${
-                        isActive ? "scale-125 shadow-lg shadow-blue-500/50" : ""
-                      }`}>
-                        <span className="text-white font-bold text-sm">{index + 1}</span>
+                      <div
+                        className={`relative w-12 h-12 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center border-4 border-gray-900 transition-all duration-300 ${
+                          isActive
+                            ? "scale-125 shadow-lg shadow-blue-500/50"
+                            : ""
+                        }`}
+                      >
+                        <span className="text-white font-bold text-sm">
+                          {index + 1}
+                        </span>
                       </div>
                     </div>
-                    
+
                     {/* Right Side - Spacer */}
                     <div className="w-1/2"></div>
                   </div>
@@ -274,44 +365,70 @@ export default function ExhibitionJourney() {
                     <div className="relative pl-10">
                       {/* Timeline Line */}
                       <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/50 to-transparent"></div>
-                      
+
                       {/* Step Number */}
-                      <div className={`absolute left-0 top-0 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center z-10`}>
-                        <span className="text-white font-bold text-xs">{index + 1}</span>
+                      <div
+                        className={`absolute left-0 top-0 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center z-10`}
+                      >
+                        <span className="text-white font-bold text-xs">
+                          {index + 1}
+                        </span>
                       </div>
-                      
+
                       {/* Card */}
-                      <div className={`bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 transition-all duration-500 ${
-                        isActive ? "ring-2 ring-blue-500/50" : ""
-                      }`}>
-                        <div className={`relative w-12 h-12 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center mb-3`}>
+                      <div
+                        className={`bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 transition-all duration-500 ${
+                          isActive ? "ring-2 ring-blue-500/50" : ""
+                        }`}
+                      >
+                        <div
+                          className={`relative w-12 h-12 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center mb-3`}
+                        >
                           <Icon className="w-6 h-6 text-white" />
                         </div>
-                        
-                        <h3 className="text-xl font-bold text-white">{step.titleEn}</h3>
-                        <p className="text-gray-400 mb-2" dir="rtl">{step.titleAr}</p>
-                        
+
+                        <h3 className="text-xl font-bold text-white">
+                          {step.titleEn}
+                        </h3>
+                        <p className="text-gray-400 mb-2" dir="rtl">
+                          {step.titleAr}
+                        </p>
+
                         <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-2 py-0.5 mb-3">
                           <Calendar className="w-3 h-3 text-blue-400" />
-                          <span className="text-xs text-gray-300">{step.timeline}</span>
+                          <span className="text-xs text-gray-300">
+                            {step.timeline}
+                          </span>
                         </div>
-                        
-                        <p className="text-sm text-gray-400 mb-3">{step.description}</p>
-                        
+
+                        <p className="text-sm text-gray-400 mb-3">
+                          {step.description}
+                        </p>
+
                         {/* Points */}
                         <div className="space-y-1.5 mb-3">
                           {step.points.map((point, idx) => {
                             const PointIcon = point.icon;
                             return (
-                              <div key={idx} className="flex items-start gap-2 text-xs">
+                              <div
+                                key={idx}
+                                className="flex items-start gap-2 text-xs"
+                              >
                                 <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0 mt-0.5" />
-                                <span className="text-gray-300">{point.textEn}</span>
-                                <span className="text-gray-500 text-[10px]" dir="rtl">{point.textAr}</span>
+                                <span className="text-gray-300">
+                                  {point.textEn}
+                                </span>
+                                <span
+                                  className="text-gray-500 text-[10px]"
+                                  dir="rtl"
+                                >
+                                  {point.textAr}
+                                </span>
                               </div>
                             );
                           })}
                         </div>
-                        
+
                         {/* Stats */}
                         <div className="flex gap-4 pt-3 border-t border-white/10">
                           {Object.entries(step.stats).map(([key, value]) => (
@@ -319,7 +436,9 @@ export default function ExhibitionJourney() {
                               <p className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                                 {value}
                               </p>
-                              <p className="text-[10px] text-gray-500 capitalize">{key}</p>
+                              <p className="text-[10px] text-gray-500 capitalize">
+                                {key}
+                              </p>
                             </div>
                           ))}
                         </div>
@@ -330,7 +449,7 @@ export default function ExhibitionJourney() {
               );
             })}
           </div>
-<div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
+          <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
             {/* Animated background */}
             <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
 
@@ -347,11 +466,12 @@ export default function ExhibitionJourney() {
               </div>
 
               <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-               Ready to Begin Your Exhibition Journey?
+                Ready to Begin Your Exhibition Journey?
               </h4>
 
               <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                Join us in creating an unforgettable exhibition experience. Let's make every milestone count
+                Join us in creating an unforgettable exhibition experience.
+                Let's make every milestone count
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
@@ -359,15 +479,14 @@ export default function ExhibitionJourney() {
                   href="/pages/Events"
                   className="group bg-white text-gray-900 px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                 Register Now
+                  Register Now
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
           </div>
-        
         </div>
-        
+
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
       </section>

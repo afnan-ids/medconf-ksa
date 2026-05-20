@@ -45,7 +45,7 @@ export default function SystemSettings() {
 
   // General Settings
   const [generalSettings, setGeneralSettings] = useState({
-    siteName: "MedConf Portal",
+    siteName: "HPQL Portal",
     siteDescription: "Healthcare Event Management Platform",
     dateFormat: "YYYY-MM-DD",
     timeFormat: "24h",

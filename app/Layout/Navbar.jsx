@@ -224,7 +224,7 @@ export default function Navbar() {
         )}
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-20 p-4 lg:p-0 md:p-0">
             {/* Logo */}
             <Link href="/" className="group relative">
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
