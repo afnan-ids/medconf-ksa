@@ -218,21 +218,21 @@ export default function WomenAndHealth() {
                       <div
                         key={index}
                         className="
-                      group
-                      relative
-                      overflow-hidden
-                      rounded-lg xs:rounded-xl
-                      border
-                      border-white/15
-                      bg-white/[0.08]
-                      backdrop-blur-xl
-                      p-2 xs:p-3 sm:p-3.5
-                      transition-all
-                      duration-400
-                      hover:bg-white/[0.12]
-                      hover:-translate-y-0.5
-                      hover:border-emerald-400/30
-                    "
+                          group
+                          relative
+                          overflow-hidden
+                          rounded-lg xs:rounded-xl
+                          border
+                          border-white/15
+                          bg-white/[0.08]
+                          backdrop-blur-xl
+                          p-2 xs:p-3 sm:p-3.5
+                          transition-all
+                          duration-400
+                          hover:bg-white/[0.12]
+                          hover:-translate-y-0.5
+                          hover:border-emerald-400/30
+                        "
                       >
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
                           <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 blur-3xl rounded-full" />
@@ -262,7 +262,7 @@ export default function WomenAndHealth() {
                 </div>
 
                 {/* RIGHT */}
-                <div className="relative flex items-start justify-center lg:justify-end mt-2 xs:mt-3 lg:mt-0 order-1 md:order-2">
+                <div className="relative flex items-start justify-center lg:justify-end mt-2 xs:mt-3 lg:mt-0 order-1 md:order-2 mb-6">
                   <div className="absolute w-32 h-32 xs:w-48 xs:h-48 sm:w-64 sm:h-64 bg-emerald-500/15 blur-3xl rounded-full" />
 
                   <div className="relative text-center lg:text-right backdrop-blur-sm bg-white/5 rounded-xl xs:rounded-2xl p-3 xs:p-4 border border-white/10">

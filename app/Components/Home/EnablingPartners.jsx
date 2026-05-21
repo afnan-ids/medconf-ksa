@@ -180,18 +180,18 @@ export default function EnablingPartners() {
       </section>
 
       {/* SECTION 2 */}
-      <section className="relative w-full mx-auto overflow-hidden py-8 sm:py-12">
-        <div className="relative z-10 px-4 sm:px-6">
+      <section className="relative w-full mx-auto overflow-hidden py-6 sm:py-12">
+        <div className="relative z-10 px-3 sm:px-6">
           {/* Main Container */}
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white shadow-[0_10px_50px_rgba(0,0,0,0.06)] min-h-[600px]">
+          <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] border border-white/10 bg-white shadow-[0_10px_50px_rgba(0,0,0,0.06)] min-h-[420px] sm:min-h-[600px]">
             <div className="absolute inset-0 bg-black/3"></div>
 
             {/* top glow line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-              {/* LOGO - More compact */}
-              <div className="flex justify-center mb-8 sm:mb-20 mt-8">
+            <div className="relative max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10">
+              {/* LOGO */}
+              <div className="flex justify-center mb-6 sm:mb-20 mt-4 sm:mt-8">
                 <div className="relative group">
                   <div className="relative rounded-[1.5rem]">
                     <Image
@@ -199,41 +199,47 @@ export default function EnablingPartners() {
                       alt="Enabling Entities Logo"
                       height={1200}
                       width={1200}
-                      className="relative z-10 w-40 sm:w-48 md:w-56 lg:w-220 h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="relative z-10 
+                        w-60 
+                        sm:w-65 
+                        md:w-120 
+                        lg:w-220 
+                        h-auto 
+                        object-contain 
+                        transition-transform 
+                        duration-500 
+                        group-hover:scale-105"
                       priority
                     />
                   </div>
                 </div>
               </div>
 
-              {/* CONTENT - Tighter grid gap */}
-              <div className="grid grid-cols-1 lg:grid-cols-[180px_1fr] max-w-4xl mx-auto items-center">
+              {/* CONTENT */}
+              <div className="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-6 lg:gap-10 max-w-4xl mx-auto items-center">
                 {/* LEFT - HPQL */}
                 <div className="text-center lg:text-left">
-                  <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-[-0.05em] leading-none">
+                  <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-[-0.05em] leading-none">
                     <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">
                       HPQL
                     </span>
                   </h2>
-                  {/* <div className="mt-3 flex justify-center lg:justify-start">
-                    <div className="h-1 w-12 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500"></div>
-                  </div> */}
                 </div>
 
                 {/* RIGHT - Content Card */}
                 <div className="relative">
-                  <div className="rounded-[1.5rem] p-4 sm:p-5 lg:p-6 ">
-                    {/* top row - Compact */}
-                    <div className="flex flex-col sm:flex-row justify-between gap-3 ">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm sm:text-lg lg:text-xl font-bold leading-tight text-emerald-500">
+                  <div className="rounded-[1.5rem] p-3 sm:p-5 lg:p-6">
+                    {/* top row */}
+                    <div className="flex flex-col sm:flex-row justify-between gap-4">
+                      <div className="flex items-center justify-center sm:justify-start">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold leading-snug text-emerald-500 text-center sm:text-left">
                           Moving forward together towards
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-2 sm:justify-end">
+                      <div className="flex items-center justify-center sm:justify-end">
                         <span
-                          className="text-sm sm:text-lg lg:text-xl font-bold leading-tight text-emerald-500 text-right"
+                          className="text-sm sm:text-lg lg:text-xl font-bold leading-snug text-emerald-500 text-center sm:text-right"
                           dir="rtl"
                         >
                           لننطلق معا نحو
@@ -241,27 +247,23 @@ export default function EnablingPartners() {
                       </div>
                     </div>
 
-                    {/* titles - Compact */}
-                    <div className="flex flex-col sm:flex-row justify-between gap-4">
+                    {/* titles */}
+                    <div className="flex flex-col sm:flex-row justify-between gap-5 mt-4">
                       {/* english */}
-                      <div className="space-y-0.5">
-                        <h3 className="text-sm sm:text-lg lg:text-xl font-bold leading-tight text-blue-950">
+                      <div className="space-y-1 text-center sm:text-left">
+                        <h3 className="text-base sm:text-lg lg:text-xl font-bold leading-snug text-blue-950">
                           Health Promotion & Quality of Life
                         </h3>
                       </div>
 
                       {/* arabic */}
-                      <div className="space-y-0.5 text-right">
+                      <div className="space-y-1 text-center sm:text-right">
                         <h3
-                          className="text-sm sm:text-lg lg:text-xl font-bold leading-tight text-blue-950"
+                          className="text-base sm:text-lg lg:text-xl font-bold leading-snug text-blue-950"
                           dir="rtl"
                         >
                           تعزيز الصحة وجودة الحياة
                         </h3>
-                        <p
-                          className="text-sm sm:text-base lg:text-lg font-semibold text-purple-700"
-                          dir="rtl"
-                        ></p>
                       </div>
                     </div>
                   </div>
@@ -274,7 +276,7 @@ export default function EnablingPartners() {
 
       {/* SECTION 3  */}
       <section className="relative w-full overflow-hidden py-6 sm:py-10 bg-[url('/Images/Home/EnabalingPartners/EE-BG-3.png')] bg-cover bg-center">
-        <div className="relative z-10 px-4 sm:px-6">
+        <div className="relative z-10 px-4 sm:px-6 xs-px-3">
           {/* Main Glass Card */}
           <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
             {/* Top Accent Line */}
@@ -284,7 +286,7 @@ export default function EnablingPartners() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_25%)]"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(168,85,247,0.08),transparent_25%)]"></div>
 
-            <div className="relative max-w-7xl mx-auto py-8 sm:py-10 lg:py-12">
+            <div className="relative max-w-7xl mx-auto py-8 sm:py-10 lg:py-12 px-3 md:px-0">
               {/* TOP HEADER  */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-white/10">
                 {/* Left */}

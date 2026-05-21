@@ -55,7 +55,7 @@ const HeroSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 80000);
+    }, 800000);
 
     return () => clearInterval(interval);
   }, [nextSlide]);
@@ -63,7 +63,7 @@ const HeroSlider = () => {
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden mt-15 md:mt-0">
+    <div className="relative w-full h-screen overflow-hidden">
       
       {/* Slide Content */}
       <div className="w-full h-full transition-opacity duration-500">

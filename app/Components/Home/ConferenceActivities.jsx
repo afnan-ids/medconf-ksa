@@ -161,19 +161,18 @@ export default function ConferenceActivities() {
       className="relative w-full mx-auto overflow-hidden"
       ref={containerRef}
     >
-      {/* Dark themed background - optimized with will-change */}
+      {/* Dark themed background  */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
         <div className="absolute top-10 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse will-change-transform"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000 will-change-transform"></div>
         <div className="absolute top-1/3 left-1/3 w-48 h-48 sm:w-96 sm:h-96 bg-emerald-500/10 rounded-full blur-3xl will-change-transform"></div>
       </div>
 
-      {/* Glass container - Mobile optimized */}
+      {/* Glass container */}
       <div className="relative z-10 mx-auto px-3 xs:px-4 sm:px-6 lg:px-4 py-3 xs:py-4 sm:py-8">
         <div className="rounded-xl xs:rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden">
-          <div className="py-3 xs:py-4 sm:py-6 md:py-8 lg:py-12  max-w-7xl mx-auto relative">
-            
-            {/* Header Section - Mobile optimized */}
+          <div className="py-3 xs:py-4 sm:py-6 md:py-8 lg:py-12  max-w-7xl mx-auto relative px-3 md:px-0">
+            {/* Header Section  */}
             <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16 relative z-10">
               <div className="relative inline-block group/badge mb-4 xs:mb-5 sm:mb-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
@@ -208,7 +207,7 @@ export default function ConferenceActivities() {
               </div>
             </div>
 
-            {/* Activities Grid - Mobile Optimized */}
+            {/* Activities Grid  */}
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row gap-3 xs:gap-4 min-h-[400px] md:min-h-[500px] md:h-[480px]">
                 {activityGroups.map((activity, idx) => {
@@ -229,7 +228,7 @@ export default function ConferenceActivities() {
                         bg-white/[0.03]
                         backdrop-blur-xl
                         cursor-pointer
-                        ${isMobile ? "min-h-[80px]" : "hover:md:flex-[4]"}
+                        ${isMobile ? "min-h-[220px]" : "hover:md:flex-[4]"}
                         ${isMobile && isHovered ? "flex-[4] min-h-[420px] xs:min-h-[400px] sm:min-h-[380px]" : ""}
                       `}
                       onMouseEnter={() => !isMobile && setHoveredIndex(idx)}
