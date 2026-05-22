@@ -42,7 +42,7 @@ const SlidePatronage = () => {
                 </div>
 
                 {/* Name Section */}
-                <div className="rounded-xl px-4 py-2 backdrop-blur-[2px]">
+                <div className="rounded-xl py-2 backdrop-blur-[2px]">
                   <div className="flex flex-col md:flex-row justify-between items-center gap-2">
                     <p className="text-lg md:text-2xl lg:text-[28px] font-extrabold text-white tracking-tight">
                       Prince Khalid AL Faisal
@@ -79,8 +79,10 @@ const SlidePatronage = () => {
                   <p
                     className="text-sm md:text-lg lg:text-2xl font-bold text-white leading-snug"
                     dir="rtl"
+                    style={{ wordSpacing: "0.2rem" }}
                   >
-                    مؤتمر ومعرض تعزيز الصحة وجودة الحياة
+                    مؤتمــــــــر ومعــــــــرض تعزيــــــــز الصحـــــــة
+                    وجــــودة الحيــــاة
                   </p>
 
                   <p className="text-xs md:text-sm lg:text-xl text-white/90 tracking-wide">
@@ -94,8 +96,8 @@ const SlidePatronage = () => {
                     className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/95 text-center"
                     dir="rtl"
                   >
-                    يقام أضخم حدث من نوعه في المنطقة الغربية يهدف إلى تحسين جودة
-                    الحياة تحت شعار
+                    يقام أضخــــم حــــدث من نوعة في المنطقة الغربية يهـدف إلى
+                    تحسين جــــودة الحياة تحــــت شعــــار
                   </p>
 
                   <p className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/90 text-center">
@@ -110,7 +112,7 @@ const SlidePatronage = () => {
                     className="text-base md:text-xl lg:text-2xl font-extrabold text-white tracking-tight"
                     dir="rtl"
                   >
-                    صحـــة . تمكيــن . توعيـــة . عمـر مديـــد
+                    تعزيز الصحة وجودة الحياة{" "}
                   </p>
 
                   <p className="text-xs md:text-sm lg:text-base font-semibold text-white/90 tracking-[0.10em] uppercase mt-1">

@@ -7,6 +7,7 @@ import HealthTransformation from "./slides/HealthTransformation";
 import SlideVideo from "./slides/vedio";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -55,7 +56,7 @@ const HeroSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 800000);
+    }, 80000);
 
     return () => clearInterval(interval);
   }, [nextSlide]);
@@ -64,11 +65,31 @@ const HeroSlider = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      
-      {/* Slide Content */}
-      <div className="w-full h-full transition-opacity duration-500">
+      <motion.div
+        key={currentSlide}
+        initial={{
+          opacity: 0,
+          scale: 1.03,
+          backdropFilter: "blur(20px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          backdropFilter: "blur(0px)",
+        }}
+        exit={{
+          opacity: 0,
+          scale: 0.97,
+          backdropFilter: "blur(10px)",
+        }}
+        transition={{
+          duration: 0.9,
+          ease: "easeOut",
+        }}
+        className="absolute inset-0 w-full h-full"
+      >
         <CurrentSlideComponent />
-      </div>
+      </motion.div>
 
       {/* Left Arrow */}
       <button
@@ -98,7 +119,6 @@ const HeroSlider = () => {
 
       {/* Dots Navigation */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3 px-4 py-2 rounded-full">
-        
         {slides.map((_, index) => (
           <button
             key={index}
@@ -122,7 +142,6 @@ const HeroSlider = () => {
 
       {/* Slide Counter */}
       <div className="absolute bottom-8 right-8 z-20 text-xs font-medium px-3 py-1.5 rounded-full bg-black/30 text-white backdrop-blur-md">
-        
         {String(currentSlide + 1).padStart(2, "0")} /{" "}
         {String(slides.length).padStart(2, "0")}
       </div>

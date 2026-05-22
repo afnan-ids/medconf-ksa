@@ -283,6 +283,7 @@ export default function EventIndicators() {
                             transition-all duration-300
                             group-hover:scale-110
                             group-hover:shadow-xl
+                             group-hover:rotate-3
                           `}
                         >
                           <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />

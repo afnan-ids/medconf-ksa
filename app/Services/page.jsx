@@ -60,7 +60,7 @@ export default function Services() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+        <div className="relative max-w-7xl mx-auto px-3 md:px-0">
           {/* Section Header with decorative elements */}
           <div className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-20">
             {/* Top badge */}

@@ -33,21 +33,22 @@ const SlideVexora = () => {
                 />
               </div>
 
-              <div>
+              <div className="">
                 <h2
-                  className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20"
+                  className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
                   dir="rtl"
+                  style={{ wordSpacing: "0.8rem" }}
                 >
                   مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
                 </h2>
-                <p className="text-xs md:text-sm text-white mt-1.5 tracking-wide">
+                <p className="text-xs md:text-sm text-white mt-1.5 tracking-[0.15em]">
                   HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
                 </p>
               </div>
             </div>
 
             {/* HEAL Section - More compact */}
-            <div className="flex justify-end items-center gap-3 pt-1 lg:mt-15">
+            <div className="flex justify-end items-center gap-3 pt-1 lg:mt-15 tracking-[0.3em]">
               <p className="text-4xl md:text-5xl lg:text-6xl font-black ">
                 HPQL
               </p>
@@ -55,10 +56,11 @@ const SlideVexora = () => {
                 <p
                   className="text-base md:text-lg lg:text-2xl font-bold text-white mb-0.5"
                   dir="rtl"
+                  style={{ wordSpacing: "0.2rem" }}
                 >
                   صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
                 </p>
-                <p className="text-xs md:text-sm text-white tracking-wide">
+                <p className="w-full text-xs md:text-sm text-white uppercase tracking-[0.25em] font-light">
                   HEALTH PROMOTION • QUALITY OF LIFE
                 </p>
               </div>
