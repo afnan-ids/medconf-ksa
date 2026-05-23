@@ -267,7 +267,6 @@ export default function ExhibitorRegisterPage() {
     <>
       <BreadCrumb
         title="Exhibitor Registration"
-        backgroundImage="/Images/Home/Bread-crum-1.avif"
         path={[{ label: "Exhibitor Registration" }]}
       />
       <div className="min-h-screen relative">

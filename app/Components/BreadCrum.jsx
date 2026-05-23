@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const BreadCrumb = ({ title, path }) => {
  return (
-  <section className="relative overflow-hidden py-6">
+  <section className="relative overflow-hidden pt-6 pb-4">
     {/* Background */}
     <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
       <div className="absolute top-10 left-10 w-72 h-72 bg-blue-800/20 rounded-full blur-3xl animate-pulse"></div>
@@ -17,15 +17,15 @@ const BreadCrumb = ({ title, path }) => {
 
     <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-17">
       {/* Glass Container */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-600/30 via-gray-600/30 to-cyan-600/30 backdrop-blur-xl border border-cyan-500/40 shadow-2xl shadow-cyan-500/10 px-8 py-6 md:px-14 md:py-8">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-600/30 via-gray-600/30 to-cyan-600/30 backdrop-blur-xl border border-cyan-500/40 shadow-2xl shadow-cyan-500/10 px-8 py-6 md:px-14 md:py-8 max-w-7xl mx-auto">
         
-        {/* Corner Accents - Hidden on mobile */}
+        {/* Corner Accents  */}
         <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-cyan-500/60 rounded-tl-xl hidden sm:block"></div>
         <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-cyan-500/60 rounded-tr-xl hidden sm:block"></div>
         <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-cyan-500/60 rounded-bl-xl hidden sm:block"></div>
         <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-cyan-500/60 rounded-br-xl hidden sm:block"></div>
 
-        {/* Breadcrumb - Responsive padding */}
+        {/* Breadcrumb  */}
         <nav
           className="inline-flex items-center flex-wrap gap-2 rounded-full bg-black/30 backdrop-blur-sm border border-cyan-500/30 px-3 sm:px-5 py-1.5 sm:py-2.5 mb-8"
           aria-label="Breadcrumb"

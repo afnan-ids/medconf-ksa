@@ -5,106 +5,205 @@ import { Calendar, MapPin, Sparkles } from "lucide-react";
 
 const SlideVexora = () => {
   return (
-    <div className="relative w-full h-full bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
-      <div className="relative z-10 w-full max-w-7xl mx-auto h-full md:grid grid-cols-1 lg:grid-cols-[45%_55%] flex text-white lg:mt-20 pt-10 px-4 md:px-0">
-        {/* Left Column */}
-        <div className="text-center lg:text-left mb-8 lg:mb-0">
-          <Image
-            src="/Images/Home/slider/MainLogo.png"
-            alt="Logo"
-            width={180}
-            height={150}
-            className="opacity-90 h-10 w-20 md:h-22 md:w-45 "
-          />
-        </div>
-
-        {/* Right Column */}
-        <div className="w-full max-w-4xl mx-auto space-y-5 py-6 ">
-          {/* HPQL Section  */}
-          <div className="text-right space-y-2.5">
-            <div className="flex items-center justify-end">
-              <Image
-                src="/Images/Home/slider/Right-Side-Logo.png"
-                alt="Logo"
-                width={250}
-                height={200}
-                className="opacity-90 h-10 w-20 md:h-20 md:w-65"
-              />
-            </div>
-
-            <div>
-              <h2
-                className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20"
-                dir="rtl"
-              >
-                مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
-              </h2>
-              <p className="text-xs md:text-sm text-white mt-1.5 tracking-wide">
-                HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
-              </p>
-            </div>
+    <>
+      <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto h-full grid grid-cols-1 lg:grid-cols-[45%_55%]  text-white lg:mt-20 pt-10">
+          {/* Left Column */}
+          <div className="text-center lg:text-left mb-8 lg:mb-0">
+            <Image
+              src="/Images/Home/slider/MainLogo.png"
+              alt="Logo"
+              width={180}
+              height={150}
+              className="opacity-90"
+            />
           </div>
 
-          {/* HEAL Section - More compact */}
-          <div className="flex justify-end items-center gap-3 pt-1 lg:mt-15">
-            <p className="text-4xl md:text-5xl lg:text-6xl font-black ">HPQL</p>
-            <div className="text-right">
-              <p
-                className="text-base md:text-lg lg:text-2xl font-bold text-white mb-0.5"
-                dir="rtl"
-              >
-                صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
-              </p>
-              <p className="text-xs md:text-sm text-white tracking-wide">
-                HEALTH PROMOTION  •  QUALITY OF LIFE
-              </p>
+          {/* Right Column */}
+          <div className="w-full max-w-4xl mx-auto space-y-5 py-6 ">
+            {/* HPQL Section  */}
+            <div className="text-right space-y-2.5">
+              <div className="flex items-center justify-end">
+                <Image
+                  src="/Images/Home/slider/Right-Side-Logo.png"
+                  alt="Logo"
+                  width={250}
+                  height={200}
+                  className="opacity-90"
+                />
+              </div>
+
+              <div className="">
+                <h2
+                  className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
+                  dir="rtl"
+                  style={{ wordSpacing: "0.8rem" }}
+                >
+                  مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
+                </h2>
+                <p className="text-xs md:text-sm text-white mt-1.5 tracking-[0.15em]">
+                  HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Info Card  */}
-          <div className="flex justify-end">
-          <div className="bg-cyan-500 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden w-full max-w-150">
-            <div className="p-4">
-              <div className="flex items-center justify-between gap-3">
-                {/* Location */}
-                <div className="text-center">
-                  <p className="text-md font-bold text-blue-900" dir="rtl">
-                    مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
-                  </p>
-                  <p className="text-md font-bold text-blue-900 mt-0.5">
-                    Exhibition & trade center in Jeddah
-                  </p>
-                </div>
+            {/* HEAL Section - More compact */}
+            <div className="flex justify-end items-center gap-3 pt-1 lg:mt-15 tracking-[0.3em]">
+              <p className="text-4xl md:text-5xl lg:text-6xl font-black ">
+                HPQL
+              </p>
+              <div className="text-right">
+                <p
+                  className="text-base md:text-lg lg:text-2xl font-bold text-white mb-0.5"
+                  dir="rtl"
+                  style={{ wordSpacing: "0.2rem" }}
+                >
+                  صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
+                </p>
+                <p className="w-full text-xs md:text-sm text-white uppercase tracking-[0.25em] font-light">
+                  HEALTH PROMOTION • QUALITY OF LIFE
+                </p>
+              </div>
+            </div>
 
-                <div className="w-px h-10 bg-white/15" />
+            {/* Info Card  */}
+            <div className="flex justify-end">
+              <div className="bg-cyan-500 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden w-full max-w-150">
+                <div className="p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    {/* Location */}
+                    <div className="text-center">
+                      <p className="text-md font-bold text-blue-900" dir="rtl">
+                        مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
+                      </p>
+                      <p className="text-md font-bold text-blue-900 mt-0.5">
+                        Exhibition & trade center in Jeddah
+                      </p>
+                    </div>
 
-                {/* 2026  - Arabic */}
-                <div className=" text-center">
-                  <p className="text-md font-bold text-blue-900">نوفمبر</p>
-                  <p className="text-md font-bold text-blue-900">2026</p>
-                </div>
+                    <div className="w-px h-10 bg-white/15" />
 
-                <div className="w-px h-10 bg-white/15" />
+                    {/* 2026  - Arabic */}
+                    <div className=" text-center">
+                      <p className="text-md font-bold text-blue-900">نوفمبر</p>
+                      <p className="text-md font-bold text-blue-900">2026</p>
+                    </div>
 
-                {/* Date - Arabic */}
-                <div className="flex text-center">
-                  <p className="text-3xl font-bold text-blue-900">9 - 11</p>
-                </div>
+                    <div className="w-px h-10 bg-white/15" />
 
-                <div className="w-px h-10 bg-white/15" />
+                    {/* Date - Arabic */}
+                    <div className="flex text-center">
+                      <p className="text-3xl font-bold text-blue-900">9 - 11</p>
+                    </div>
 
-                {/* Date */}
-                <div className="text-start text-lg ">
-                  <p className=" font-bold text-blue-900">November</p>
-                  <p className="font-bold text-blue-900 mt-0.5">2026</p>
+                    <div className="w-px h-10 bg-white/15" />
+
+                    {/* Date */}
+                    <div className="text-start text-lg ">
+                      <p className=" font-bold text-blue-900">November</p>
+                      <p className="font-bold text-blue-900 mt-0.5">2026</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* For mobile  */}
+      <div className="block md:hidden relative h-[700px]  bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
+        <div className="relative z-10 w-full h-full flex items-center  px-4 py-6 overflow-y-auto">
+          <div className="w-full max-w-md mx-auto space-y-6">
+            {/* Logos Section  */}
+            <div className="flex justify-between items-center mb-10">
+              <Image
+                src="/Images/Home/slider/MainLogo.png"
+                alt="Logo"
+                width={100}
+                height={80}
+                className="opacity-90 w-auto h-10 sm:h-12"
+                priority
+              />
+              <Image
+                src="/Images/Home/slider/Right-Side-Logo.png"
+                alt="Logo"
+                width={120}
+                height={100}
+                className="opacity-90 w-auto h-10 sm:h-12"
+                priority
+              />
+            </div>
+
+            {/* Conference Name */}
+            <div className="text-center space-y-1.5">
+              <h2
+                className="text-base sm:text-lg font-bold text-white leading-tight"
+                dir="rtl"
+              >
+                مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
+              </h2>
+              <p className="text-[10px] sm:text-xs text-white tracking-wide">
+                HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
+              </p>
+            </div>
+
+            {/* HPQL & Slogan Section */}
+            <div className="text-center space-y-2">
+              <p className="text-4xl sm:text-5xl font-black text-white">HPQL</p>
+              <div>
+                <p
+                  className="text-sm sm:text-base font-bold text-white"
+                  dir="rtl"
+                >
+                  صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
+                </p>
+                <p className="text-[10px] sm:text-xs text-white tracking-wide mt-0.5">
+                  HEALTH PROMOTION • QUALITY OF LIFE
+                </p>
+              </div>
+            </div>
+
+            {/* Info Card */}
+            <div className="pt-4">
+              <div className="bg-cyan-500 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden">
+                <div className="p-4">
+                  {/* Location - Full width on mobile */}
+                  <div className="col-span-2 text-center pb-2 border-b border-white/20">
+                    <p className="text-sm font-bold text-blue-900" dir="rtl">
+                      مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
+                    </p>
+                    <p className="text-xs font-bold text-blue-900 mt-0.5">
+                      Exhibition & trade center in Jeddah
+                    </p>
+                  </div>
+                  {/* Mobile optimized grid layout */}
+                  <div className="grid grid-cols-3 gap-4 mt-4">
+                    {/* November arabic */}
+                    <div className="text-center">
+                      <p className="text-base font-bold text-blue-900">
+                        نوفمبر
+                      </p>
+                      <p className="text-base font-bold text-blue-900">2026</p>
+                    </div>
+
+                    {/* Date  */}
+                    <div className="text-center">
+                      <p className="text-3xl font-bold text-blue-900">9 - 11</p>
+                    </div>
+                    <div className="">
+                      <p className="text-sm font-bold text-blue-900 mt-1">
+                        November 2026
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

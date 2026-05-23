@@ -143,7 +143,7 @@ export default function EventIndicators() {
           {/* Inner gradient border highlight */}
           <div className="absolute inset-0 rounded-3xl sm:rounded-[3rem] pointer-events-none bg-gradient-to-r from-white/5 via-transparent to-white/5"></div>
 
-          <div className="py-6 sm:py-10 lg:py-16 max-w-7xl mx-auto relative">
+          <div className="px-3 md:px-0 py-6 sm:py-10 lg:py-16 max-w-7xl mx-auto relative">
             {/* Header Section with enhanced typography */}
             <div className="text-center mb-12 sm:mb-20 relative z-10">
               <div className="relative inline-block group/badge mb-8">
@@ -283,6 +283,7 @@ export default function EventIndicators() {
                             transition-all duration-300
                             group-hover:scale-110
                             group-hover:shadow-xl
+                             group-hover:rotate-3
                           `}
                         >
                           <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />

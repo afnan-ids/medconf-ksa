@@ -253,9 +253,8 @@ export default function PractitionerRegisterPage() {
   return (
     <>
       <BreadCrumb
-        title="Health Care Registration"
-        backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Health Care Registration" }]}
+        title="Health Care Registeration"
+        path={[{ label: "Health Care" }]}
       />
       <div className="min-h-screen relative">
         {/* Dark themed background - matching other components */}
@@ -275,48 +274,55 @@ export default function PractitionerRegisterPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-8 md:py-12">
           {/* Hero Banner - Dark themed */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-3xl shadow-2xl mb-8 overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-700">
-            <div className="p-8 md:p-10">
-              <div className="text-center mb-8">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl mb-6 sm:mb-8 overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-700">
+            <div className="p-4 sm:p-6 md:p-10">
+              <div className="text-center mb-6 sm:mb-8">
+                {/* Badge */}
                 <div className="relative inline-block group/badge mb-4">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
-                  <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
-                    <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                    <span>Hpql 2026 • Riyadh, Saudi Arabia</span>
+
+                  <div className="relative inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[11px] sm:text-xs">
+                    <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 flex-shrink-0" />
+                    <span className="whitespace-nowrap">
+                      Hpql 2026 • Riyadh, Saudi Arabia
+                    </span>
                   </div>
                 </div>
 
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                {/* Heading */}
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
                   Let's Talk{" "}
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                     Healthcare Innovation
                   </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                  <br className="hidden sm:block" />
+                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent block sm:inline">
                     Let's Talk Hpql
                   </span>
                 </h1>
 
-                <div className="flex flex-wrap items-center justify-center gap-4 text-gray-300 text-sm mb-4">
-                  <div className="flex items-center gap-2 bg-white/5 rounded-full px-3 py-1 border border-white/10">
-                    <Calendar className="w-4 h-4 text-blue-400" />
+                {/* Info Pills */}
+                <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 text-gray-300 text-xs sm:text-sm mb-5">
+                  <div className="flex items-center gap-2 bg-white/5 rounded-full px-3 py-2 border border-white/10 w-full sm:w-auto justify-center">
+                    <Calendar className="w-4 h-4 text-blue-400 flex-shrink-0" />
                     <span>15 - 17 November 2026</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white/5 rounded-full px-3 py-1 border border-white/10">
-                    <MapPin className="w-4 h-4 text-cyan-400" />
-                    <span>
+
+                  <div className="flex items-center gap-2 bg-white/5 rounded-full px-3 py-2 border border-white/10 w-full sm:w-auto justify-center">
+                    <MapPin className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+
+                    <span className="text-center sm:text-left">
                       Riyadh International Convention & Exhibition Center
                     </span>
                   </div>
                 </div>
 
-                <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                {/* Description */}
+                <p className="text-gray-300 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
                   Complete the form to connect with our commercial team and
                   explore how{" "}
-                  <span className="font-semibold text-blue-400">
-                    HPQL
-                  </span>{" "}
-                  can deliver
+                  <span className="font-semibold text-blue-400">HPQL</span> can
+                  deliver
                   <span className="font-semibold text-blue-400">
                     {" "}
                     strategic partnerships, brand visibility, and measurable
@@ -326,13 +332,14 @@ export default function PractitionerRegisterPage() {
                 </p>
               </div>
 
-              {/* Why Exhibit Section - Dark themed */}
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <Target className="w-5 h-5 text-cyan-400" />
+              {/* Why Exhibit Section */}
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <Target className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                   Why exhibit at HPQL?
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {[
                     "Connect with key decision-makers from Saudi Arabia's healthcare sector",
                     "Showcase your medical innovations to 50,000+ healthcare professionals",
@@ -346,7 +353,8 @@ export default function PractitionerRegisterPage() {
                       className="flex items-start gap-2 text-sm text-gray-300"
                     >
                       <CheckCircle className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                      <span>{item}</span>
+
+                      <span className="leading-relaxed">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -367,19 +375,26 @@ export default function PractitionerRegisterPage() {
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-blue-500/20 to-cyan-500/20 rounded-tl-3xl blur-2xl"></div>
 
             {/* Form Header */}
-            <div className="relative text-center py-10 px-4 border-b border-white/10 bg-gradient-to-r from-blue-600/10 via-cyan-500/10 to-blue-600/10">
+            <div className="relative text-center py-8 sm:py-10 px-3 sm:px-4 border-b border-white/10 bg-gradient-to-r from-blue-600/10 via-cyan-500/10 to-blue-600/10 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+
               <div className="relative">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 mb-4">
-                  <Stethoscope className="w-4 h-4 text-blue-400" />
-                  <span className="text-xs text-blue-300 font-medium">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 mb-4 max-w-full">
+                  <Stethoscope className="w-4 h-4 text-blue-400 flex-shrink-0" />
+
+                  <span className="text-[11px] sm:text-xs text-blue-300 font-medium whitespace-nowrap">
                     Healthcare Professional
                   </span>
                 </div>
-                <h2 className="pb-2 text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
+
+                {/* Heading */}
+                <h2 className="pb-2 text-2xl sm:text-3xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
                   Practitioner Registration
                 </h2>
-                <p className="text-gray-300 mt-3 text-lg">
+
+                {/* Subtitle */}
+                <p className="text-gray-300 mt-3 text-sm sm:text-base md:text-lg px-2">
                   Join the region's premier healthcare network
                 </p>
                 <div className="flex items-center justify-center gap-2 mt-4">
@@ -404,34 +419,42 @@ export default function PractitionerRegisterPage() {
               className="relative p-6 md:p-8 lg:p-10 space-y-8"
             >
               {/* ACCOUNT SECTION */}
-              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10">
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10">
                 <div className="absolute -inset-px bg-gradient-to-r from-blue-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/10 group-hover:via-blue-500/10 group-hover:to-cyan-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
 
-                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
-                  <div className="relative">
+                {/* Header */}
+                <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 pb-3 border-b border-white/10">
+                  <div className="relative flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
-                    <div className="relative p-3 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl shadow-lg">
-                      <Lock className="w-6 h-6 text-white" />
+
+                    <div className="relative p-2.5 sm:p-3 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl shadow-lg">
+                      <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                   </div>
+
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
                       Account Information
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">
+
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">
                       Create your secure account
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                {/* Form Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                  {/* Email */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
                       <Mail className="w-4 h-4 text-blue-400" />
                       Email Address <span className="text-red-400">*</span>
                     </label>
+
                     <div className="relative">
                       <Mail className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover/field:text-blue-400" />
+
                       <input
                         name="email"
                         type="email"
@@ -444,13 +467,16 @@ export default function PractitionerRegisterPage() {
                     </div>
                   </div>
 
+                  {/* Phone */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
                       <Phone className="w-4 h-4 text-cyan-400" />
                       Phone Number <span className="text-red-400">*</span>
                     </label>
+
                     <div className="relative">
                       <Phone className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover/field:text-cyan-400" />
+
                       <input
                         name="phone"
                         type="tel"
@@ -463,13 +489,16 @@ export default function PractitionerRegisterPage() {
                     </div>
                   </div>
 
+                  {/* Password */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
                       <Lock className="w-4 h-4 text-blue-400" />
                       Password <span className="text-red-400">*</span>
                     </label>
+
                     <div className="relative">
                       <Lock className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover/field:text-blue-400" />
+
                       <input
                         name="password"
                         type={showPassword ? "text" : "password"}
@@ -479,6 +508,7 @@ export default function PractitionerRegisterPage() {
                         placeholder="Create a strong password"
                         required
                       />
+
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
@@ -493,13 +523,16 @@ export default function PractitionerRegisterPage() {
                     </div>
                   </div>
 
+                  {/* Confirm Password */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
                       <Lock className="w-4 h-4 text-cyan-400" />
                       Confirm Password <span className="text-red-400">*</span>
                     </label>
+
                     <div className="relative">
                       <Lock className="absolute left-3 top-3.5 text-gray-400 w-5 transition-all group-hover/field:text-cyan-400" />
+
                       <input
                         name="confirmPassword"
                         type={showConfirmPassword ? "text" : "password"}
@@ -509,6 +542,7 @@ export default function PractitionerRegisterPage() {
                         placeholder="Confirm your password"
                         required
                       />
+
                       <button
                         type="button"
                         onClick={() =>
@@ -528,31 +562,38 @@ export default function PractitionerRegisterPage() {
               </div>
 
               {/* PERSONAL INFORMATION SECTION */}
-              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-emerald-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/10">
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 hover:border-emerald-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/10">
                 <div className="absolute -inset-px bg-gradient-to-r from-emerald-500/0 via-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/10 group-hover:via-emerald-500/10 group-hover:to-teal-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
 
-                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
-                  <div className="relative">
+                {/* Header */}
+                <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 pb-3 border-b border-white/10">
+                  <div className="relative flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
-                    <div className="relative p-3 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-xl shadow-lg">
-                      <User className="w-6 h-6 text-white" />
+
+                    <div className="relative p-2.5 sm:p-3 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-xl shadow-lg">
+                      <User className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                   </div>
+
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
                       Personal Information
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">
+
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">
                       Tell us about yourself
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                {/* Form Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                  {/* First Name */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       First Name <span className="text-red-400">*</span>
                     </label>
+
                     <input
                       name="firstName"
                       value={formData.firstName}
@@ -563,10 +604,12 @@ export default function PractitionerRegisterPage() {
                     />
                   </div>
 
+                  {/* Last Name */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Last Name <span className="text-red-400">*</span>
                     </label>
+
                     <input
                       name="lastName"
                       value={formData.lastName}
@@ -577,12 +620,15 @@ export default function PractitionerRegisterPage() {
                     />
                   </div>
 
+                  {/* Nationality */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Nationality
                     </label>
+
                     <div className="relative">
                       <Globe className="absolute left-3 top-3.5 text-gray-400 w-5" />
+
                       <input
                         name="nationality"
                         value={formData.nationality}
@@ -593,12 +639,15 @@ export default function PractitionerRegisterPage() {
                     </div>
                   </div>
 
+                  {/* City */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       City
                     </label>
+
                     <div className="relative">
                       <MapPin className="absolute left-3 top-3.5 text-gray-400 w-5" />
+
                       <input
                         name="city"
                         value={formData.city}
@@ -612,31 +661,38 @@ export default function PractitionerRegisterPage() {
               </div>
 
               {/* PROFESSIONAL INFORMATION SECTION */}
-              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-purple-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10">
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 hover:border-purple-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10">
                 <div className="absolute -inset-px bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
 
-                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
-                  <div className="relative">
+                {/* Header */}
+                <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 pb-3 border-b border-white/10">
+                  <div className="relative flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
-                    <div className="relative p-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-xl shadow-lg">
-                      <Stethoscope className="w-6 h-6 text-white" />
+
+                    <div className="relative p-2.5 sm:p-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-xl shadow-lg">
+                      <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                   </div>
+
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
                       Professional Information
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">
+
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">
                       Tell us about your practice
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                {/* Form Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                  {/* Profession */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Job/Title <span className="text-red-400">*</span>
                     </label>
+
                     <select
                       name="profession"
                       value={formData.profession}
@@ -647,22 +703,27 @@ export default function PractitionerRegisterPage() {
                       <option value="" className="bg-gray-800">
                         Select your profession
                       </option>
+
                       <option className="bg-gray-800">Medical Doctor</option>
                       <option className="bg-gray-800">Dentist</option>
                       <option className="bg-gray-800">Pharmacist</option>
                       <option className="bg-gray-800">Nurse</option>
                       <option className="bg-gray-800">Physiotherapist</option>
+
                       <option className="bg-gray-800">
                         Healthcare Administrator
                       </option>
+
                       <option className="bg-gray-800">Researcher</option>
                     </select>
                   </div>
 
+                  {/* Specialization */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Specialization
                     </label>
+
                     <input
                       name="specialization"
                       value={formData.specialization}
@@ -672,11 +733,13 @@ export default function PractitionerRegisterPage() {
                     />
                   </div>
 
+                  {/* Company */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       Company/Institution{" "}
                       <span className="text-red-400">*</span>
                     </label>
+
                     <input
                       name="companyName"
                       value={formData.companyName}
@@ -687,10 +750,12 @@ export default function PractitionerRegisterPage() {
                     />
                   </div>
 
+                  {/* SCFHS */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
                       SCFHS Number
                     </label>
+
                     <input
                       name="scfhsNumber"
                       value={formData.scfhsNumber}
@@ -703,27 +768,32 @@ export default function PractitionerRegisterPage() {
               </div>
 
               {/* DOCUMENTS SECTION */}
-              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-orange-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/10">
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 hover:border-orange-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/10">
                 <div className="absolute -inset-px bg-gradient-to-r from-orange-500/0 via-orange-500/0 to-amber-500/0 group-hover:from-orange-500/10 group-hover:via-orange-500/10 group-hover:to-amber-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
 
-                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
-                  <div className="relative">
+                {/* Header */}
+                <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 pb-3 border-b border-white/10">
+                  <div className="relative flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
-                    <div className="relative p-3 bg-gradient-to-r from-orange-600 to-amber-500 rounded-xl shadow-lg">
-                      <FileText className="w-6 h-6 text-white" />
+
+                    <div className="relative p-2.5 sm:p-3 bg-gradient-to-r from-orange-600 to-amber-500 rounded-xl shadow-lg">
+                      <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                   </div>
+
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
                       Upload Documents
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">
+
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">
                       Verify your professional credentials
                     </p>
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Upload Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                   {[
                     {
                       name: "Medical License",
@@ -754,7 +824,7 @@ export default function PractitionerRegisterPage() {
                       key={idx}
                       onMouseEnter={() => setHoveredDoc(idx)}
                       onMouseLeave={() => setHoveredDoc(null)}
-                      className={`relative border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all duration-300 transform ${
+                      className={`relative border-2 border-dashed rounded-2xl p-5 sm:p-6 text-center cursor-pointer transition-all duration-300 transform ${
                         hoveredDoc === idx
                           ? "border-transparent bg-gradient-to-br from-orange-500 to-amber-500 shadow-2xl scale-105"
                           : "border-white/20 hover:border-white/40 bg-white/5"
@@ -766,50 +836,70 @@ export default function PractitionerRegisterPage() {
                         accept={doc.accept}
                         onChange={(e) => handleFileChange(e, doc.key)}
                       />
+
                       <div
-                        className={`transition-all duration-300 ${hoveredDoc === idx ? "text-white" : "text-gray-400"}`}
+                        className={`transition-all duration-300 ${
+                          hoveredDoc === idx ? "text-white" : "text-gray-400"
+                        }`}
                       >
-                        <doc.icon className="mx-auto mb-3 w-10 h-10" />
+                        <doc.icon className="mx-auto mb-3 w-8 h-8 sm:w-10 sm:h-10" />
                       </div>
+
                       <p
-                        className={`text-sm font-medium transition-all duration-300 ${hoveredDoc === idx ? "text-white" : "text-gray-300"}`}
+                        className={`text-sm font-medium transition-all duration-300 leading-snug ${
+                          hoveredDoc === idx ? "text-white" : "text-gray-300"
+                        }`}
                       >
                         {doc.name}
                       </p>
+
                       {formData[doc.key] && (
                         <p
-                          className={`text-xs mt-2 truncate px-2 ${hoveredDoc === idx ? "text-white/80" : "text-cyan-400"}`}
+                          className={`text-xs mt-2 truncate px-2 ${
+                            hoveredDoc === idx
+                              ? "text-white/80"
+                              : "text-cyan-400"
+                          }`}
                         >
                           ✓ {formData[doc.key].name}
                         </p>
                       )}
+
                       <Upload
-                        className={`absolute bottom-4 right-4 w-5 h-5 transition-all duration-300 ${hoveredDoc === idx ? "text-white opacity-100" : "opacity-0"}`}
+                        className={`absolute bottom-4 right-4 w-5 h-5 transition-all duration-300 ${
+                          hoveredDoc === idx
+                            ? "text-white opacity-100"
+                            : "opacity-0"
+                        }`}
                       />
                     </label>
                   ))}
                 </div>
-                <p className="text-xs text-gray-500 mt-4 text-center">
+
+                <p className="text-xs text-gray-500 mt-4 text-center leading-relaxed">
                   Accepted formats: PDF, JPG, PNG. Max size: 5MB per file
                 </p>
               </div>
-
               {/* ADDITIONAL QUESTIONS SECTION */}
-              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
+              <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10">
                 <div className="absolute -inset-px bg-gradient-to-r from-gray-500/0 via-gray-500/0 to-gray-600/0 group-hover:from-gray-500/10 group-hover:via-gray-500/10 group-hover:to-gray-600/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
 
-                <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
-                  <div className="relative">
+                {/* Header */}
+                <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 pb-3 border-b border-white/10">
+                  <div className="relative flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-gray-600 rounded-xl blur-lg opacity-50 animate-pulse"></div>
-                    <div className="relative p-3 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl shadow-lg">
-                      <Send className="w-6 h-6 text-white" />
+
+                    <div className="relative p-2.5 sm:p-3 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl shadow-lg">
+                      <Send className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                   </div>
+
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
                       Additional Information
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">
+
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">
                       Help us personalize your experience
                     </p>
                   </div>
@@ -818,10 +908,11 @@ export default function PractitionerRegisterPage() {
                 <div className="space-y-6">
                   {/* Announcements */}
                   <div>
-                    <h4 className="font-semibold text-gray-300 mb-3 text-lg">
+                    <h4 className="font-semibold text-gray-300 mb-3 text-base sm:text-lg">
                       Do you plan on making any announcements at HPQL?
                     </h4>
-                    <div className="flex flex-wrap gap-6">
+
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
                       {["yes", "no", "maybe"].map((value) => (
                         <label
                           key={value}
@@ -835,10 +926,12 @@ export default function PractitionerRegisterPage() {
                               onChange={(e) => setAnnouncement(e.target.value)}
                               className="w-4 h-4 text-blue-500 bg-white/10 border-white/20 peer hidden"
                             />
+
                             <div className="w-5 h-5 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
                               <div className="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
                             </div>
                           </div>
+
                           <span className="text-gray-300 capitalize group-hover/radio:text-white transition-colors duration-300">
                             {value}
                           </span>
@@ -849,10 +942,11 @@ export default function PractitionerRegisterPage() {
 
                   {/* Sponsorship */}
                   <div>
-                    <h4 className="font-semibold text-gray-300 mb-3 text-lg">
+                    <h4 className="font-semibold text-gray-300 mb-3 text-base sm:text-lg">
                       Are you interested in sponsorship opportunities?
                     </h4>
-                    <div className="flex flex-wrap gap-6">
+
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
                       {[
                         { value: "yes", label: "Yes, please contact me" },
                         { value: "no", label: "Not at this time" },
@@ -870,11 +964,13 @@ export default function PractitionerRegisterPage() {
                               onChange={(e) => setSponsorship(e.target.value)}
                               className="w-4 h-4 text-blue-500 bg-white/10 border-white/20 peer hidden"
                             />
+
                             <div className="w-5 h-5 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
                               <div className="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
                             </div>
                           </div>
-                          <span className="text-gray-300 group-hover/radio:text-white transition-colors duration-300">
+
+                          <span className="text-gray-300 group-hover/radio:text-white transition-colors duration-300 text-sm sm:text-base">
                             {option.label}
                           </span>
                         </label>
@@ -884,10 +980,11 @@ export default function PractitionerRegisterPage() {
 
                   {/* Information Request */}
                   <div>
-                    <h4 className="font-semibold text-gray-300 mb-3 text-lg">
+                    <h4 className="font-semibold text-gray-300 mb-3 text-base sm:text-lg">
                       What information would you like to receive?
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                       {[
                         "Sales Brochure",
                         "Attendee Information",
@@ -907,10 +1004,12 @@ export default function PractitionerRegisterPage() {
                               onChange={() => handleInfoRequestChange(item)}
                               className="w-4 h-4 text-blue-500 rounded bg-white/10 border-white/20 peer hidden"
                             />
+
                             <div className="w-5 h-5 rounded border-2 border-gray-400 group-hover/checkbox:border-blue-400 transition-all duration-300 peer-checked:bg-blue-500 peer-checked:border-blue-500 flex items-center justify-center">
                               <CheckCircle className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300" />
                             </div>
                           </div>
+
                           <span className="text-sm text-gray-300 group-hover/checkbox:text-white transition-colors duration-300">
                             {item}
                           </span>
@@ -920,91 +1019,107 @@ export default function PractitionerRegisterPage() {
                   </div>
 
                   {/* Organizer Communication */}
-                  <div className="bg-white/5 rounded-xl p-5 border border-white/10">
-                    <p className="text-sm text-gray-300 mb-4 font-medium">
+                  <div className="bg-white/5 rounded-xl p-4 sm:p-5 border border-white/10">
+                    <p className="text-sm text-gray-300 mb-4 font-medium leading-relaxed">
                       I would like to receive tailored information, including
                       industry insights, exclusive networking opportunities and
                       access to offers from Hpql
                     </p>
-                    <div className="flex flex-wrap gap-6 text-sm justify-between">
+
+                    <div className="flex flex-col gap-4 sm:gap-6 text-sm">
                       {["Email", "Phone", "SMS"].map((type) => (
-                        <div key={type} className="flex items-center gap-3">
-                          <span className="text-gray-400 font-medium w-12">
+                        <div
+                          key={type}
+                          className="flex flex-col sm:flex-row sm:items-center gap-3"
+                        >
+                          <span className="text-gray-400 font-medium min-w-[50px]">
                             {type}:
                           </span>
-                          {["yes", "no"].map((option) => (
-                            <label
-                              key={option}
-                              className="flex items-center gap-1 cursor-pointer group/radio"
-                            >
-                              <div className="relative">
-                                <input
-                                  type="radio"
-                                  name={`org-${type}`}
-                                  value={option}
-                                  onChange={() =>
-                                    setOrgComm({
-                                      ...orgComm,
-                                      [type.toLowerCase()]: option,
-                                    })
-                                  }
-                                  className="w-3.5 h-3.5 text-blue-500 bg-white/10 border-white/20 peer hidden"
-                                />
-                                <div className="w-4 h-4 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
+
+                          <div className="flex gap-4">
+                            {["yes", "no"].map((option) => (
+                              <label
+                                key={option}
+                                className="flex items-center gap-1 cursor-pointer group/radio"
+                              >
+                                <div className="relative">
+                                  <input
+                                    type="radio"
+                                    name={`org-${type}`}
+                                    value={option}
+                                    onChange={() =>
+                                      setOrgComm({
+                                        ...orgComm,
+                                        [type.toLowerCase()]: option,
+                                      })
+                                    }
+                                    className="w-3.5 h-3.5 text-blue-500 bg-white/10 border-white/20 peer hidden"
+                                  />
+
+                                  <div className="w-4 h-4 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
+                                  </div>
                                 </div>
-                              </div>
-                              <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
-                                {option}
-                              </span>
-                            </label>
-                          ))}
+
+                                <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
+                                  {option}
+                                </span>
+                              </label>
+                            ))}
+                          </div>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Exhibitor Communication */}
-                  <div className="bg-white/5 rounded-xl p-5 border border-white/10">
-                    <p className="text-sm text-gray-300 mb-4 font-medium">
+                  <div className="bg-white/5 rounded-xl p-4 sm:p-5 border border-white/10">
+                    <p className="text-sm text-gray-300 mb-4 font-medium leading-relaxed">
                       I would like to receive information about innovations,
                       products and services from exhibitors and sponsors.
                     </p>
-                    <div className="flex flex-wrap gap-6 text-sm justify-between">
+
+                    <div className="flex flex-col gap-4 sm:gap-6 text-sm">
                       {["Email", "Phone", "SMS"].map((type) => (
-                        <div key={type} className="flex items-center gap-3">
-                          <span className="text-gray-400 font-medium w-12">
+                        <div
+                          key={type}
+                          className="flex flex-col sm:flex-row sm:items-center gap-3"
+                        >
+                          <span className="text-gray-400 font-medium min-w-[50px]">
                             {type}:
                           </span>
-                          {["yes", "no"].map((option) => (
-                            <label
-                              key={option}
-                              className="flex items-center justify-between gap-1 cursor-pointer group/radio"
-                            >
-                              <div className="relative">
-                                <input
-                                  type="radio"
-                                  name={`expo-${type}`}
-                                  value={option}
-                                  onChange={() =>
-                                    setExhibitorComm({
-                                      ...exhibitorComm,
-                                      [type.toLowerCase()]: option,
-                                    })
-                                  }
-                                  className="w-3.5 h-3.5 text-blue-500 bg-white/10 border-white/20 peer hidden"
-                                />
-                                <div className="w-4 h-4 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
 
-                                  <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
+                          <div className="flex gap-4">
+                            {["yes", "no"].map((option) => (
+                              <label
+                                key={option}
+                                className="flex items-center gap-1 cursor-pointer group/radio"
+                              >
+                                <div className="relative">
+                                  <input
+                                    type="radio"
+                                    name={`expo-${type}`}
+                                    value={option}
+                                    onChange={() =>
+                                      setExhibitorComm({
+                                        ...exhibitorComm,
+                                        [type.toLowerCase()]: option,
+                                      })
+                                    }
+                                    className="w-3.5 h-3.5 text-blue-500 bg-white/10 border-white/20 peer hidden"
+                                  />
+
+                                  <div className="w-4 h-4 rounded-full border-2 border-gray-400 group-hover/radio:border-blue-400 transition-all duration-300 peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
+                                  </div>
                                 </div>
-                              </div>
-                              
-                              <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
-                                {option}
-                              </span>
-                            </label>
-                          ))}
+
+                                <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
+                                  {option}
+                                </span>
+                              </label>
+                            ))}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -1018,21 +1133,33 @@ export default function PractitionerRegisterPage() {
                   type="submit"
                   className="relative group/btn w-full overflow-hidden transition-all duration-500"
                 >
+                  {/* Glow Background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-2xl animate-gradient-x"></div>
+
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur-xl opacity-0 group-hover/btn:opacity-60 transition-opacity duration-500"></div>
-                  <div className="relative bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-10 py-4 rounded-2xl text-lg font-bold hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 w-full">
-                    <Stethoscope className="w-5 h-5" />
-                    <span>Complete Registration</span>
-                    <CheckCircle className="w-5 h-5 group-hover/btn:scale-125 transition-transform duration-300" />
+
+                  {/* Main Button */}
+                  <div className="relative bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-5 sm:px-8 md:px-10 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base md:text-lg font-bold hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 w-full">
+                    <Stethoscope className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+
+                    <span className="text-center leading-snug">
+                      Complete Registration
+                    </span>
+
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 group-hover/btn:scale-125 transition-transform duration-300" />
+
                     <div className="absolute inset-0 rounded-2xl bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
                   </div>
+
+                  {/* Shine Effect */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden">
                     <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                   </div>
                 </button>
 
-                <div className="flex items-center justify-center gap-4 mt-6">
-                  <p className="text-xs text-gray-500 text-center">
+                {/* Terms Text */}
+                <div className="flex items-center justify-center mt-5 sm:mt-6 px-2">
+                  <p className="text-[11px] sm:text-xs text-gray-500 text-center leading-relaxed">
                     By submitting, you agree to our Terms of Service and Privacy
                     Policy
                   </p>
