@@ -29,10 +29,14 @@ import {
 } from "@mui/icons-material";
 import { ChevronRight, Headphones, Mail, Phone, Shield, Sparkles } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
+import ExhibitionMap from "../../../Components/exhibition/ExhibitionMap";
+import axios from "../../../api/axios";
+import { getExhibitionById } from "../../../api/exhibition";
 
 const ExhibitorPortal = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [isFormDirty, setIsFormDirty] = useState(false);
+  const [exhibitionData, setExhibitionData] = useState({});
 
   // Updated tabs with your 7 required sections
   const tabs = [
@@ -44,6 +48,20 @@ const ExhibitorPortal = () => {
     { id: "payment", label: "Payment", icon: PaymentIcon },
     { id: "support", label: "Support", icon: SupportIcon },
   ];
+
+  const getExhibitionData = async () => {
+    try {
+     const response = await getExhibitionById(1)
+    console.log(response);
+    setExhibitionData(response); 
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getExhibitionData()
+  }, [])
 
   // Stats data with theme colors
   const statsData = [
@@ -480,61 +498,8 @@ const ExhibitorPortal = () => {
                   View your booth location and exhibition layout
                 </p>
               </div>
-
-              <div className="p-4 sm:p-5 md:p-6 lg:p-8">
-                <div className="bg-gray-50 rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 border border-dashed border-gray-200">
-                  <div className="space-y-3 sm:space-y-4">
-                    <img
-                      src="/Images/exhibition-floor-plan.webp"
-                      alt="exhibition-floor-plan"
-                      className="object-cover h-auto w-full shadow-md rounded-lg sm:rounded-xl"
-                    />
-                    <img
-                      src="/Images/taqeem-exhibition-booth-designs-1024x602.jpg"
-                      alt="exhibition-floor-design"
-                      className="object-cover h-auto w-full shadow-md rounded-lg sm:rounded-xl"
-                    />
-                  </div>
-                  
-                  {/* Booth Location Highlight */}
-                  <div className="mt-4 sm:mt-5 md:mt-6 p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-100">
-                    <div className="flex items-center gap-2 mb-2">
-                      <LocationIcon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
-                      <span className="text-xs sm:text-sm font-medium text-gray-800">Your Booth Location: <span className="text-blue-600 font-bold">A12</span></span>
-                    </div>
-                    <p className="text-xs text-gray-600">Hall 1, Premium Corner Section - Near Main Entrance</p>
-                  </div>
-
-                  <div className="text-center">
-                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mt-4 sm:mt-5 md:mt-6">
-                      <Button
-                        variant="contained"
-                        className="!bg-gradient-to-r !from-emerald-500 !to-green-400 !rounded-full !px-3 sm:!px-4 md:!px-5 lg:!px-6 !text-xs sm:!text-sm !py-1.5 sm:!py-2 !shadow-md hover:!shadow-lg !normal-case"
-                      >
-                        Available
-                      </Button>
-                      <Button
-                        variant="contained"
-                        className="!bg-gradient-to-r !from-amber-500 !to-orange-400 !rounded-full !px-3 sm:!px-4 md:!px-5 lg:!px-6 !text-xs sm:!text-sm !py-1.5 sm:!py-2 !shadow-md hover:!shadow-lg !normal-case"
-                      >
-                        Selected
-                      </Button>
-                      <Button
-                        variant="contained"
-                        className="!bg-gradient-to-r !from-purple-500 !to-pink-400 !rounded-full !px-3 sm:!px-4 md:!px-5 lg:!px-6 !text-xs sm:!text-sm !py-1.5 sm:!py-2 !shadow-md hover:!shadow-lg !normal-case"
-                      >
-                        Your Booth
-                      </Button>
-                      <Button
-                        variant="contained"
-                        className="!bg-gradient-to-r !from-red-500 !to-rose-500 !rounded-full !px-3 sm:!px-4 md:!px-5 lg:!px-6 !text-xs sm:!text-sm !py-1.5 sm:!py-2 !shadow-md hover:!shadow-lg !normal-case"
-                      >
-                        Booked
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <ExhibitionMap exhibitionData={exhibitionData}/>
+              
             </div>
           </div>
         )}
