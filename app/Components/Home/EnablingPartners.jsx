@@ -22,7 +22,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 export default function EnablingPartners() {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <div className="relative">
       {/* Dark themed background */}
@@ -108,27 +112,30 @@ export default function EnablingPartners() {
 
                     <div className="relative inline-flex items-center gap-1 xs:gap-2 px-2 xs:px-3 sm:px-4 py-1 xs:py-1.5 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[8px] xs:text-[10px] sm:text-xs">
                       <Building2 className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-blue-400" />
-                      <span className="">Strategic Partners</span>
+                      <span className="">{t.stratigicPartner}</span>
                       {/* <span className="inline xs:hidden">Partners</span> */}
                       <span className="w-0.5 h-0.5 bg-white/30 rounded-full hidden xs:block"></span>
                       <Trophy className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-cyan-400" />
-                      <span className="">Enabling Entities</span>
+                      <span className="">{t.enablingentities}</span>
                     </div>
                   </div>
+                  {language === "ar" && (
+                    <h2
+                      className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-right"
+                      dir="rtl"
+                    >
+                      الجــــهات الممكــــنة للمؤتمر
+                    </h2>
+                  )}
 
-                  <h2
-                    className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-right"
-                    dir="rtl"
-                  >
-                    الجــــهات الممكــــنة للمؤتمر
-                  </h2>
-
-                  <h2 className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-end">
-                    Enabling Entities{" "}
-                    <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                      of the Conference
-                    </span>
-                  </h2>
+                  {language === "en" && (
+                    <h2 className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-end">
+                      Enabling Entities{" "}
+                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                        of the Conference
+                      </span>
+                    </h2>
+                  )}
 
                   <div className="flex justify-center lg:justify-end">
                     <div className="relative w-16 xs:w-20 h-0.5 xs:h-1 my-3 xs:my-4">
@@ -136,31 +143,34 @@ export default function EnablingPartners() {
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
                     </div>
                   </div>
-
-                  <p
-                    className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center lg:text-right px-2 xs:px-0"
-                    dir="rtl"
-                  >
-                    يحظــــى مؤتمر تعزيز الصحة وجــــودة الحياة بدعم وتمكيــــن
-                    نخبة من الجهات الحكومية والشــــركاء الاستراتيجيين، الذين
-                    يســــخرون إمكاناتهم لتعزيز جودة الحيــــاة وتطويــــر
-                    القطاع الصحــــي، بما يتماشــــى مع المســــتهدفات الوطنية
-                    الطموحة.
-                  </p>
-
-                  <p className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mt-3 xs:mt-4 text-center lg:text-end px-2 xs:px-0">
-                    HEAL is empowered and supported by elite government entities
-                    and strategic partners. They leverage their resources to
-                    enhance quality of life and develop the healthcare sector,
-                    in alignment with ambitious national objectives.
-                  </p>
+                  {language === "ar" && (
+                    <p
+                      className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center lg:text-right px-2 xs:px-0"
+                      dir="rtl"
+                    >
+                      يحظــــى مؤتمر تعزيز الصحة وجــــودة الحياة بدعم
+                      وتمكيــــن نخبة من الجهات الحكومية والشــــركاء
+                      الاستراتيجيين، الذين يســــخرون إمكاناتهم لتعزيز جودة
+                      الحيــــاة وتطويــــر القطاع الصحــــي، بما يتماشــــى مع
+                      المســــتهدفات الوطنية الطموحة.
+                    </p>
+                  )}
+                  {language === "en" && (
+                    <p className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mt-3 xs:mt-4 text-center lg:text-end px-2 xs:px-0">
+                      HEAL is empowered and supported by elite government
+                      entities and strategic partners. They leverage their
+                      resources to enhance quality of life and develop the
+                      healthcare sector, in alignment with ambitious national
+                      objectives.
+                    </p>
+                  )}
 
                   {/* Decorative stat - Mobile optimized */}
                   <div className="flex justify-center lg:justify-end mt-4 xs:mt-5 sm:mt-6 gap-3 xs:gap-4">
                     <div className="flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1 xs:py-1.5 rounded-full bg-white/5 border border-white/10">
                       <Users className="w-3 h-3 xs:w-3.5 xs:h-3.5 text-blue-400" />
                       <span className="text-[9px] xs:text-xs text-gray-300">
-                        Nationwide Impact
+                        {t.nationwideImpact}
                       </span>
                     </div>
                   </div>
@@ -170,8 +180,7 @@ export default function EnablingPartners() {
               {/* Bottom decorative note - Mobile optimized */}
               <div className="text-center mt-8 xs:mt-10 sm:mt-12 md:mt-16 relative z-10">
                 <p className="text-[8px] xs:text-[9px] sm:text-xs text-gray-500 px-2">
-                  * Strategic partners committed to healthcare excellence and
-                  quality of life enhancement
+                  *{t.stratigicPartnerCommitted}
                 </p>
               </div>
             </div>
@@ -232,18 +241,22 @@ export default function EnablingPartners() {
                     {/* top row */}
                     <div className="flex flex-col sm:flex-row justify-between gap-4">
                       <div className="flex items-center justify-center sm:justify-start">
-                        <span className="text-sm sm:text-lg lg:text-xl font-bold leading-snug text-emerald-500 text-center sm:text-left">
-                          Moving forward together towards
-                        </span>
+                        {language === "en" && (
+                          <span className="text-sm sm:text-lg lg:text-xl font-bold leading-snug text-emerald-500 text-center sm:text-left">
+                            Moving forward together towards
+                          </span>
+                        )}
                       </div>
 
                       <div className="flex items-center justify-center sm:justify-end">
-                        <span
-                          className="text-sm sm:text-lg lg:text-xl font-bold leading-snug text-emerald-500 text-center sm:text-right"
-                          dir="rtl"
-                        >
-                          لننطلق معا نحو
-                        </span>
+                        {language === "ar" && (
+                          <span
+                            className="text-sm sm:text-lg lg:text-xl font-bold leading-snug text-emerald-500 text-center sm:text-right"
+                            dir="rtl"
+                          >
+                            لننطلق معا نحو
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -251,19 +264,23 @@ export default function EnablingPartners() {
                     <div className="flex flex-col sm:flex-row justify-between gap-5 mt-4">
                       {/* english */}
                       <div className="space-y-1 text-center sm:text-left">
-                        <h3 className="text-base sm:text-lg lg:text-xl font-bold leading-snug text-blue-950">
-                          Health Promotion & Quality of Life
-                        </h3>
+                        {language === "en" && (
+                          <h3 className="text-base sm:text-lg lg:text-xl font-bold leading-snug text-blue-950">
+                            Health Promotion & Quality of Life
+                          </h3>
+                        )}
                       </div>
 
                       {/* arabic */}
                       <div className="space-y-1 text-center sm:text-right">
-                        <h3
-                          className="text-base sm:text-lg lg:text-xl font-bold leading-snug text-blue-950"
-                          dir="rtl"
-                        >
-                          تعزيز الصحة وجودة الحياة
-                        </h3>
+                        {language === "ar" && (
+                          <h3
+                            className="text-base sm:text-lg lg:text-xl font-bold leading-snug text-blue-950"
+                            dir="rtl"
+                          >
+                            تعزيز الصحة وجودة الحياة
+                          </h3>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -293,25 +310,33 @@ export default function EnablingPartners() {
                 <div className="flex items-center gap-3">
                   <div className="h-8 w-0.5 rounded-full bg-gradient-to-b from-cyan-400 to-purple-500"></div>
                   <div className="flex items-center gap-2">
-                    <span className="text-lg sm:text-xl font-black tracking-tight bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
-                      HPQL
-                    </span>
+                    {language === "en" && (
+                      <span className="text-lg sm:text-xl font-black tracking-tight bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                        HPQL
+                      </span>
+                    )}
                     <div className="h-1 w-1 rounded-full bg-white/30 hidden sm:block"></div>
                     <span className="text-[10px] sm:text-xs tracking-[0.2em] text-gray-400 uppercase">
-                      <span className="">
-                        Health Promotion & Quality Of Life
-                      </span>
+                      {language === "en" && (
+                        <span className="">
+                          Health Promotion & Quality Of Life
+                        </span>
+                      )}
                       {/* <span className="inline sm:hidden">HPQL</span> */}
                     </span>
                   </div>
                 </div>
 
                 {/* Right Arabic */}
-                <div
-                  className="text-xs sm:text-sm text-gray-300 tracking-wide text-right"
-                  dir="rtl"
-                >
-                  تعزيز الصحة وجودة الحياة
+                <div>
+                  {language === "ar" && (
+                    <div
+                      className="text-xs sm:text-sm text-gray-300 tracking-wide text-right"
+                      dir="rtl"
+                    >
+                      تعزيز الصحة وجودة الحياة
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -319,65 +344,74 @@ export default function EnablingPartners() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mt-6 sm:mt-8">
                 {/* LEFT CONTENT */}
                 <div>
-                  {/* Mini Label */}
-                  <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-[10px] sm:text-xs font-medium text-cyan-300 mb-3 sm:mb-4">
-                    <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
-                    <span className="hidden sm:inline">
-                      Organization & Operational Excellence
-                    </span>
-                    <span className="inline sm:hidden">
-                      Operational Excellence
-                    </span>
-                  </div>
+                  {language === "en" && (
+                    <div>
+                      {/* Mini Label */}
+                      <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-[10px] sm:text-xs font-medium text-cyan-300 mb-3 sm:mb-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
+                        <span className="hidden sm:inline">
+                          Organization & Operational Excellence
+                        </span>
+                        <span className="inline sm:hidden">
+                          Operational Excellence
+                        </span>
+                      </div>
 
-                  {/* Heading */}
-                  <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold leading-[1.2] text-white">
-                    Absolute precision for an experience befitting the Kingdom
-                  </h3>
+                      {/* Heading */}
+                      <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold leading-[1.2] text-white">
+                        Absolute precision for an experience befitting the
+                        Kingdom
+                      </h3>
 
-                  {/* Description */}
-                  <p className="mt-3 sm:mt-4 text-sm text-gray-300 leading-relaxed max-w-xl">
-                    All operational facets of the conference are managed and
-                    executed by{" "}
-                    <span className="font-semibold text-cyan-300">
-                      VEXORA SOLUTIONS
-                    </span>
-                  </p>
+                      {/* Description */}
+                      <p className="mt-3 sm:mt-4 text-sm text-gray-300 leading-relaxed max-w-xl">
+                        All operational facets of the conference are managed and
+                        executed by{" "}
+                        <span className="font-semibold text-cyan-300">
+                          VEXORA SOLUTIONS
+                        </span>
+                      </p>
 
-                  {/* bottom tags */}
-                  <div className="mt-4 sm:mt-5 flex flex-wrap gap-2">
-                    <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] text-gray-300 backdrop-blur-md">
-                      Premium Conference Operations
+                      {/* bottom tags */}
+                      <div className="mt-4 sm:mt-5 flex flex-wrap gap-2">
+                        <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] text-gray-300 backdrop-blur-md">
+                          Premium Conference Operations
+                        </div>
+                        <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] text-gray-300 backdrop-blur-md">
+                          Kingdom Standard Experience
+                        </div>
+                      </div>
                     </div>
-                    <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] text-gray-300 backdrop-blur-md">
-                      Kingdom Standard Experience
-                    </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* RIGHT CONTENT */}
-                <div className="lg:text-right" dir="rtl">
-                  {/* Mini Label */}
-                  <div className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-[10px] sm:text-xs font-medium text-purple-300 mb-3 sm:mb-4">
-                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
-                    <span>التنظيم والتميز التشغيلي</span>
-                  </div>
+                <div>
+                  {language === "ar" && (
+                    <div className="lg:text-right" dir="rtl">
+                      {/* Mini Label */}
+                      <div className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-[10px] sm:text-xs font-medium text-purple-300 mb-3 sm:mb-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
+                        <span>التنظيم والتميز التشغيلي</span>
+                      </div>
 
-                  {/* Heading */}
-                  <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold leading-[1.3] text-white">
-                    التزام بالدقة المتناهيـــة لضـــمان تجـــربة تنظيمية تليق
-                    بمكانة المملكة
-                  </h3>
+                      {/* Heading */}
+                      <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold leading-[1.3] text-white">
+                        التزام بالدقة المتناهيـــة لضـــمان تجـــربة تنظيمية
+                        تليق بمكانة المملكة
+                      </h3>
 
-                  {/* Description */}
-                  <p className="mt-3 sm:mt-4 text-sm text-gray-300 leading-relaxed max-w-xl lg:ml-auto">
-                    يتم إدارة وتنفيذ كافة العمليات التشغيلية للمؤتمر بواسطة
-                    <span className="font-semibold text-cyan-300">
-                      {" "}
-                      SOLUTIONS VEXORA
-                    </span>
-                    ، بما يضمن أعلى معايير الجودة والدقة
-                  </p>
+                      {/* Description */}
+                      <p className="mt-3 sm:mt-4 text-sm text-gray-300 leading-relaxed max-w-xl lg:ml-auto">
+                        يتم إدارة وتنفيذ كافة العمليات التشغيلية للمؤتمر بواسطة
+                        <span className="font-semibold text-cyan-300">
+                          {" "}
+                          SOLUTIONS VEXORA
+                        </span>
+                        ، بما يضمن أعلى معايير الجودة والدقة
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -387,25 +421,29 @@ export default function EnablingPartners() {
                   {/* Logo 1 */}
                   <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-3 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/30 hover:bg-white/10 w-full sm:w-auto flex justify-center">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <Image
-                      src="/Images/Home/EnabalingPartners/Logo.png"
-                      alt="Logo"
-                      width={150}
-                      height={60}
-                      className="relative z-10 w-32 sm:w-36 h-auto object-contain"
-                    />
+                    {language === 'en' && (
+                      <Image
+                        src="/Images/Home/EnabalingPartners/Logo.png"
+                        alt="Logo"
+                        width={150}
+                        height={60}
+                        className="relative z-10 w-32 sm:w-36 h-auto object-contain"
+                      />
+                    )}
                   </div>
 
                   {/* Logo 2 */}
                   <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-3 backdrop-blur-xl transition-all duration-500 hover:border-purple-400/30 hover:bg-white/10 w-full sm:w-auto flex justify-center">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <Image
-                      src="/Images/Home/EnabalingPartners/WhiteLogo.png"
-                      alt="White Logo"
-                      height={60}
-                      width={200}
-                      className="relative z-10 w-36 sm:w-44 h-auto object-contain"
-                    />
+                    {language === 'ar' && (
+                      <Image
+                        src="/Images/Home/EnabalingPartners/WhiteLogo.png"
+                        alt="White Logo"
+                        height={60}
+                        width={200}
+                        className="relative z-10 w-36 sm:w-44 h-auto object-contain"
+                      />
+                    )}
                   </div>
                 </div>
               </div>

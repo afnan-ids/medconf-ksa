@@ -1,5 +1,7 @@
 "use client";
 
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../il18/translations";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -23,124 +25,143 @@ import {
   ArrowRight,
   Shield,
 } from "lucide-react";
-import { Handshake, Building2, TrendingUp } from "lucide-react"
+import { Handshake, Building2, TrendingUp } from "lucide-react";
 import Image from "next/image";
 
 const navlinks = [
-  { label: "Home", href: "/" },
+  { label: "home", href: "/" },
+
   {
-    label: "Services",
+    label: "services",
     href: "/Services",
     submenus: [
       {
-        label: "Conference Organization",
+        label: "conferenceOrganization",
         href: "/Services/conferenceorganization",
         icon: Calendar,
       },
       {
-        label: "Exhibition & Space Booking",
+        label: "exhibitionSpaceBooking",
         href: "/Services/exhibitionspacebooking",
         icon: Building,
       },
       {
-        label: "Practitioner Registration",
+        label: "practitionerRegistration",
         href: "/Services/practitionerregistration",
         icon: UserPlus,
       },
       {
-        label: "View All Services",
+        label: "viewAllServices",
         href: "/Services",
         isViewAll: true,
         icon: Eye,
       },
     ],
   },
-  { label: "Events", href: "/pages/Events" },
+
+  { label: "events", href: "/pages/Events" },
+
   {
-    label: "Portals",
+    label: "portals",
     href: "/pages/Portals",
     submenus: [
       {
-        label: "Sponsor Portal",
+        label: "sponsorPortal",
         href: "/pages/Portals/SponcerPortal/dashboard",
         icon: Trophy,
       },
       {
-        label: "Exhibitor Portal",
+        label: "exhibitorPortal",
         href: "/pages/Portals/ExhibitorPortal/dashboard",
         icon: Building,
       },
       {
-        label: "Visitor Portal",
+        label: "visitorPortal",
         href: "/pages/Portals/VisitorPortal/dashboard",
         icon: Eye,
       },
       {
-        label: "Health Care Portal",
+        label: "healthCarePortal",
         href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
         icon: Stethoscope,
       },
       {
-        label: "Admin Portal",
+        label: "adminPortal",
         href: "/Admin/Dashboard",
         icon: Shield,
       },
       {
-        label: "View All Portals",
+        label: "viewAllPortals",
         href: "/pages/Portals/",
         isViewAll: true,
         icon: Eye,
       },
     ],
   },
+
   {
-  label: "About",
-  href: "/pages/AboutUs",
-  submenus: [
-    { label: "Who We Are", href: "/pages/AboutUs", icon: Building2 },
-    { label: "Our Journey", href: "/pages/AboutUs/ExhibitionJourney", icon: TrendingUp },
-    { label: "Partnership Opportunities", href: "/pages/AboutUs/SponsorshipPartnershipOpportunities", icon: Handshake },
-  ],
-},
-  { label: "Contact", href: "/pages/ContactUs" },
-  { label: "News & Blogs", href: "/pages/NewsBlogPage" },
-  { label: "FAQ", href: "/pages/FAQ" },
+    label: "about",
+    href: "/pages/AboutUs",
+    submenus: [
+      {
+        label: "whoWeAre",
+        href: "/pages/AboutUs",
+        icon: Building2,
+      },
+      {
+        label: "ourJourney",
+        href: "/pages/AboutUs/ExhibitionJourney",
+        icon: TrendingUp,
+      },
+      {
+        label: "partnershipOpportunities",
+        href: "/pages/AboutUs/SponsorshipPartnershipOpportunities",
+        icon: Handshake,
+      },
+    ],
+  },
+
+  { label: "newsBlogs", href: "/pages/NewsBlogPage" },
+  { label: "faq", href: "/pages/FAQ" },
+
   {
-    label: "Whats On ?",
+    label: "whatsOn",
     href: "#",
     submenus: [
       {
-        label: "Medical-Innovation-Arena",
+        label: "medicalInnovationArena",
         href: "/pages/WhatsOn/MedicalInnovationArena",
         icon: Lightbulb,
       },
       {
-        label: "Healthcare-Innovation-Hub",
+        label: "healthcareInnovationHub",
         href: "/pages/WhatsOn/HealthcareInnovationHub",
         icon: Microscope,
       },
       {
-        label: "Medical-Technology-Zone",
+        label: "medicalTechnologyZone",
         href: "/pages/WhatsOn/MedicalTechnologyZone",
         icon: Cpu,
       },
       {
-        label: "Clinical-Knowledge-Forum",
+        label: "clinicalKnowledgeForum",
         href: "/pages/WhatsOn/ClinicalKnowledgeForum",
         icon: BookOpen,
       },
       {
-        label: "Industry-Collaboration-Exchange",
+        label: "industryCollaborationExchange",
         href: "/pages/WhatsOn/IndustryCollaborationExchange",
         icon: UsersRound,
       },
       {
-        label: "Guided-Exhibition-Tours",
+        label: "guidedExhibitionTours",
         href: "/pages/WhatsOn/GuidedExhibitionTours",
         icon: Landmark,
       },
     ],
   },
+
+  { label: "contact", href: "/pages/ContactUs" },
 ];
 
 export default function Navbar() {
@@ -149,7 +170,8 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownTimeoutRef = useRef(null);
-
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
   const pathname = usePathname();
 
   useEffect(() => {
@@ -256,7 +278,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`relative px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-300 group flex items-center gap-1 ${
+                    className={`relative px-3 py-2 text-sm font-semibold rounded-xl transition-all duration-300 group flex items-center gap-1 ${
                       isActive(link.href, link.submenus)
                         ? "text-blue-400"
                         : scrolled
@@ -268,7 +290,7 @@ export default function Navbar() {
                       <span className="absolute inset-0 bg-blue-500/10 rounded-xl border border-blue-500/30"></span>
                     )}
                     <span className="absolute inset-0 rounded-xl transition-opacity duration-300 bg-white/5 opacity-0 group-hover:opacity-100"></span>
-                    <span className="relative z-10">{link.label}</span>
+                    <span className="relative z-10">{t[link.label]}</span>
                     {link.submenus && (
                       <ChevronDown
                         className={`relative z-10 w-4 h-4 transition-transform duration-300 ${
@@ -315,7 +337,7 @@ export default function Navbar() {
                                       </div>
                                     )}
                                     <span className="flex-1">
-                                      {submenu.label}
+                                      {t[submenu.label]}
                                     </span>
                                     <ArrowRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 transition-all duration-300 -translate-x-2 group-hover/item:translate-x-0" />
                                   </Link>
@@ -368,7 +390,7 @@ export default function Navbar() {
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <LogIn className="w-4 h-4" />
-                  Sign In
+                  {t.signIn}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
@@ -376,6 +398,12 @@ export default function Navbar() {
                 </div>
               </Link>
             </div>
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-2 border rounded text-white"
+            >
+              {language === "en" ? "العربية" : "English"}
+            </button>
 
             {/* Mobile Menu Button */}
             <button
@@ -435,7 +463,7 @@ export default function Navbar() {
                         : "text-gray-300 hover:text-white hover:bg-white/5"
                     }`}
                   >
-                    <span>{link.label}</span>
+                    <span>{t[link.label]}</span>
                     {link.submenus && (
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-300 ${
@@ -466,7 +494,7 @@ export default function Navbar() {
                             {IconComponent && (
                               <IconComponent className="w-4 h-4" />
                             )}
-                            <span>{submenu.label}</span>
+                            <span>{t[submenu.label]}</span>
                             {submenu.isViewAll && (
                               <ArrowRight className="w-3 h-3 ml-auto opacity-70" />
                             )}
@@ -487,9 +515,9 @@ export default function Navbar() {
               <Link
                 href="/Forms/Login"
                 onClick={() => setMobileOpen(false)}
-                className="group relative overflow-hidden block w-full text-center px-4 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-xl transition-all duration-300"
+                className="group relative overflow-hidden block w-full text-center px-2 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-xl transition-all duration-300"
               >
-                <span className="relative z-10 flex items-center justify-center gap-2">
+                <span className="relative z-10 flex items-center justify-center gap-1">
                   <LogIn className="w-4 h-4" />
                   Sign In
                 </span>

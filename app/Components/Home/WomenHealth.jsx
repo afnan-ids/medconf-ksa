@@ -15,7 +15,8 @@ import {
 import Image from "next/image";
 import { Activity } from "react";
 import { FaArrowAltCircleLeft, FaCaretLeft } from "react-icons/fa";
-
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 // DATA
 
 const statsData = [
@@ -80,6 +81,8 @@ const highlightsData = [
 ];
 
 export default function WomenAndHealth() {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <div className="relative isolate overflow-hidden py-6 xs:py-8 sm:py-12 lg:py-16">
       {/* Animated gradient background - Mobile optimized */}
@@ -102,24 +105,27 @@ export default function WomenAndHealth() {
               <div className="relative inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[9px] xs:text-xs sm:text-sm">
                 <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-emerald-300" />
                 <span className="hidden xs:inline">Women Empowerment</span>
-                <span className="inline xs:hidden">Empowerment</span>
+                <span className="inline xs:hidden">{t.empowerment}</span>
               </div>
             </div>
 
             {/* Bilingual Headers - Mobile optimized */}
             <div className="space-y-2 xs:space-y-3 mb-4 xs:mb-6">
-              <h2
-                dir="rtl"
-                className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white px-2"
-              >
-                المرأة والصحــــــــــة
-              </h2>
-
-              <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
-                <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">
-                  Women & Health
-                </span>
-              </h2>
+              {language === "ar" && (
+                <h2
+                  dir="rtl"
+                  className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white px-2"
+                >
+                  المرأة والصحــــــــــة
+                </h2>
+              )}
+              {language === "en" && (
+                <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
+                  <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">
+                    Women & Health
+                  </span>
+                </h2>
+              )}
             </div>
 
             {/* Divider */}
@@ -129,8 +135,9 @@ export default function WomenAndHealth() {
             </div>
 
             {/* Description - Mobile optimized */}
-            <p
-              className="
+            {language === "en" && (
+              <p
+                className="
             max-w-2xl mx-auto
             text-neutral-300/80
             text-xs xs:text-sm sm:text-base
@@ -138,10 +145,11 @@ export default function WomenAndHealth() {
             font-light
             px-2
           "
-            >
-              Highlighting the role of women in advancing healthcare,
-              innovation, medical research, and community well-being.
-            </p>
+              >
+                Highlighting the role of women in advancing healthcare,
+                innovation, medical research, and community well-being.
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -184,30 +192,38 @@ export default function WomenAndHealth() {
               {/* for mobile screens */}
               <div className="max-w-7xl mx-auto w-full flex md:hidden flex-col xs:flex-row items-center justify-between gap-2 xs:gap-3 text-white/80 text-[8px] xs:text-[10px] sm:text-xs mb-0 lg:mb-6">
                 <span className="backdrop-blur-sm bg-white/5 px-2 xs:px-3 py-1 rounded-full text-center">
-                  <span className="font-semibold text-white">HPQL</span>
-                  <span className=""> HEALTH PROMOTION & QUALITY OF LIFE</span>
+                  {language === "en" && (
+                    <span className="font-semibold text-white">HPQL</span>
+                  )}
+                  {language === "en" && (
+                    <span className="">HEALTH PROMOTION & QUALITY OF LIFE</span>
+                  )}
                 </span>
-
-                <span
-                  dir="rtl"
-                  className="backdrop-blur-sm bg-white/5 px-2 xs:px-3 py-1 rounded-full text-center text-[8px] xs:text-[10px] sm:text-xs"
-                >
-                  تعزيز الصحة وجودة الحياة
-                </span>
+                {language === "ar" && (
+                  <span
+                    dir="rtl"
+                    className="backdrop-blur-sm bg-white/5 px-2 xs:px-3 py-1 rounded-full text-center text-[8px] xs:text-[10px] sm:text-xs"
+                  >
+                    تعزيز الصحة وجودة الحياة
+                  </span>
+                )}
               </div>
               {/* for lagre screens  */}
               <div className="hidden max-w-7xl mx-auto w-full md:flex items-center justify-between text-white/80 text-[10px] sm:text-xs mb-6">
-                <span className="backdrop-blur-sm bg-white/5 px-3 py-1 rounded-full">
-                  <span className="font-semibold text-white">HPQL</span> HEALTH
-                  PROMOTION & QUALITY OF LIFE
-                </span>
-
-                <span
-                  dir="rtl"
-                  className="backdrop-blur-sm bg-white/5 px-3 py-1 rounded-full"
-                >
-                  تعزيز الصحة وجودة الحياة
-                </span>
+                {language === "en" && (
+                  <span className="backdrop-blur-sm bg-white/5 px-3 py-1 rounded-full">
+                    <span className="font-semibold text-white">HPQL</span>{" "}
+                    HEALTH PROMOTION & QUALITY OF LIFE
+                  </span>
+                )}
+                {language === "ar" && (
+                  <span
+                    dir="rtl"
+                    className="backdrop-blur-sm bg-white/5 px-3 py-1 rounded-full"
+                  >
+                    تعزيز الصحة وجودة الحياة
+                  </span>
+                )}
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] max-w-7xl mx-auto flex-1 w-full mt-2 xs:mt-3 sm:mt-4">
@@ -245,17 +261,19 @@ export default function WomenAndHealth() {
                             </h3>
                           </div>
                         </div>
-
-                        <p
-                          dir="rtl"
-                          className="text-white text-[10px] xs:text-xs sm:text-sm md:text-lg text-center leading-relaxed"
-                        >
-                          {stat.labelAr}
-                        </p>
-
-                        <p className="text-white/90 text-[9px] xs:text-[10px] sm:text-xs md:text-sm text-center mt-0.5 xs:mt-1">
-                          {stat.labelEn}
-                        </p>
+                        {language === "ar" && (
+                          <p
+                            dir="rtl"
+                            className="text-white text-[10px] xs:text-xs sm:text-sm md:text-lg text-center leading-relaxed"
+                          >
+                            {stat.labelAr}
+                          </p>
+                        )}
+                        {language === "en" && (
+                          <p className="text-white/90 text-[9px] xs:text-[10px] sm:text-xs md:text-sm text-center mt-0.5 xs:mt-1">
+                            {stat.labelEn}
+                          </p>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -266,13 +284,17 @@ export default function WomenAndHealth() {
                   <div className="absolute w-32 h-32 xs:w-48 xs:h-48 sm:w-64 sm:h-64 bg-emerald-500/15 blur-3xl rounded-full" />
 
                   <div className="relative text-center lg:text-right backdrop-blur-sm bg-white/5 rounded-xl xs:rounded-2xl p-3 xs:p-4 border border-white/10">
-                    <h2 className="text-base xs:text-lg sm:text-xl lg:text-3xl font-bold text-white leading-tight">
-                      المــــــرأة والصحــــــة
-                    </h2>
+                    {language === "ar" && (
+                      <h2 className="text-base xs:text-lg sm:text-xl lg:text-3xl font-bold text-white leading-tight">
+                        المــــــرأة والصحــــــة
+                      </h2>
+                    )}
 
-                    <p className="text-sm xs:text-base sm:text-lg lg:text-2xl text-white/90 mt-0.5 xs:mt-1">
-                      Woman & Health
-                    </p>
+                    {language === "en" && (
+                      <p className="text-sm xs:text-base sm:text-lg lg:text-2xl text-white/90 mt-0.5 xs:mt-1">
+                        Woman & Health
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -363,11 +385,15 @@ export default function WomenAndHealth() {
                       "
                     >
                       <span>
-                        <span className="font-semibold text-white">HPQL</span>
-                        <span className="">
-                          {" "}
-                          HEALTH PROMOTION & QUALITY OF LIFE
-                        </span>
+                        {language === "en" && (
+                          <span className="font-semibold text-white">HPQL</span>
+                        )}
+                        {language === "en" && (
+                          <span className="">
+                            {" "}
+                            HEALTH PROMOTION & QUALITY OF LIFE
+                          </span>
+                        )}
                       </span>
                     </div>
                   </div>
@@ -405,9 +431,9 @@ export default function WomenAndHealth() {
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                               <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-400/10 blur-3xl rounded-full" />
                             </div>
-
-                            <h3
-                              className="
+                            {language === "ar" && (
+                              <h3
+                                className="
                             relative
                             z-10
                             text-white
@@ -417,12 +443,13 @@ export default function WomenAndHealth() {
                             md:text-base
                             leading-relaxed
                           "
-                            >
-                              {highlight.titleAr}
-                            </h3>
-
-                            <p
-                              className="
+                              >
+                                {highlight.titleAr}
+                              </h3>
+                            )}
+                            {language === "en" && (
+                              <p
+                                className="
                             relative
                             z-10
                             text-white/80
@@ -433,9 +460,10 @@ export default function WomenAndHealth() {
                             tracking-wide
                             mt-0.5
                           "
-                            >
-                              {highlight.titleEn}
-                            </p>
+                              >
+                                {highlight.titleEn}
+                              </p>
+                            )}
                           </div>
                         ))}
                       </div>
@@ -464,9 +492,10 @@ export default function WomenAndHealth() {
                 <div className="relative z-10 w-full max-w-7xl mx-auto h-full flex flex-col">
                   {/* top arabic text visible only on Desktop */}
                   <div className="hidden md:flex justify-end pt-3 xs:pt-4 sm:pt-5 max-w-2xl mx-auto lg:ps-20 px-3 xs:px-4">
-                    <span
-                      dir="rtl"
-                      className="
+                    {language === "ar" && (
+                      <span
+                        dir="rtl"
+                        className="
                         text-white/80
                         text-[8px] xs:text-[10px] sm:text-xs
                         tracking-[0.15em] xs:tracking-[0.2em]
@@ -475,20 +504,25 @@ export default function WomenAndHealth() {
                         py-0.5 xs:py-1
                         rounded-full
                       "
-                    >
-                      تعزيز الصحة وجودة الحياة
-                    </span>
+                      >
+                        تعزيز الصحة وجودة الحياة
+                      </span>
+                    )}
                   </div>
 
                   {/* visible only on mobile  */}
                   {/* for mobile screens */}
                   <div className="max-w-7xl mt-4 mx-auto w-full flex md:hidden flex-col xs:flex-row items-center justify-between gap-2 xs:gap-3 text-white/80 text-[8px] xs:text-[10px] sm:text-xs mb-0 xs:mb-5 lg:mb-4">
                     <span className="backdrop-blur-sm bg-white/5 px-2 xs:px-3 py-1 rounded-full text-center">
-                      <span className="font-semibold text-white">HPQL</span>
-                      <span className="">
-                        {" "}
-                        HEALTH PROMOTION & QUALITY OF LIFE
-                      </span>
+                      {language === "en" && (
+                        <span className="font-semibold text-white">HPQL</span>
+                      )}
+                      {language === "en" && (
+                        <span className="">
+                          {" "}
+                          HEALTH PROMOTION & QUALITY OF LIFE
+                        </span>
+                      )}
                     </span>
 
                     <span
@@ -502,8 +536,9 @@ export default function WomenAndHealth() {
                   {/* CENTER CONTENT - Mobile optimized */}
                   <div className="flex-1 flex items-center justify-center px-3 xs:px-4 py-6 xs:py-8 lg:pe-26">
                     <div className="w-full text-center lg:text-right backdrop-blur-sm bg-white/5 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-5 border border-white/10">
-                      <h2
-                        className="
+                      {language === "ar" && (
+                        <h2
+                          className="
                       text-base xs:text-lg sm:text-xl
                       lg:text-3xl
                       font-bold
@@ -511,13 +546,16 @@ export default function WomenAndHealth() {
                       leading-[1.2]
                       tracking-tight
                     "
-                      >
-                        المــــــرأة والصحــــــة
-                      </h2>
+                        >
+                          المــــــرأة والصحــــــة
+                        </h2>
+                      )}
 
-                      <p className="text-sm xs:text-base sm:text-lg md:text-2xl font-medium tracking-wide text-white/90 mt-0.5 xs:mt-1">
-                        Woman & Health
-                      </p>
+                      {language === "en" && (
+                        <h2 className="text-sm xs:text-base sm:text-lg md:text-2xl font-medium tracking-wide text-white/90 mt-0.5 xs:mt-1">
+                          Woman & Health
+                        </h2>
+                      )}
 
                       <div className="mt-3 xs:mt-4 sm:mt-5 md:mt-6 flex justify-between items-center gap-2 xs:gap-3">
                         {/* Enhanced Glass Indicator - Mobile optimized */}
@@ -544,12 +582,16 @@ export default function WomenAndHealth() {
                           </div>
                         </div>
                         <div className="text-right flex-1">
-                          <p className="text-white text-xs xs:text-sm sm:text-base font-semibold">
-                            أبرز المواضيع
-                          </p>
-                          <span className="text-white/60 text-[9px] xs:text-[10px] sm:text-xs tracking-wide">
-                            Key Highlights
-                          </span>
+                          {language === "ar" && (
+                            <p className="text-white text-xs xs:text-sm sm:text-base font-semibold">
+                              أبرز المواضيع
+                            </p>
+                          )}
+                          {language === "en" && (
+                            <p className="text-white/60 text-[9px] xs:text-[10px] sm:text-xs tracking-wide">
+                              Key Highlights
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>

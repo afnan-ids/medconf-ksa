@@ -17,8 +17,11 @@ import {
   Share2,
 } from "lucide-react";
 import Link from "next/link";
-
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 export default function EventIndicators() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const mainMetrics = [
     {
       value: "100+",
@@ -150,26 +153,30 @@ export default function EventIndicators() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
                 <div className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
                   <TrendingUp className="w-4 h-4 text-blue-400" />
-                  <span>Event Scale</span>
+                  <span>{t.eventScale}</span>
                   <span className="w-0.5 h-0.5 bg-white/30 rounded-full"></span>
                   <BarChart3 className="w-4 h-4 text-cyan-400" />
-                  <span>Impact Metrics</span>
+                  <span>{t.impactMatricx}</span>
                 </div>
               </div>
 
               {/* Bilingual Headers with enhanced gradients */}
               <div className="space-y-4 mb-8">
-                <h2
-                  className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight"
-                  dir="rtl"
-                >
-                  مؤشـــــرات التأثيـــــر في المؤتمر
-                </h2>
-                <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                  <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
-                    Event Scale Indicators
-                  </span>
-                </h2>
+                {language === "ar" && (
+                  <h2
+                    className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight"
+                    dir="rtl"
+                  >
+                    مؤشـــــرات التأثيـــــر في المؤتمر
+                  </h2>
+                )}
+                {language === "en" && (
+                  <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+                    <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
+                      Event Scale Indicators
+                    </span>
+                  </h2>
+                )}
               </div>
 
               {/* Decorative divider with enhanced animation */}
@@ -180,17 +187,22 @@ export default function EventIndicators() {
 
               {/* Description text with improved readability */}
               <div className="max-w-3xl mx-auto space-y-4">
-                <p
-                  className="text-base md:text-lg text-gray-200/90 leading-relaxed font-light"
-                  dir="rtl"
-                >
-                  يهـــدف المؤتمر والمعـــرض المصاحب له إلى حضور استثنائي في
-                  قلــــب اقتصاد صحـــــي واعـــــد
-                </p>
-                <p className="text-base md:text-lg text-gray-300/80 leading-relaxed font-light">
-                  The conference and exhibition aim for an exceptional presence
-                  in a promising health economy
-                </p>
+                {language === "ar" && (
+                  <p
+                    className="text-base md:text-lg text-gray-200/90 leading-relaxed font-light"
+                    dir="rtl"
+                  >
+                    يهـــدف المؤتمر والمعـــرض المصاحب له إلى حضور استثنائي في
+                    قلــــب اقتصاد صحـــــي واعـــــد
+                  </p>
+                )}
+
+                {language === "en" && (
+                  <p className="text-base md:text-lg text-gray-300/80 leading-relaxed font-light">
+                    The conference and exhibition aim for an exceptional
+                    presence in a promising health economy
+                  </p>
+                )}
               </div>
             </div>
 
@@ -290,15 +302,18 @@ export default function EventIndicators() {
                         </div>
 
                         {/* Labels with improved typography */}
-                        <p
-                          className="text-lg lg:text-xl font-semibold text-white mb-1.5"
-                          dir="rtl"
-                        >
-                          {metric.labelAr}
-                        </p>
-                        <p className="text-sm text-gray-300/80 font-medium tracking-wide">
-                          {metric.labelEn}
-                        </p>
+                        {language === "ar" ? (
+                          <p
+                            className="text-lg lg:text-xl font-semibold text-white mb-1.5"
+                            dir="rtl"
+                          >
+                            {metric.labelAr}
+                          </p>
+                        ) : (
+                          <p className="text-sm text-gray-300/80 font-medium tracking-wide">
+                            {metric.labelEn}
+                          </p>
+                        )}
                       </div>
 
                       {/* Bottom decorative line */}
@@ -315,36 +330,43 @@ export default function EventIndicators() {
                 <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-xl mb-6 shadow-lg">
                   <Globe className="w-4 h-4 text-blue-400" />
                   <span className="text-xs md:text-sm text-gray-200 font-medium">
-                    Digital Reach
+                    {t.digitalReach}
                   </span>
                 </div>
-
-                <h3
-                  className="text-2xl md:text-4xl font-bold text-white mb-3"
-                  dir="rtl"
-                >
-                  وصـــــول عالـــــي للجـــــمهور
-                </h3>
-                <h3 className="text-xl md:text-3xl font-bold">
-                  <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
-                    High reach to audiences
-                  </span>
-                </h3>
+                {language === "ar" && (
+                  <h3
+                    className="text-2xl md:text-4xl font-bold text-white mb-3"
+                    dir="rtl"
+                  >
+                    وصـــــول عالـــــي للجـــــمهور
+                  </h3>
+                )}
+                {language === "en" && (
+                  <h3 className="text-xl md:text-3xl font-bold">
+                    <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
+                      High reach to audiences
+                    </span>
+                  </h3>
+                )}
               </div>
 
               {/* Description with improved styling */}
               <div className="max-w-3xl mx-auto text-center mb-12 space-y-4">
-                <p
-                  className="text-base md:text-lg text-gray-200/90 leading-relaxed font-light"
-                  dir="rtl"
-                >
-                  مـــن خلال المحتـــوى الرقمـــــي للمؤتمر نهدف للوصـــول إلى
-                  كافـــة الجمهور عبر النشر على وسائــــــل الإعـلام الرقمي
-                </p>
-                <p className="text-base md:text-lg text-gray-300/80 leading-relaxed font-light">
-                  Our digital strategy ensures maximum reach to all audiences
-                  through targeted content across all digital media channels
-                </p>
+                {language === "ar" && (
+                  <p
+                    className="text-base md:text-lg text-gray-200/90 leading-relaxed font-light"
+                    dir="rtl"
+                  >
+                    مـــن خلال المحتـــوى الرقمـــــي للمؤتمر نهدف للوصـــول إلى
+                    كافـــة الجمهور عبر النشر على وسائــــــل الإعـلام الرقمي
+                  </p>
+                )}
+                {language === "en" && (
+                  <p className="text-base md:text-lg text-gray-300/80 leading-relaxed font-light">
+                    Our digital strategy ensures maximum reach to all audiences
+                    through targeted content across all digital media channels
+                  </p>
+                )}
               </div>
 
               {/* Audience Metrics - Enhanced 3 Cards */}
@@ -432,16 +454,18 @@ export default function EventIndicators() {
                           >
                             <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
                           </div>
-
-                          <p
-                            className="text-lg lg:text-xl font-semibold text-white mb-1.5"
-                            dir="rtl"
-                          >
-                            {metric.labelAr}
-                          </p>
-                          <p className="text-sm text-gray-300/80 font-medium tracking-wide">
-                            {metric.labelEn}
-                          </p>
+                          {language === "ar" ? (
+                            <p
+                              className="text-lg lg:text-xl font-semibold text-white mb-1.5"
+                              dir="rtl"
+                            >
+                              {metric.labelAr}
+                            </p>
+                          ) : (
+                            <p className="text-sm text-gray-300/80 font-medium tracking-wide">
+                              {metric.labelEn}
+                            </p>
+                          )}
                         </div>
 
                         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-white/50 to-transparent group-hover:w-3/4 transition-all duration-500"></div>
@@ -456,7 +480,7 @@ export default function EventIndicators() {
             <div className="text-center mt-16 relative z-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
                 <p className="text-xs text-gray-400">
-                  Based on projected metrics for 2026 conference season
+                  {t.BasedOnProjected}
                 </p>
               </div>
             </div>
@@ -480,21 +504,41 @@ export default function EventIndicators() {
           opacity: 0;
         }
         @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
         .animate-gradient {
           background-size: 200% auto;
           animation: gradient 3s linear infinite;
         }
         @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.05); }
+          0%,
+          100% {
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.5;
+            transform: scale(1.05);
+          }
         }
         @keyframes pulse-slower {
-          0%, 100% { opacity: 0.2; transform: scale(1); }
-          50% { opacity: 0.35; transform: scale(1.1); }
+          0%,
+          100% {
+            opacity: 0.2;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.35;
+            transform: scale(1.1);
+          }
         }
         .animate-pulse-slow {
           animation: pulse-slow 4s ease-in-out infinite;

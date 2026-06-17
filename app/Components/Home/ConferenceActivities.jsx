@@ -26,6 +26,8 @@ import {
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 const activityGroups = [
   {
     id: 1,
@@ -138,6 +140,8 @@ export default function ConferenceActivities() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   // Check for mobile view
   useEffect(() => {
@@ -179,7 +183,7 @@ export default function ConferenceActivities() {
                 <div className="relative inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] xs:text-xs sm:text-sm">
                   <Calendar className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 text-blue-400" />
                   <span className="hidden xs:inline">Event Highlights</span>
-                  <span className="inline xs:hidden">Highlights</span>
+                  <span className="inline xs:hidden">{t.highlights}</span>
                   <span className="w-0.5 h-0.5 bg-white/30 rounded-full hidden xs:block"></span>
                   <Sparkles className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 text-cyan-400 hidden xs:block" />
                   <span className="hidden xs:inline">3-in-1 Experience</span>
@@ -188,17 +192,21 @@ export default function ConferenceActivities() {
 
               {/* Bilingual Headers - Mobile optimized */}
               <div className="space-y-2 xs:space-y-3 mb-4 xs:mb-6">
-                <h2
-                  className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white px-2"
-                  dir="rtl"
-                >
-                  فعاليـــــــات المؤتمـــــــــــــر
-                </h2>
-                <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Conference Activities
-                  </span>
-                </h2>
+                {language === "ar" && (
+                  <h2
+                    className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white px-2"
+                    dir="rtl"
+                  >
+                    فعاليـــــــات المؤتمـــــــــــــر
+                  </h2>
+                )}
+                {language === "en" && (
+                  <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
+                    <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                      Conference Activities
+                    </span>
+                  </h2>
+                )}
               </div>
 
               <div className="relative w-16 xs:w-20 h-0.5 xs:h-1 mx-auto my-4 xs:my-6">
@@ -281,20 +289,24 @@ export default function ConferenceActivities() {
 
                           {/* Title section - Mobile optimized */}
                           <div className="text-center space-y-1 xs:space-y-2 sm:space-y-3">
-                            <h3
-                              className="text-base xs:text-lg sm:text-xl md:text-2xl font-black text-white tracking-wide px-1"
-                              dir="rtl"
-                            >
-                              {activity.titleAr}
-                            </h3>
+                            {language === "ar" && (
+                              <h3
+                                className="text-base xs:text-lg sm:text-xl md:text-2xl font-black text-white tracking-wide px-1"
+                                dir="rtl"
+                              >
+                                {activity.titleAr}
+                              </h3>
+                            )}
 
                             <div className="flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-3">
                               <div
                                 className={`h-px w-4 xs:w-5 sm:w-8 bg-gradient-to-r ${colors.gradient}`}
                               ></div>
-                              <p className="text-[10px] xs:text-xs sm:text-sm md:text-base text-gray-200 font-semibold">
-                                {activity.titleEn}
-                              </p>
+                              {language === "en" && (
+                                <p className="text-[10px] xs:text-xs sm:text-sm md:text-base text-gray-200 font-semibold">
+                                  {activity.titleEn}
+                                </p>
+                              )}
                               <div
                                 className={`h-px w-4 xs:w-5 sm:w-8 bg-gradient-to-l ${colors.gradient}`}
                               ></div>
@@ -384,15 +396,23 @@ export default function ConferenceActivities() {
                             </div>
 
                             <div className="min-w-0 flex justify-between items-center w-full gap-2 xs:gap-3">
-                              <span className="text-xs xs:text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-white mt-0.5 truncate">
-                                {activity.titleEn}
-                              </span>
-                              <span
-                                className="text-xs xs:text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-white truncate"
-                                dir="rtl"
-                              >
-                                {activity.titleAr}
-                              </span>
+                              <div>
+                                {language === "en" && (
+                                  <span className="text-xs xs:text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-white mt-0.5 truncate">
+                                    {activity.titleEn}
+                                  </span>
+                                )}
+                              </div>
+                              <div>
+                                {language === "ar" && (
+                                  <span
+                                    className="text-xs xs:text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-white truncate"
+                                    dir="rtl"
+                                  >
+                                    {activity.titleAr}
+                                  </span>
+                                )}
+                              </div>
                             </div>
                           </div>
 
@@ -407,15 +427,23 @@ export default function ConferenceActivities() {
                                   className={`mt-1 xs:mt-1.5 sm:mt-2 h-1 w-1 xs:h-1.5 xs:w-1.5 sm:h-2 sm:w-2 rounded-full flex-shrink-0 bg-gradient-to-r ${colors.gradient}`}
                                 />
                                 <div className="w-full flex justify-between items-center min-w-0 gap-1 xs:gap-2">
-                                  <span className="text-[9px] xs:text-[10px] sm:text-xs text-gray-100 mt-0.5 break-words flex-1">
-                                    {activity.listEn[listIdx]}
-                                  </span>
-                                  <span
-                                    className="text-[10px] xs:text-xs sm:text-sm font-medium text-gray-100 break-words text-right"
-                                    dir="rtl"
-                                  >
-                                    {item}
-                                  </span>
+                                  <div>
+                                    {language === "en" && (
+                                      <span className="text-[9px] xs:text-[10px] sm:text-xs text-gray-100 mt-0.5 break-words flex-1">
+                                        {activity.listEn[listIdx]}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div>
+                                    {language === "ar" && (
+                                      <span
+                                        className="text-[10px] xs:text-xs sm:text-sm font-medium text-gray-100 break-words text-right"
+                                        dir="rtl"
+                                      >
+                                        {item}
+                                      </span>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
                             ))}
@@ -423,16 +451,20 @@ export default function ConferenceActivities() {
 
                           {/* Description - Mobile optimized */}
                           <div className="mt-3 xs:mt-4 sm:mt-6 rounded-lg xs:rounded-xl sm:rounded-2xl border border-white/10 bg-black/20 p-2 xs:p-3 sm:p-5">
-                            <p
-                              className="text-[10px] xs:text-xs sm:text-sm leading-5 xs:leading-6 sm:leading-7 text-gray-300 break-words"
-                              dir="rtl"
-                            >
-                              {activity.descriptionAr}
-                            </p>
+                            {language === "ar" && (
+                              <p
+                                className="text-[10px] xs:text-xs sm:text-sm leading-5 xs:leading-6 sm:leading-7 text-gray-300 break-words"
+                                dir="rtl"
+                              >
+                                {activity.descriptionAr}
+                              </p>
+                            )}
                             <div className="my-2 xs:my-3 sm:my-4 h-px bg-white/10" />
-                            <p className="text-[9px] xs:text-[10px] sm:text-xs leading-4 xs:leading-5 sm:leading-6 text-gray-300 break-words">
-                              {activity.descriptionEn}
-                            </p>
+                            {language === "en" && (
+                              <p className="text-[9px] xs:text-[10px] sm:text-xs leading-4 xs:leading-5 sm:leading-6 text-gray-300 break-words">
+                                {activity.descriptionEn}
+                              </p>
+                            )}
                           </div>
 
                           {/* Stats badge in open state - Mobile optimized */}
@@ -460,7 +492,7 @@ export default function ConferenceActivities() {
                 <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 xs:px-5 sm:px-6 md:px-8 py-2 xs:py-2.5 sm:py-3 rounded-full text-[10px] xs:text-xs sm:text-sm font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-1.5 xs:gap-2 sm:gap-3">
                   <Briefcase className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4" />
                   <span className="hidden xs:inline">View Full Agenda</span>
-                  <span className="inline xs:hidden">Agenda</span>
+                  <span className="inline xs:hidden">{t.agenda}</span>
                   <ArrowRight className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>

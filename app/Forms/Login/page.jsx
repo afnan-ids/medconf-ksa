@@ -460,12 +460,6 @@ export default function LoginPage() {
                           Remember
                         </span>
                       </label>
-                      <Link
-                        href="/Forms/PractitionerRegistrationForm"
-                        className="text-xs text-blue-400 hover:text-cyan-400 transition-colors"
-                      >
-                        Create account →
-                      </Link>
                     </div>
 
                     {/* Login Button - Compact */}
@@ -548,9 +542,42 @@ export default function LoginPage() {
                       </button>
                     </div>
                   </div>
+                  {/* Security Note */}
+                  <div className="text-center pt-1 mb-4">
+                    <p className="text-xs text-gray-500 flex items-center justify-center gap-1">
+                      {/* <Shield className="w-3 h-3 text-emerald-400" /> */}
+                      <span>Dont Have an Account?</span>
+                    </p>
+                  </div>
+                  {/* Login Button - Compact */}
+                  <Link
+                    href="/Forms/PractitionerRegistrationForm"
+                    className="p-5 space-y-4"
+                  >
+                    <button
+                      type="submit"
+                      className="w-100 group relative overflow-hidden rounded-lg  bg-gradient-to-r from-blue-600 to-cyan-600 p-0.5 shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      <div className="relative px-4 py-2 bg-cyan-100/10 rounded-lg transition-all duration-300 group-hover:bg-transparent">
+                        <span className="text-white text-sm font-semibold flex items-center justify-center gap-2">
+                          {isLoading ? (
+                            <>
+                              <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                              Signing in...
+                            </>
+                          ) : (
+                            <>
+                              Sign Up
+                              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                            </>
+                          )}
+                        </span>
+                      </div>
+                    </button>
+                  </Link>
 
                   {/* Footer - Compact */}
-                  <div className="text-center py-2 border-t border-white/10 bg-white/5">
+                  <div className="text-center mt-4 py-2 border-t border-white/10 bg-white/5">
                     <p className="text-gray-500 text-[11px]">
                       By signing in, you agree to our{" "}
                       <Link

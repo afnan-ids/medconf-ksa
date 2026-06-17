@@ -14,6 +14,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 
 const objectives = [
   {
@@ -118,6 +120,8 @@ const colorVariants = {
 };
 
 export default function StrategicObjectives() {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <section className="relative w-full mx-auto overflow-hidden">
       {/* Dark themed background */}
@@ -141,69 +145,75 @@ export default function StrategicObjectives() {
 
             {/* Header Section - Two Columns (English + Arabic) */}
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-16 relative z-10">
-              {/* English Column */}
-              <div className="text-center md:text-left">
-                <div className="relative inline-block group/badge mb-4 sm:mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
-                  <div className="relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] sm:text-xs">
-                    <Target className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                    <span>Our Mission</span>
-                    <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
-                    <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
-                    <span>Vision 2030</span>
+              <div>
+                {language === "en" && (
+                  <div className="text-center md:text-left">
+                    <div className="relative inline-block group/badge mb-4 sm:mb-6">
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
+                      <div className="relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] sm:text-xs">
+                        <Target className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
+                        <span>Our Mission</span>
+                        <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
+                        <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
+                        <span>Vision 2030</span>
+                      </div>
+                    </div>
+
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
+                      Strategic Objectives
+                      <br />
+                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                        of the Conference
+                      </span>
+                    </h2>
+
+                    <div className="relative w-20 h-1 my-4 mx-auto md:mx-0">
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
+                    </div>
+
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+                      A mission to transform the conference into a catalyst for
+                      impact across society, the healthcare sector, and the
+                      health economy.
+                    </p>
                   </div>
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
-                  Strategic Objectives
-                  <br />
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    of the Conference
-                  </span>
-                </h2>
-
-                <div className="relative w-20 h-1 my-4 mx-auto md:mx-0">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
-                </div>
-
-                <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
-                  A mission to transform the conference into a catalyst for
-                  impact across society, the healthcare sector, and the health
-                  economy.
-                </p>
+                )}
               </div>
+              <div className="">
+                {language === "ar" && (
+                  <div className="text-center md:text-right" dir="rtl">
+                    <div className="relative inline-block group/badge mb-4 sm:mb-6">
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
+                      <div className="relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] sm:text-xs">
+                        <Target className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
+                        <span>رسالتنا</span>
+                        <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
+                        <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
+                        <span>رؤية 2030</span>
+                      </div>
+                    </div>
 
-              {/* Arabic Column - RTL */}
-              <div className="text-center md:text-right" dir="rtl">
-                <div className="relative inline-block group/badge mb-4 sm:mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
-                  <div className="relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] sm:text-xs">
-                    <Target className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                    <span>رسالتنا</span>
-                    <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
-                    <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
-                    <span>رؤية 2030</span>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
+                      الأهداف الاستراتيجية
+                      <br />
+                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                        للمؤتمــــــر
+                      </span>
+                    </h2>
+
+                    <div className="relative w-20 h-1 my-4 mx-auto md:mx-0 md:mr-0">
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
+                    </div>
+
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+                      تنطلـــق منظومـــة أهداف تحـــول المؤتمر إلـــى منصة تغيير
+                      وتأثير على مســـتوى المجتمع والقطـــاع الصحي والاقتصاد
+                      الصحي
+                    </p>
                   </div>
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
-                  الأهداف الاستراتيجية
-                  <br />
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    للمؤتمــــــر
-                  </span>
-                </h2>
-
-                <div className="relative w-20 h-1 my-4 mx-auto md:mx-0 md:mr-0">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
-                </div>
-
-                <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
-                  تنطلـــق منظومـــة أهداف تحـــول المؤتمر إلـــى منصة تغيير
-                  وتأثير على مســـتوى المجتمع والقطـــاع الصحي والاقتصاد الصحي
-                </p>
+                )}
               </div>
             </div>
 
@@ -250,21 +260,13 @@ export default function StrategicObjectives() {
                     </div>
 
                     {/* English Text - LARGER */}
-                    <p className="text-base sm:text-lg text-gray-100 leading-relaxed mb-4 sm:mb-5 font-medium">
-                      {objective.titleEn}
-                    </p>
-
-                    {/* Divider */}
-                    <div
-                      className={`w-16 h-0.5 bg-gradient-to-r ${colors.gradient} mb-4 sm:mb-5`}
-                    ></div>
-
-                    {/* Arabic Text - LARGER */}
                     <p
-                      className="text-base sm:text-lg text-gray-300 leading-relaxed"
-                      dir="rtl"
+                      className="text-base sm:text-lg text-gray-100 leading-relaxed mb-4 sm:mb-5 font-medium"
+                      dir={language === "ar" ? "rtl" : "ltr"}
                     >
-                      {objective.titleAr}
+                      {language === "en"
+                        ? objective.titleEn
+                        : objective.titleAr}
                     </p>
                   </div>
                 );
@@ -284,7 +286,7 @@ export default function StrategicObjectives() {
                 <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
 
-                  <span>Discover Our Vision</span>
+                  <span>{t.discoverOurVersion}</span>
 
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
@@ -294,7 +296,7 @@ export default function StrategicObjectives() {
             {/* Bottom decorative note */}
             <div className="text-center mt-6 sm:mt-8 relative z-10">
               <p className="text-[10px] sm:text-xs text-gray-500">
-                * Aligned with Saudi Vision 2030 healthcare transformation goals
+                * {t.alignedWithSaudi}
               </p>
             </div>
           </div>
