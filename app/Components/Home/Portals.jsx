@@ -12,32 +12,9 @@ import {
   Globe,
 } from "lucide-react";
 
-const portals = [
-  {
-    title: "Exhibitor & Sponsor Portal",
-    description: "Account creation, space booking, contract management",
-    icon: Building2,
-    href: "/pages/Portals/ExhibitorPortal/dashboard",
-    gradient: "from-blue-600 to-cyan-400",
-    color: "blue",
-  },
-  {
-    title: "Visitor Portal",
-    description: "Registration, agenda, live streaming",
-    icon: Users,
-    href: "/pages/Portals/VisitorPortal/dashboard",
-    gradient: "from-purple-600 to-pink-500",
-    color: "purple",
-  },
-  {
-    title: "Healthcare Practitioners Portal",
-    description: "License upload & SCFHS verification",
-    icon: Stethoscope,
-    href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
-    gradient: "from-amber-600 to-orange-500",
-    color: "amber",
-  },
-];
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
+
 
 const colorVariants = {
   blue: {
@@ -61,6 +38,36 @@ const colorVariants = {
 };
 
 export default function Portals() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  
+const portals = [
+  {
+    title: t.exhibitorSponsorPortalTitle,
+    description: t.exhibitorSponsorPortalDescription,
+    icon: Building2,
+    href: "/pages/Portals/ExhibitorPortal/dashboard",
+    gradient: "from-blue-600 to-cyan-400",
+    color: "blue",
+  },
+  {
+    title: t.visitorPortalTitle,
+  description: t.visitorPortalDescription,
+    icon: Users,
+    href: "/pages/Portals/VisitorPortal/dashboard",
+    gradient: "from-purple-600 to-pink-500",
+    color: "purple",
+  },
+  {
+   title: t.healthcarePractitionersPortalTitle,
+  description: t.healthcarePractitionersPortalDescription,
+    icon: Stethoscope,
+    href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
+    gradient: "from-amber-600 to-orange-500",
+    color: "amber",
+  },
+];
   return (
     <section className="relative w-full overflow-hidden py-10 sm:py-16 md:py-20">
       {/* Dark themed background - matching other pages */}
@@ -91,19 +98,19 @@ export default function Portals() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
                 <div className="relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] sm:text-xs">
                   <Lock className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                  <span>Secure Access</span>
+                  <span>{t.secureAccess} </span>
                   <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
                   <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
-                  <span>PDPL Compliant</span>
+                  <span>PDPL {t.complaints}</span>
                 </div>
               </div>
 
               {/* Gradient title */}
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4 px-2">
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">
-                  Secure
+                  {t.secure}
                 </span>{" "}
-                <span className="text-white">Portals</span>
+                <span className="text-white">{t.portals}</span>
               </h2>
 
               {/* Decorative line */}
@@ -113,8 +120,7 @@ export default function Portals() {
               </div>
 
               <p className="text-gray-300 max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed px-4">
-                All portals are encrypted, PDPL compliant, and securely hosted
-                inside Saudi Arabia.
+                {t.allPortalAreEncrypted}
               </p>
             </div>
 
@@ -182,7 +188,7 @@ export default function Portals() {
 
                       {/* Button text */}
                       <span className="relative z-10 flex items-center gap-1 sm:gap-2 text-gray-300 group-hover/btn:text-white transition-colors duration-300">
-                        Explore portal
+                        {t.explorePortal}
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 sm:group-hover/btn:translate-x-2 transition-transform duration-300" />
                       </span>
 
@@ -209,7 +215,7 @@ export default function Portals() {
                 <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
 
-                  <span>Access All Portals</span>
+                  <span>{t.accessAllPortals}</span>
 
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>

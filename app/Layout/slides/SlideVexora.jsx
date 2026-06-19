@@ -3,47 +3,59 @@
 import Image from "next/image";
 import { Calendar, MapPin, Sparkles } from "lucide-react";
 
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
+
 const SlideVexora = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <>
       <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
         <div className="relative z-10 w-full max-w-7xl mx-auto h-full grid grid-cols-1 lg:grid-cols-[45%_55%]  text-white lg:mt-20 pt-10">
           {/* Left Column */}
-          <div className="text-center lg:text-left mb-8 lg:mb-0">
-            <Image
-              src="/Images/Home/slider/MainLogo.png"
-              alt="Logo"
-              width={180}
-              height={150}
-              className="opacity-90"
-            />
-          </div>
+          <div className="text-center lg:text-left mb-8 lg:mb-0"></div>
 
           {/* Right Column */}
           <div className="w-full max-w-4xl mx-auto space-y-5 py-6 ">
             {/* HPQL Section  */}
             <div className="text-right space-y-2.5">
               <div className="flex items-center justify-end">
-                <Image
-                  src="/Images/Home/slider/Right-Side-Logo.png"
-                  alt="Logo"
-                  width={250}
-                  height={200}
-                  className="opacity-90"
-                />
+                {language === "en" && (
+                  <Image
+                    src="/Images/Home/slider/MainLogo.png"
+                    alt="Logo"
+                    width={180}
+                    height={150}
+                    className="opacity-90 mb-2"
+                  />
+                )}
+                {language === "ar" && (
+                  <Image
+                    src="/Images/Home/slider/Right-Side-Logo.png"
+                    alt="Logo"
+                    width={250}
+                    height={200}
+                    className="opacity-90"
+                  />
+                )}
               </div>
 
               <div className="">
-                <h2
-                  className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
-                  dir="rtl"
-                  style={{ wordSpacing: "0.8rem" }}
-                >
-                  مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
-                </h2>
-                <p className="text-xs md:text-sm text-white mt-1.5 tracking-[0.15em]">
-                  HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
-                </p>
+                {language === "ar" && (
+                  <h2
+                    className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
+                    dir="rtl"
+                    style={{ wordSpacing: "0.8rem" }}
+                  >
+                    مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
+                  </h2>
+                )}
+                {language === "en" && (
+                  <h2 className="text-xs md:text-sm text-white mt-1.5 tracking-[0.15em]">
+                    HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
+                  </h2>
+                )}
               </div>
             </div>
 
@@ -53,16 +65,20 @@ const SlideVexora = () => {
                 HPQL
               </p>
               <div className="text-right">
-                <p
-                  className="text-base md:text-lg lg:text-2xl font-bold text-white mb-0.5"
-                  dir="rtl"
-                  style={{ wordSpacing: "0.2rem" }}
-                >
-                  صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
-                </p>
-                <p className="w-full text-xs md:text-sm text-white uppercase tracking-[0.25em] font-light">
-                  HEALTH PROMOTION • QUALITY OF LIFE
-                </p>
+                {language === "ar" && (
+                  <p
+                    className="text-base md:text-lg lg:text-2xl font-bold text-white mb-0.5"
+                    dir="rtl"
+                    style={{ wordSpacing: "0.2rem" }}
+                  >
+                    صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
+                  </p>
+                )}
+                {language === "en" && (
+                  <p className="w-full text-xs md:text-sm text-white uppercase tracking-[0.25em] font-light">
+                    HEALTH PROMOTION • QUALITY OF LIFE
+                  </p>
+                )}
               </div>
             </div>
 
@@ -73,12 +89,19 @@ const SlideVexora = () => {
                   <div className="flex items-center justify-between gap-3">
                     {/* Location */}
                     <div className="text-center">
-                      <p className="text-md font-bold text-blue-900" dir="rtl">
-                        مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
-                      </p>
-                      <p className="text-md font-bold text-blue-900 mt-0.5">
-                        Exhibition & trade center in Jeddah
-                      </p>
+                      {language === "ar" && (
+                        <p
+                          className="text-md font-bold text-blue-900"
+                          dir="rtl"
+                        >
+                          مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
+                        </p>
+                      )}
+                      {language === "en" && (
+                        <p className="text-md font-bold text-blue-900 mt-0.5">
+                          Exhibition & trade center in Jeddah
+                        </p>
+                      )}
                     </div>
 
                     <div className="w-px h-10 bg-white/15" />
@@ -117,50 +140,62 @@ const SlideVexora = () => {
           <div className="w-full max-w-md mx-auto space-y-6">
             {/* Logos Section  */}
             <div className="flex justify-between items-center mb-10">
-              <Image
-                src="/Images/Home/slider/MainLogo.png"
-                alt="Logo"
-                width={100}
-                height={80}
-                className="opacity-90 w-auto h-10 sm:h-12"
-                priority
-              />
-              <Image
-                src="/Images/Home/slider/Right-Side-Logo.png"
-                alt="Logo"
-                width={120}
-                height={100}
-                className="opacity-90 w-auto h-10 sm:h-12"
-                priority
-              />
+              {language === "en" && (
+                <Image
+                  src="/Images/Home/slider/MainLogo.png"
+                  alt="Logo"
+                  width={100}
+                  height={80}
+                  className="opacity-90 w-auto h-10 sm:h-12"
+                  priority
+                />
+              )}
+              {language === "ar" && (
+                <Image
+                  src="/Images/Home/slider/Right-Side-Logo.png"
+                  alt="Logo"
+                  width={120}
+                  height={100}
+                  className="opacity-90 w-auto h-10 sm:h-12"
+                  priority
+                />
+              )}
             </div>
 
             {/* Conference Name */}
             <div className="text-center space-y-1.5">
-              <h2
-                className="text-base sm:text-lg font-bold text-white leading-tight"
-                dir="rtl"
-              >
-                مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
-              </h2>
-              <p className="text-[10px] sm:text-xs text-white tracking-wide">
-                HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
-              </p>
+              {language === "ar" && (
+                <h2
+                  className="text-base sm:text-lg font-bold text-white leading-tight"
+                  dir="rtl"
+                >
+                  مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
+                </h2>
+              )}
+              {language === "en" && (
+                <h2 className="text-[10px] sm:text-xs text-white tracking-wide">
+                  HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
+                </h2>
+              )}
             </div>
 
             {/* HPQL & Slogan Section */}
             <div className="text-center space-y-2">
               <p className="text-4xl sm:text-5xl font-black text-white">HPQL</p>
               <div>
-                <p
-                  className="text-sm sm:text-base font-bold text-white"
-                  dir="rtl"
-                >
-                  صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
-                </p>
-                <p className="text-[10px] sm:text-xs text-white tracking-wide mt-0.5">
-                  HEALTH PROMOTION • QUALITY OF LIFE
-                </p>
+                {language === "ar" && (
+                  <p
+                    className="text-sm sm:text-base font-bold text-white"
+                    dir="rtl"
+                  >
+                    صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
+                  </p>
+                )}
+                {language === "en" && (
+                  <p className="text-[10px] sm:text-xs text-white tracking-wide mt-0.5">
+                    HEALTH PROMOTION • QUALITY OF LIFE
+                  </p>
+                )}
               </div>
             </div>
 
@@ -170,12 +205,16 @@ const SlideVexora = () => {
                 <div className="p-4">
                   {/* Location - Full width on mobile */}
                   <div className="col-span-2 text-center pb-2 border-b border-white/20">
-                    <p className="text-sm font-bold text-blue-900" dir="rtl">
-                      مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
-                    </p>
-                    <p className="text-xs font-bold text-blue-900 mt-0.5">
-                      Exhibition & trade center in Jeddah
-                    </p>
+                    {language === "ar" && (
+                      <p className="text-sm font-bold text-blue-900" dir="rtl">
+                        مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
+                      </p>
+                    )}
+                    {language === "en" && (
+                      <p className="text-xs font-bold text-blue-900 mt-0.5">
+                        Exhibition & trade center in Jeddah
+                      </p>
+                    )}
                   </div>
                   {/* Mobile optimized grid layout */}
                   <div className="grid grid-cols-3 gap-4 mt-4">

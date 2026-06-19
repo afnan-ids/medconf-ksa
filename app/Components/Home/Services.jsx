@@ -12,32 +12,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const services = [
-  {
-    icon: Calendar,
-    title: "Conference Organization",
-    description: "Full planning, live workshops, international streaming",
-    stats: "50+ events yearly",
-    color: "blue",
-    link:'/Services/conferenceorganization'
-  },
-  {
-    icon: MapPin,
-    title: "Exhibition & Space Booking",
-    description: "Interactive maps, dynamic pricing, PDF contracts",
-    stats: "100k+ sqm managed",
-    color: "purple",
-    link:'/Services/exhibitionspacebooking'
-  },
-  {
-    icon: UserCheck,
-    title: "Practitioner Registration",
-    description: "SCFHS license verification & compliance",
-    stats: "15k+ verified",
-    color: "cyan",
-    link:'/Services/practitionerregistration'
-  },
-];
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 
 const colorVariants = {
   blue: {
@@ -73,6 +49,35 @@ const colorVariants = {
 };
 
 export default function Services() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const services = [
+    {
+      icon: Calendar,
+      title: t.conferenceOrganizationTitle,
+      description: t.conferenceOrganizationDescription,
+      stats: t.conferenceOrganizationStats,
+      color: "blue",
+      link: "/Services/conferenceorganization",
+    },
+    {
+      icon: MapPin,
+      title: t.exhibitionSpaceBookingTitle,
+      description: t.exhibitionSpaceBookingDescription,
+      stats: t.exhibitionSpaceBookingStats,
+      color: "purple",
+      link: "/Services/exhibitionspacebooking",
+    },
+    {
+      icon: UserCheck,
+      title: t.practitionerRegistrationTitle,
+      description: t.practitionerRegistrationDescription,
+      stats: t.practitionerRegistrationStats,
+      color: "cyan",
+      link: "/Services/practitionerregistration",
+    },
+  ];
   return (
     <section className="relative w-full mx-auto overflow-hidden">
       {/* Dark themed background*/}
@@ -86,7 +91,6 @@ export default function Services() {
       {/* Glass container */}
       <div className="relative z-10 mx-auto py-4 px-4 sm:px-6 lg:px-4">
         <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(79,70,229,0.3)] transition-all duration-700">
-        
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
@@ -102,18 +106,18 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
                 <div className="relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] sm:text-xs">
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                  <span>Our Expertise</span>
+                  <span>{t.ourExperties}</span>
                   <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
                   <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
-                  <span>Healthcare Focused</span>
+                  <span>{t.healthCareFocused}</span>
                 </div>
               </div>
 
               {/* Title with gradient */}
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-4 px-2">
-                Our{" "}
+                {t.our}{" "}
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Services
+                  {t.services}
                 </span>
               </h2>
 
@@ -124,8 +128,7 @@ export default function Services() {
               </div>
 
               <p className="text-xs sm:text-sm md:text-lg text-gray-300 mt-3 sm:mt-6 max-w-2xl mx-auto px-4">
-                Streamlined solutions for healthcare events, backed by data and
-                decades of experience.
+                {t.steamlineSolution}
               </p>
             </div>
 
@@ -201,7 +204,7 @@ export default function Services() {
 
                       {/* Button text */}
                       <span className="relative z-10 flex items-center gap-1 sm:gap-2 text-gray-300 group-hover/btn:text-white transition-colors duration-300">
-                        Explore service
+                        {t.exploreService}
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 sm:group-hover/btn:translate-x-2 transition-transform duration-300" />
                       </span>
 
@@ -226,7 +229,7 @@ export default function Services() {
 
                 {/* Button */}
                 <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                  <span>View all services</span>
+                  <span>{t.viewAllServices}</span>
 
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>

@@ -11,44 +11,49 @@ import BreadCrumb from "../Components/BreadCrum";
 import { GrServices } from "react-icons/gr";
 import Link from "next/link";
 
-const services = [
-  {
-    icon: Calendar,
-    title: "Conference Organization",
-    description: "Full planning, live workshops, international streaming",
-    features: ["End-to-end planning", "Live streaming", "Workshop management"],
-    color: "from-blue-500 to-cyan-400",
-    href:"/Services/conferenceorganization",
-  },
-  {
-    icon: MapPin,
-    title: "Exhibition & Space Booking",
-    description: "Interactive maps, dynamic pricing, PDF contracts",
-    features: [
-      "Interactive floor plans",
-      "Real-time pricing",
-      "Automated contracts",
-    ],
-    color: "from-purple-500 to-pink-400",
-    href: "/Services/exhibitionspacebooking",
-  },
-  {
-    icon: UserCheck,
-    title: "Practitioner Registration",
-    description: "SCFHS license verification & compliance",
-    features: ["License verification", "Compliance checks", "Credentialing"],
-    color: "from-amber-500 to-orange-400",
-    href: "/Services/practitionerregistration",
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../il18/servicePage";
 
 export default function Services() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const services = [
+    {
+      icon: Calendar,
+      title: t.conferenceOrganization,
+      description: t.conferenceOrganizationDescription,
+      features: [t.endToEndPlanning, t.liveStreaming, t.workshopManagement],
+      color: "from-blue-500 to-cyan-400",
+      href: "/Services/conferenceorganization",
+    },
+    {
+      icon: MapPin,
+      title: t.exhibitionAndSpaceBooking,
+      description: t.exhibitionAndSpaceBookingDescription,
+      features: [
+        t.interactiveFloorPlans,
+        t.realTimePricing,
+        t.automatedContracts,
+      ],
+      color: "from-purple-500 to-pink-400",
+      href: "/Services/exhibitionspacebooking",
+    },
+    {
+      icon: UserCheck,
+      title: t.practitionerRegistration,
+      description: t.practitionerRegistrationDescription,
+      features: [t.licenseVerification, t.complianceChecks, t.credentialing],
+      color: "from-amber-500 to-orange-400",
+      href: "/Services/practitionerregistration",
+    },
+  ];
   return (
     <>
       <BreadCrumb
-        title="Services"
+        title={t.services}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Services" }]}
+        path={[{ label: `${t.services}` }]}
       />
 
       <section className="relative py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden">
@@ -67,16 +72,15 @@ export default function Services() {
             <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
               <GrServices className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
               <span className="text-xs sm:text-sm font-medium text-gray-300">
-                Premium Healthcare Solutions
+                {t.premiumHealthcareSolutions}
               </span>
             </div>
 
             {/* Main title */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
-              <span className="text-white">Comprehensive</span>
-              {''} {""}
+              <span className="text-white">{t.comprehensive}</span>{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                Event Services
+                {t.eventServices}
               </span>
             </h2>
 
@@ -84,8 +88,7 @@ export default function Services() {
             <div className="relative max-w-3xl mx-auto">
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
-                Everything you need to deliver high-impact medical conferences,
-                workshops, and compliant healthcare events in Saudi Arabia.
+                {t.servicesDescription}
               </p>
             </div>
           </div>
@@ -150,10 +153,11 @@ export default function Services() {
 
                     {/* Mobile button - always visible */}
                     <div className="md:hidden mt-3">
-                      <Link href={service.href}
+                      <Link
+                        href={service.href}
                         className={`inline-flex items-center justify-center gap-1 sm:gap-2 w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-r ${service.color} text-white text-xs sm:text-sm font-semibold hover:shadow-lg transition-all duration-300 group/btn`}
                       >
-                        Learn more
+                        {t.learnMore}
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -166,10 +170,11 @@ export default function Services() {
 
                   {/* Floating button on hover - hidden on mobile, shown on desktop hover */}
                   <div className=" md:block absolute -bottom-5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:-bottom-6">
-                    <Link href={service.href}
+                    <Link
+                      href={service.href}
                       className="bg-white text-gray-900 rounded-full px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-semibold shadow-xl hover:shadow-2xl flex items-center gap-1 sm:gap-2 group whitespace-nowrap hover:cursor-pointer"
                     >
-                      Learn more
+                      {t.learnMore}
                       <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>

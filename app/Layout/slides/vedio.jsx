@@ -1,10 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 
 const SlideVideo = () => {
   const [mounted, setMounted] = useState(false);
   const videoRef = useRef(null);
+
+   const { language } = useLanguage();
+  const t = translations[language];
 
   useEffect(() => {
     setMounted(true);
@@ -45,7 +50,8 @@ const SlideVideo = () => {
         <div className="w-16 sm:w-20 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-cyan-300 mt-4 sm:mt-6 mb-4 sm:mb-8 rounded-full"></div>
 
         <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-white/90 max-w-xl leading-relaxed mb-6 sm:mb-8 md:mb-10">
-          Leading Medical Conferences & Exhibitions in the Kingdom of Saudi Arabia
+        {t.leadingMedicalConferences}
+          
         </p>
       </div>
     </div>
@@ -57,19 +63,20 @@ const SlideVideo = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 text-center divide-x divide-white/20 [&>*:nth-child(1)]:border-r [&>*:nth-child(2)]:border-r [&>*:nth-child(3)]:border-r md:[&>*:nth-child(2)]:border-r-0 [&>*:nth-child(4)]:border-r-0 border-b border-white/20 md:border-b-0">
         <div className="px-2 xs:px-3 sm:px-4 lg:px-6 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6">
           <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">250+</div>
-          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">Global Speakers</div>
+          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{t.globalSpeakers}</div>
         </div>
         <div className="px-2 xs:px-3 sm:px-4 lg:px-6 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6">
-          <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">3 Days</div>
-          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">Exhibition</div>
+          <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">3 {t.days}</div>
+          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{t.exhibition}</div>
         </div>
         <div className="px-2 xs:px-3 sm:px-4 lg:px-6 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6">
           <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">15K+</div>
-          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">Expected Visitors</div>
+          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{t.expectedVisitors}</div>
         </div>
         <div className="px-2 xs:px-3 sm:px-4 lg:px-6 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6">
           <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">12+</div>
-          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">Years Experience</div>
+          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">
+          {t.yearsExperience}</div>
         </div>
       </div>
     </div>

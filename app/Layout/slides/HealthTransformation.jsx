@@ -2,8 +2,12 @@
 
 import Image from "next/image";
 import { Crown, Award, Star } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 
 const HealthTransformation = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <>
       <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/HealthTransformationBG.png')] bg-cover bg-center">
@@ -15,11 +19,13 @@ const HealthTransformation = () => {
                 <p className="text-xs text-blue-950 font-bold whitespace-nowrap">
                   HPQL
                 </p>
-
-                <p className="text-xs text-blue-900 font-bold   ms-2 whitespace-nowrap">
-                  HEALTH PROMOTION & QUALITY OF LIFE
-                </p>
+                {language === "en" && (
+                  <p className="text-xs text-blue-900 font-bold   ms-2 whitespace-nowrap">
+                    HEALTH PROMOTION & QUALITY OF LIFE
+                  </p>
+                )}
               </div>
+ {language === 'ar' && (
 
               <p
                 className="text-[10px] md:text-xs text-white/90 font-semibold tracking-[0.10em]"
@@ -27,6 +33,7 @@ const HealthTransformation = () => {
               >
                 صحة • تمكين • توعية • عمر مديد
               </p>
+ )}
             </div>
           </div>
 
@@ -44,6 +51,8 @@ const HealthTransformation = () => {
               <div className="w-full lg:w-1/2 space-y-3">
                 {/* Heading */}
                 <div className="relative text-white space-y-1.5">
+                   {language === 'ar' && (
+
                   <p
                     className="text-sm md:text-lg lg:text-[26px] font-extrabold text-center leading-[1.4] tracking-tight"
                     dir="rtl"
@@ -51,15 +60,20 @@ const HealthTransformation = () => {
                     التحـــــــول الصحـــــي كركيزة أساسيـة للاستثمــــــــار في
                     رأس المال البشـري
                   </p>
+                   )}
+                   {language === 'en' && (
 
                   <p className="text-xs md:text-base lg:text-[22px] text-center font-medium leading-relaxed text-white/95">
                     Health Transformation as a Fundamental Pillar for Human
                     Capital Investment
                   </p>
+                   )}
+
                 </div>
 
                 {/* Description */}
                 <div className="rounded-xl px-2 py-1 space-y-2">
+                   {language === 'ar' && (
                   <p
                     className="text-xs md:text-sm lg:text-[14px] leading-[1.8] text-white/95 text-center"
                     dir="rtl"
@@ -71,6 +85,10 @@ const HealthTransformation = () => {
                     الصحـــة وارتباطها بجودة الحياة على مستوى الفرد والمجتمع
                   </p>
 
+                   )}
+
+                   {language === 'en' && (
+
                   <p className="text-xs md:text-sm lg:text-[14px] leading-[1.7] text-white/90 text-center">
                     The Health Promotion Conference and Exhibition aims to be
                     the Kingdom of Saudi Arabia's premier specialized health
@@ -80,6 +98,8 @@ const HealthTransformation = () => {
                     health promotion concepts and their vital link to the
                     quality of life for both individuals and society
                   </p>
+                   )}
+
                 </div>
               </div>
             </div>
@@ -118,20 +138,27 @@ const HealthTransformation = () => {
             <div className="text-center space-y-2 pt-2">
               <div className="space-y-1">
                 <p className="text-sm text-white font-bold">HPQL</p>
+                {language === 'en' && (
+
                 <p className="text-[10px] text-white font-semibold">
                   HEALTH PROMOTION & QUALITY OF LIFE
                 </p>
+                )}
               </div>
+               {language === 'ar' && (
+
               <p
                 className="text-[10px] text-white/90 font-semibold tracking-[0.10em]"
                 dir="rtl"
               >
                 صحة • تمكين • توعية • عمر مديد
               </p>
+               )}
             </div>
 
             {/* Heading */}
             <div className="text-center space-y-2">
+               {language === 'ar' && (
               <p
                 className="text-sm font-extrabold text-white leading-[1.4] tracking-tight"
                 dir="rtl"
@@ -139,14 +166,21 @@ const HealthTransformation = () => {
                 التحـــــــول الصحـــــي كركيزة أساسيـة للاستثمــــــــار في رأس
                 المال البشـري
               </p>
+
+               )}
+               {language === 'en' && (
               <p className="text-xs font-medium leading-relaxed text-white/95">
                 Health Transformation as a Fundamental Pillar for Human Capital
                 Investment
               </p>
+
+               )}
             </div>
 
             {/* Description */}
             <div className="space-y-3">
+               {language === 'ar' && (
+
               <p
                 className="text-[11px] leading-[1.6] text-white/95 text-center"
                 dir="rtl"
@@ -157,6 +191,9 @@ const HealthTransformation = () => {
                 إطـــار متكامل يهدف إلى الارتقاء بمفاهيم تعزيز الصحـــة
                 وارتباطها بجودة الحياة على مستوى الفرد والمجتمع
               </p>
+               )}
+               {language === 'en' && (
+
               <p className="text-[11px] leading-[1.6] text-white/90 text-center">
                 The Health Promotion Conference and Exhibition aims to be the
                 Kingdom of Saudi Arabia's premier specialized health platform.
@@ -166,6 +203,7 @@ const HealthTransformation = () => {
                 concepts and their vital link to the quality of life for both
                 individuals and society
               </p>
+               )}
             </div>
           </div>
         </div>
