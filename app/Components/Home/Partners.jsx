@@ -12,6 +12,9 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
+
 const partners = [
   {
     name: "Airbus",
@@ -88,6 +91,8 @@ const partners = [
 ];
 
 export default function PartnersGrid() {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <section className="relative w-full overflow-hidden py-10 sm:py-16 md:py-20">
       {/* Background - responsive orbs */}
@@ -107,22 +112,22 @@ export default function PartnersGrid() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
               <div className="relative inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[10px] sm:text-xs">
                 <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                <span className="hidden xs:inline">Global Network</span>
-                <span className="inline xs:hidden">Network</span>
+                <span className="hidden xs:inline">{t.globalNetwork}</span>
+                <span className="inline xs:hidden">{t.network}</span>
                 <span className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/30 rounded-full"></span>
                 <Award className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
-                <span>{partners.length}+ Partners</span>
+                <span>{partners.length}{t.partners}</span>
               </div>
             </div>
 
             {/* Title - responsive */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 px-2">
-              Media &{" "}
+              {t.media} &{" "}
               <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                Innovation
+                {t.innovation}
               </span>
               <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mt-1 sm:mt-2 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                Partners
+                {t.partners}
               </span>
             </h2>
             {/* Decorative line  */}
@@ -133,8 +138,7 @@ export default function PartnersGrid() {
 
             {/* Description */}
             <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-2xl mx-auto px-4">
-              Collaborating with global industry leaders and innovation
-              pioneers.
+              {t.collabrotatingWithGlobalIndusty}
             </p>
           </div>
 
@@ -167,8 +171,8 @@ export default function PartnersGrid() {
               <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
 
-                <span className="hidden xs:inline">Become a Partner</span>
-                <span className="inline xs:hidden">Join</span>
+                <span className="hidden xs:inline">{t.becomeAPartner}</span>
+                <span className="inline xs:hidden">{t.join}</span>
 
                 <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </div>

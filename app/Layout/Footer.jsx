@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from 'next/image';
+import Image from "next/image";
 import {
   Stethoscope,
   Mail,
@@ -16,81 +16,99 @@ import {
 } from "lucide-react";
 import { FaInstagram, FaYoutube, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../il18/translations";
+
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const currentYear = new Date().getFullYear();
 
-  // Column 1: Quick Links
   const quickLinks = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/Services" },
-    { label: "Events", href: "/pages/Events" },
-    { label: "Portals", href: "/pages/Portals" },
-    // { label: "Whats On ?", href: "#" },
-    { label: "About", href: "/pages/AboutUs" },
-    { label: "Contact", href: "/pages/ContactUs" },
-    { label: "News & Blogs", href: "/pages/NewsBlogPage" },
-    { label: "FAQ", href: "/pages/FAQ" },
+    { label: t.home, href: "/" },
+    { label: t.services, href: "/Services" },
+    { label: t.events, href: "/pages/Events" },
+    { label: t.portals, href: "/pages/Portals" },
+    { label: t.about, href: "/pages/AboutUs" },
+    { label: t.contact, href: "/pages/ContactUs" },
+    { label: t.newsBlogs, href: "/pages/NewsBlogPage" },
+    { label: t.faq, href: "/pages/FAQ" },
   ];
 
-  // Column 2: Services
   const services = [
     {
-      label: "Conference Organization",
+      label: t.conferenceOrganization,
       href: "/Services/conferenceorganization",
     },
     {
-      label: "Exhibition & Space Booking",
+      label: t.exhibitionSpaceBooking,
       href: "/Services/exhibitionspacebooking",
     },
     {
-      label: "Practitioner Registration",
+      label: t.practitionerRegistration,
       href: "/Services/practitionerregistration",
     },
-    { label: "View All Services", href: "/Services", isViewAll: true },
+    {
+      label: t.viewAllServices,
+      href: "/Services",
+      isViewAll: true,
+    },
   ];
 
-  // Column 3: Portals
   const portals = [
-    { label: "Sponsor Portal", href: "/pages/Portals/SponcerPortal/dashboard" },
     {
-      label: "Exhibitor Portal",
+      label: t.sponsorPortal,
+      href: "/pages/Portals/SponcerPortal/dashboard",
+    },
+    {
+      label: t.exhibitorPortal,
       href: "/pages/Portals/ExhibitorPortal/dashboard",
     },
-    { label: "Visitor Portal", href: "/pages/Portals/VisitorPortal/dashboard" },
     {
-      label: "Health Care Portal",
+      label: t.visitorPortal,
+      href: "/pages/Portals/VisitorPortal/dashboard",
+    },
+    {
+      label: t.healthCarePortal,
       href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
     },
-    { label: "View All Portals", href: "/pages/Portals", isViewAll: true },
+    {
+      label: t.viewAllPortals,
+      href: "/pages/Portals",
+      isViewAll: true,
+    },
   ];
 
-  // Column 4: What's On
   const whatsOn = [
     {
-      label: "Medical Innovation Arena",
+      label: t.medicalInnovationArena,
       href: "/pages/WhatsOn/MedicalInnovationArena",
     },
     {
-      label: "Healthcare Innovation Hub",
+      label: t.healthcareInnovationHub,
       href: "/pages/WhatsOn/HealthcareInnovationHub",
     },
     {
-      label: "Medical Technology Zone",
+      label: t.medicalTechnologyZone,
       href: "/pages/WhatsOn/MedicalTechnologyZone",
     },
     {
-      label: "Clinical Knowledge Forum",
+      label: t.clinicalKnowledgeForum,
       href: "/pages/WhatsOn/ClinicalKnowledgeForum",
     },
     {
-      label: "Industry Collaboration Exchange",
+      label: t.industryCollaborationExchange,
       href: "/pages/WhatsOn/IndustryCollaborationExchange",
     },
     {
-      label: "Guided Exhibition Tours",
+      label: t.guidedExhibitionTours,
       href: "/pages/WhatsOn/GuidedExhibitionTours",
     },
-    { label: "View All Events", href: "#", isViewAll: false },
+    {
+      label: t.viewAllEvents,
+      href: "#",
+      isViewAll: true,
+    },
   ];
 
   // Column 5: Resources
@@ -171,24 +189,24 @@ export default function Footer() {
                       </span>
                     </h2>
                     <p className="text-xs text-gray-400 -mt-1">
-                      Conferences & Exhibitions
+                      {t.conferencesAndExhibitions}
+                      
                     </p>
                   </div>
                 </div>
 
                 <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                  Saudi Arabia's premium platform for secure medical
-                  conferences, exhibitions, CME credits, and healthcare portals.
+                  {t.saudiArabiaPremiumPlatform}
                 </p>
 
                 <div className="relative inline-block group/badge mb-4">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
                   <div className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
                     <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-                    <span>SCFHS & PDPL Compliant</span>
+                    <span>SCFHS & PDPL {t.complaints}</span>
                     <span className="w-0.5 h-0.5 bg-white/30 rounded-full"></span>
                     <Globe className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Hosted in HPQL</span>
+                    <span>{t.hosted} in HPQL</span>
                   </div>
                 </div>
               </div>
@@ -196,7 +214,7 @@ export default function Footer() {
               {/* Column 2 - Quick Links */}
               <div className="lg:ps-12 relative">
                 <h3 className="text-white font-bold text-lg mb-4 pb-2 inline-block">
-                  Quick Links
+                  {t.quickLinks}
                 </h3>
                 <div className="w-15 h-px bg-gradient-to-r from-blue-400 to bg-purple-400 absolute top-10"></div>
                 <ul className="space-y-2.5">
@@ -219,7 +237,7 @@ export default function Footer() {
               {/* Column 3 - Services */}
               <div className="relative">
                 <h3 className="text-white font-bold text-lg mb-4 pb-2 inline-block">
-                  Our Services
+                  {t.ourServices}
                 </h3>
                 <div className="w-15 h-px bg-gradient-to-r from-blue-400 to bg-purple-400 absolute top-10"></div>
                 <ul className="space-y-2.5">
@@ -255,7 +273,7 @@ export default function Footer() {
               {/* Column 4 - Portals */}
               <div className="relative">
                 <h3 className="text-white font-bold text-lg mb-4 pb-2 inline-block">
-                  Portals
+                  {t.portals}
                 </h3>
                 <div className="w-15 h-px bg-gradient-to-r from-blue-400 to bg-purple-400 absolute top-10"></div>
                 <ul className="space-y-2.5">
@@ -291,7 +309,7 @@ export default function Footer() {
               {/* Column 5 - What's On */}
               <div className="relative">
                 <h3 className="text-white font-bold text-lg mb-4 pb-2 inline-block">
-                  What's On?
+                  {t.whatsOn}
                 </h3>
                 <div className="w-15 h-px bg-gradient-to-r from-blue-400 to bg-purple-400 absolute top-10"></div>
                 <ul className="space-y-2.5">
@@ -327,7 +345,7 @@ export default function Footer() {
               {/* Column 6 - Contact & Newsletter */}
               <div className="relative">
                 <h3 className="text-white font-bold text-lg mb-4 pb-2 inline-block">
-                  Connect
+                  {t.connect}
                 </h3>
                 <div className="w-15 h-px bg-gradient-to-r from-blue-400 to bg-purple-400 absolute top-10"></div>
                 {/* Contact Info */}
@@ -354,14 +372,14 @@ export default function Footer() {
                     <div className="p-1.5 bg-white/5 rounded-lg border border-white/10 group-hover:bg-white/10 transition-colors">
                       <MapPin className="w-3.5 h-3.5 text-blue-400" />
                     </div>
-                    <span>Riyadh, Saudi Arabia</span>
+                    <span>{t.riyadhSaudiArabia}</span>
                   </div>
                 </div>
 
                 {/* Newsletter */}
                 <div>
                   <p className="text-gray-400 text-sm mb-2">
-                    Subscribe to Newsletter
+                    {t.subcribeToNewsletter}
                   </p>
                   <div className="relative group/input">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg blur-lg opacity-0 group-hover/input:opacity-30 transition-opacity duration-500"></div>
@@ -373,7 +391,7 @@ export default function Footer() {
                         className="bg-transparent outline-none flex-1 text-sm text-white placeholder:text-gray-500 min-w-0"
                       />
                       <button className="px-3 py-1 rounded-md bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-medium hover:scale-105 transition">
-                        Subscribe
+                        {t.subcribe}
                       </button>
                     </div>
                   </div>
@@ -389,7 +407,7 @@ export default function Footer() {
             {/* Bottom Bar */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-sm text-gray-400 text-center md:text-left">
-                © {currentYear} HPQL. All rights reserved 
+                © {currentYear} HPQL.{t.allRightsReserved}
               </p>
 
               {/* Social Links */}
@@ -420,7 +438,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors relative group"
                 >
-                  Privacy Policy
+                  {t.privacyPolicy}
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
                 </Link>
                 <span className="text-gray-600">|</span>
@@ -428,7 +446,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors relative group"
                 >
-                  Terms
+                  {t.terms}
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-purple-400 to-pink-400 group-hover:w-full transition-all duration-300"></span>
                 </Link>
                 <span className="text-gray-600">|</span>

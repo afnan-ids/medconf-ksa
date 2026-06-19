@@ -33,70 +33,71 @@ import {
 import BreadCrumb from "../../Components/BreadCrum";
 import Link from "next/link";
 import { useState } from "react";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/exhibitionSpaceBooking";
 
 export default function ExhibitionSpaceBooking() {
   const [selectedBooth, setSelectedBooth] = useState(null);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const benefits = [
     {
       icon: Building2,
-      title: "Brand Exposure",
-      description:
-        "Present your brand to thousands of healthcare professionals and decision-makers.",
+      title: t.brandExposure,
+      description: t.brandExposureDescription,
       color: "from-purple-500 to-pink-400",
-      stats: "10,000+ Visitors",
+      stats: t.brandExposureStats,
     },
     {
       icon: Network,
-      title: "Networking",
-      description:
-        "Connect with distributors, buyers, investors, and industry leaders.",
+      title: t.networking,
+      description: t.networkingDescription,
       color: "from-blue-500 to-cyan-400",
-      stats: "500+ Delegates",
+      stats: t.networkingStats,
     },
     {
       icon: Rocket,
-      title: "Product Launch",
-      description:
-        "Introduce new products directly to your target market with maximum impact.",
+      title: t.productLaunch,
+      description: t.productLaunchDescription,
       color: "from-amber-500 to-orange-400",
-      stats: "Launch Ready",
+      stats: t.productLaunchStats,
     },
     {
       icon: Handshake,
-      title: "Business Opportunities",
-      description: "Generate qualified leads and build lasting partnerships.",
+      title: t.businessOpportunities,
+      description: t.businessOpportunitiesDescription,
       color: "from-emerald-500 to-green-400",
-      stats: "ROI Focused",
+      stats: t.businessOpportunitiesStats,
     },
   ];
 
   const process = [
     {
       number: "01",
-      title: "Inquiry",
-      description: "Contact our team to check availability and get pricing.",
+      title: t.inquiry,
+      description: t.inquiryDescription,
       color: "from-purple-500 to-pink-400",
       icon: Phone,
     },
     {
       number: "02",
-      title: "Choose Space",
-      description: "Select your preferred booth size and prime location.",
+      title: t.chooseSpace,
+      description: t.chooseSpaceDescription,
       color: "from-blue-500 to-cyan-400",
       icon: MapPin,
     },
     {
       number: "03",
-      title: "Registration",
-      description: "Complete registration and confirm your participation.",
+      title: t.registration,
+      description: t.registrationDescription,
       color: "from-amber-500 to-orange-400",
       icon: Ticket,
     },
     {
       number: "04",
-      title: "Setup & Exhibit",
-      description: "Set up your booth and engage with attendees.",
+      title: t.setupAndExhibit,
+      description: t.setupAndExhibitDescription,
       color: "from-emerald-500 to-green-400",
       icon: Building2,
     },
@@ -104,52 +105,52 @@ export default function ExhibitionSpaceBooking() {
 
   const features = [
     {
-      category: "Location",
+      category: t.location,
       icon: MapPin,
       color: "from-blue-500 to-cyan-400",
     },
     {
-      category: "Flexibility",
+      category: t.flexibility,
       icon: LayoutGrid,
       color: "from-green-500 to-emerald-400",
     },
     {
-      category: "Visibility",
+      category: t.visibility,
       icon: Star,
       color: "from-amber-500 to-orange-400",
     },
     {
-      category: "Promotion",
+      category: t.promotion,
       icon: Shield,
       color: "from-purple-500 to-pink-400",
     },
     {
-      category: "Leads",
+      category: t.leads,
       icon: Target,
       color: "from-blue-500 to-cyan-400",
     },
     {
-      category: "Marketing",
+      category: t.marketing,
       icon: TrendingUp,
       color: "from-green-500 to-emerald-400",
     },
     {
-      category: "Comfort",
+      category: t.comfort,
       icon: Compass,
       color: "from-amber-500 to-orange-400",
     },
     {
-      category: "Networking",
+      category: t.networking,
       icon: Users,
       color: "from-purple-500 to-pink-400",
     },
     {
-      category: "Support",
+      category: t.support,
       icon: Settings,
       color: "from-blue-500 to-cyan-400",
     },
     {
-      category: "Analytics",
+      category: t.analytics,
       icon: BarChart3,
       color: "from-purple-500 to-pink-400",
     },
@@ -157,112 +158,111 @@ export default function ExhibitionSpaceBooking() {
 
   const boothTypes = [
     {
-      name: "Standard Booth",
+      name: t.standardBooth,
       size: "3m x 3m",
-      price: "Starting at $2,500",
+      price: t.startingAt2500,
       includes: [
-        "Shell scheme with back wall",
-        "1 table (600 x 600mm)",
-        "2 chairs",
-        "Basic LED lighting",
-        "1 power outlet (500W)",
-        "Company listing in directory",
+        t.shellSchemeWithBackWall,
+        t.oneTable,
+        t.twoChairs,
+        t.basicLedLighting,
+        t.onePowerOutlet,
+        t.companyListingInDirectory,
       ],
       color: "from-blue-500 to-cyan-400",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/20",
-      availability: "12 Spaces Left",
+      availability: t.spacesLeft12,
       popular: false,
     },
     {
-      name: "Premium Booth",
+      name: t.premiumBooth,
       size: "6m x 4m",
-      price: "Starting at $5,500",
+      price: t.startingAt5500,
       includes: [
-        "Custom build-up design",
-        "Premium furniture package",
-        '2 LED screens (55")',
-        "Private storage room",
-        "Hospitality area with seating",
-        "Premium directory listing",
-        "Dedicated account manager",
+        t.customBuildUpDesign,
+        t.premiumFurniturePackage,
+        t.twoLedScreens,
+        t.privateStorageRoom,
+        t.hospitalityAreaWithSeating,
+        t.premiumDirectoryListing,
+        t.dedicatedAccountManager,
       ],
       color: "from-purple-500 to-pink-400",
       bgColor: "bg-purple-500/10",
       borderColor: "border-purple-500/20",
-      availability: "8 Spaces Left",
-      // popular: true,
+      availability: t.spacesLeft8,
     },
     {
-      name: "Corner Booth",
+      name: t.cornerBooth,
       size: "4m x 4m",
-      price: "Starting at $4,200",
+      price: t.startingAt4200,
       includes: [
-        "Double-side access",
-        "Enhanced visibility",
-        "Premium furniture",
-        "Custom branding wall",
-        "Product demo area",
-        "Featured listing in directory",
-        "2 exhibitor passes",
+        t.doubleSideAccess,
+        t.enhancedVisibility,
+        t.premiumFurniture,
+        t.customBrandingWall,
+        t.productDemoArea,
+        t.featuredListingInDirectory,
+        t.twoExhibitorPasses,
       ],
       color: "from-amber-500 to-orange-400",
       bgColor: "bg-amber-500/10",
       borderColor: "border-amber-500/20",
-      availability: "5 Spaces Left",
+      availability: t.spacesLeft5,
       popular: false,
     },
     {
-      name: "Custom Pavilion",
+      name: t.customPavilion,
       size: "Custom Size",
-      price: "Custom Pricing",
+      price: t.customPricing,
       includes: [
-        "Fully customizable space",
-        "Island booth configuration",
-        "Multi-level structure",
-        "Lounge & meeting rooms",
-        "Premium AV equipment",
-        "VIP hospitality suite",
-        "Dedicated branding area",
-        "Priority marketing package",
+        t.fullyCustomizableSpace,
+        t.islandBoothConfiguration,
+        t.multiLevelStructure,
+        t.loungeAndMeetingRooms,
+        t.premiumAvEquipment,
+        t.vipHospitalitySuite,
+        t.dedicatedBrandingArea,
+        t.priorityMarketingPackage,
       ],
       color: "from-emerald-500 to-green-400",
       bgColor: "bg-emerald-500/10",
       borderColor: "border-emerald-500/20",
-      availability: "Limited Availability",
+      availability: t.limitedAvailability,
       popular: false,
     },
   ];
 
   const upcomingEvents = [
     {
-      name: "Global Health Expo 2024",
+      name: t.globalHealthExpo2024,
       date: "Nov 15-18, 2024",
-      location: "Dubai World Trade Centre",
-      attendees: "15,000+",
+      location: t.dubaiWorldTradeCentre,
+      attendees: t.visitors15000,
     },
     {
-      name: "MedTech Innovation Summit",
+      name: t.medTechInnovationSummit,
       date: "Dec 5-7, 2024",
-      location: "Abu Dhabi National Exhibition Centre",
-      attendees: "8,000+",
+      location: t.abuDhabiNationalExhibitionCentre,
+      attendees: t.visitors8000,
     },
     {
-      name: "Healthcare Leaders Forum",
+      name: t.healthcareLeadersForum,
       date: "Jan 20-22, 2025",
-      location: "Riyadh International Convention Center",
-      attendees: "5,000+",
+      location: t.riyadhInternationalConventionCenter,
+      attendees: t.visitors5000,
     },
   ];
 
   return (
     <>
       <BreadCrumb
-        title="Exhibition & Space Booking"
+        title={t.exhibitionAndSpaceBooking}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
         path={[
-          { label: "Services", href: "/pages/NavBar-Links/NavServices" },
-          { label: "Exhibition & Space Booking" },
+          { label: `${t.services}`, href: "/pages/NavBar-Links/NavServices" },
+          { label: `${t.exhibitionAndSpaceBooking}` },
         ]}
       />
 
@@ -289,22 +289,20 @@ export default function ExhibitionSpaceBooking() {
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
               <Sparkles className="w-4 h-4 text-purple-400" />
               <span className="text-sm font-medium text-gray-300">
-                Premium Exhibition Spaces • Limited Availability
+                {t.premiumExhibitionSpaces}
               </span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Showcase Your Brand at</span>
+              <span className="text-white">{t.showcaseYourBrandAt}</span>
               <br />
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-amber-400 bg-clip-text text-transparent">
-                Premier Healthcare Events
+                {t.premierHealthcareEvents}
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-8 px-4">
-              Secure premium exhibition space at leading medical conferences and
-              connect with thousands of healthcare professionals,
-              decision-makers, and industry leaders.
+              {t.securePremiumExhibitionSpace}
             </p>
 
             {/* Quick Stats */}
@@ -337,7 +335,7 @@ export default function ExhibitionSpaceBooking() {
             <div className="bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-amber-500/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-purple-400" />
-                Upcoming Exhibition Opportunities
+                {t.upcomingExhibitionOpportunities}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {upcomingEvents.map((event, index) => (
@@ -358,7 +356,7 @@ export default function ExhibitionSpaceBooking() {
                     </div>
                     <div className="flex items-center gap-1 text-xs text-purple-400">
                       <Users className="w-3 h-3" />
-                      {event.attendees} expected
+                      {event.attendees} {t.expected}
                     </div>
                   </div>
                 ))}
@@ -370,15 +368,14 @@ export default function ExhibitionSpaceBooking() {
           <div className="mb-16 md:mb-20">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-                Choose Your Perfect
+                {t.chooseYourPerfect}
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {" "}
-                  Exhibition Space
+                  {t.exhibitionSpace}
                 </span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Select from our range of premium booth options designed to
-                maximize your brand visibility
+                {t.selectFromOurRange}
               </p>
             </div>
 
@@ -449,7 +446,7 @@ export default function ExhibitionSpaceBooking() {
                         ))}
                         {booth.includes.length > 4 && (
                           <p className="text-xs text-gray-500">
-                            +{booth.includes.length - 4} more items
+                            +{booth.includes.length - 4} {t.moreItems}
                           </p>
                         )}
                       </div>
@@ -457,7 +454,7 @@ export default function ExhibitionSpaceBooking() {
                       <button
                         className={`w-full py-2 px-4 rounded-xl bg-gradient-to-r ${booth.color} text-white text-sm font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0`}
                       >
-                        Select This Space
+                        {t.selectThisSpace}
                       </button>
                     </div>
                   </div>
@@ -470,10 +467,10 @@ export default function ExhibitionSpaceBooking() {
           <div className="mb-16 md:mb-20">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-                Why Exhibit With
+                {t.whyExhibitWith}
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {" "}
-                  Us?
+                  {t.us}?
                 </span>
               </h2>
             </div>
@@ -517,10 +514,10 @@ export default function ExhibitionSpaceBooking() {
           <div className="mb-16 md:mb-20">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-                Simple
+                {t.simple}
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {" "}
-                  4-Step Process
+                  4-{t.stepProcess}
                 </span>
               </h2>
             </div>
@@ -564,10 +561,10 @@ export default function ExhibitionSpaceBooking() {
           <div className="mb-20">
             <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
-                Everything Included in Your
+                {t.everythingIncludedinYour}
                 <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                   {" "}
-                  Exhibition Package
+                  {t.exhibitionPackage}
                 </span>
               </h3>
 
@@ -611,37 +608,36 @@ export default function ExhibitionSpaceBooking() {
               <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
               <div className="relative py-16 px-8">
                 <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-                  Ready to Showcase Your Brand?
+                  {t.ReadytoShowcaseYourBrand}?
                 </h4>
 
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                  Join industry leaders at our upcoming exhibitions and connect
-                  with thousands of healthcare professionals.
+                  {t.joinIndustryLeadersAt}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                    Book Your Space Now
+                    {t.BookYourSpaceNow}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
 
                   <button className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-300">
-                    Contact Sales
+                    {t.ContactSales}
                   </button>
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-6 mt-8">
                   <div className="flex items-center gap-2 text-white/80">
                     <Shield className="w-4 h-4" />
-                    <span className="text-sm">Best price guarantee</span>
+                    <span className="text-sm">{t.BestPriceGuarantee}</span>
                   </div>
                   <div className="flex items-center gap-2 text-white/80">
                     <Zap className="w-4 h-4" />
-                    <span className="text-sm">Fast confirmation</span>
+                    <span className="text-sm">{t.FastConfirmation}</span>
                   </div>
                   <div className="flex items-center gap-2 text-white/80">
                     <Users className="w-4 h-4" />
-                    <span className="text-sm">Dedicated support</span>
+                    <span className="text-sm">{t.DedicatedSupport}</span>
                   </div>
                 </div>
               </div>
