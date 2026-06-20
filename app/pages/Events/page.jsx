@@ -5,46 +5,50 @@ import { Sparkles, Calendar, MapPin, Download, ArrowRight } from "lucide-react";
 import BreadCrumb from "../../Components/BreadCrum";
 import { MdEmojiEvents } from "react-icons/md";
 
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/events";
+
 const EventsSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const pastEvents = [
     {
       id: 1,
       image: "/Images/Events/GlobalHealthSaudi.jpg",
-      title: "Healthcare Innovation 2024",
-      date: "September 2024",
+      title: t.healthcareInnovation2024,
+      date: t.september2024,
       report: true,
     },
     {
       id: 2,
       image: "/Images/Events/Riyadh-2.webp",
-      title: "Digital Health Forum",
-      date: "April 2024",
+      title: t.digitalHealthForum,
+      date: t.april2024,
       report: true,
     },
     {
       id: 3,
       image: "/Images/Events/Arabnews.jpg",
-      title: "Medical Excellence Conference",
-      date: "August 2019",
+      title: t.medicalExcellenceConference,
+      date: t.august2019,
       report: true,
     },
     {
       id: 4,
       image: "/Images/Events/Meeting.jpg",
-      title: "Global Health Assembly",
-      date: "March 2024",
+      title: t.globalHealthAssembly,
+      date: t.march2024,
       report: true,
     },
   ];
 
   return (
     <>
-      <BreadCrumb
-        title="Events"
-        // backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Events" }]}
-      />
-      <section id="events" className="relative py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden">
+      <BreadCrumb title={t.events} path={[{ label: t.events }]} />
+      <section
+        id="events"
+        className="relative py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden"
+      >
         {/* Animated Background - Matching Services section */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
           {/* Floating orbs - responsive sizes */}
@@ -60,16 +64,16 @@ const EventsSection = () => {
             <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
               <MdEmojiEvents className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-300" />
               <span className="text-xs sm:text-sm font-medium text-gray-300">
-                Events & Insights
+                {t.eventsInsights}
               </span>
             </div>
 
             {/* Main title */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
-              <span className="text-white">Shaping the Future of</span>
-             {''} {''}
+              <span className="text-white">{t.shapingTheFutureOf}</span>
+              {""} {""}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                Healthcare
+                {t.healthcare}
               </span>
             </h1>
 
@@ -77,8 +81,7 @@ const EventsSection = () => {
             <div className="relative max-w-3xl mx-auto">
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
-                Bringing together healthcare leaders, innovators, and global
-                experts to shape the future of medical excellence.
+               {t.eventsHeroDescription}
               </p>
             </div>
           </div>
@@ -87,7 +90,7 @@ const EventsSection = () => {
           <div className="relative mb-24 sm:mb-28 md:mb-32 lg:mb-40">
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-             
+
             <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center rounded-2xl p-3 sm:p-4 inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center">
               {/* Image Section */}
               <div className="relative group">
@@ -118,14 +121,14 @@ const EventsSection = () => {
                 <div className="mb-2 sm:mb-3">
                   <span className="inline-flex items-center gap-1 sm:gap-2 bg-blue-500/20 text-blue-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-semibold border border-blue-500/30">
                     <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full animate-pulse"></span>
-                    UPCOMING EVENT 2026
+                    {t.upcomingEvent2026}
                   </span>
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
-                  Global Health
+                  {t.globalHealth}
                   <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent block mt-1">
-                    Exhibition 2026
+                   {t.exhibition2026}
                   </span>
                 </h2>
 
@@ -135,7 +138,7 @@ const EventsSection = () => {
                       <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                     </div>
                     <p className="text-sm sm:text-base md:text-lg">
-                      Riyadh International Convention Center
+                      {t.riyadhInternationalConventionCenter}
                     </p>
                   </div>
 
@@ -143,7 +146,9 @@ const EventsSection = () => {
                     <div className="p-1.5 sm:p-2 bg-purple-500/20 rounded-lg border border-purple-500/30">
                       <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
                     </div>
-                    <p className="text-sm sm:text-base md:text-lg">26-03-2026</p>
+                    <p className="text-sm sm:text-base md:text-lg">
+                      {t.eventDate}
+                    </p>
                   </div>
                 </div>
 
@@ -153,19 +158,25 @@ const EventsSection = () => {
                     <p className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                       500+
                     </p>
-                    <p className="text-xs sm:text-sm text-gray-400 mt-0.5 sm:mt-1">Speakers</p>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-0.5 sm:mt-1">
+                      {t.speakers}
+                    </p>
                   </div>
                   <div className="text-center border-x border-white/10">
                     <p className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                       100+
                     </p>
-                    <p className="text-xs sm:text-sm text-gray-400 mt-0.5 sm:mt-1">Exhibitors</p>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-0.5 sm:mt-1">
+                      {t.exhibitors}
+                    </p>
                   </div>
                   <div className="text-center">
                     <p className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                       50+
                     </p>
-                    <p className="text-xs sm:text-sm text-gray-400 mt-0.5 sm:mt-1">Countries</p>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-0.5 sm:mt-1">
+                     {t.countries}
+                    </p>
                   </div>
                 </div>
 
@@ -173,7 +184,7 @@ const EventsSection = () => {
                 <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3 md:pt-4">
                   <button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 flex-1">
                     <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2">
-                      Register Now
+                      {t.registerNow}
                       <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -181,7 +192,7 @@ const EventsSection = () => {
 
                   <button className="group border-2 border-blue-500/50 text-blue-400 px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-blue-500/10 hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 flex-1 backdrop-blur-sm">
                     <span className="flex items-center justify-center gap-1 sm:gap-2">
-                      Book Booth
+                      {t.bookBooth}
                       <svg
                         className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform"
                         fill="none"
@@ -205,9 +216,11 @@ const EventsSection = () => {
           {/* PAST EVENTS */}
           <div className="mb-12 sm:mb-14 md:mb-16 lg:mb-20">
             <div className="flex flex-col xs:flex-row items-center justify-between gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 lg:mb-14">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">Past Events</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+                {t.pastEvents}
+              </h3>
               <span className="text-xs sm:text-sm text-blue-400 font-semibold hover:text-blue-300 cursor-pointer inline-flex items-center gap-1 sm:gap-2 group">
-                View all reports
+                {t.viewAllReports}
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </div>
@@ -244,11 +257,13 @@ const EventsSection = () => {
                     </h4>
                     <div className="flex items-center gap-1 sm:gap-2 mt-1 sm:mt-2">
                       <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500" />
-                      <p className="text-gray-400 text-xs sm:text-sm">{event.date}</p>
+                      <p className="text-gray-400 text-xs sm:text-sm">
+                        {event.date}
+                      </p>
                     </div>
 
                     <button className="mt-3 sm:mt-4 md:mt-5 text-blue-400 text-xs sm:text-sm font-semibold hover:gap-2 inline-flex items-center gap-1 transition-all group/btn">
-                      View Report
+                      {t.viewAllReports}
                       <span className="group-hover/btn:translate-x-1 transition-transform">
                         →
                       </span>
@@ -275,21 +290,20 @@ const EventsSection = () => {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                 <Download className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span className="text-xs sm:text-sm font-medium text-white/90">
-                  Resources
+                  {t.resources}
                 </span>
               </div>
 
               <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                Download All Event Reports
+                {t.downloadAllEventReports}
               </h4>
 
               <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                Access full reports, presentations, and insights from previous
-                events.
+               {t.downloadReportsDescription}
               </p>
 
               <button className="group inline-flex items-center gap-1 sm:gap-2 bg-white text-gray-900 px-5 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                <span>Download Reports</span>
+                <span>{t.downloadReports}</span>
                 <Download className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-y-1 transition-transform" />
               </button>
             </div>

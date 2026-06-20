@@ -36,232 +36,214 @@ import {
 import Link from "next/link";
 import BreadCrumb from "../../Components/BreadCrum";
 
-// FAQ Categories with icons and colors
-const categories = [
-  {
-    id: "all",
-    name: "All Topics",
-    icon: Sparkles,
-    color: "from-blue-500 to-purple-500",
-    count: 24,
-  },
-  {
-    id: "registration",
-    name: "Registration",
-    icon: Ticket,
-    color: "from-green-500 to-emerald-500",
-    count: 8,
-  },
-  {
-    id: "booth",
-    name: "Booth Booking",
-    icon: Building2,
-    color: "from-orange-500 to-amber-500",
-    count: 6,
-  },
-  {
-    id: "event",
-    name: "Event",
-    icon: Calendar,
-    color: "from-purple-500 to-pink-500",
-    count: 10,
-  },
-  {
-    id: "portal",
-    name: "Portal",
-    icon: UserCheck,
-    color: "from-cyan-500 to-blue-500",
-    count: 12,
-  },
-  {
-    id: "payment",
-    name: "Payment",
-    icon: CreditCard,
-    color: "from-indigo-500 to-purple-500",
-    count: 5,
-  },
-];
-
-// FAQ Data - Organized by category
-const faqData = {
-  registration: [
-    {
-      question: "How do I register for an event?",
-      answer:
-        "Visit the Events page, select your event, click 'Register Now', create an account or log in, fill your details, choose ticket type, and complete payment. You'll receive a confirmation email instantly.",
-      helpful: 245,
-    },
-    {
-      question: "What is the early bird deadline?",
-      answer:
-        "Early bird pricing ends 60 days before the event. Save up to 30% by registering early. Check specific event pages for exact dates.",
-      helpful: 189,
-    },
-    {
-      question: "Can I transfer my registration?",
-      answer:
-        "Yes, transfers are allowed up to 14 days before the event. Contact support with both participants' details. A small administrative fee applies.",
-      helpful: 67,
-    },
-    {
-      question: "What is your cancellation policy?",
-      answer:
-        "30+ days: 80% refund | 15-29 days: 50% refund | Less than 14 days: No refund. Submit cancellation requests in writing to support@Hpql.com.",
-      helpful: 123,
-    },
-  ],
-  booth: [
-    {
-      question: "How do I book a booth?",
-      answer:
-        "Go to Exhibition section, view interactive floor plan, select your preferred location, review pricing, and complete booking form. Our team confirms within 24 hours.",
-      helpful: 156,
-    },
-    {
-      question: "What's included in booth package?",
-      answer:
-        "Each booth includes: branded backdrop, table & chairs, power outlet, Wi-Fi, company listing, 2 exhibitor passes, and basic cleaning. Premium packages available.",
-      helpful: 134,
-    },
-    {
-      question: "Can I customize my booth?",
-      answer:
-        "Yes! Custom designs allowed with approval 30 days before event. Our team provides guidelines. Additional fees may apply for custom setups.",
-      helpful: 89,
-    },
-  ],
-  event: [
-    {
-      question: "How do I earn CME credits?",
-      answer:
-        "Attend sessions and get your badge scanned at each session. Certificates available in your portal within 2 weeks post-event. Track your progress in real-time.",
-      helpful: 312,
-    },
-    {
-      question: "What's the dress code?",
-      answer:
-        "Business professional for conference sessions. Business formal for networking events and gala dinner. Lab coats welcome for clinical sessions.",
-      helpful: 45,
-    },
-    {
-      question: "Will there be networking?",
-      answer:
-        "Yes! Dedicated networking sessions, coffee breaks, lunch meetups, evening gala, and our networking app to connect with attendees before, during, and after.",
-      helpful: 178,
-    },
-    {
-      question: "Can I attend virtually?",
-      answer:
-        "Yes! Hybrid attendance available. Virtual attendees get live stream access, interactive Q&A, virtual networking, and 30-day on-demand recordings.",
-      helpful: 234,
-    },
-  ],
-  portal: [
-    {
-      question: "How to access my dashboard?",
-      answer:
-        "Log in with your email and password. Click 'My Dashboard' to access registrations, certificates, invoices, and profile settings.",
-      helpful: 167,
-    },
-    {
-      question: "How to reset password?",
-      answer:
-        "Click 'Forgot Password' on login page. Enter your email, receive reset link (valid 24 hours), and create new password.",
-      helpful: 98,
-    },
-    {
-      question: "How to download certificates?",
-      answer:
-        "After event, log in to portal, go to 'My Certificates', click 'Download' for PDF certificates ready to share with your board.",
-      helpful: 203,
-    },
-    {
-      question: "How to update profile?",
-      answer:
-        "Go to 'My Profile' in dashboard. Update name, contact info, professional details, and preferences. Changes save automatically.",
-      helpful: 76,
-    },
-  ],
-  payment: [
-    {
-      question: "What payment methods?",
-      answer:
-        "All major credit cards (Visa, Mastercard, Amex), bank transfers, and corporate purchase orders. Secure payment gateway with encryption.",
-      helpful: 145,
-    },
-    {
-      question: "How to get invoice?",
-      answer:
-        "Invoice attached to confirmation email. Also available in portal under 'My Invoices' for download anytime.",
-      helpful: 112,
-    },
-  ],
-};
-
-// Quick Stats
-const stats = [
-  {
-    icon: Headphones,
-    value: "24/7",
-    label: "Support",
-    color: "from-blue-500 to-cyan-400",
-  },
-  {
-    icon: Clock,
-    value: "< 24h",
-    label: "Response Time",
-    color: "from-green-500 to-emerald-400",
-  },
-  {
-    icon: Users,
-    value: "98%",
-    label: "Satisfaction",
-    color: "from-purple-500 to-pink-400",
-  },
-  {
-    icon: Award,
-    value: "5K+",
-    label: "Questions Answered",
-    color: "from-orange-500 to-amber-400",
-  },
-];
-
-// Contact Cards
-const contactCards = [
-  {
-    icon: Mail,
-    title: "Email Support",
-    value: "support@Hpql.com",
-    action: "Send Email",
-    link: "mailto:support@Hpql.com",
-    gradient: "from-blue-500 to-cyan-400",
-    bgGradient: "from-blue-500/10 to-cyan-500/10",
-  },
-  {
-    icon: Phone,
-    title: "Phone Support",
-    value: "+966 800 123 4567",
-    action: "Call Now",
-    link: "tel:+9668001234567",
-    gradient: "from-purple-500 to-pink-400",
-    bgGradient: "from-purple-500/10 to-pink-500/10",
-  },
-  {
-    icon: MessageSquare,
-    title: "Submit a Ticket",
-    value: "Get help from our support team",
-    action: "Create Ticket",
-    link: "/support",
-    gradient: "from-green-500 to-emerald-400",
-    bgGradient: "from-green-500/10 to-emerald-500/10",
-  },
-];
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/FAQ";
 
 export default function FAQPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFaq, setSelectedFaq] = useState(null);
   const [feedbackGiven, setFeedbackGiven] = useState({});
+  // FAQ Categories with icons and colors
+  const categories = [
+    {
+      id: "all",
+      name: t.allTopics,
+      icon: Sparkles,
+      color: "from-blue-500 to-purple-500",
+      count: 24,
+    },
+    {
+      id: "registration",
+      name: t.registration,
+      icon: Ticket,
+      color: "from-green-500 to-emerald-500",
+      count: 8,
+    },
+    {
+      id: "booth",
+      name: t.boothBooking,
+      icon: Building2,
+      color: "from-orange-500 to-amber-500",
+      count: 6,
+    },
+    {
+      id: "event",
+      name: t.event,
+      icon: Calendar,
+      color: "from-purple-500 to-pink-500",
+      count: 10,
+    },
+    {
+      id: "portal",
+      name: t.portal,
+      icon: UserCheck,
+      color: "from-cyan-500 to-blue-500",
+      count: 12,
+    },
+    {
+      id: "payment",
+      name: t.payment,
+      icon: CreditCard,
+      color: "from-indigo-500 to-purple-500",
+      count: 5,
+    },
+  ];
+
+  // FAQ Data - Organized by category
+  const faqData = {
+    registration: [
+      {
+        question: t.faqRegisterQuestion,
+        answer: t.faqRegisterAnswer,
+        helpful: 245,
+      },
+      {
+        question: t.faqEarlyBirdQuestion,
+        answer: t.faqEarlyBirdAnswer,
+        helpful: 189,
+      },
+      {
+        question: t.faqTransferQuestion,
+        answer: t.faqTransferAnswer,
+        helpful: 67,
+      },
+      {
+        question: t.faqCancellationQuestion,
+        answer: t.faqCancellationAnswer,
+        helpful: 123,
+      },
+    ],
+    booth: [
+      {
+        question: t.faqBoothQuestion,
+        answer: t.faqBoothAnswer,
+        helpful: 156,
+      },
+      {
+        question: t.faqBoothPackageQuestion,
+        answer: t.faqBoothPackageAnswer,
+        helpful: 134,
+      },
+    ],
+    event: [
+      {
+        question: t.faqCMEQuestion,
+        answer: t.faqCMEAnswer,
+      },
+      {
+        question: t.faqDressCodeQuestion,
+        answer: t.faqDressCodeAnswer,
+        helpful: 45,
+      },
+      {
+        question: t.faqNetworkingQuestion,
+        answer: t.faqNetworkingAnswer,
+        helpful: 178,
+      },
+      {
+        question: t.faqVirtualQuestion,
+        answer: t.faqVirtualAnswer,
+        helpful: 234,
+      },
+    ],
+    portal: [
+      {
+        question: t.faqDashboardQuestion,
+        answer: t.faqDashboardAnswer,
+        helpful: 167,
+      },
+      {
+        question: t.faqResetPasswordQuestion,
+        answer: t.faqResetPasswordAnswer,
+        helpful: 98,
+      },
+      {
+        question: t.faqCertificatesQuestion,
+        answer: t.faqCertificatesAnswer,
+        helpful: 203,
+      },
+      {
+        question: t.faqUpdateProfileQuestion,
+        answer: t.faqUpdateProfileAnswer,
+        helpful: 76,
+      },
+    ],
+    payment: [
+      {
+        question: t.faqPaymentQuestion,
+        answer: t.faqPaymentAnswer,
+        helpful: 145,
+      },
+      {
+        question: t.faqInvoiceQuestion,
+        answer: t.faqInvoiceAnswer,
+        helpful: 112,
+      },
+    ],
+  };
+
+  // Quick Stats
+  const stats = [
+    {
+      icon: Headphones,
+      value: "24/7",
+      label: "Support",
+      color: "from-blue-500 to-cyan-400",
+    },
+    {
+      icon: Clock,
+      value: "< 24h",
+      label: "Response Time",
+      color: "from-green-500 to-emerald-400",
+    },
+    {
+      icon: Users,
+      value: "98%",
+      label: "Satisfaction",
+      color: "from-purple-500 to-pink-400",
+    },
+    {
+      icon: Award,
+      value: "5K+",
+      label: "Questions Answered",
+      color: "from-orange-500 to-amber-400",
+    },
+  ];
+
+  // Contact Cards
+  const contactCards = [
+    {
+      icon: Mail,
+      value: "support@Hpql.com",
+      title: t.emailSupport,
+      action: t.sendEmail,
+      link: "mailto:support@Hpql.com",
+      gradient: "from-blue-500 to-cyan-400",
+      bgGradient: "from-blue-500/10 to-cyan-500/10",
+    },
+    {
+      icon: Phone,
+      value: "+966 800 123 4567",
+      title: t.phoneSupport,
+      action: t.callNow,
+      link: "tel:+9668001234567",
+      gradient: "from-purple-500 to-pink-400",
+      bgGradient: "from-purple-500/10 to-pink-500/10",
+    },
+    {
+      icon: MessageSquare,
+      title: t.submitTicket,
+      value: t.ticketDescription,
+      action: t.createTicket,
+      link: "/support",
+      gradient: "from-green-500 to-emerald-400",
+      bgGradient: "from-green-500/10 to-emerald-500/10",
+    },
+  ];
 
   // Get current FAQs based on category
   const getCurrentFaqs = () => {
@@ -297,9 +279,9 @@ export default function FAQPage() {
   return (
     <>
       <BreadCrumb
-        title="Help Center"
+        title={t.helpCenter}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Help & Support" }]}
+        path={[{ label: t.helpSupport }]}
       />
 
       <section className="relative min-h-screen py-10 overflow-hidden">
@@ -316,18 +298,17 @@ export default function FAQPage() {
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 mb-4">
               <Star className="w-3 h-3 text-blue-400" />
               <span className="text-xs font-medium text-gray-300">
-                How can we help ?
+                {t.howCanWeHelpShort}
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-              Hello!{" "}
+              {t.helloHelpTitle}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                How can we help you?
+                {t.howCanWeHelpTitle}
               </span>
             </h1>
             <p className="text-gray-400 text-sm max-w-xl mx-auto">
-              Find answers to common questions or get in touch with our support
-              team
+              {t.helpDescription}
             </p>
           </div>
 
@@ -341,7 +322,7 @@ export default function FAQPage() {
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-blue-400 transition-colors" />
                 <input
                   type="text"
-                  placeholder="Search for answers..."
+                  placeholder={t.searchAnswers}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-12 pr-4 py-3.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-sm text-white placeholder:text-gray-400 focus:outline-none focus:border-transparent transition-all"
@@ -392,13 +373,13 @@ export default function FAQPage() {
             <div className="text-center py-16 bg-white/5 rounded-2xl border border-white/10">
               <HelpCircle className="w-16 h-16 text-gray-500 mx-auto mb-4" />
               <p className="text-gray-400">
-                No results found for "{searchQuery}"
+                {t.noResultsFound} "{searchQuery}"
               </p>
               <button
                 onClick={() => setSearchQuery("")}
                 className="mt-4 text-sm text-blue-400 hover:text-blue-300"
               >
-                Clear search
+                {t.clearSearch}
               </button>
             </div>
           ) : (
@@ -439,7 +420,7 @@ export default function FAQPage() {
                     {selectedFaq === idx && (
                       <div className="flex items-center gap-4 mt-4 pt-3 border-t border-white/10">
                         <span className="text-[10px] text-gray-500">
-                          Was this helpful?
+                          {t.wasThisHelpful}
                         </span>
                         <div className="flex gap-2">
                           <button
@@ -454,7 +435,7 @@ export default function FAQPage() {
                             }`}
                           >
                             <ThumbsUp className="w-3 h-3" />
-                            Yes ({faq.helpful})
+                            {t.yes} ({faq.helpful})
                           </button>
                           <button
                             onClick={(e) => {
@@ -468,7 +449,7 @@ export default function FAQPage() {
                             }`}
                           >
                             <ThumbsDown className="w-3 h-3" />
-                            No
+                            {t.no}
                           </button>
                         </div>
                       </div>
@@ -483,11 +464,9 @@ export default function FAQPage() {
           <div className="mb-12">
             <div className="text-center mb-8">
               <h2 className="text-xl font-bold text-white mb-2">
-                Still have questions?
+                {t.stillHaveQuestions}
               </h2>
-              <p className="text-sm text-gray-400">
-                Our support team is ready to help you
-              </p>
+              <p className="text-sm text-gray-400">{t.supportReady}</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-5">

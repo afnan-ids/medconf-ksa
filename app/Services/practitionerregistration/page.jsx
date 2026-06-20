@@ -35,70 +35,68 @@ import BreadCrumb from "../../Components/BreadCrum";
 import Link from "next/link";
 import { FaRegistered } from "react-icons/fa";
 
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/PractitionerRegistration";
+
 export default function PractitionerRegistration() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const benefits = [
     {
       icon: Lightbulb,
-      title: "Knowledge Sharing",
-      description:
-        "Attend educational sessions and learn about the latest medical innovations.",
+      title: t.knowledgeSharing,
+      description: t.knowledgeSharingDescription,
       color: "from-amber-500 to-orange-400",
-      stats: "50+ Sessions",
+      stats: t.sessions50Plus,
     },
     {
       icon: Network,
-      title: "Networking",
-      description: "Connect with doctors, researchers, and healthcare experts.",
+      title: t.networking,
+      description: t.networkingDescription,
       color: "from-blue-500 to-cyan-400",
-      stats: "1000+ Peers",
+      stats: t.peers1000Plus,
     },
     {
       icon: TrendingUp,
-      title: "Industry Insights",
-      description:
-        "Explore new technologies and medical solutions from leading companies.",
+      title: t.industryInsights,
+      description: t.industryInsightsDescription,
       color: "from-purple-500 to-pink-400",
-      stats: "200+ Exhibitors",
+      stats: t.exhibitors200Plus,
     },
     {
       icon: GraduationCap,
-      title: "Professional Growth",
-      description:
-        "Enhance your professional network and career opportunities.",
+      title: t.professionalGrowth,
+      description: t.professionalGrowthDescription,
       color: "from-green-500 to-emerald-400",
-      stats: "CME Credits",
+      stats: t.cmeCredits,
     },
   ];
-
   const process = [
     {
       icon: FileCheck,
-      title: "Sign Up",
-      description:
-        "Fill out the practitioner registration form with your details.",
+      title: t.signUp,
+      description: t.signUpDescription,
       color: "from-blue-500 to-cyan-400",
       step: "01",
     },
     {
       icon: BadgeCheck,
-      title: "Verification",
-      description:
-        "Our team verifies your professional credentials and license.",
+      title: t.verification,
+      description: t.verificationDescription,
       color: "from-purple-500 to-pink-400",
       step: "02",
     },
     {
       icon: MailCheck,
-      title: "Confirmation",
-      description: "Receive confirmation and event access details via email.",
+      title: t.confirmation,
+      description: t.confirmationDescription,
       color: "from-amber-500 to-orange-400",
       step: "03",
     },
     {
       icon: CalendarCheck,
-      title: "Attend Event",
-      description:
-        "Participate in conferences, workshops, and networking sessions.",
+      title: t.attendEvent,
+      description: t.attendEventDescription,
       color: "from-green-500 to-emerald-400",
       step: "04",
     },
@@ -106,26 +104,26 @@ export default function PractitionerRegistration() {
 
   const practitionerTypes = [
     {
-      title: "Physicians & Specialists",
-      description: "Medical doctors across all specialties",
+      title: t.physiciansSpecialists,
+      description: t.physiciansSpecialistsDescription,
       icon: Stethoscope,
       color: "from-blue-500 to-cyan-400",
     },
     {
-      title: "Researchers & Academics",
-      description: "Medical researchers and faculty members",
+      title: t.researchersAcademics,
+      description: t.researchersAcademicsDescription,
       icon: GraduationCap,
       color: "from-purple-500 to-pink-400",
     },
     {
-      title: "Healthcare Administrators",
-      description: "Hospital and clinic management professionals",
+      title: t.healthcareAdministrators,
+      description: t.healthcareAdministratorsDescription,
       icon: UserCog,
       color: "from-amber-500 to-orange-400",
     },
     {
-      title: "Allied Health Professionals",
-      description: "Nurses, technicians, and therapists",
+      title: t.alliedHealthProfessionals,
+      description: t.alliedHealthProfessionalsDescription,
       icon: ClipboardCheck,
       color: "from-green-500 to-emerald-400",
     },
@@ -133,42 +131,42 @@ export default function PractitionerRegistration() {
 
   const features = [
     {
-      text: "SCFHS license verification included",
+      text: t.scfhsLicenseVerificationIncluded,
       icon: ShieldCheck,
       color: "from-blue-500 to-cyan-400",
     },
     {
-      text: "Access to all conference sessions",
+      text: t.accessToAllConferenceSessions,
       icon: Mic,
       color: "from-purple-500 to-pink-400",
     },
     {
-      text: "Exhibitor hall access",
+      text: t.exhibitorHallAccess,
       icon: Building2,
       color: "from-amber-500 to-orange-400",
     },
     {
-      text: "Networking lounge access",
+      text: t.networkingLoungeAccess,
       icon: Users,
       color: "from-green-500 to-emerald-400",
     },
     {
-      text: "CME/CPD credit tracking",
+      text: t.cmeCpdCreditTracking,
       icon: Award,
       color: "from-blue-500 to-cyan-400",
     },
     {
-      text: "Workshop participation",
+      text: t.workshopParticipation,
       icon: GraduationCap,
       color: "from-purple-500 to-pink-400",
     },
     {
-      text: "Event materials & resources",
+      text: t.eventMaterialsResources,
       icon: FileText,
       color: "from-amber-500 to-orange-400",
     },
     {
-      text: "Post-event content access",
+      text: t.postEventContentAccess,
       icon: Video,
       color: "from-green-500 to-emerald-400",
     },
@@ -176,16 +174,14 @@ export default function PractitionerRegistration() {
   return (
     <>
       <BreadCrumb
-        title="Practitioner Registration"
-        backgroundImage="/Images/Home/Bread-crum-1.avif"
+        title={t.practitionerRegistration}
         path={[
-          { label: "Services", href: "/pages/NavBar-Links/NavServices" },
-          { label: "Practitioner Registration" },
+          { label: t.services, href: "/pages/NavBar-Links/NavServices" },
+          { label: t.practitionerRegistration },
         ]}
       />
 
       <section className="relative py-16 overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900">
-        
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -208,32 +204,30 @@ export default function PractitionerRegistration() {
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
               <UserCheck className="w-4 h-4 text-emerald-400" />
               <span className="text-sm font-medium text-gray-300">
-                Join 5,000+ Healthcare Professionals
+                {t.joinHealthcareProfessionals}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Practitioner</span>
-              {""} {''}
+              <span className="text-white">{t.practitioner}</span>
+              {""} {""}
               <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Registration
+                {t.registration}
               </span>
             </h1>
 
             <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-              Register as a healthcare practitioner to access exclusive
-              conferences, workshops, and networking events. Connect with peers
-              and stay at the forefront of medical innovation.
+              {t.practitionerHeroDescription}
             </p>
           </div>
 
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
             {[
-              { number: "5000+", label: "Active Members", icon: Users },
-              { number: "150+", label: "Events Yearly", icon: Calendar },
-              { number: "30+", label: "Specialties", icon: Stethoscope },
-              { number: "50+", label: "CME Credits", icon: Award },
+              { number: "5000+", label: t.activeMembers, icon: Users },
+              { number: "150+", label: t.eventsYearly, icon: Calendar },
+              { number: "30+", label: t.specialties, icon: Stethoscope },
+              { number: "50+", label: t.cmeCreditsStat, icon: Award },
             ].map((stat, index) => {
               const Icon = stat.icon;
               return (
@@ -255,15 +249,10 @@ export default function PractitionerRegistration() {
           <div className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Who Can
-                <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                  {" "}
-                  Register?
-                </span>
+                {t.whoCanRegister}
               </h2>
               <p className="text-gray-300 max-w-2xl mx-auto">
-                Our registration is open to all qualified healthcare
-                professionals looking to expand their knowledge and network.
+                {t.whoCanRegisterDescription}
               </p>
             </div>
 
@@ -294,11 +283,7 @@ export default function PractitionerRegistration() {
           <div className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Benefits of
-                <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                  {" "}
-                  Registration
-                </span>
+                {t.benefitsOfRegistration}
               </h2>
             </div>
 
@@ -336,10 +321,10 @@ export default function PractitionerRegistration() {
           <div className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Simple
+                {t.simpleProcess}
                 <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                   {" "}
-                  4-Step Process
+                  {t.fourStepProcess}
                 </span>
               </h2>
             </div>
@@ -362,7 +347,7 @@ export default function PractitionerRegistration() {
                         <span
                           className={`text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r ${step.color} block mb-2`}
                         >
-                          Step {step.step}
+                          {t.step} {step.step}
                         </span>
                         <h3 className="text-lg font-bold text-white mb-2">
                           {step.title}
@@ -382,10 +367,10 @@ export default function PractitionerRegistration() {
           <div className="mb-20">
             <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
-                Everything Included in Your
+                {t.everythingIncluded}
                 <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                   {" "}
-                  Registration
+                  {t.registrationText}
                 </span>
               </h3>
 
@@ -429,27 +414,28 @@ export default function PractitionerRegistration() {
                 <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-4 py-2 mb-6">
                   <FaRegistered className="w-4 h-4 text-white" />
                   <span className="text-sm font-medium text-white">
-                    Limited Time Offer
+                    {t.limitedTimeOffer}
                   </span>
                 </div>
 
                 <h4 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Ready to Join?
+                  {t.readyToJoin}?
                 </h4>
 
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                  Become part of a professional healthcare network and stay
-                  updated with the latest industry innovations.
+                 {t.readyToJoinDescription}
                 </p>
 
-                <Link href='/Forms/PractitionerRegistrationForm' className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                  Register Now
+                <Link
+                  href="/Forms/PractitionerRegistrationForm"
+                  className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                >
+                 {t.registerNow}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <p className="text-white/70 text-sm mt-4">
-                  Free registration for limited time • Verified professionals
-                  only
+                {t.freeRegistrationLimitedTime} • {t.verifiedProfessionalsOnly}
                 </p>
               </div>
             </div>
