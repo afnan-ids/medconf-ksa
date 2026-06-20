@@ -35,166 +35,12 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import BreadCrumb from "../../Components/BreadCrum";
-
-// Categories
-const categories = [
-  { name: "For You", icon: Sparkles },
-  { name: "Events", icon: Calendar },
-  { name: "Insights", icon: Stethoscope },
-  { name: "Exhibitions", icon: Building2 },
-  { name: "Announcements", icon: Megaphone },
-];
-
-// Breaking News
-const breakingNews = {
-  title:
-    "Early Bird Registration Now Open! Save up to 30% on conference passes",
-  link: "#",
-};
-
-// Featured Story
-const featuredStory = {
-  title: "The Future of Healthcare in Saudi Arabia: Vision 2030 and Beyond",
-  excerpt:
-    "How the Kingdom is revolutionizing medical education, digital health infrastructure, and patient care through strategic initiatives and international partnerships.",
-  author: "Dr. Sarah Al-Malki",
-  authorRole: "Chief Medical Officer",
-  date: "Dec 10, 2024",
-  readTime: "8 min read",
-  category: "Healthcare Insights",
-  color: "from-blue-600 to-purple-600",
-};
-
-// Top Stories
-const topStories = [
-  {
-    id: 1,
-    title: "AI Diagnostics: New Breakthrough in Early Cancer Detection",
-    excerpt:
-      "Revolutionary AI model shows 95% accuracy in detecting early-stage cancers.",
-    author: "Dr. James Wilson",
-    date: "Dec 8, 2024",
-    readTime: "5 min",
-    category: "Industry Trends",
-    color: "from-purple-500 to-pink-400",
-    pinned: true,
-  },
-  {
-    id: 2,
-    title: "Hpql Announces 100+ International Speakers",
-    excerpt:
-      "World-renowned experts from Harvard, Mayo Clinic, and WHO to headline the event.",
-    author: "Ahmed Al-Jabri",
-    date: "Dec 7, 2024",
-    readTime: "4 min",
-    category: "Event Updates",
-    color: "from-green-500 to-blue-400",
-    pinned: false,
-  },
-  {
-    id: 3,
-    title: "New CME Guidelines Released for 2025",
-    excerpt:
-      "SCFHS announces updated continuing medical education requirements.",
-    author: "Dr. Fatima Al-Zahrani",
-    date: "Dec 6, 2024",
-    readTime: "6 min",
-    category: "Announcements",
-    color: "from-amber-500 to-orange-400",
-    pinned: false,
-  },
-];
-
-// Recent Articles
-const recentArticles = [
-  {
-    id: 4,
-    title: "Exhibition Space Sellout Expected Before Deadline",
-    excerpt:
-      "Over 70% of exhibition booths already booked for Hpql 2024.",
-    date: "Dec 5, 2024",
-    readTime: "3 min",
-    category: "Exhibition News",
-    color: "from-cyan-500 to-blue-500",
-    likes: 234,
-    comments: 12,
-  },
-  {
-    id: 5,
-    title: "Digital Health Summit Announces Innovation Track",
-    excerpt:
-      "New track focused on telehealth, wearables, and remote patient monitoring.",
-    date: "Dec 4, 2024",
-    readTime: "4 min",
-    category: "Event Updates",
-    color: "from-emerald-500 to-teal-500",
-    likes: 189,
-    comments: 8,
-  },
-  {
-    id: 6,
-    title: "Healthcare Leadership Workshop Registration Opens",
-    excerpt:
-      "Limited seats available for executive leadership development program.",
-    date: "Dec 3, 2024",
-    readTime: "5 min",
-    category: "Healthcare Insights",
-    color: "from-rose-500 to-red-500",
-    likes: 145,
-    comments: 23,
-  },
-  {
-    id: 7,
-    title: "Meet the Keynotes: Dr. Ahmed Al-Rasheed on Vision 2030",
-    excerpt: "Exclusive interview with MOH's digital transformation lead.",
-    date: "Dec 2, 2024",
-    readTime: "4 min",
-    category: "Announcements",
-    color: "from-indigo-500 to-purple-500",
-    likes: 312,
-    comments: 45,
-  },
-  {
-    id: 8,
-    title: "Networking App Launches for Conference Attendees",
-    excerpt:
-      "New platform to connect speakers, exhibitors, and attendees before the event.",
-    date: "Dec 1, 2024",
-    readTime: "3 min",
-    category: "Event Updates",
-    color: "from-orange-500 to-amber-500",
-    likes: 267,
-    comments: 34,
-  },
-  {
-    id: 9,
-    title: "Telehealth Regulations: What Practitioners Need to Know",
-    excerpt:
-      "New guidelines for remote consultations and digital health services in Saudi Arabia.",
-    date: "Nov 30, 2024",
-    readTime: "6 min",
-    category: "Healthcare Insights",
-    color: "from-pink-500 to-rose-500",
-    likes: 198,
-    comments: 27,
-  },
-];
-
-// Popular Tags
-const popularTags = [
-  "AI in Healthcare",
-  "CME Credits",
-  "Digital Health",
-  "Saudi Vision 2030",
-  "Medical Conference",
-  "Networking",
-  "Exhibition",
-  "Workshops",
-  "Telemedicine",
-  "Innovation",
-];
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/newsAndBlogs";
 
 export default function NewsBlogPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [activeCategory, setActiveCategory] = useState("For You");
   const [searchQuery, setSearchQuery] = useState("");
   const [likedArticles, setLikedArticles] = useState([]);
@@ -211,13 +57,160 @@ export default function NewsBlogPage() {
       prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id],
     );
   };
+  // Categories
+  const categories = [
+    { key: "forYou", icon: Sparkles },
+    { key: "events", icon: Calendar },
+    { key: "insightsCategory", icon: Stethoscope },
+    { key: "exhibitions", icon: Building2 },
+    { key: "announcements", icon: Megaphone },
+  ];
+
+  // Breaking News
+  const breakingNews = {
+    title: t.breakingNewsTitle,
+    link: "#",
+  };
+
+  // Featured Story
+  const featuredStory = {
+    title: t.featuredStoryTitle,
+    excerpt: t.featuredStoryExcerpt,
+    author: t.featuredStoryAuthor,
+    authorRole: t.featuredStoryAuthorRole,
+    date: "Dec 10, 2024",
+    readTime: "8 min read",
+    category: t.featuredStoryCategory,
+    color: "from-blue-600 to-purple-600",
+  };
+
+  // Top Stories
+  const topStories = [
+    {
+      id: 1,
+      title: t.topStory1Title,
+      excerpt: t.topStory1Excerpt,
+      author: t.topStory1Author,
+      date: "Dec 8, 2024",
+      readTime: "5 min",
+      category: t.topStory1Category,
+      color: "from-purple-500 to-pink-400",
+      pinned: true,
+    },
+    {
+      id: 2,
+      title: t.topStory2Title,
+      excerpt: t.topStory2Excerpt,
+      author: t.topStory2Author,
+      date: "Dec 7, 2024",
+      readTime: "4 min",
+      category: t.topStory2Category,
+      color: "from-green-500 to-blue-400",
+      pinned: false,
+    },
+    {
+      id: 3,
+      title: t.topStory3Title,
+      excerpt: t.topStory3Excerpt,
+      author: t.topStory3Author,
+      date: "Dec 6, 2024",
+      readTime: "6 min",
+      category: t.topStory3Category,
+      color: "from-amber-500 to-orange-400",
+      pinned: false,
+    },
+  ];
+
+  // Recent Articles
+  const recentArticles = [
+    {
+      id: 4,
+      title: t.recentArticle1Title,
+      excerpt: t.recentArticle1Excerpt,
+      date: "Dec 5, 2024",
+      readTime: "3 min",
+      category: t.recentArticle1Category,
+      color: "from-cyan-500 to-blue-500",
+      likes: 234,
+      comments: 12,
+    },
+    {
+      id: 5,
+      title: t.recentArticle2Title,
+      excerpt: t.recentArticle2Excerpt,
+      date: "Dec 4, 2024",
+      readTime: "4 min",
+      category: t.recentArticle2Category,
+      color: "from-emerald-500 to-teal-500",
+      likes: 189,
+      comments: 8,
+    },
+    {
+      id: 6,
+      title: t.recentArticle3Title,
+      excerpt: t.recentArticle3Excerpt,
+      date: "Dec 3, 2024",
+      readTime: "5 min",
+      category: t.recentArticle3Category,
+      color: "from-rose-500 to-red-500",
+      likes: 145,
+      comments: 23,
+    },
+    {
+      id: 7,
+      title: t.recentArticle4Title,
+      excerpt: t.recentArticle4Excerpt,
+      date: "Dec 2, 2024",
+      readTime: "4 min",
+      category: t.recentArticle4Category,
+      color: "from-indigo-500 to-purple-500",
+      likes: 312,
+      comments: 45,
+    },
+    {
+      id: 8,
+      title: t.recentArticle5Title,
+      excerpt: t.recentArticle5Excerpt,
+      date: "Dec 1, 2024",
+      readTime: "3 min",
+      category: t.recentArticle5Category,
+      color: "from-orange-500 to-amber-500",
+      likes: 267,
+      comments: 34,
+    },
+    {
+      id: 9,
+      title: t.recentArticle6Title,
+      excerpt: t.recentArticle6Excerpt,
+      date: "Nov 30, 2024",
+      readTime: "6 min",
+      category: t.recentArticle6Category,
+      color: "from-pink-500 to-rose-500",
+      likes: 198,
+      comments: 27,
+    },
+  ];
+
+  // Popular Tags
+  const popularTags = [
+    "tagAiInHealthcare",
+    "tagCmeCredits",
+    "tagDigitalHealth",
+    "tagSaudiVision2030",
+    "tagMedicalConference",
+    "tagNetworking",
+    "tagExhibition",
+    "tagWorkshops",
+    "tagTelemedicine",
+    "tagInnovation",
+  ];
 
   return (
     <>
       <BreadCrumb
-        title="News & Blogs"
+        title={t.newsAndBlogs}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "News & Blogs" }]}
+        path={[{ label: t.newsAndBlogs }]}
       />
 
       <section className="relative min-h-screen py-8 overflow-hidden">
@@ -234,18 +227,17 @@ export default function NewsBlogPage() {
             <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
               <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-300" />
               <span className="text-xs sm:text-sm font-medium text-gray-300">
-                Fresh Updates
+                {t.freshUpdates}
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-              News &{" "}
+              {t.newsAnd}{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                Insights
+                {t.insights}{" "}
               </span>
             </h1>
             <p className="text-gray-400 text-sm max-w-xl mx-auto">
-              Stay updated with the latest healthcare news, conference updates,
-              and industry trends
+              {t.newsHeroDescription}
             </p>
           </div>
 
@@ -255,7 +247,7 @@ export default function NewsBlogPage() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-hover:text-blue-400 transition-colors" />
               <input
                 type="text"
-                placeholder="Search articles..."
+                placeholder={t.searchArticles}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
@@ -277,7 +269,7 @@ export default function NewsBlogPage() {
                     }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
-                    {cat.name}
+                    {t[cat.key]}
                   </button>
                 );
               })}
@@ -345,7 +337,7 @@ export default function NewsBlogPage() {
                       href="#"
                       className="text-sm text-blue-400 hover:text-blue-300 flex items-center gap-1 transition-all hover:gap-2"
                     >
-                      Read more <ArrowRight className="w-3.5 h-3.5" />
+                      {t.readMore} <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
@@ -357,7 +349,7 @@ export default function NewsBlogPage() {
               <div className="flex items-center gap-2 mb-3">
                 <TrendingUp className="w-4 h-4 text-orange-400" />
                 <h3 className="text-sm font-semibold text-white">
-                  Trending Now
+                  {t.trendingNow}
                 </h3>
               </div>
 
@@ -399,14 +391,14 @@ export default function NewsBlogPage() {
               <div className="flex items-center gap-2">
                 <div className="w-1 h-5 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
                 <h2 className="text-lg font-bold text-white">
-                  Recent Articles
+                  {t.recentArticles}
                 </h2>
               </div>
               <Link
                 href="#"
                 className="text-xs text-gray-500 hover:text-blue-400 transition-colors flex items-center gap-1"
               >
-                View all <ChevronRight className="w-3 h-3" />
+                {t.viewAll} <ChevronRight className="w-3 h-3" />
               </Link>
             </div>
 
@@ -481,7 +473,7 @@ export default function NewsBlogPage() {
             <div className="flex items-center gap-2 mb-4">
               <Award className="w-4 h-4 text-purple-400" />
               <h3 className="text-white font-semibold text-sm">
-                Popular Topics
+                {t.popularTopics}
               </h3>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -490,7 +482,7 @@ export default function NewsBlogPage() {
                   key={i}
                   className="px-3 py-1.5 text-xs rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
                 >
-                  #{tag}
+                  #{t[tag]}
                 </button>
               ))}
             </div>
@@ -510,26 +502,26 @@ export default function NewsBlogPage() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span className="text-xs sm:text-sm font-medium text-white/90">
-                  Never Miss an Update
+                  {t.neverMissAnUpdate}
                 </span>
               </div>
 
               <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                Subscribe to Our Newsletter
+                {t.subscribeNewsletter}
               </h4>
 
               <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                Get the latest healthcare news delivered straight to your inbox
+                {t.newsletterDescription}
               </p>
 
               <div className="flex max-w-md mx-auto gap-2">
                 <input
                   type="email"
-                  placeholder="Enter your email address"
+                  placeholder={t.enterEmailAddress}
                   className="flex-1 px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 transition-all"
                 />
                 <button className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white text-sm font-medium hover:shadow-lg hover:scale-105 transition-all duration-300">
-                  Subscribe
+                  {t.subscribe}
                 </button>
               </div>
             </div>
@@ -539,7 +531,7 @@ export default function NewsBlogPage() {
           <div className="text-center mt-10">
             <button className="group px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto">
               <Loader2 className="w-4 h-4 group-hover:animate-spin" />
-              Load More Articles
+              {t.loadMoreArticles}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

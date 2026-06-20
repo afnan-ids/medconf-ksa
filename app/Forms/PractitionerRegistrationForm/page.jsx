@@ -41,6 +41,9 @@ import { useState } from "react";
 import PortalIntro from "../../Layout/PortalsAnimation";
 import BreadCrumb from "../../Components/BreadCrum";
 
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/signUp";
+
 const FloatingIcon = ({
   Icon,
   delay = 0,
@@ -69,6 +72,8 @@ const FloatingIcon = ({
 };
 
 export default function PractitionerRegisterPage() {
+   const { language } = useLanguage();
+  const t = translations[language];
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
@@ -253,8 +258,8 @@ export default function PractitionerRegisterPage() {
   return (
     <>
       <BreadCrumb
-        title="Health Care Registeration"
-        path={[{ label: "Health Care" }]}
+        title={t.healthCareRegistration}
+        path={[{ label: t.healthCare }]}
       />
       <div className="min-h-screen relative">
         {/* Dark themed background - matching other components */}
@@ -283,21 +288,16 @@ export default function PractitionerRegisterPage() {
 
                   <div className="relative inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[11px] sm:text-xs">
                     <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 flex-shrink-0" />
-                    <span className="whitespace-nowrap">
-                      Hpql 2026 • Riyadh, Saudi Arabia
-                    </span>
+                    <span className="whitespace-nowrap">{t.hpqlBadge}</span>
                   </div>
                 </div>
 
                 {/* Heading */}
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-                  Let's Talk{" "}
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Healthcare Innovation
-                  </span>
+                  {t.heroTitle1}
                   <br className="hidden sm:block" />
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent block sm:inline">
-                    Let's Talk Hpql
+                    {t.heroTitle2}
                   </span>
                 </h1>
 
@@ -305,30 +305,21 @@ export default function PractitionerRegisterPage() {
                 <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 text-gray-300 text-xs sm:text-sm mb-5">
                   <div className="flex items-center gap-2 bg-white/5 rounded-full px-3 py-2 border border-white/10 w-full sm:w-auto justify-center">
                     <Calendar className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                    <span>15 - 17 November 2026</span>
+                    <span>{t.eventDate}</span>
                   </div>
 
                   <div className="flex items-center gap-2 bg-white/5 rounded-full px-3 py-2 border border-white/10 w-full sm:w-auto justify-center">
                     <MapPin className="w-4 h-4 text-cyan-400 flex-shrink-0" />
 
                     <span className="text-center sm:text-left">
-                      Riyadh International Convention & Exhibition Center
+                      {t.eventLocation}
                     </span>
                   </div>
                 </div>
 
                 {/* Description */}
                 <p className="text-gray-300 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-                  Complete the form to connect with our commercial team and
-                  explore how{" "}
-                  <span className="font-semibold text-blue-400">HPQL</span> can
-                  deliver
-                  <span className="font-semibold text-blue-400">
-                    {" "}
-                    strategic partnerships, brand visibility, and measurable
-                    impact
-                  </span>{" "}
-                  for your healthcare organization.
+                  {t.heroDescription}
                 </p>
               </div>
 
@@ -336,18 +327,11 @@ export default function PractitionerRegisterPage() {
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
                   <Target className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-                  Why exhibit at HPQL?
+                  {t.whyExhibit}
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {[
-                    "Connect with key decision-makers from Saudi Arabia's healthcare sector",
-                    "Showcase your medical innovations to 50,000+ healthcare professionals",
-                    "Align your brand with Saudi Vision 2030 healthcare transformation goals",
-                    "Access exclusive B2B matching and networking opportunities",
-                    "Gain exposure to government and private hospital procurement teams",
-                    "Participate in CME-accredited conferences and workshops",
-                  ].map((item, i) => (
+                  {t.exhibitReasons.map((item, i) => (
                     <div
                       key={i}
                       className="flex items-start gap-2 text-sm text-gray-300"
@@ -384,30 +368,28 @@ export default function PractitionerRegisterPage() {
                   <Stethoscope className="w-4 h-4 text-blue-400 flex-shrink-0" />
 
                   <span className="text-[11px] sm:text-xs text-blue-300 font-medium whitespace-nowrap">
-                    Healthcare Professional
+                    {t.healthcareProfessional}
                   </span>
                 </div>
 
                 {/* Heading */}
                 <h2 className="pb-2 text-2xl sm:text-3xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
-                  Practitioner Registration
+                  {t.practitionerRegistration}
                 </h2>
 
                 {/* Subtitle */}
                 <p className="text-gray-300 mt-3 text-sm sm:text-base md:text-lg px-2">
-                  Join the region's premier healthcare network
+                  {t.practitionerSubtitle}
                 </p>
                 <div className="flex items-center justify-center gap-2 mt-4">
                   <div className="flex items-center gap-1 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
                     <Lock className="w-3 h-3 text-cyan-400" />
-                    <span className="text-xs text-gray-400">
-                      256-bit SSL Secure
-                    </span>
+                    <span className="text-xs text-gray-400">{t.sslSecure}</span>
                   </div>
                   <div className="flex items-center gap-1 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
                     <Shield className="w-3 h-3 text-blue-400" />
                     <span className="text-xs text-gray-400">
-                      GDPR Compliant
+                      {t.gdprCompliant}
                     </span>
                   </div>
                 </div>
@@ -434,11 +416,11 @@ export default function PractitionerRegisterPage() {
 
                   <div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
-                      Account Information
+                      {t.accountInformation}
                     </h3>
 
                     <p className="text-gray-400 text-xs sm:text-sm mt-1">
-                      Create your secure account
+                      {t.createSecureAccount}
                     </p>
                   </div>
                 </div>
@@ -449,7 +431,7 @@ export default function PractitionerRegisterPage() {
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
                       <Mail className="w-4 h-4 text-blue-400" />
-                      Email Address <span className="text-red-400">*</span>
+                      {t.emailAddress} <span className="text-red-400">*</span>
                     </label>
 
                     <div className="relative">
@@ -461,7 +443,7 @@ export default function PractitionerRegisterPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         className={`${inputStyle} pl-12`}
-                        placeholder="dr.name@example.com"
+                        placeholder={t.emailPlaceholder}
                         required
                       />
                     </div>
@@ -471,7 +453,8 @@ export default function PractitionerRegisterPage() {
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
                       <Phone className="w-4 h-4 text-cyan-400" />
-                      Phone Number <span className="text-red-400">*</span>
+                      {t.phoneNumber}
+                      <span className="text-red-400">*</span>
                     </label>
 
                     <div className="relative">
@@ -483,7 +466,7 @@ export default function PractitionerRegisterPage() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className={`${inputStyle} pl-12`}
-                        placeholder="+966 XX XXX XXXX"
+                        placeholder={t.phonePlaceholder}
                         required
                       />
                     </div>
@@ -493,7 +476,7 @@ export default function PractitionerRegisterPage() {
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
                       <Lock className="w-4 h-4 text-blue-400" />
-                      Password <span className="text-red-400">*</span>
+                      {t.password} <span className="text-red-400">*</span>
                     </label>
 
                     <div className="relative">
@@ -505,7 +488,7 @@ export default function PractitionerRegisterPage() {
                         value={formData.password}
                         onChange={handleInputChange}
                         className={`${inputStyle} pl-12 pr-12`}
-                        placeholder="Create a strong password"
+                        placeholder={t.passwordPlaceholder}
                         required
                       />
 
@@ -527,7 +510,8 @@ export default function PractitionerRegisterPage() {
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm flex items-center gap-1">
                       <Lock className="w-4 h-4 text-cyan-400" />
-                      Confirm Password <span className="text-red-400">*</span>
+                      {t.confirmPassword}{" "}
+                      <span className="text-red-400">*</span>
                     </label>
 
                     <div className="relative">
@@ -539,7 +523,7 @@ export default function PractitionerRegisterPage() {
                         value={formData.confirmPassword}
                         onChange={handleInputChange}
                         className={`${inputStyle} pl-12 pr-12`}
-                        placeholder="Confirm your password"
+                        placeholder={t.confirmPasswordPlaceholder}
                         required
                       />
 
@@ -577,11 +561,11 @@ export default function PractitionerRegisterPage() {
 
                   <div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
-                      Personal Information
+                      {t.personalInformation}
                     </h3>
 
                     <p className="text-gray-400 text-xs sm:text-sm mt-1">
-                      Tell us about yourself
+                      {t.personalInformationSubtitle}
                     </p>
                   </div>
                 </div>
@@ -591,7 +575,7 @@ export default function PractitionerRegisterPage() {
                   {/* First Name */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      First Name <span className="text-red-400">*</span>
+                      {t.firstName} <span className="text-red-400">*</span>
                     </label>
 
                     <input
@@ -599,7 +583,7 @@ export default function PractitionerRegisterPage() {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       className={inputStyle}
-                      placeholder="John"
+                      placeholder={t.firstNamePlaceholder}
                       required
                     />
                   </div>
@@ -607,7 +591,7 @@ export default function PractitionerRegisterPage() {
                   {/* Last Name */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Last Name <span className="text-red-400">*</span>
+                      {t.lastName} <span className="text-red-400">*</span>
                     </label>
 
                     <input
@@ -615,7 +599,7 @@ export default function PractitionerRegisterPage() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       className={inputStyle}
-                      placeholder="Doe"
+                      placeholder={t.lastNamePlaceholder}
                       required
                     />
                   </div>
@@ -623,7 +607,7 @@ export default function PractitionerRegisterPage() {
                   {/* Nationality */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Nationality
+                      {t.nationality}
                     </label>
 
                     <div className="relative">
@@ -634,7 +618,7 @@ export default function PractitionerRegisterPage() {
                         value={formData.nationality}
                         onChange={handleInputChange}
                         className={`${inputStyle} pl-12`}
-                        placeholder="e.g., Saudi, American, British"
+                        placeholder={t.nationalityPlaceholder}
                       />
                     </div>
                   </div>
@@ -642,7 +626,7 @@ export default function PractitionerRegisterPage() {
                   {/* City */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      City
+                      {t.city}
                     </label>
 
                     <div className="relative">
@@ -653,7 +637,7 @@ export default function PractitionerRegisterPage() {
                         value={formData.city}
                         onChange={handleInputChange}
                         className={`${inputStyle} pl-12`}
-                        placeholder="e.g., Riyadh, Jeddah, Dammam"
+                        placeholder={t.cityPlaceholder}
                       />
                     </div>
                   </div>
@@ -676,11 +660,11 @@ export default function PractitionerRegisterPage() {
 
                   <div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
-                      Professional Information
+                      {t.professionalInformation}
                     </h3>
 
                     <p className="text-gray-400 text-xs sm:text-sm mt-1">
-                      Tell us about your practice
+                      {t.professionalInformationSubtitle}
                     </p>
                   </div>
                 </div>
@@ -690,7 +674,7 @@ export default function PractitionerRegisterPage() {
                   {/* Profession */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Job/Title <span className="text-red-400">*</span>
+                      {t.jobTitle} <span className="text-red-400">*</span>
                     </label>
 
                     <select
@@ -701,27 +685,29 @@ export default function PractitionerRegisterPage() {
                       required
                     >
                       <option value="" className="bg-gray-800">
-                        Select your profession
+                        {t.selectProfession}
                       </option>
 
-                      <option className="bg-gray-800">Medical Doctor</option>
-                      <option className="bg-gray-800">Dentist</option>
-                      <option className="bg-gray-800">Pharmacist</option>
-                      <option className="bg-gray-800">Nurse</option>
-                      <option className="bg-gray-800">Physiotherapist</option>
+                      <option className="bg-gray-800">{t.medicalDoctor}</option>
+                      <option className="bg-gray-800">{t.dentist}</option>
+                      <option className="bg-gray-800">{t.pharmacist}</option>
+                      <option className="bg-gray-800">{t.nurse}</option>
+                      <option className="bg-gray-800">
+                        {t.physiotherapist}
+                      </option>
 
                       <option className="bg-gray-800">
-                        Healthcare Administrator
+                        {t.healthcareAdministrator}
                       </option>
 
-                      <option className="bg-gray-800">Researcher</option>
+                      <option className="bg-gray-800">{t.researcher}</option>
                     </select>
                   </div>
 
                   {/* Specialization */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Specialization
+                      {t.specialization}
                     </label>
 
                     <input
@@ -729,14 +715,14 @@ export default function PractitionerRegisterPage() {
                       value={formData.specialization}
                       onChange={handleInputChange}
                       className={inputStyle}
-                      placeholder="e.g., Cardiology, Pediatrics"
+                      placeholder={t.specializationPlaceholder}
                     />
                   </div>
 
                   {/* Company */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      Company/Institution{" "}
+                      {t.companyInstitution}{" "}
                       <span className="text-red-400">*</span>
                     </label>
 
@@ -745,7 +731,7 @@ export default function PractitionerRegisterPage() {
                       value={formData.companyName}
                       onChange={handleInputChange}
                       className={inputStyle}
-                      placeholder="Enter company or institution name"
+                      placeholder={t.companyPlaceholder}
                       required
                     />
                   </div>
@@ -753,7 +739,7 @@ export default function PractitionerRegisterPage() {
                   {/* SCFHS */}
                   <div className="group/field">
                     <label className="font-semibold text-gray-300 mb-2 block text-sm">
-                      SCFHS Number
+                      {t.scfhsNumber}
                     </label>
 
                     <input
@@ -761,7 +747,7 @@ export default function PractitionerRegisterPage() {
                       value={formData.scfhsNumber}
                       onChange={handleInputChange}
                       className={inputStyle}
-                      placeholder="Enter SCFHS license number"
+                      placeholder={t.scfhsPlaceholder}
                     />
                   </div>
                 </div>
@@ -783,11 +769,11 @@ export default function PractitionerRegisterPage() {
 
                   <div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
-                      Upload Documents
+                      {t.uploadDocuments}
                     </h3>
 
                     <p className="text-gray-400 text-xs sm:text-sm mt-1">
-                      Verify your professional credentials
+                      {t.uploadDocumentsSubtitle}
                     </p>
                   </div>
                 </div>
@@ -796,25 +782,25 @@ export default function PractitionerRegisterPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                   {[
                     {
-                      name: "Medical License",
+                      name: t.medicalLicense,
                       icon: Award,
                       key: "medicalLicense",
                       accept: ".pdf,.jpg,.png",
                     },
                     {
-                      name: "Government ID",
+                      name: t.governmentId,
                       icon: IdCard,
                       key: "governmentId",
                       accept: ".pdf,.jpg,.png",
                     },
                     {
-                      name: "Professional Photo",
+                      name: t.professionalPhoto,
                       icon: Camera,
                       key: "professionalPhoto",
                       accept: "image/*",
                     },
                     {
-                      name: "CV/Resume",
+                      name: t.cvResume,
                       icon: GraduationCap,
                       key: "cvResume",
                       accept: ".pdf,.doc,.docx",
@@ -877,7 +863,7 @@ export default function PractitionerRegisterPage() {
                 </div>
 
                 <p className="text-xs text-gray-500 mt-4 text-center leading-relaxed">
-                  Accepted formats: PDF, JPG, PNG. Max size: 5MB per file
+                  {t.acceptedFormats}
                 </p>
               </div>
               {/* ADDITIONAL QUESTIONS SECTION */}
@@ -896,11 +882,11 @@ export default function PractitionerRegisterPage() {
 
                   <div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
-                      Additional Information
+                      {t.additionalInformation}
                     </h3>
 
                     <p className="text-gray-400 text-xs sm:text-sm mt-1">
-                      Help us personalize your experience
+                      {t.additionalInformationSubtitle}
                     </p>
                   </div>
                 </div>
@@ -909,7 +895,7 @@ export default function PractitionerRegisterPage() {
                   {/* Announcements */}
                   <div>
                     <h4 className="font-semibold text-gray-300 mb-3 text-base sm:text-lg">
-                      Do you plan on making any announcements at HPQL?
+                      {t.announcementQuestion}
                     </h4>
 
                     <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
@@ -933,7 +919,7 @@ export default function PractitionerRegisterPage() {
                           </div>
 
                           <span className="text-gray-300 capitalize group-hover/radio:text-white transition-colors duration-300">
-                            {value}
+                            {t[value]}
                           </span>
                         </label>
                       ))}
@@ -943,14 +929,14 @@ export default function PractitionerRegisterPage() {
                   {/* Sponsorship */}
                   <div>
                     <h4 className="font-semibold text-gray-300 mb-3 text-base sm:text-lg">
-                      Are you interested in sponsorship opportunities?
+                      {t.sponsorshipQuestion}
                     </h4>
 
                     <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
                       {[
-                        { value: "yes", label: "Yes, please contact me" },
-                        { value: "no", label: "Not at this time" },
-                        { value: "maybe", label: "Maybe, send me information" },
+                        { value: "yes", label: t.sponsorshipYes },
+                        { value: "no", label: t.sponsorshipNo },
+                        { value: "maybe", label: t.sponsorshipMaybe },
                       ].map((option) => (
                         <label
                           key={option.value}
@@ -981,17 +967,17 @@ export default function PractitionerRegisterPage() {
                   {/* Information Request */}
                   <div>
                     <h4 className="font-semibold text-gray-300 mb-3 text-base sm:text-lg">
-                      What information would you like to receive?
+                      {t.informationRequest}
                     </h4>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                       {[
-                        "Sales Brochure",
-                        "Attendee Information",
-                        "2025 Event Report",
-                        "Sponsorship Package",
-                        "Floor Plan",
-                        "Speaker Opportunities",
+                        t.salesBrochure,
+                        t.attendeeInformation,
+                        t.eventReport2025,
+                        t.sponsorshipPackage,
+                        t.floorPlan,
+                        t.speakerOpportunities,
                       ].map((item, i) => (
                         <label
                           key={i}
@@ -1021,13 +1007,11 @@ export default function PractitionerRegisterPage() {
                   {/* Organizer Communication */}
                   <div className="bg-white/5 rounded-xl p-4 sm:p-5 border border-white/10">
                     <p className="text-sm text-gray-300 mb-4 font-medium leading-relaxed">
-                      I would like to receive tailored information, including
-                      industry insights, exclusive networking opportunities and
-                      access to offers from Hpql
+                      {t.organizerCommunicationText}
                     </p>
 
                     <div className="flex flex-col gap-4 sm:gap-6 text-sm">
-                      {["Email", "Phone", "SMS"].map((type) => (
+                      {[t.email, t.phone, t.sms].map((type) => (
                         <div
                           key={type}
                           className="flex flex-col sm:flex-row sm:items-center gap-3"
@@ -1075,12 +1059,11 @@ export default function PractitionerRegisterPage() {
                   {/* Exhibitor Communication */}
                   <div className="bg-white/5 rounded-xl p-4 sm:p-5 border border-white/10">
                     <p className="text-sm text-gray-300 mb-4 font-medium leading-relaxed">
-                      I would like to receive information about innovations,
-                      products and services from exhibitors and sponsors.
+                      {t.exhibitorCommunicationText}
                     </p>
 
                     <div className="flex flex-col gap-4 sm:gap-6 text-sm">
-                      {["Email", "Phone", "SMS"].map((type) => (
+                      {[t.email, t.phone, t.sms].map((type) => (
                         <div
                           key={type}
                           className="flex flex-col sm:flex-row sm:items-center gap-3"
@@ -1143,7 +1126,7 @@ export default function PractitionerRegisterPage() {
                     <Stethoscope className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
 
                     <span className="text-center leading-snug">
-                      Complete Registration
+                      {t.completeRegistration}
                     </span>
 
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 group-hover/btn:scale-125 transition-transform duration-300" />
@@ -1160,8 +1143,7 @@ export default function PractitionerRegisterPage() {
                 {/* Terms Text */}
                 <div className="flex items-center justify-center mt-5 sm:mt-6 px-2">
                   <p className="text-[11px] sm:text-xs text-gray-500 text-center leading-relaxed">
-                    By submitting, you agree to our Terms of Service and Privacy
-                    Policy
+                   {t.termsText}
                   </p>
                 </div>
               </div>
@@ -1170,12 +1152,12 @@ export default function PractitionerRegisterPage() {
             {/* Footer */}
             <div className="relative text-center py-6 border-t border-white/10 bg-gradient-to-r from-blue-600/5 via-cyan-500/5 to-blue-600/5">
               <p className="text-gray-400 text-sm">
-                Already have an account?{" "}
+                 {t.alreadyHaveAccount}{" "}
                 <Link
                   href="/Forms/Login"
                   className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text font-semibold hover:from-blue-300 hover:to-cyan-200 transition-all duration-300"
                 >
-                  Sign in here
+                  {t.signInHere}
                 </Link>
               </p>
             </div>
