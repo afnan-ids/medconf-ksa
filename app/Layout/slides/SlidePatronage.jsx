@@ -17,16 +17,16 @@ const SlidePatronage = () => {
             {/* Top Bar */}
             <div className="flex flex-col md:flex-row justify-between items-center gap-1 pb-10 mb-1 ">
               <div>
-              {language == "en" && (
-                <p className="text-[10px] flex md:text-xs text-white/90 font-medium items-center ms-3 text-center">
-                  <span className="font-extrabold me-3 p-4">HPQL</span> HEALTH
-                  PROMOTION & QUALITY OF LIFE
-                </p>
-              )}
+                {language == "en" && (
+                  <p className="text-[10px] flex md:text-xs text-white/90 font-medium items-center text-center">
+                    <span className="font-extrabold pe-4">HPQL</span> HEALTH
+                    PROMOTION & QUALITY OF LIFE
+                  </p>
+                )}
               </div>
               {language === "ar" && (
                 <p
-                  className="text-[10px] md:text-xs text-white/90 font-medium tracking-[0.10em]"
+                  className="text-[16px] mt-2 text-white/90 font-medium tracking-[0.10em]"
                   dir="rtl"
                 >
                   صحة • تمكين • توعية • عمر مديد
@@ -41,14 +41,14 @@ const SlidePatronage = () => {
                 <div className="relative px-4 py-3 shadow-2xl  bg-cyan-500 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden">
                   {language === "ar" && (
                     <p
-                      className="text-sm md:text-base lg:text-xl font-extrabold text-center text-blue-900 leading-snug"
+                      className="text-sm md:text-base lg:text-2xl  text-center text-blue-900 leading-snug"
                       dir="rtl"
                     >
                       برعاية كريمة من صاحب السمو الملكي
                     </p>
                   )}
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-base text-center text-blue-900 mt-1 font-medium">
+                    <p className="text-sm md:text-base lg:text-xl text-center text-blue-900  font-medium">
                       Under the gracious patronage of His Royal Highness
                     </p>
                   )}
@@ -80,8 +80,9 @@ const SlidePatronage = () => {
                     <div>
                       {language === "en" && (
                         <p className="text-xs md:text-sm lg:text-[15px] text-white/90 leading-relaxed">
-                          Advisor to the Custodian of the Two Holy Mosques,
+                          Advisor to the Custodian of the Two Holy
                           <br />
+                           Mosques,
                           Governor of Makkah Region
                         </p>
                       )}
@@ -92,8 +93,9 @@ const SlidePatronage = () => {
                           className="text-xs md:text-sm lg:text-[15px] text-white/90 text-right leading-relaxed"
                           dir="rtl"
                         >
-                          مستشار خادم الحرمين الشريفين
+                          مستشار خادم الحرمين 
                           <br />
+                          الشريفين
                           أمير منطقة مكة المكرمة
                         </p>
                       )}
@@ -115,7 +117,7 @@ const SlidePatronage = () => {
                   )}
 
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-xl text-white/90 tracking-wide">
+                    <p className="text-xs md:text-sm lg:text-xl text-white/90 tracking-wide text-start">
                       Health Promotion & Quality of Life Conference and
                       Exhibition
                     </p>
@@ -123,7 +125,7 @@ const SlidePatronage = () => {
                 </div>
 
                 {/* Description */}
-                <div className="rounded-xl px-2 py-1 space-y-1">
+                <div className="rounded-xl  py-1 space-y-1">
                   {language === "ar" && (
                     <p
                       className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/95 text-center"
@@ -135,7 +137,7 @@ const SlidePatronage = () => {
                   )}
 
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/90 text-center">
+                    <p className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/90 text-start">
                       The largest event of its kind in the Western Region is
                       being held, aiming to improve the quality of life under
                       the slogan
@@ -144,18 +146,18 @@ const SlidePatronage = () => {
                 </div>
 
                 {/* Slogan */}
-                <div className="text-center py-1 px-2 rounded-xl">
+                <div className="text-start py-1 rounded-xl">
                   {language === "ar" && (
                     <p
-                      className="text-base md:text-xl lg:text-2xl font-extrabold text-white tracking-tight"
+                      className="text-base md:text-xl lg:text-[45.5px] font-extrabold text-white tracking-tight"
                       dir="rtl"
                     >
-                      تعزيز الصحة وجودة الحياة{" "}
+                     صحة • تمكين • توعية • عمر مديد
                     </p>
                   )}
 
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-base font-semibold text-white/90 tracking-[0.10em] uppercase mt-1">
+                    <p className="text-[26px] font-semibold text-white/90 tracking-[0.10em] uppercase text-start">
                       HEALTH PROMOTION & QUALITY OF LIFE
                     </p>
                   )}

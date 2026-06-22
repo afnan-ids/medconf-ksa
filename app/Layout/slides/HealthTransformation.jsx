@@ -13,7 +13,7 @@ const HealthTransformation = () => {
       <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/HealthTransformationBG.png')] bg-cover bg-center">
         <div className="relative z-10 w-full h-full flex items-center justify-center px-5 md:px-8 lg:px-14 overflow-y-auto">
           {/* Top Bar */}
-          <div className="absolute top-30 w-full">
+          <div className="absolute top-30 w-full mb-10">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1 pb-10 mb-1">
               <div className="flex items-center">
                 <p className="text-xs text-blue-950 font-bold whitespace-nowrap">
@@ -25,15 +25,14 @@ const HealthTransformation = () => {
                   </p>
                 )}
               </div>
- {language === 'ar' && (
-
-              <p
-                className="text-[10px] md:text-xs text-white/90 font-semibold tracking-[0.10em]"
-                dir="rtl"
-              >
-                صحة • تمكين • توعية • عمر مديد
-              </p>
- )}
+              {language === "ar" && (
+                <p
+                  className="text-[10px] md:text-xs text-white/90 font-semibold tracking-[0.10em]"
+                  dir="rtl"
+                >
+                  صحة • تمكين • توعية • عمر مديد
+                </p>
+              )}
             </div>
           </div>
 
@@ -48,58 +47,56 @@ const HealthTransformation = () => {
               </div>
 
               {/* right Side */}
-              <div className="w-full lg:w-1/2 space-y-3">
+              <div className="w-full lg:w-1/2 mt-20 px-6">
                 {/* Heading */}
                 <div className="relative text-white space-y-1.5">
-                   {language === 'ar' && (
-
-                  <p
-                    className="text-sm md:text-lg lg:text-[26px] font-extrabold text-center leading-[1.4] tracking-tight"
-                    dir="rtl"
-                  >
-                    التحـــــــول الصحـــــي كركيزة أساسيـة للاستثمــــــــار في
-                    رأس المال البشـري
-                  </p>
-                   )}
-                   {language === 'en' && (
-
-                  <p className="text-xs md:text-base lg:text-[22px] text-center font-medium leading-relaxed text-white/95">
-                    Health Transformation as a Fundamental Pillar for Human
-                    Capital Investment
-                  </p>
-                   )}
-
+                  {language === "ar" && (
+                    <p
+                      className="text-sm md:text-lg lg:text-[37px] text-start leading-[1.4] tracking-tight"
+                      dir="rtl"
+                    >
+                      التحـــــــول الصحـــــي كركيزة أساسيـة للاستثمــــــــار
+                      في رأس المال البشـري
+                    </p>
+                  )}
+                  {language === "en" && (
+                    <p
+                      className="text-xs md:text-base lg:text-[38px] text-start font-medium leading-relaxed text-white/95 mb-0"
+                      style={{ lineHeight: "45px " }}
+                    >
+                      Health Transformation as
+                      <br />a Fundamental Pillar for Human Capital Investment
+                    </p>
+                  )}
                 </div>
 
                 {/* Description */}
-                <div className="rounded-xl px-2 py-1 space-y-2">
-                   {language === 'ar' && (
-                  <p
-                    className="text-xs md:text-sm lg:text-[14px] leading-[1.8] text-white/95 text-center"
-                    dir="rtl"
-                  >
-                    يهـــدف مؤتمر ومعرض تعزيز الصحة ليكون أبرز المنصات الصحية
-                    المتخصصة في المملكة العربية الســـعودية، ويأتي كحدث وطني
-                    رائد يجمع بين المؤتمـــر العلمي المتخصص والمعرض الصحي
-                    التفاعلي، في إطـــار متكامل يهدف إلى الارتقاء بمفاهيم تعزيز
-                    الصحـــة وارتباطها بجودة الحياة على مستوى الفرد والمجتمع
-                  </p>
+                <div className="rounded-xl py-1 space-y-2">
+                  {language === "ar" && (
+                    <p
+                      className="text-xs md:text-sm lg:text-[14.5px] leading-[1.8] text-white/95 text-start"
+                      dir="rtl"
+                    >
+                      يهـــدف مؤتمر ومعرض تعزيز الصحة ليكون أبرز المنصات الصحية
+                      المتخصصة في المملكة العربية الســـعودية، ويأتي كحدث وطني
+                      رائد يجمع بين المؤتمـــر العلمي المتخصص والمعرض الصحي
+                      التفاعلي، في إطـــار متكامل يهدف إلى الارتقاء بمفاهيم
+                      تعزيز الصحـــة وارتباطها بجودة الحياة على مستوى الفرد
+                      والمجتمع{" "}
+                    </p>
+                  )}
 
-                   )}
-
-                   {language === 'en' && (
-
-                  <p className="text-xs md:text-sm lg:text-[14px] leading-[1.7] text-white/90 text-center">
-                    The Health Promotion Conference and Exhibition aims to be
-                    the Kingdom of Saudi Arabia's premier specialized health
-                    platform. As a leading national event, it integrates a
-                    specialized scientific conference with an interactive health
-                    exhibition, creating a comprehensive framework to elevate
-                    health promotion concepts and their vital link to the
-                    quality of life for both individuals and society
-                  </p>
-                   )}
-
+                  {language === "en" && (
+                    <p className="text-xs md:text-sm lg:text-[15px] leading-[1.7] text-white/90 text-start">
+                      The Health Promotion Conference and Exhibition Aims to be
+                      The Kingdom of Saudi Arabia's premier specialized health
+                      platform. As a leading national event, it integrates a
+                      specialized scientific conference with an interactive
+                      health exhibition, creating a comprehensive framework to
+                      elevate health promotion concepts and their vital link to
+                      the quality of life for both individuals and society
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -138,72 +135,66 @@ const HealthTransformation = () => {
             <div className="text-center space-y-2 pt-2">
               <div className="space-y-1">
                 <p className="text-sm text-white font-bold">HPQL</p>
-                {language === 'en' && (
-
-                <p className="text-[10px] text-white font-semibold">
-                  HEALTH PROMOTION & QUALITY OF LIFE
-                </p>
+                {language === "en" && (
+                  <p className="text-[10px] text-white font-semibold">
+                    HEALTH PROMOTION & QUALITY OF LIFE
+                  </p>
                 )}
               </div>
-               {language === 'ar' && (
-
-              <p
-                className="text-[10px] text-white/90 font-semibold tracking-[0.10em]"
-                dir="rtl"
-              >
-                صحة • تمكين • توعية • عمر مديد
-              </p>
-               )}
+              {language === "ar" && (
+                <p
+                  className="text-[10px] text-white/90 font-semibold tracking-[0.10em]"
+                  dir="rtl"
+                >
+                  صحة • تمكين • توعية • عمر مديد
+                </p>
+              )}
             </div>
 
             {/* Heading */}
             <div className="text-center space-y-2">
-               {language === 'ar' && (
-              <p
-                className="text-sm font-extrabold text-white leading-[1.4] tracking-tight"
-                dir="rtl"
-              >
-                التحـــــــول الصحـــــي كركيزة أساسيـة للاستثمــــــــار في رأس
-                المال البشـري
-              </p>
-
-               )}
-               {language === 'en' && (
-              <p className="text-xs font-medium leading-relaxed text-white/95">
-                Health Transformation as a Fundamental Pillar for Human Capital
-                Investment
-              </p>
-
-               )}
+              {language === "ar" && (
+                <p
+                  className="text-sm font-extrabold text-white leading-[1.4] tracking-tight"
+                  dir="rtl"
+                >
+                  التحـــــــول الصحـــــي كركيزة أساسيـة للاستثمــــــــار في
+                  رأس المال البشـري
+                </p>
+              )}
+              {language === "en" && (
+                <p className="text-xs font-medium leading-relaxed text-white/95">
+                  Health Transformation as a Fundamental Pillar for Human
+                  Capital Investment
+                </p>
+              )}
             </div>
 
             {/* Description */}
             <div className="space-y-3">
-               {language === 'ar' && (
-
-              <p
-                className="text-[11px] leading-[1.6] text-white/95 text-center"
-                dir="rtl"
-              >
-                يهـــدف مؤتمر ومعرض تعزيز الصحة ليكون أبرز المنصات الصحية
-                المتخصصة في المملكة العربية الســـعودية، ويأتي كحدث وطني رائد
-                يجمع بين المؤتمـــر العلمي المتخصص والمعرض الصحي التفاعلي، في
-                إطـــار متكامل يهدف إلى الارتقاء بمفاهيم تعزيز الصحـــة
-                وارتباطها بجودة الحياة على مستوى الفرد والمجتمع
-              </p>
-               )}
-               {language === 'en' && (
-
-              <p className="text-[11px] leading-[1.6] text-white/90 text-center">
-                The Health Promotion Conference and Exhibition aims to be the
-                Kingdom of Saudi Arabia's premier specialized health platform.
-                As a leading national event, it integrates a specialized
-                scientific conference with an interactive health exhibition,
-                creating a comprehensive framework to elevate health promotion
-                concepts and their vital link to the quality of life for both
-                individuals and society
-              </p>
-               )}
+              {language === "ar" && (
+                <p
+                  className="text-[11px] leading-[1.6] text-white/95 text-center"
+                  dir="rtl"
+                >
+                  يهـــدف مؤتمر ومعرض تعزيز الصحة ليكون أبرز المنصات الصحية
+                  المتخصصة في المملكة العربية الســـعودية، ويأتي كحدث وطني رائد
+                  يجمع بين المؤتمـــر العلمي المتخصص والمعرض الصحي التفاعلي، في
+                  إطـــار متكامل يهدف إلى الارتقاء بمفاهيم تعزيز الصحـــة
+                  وارتباطها بجودة الحياة على مستوى الفرد والمجتمع
+                </p>
+              )}
+              {language === "en" && (
+                <p className="text-[11px] leading-[1.6] text-white/90 text-center">
+                  The Health Promotion Conference and Exhibition aims to be the
+                  Kingdom of Saudi Arabia's premier specialized health platform.
+                  As a leading national event, it integrates a specialized
+                  scientific conference with an interactive health exhibition,
+                  creating a comprehensive framework to elevate health promotion
+                  concepts and their vital link to the quality of life for both
+                  individuals and society
+                </p>
+              )}
             </div>
           </div>
         </div>

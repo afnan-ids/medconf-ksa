@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-body {
-  font-family: "Expo Arabic", sans-serif;
+* {
+  font-family: "Noto Sans Arabic", sans-serif;
 }
 
 @keyframes fadeIn {

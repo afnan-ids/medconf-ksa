@@ -17,17 +17,17 @@ const SlideVexora = () => {
           <div className="text-center lg:text-left mb-8 lg:mb-0"></div>
 
           {/* Right Column */}
-          <div className="w-full max-w-4xl mx-auto space-y-5 py-6 ">
+          <div className="w-full max-w-4xl mx-auto px-2 space-y-5 py-5 ">
             {/* HPQL Section  */}
-            <div className="text-right space-y-2.5">
+            <div className="text-right space-y-2">
               <div className="flex items-center justify-end">
                 {language === "en" && (
                   <Image
                     src="/Images/Home/slider/MainLogo.png"
                     alt="Logo"
-                    width={180}
-                    height={150}
-                    className="opacity-90 mb-2"
+                    width={200}
+                    height={200}
+                    className="opacity-90 mb-16"
                   />
                 )}
                 {language === "ar" && (
@@ -44,15 +44,17 @@ const SlideVexora = () => {
               <div className="">
                 {language === "ar" && (
                   <h2
-                    className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
+                    className="text-2xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
                     dir="rtl"
-                    style={{ wordSpacing: "0.8rem" }}
+                     style={{fontSize : "37.3px"}}
                   >
                     مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
                   </h2>
                 )}
                 {language === "en" && (
-                  <h2 className="text-xs md:text-sm text-white mt-1.5 tracking-[0.15em]">
+                  <h2 className=" text-white  tracking-[0.15em]"
+                    style={{fontSize : "15.9px"}}>
+
                     HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
                   </h2>
                 )}
@@ -60,23 +62,23 @@ const SlideVexora = () => {
             </div>
 
             {/* HEAL Section - More compact */}
-            <div className="flex justify-end items-center gap-3 pt-1 lg:mt-15 tracking-[0.3em]">
-              <p className="text-4xl md:text-5xl lg:text-6xl font-black ">
+            <div className="flex justify-end items-center pt-1 gap-1 lg:mt-8 tracking-[0.3em]">
+              <p className="  font-black text-6xl " >
                 HPQL
               </p>
               <div className="text-right">
                 {language === "ar" && (
                   <p
-                    className="text-base md:text-lg lg:text-2xl font-bold text-white mb-0.5"
+                    className="text-base font-bold text-white mb-0.5"
                     dir="rtl"
-                    style={{ wordSpacing: "0.2rem" }}
-                  >
-                    صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
+                    style={{fontSize : "34.2px"}}
+                  > صحة • تمكين • توعية • عمر مديد
                   </p>
                 )}
                 {language === "en" && (
-                  <p className="w-full text-xs md:text-sm text-white uppercase tracking-[0.25em] font-light">
-                    HEALTH PROMOTION • QUALITY OF LIFE
+                  <p className="w-full text-white uppercase tracking-[0.25em] font-light"
+                   style={{fontSize : "17.2px"}}>
+                    HEALTH PROMOTION & QUALITY OF LIFE
                   </p>
                 )}
               </div>
@@ -84,7 +86,7 @@ const SlideVexora = () => {
 
             {/* Info Card  */}
             <div className="flex justify-end">
-              <div className="bg-cyan-500 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden w-full max-w-150">
+              <div className="bg-cyan-500 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden w-full max-w-200">
                 <div className="p-4">
                   <div className="flex items-center justify-between gap-3">
                     {/* Location */}
@@ -93,6 +95,7 @@ const SlideVexora = () => {
                         <p
                           className="text-md font-bold text-blue-900"
                           dir="rtl"
+                          
                         >
                           مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
                         </p>

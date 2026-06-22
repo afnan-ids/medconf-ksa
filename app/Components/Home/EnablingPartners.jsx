@@ -49,33 +49,33 @@ export default function EnablingPartners() {
               <div className="absolute top-0 right-0 w-32 h-32 xs:w-48 xs:h-48 sm:w-64 sm:h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 xs:w-48 xs:h-48 sm:w-64 sm:h-64 bg-purple-500/10 rounded-full blur-3xl hidden sm:block"></div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xs:gap-6 sm:gap-8 lg:gap-12 mb-8 xs:mb-10 sm:mb-12 md:mb-16 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xs:gap-6 sm:gap-8 lg:gap-12 mb-8 xs:mb-10 sm:mb-12 md:mb-16 relative z-10 px-5">
                 {/* Left Column - Logo Grid - Mobile optimized */}
                 <div className="order-2 md:order-1 grid grid-cols-2 gap-2 xs:gap-3 sm:gap-4 rounded-xl xs:rounded-2xl sm:rounded-[2rem] md:rounded-[2.2rem] bg-white p-3 xs:p-4 sm:p-5 md:p-6 border border-gray-200 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
                   {[
-                    {
-                      src: "/Images/Home/EnabalingPartners/kingAbdullaziz.png",
-                      alt: "King Abdullah",
-                    },
                     {
                       src: "/Images/Home/EnabalingPartners/imarat.png",
                       alt: "Imarat",
                     },
                     {
-                      src: "/Images/Home/EnabalingPartners/aldaiyat.png",
-                      alt: "Aldaiyat",
+                      src: "/Images/Home/EnabalingPartners/kingAbdullaziz.png",
+                      alt: "King Abdullah",
                     },
                     {
                       src: "/Images/Home/EnabalingPartners/jiddahChamber.png",
                       alt: "Jiddah Chamber",
                     },
                     {
-                      src: "/Images/Home/EnabalingPartners/amanat.png",
-                      alt: "Amanat",
+                      src: "/Images/Home/EnabalingPartners/aldaiyat.png",
+                      alt: "Aldaiyat",
                     },
                     {
                       src: "/Images/Home/EnabalingPartners/publicHealthAuthority.png",
                       alt: "Public Health Authority",
+                    },
+                    {
+                      src: "/Images/Home/EnabalingPartners/amanat.png",
+                      alt: "Amanat",
                     },
                   ].map((logo, index) => (
                     <div
@@ -106,30 +106,32 @@ export default function EnablingPartners() {
                 </div>
 
                 {/* Right Column - Mobile optimized */}
-                <div className="order-1 md:order-2 flex flex-col justify-center">
-                  <div className="relative group/badge mb-3 xs:mb-4 sm:mb-6 self-center lg:self-end">
+                <div className="order-1 md:order-2 flex flex-col justify-center px-4">
+                  {/* <div className="relative group/badge mb-3 xs:mb-4 sm:mb-6 self-center lg:self-end">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
 
                     <div className="relative inline-flex items-center gap-1 xs:gap-2 px-2 xs:px-3 sm:px-4 py-1 xs:py-1.5 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-[8px] xs:text-[10px] sm:text-xs">
                       <Building2 className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-blue-400" />
                       <span className="">{t.stratigicPartner}</span>
-                      {/* <span className="inline xs:hidden">Partners</span> */}
                       <span className="w-0.5 h-0.5 bg-white/30 rounded-full hidden xs:block"></span>
                       <Trophy className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-cyan-400" />
                       <span className="">{t.enablingentities}</span>
                     </div>
-                  </div>
+                  </div> */}
                   {language === "ar" && (
                     <h2
-                      className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-right"
+                      className=" lg:text-[46px] text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-right"
                       dir="rtl"
                     >
-                      الجــــهات الممكــــنة للمؤتمر
+                      الجــــهات الممكــــنة
+                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                       للمؤتمر
+                      </span>
                     </h2>
                   )}
 
                   {language === "en" && (
-                    <h2 className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-end">
+                    <h2 className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 xs:mb-3 sm:mb-4 lg:text-end">
                       Enabling Entities{" "}
                       <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                         of the Conference
@@ -137,33 +139,35 @@ export default function EnablingPartners() {
                     </h2>
                   )}
 
-                  <div className="flex justify-center lg:justify-end">
+                  <div className="flex justify-center">
                     <div className="relative w-16 xs:w-20 h-0.5 xs:h-1 my-3 xs:my-4">
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-sm"></div>
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
                     </div>
                   </div>
-                  {language === "ar" && (
-                    <p
-                      className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center lg:text-right px-2 xs:px-0"
-                      dir="rtl"
-                    >
-                      يحظــــى مؤتمر تعزيز الصحة وجــــودة الحياة بدعم
-                      وتمكيــــن نخبة من الجهات الحكومية والشــــركاء
-                      الاستراتيجيين، الذين يســــخرون إمكاناتهم لتعزيز جودة
-                      الحيــــاة وتطويــــر القطاع الصحــــي، بما يتماشــــى مع
-                      المســــتهدفات الوطنية الطموحة.
-                    </p>
-                  )}
-                  {language === "en" && (
-                    <p className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mt-3 xs:mt-4 text-center lg:text-end px-2 xs:px-0">
-                      HEAL is empowered and supported by elite government
-                      entities and strategic partners. They leverage their
-                      resources to enhance quality of life and develop the
-                      healthcare sector, in alignment with ambitious national
-                      objectives.
-                    </p>
-                  )}
+                  <div className="ps-12">
+                    {language === "ar" && (
+                      <p
+                        className=" md:text-[16px] text-gray-300 mt-6 leading-relaxed text-right xs:px-0"
+                        dir="rtl"
+                      >
+                        يحظــــى مؤتمر تعزيز الصحة وجــــودة الحياة بدعم
+                        وتمكيــــن نخبة من الجهات الحكومية والشــــركاء
+                        الاستراتيجيين، الذين يســــخرون إمكاناتهم لتعزيز جودة
+                        الحيــــاة وتطويــــر القطاع الصحــــي، بما يتماشــــى مع
+                        المســــتهدفات الوطنية الطموحة.
+                      </p>
+                    )}
+                    {language === "en" && (
+                      <p className="md:text-[16px] mt-4 text-gray-300 leading-relaxed mt-3 xs:mt-4 text-start xs:px-0">
+                        HEAL is empowered and supported by elite government
+                        entities and strategic partners. They leverage their
+                        resources to enhance quality of life and develop the
+                        healthcare sector, in alignment with ambitious national
+                        objectives.
+                      </p>
+                    )}
+                  </div>
 
                   {/* Decorative stat - Mobile optimized */}
                   <div className="flex justify-center lg:justify-end mt-4 xs:mt-5 sm:mt-6 gap-3 xs:gap-4">

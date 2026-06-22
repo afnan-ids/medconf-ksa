@@ -49,19 +49,14 @@ const statsData = [
 
 const highlightsData = [
   {
-    titleAr: "تمكين المرأة في القطاع الصحي",
-    titleEn: "Women Empowerment in Health Sector",
-    icon: Briefcase,
-  },
-  {
     titleAr: "التمريض: ركائز الرعاية الطبية",
     titleEn: "Nursing: Pillars of Medical Care",
     icon: Heart,
   },
   {
-    titleAr: "دور المرأة في التحول الرقمي بمجال الصحة",
-    titleEn: "Women's Role in Digital Health Transformation",
-    icon: Zap,
+    titleAr: "تمكين المرأة في القطاع الصحي",
+    titleEn: "Women Empowerment in Health Sector",
+    icon: Briefcase,
   },
   {
     titleAr: "المرأة في الأبحاث والابتكار الطبي",
@@ -69,14 +64,19 @@ const highlightsData = [
     icon: Microscope,
   },
   {
-    titleAr: "المرأة السعودية في المنظمات الطبية الدولية",
-    titleEn: "Saudi Women in International Medical Organizations",
-    icon: Globe,
+    titleAr: "دور المرأة في التحول الرقمي بمجال الصحة",
+    titleEn: "Women's Role in Digital Health Transformation",
+    icon: Zap,
   },
   {
     titleAr: "المرأة في التعليم الطبي والأكاديمي",
     titleEn: "Women in Medical Education & Academia",
     icon: GraduationCap,
+  },
+  {
+    titleAr: "المرأة السعودية في المنظمات الطبية الدولية",
+    titleEn: "Saudi Women in International Medical Organizations",
+    icon: Globe,
   },
 ];
 
@@ -209,21 +209,25 @@ export default function WomenAndHealth() {
                 )}
               </div>
               {/* for lagre screens  */}
-              <div className="hidden max-w-7xl mx-auto w-full md:flex items-center justify-between text-white/80 text-[10px] sm:text-xs mb-6">
-                {language === "en" && (
-                  <span className="backdrop-blur-sm bg-white/5 px-3 py-1 rounded-full">
-                    <span className="font-semibold text-white">HPQL</span>{" "}
-                    HEALTH PROMOTION & QUALITY OF LIFE
-                  </span>
-                )}
-                {language === "ar" && (
-                  <span
-                    dir="rtl"
-                    className="backdrop-blur-sm bg-white/5 px-3 py-1 rounded-full"
-                  >
-                    تعزيز الصحة وجودة الحياة
-                  </span>
-                )}
+              <div className="hidden max-w-7xl mx-auto w-full md:flex items-center justify-between text-white/80 text-[10px] sm:text-xs mb-6 pt-8">
+                <div>
+                  {language === "en" && (
+                    <span className="backdrop-blur-sm bg-white/5 px-3 py-1 rounded-full">
+                      <span className="font-semibold text-white">HPQL</span>{" "}
+                      HEALTH PROMOTION & QUALITY OF LIFE
+                    </span>
+                  )}
+                </div>
+                <div>
+                  {language === "ar" && (
+                    <span
+                      dir="rtl"
+                      className="backdrop-blur-sm bg-white/5 px-3 py-1 rounded-full"
+                    >
+                      تعزيز الصحة وجودة الحياة
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] max-w-7xl mx-auto flex-1 w-full mt-2 xs:mt-3 sm:mt-4">
@@ -291,7 +295,7 @@ export default function WomenAndHealth() {
                     )}
 
                     {language === "en" && (
-                      <p className="text-sm xs:text-base sm:text-lg lg:text-2xl text-white/90 mt-0.5 xs:mt-1">
+                      <p className="text-sm xs:text-base sm:text-lg lg:text-3xl text-white/90 mt-0.5 xs:mt-1">
                         Woman & Health
                       </p>
                     )}
@@ -306,9 +310,9 @@ export default function WomenAndHealth() {
                 <Image
                   src="/Images/Home/WomenAndHealth/women.png"
                   alt="Women"
-                  width={700}
+                  width={1200}
                   height={700}
-                  className="relative object-contain object-bottom w-60 h-40  sm:w-80 sm:h-80 lg:w-auto lg:h-100 opacity-95"
+                  className="relative object-contain top-50 left-40 object-bottom opacity-95"
                 />
               </div>
             </div>
@@ -410,9 +414,9 @@ export default function WomenAndHealth() {
                   </div>
 
                   {/* CENTER CONTENT - Mobile optimized */}
-                  <div className="flex flex-1 items-end px-3 xs:px-4 sm:px-8 lg:px-10 py-4 xs:py-5 sm:py-6">
-                    <div className="w-full py-2 xs:py-3 sm:py-4">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
+                  <div className="flex flex-1 items-center px-3 xs:px-4 sm:px-8 lg:px-20 py-4 xs:py-5 sm:py-6">
+                    <div className="w-full py-2 xs:py-3 sm:py-4 mt-38 px-20">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 ">
                         {highlightsData.map((highlight, index) => (
                           <div
                             key={index}
@@ -428,8 +432,8 @@ export default function WomenAndHealth() {
                           hover:bg-white/5
                         "
                           >
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-400/10 blur-3xl rounded-full" />
+                            <div className=" group-hover:opacity-100 transition-opacity duration-300">
+                              <div className="bg-emerald-400/10 blur-3xl rounded-full" />
                             </div>
                             {language === "ar" && (
                               <h3
@@ -438,7 +442,7 @@ export default function WomenAndHealth() {
                             z-10
                             text-white
                             text-end
-                            font-semibold
+                            
                             text-xs xs:text-sm
                             md:text-base
                             leading-relaxed
@@ -454,8 +458,7 @@ export default function WomenAndHealth() {
                             z-10
                             text-white/80
                             text-end
-                            text-[10px] xs:text-xs
-                            md:text-sm
+                            text-[18px]
                             leading-relaxed
                             tracking-wide
                             mt-0.5
@@ -540,8 +543,8 @@ export default function WomenAndHealth() {
                         <h2
                           className="
                       text-base xs:text-lg sm:text-xl
-                      lg:text-3xl
-                      font-bold
+                      lg:text-2xl
+              
                       text-white
                       leading-[1.2]
                       tracking-tight
@@ -557,7 +560,7 @@ export default function WomenAndHealth() {
                         </h2>
                       )}
 
-                      <div className="mt-3 xs:mt-4 sm:mt-5 md:mt-6 flex justify-between items-center gap-2 xs:gap-3">
+                      <div className=" flex justify-between items-center gap-2 xs:gap-3">
                         {/* Enhanced Glass Indicator - Mobile optimized */}
                         <div className="relative flex items-center justify-center h-8 w-8 xs:h-9 xs:w-9 sm:h-10 sm:w-10">
                           <div
