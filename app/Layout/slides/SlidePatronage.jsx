@@ -104,7 +104,7 @@ const SlidePatronage = () => {
                 </div>
 
                 {/* Conference Name */}
-                <div className="text-center space-y-0.5">
+                <div className="text-right space-y-0.5">
                   {language === "ar" && (
                     <p
                       className="text-sm md:text-lg lg:text-2xl font-bold text-white leading-snug"
@@ -128,7 +128,7 @@ const SlidePatronage = () => {
                 <div className="rounded-xl  py-1 space-y-1">
                   {language === "ar" && (
                     <p
-                      className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/95 text-center"
+                      className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/95 text-right"
                       dir="rtl"
                     >
                       يقام أضخــــم حــــدث من نوعة في المنطقة الغربية يهـدف إلى
@@ -149,8 +149,9 @@ const SlidePatronage = () => {
                 <div className="text-start py-1 rounded-xl">
                   {language === "ar" && (
                     <p
-                      className="text-base md:text-xl lg:text-[45.5px] font-extrabold text-white tracking-tight"
+                      className="text-base md:text-xl lg:text-[43px] text-white tracking-tight"
                       dir="rtl"
+                      style={{ wordSpacing: "0.4rem" }}
                     >
                      صحة • تمكين • توعية • عمر مديد
                     </p>
@@ -286,7 +287,7 @@ const SlidePatronage = () => {
             <div className="space-y-2">
               {language === "ar" && (
                 <p
-                  className="text-xs leading-relaxed text-white/95 text-center"
+                  className="text-[20px] leading-relaxed text-white/95 text-right"
                   dir="rtl"
                 >
                   يقام أضخم حدث من نوعه في المنطقة الغربية يهدف إلى تحسين جودة
@@ -305,7 +306,7 @@ const SlidePatronage = () => {
             <div className="text-center space-y-1.5 py-2">
               {language === "ar" && (
                 <p
-                  className="text-base font-extrabold text-white tracking-tight"
+                  className="text-[25px]  text-white tracking-tight"
                   dir="rtl"
                 >
                   صحـــة . تمكيــن . توعيـــة . عمـر مديـــد

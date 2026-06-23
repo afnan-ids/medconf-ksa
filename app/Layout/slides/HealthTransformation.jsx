@@ -47,7 +47,7 @@ const HealthTransformation = () => {
               </div>
 
               {/* right Side */}
-              <div className="w-full lg:w-1/2 mt-20 px-6">
+              <div className="w-full lg:w-1/2 mt-20 pe-6 ps-10">
                 {/* Heading */}
                 <div className="relative text-white space-y-1.5">
                   {language === "ar" && (
@@ -55,17 +55,23 @@ const HealthTransformation = () => {
                       className="text-sm md:text-lg lg:text-[37px] text-start leading-[1.4] tracking-tight"
                       dir="rtl"
                     >
-                      التحـــــــول الصحـــــي كركيزة أساسيـة للاستثمــــــــار
-                      في رأس المال البشـري
+                      التحـــــــول الصحـــــي كركيزة أساسيـة
+                      <br />
+                      <span style={{ wordSpacing: "1px" }}>
+                        للاستثمــــــــار في رأس المال البشـري
+                      </span>
                     </p>
                   )}
                   {language === "en" && (
                     <p
-                      className="text-xs md:text-base lg:text-[38px] text-start font-medium leading-relaxed text-white/95 mb-0"
+                      className="text-xs md:text-base lg:text-[36.8px] text-start font-medium leading-relaxed text-white/95 mb-0"
                       style={{ lineHeight: "45px " }}
                     >
                       Health Transformation as
-                      <br />a Fundamental Pillar for Human Capital Investment
+                      <br />
+                      a Fundamental Pillar for Human
+                      <br />
+                      Capital Investment
                     </p>
                   )}
                 </div>
@@ -78,23 +84,46 @@ const HealthTransformation = () => {
                       dir="rtl"
                     >
                       يهـــدف مؤتمر ومعرض تعزيز الصحة ليكون أبرز المنصات الصحية
-                      المتخصصة في المملكة العربية الســـعودية، ويأتي كحدث وطني
-                      رائد يجمع بين المؤتمـــر العلمي المتخصص والمعرض الصحي
-                      التفاعلي، في إطـــار متكامل يهدف إلى الارتقاء بمفاهيم
-                      تعزيز الصحـــة وارتباطها بجودة الحياة على مستوى الفرد
-                      والمجتمع{" "}
+                      المتخصصة في المملكة العربية
+                      <br />
+                      <span style={{ wordSpacing: "0.3px" }}>
+                        الســـعودية، ويأتي كحدث وطني رائد يجمع بين المؤتمـــر
+                        العلمي المتخصص والمعرض الصحي
+                      </span>
+                      <br />
+                      <span style={{ wordSpacing: "0.4px" }}>
+                        التفاعلي، في إطـــار متكامل يهدف إلى الارتقاء بمفاهيم
+                        تعزيز الصحـــة وارتباطها بجودة الحياة
+                      </span>
+                      <br />
+                      على مستوى الفرد والمجتمع{" "}
                     </p>
                   )}
 
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-[15px] leading-[1.7] text-white/90 text-start">
-                      The Health Promotion Conference and Exhibition Aims to be
-                      The Kingdom of Saudi Arabia's premier specialized health
-                      platform. As a leading national event, it integrates a
-                      specialized scientific conference with an interactive
-                      health exhibition, creating a comprehensive framework to
-                      elevate health promotion concepts and their vital link to
-                      the quality of life for both individuals and society
+                    <p className="text-xs md:text-sm lg:text-[14.7px] leading-[1.7] text-white/90 text-start">
+                      <span style={{ wordSpacing: "2.1px" }}>
+                        The Health Promotion Conference and Exhibition Aims to
+                        be The Kingdom of
+                      </span>
+                      <br />
+                      Saudi Arabia's premier specialized health platform. As a
+                      leading national event, it
+                      <br />
+                      <span style={{ wordSpacing: "8.2px" }}>
+                        integrates a specialized scientific conference with an
+                        interactive health
+                      </span>
+                      <br />
+                      <span style={{ wordSpacing: "2.5px" }}>
+                        exhibition, creating a comprehensive framework to elevate
+                        health promotion
+                      </span>
+                      <br />
+                      <span style={{ wordSpacing: "0.5px" }}>
+                        concepts and their vital link to the quality of life for
+                        both individuals and society
+                      </span>
                     </p>
                   )}
                 </div>

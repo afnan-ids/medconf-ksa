@@ -106,7 +106,7 @@ export default function EnablingPartners() {
                 </div>
 
                 {/* Right Column - Mobile optimized */}
-                <div className="order-1 md:order-2 flex flex-col justify-center px-4">
+                <div className="order-1 md:order-2 flex flex-col justify-center px-10">
                   {/* <div className="relative group/badge mb-3 xs:mb-4 sm:mb-6 self-center lg:self-end">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
 
@@ -120,12 +120,13 @@ export default function EnablingPartners() {
                   </div> */}
                   {language === "ar" && (
                     <h2
-                      className=" lg:text-[46px] text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-right"
+                      className="lg:text-[44px] text-white mb-2 xs:mb-3 sm:mb-4 text-center lg:text-right"
                       dir="rtl"
+                      style={{ wordSpacing: "0.8rem" }}
                     >
                       الجــــهات الممكــــنة
-                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                       للمؤتمر
+                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent ps-5">
+                        للمؤتمر
                       </span>
                     </h2>
                   )}
@@ -145,26 +146,46 @@ export default function EnablingPartners() {
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
                     </div>
                   </div>
-                  <div className="ps-12">
+                  <div className="">
                     {language === "ar" && (
                       <p
                         className=" md:text-[16px] text-gray-300 mt-6 leading-relaxed text-right xs:px-0"
                         dir="rtl"
                       >
-                        يحظــــى مؤتمر تعزيز الصحة وجــــودة الحياة بدعم
-                        وتمكيــــن نخبة من الجهات الحكومية والشــــركاء
-                        الاستراتيجيين، الذين يســــخرون إمكاناتهم لتعزيز جودة
-                        الحيــــاة وتطويــــر القطاع الصحــــي، بما يتماشــــى مع
-                        المســــتهدفات الوطنية الطموحة.
+                        <span style={{ wordSpacing: "1.7px" }}>
+                          يحظــــى مؤتمر تعزيز الصحة وجــــودة الحياة بدعم
+                          وتمكيــــن نخبة من الجهات
+                        </span>
+                        <br />
+                        <span style={{ wordSpacing: "3px" }}>
+                          الحكومية والشــــركاء الاستراتيجيين، الذين يســــخرون
+                          إمكاناتهم لتعزيز جودة
+                        </span>
+                        <br />
+                        <span style={{ wordSpacing: "1px" }}>
+                          الحيــــاة وتطويــــر القطاع الصحــــي، بما يتماشــــى
+                          مع المســــتهدفات الوطنية
+                        </span>
+                        <br />
+                        الطموحة.
                       </p>
                     )}
                     {language === "en" && (
-                      <p className="md:text-[16px] mt-4 text-gray-300 leading-relaxed mt-3 xs:mt-4 text-start xs:px-0">
-                        HEAL is empowered and supported by elite government
-                        entities and strategic partners. They leverage their
-                        resources to enhance quality of life and develop the
-                        healthcare sector, in alignment with ambitious national
-                        objectives.
+                      <p className="md:text-[16.5px] mt-4 text-gray-300 leading-relaxed mt-3 xs:mt-4 text-start xs:px-0">
+                        <span style={{ wordSpacing: "1.5px" }}>
+                          HEAL is empowered and supported by elite government
+                          entities
+                        </span>
+                        <br />
+                        <span style={{ wordSpacing: "1.2px" }}>
+                          and strategic partners. They leverage their resources
+                          to enhance
+                        </span>
+                        <br />
+                        quality of life and develop the healthcare sector, in
+                        alignment with
+                        <br />
+                        ambitious national objectives.
                       </p>
                     )}
                   </div>
@@ -362,7 +383,7 @@ export default function EnablingPartners() {
                       </div>
 
                       {/* Heading */}
-                      <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold leading-[1.2] text-white">
+                      <h3 className="text-xl mt-2 sm:text-3xl lg:text-4xl leading-[1.2] text-white">
                         Absolute precision for an experience befitting the
                         Kingdom
                       </h3>
@@ -400,20 +421,27 @@ export default function EnablingPartners() {
                       </div>
 
                       {/* Heading */}
-                      <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold leading-[1.3] text-white">
+                      <h3 className="text-xl sm:text-3xl mt-2 lg:text-4xl leading-[1.3] text-white">
                         التزام بالدقة المتناهيـــة لضـــمان تجـــربة تنظيمية
                         تليق بمكانة المملكة
                       </h3>
 
                       {/* Description */}
-                      <p className="mt-3 sm:mt-4 text-sm text-gray-300 leading-relaxed max-w-xl lg:ml-auto">
-                        يتم إدارة وتنفيذ كافة العمليات التشغيلية للمؤتمر بواسطة
-                        <span className="font-semibold text-cyan-300">
-                          {" "}
-                          SOLUTIONS VEXORA
+                      <p className="mt-3 sm:mt-4 text-[16px] text-gray-300 leading-relaxed max-w-xl lg:ml-auto">
+                        <span style={{ wordSpacing: "7px" }}>
+                          يتم إدارة وتنفيذ كافة العمليات التشغيلية للمؤتمر
+                          بواسطة
                         </span>
-                        ، بما يضمن أعلى معايير الجودة والدقة
-                      </p>
+                        <br />
+                        <span style={{ wordSpacing: "2.5px" }}>
+                          
+                          <span className="font-semibold text-cyan-300">
+                            {" "}
+                            SOLUTIONS VEXORA
+                          </span>
+                          ، بما يضمن أعلى معايير الجودة والدقة
+                        </span>
+                        </p>
                     </div>
                   )}
                 </div>
@@ -425,7 +453,7 @@ export default function EnablingPartners() {
                   {/* Logo 1 */}
                   <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-3 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/30 hover:bg-white/10 w-full sm:w-auto flex justify-center">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    {language === 'en' && (
+                    {language === "en" && (
                       <Image
                         src="/Images/Home/EnabalingPartners/Logo.png"
                         alt="Logo"
@@ -439,7 +467,7 @@ export default function EnablingPartners() {
                   {/* Logo 2 */}
                   <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-5 py-3 backdrop-blur-xl transition-all duration-500 hover:border-purple-400/30 hover:bg-white/10 w-full sm:w-auto flex justify-center">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    {language === 'ar' && (
+                    {language === "ar" && (
                       <Image
                         src="/Images/Home/EnabalingPartners/WhiteLogo.png"
                         alt="White Logo"

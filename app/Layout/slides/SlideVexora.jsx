@@ -46,7 +46,7 @@ const SlideVexora = () => {
                   <h2
                     className="text-2xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
                     dir="rtl"
-                     style={{fontSize : "37.3px"}}
+                     style={{fontSize : "37.4px"}}
                   >
                     مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
                   </h2>
@@ -71,7 +71,7 @@ const SlideVexora = () => {
                   <p
                     className="text-base font-bold text-white mb-0.5"
                     dir="rtl"
-                    style={{fontSize : "34.2px"}}
+                    style={{fontSize : "34.4px"}}
                   > صحة • تمكين • توعية • عمر مديد
                   </p>
                 )}
