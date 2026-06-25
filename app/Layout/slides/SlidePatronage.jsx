@@ -11,7 +11,7 @@ const SlidePatronage = () => {
   const t = translations[language];
   return (
     <>
-      <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/healbkg.png')] bg-cover bg-center">
+      <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/healbkg.png')] bg-cover " style={{backgroundPosition : "", backgroundRepeat : "no-repeat"}}>
         <div className="relative z-10 w-full h-full flex items-center justify-center px-5 md:px-8 lg:px-14 overflow-y-auto">
           <div className="w-full max-w-7xl mx-auto py-3">
             {/* Top Bar */}

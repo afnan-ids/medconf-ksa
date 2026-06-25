@@ -10,7 +10,7 @@ const HealthTransformation = () => {
   const t = translations[language];
   return (
     <>
-      <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/HealthTransformationBG.png')] bg-cover bg-center">
+      <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/HealthTransformationBG.png')] bg-cover " style={{backgroundPosition : "0px 80px", backgroundRepeat : "no-repeat"}}>
         <div className="relative z-10 w-full h-full flex items-center justify-center px-5 md:px-8 lg:px-14 overflow-y-auto">
           {/* Top Bar */}
           <div className="absolute top-30 w-full mb-10">
@@ -52,7 +52,7 @@ const HealthTransformation = () => {
                 <div className="relative text-white space-y-1.5">
                   {language === "ar" && (
                     <p
-                      className="text-sm md:text-lg lg:text-[37px] text-start leading-[1.4] tracking-tight"
+                      className="text-sm md:text-lg lg:text-[36px] text-start leading-[1.4] tracking-tight"
                       dir="rtl"
                     >
                       التحـــــــول الصحـــــي كركيزة أساسيـة
@@ -80,7 +80,7 @@ const HealthTransformation = () => {
                 <div className="rounded-xl py-1 space-y-2">
                   {language === "ar" && (
                     <p
-                      className="text-xs md:text-sm lg:text-[14.5px] leading-[1.8] text-white/95 text-start"
+                      className="text-xs md:text-sm lg:text-[14px] leading-[1.8] text-white/95 text-start"
                       dir="rtl"
                     >
                       يهـــدف مؤتمر ومعرض تعزيز الصحة ليكون أبرز المنصات الصحية
@@ -101,7 +101,7 @@ const HealthTransformation = () => {
                   )}
 
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-[14.7px] leading-[1.7] text-white/90 text-start">
+                    <p className="text-xs md:text-sm lg:text-[14.4px] leading-[1.7] text-white/90 text-start">
                       <span style={{ wordSpacing: "2.1px" }}>
                         The Health Promotion Conference and Exhibition Aims to
                         be The Kingdom of
