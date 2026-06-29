@@ -59,7 +59,7 @@ const SlidePatronage = () => {
                   <div className="flex flex-col md:flex-row justify-between items-center gap-2">
                     <div>
                       {language === "en" && (
-                        <p className="text-lg md:text-2xl lg:text-[28px] font-extrabold text-white tracking-tight">
+                        <p className="text-lg md:text-2xl lg:text-[1.7rem] font-extrabold text-white tracking-tight">
                           Prince Khalid AL Faisal
                         </p>
                       )}
@@ -79,11 +79,10 @@ const SlidePatronage = () => {
                   <div className="flex flex-col md:flex-row justify-between items-start gap-2 mt-2 pt-2 border-t border-white/10">
                     <div>
                       {language === "en" && (
-                        <p className="text-xs md:text-sm lg:text-[15px] text-white/90 leading-relaxed">
+                        <p className="text-xs md:text-sm lg:text-[0.9rem] text-white/90 leading-relaxed">
                           Advisor to the Custodian of the Two Holy
                           <br />
-                           Mosques,
-                          Governor of Makkah Region
+                           <span style={{wordSpacing: "0.3rem"}}>Mosques, Governor of Makkah Region</span>
                         </p>
                       )}
                     </div>
@@ -109,7 +108,7 @@ const SlidePatronage = () => {
                     <p
                       className="text-sm md:text-lg lg:text-2xl font-bold text-white leading-snug"
                       dir="rtl"
-                      style={{ wordSpacing: "0.2rem" }}
+                      style={{ wordSpacing: "0.5rem" }}
                     >
                       مؤتمــــــــر ومعــــــــرض تعزيــــــــز الصحـــــــة
                       وجــــودة الحيــــاة
@@ -117,7 +116,8 @@ const SlidePatronage = () => {
                   )}
 
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-xl text-white/90 tracking-wide text-start">
+                    <p className="text-xs md:text-sm lg:text-[1.2rem] text-white/90 tracking-wide text-start"
+                    style={{wordSpacing: "0.3rem"}}>
                       Health Promotion & Quality of Life Conference and
                       Exhibition
                     </p>
@@ -128,8 +128,9 @@ const SlidePatronage = () => {
                 <div className="rounded-xl  py-1 space-y-1">
                   {language === "ar" && (
                     <p
-                      className="text-xs md:text-sm lg:text-[15px] leading-relaxed text-white/95 text-right"
+                      className="text-xs md:text-sm lg:text-[0.9rem] leading-relaxed text-white/95 text-right"
                       dir="rtl"
+                      style={{wordSpacing: "0.2rem"}}
                     >
                       يقام أضخــــم حــــدث من نوعة في المنطقة الغربية يهـدف إلى
                       تحسين جــــودة الحياة تحــــت شعــــار
@@ -149,16 +150,17 @@ const SlidePatronage = () => {
                 <div className="text-start py-1 rounded-xl">
                   {language === "ar" && (
                     <p
-                      className="text-base md:text-xl lg:text-[43px] text-white tracking-tight"
+                      className="text-base md:text-xl lg:text-[2.9rem] text-white tracking-tight"
                       dir="rtl"
-                      style={{ wordSpacing: "0.4rem" }}
+                      style={{ wordSpacing: "0.1rem" }}
                     >
                      صحة • تمكين • توعية • عمر مديد
                     </p>
                   )}
 
                   {language === "en" && (
-                    <p className="text-[26px] font-semibold text-white/90 tracking-[0.10em] uppercase text-start">
+                    <p className="text-[1.6rem] font-semibold text-white/90 tracking-[0.10em] uppercase text-start" 
+                    style={{wordSpacing: "0.2rem"}}>
                       HEALTH PROMOTION & QUALITY OF LIFE
                     </p>
                   )}

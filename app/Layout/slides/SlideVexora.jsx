@@ -17,7 +17,7 @@ const SlideVexora = () => {
           <div className="text-center lg:text-left mb-8 lg:mb-0"></div>
 
           {/* Right Column */}
-          <div className="w-full max-w-4xl mx-auto px-2 space-y-5 py-5 ">
+          <div className="w-full max-w-4xl mx-auto space-y-5 py-5 ">
             {/* HPQL Section  */}
             <div className="text-right space-y-2">
               <div className="flex items-center justify-end">
@@ -46,14 +46,14 @@ const SlideVexora = () => {
                   <h2
                     className="text-2xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
                     dir="rtl"
-                     style={{fontSize : "37px"}}
+                     style={{fontSize : "2.3rem", wordSpacing: "0.3rem"}}
                   >
                     مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
                   </h2>
                 )}
                 {language === "en" && (
                   <h2 className=" text-white  tracking-[0.15em]"
-                    style={{fontSize : "15.9px", wordSpacing : "2px"}} >
+                    style={{fontSize : "1rem"}} >
 
                     HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
                   </h2>
@@ -71,13 +71,13 @@ const SlideVexora = () => {
                   <p
                     className="text-base font-bold text-white mb-0.5"
                     dir="rtl"
-                    style={{fontSize : "33.8px"}}
+                    style={{fontSize : "2.2rem"}}
                   > صحة • تمكين • توعية • عمر مديد
                   </p>
                 )}
                 {language === "en" && (
                   <p className="w-full text-white uppercase tracking-[0.25em] font-light"
-                   style={{fontSize : "17.4px"}}>
+                   style={{fontSize : "1.1rem"}}>
                     HEALTH PROMOTION & QUALITY OF LIFE
                   </p>
                 )}

@@ -47,7 +47,7 @@ const HealthTransformation = () => {
               </div>
 
               {/* right Side */}
-              <div className="w-full lg:w-1/2 mt-20 pe-6 ps-10">
+              <div className="w-full lg:w-1/2 mt-20 px-2">
                 {/* Heading */}
                 <div className="relative text-white space-y-1.5">
                   {language === "ar" && (
@@ -64,7 +64,7 @@ const HealthTransformation = () => {
                   )}
                   {language === "en" && (
                     <p
-                      className="text-xs md:text-base lg:text-[36.8px] text-start font-medium leading-relaxed text-white/95 mb-0"
+                      className="text-xs md:text-base lg:text-[2.5rem] text-start font-medium leading-relaxed text-white/95 mb-0"
                       style={{ lineHeight: "45px " }}
                     >
                       Health Transformation as
@@ -101,26 +101,28 @@ const HealthTransformation = () => {
                   )}
 
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-[14.4px] leading-[1.7] text-white/90 text-start">
-                      <span style={{ wordSpacing: "2.1px" }}>
+                    <p className="text-xs md:text-sm lg:text-[0.98rem] leading-[1.7] text-white/90 text-start">
+                      <span style={{ wordSpacing: "0.25rem" }}>
                         The Health Promotion Conference and Exhibition Aims to
                         be The Kingdom of
                       </span>
                       <br />
-                      Saudi Arabia's premier specialized health platform. As a
-                      leading national event, it
+                      <span style={{wordSpacing : "0.1rem"}}>
+                        Saudi Arabia's premier specialized health platform. As a
+                        leading national event, it
+                      </span>
                       <br />
-                      <span style={{ wordSpacing: "8.2px" }}>
+                      <span style={{ wordSpacing: "0.7rem" }}>
                         integrates a specialized scientific conference with an
                         interactive health
                       </span>
                       <br />
-                      <span style={{ wordSpacing: "2.5px" }}>
+                      <span style={{ wordSpacing: "0.3rem" }}>
                         exhibition, creating a comprehensive framework to elevate
                         health promotion
                       </span>
                       <br />
-                      <span style={{ wordSpacing: "0.5px" }}>
+                      <span style={{ wordSpacing: "0.12rem" }}>
                         concepts and their vital link to the quality of life for
                         both individuals and society
                       </span>
