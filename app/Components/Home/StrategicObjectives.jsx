@@ -195,7 +195,7 @@ export default function StrategicObjectives() {
                     </div>
 
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
-                      الأهداف الاستراتيجية
+                      الأهداف الاستر اتيجية
                       <br />
                       <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                         للمؤتمــــــر
@@ -207,10 +207,15 @@ export default function StrategicObjectives() {
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
                     </div>
 
-                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
-                      تنطلـــق منظومـــة أهداف تحـــول المؤتمر إلـــى منصة تغيير
-                      وتأثير على مســـتوى المجتمع والقطـــاع الصحي والاقتصاد
-                      الصحي
+                    <p className="text-sm sm:text-base md:text-[1rem] text-gray-300 leading-relaxed">
+                      <span style={{ wordSpacing: "0.1rem" }}>
+                        تنطلـــق منظومـــة أهداف تحـــول المؤتمر إلـــى منصة
+                        تغيير وتأثير
+                      </span>
+                      <br />
+                      <span style={{ wordSpacing: "0.4rem" }}>
+                        على مســـتوى المجتمع والقطـــاع الصحي والاقتصاد الصحي
+                      </span>
                     </p>
                   </div>
                 )}

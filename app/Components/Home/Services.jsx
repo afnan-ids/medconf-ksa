@@ -127,7 +127,7 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
               </div>
 
-              <p className="text-xs sm:text-sm md:text-lg text-gray-300 mt-3 sm:mt-6 max-w-2xl mx-auto px-4">
+              <p className="text-xs sm:text-sm md:text-[1.2rem] text-gray-300 mt-3 sm:mt-6 max-w-2xl mx-auto">
                 {t.steamlineSolution}
               </p>
             </div>

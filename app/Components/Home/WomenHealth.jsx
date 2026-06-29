@@ -40,12 +40,17 @@ const statsData = [
     labelAr: "نمو في العيادات المتخصصة لصحة المرأة",
     labelEn: "Women's Health Clinics Growth",
   },
+ 
+];
+const statsData2 = [
+
   {
     value: "15+",
     labelAr: "براءة اختـــــراع طبية مسجلـــــة عالميا لطبيبات سعــوديات",
     labelEn: "Global Medical Patents",
   },
 ];
+
 
 const highlightsData = [
   {
@@ -281,6 +286,55 @@ export default function WomenAndHealth() {
                       </div>
                     ))}
                   </div>
+                  <div className="grid grid-cols-1 px-20 mb-2 mt-4 gap-2 xs:gap-3 sm:gap-4">
+                    {statsData2.map((stat, index) => (
+                      <div
+                        key={index}
+                        className="
+                          group
+                          relative
+                          overflow-hidden
+                          rounded-lg xs:rounded-xl
+                          border
+                          border-white/15
+                          bg-white/[0.08]
+                          backdrop-blur-xl
+                          p-2 xs:p-3 sm:p-3.5
+                          transition-all
+                          duration-400
+                          hover:bg-white/[0.12]
+                          hover:-translate-y-0.5
+                          hover:border-emerald-400/30
+                        "
+                      >
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/20 blur-3xl rounded-full" />
+                        </div>
+
+                        <div className="relative mb-1 xs:mb-2">
+                          <div className="relative rounded-lg xs:rounded-xl border border-white/25 bg-blue-900 px-2 xs:px-3 py-1.5 xs:py-2 text-center shadow-lg backdrop-blur-sm">
+                            <h3 className="text-base xs:text-lg sm:text-xl lg:text-2xl font-bold text-white">
+                              {stat.value}
+                            </h3>
+                          </div>
+                        </div>
+                        {language === "ar" && (
+                          <p
+                            dir="rtl"
+                            className="text-white text-[10px] xs:text-xs sm:text-sm md:text-lg text-center leading-relaxed"
+                          >
+                            {stat.labelAr}
+                          </p>
+                        )}
+                        {language === "en" && (
+                          <p className="text-white/90 text-[9px] xs:text-[10px] sm:text-xs md:text-sm text-center mt-0.5 xs:mt-1">
+                            {stat.labelEn}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <Image src="/images/Footer-logo.png" alt="" width={40} height={40}/>
                 </div>
 
                 {/* RIGHT */}

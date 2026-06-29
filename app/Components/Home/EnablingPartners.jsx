@@ -149,20 +149,20 @@ export default function EnablingPartners() {
                   <div className="">
                     {language === "ar" && (
                       <p
-                        className=" md:text-[16px] text-gray-300 mt-6 leading-relaxed text-right xs:px-0"
+                        className=" md:text-[1rem] text-gray-300 mt-6 leading-relaxed text-right xs:px-0"
                         dir="rtl"
                       >
-                        <span style={{ wordSpacing: "1.7px" }}>
+                        <span style={{ wordSpacing: "" }}>
                           يحظــــى مؤتمر تعزيز الصحة وجــــودة الحياة بدعم
                           وتمكيــــن نخبة من الجهات
                         </span>
                         <br />
-                        <span style={{ wordSpacing: "3px" }}>
+                        <span style={{ wordSpacing: "" }}>
                           الحكومية والشــــركاء الاستراتيجيين، الذين يســــخرون
                           إمكاناتهم لتعزيز جودة
                         </span>
                         <br />
-                        <span style={{ wordSpacing: "1px" }}>
+                        <span style={{ fontSize: "0.98rem",wordSpacing: "0.12rem" }}>
                           الحيــــاة وتطويــــر القطاع الصحــــي، بما يتماشــــى
                           مع المســــتهدفات الوطنية
                         </span>
@@ -276,7 +276,7 @@ export default function EnablingPartners() {
                       <div className="flex items-center justify-center sm:justify-end">
                         {language === "ar" && (
                           <span
-                            className="text-sm sm:text-lg lg:text-xl font-bold leading-snug text-emerald-500 text-center sm:text-right"
+                            className="text-sm sm:text-lg lg:text-4xl font-bold leading-snug text-emerald-500 text-center sm:text-right"
                             dir="rtl"
                           >
                             لننطلق معا نحو
@@ -290,7 +290,7 @@ export default function EnablingPartners() {
                       {/* english */}
                       <div className="space-y-1 text-center sm:text-left">
                         {language === "en" && (
-                          <h3 className="text-base sm:text-lg lg:text-xl font-bold leading-snug text-blue-950">
+                          <h3 className="text-base sm:text-lg lg:text-[1.22rem] font-bold leading-snug text-blue-950">
                             Health Promotion & Quality of Life
                           </h3>
                         )}
@@ -300,7 +300,7 @@ export default function EnablingPartners() {
                       <div className="space-y-1 text-center sm:text-right">
                         {language === "ar" && (
                           <h3
-                            className="text-base sm:text-lg lg:text-xl font-bold leading-snug text-blue-950"
+                            className="text-base sm:text-lg lg:text-[1.3rem] font-bold leading-snug text-blue-950"
                             dir="rtl"
                           >
                             تعزيز الصحة وجودة الحياة
@@ -413,7 +413,7 @@ export default function EnablingPartners() {
                 {/* RIGHT CONTENT */}
                 <div>
                   {language === "ar" && (
-                    <div className="lg:text-right" dir="rtl">
+                    <div className="lg:text-right pe-40"  dir="rtl">
                       {/* Mini Label */}
                       <div className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-[10px] sm:text-xs font-medium text-purple-300 mb-3 sm:mb-4">
                         <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
@@ -421,19 +421,21 @@ export default function EnablingPartners() {
                       </div>
 
                       {/* Heading */}
-                      <h3 className="text-xl sm:text-3xl mt-2 lg:text-4xl leading-[1.3] text-white">
-                        التزام بالدقة المتناهيـــة لضـــمان تجـــربة تنظيمية
+                      <h3 className="text-xl sm:text-3xl mt-2 lg:text-3xl leading-[1.3] text-white">
+                        <span style={{wordSpacing: "0.98rem"}}>
+                          التزام بالدقة المتناهيـــة لضـــمان
+                      </span> تجـــربة تنظيمية
                         تليق بمكانة المملكة
                       </h3>
 
                       {/* Description */}
-                      <p className="mt-3 sm:mt-4 text-[16px] text-gray-300 leading-relaxed max-w-xl lg:ml-auto">
-                        <span style={{ wordSpacing: "7px" }}>
+                      <p className="mt-3 sm:mt-4 text-[1rem] text-gray-300 leading-relaxed max-w-xl lg:ml-auto">
+                        <span style={{ wordSpacing: "0.5rem" }}>
                           يتم إدارة وتنفيذ كافة العمليات التشغيلية للمؤتمر
                           بواسطة
                         </span>
                         <br />
-                        <span style={{ wordSpacing: "2.5px" }}>
+                        <span style={{ wordSpacing: "0.22rem" }}>
                           
                           <span className="font-semibold text-cyan-300">
                             {" "}
