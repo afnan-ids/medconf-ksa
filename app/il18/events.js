@@ -1,6 +1,6 @@
 export const translations = {
     en:
-    {
+    {   home: "Home",
         events: "Events",
 
         eventsInsights: "Events & Insights",
@@ -45,7 +45,7 @@ export const translations = {
         downloadReportsDescription:
             "Access full reports, presentations, and insights from previous events.",
 
-        downloadReports: "Download Reports",
+        downloadReports: "Download All Event Reports",
 
         // Event Titles
         healthcareInnovation2024:
@@ -67,12 +67,13 @@ export const translations = {
         march2024: "March 2024",
 
     },
-    ar: {
+    ar:
+    {   home: "الرئيسية",
         events: "الفعاليات",
 
         eventsInsights: "الأحداث والرؤى",
 
-        shapingTheFutureOf: "تشكيل مستقبل",
+        shapingTheFutureOf: "تشكيل مستقبل الرعاية الصحية",
         healthcare: "الرعاية الصحية",
 
         eventsHeroDescription:
