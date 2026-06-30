@@ -67,53 +67,52 @@ export const translations = {
         march2024: "March 2024",
 
     },
-    ar:
-    {
+    ar: {
         events: "الفعاليات",
 
-        eventsInsights: "الفعاليات والرؤى",
+        eventsInsights: "الأحداث والرؤى",
 
-        shapingTheFutureOf: "نرسم مستقبل",
+        shapingTheFutureOf: "تشكيل مستقبل",
         healthcare: "الرعاية الصحية",
 
         eventsHeroDescription:
-            "نجمع قادة الرعاية الصحية والمبتكرين والخبراء العالميين لرسم مستقبل التميز الطبي.",
+            "يجمع هذا الحدث قادة الرعاية الصحية والمبتكرين والخبراء العالميين لتشكيل مستقبل التميز الطبي.",
 
         // Featured Event
-        upcomingEvent2026: "الفعالية القادمة 2026",
+        upcomingEvent2026: "الحدث القادم 2026",
 
         globalHealth: "الصحة العالمية",
-        exhibition2026: "معرض 2026",
+        exhibition2026: "معرض 2026: معرض 2026",
 
         riyadhInternationalConventionCenter:
-            "مركز الرياض الدولي للمؤتمرات والمعارض",
+            "مركز الرياض الدولي للمؤتمرات",
 
-        eventDate: "26-03-2026",
+        eventDate: "26/03/2026",
 
         speakers: "المتحدثون",
         exhibitors: "العارضون",
-        countries: "الدول",
+        countries: "بلدان",
 
         registerNow: "سجل الآن",
-        bookBooth: "احجز جناحاً",
+        bookBooth: "كشك الكتب",
 
         // Past Events Section
-        pastEvents: "الفعاليات السابقة",
+        pastEvents: "الأحداث السابقة",
 
         viewAllReports: "عرض جميع التقارير",
 
-        viewReport: "عرض التقرير",
+        viewReport: "عرض جميع التقارير",
 
         // Download Section
-        resources: "الموارد",
+        resources: "موارد",
 
         downloadAllEventReports:
-            "تحميل جميع تقارير الفعاليات",
+            "تنزيل جميع تقارير الفعاليات",
 
         downloadReportsDescription:
-            "الوصول إلى التقارير الكاملة والعروض التقديمية والرؤى من الفعاليات السابقة.",
+            "يمكنكم الاطلاع على التقارير الكاملة والعروض التقديمية والرؤى المستقاة من الأحداث السابقة.",
 
-        downloadReports: "تحميل التقارير",
+        downloadReports: "تنزيل جميع تقارير الفعاليات",
 
         // Event Titles
         healthcareInnovation2024:
@@ -129,10 +128,9 @@ export const translations = {
             "الجمعية العالمية للصحة",
 
         // Event Dates
-        september2024: "سبتمبر 2024",
-        april2024: "أبريل 2024",
-        august2019: "أغسطس 2019",
-        march2024: "مارس 2024",
-
+        september2024: "Sep-24",
+        april2024: "Apr-24",
+        august2019: "Aug-19",
+        march2024: "Mar-24",
     }
 }

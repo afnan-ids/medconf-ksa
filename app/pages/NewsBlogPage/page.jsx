@@ -255,12 +255,12 @@ export default function NewsBlogPage() {
             </div>
 
             <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-              {categories.map((cat) => {
+              {categories.map((cat, i) => {
                 const Icon = cat.icon;
                 const isActive = activeCategory === cat.name;
                 return (
                   <button
-                    key={cat.name}
+                    key={i}
                     onClick={() => setActiveCategory(cat.name)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs whitespace-nowrap transition-all me-1 ${
                       isActive

@@ -102,56 +102,56 @@ export const translations = {
 
         // Hero Section
         getInTouch: "تواصل معنا",
-        lets: "لنقم بـ",
-        connect: "التواصل",
+        lets: "هيا",
+        connect: "نتواصل",
         contactDescription:
-            "هل لديك أسئلة حول فعالياتنا أو بواباتنا أو خدماتنا؟ فريقنا هنا لمساعدتك في كل خطوة.",
+            "هل لديك أسئلة حول فعالياتنا أو بواباتنا أو خدماتنا؟ فريقنا هنا لمساعدتك في كل خطوة على الطريق.",
 
         // Contact Info Cards
-        phone: "الهاتف",
-        email: "البريد الإلكتروني",
-        address: "العنوان",
+        phone: "هاتف",
+        email: "بريد إلكتروني",
+        address: "عنوان",
 
-        phoneHours: "الأحد - الخميس، 9:00 صباحاً - 6:00 مساءً",
-        addressLine1: "مركز الملك عبدالله المالي",
-        addressLine2: "الرياض 13519، المملكة العربية السعودية",
+        phoneHours: "من الأحد إلى الخميس، من الساعة 9:00 صباحاً إلى الساعة 6:00 مساءً",
+        addressLine1: "الحي المالي للملك عبد الله",
+        addressLine2: "الرياض ١٣٥١٩، المملكة العربية السعودية",
 
         // Contact Form
         sendMessageTitle: "أرسل لنا رسالة",
 
-        name: "الاسم",
-        emailLabel: "البريد الإلكتروني",
-        phoneLabel: "رقم الهاتف",
-        company: "الشركة",
-        subject: "الموضوع",
-        message: "الرسالة",
+        name: "اسم",
+        emailLabel: "بريد إلكتروني",
+        phoneLabel: "هاتف",
+        company: "شركة",
+        subject: "موضوع *",
+        message: "رسالة",
 
         yourName: "اسمك",
-        yourEmail: "your@email.com",
-        yourCompany: "اسم الشركة",
+        yourEmail: "Your@email.com",
+        yourCompany: "شركتكم",
         phonePlaceholder: "+966 XX XXX XXXX",
         messagePlaceholder: "كيف يمكننا مساعدتك؟",
 
-        selectSubject: "اختر موضوعاً",
+        selectSubject: "اختر موضوعًا",
         generalInquiry: "استفسار عام",
         exhibitorInformation: "معلومات العارضين",
-        registrationHelp: "المساعدة في التسجيل",
+        registrationHelp: "مساعدة في التسجيل",
         technicalSupport: "الدعم الفني",
         partnershipOpportunities: "فرص الشراكة",
 
         sendMessage: "إرسال الرسالة",
-        messageSent: "تم إرسال الرسالة بنجاح!",
+        messageSent: "تم إرسال الرسالة!",
 
         // Location
         ourLocation: "موقعنا",
         conferenceCenter: "مركز المؤتمرات",
-        conferenceCenterName: "مركز الرياض الدولي للمؤتمرات والمعارض",
-        getDirections: "الحصول على الاتجاهات",
+        conferenceCenterName: "مركز الرياض الدولي للمؤتمرات",
+        getDirections: "احصل على الاتجاهات",
 
         // Team Contacts
         directContacts: "جهات الاتصال المباشرة",
 
-        conferenceDirector: "مدير المؤتمرات",
+        conferenceDirector: "مدير المؤتمر",
         exhibitorRelations: "علاقات العارضين",
         technicalSupportRole: "الدعم الفني",
 
@@ -166,30 +166,32 @@ export const translations = {
         ratesAnswer:
             "تختلف أسعار مساحات المعارض حسب الموقع والحجم. يرجى التواصل مع فريق علاقات العارضين للحصول على عرض سعر مخصص.",
 
-        verificationQuestion: "كيف تعمل عملية التحقق من الهيئة السعودية للتخصصات الصحية؟",
+        verificationQuestion:
+            "كيف تعمل عملية التحقق من الهيئة السعودية للتخصصات الصحية؟",
         verificationAnswer:
             "يمكن للممارسين الصحيين رفع تراخيصهم عبر بوابتنا الآمنة. تستغرق عملية التحقق عادةً من 24 إلى 48 ساعة.",
 
         // Stats
-        support247: "دعم على مدار الساعة",
+        support247: "دعم متوفر على مدار الساعة طوال أيام الأسبوع",
         submitTicket: "إرسال تذكرة",
 
-        globalEvents: "فعاليات عالمية",
+        globalEvents: "الأحداث العالمية",
         countries15: "أكثر من 15 دولة",
 
         happyClients: "عملاء سعداء",
-        clients5000: "5000+",
+        clients5000: "أكثر من 5000",
 
         yearsOfExcellence: "سنوات من التميز",
         years10: "أكثر من 10 سنوات",
 
         // CTA
         medicalConferences: "المؤتمرات الطبية",
-        transformEventTitle: "هل أنت مستعد للارتقاء بفعاليتك الصحية؟",
+        transformEventTitle:
+            "هل أنتم مستعدون لإحداث نقلة نوعية في فعاليات الرعاية الصحية لدينا؟",
         transformEventDescription:
-            "انضم إلى مئات المتخصصين في الرعاية الصحية الذين يثقون بنا لتنظيم مؤتمرات طبية عالمية المستوى",
+            "انضم إلى مئات من المتخصصين في الرعاية الصحية الذين يثقون بنا لحضور مؤتمر طبي عالمي المستوى",
 
         exploreEvents: "استكشف الفعاليات",
-        accessPortals: "الوصول إلى البوابات",
+        accessPortals: "بوابات الوصول",
     },
 };
