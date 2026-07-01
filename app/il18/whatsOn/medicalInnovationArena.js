@@ -1,4 +1,4 @@
-export const translations = {
+export const medicalInnovationArenaTranslations = {
   en: {
     home: "Home",
     whatsOn: "Whats On",

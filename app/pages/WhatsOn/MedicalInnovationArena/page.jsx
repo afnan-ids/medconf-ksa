@@ -21,12 +21,8 @@ import {
   View,
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
-import { useLanguage } from "../../../context/LanguageContext";
-import { translations } from "../../../il18/whatsOn/medicalInnovationArena";
 
 export default function MedicalInnovationArena() {
-   const { language } = useLanguage();
-  const t = translations[language];
   const statsData = [
     {
       icon: Microscope,
@@ -103,9 +99,9 @@ export default function MedicalInnovationArena() {
   return (
     <>
       <BreadCrumb
-        title={t.medicalInnovationArena}
+        title="Medical Innovation Arena"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: t.whatsOn }, { label: t.medicalInnovationArena }]}
+        path={[{ label: "Whats On" }, { label: "Medical Innovation Arena" }]}
       />
 
       <section className="relative min-h-screen py-10 sm:py-12 md:py-16 overflow-hidden">
@@ -124,18 +120,26 @@ export default function MedicalInnovationArena() {
             <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-300" />
               <span className="text-xs sm:text-sm font-medium text-gray-300">
-                {t.innovationShowcase2026}
+                Innovation Showcase 2026
               </span>
             </div>
 
             {/* Main title with gradient */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative text-white">
-              {t.medicalInnovationArena}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative">
+              <span className="text-white">Medical</span>{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                Innovation
+              </span>
+              {"   "}
+              <span className="text-white">Arena</span>
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
             </h1>
 
             {/* Description */}
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-4">
-             {t.heroDescription}
+              Showcase of the latest medical technologies, AI in healthcare,
+              diagnostic tools, and next-generation medical devices transforming
+              patient care.
             </p>
           </div>
 
@@ -158,12 +162,28 @@ export default function MedicalInnovationArena() {
                 <div className="relative z-10">
                   {/* Heading (NEW) */}
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight">
-                 {t.experienceFuture}
+                    Experience the Future of{" "}
+                    <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                      Healthcare Innovation
+                    </span>
                   </h2>
 
                   {/* Paragraph */}
                   <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                    {t.heroSubDescription}
+                    Step into the{" "}
+                    <span className="text-blue-400 font-medium">
+                      Medical Innovation Arena
+                    </span>{" "}
+                    — where breakthrough technologies come to life. From{" "}
+                    <span className="text-cyan-300">
+                      AI-powered diagnostics
+                    </span>{" "}
+                    to{" "}
+                    <span className="text-purple-300">
+                      robotic surgery systems
+                    </span>
+                    , explore how innovation is transforming healthcare and
+                    improving patient outcomes worldwide.
                   </p>
 
                   {/* Tags */}
