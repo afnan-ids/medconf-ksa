@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { Crown, Award, Star } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../il18/translations";
 
-const HealthTransformation = () => {
+const HealthTransformation = ({ labels = {} }) => {
   const { language } = useLanguage();
-  const t = translations[language];
+
+  const slider4Title = labels["Slider4Title"]?.[language] || "";
+  const slider4Description = labels["Slider4Description"]?.[language] || "";
+
   return (
     <>
       <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/HealthTransformationBG.png')] bg-cover " style={{backgroundPosition : "0px 80px", backgroundRepeat : "no-repeat"}}>
@@ -55,11 +56,7 @@ const HealthTransformation = () => {
                       className="text-sm md:text-lg lg:text-[36px] text-start leading-[1.4] tracking-tight"
                       dir="rtl"
                     >
-                      التحـــــــول الصحـــــي كركيزة أساسيـة
-                      <br />
-                      <span style={{ wordSpacing: "1px" }}>
-                        للاستثمــــــــار في رأس المال البشـري
-                      </span>
+                      {slider4Title}
                     </p>
                   )}
                   {language === "en" && (
@@ -67,11 +64,7 @@ const HealthTransformation = () => {
                       className="text-xs md:text-base lg:text-[2.5rem] text-start font-medium leading-relaxed text-white/95 mb-0"
                       style={{ lineHeight: "45px " }}
                     >
-                      Health Transformation as
-                      <br />
-                      a Fundamental Pillar for Human
-                      <br />
-                      Capital Investment
+                      {slider4Title}
                     </p>
                   )}
                 </div>
@@ -83,49 +76,13 @@ const HealthTransformation = () => {
                       className="text-xs md:text-sm lg:text-[14px] leading-[1.8] text-white/95 text-start"
                       dir="rtl"
                     >
-                      يهـــدف مؤتمر ومعرض تعزيز الصحة ليكون أبرز المنصات الصحية
-                      المتخصصة في المملكة العربية
-                      <br />
-                      <span style={{ wordSpacing: "0.3px" }}>
-                        الســـعودية، ويأتي كحدث وطني رائد يجمع بين المؤتمـــر
-                        العلمي المتخصص والمعرض الصحي
-                      </span>
-                      <br />
-                      <span style={{ wordSpacing: "0.4px" }}>
-                        التفاعلي، في إطـــار متكامل يهدف إلى الارتقاء بمفاهيم
-                        تعزيز الصحـــة وارتباطها بجودة الحياة
-                      </span>
-                      <br />
-                      على مستوى الفرد والمجتمع{" "}
+                      {slider4Description}
                     </p>
                   )}
 
                   {language === "en" && (
                     <p className="text-xs md:text-sm lg:text-[0.98rem] leading-[1.7] text-white/90 text-start">
-                      <span style={{ wordSpacing: "0.25rem" }}>
-                        The Health Promotion Conference and Exhibition Aims to
-                        be The Kingdom of
-                      </span>
-                      <br />
-                      <span style={{wordSpacing : "0.1rem"}}>
-                        Saudi Arabia's premier specialized health platform. As a
-                        leading national event, it
-                      </span>
-                      <br />
-                      <span style={{ wordSpacing: "0.7rem" }}>
-                        integrates a specialized scientific conference with an
-                        interactive health
-                      </span>
-                      <br />
-                      <span style={{ wordSpacing: "0.3rem" }}>
-                        exhibition, creating a comprehensive framework to elevate
-                        health promotion
-                      </span>
-                      <br />
-                      <span style={{ wordSpacing: "0.12rem" }}>
-                        concepts and their vital link to the quality of life for
-                        both individuals and society
-                      </span>
+                      {slider4Description}
                     </p>
                   )}
                 </div>
@@ -189,14 +146,12 @@ const HealthTransformation = () => {
                   className="text-sm font-extrabold text-white leading-[1.4] tracking-tight"
                   dir="rtl"
                 >
-                  التحـــــــول الصحـــــي كركيزة أساسيـة للاستثمــــــــار في
-                  رأس المال البشـري
+                  {slider4Title}
                 </p>
               )}
               {language === "en" && (
                 <p className="text-xs font-medium leading-relaxed text-white/95">
-                  Health Transformation as a Fundamental Pillar for Human
-                  Capital Investment
+                  {slider4Title}
                 </p>
               )}
             </div>
@@ -208,22 +163,12 @@ const HealthTransformation = () => {
                   className="text-[11px] leading-[1.6] text-white/95 text-center"
                   dir="rtl"
                 >
-                  يهـــدف مؤتمر ومعرض تعزيز الصحة ليكون أبرز المنصات الصحية
-                  المتخصصة في المملكة العربية الســـعودية، ويأتي كحدث وطني رائد
-                  يجمع بين المؤتمـــر العلمي المتخصص والمعرض الصحي التفاعلي، في
-                  إطـــار متكامل يهدف إلى الارتقاء بمفاهيم تعزيز الصحـــة
-                  وارتباطها بجودة الحياة على مستوى الفرد والمجتمع
+                  {slider4Description}
                 </p>
               )}
               {language === "en" && (
                 <p className="text-[11px] leading-[1.6] text-white/90 text-center">
-                  The Health Promotion Conference and Exhibition aims to be the
-                  Kingdom of Saudi Arabia's premier specialized health platform.
-                  As a leading national event, it integrates a specialized
-                  scientific conference with an interactive health exhibition,
-                  creating a comprehensive framework to elevate health promotion
-                  concepts and their vital link to the quality of life for both
-                  individuals and society
+                  {slider4Description}
                 </p>
               )}
             </div>

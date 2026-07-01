@@ -2,14 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../il18/translations";
 
-const SlideVideo = () => {
+const SlideVideo = ({ labels = {} }) => {
   const [mounted, setMounted] = useState(false);
   const videoRef = useRef(null);
 
-   const { language } = useLanguage();
-  const t = translations[language];
+  const { language } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -17,6 +15,13 @@ const SlideVideo = () => {
   }, []);
 
   if (!mounted) return null;
+
+  const title = labels["Slider1Title"]?.[language] || "HPQL";
+  const description = labels["Slider1Description"]?.[language] || "";
+  const globalSpeakers = labels["GlobalSpeakers"]?.[language] || "Global Speakers";
+  const exhibition = labels["Exhibition"]?.[language] || "Exhibition";
+  const expectedVisitors = labels["ExpectedVisitors"]?.[language] || "Expected Visitors";
+  const yearsExperience = labels["YearsExperience"]?.[language] || "Years Experience";
 
   return (
    <div className="relative w-full h-full min-h-[400px] xs:min-h-[500px] sm:min-h-[600px] md:h-full">
@@ -43,15 +48,14 @@ const SlideVideo = () => {
           <span
             className="block xs:inline font-bold mt-1 xs:mt-0 tracking-tight transition-all duration-500 bg-gradient-to-r from-cyan-400 via-purple-500 to-purple-600 bg-clip-text text-transparent"
           >
-            HPQL
+            {title}
           </span>
         </h1>
 
         <div className="w-16 sm:w-20 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-cyan-300 mt-4 sm:mt-6 mb-4 sm:mb-8 rounded-full"></div>
 
         <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-white/90 max-w-xl leading-relaxed mb-6 sm:mb-8 md:mb-10">
-        {t.leadingMedicalConferences}
-          
+          {description}
         </p>
       </div>
     </div>
@@ -63,20 +67,20 @@ const SlideVideo = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 text-center divide-x divide-white/20 [&>*:nth-child(1)]:border-r [&>*:nth-child(2)]:border-r [&>*:nth-child(3)]:border-r md:[&>*:nth-child(2)]:border-r-0 [&>*:nth-child(4)]:border-r-0 border-b border-white/20 md:border-b-0">
         <div className="px-2 xs:px-3 sm:px-4 lg:px-6 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6">
           <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">250+</div>
-          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{t.globalSpeakers}</div>
+          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{globalSpeakers}</div>
         </div>
         <div className="px-2 xs:px-3 sm:px-4 lg:px-6 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6">
-          <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">3 {t.days}</div>
-          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{t.exhibition}</div>
+          <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">3 {language === "ar" ? "أيام" : "Days"}</div>
+          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{exhibition}</div>
         </div>
         <div className="px-2 xs:px-3 sm:px-4 lg:px-6 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6">
           <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">15K+</div>
-          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{t.expectedVisitors}</div>
+          <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">{expectedVisitors}</div>
         </div>
         <div className="px-2 xs:px-3 sm:px-4 lg:px-6 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6">
           <div className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">12+</div>
           <div className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm text-white/70 mt-0.5 sm:mt-1">
-          {t.yearsExperience}</div>
+          {yearsExperience}</div>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import SlidePatronage from "./slides/SlidePatronage";
 import SlideVexora from "./slides/SlideVexora";
 import HealthTransformation from "./slides/HealthTransformation";
 import SlideVideo from "./slides/vedio";
+import { fetchHomeLabels } from "../api/exhibition";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,23 +13,56 @@ import { motion, AnimatePresence } from "framer-motion";
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [labelsBySection, setLabelsBySection] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadLabels = async () => {
+      try {
+        const data = await fetchHomeLabels();
+        // Group labels by sectionName
+        const grouped = {};
+        if (Array.isArray(data)) {
+          data.forEach((item) => {
+            if (!grouped[item.sectionName]) {
+              grouped[item.sectionName] = {};
+            }
+            grouped[item.sectionName][item.resourceKey] = {
+              en: item.englishText,
+              ar: item.arabicText,
+            };
+          });
+        }
+        setLabelsBySection(grouped);
+      } catch (error) {
+        console.error("Failed to load labels:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadLabels();
+  }, []);
 
   const slides = [
     {
       id: 1,
       component: SlideVideo,
+      sectionName: "Slider1",
     },
     {
       id: 2,
       component: SlideVexora,
+      sectionName: "Slider2",
     },
     {
       id: 3,
       component: SlidePatronage,
+      sectionName: "Slider3",
     },
     {
       id: 4,
       component: HealthTransformation,
+      sectionName: "Slider4",
     },
   ];
 
@@ -62,34 +96,37 @@ const HeroSlider = () => {
   }, [nextSlide]);
 
   const CurrentSlideComponent = slides[currentSlide].component;
+  const currentSectionLabels = labelsBySection[slides[currentSlide].sectionName] || {};
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <motion.div
-        key={currentSlide}
-        initial={{
-          opacity: 0,
-          scale: 1.03,
-          backdropFilter: "blur(20px)",
-        }}
-        animate={{
-          opacity: 1,
-          scale: 1,
-          backdropFilter: "blur(0px)",
-        }}
-        exit={{
-          opacity: 0,
-          scale: 0.97,
-          backdropFilter: "blur(10px)",
-        }}
-        transition={{
-          duration: 0.9,
-          ease: "easeOut",
-        }}
-        className="absolute inset-0 w-full h-full"
-      >
-        <CurrentSlideComponent />
-      </motion.div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{
+            opacity: 0,
+            scale: 1.03,
+            backdropFilter: "blur(20px)",
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            backdropFilter: "blur(0px)",
+          }}
+          exit={{
+            opacity: 0,
+            scale: 0.97,
+            backdropFilter: "blur(10px)",
+          }}
+          transition={{
+            duration: 0.9,
+            ease: "easeOut",
+          }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <CurrentSlideComponent labels={currentSectionLabels} />
+        </motion.div>
+      </AnimatePresence>
 
       {/* Left Arrow */}
       <button
