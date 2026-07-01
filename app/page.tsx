@@ -12,16 +12,11 @@ import EventIndicators from "@/app/Components/Home/EventIndicators";
 import ConferenceActivities from "@/app/Components/Home/ConferenceActivities";
 import WomenAndHealth from "@/app/Components/Home/WomenHealth";
 import EnablingPartners from "@/app/Components/Home/EnablingPartners";
-import { languageFetch } from "./api/langaugeFetcher";
-export default async function Home() {
-  const data = await languageFetch(null, "Home", null, null, null, null, {
-    method: "POST",
-    next: { revalidate: 60 }, 
-  });
-  console.log("Fetched data:", data);
+
+export default function Home() {
   return (
     <>
-      <Slider data={data} />
+      <Slider />
       {/* <SpeakersSection /> */}
       <Services />
       <Portals />
