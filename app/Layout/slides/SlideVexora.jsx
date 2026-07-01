@@ -1,17 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { Calendar, MapPin, Sparkles } from "lucide-react";
 
 import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../il18/translations";
 
-const SlideVexora = ({ labels = {} }) => {
+const SlideVexora = () => {
   const { language } = useLanguage();
-
-  const conferenceTitle = labels["ConferenceTitle"]?.[language] || "";
-  const conferenceTagline = labels["ConferenceTagline"]?.[language] || "";
-  const venue = labels["Venue"]?.[language] || "";
-  const month = labels["Month"]?.[language] || "";
-
+  const t = translations[language];
   return (
     <>
       <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
@@ -49,15 +46,16 @@ const SlideVexora = ({ labels = {} }) => {
                   <h2
                     className="text-2xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
                     dir="rtl"
-                    style={{fontSize : "2.3rem", wordSpacing: "0.3rem"}}
+                     style={{fontSize : "2.3rem", wordSpacing: "0.3rem"}}
                   >
-                    {conferenceTitle}
+                    مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
                   </h2>
                 )}
                 {language === "en" && (
-                  <h2 className=" text-white tracking-[0.15em]"
+                  <h2 className=" text-white  tracking-[0.15em]"
                     style={{fontSize : "1rem"}} >
-                    {conferenceTitle}
+
+                    HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
                   </h2>
                 )}
               </div>
@@ -65,7 +63,7 @@ const SlideVexora = ({ labels = {} }) => {
 
             {/* HEAL Section - More compact */}
             <div className="flex justify-end items-center pt-1 gap-1 lg:mt-8 tracking-[0.3em]">
-              <p className="font-black text-6xl" style={{ letterSpacing : "6px"}}>
+              <p className="  font-black text-6xl " style={{ letterSpacing : "6px"}}>
                 HPQL
               </p>
               <div className="text-right">
@@ -74,14 +72,13 @@ const SlideVexora = ({ labels = {} }) => {
                     className="text-base font-bold text-white mb-0.5"
                     dir="rtl"
                     style={{fontSize : "2.2rem"}}
-                  >
-                    {conferenceTagline}
+                  > صحة • تمكين • توعية • عمر مديد
                   </p>
                 )}
                 {language === "en" && (
                   <p className="w-full text-white uppercase tracking-[0.25em] font-light"
-                    style={{fontSize : "1.1rem"}}>
-                    {conferenceTagline}
+                   style={{fontSize : "1.1rem"}}>
+                    HEALTH PROMOTION & QUALITY OF LIFE
                   </p>
                 )}
               </div>
@@ -95,13 +92,17 @@ const SlideVexora = ({ labels = {} }) => {
                     {/* Location */}
                     <div className="text-center">
                       {language === "ar" && (
-                        <p className="text-md font-bold text-blue-900" dir="rtl">
-                          {venue}
+                        <p
+                          className="text-md font-bold text-blue-900"
+                          dir="rtl"
+                          
+                        >
+                          مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
                         </p>
                       )}
                       {language === "en" && (
                         <p className="text-md font-bold text-blue-900 mt-0.5">
-                          {venue}
+                          Exhibition & trade center in Jeddah
                         </p>
                       )}
                     </div>
@@ -109,8 +110,8 @@ const SlideVexora = ({ labels = {} }) => {
                     <div className="w-px h-10 bg-white/15" />
 
                     {/* 2026  - Arabic */}
-                    <div className="text-center">
-                      <p className="text-md font-bold text-blue-900">{month}</p>
+                    <div className=" text-center">
+                      <p className="text-md font-bold text-blue-900">نوفمبر</p>
                       <p className="text-md font-bold text-blue-900">2026</p>
                     </div>
 
@@ -125,7 +126,7 @@ const SlideVexora = ({ labels = {} }) => {
 
                     {/* Date */}
                     <div className="text-start text-lg ">
-                      <p className="font-bold text-blue-900">{month}</p>
+                      <p className=" font-bold text-blue-900">November</p>
                       <p className="font-bold text-blue-900 mt-0.5">2026</p>
                     </div>
                   </div>
@@ -137,8 +138,8 @@ const SlideVexora = ({ labels = {} }) => {
       </div>
 
       {/* For mobile  */}
-      <div className="block md:hidden relative h-[700px] bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
-        <div className="relative z-10 w-full h-full flex items-center px-4 py-6 overflow-y-auto">
+      <div className="block md:hidden relative h-[700px]  bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
+        <div className="relative z-10 w-full h-full flex items-center  px-4 py-6 overflow-y-auto">
           <div className="w-full max-w-md mx-auto space-y-6">
             {/* Logos Section  */}
             <div className="flex justify-between items-center mb-10">
@@ -171,12 +172,12 @@ const SlideVexora = ({ labels = {} }) => {
                   className="text-base sm:text-lg font-bold text-white leading-tight"
                   dir="rtl"
                 >
-                  {conferenceTitle}
+                  مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
                 </h2>
               )}
               {language === "en" && (
                 <h2 className="text-[10px] sm:text-xs text-white tracking-wide">
-                  {conferenceTitle}
+                  HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
                 </h2>
               )}
             </div>
@@ -186,13 +187,16 @@ const SlideVexora = ({ labels = {} }) => {
               <p className="text-4xl sm:text-5xl font-black text-white">HPQL</p>
               <div>
                 {language === "ar" && (
-                  <p className="text-sm sm:text-base font-bold text-white" dir="rtl">
-                    {conferenceTagline}
+                  <p
+                    className="text-sm sm:text-base font-bold text-white"
+                    dir="rtl"
+                  >
+                    صحـــة . تمكيـــن . توعيـــة . عمـر مديـــد
                   </p>
                 )}
                 {language === "en" && (
                   <p className="text-[10px] sm:text-xs text-white tracking-wide mt-0.5">
-                    {conferenceTagline}
+                    HEALTH PROMOTION • QUALITY OF LIFE
                   </p>
                 )}
               </div>
@@ -206,29 +210,33 @@ const SlideVexora = ({ labels = {} }) => {
                   <div className="col-span-2 text-center pb-2 border-b border-white/20">
                     {language === "ar" && (
                       <p className="text-sm font-bold text-blue-900" dir="rtl">
-                        {venue}
+                        مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
                       </p>
                     )}
                     {language === "en" && (
                       <p className="text-xs font-bold text-blue-900 mt-0.5">
-                        {venue}
+                        Exhibition & trade center in Jeddah
                       </p>
                     )}
                   </div>
                   {/* Mobile optimized grid layout */}
                   <div className="grid grid-cols-3 gap-4 mt-4">
-                    {/* Month - Arabic */}
+                    {/* November arabic */}
                     <div className="text-center">
-                      <p className="text-base font-bold text-blue-900">{month}</p>
+                      <p className="text-base font-bold text-blue-900">
+                        نوفمبر
+                      </p>
                       <p className="text-base font-bold text-blue-900">2026</p>
                     </div>
 
-                    {/* Date */}
+                    {/* Date  */}
                     <div className="text-center">
                       <p className="text-3xl font-bold text-blue-900">9 - 11</p>
                     </div>
                     <div className="">
-                      <p className="text-sm font-bold text-blue-900 mt-1">{month} 2026</p>
+                      <p className="text-sm font-bold text-blue-900 mt-1">
+                        November 2026
+                      </p>
                     </div>
                   </div>
                 </div>
