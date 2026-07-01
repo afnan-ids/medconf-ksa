@@ -10,7 +10,7 @@ import { fetchHomeLabels } from "../api/exhibition";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HeroSlider = () => {
+const HeroSlider = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [labelsBySection, setLabelsBySection] = useState({});
@@ -19,7 +19,7 @@ const HeroSlider = () => {
   useEffect(() => {
     const loadLabels = async () => {
       try {
-        const data = await fetchHomeLabels();
+        // const data = await fetchHomeLabels();
         // Group labels by sectionName
         const grouped = {};
         if (Array.isArray(data)) {
