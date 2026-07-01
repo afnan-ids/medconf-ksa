@@ -18,7 +18,7 @@ export const translations = {
     liveDemos: "Live Demos",
     expertSessions: "Expert Sessions",
     handsOnExperience: "Hands-on Experience",
-    wantToExperience: "Want to Experience",
+    wantToExperience: "What to Experience",
 
     innovationZones: "Innovation Zones",
     innovationZonesDescription:

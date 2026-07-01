@@ -56,41 +56,36 @@ export default function MedicalInnovationArena() {
 
   const experienceCards = [
     {
-      title: "AI-Powered Diagnostics",
-      description:
-        "Experience cutting-edge artificial intelligence systems that are revolutionizing disease detection and diagnosis accuracy with 99.7% precision rates.",
+      title: t.aiPoweredDiagnostics,
+      description: t.aiDescription,
       icon: Brain,
       gradient: "from-blue-500 to-cyan-400",
-      tag: "🤖 AI Innovation",
+      tag: t.aiInnovations,
     },
     {
-      title: "Smart Medical Devices",
-      description:
-        "Explore next-generation wearable technology and IoT-enabled devices transforming patient monitoring and real-time care delivery.",
+      title: t.smartMedicalDevices,
+      description: t.wearableDescription,
       icon: Monitor,
       gradient: "from-purple-500 to-pink-400",
-      tag: "📱 Wearable Tech",
+      tag: t.wearableTech,
     },
     {
-      title: "Robotic Surgery Systems",
-      description:
-        "Witness precision robotics and minimally invasive surgical systems that are redefining operating room capabilities with sub-millimeter accuracy.",
+      title: t.roboticSurgerySystems,
+      description: t.roboticsDescription,
       icon: Zap,
       gradient: "from-amber-500 to-orange-400",
       tag: "🤖 Precision Surgery",
     },
     {
-      title: "Diagnostic Imaging Evolution",
-      description:
-        "See breakthrough imaging technologies including 3D visualization, AI-enhanced radiology, and portable ultrasound devices.",
+      title: t.diagnosticImagingEvolution,
+      description: t.imagingDescription,
       icon: Scan,
       gradient: "from-emerald-500 to-teal-500",
       tag: "🖼️ Next-Gen Imaging",
     },
     {
-      title: "Digital Health Platforms",
-      description:
-        "Discover integrated telemedicine solutions, EHR innovations, and patient engagement platforms shaping future healthcare delivery.",
+      title: t.digitalHealthPlatforms,
+      description: t.digitalHealthDescription,
       icon: HeartPulse,
       gradient: "from-blue-600 to-purple-600",
       tag: "💻 Digital Health",
@@ -174,9 +169,9 @@ export default function MedicalInnovationArena() {
                   {/* Tags */}
                   <div className="mt-6 flex flex-wrap justify-center gap-2">
                     {[
-                      "Live Demos",
-                      "Expert Sessions",
-                      "Hands-on Experience",
+                      t.liveDemos,
+                      t.expertSessions,
+                      t.handsOnExperience,
                     ].map((tag, i) => (
                       <span
                         key={i}
@@ -196,20 +191,14 @@ export default function MedicalInnovationArena() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                 <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                 <span className="text-xs sm:text-sm font-medium text-gray-300">
-                  What to Experience
+                  {t.wantToExperience}
                 </span>
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Innovation{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Zones
-                </span>
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">{t.innovationZones}
               </h2>
 
               <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
-                Explore six dedicated zones featuring groundbreaking medical
-                technologies
+                {t.innovationZonesDescription}
               </p>
             </div>
 
