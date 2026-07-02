@@ -1,4 +1,4 @@
-export const medicalInnovationArenaTranslations = {
+export const translations = {
   en: {
     home: "Home",
     whatsOn: "Whats On",
@@ -70,6 +70,10 @@ export const medicalInnovationArenaTranslations = {
 
     registerNow: "Register Now",
     viewAllZones: "View All Zones",
+    precisionSurgery: "🤖 Precision Surgery",
+    nextGenImaging: "🖼️ Next-Gen Imaging",
+    digitalHealth: "💻 Digital Health",
+    connectedCare: "📡 Connected Care",
   },
 
   ar: {
@@ -143,5 +147,9 @@ export const medicalInnovationArenaTranslations = {
 
     registerNow: "سجل الآن",
     viewAllZones: "عرض جميع المناطق",
+    precisionSurgery: "🤖 الجراحة الدقيقة",
+    nextGenImaging: "🖼️ التصوير الطبي المتطور",
+    digitalHealth: "💻 الصحة الرقمية",
+    connectedCare: "📡 الرعاية الصحية المتصلة",
   },
 };
