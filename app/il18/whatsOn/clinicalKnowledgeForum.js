@@ -5,6 +5,9 @@ export const clinicalKnowledgeForumTranslations = {
 
     cmeAccredited: "CME Accredited 2026 Edition",
     clinicalKnowledgeForum: "Clinical knowledge forum",
+    Clinical: "Clinical",
+    Knowledge: "Knowledge",
+    Forum: "Forum",
     heroDescription:
       "Sessions where doctors and experts discuss medical research, treatment methods, and healthcare advancements.",
 
@@ -30,8 +33,8 @@ export const clinicalKnowledgeForumTranslations = {
     scheduleDescription:
       "2 days of groundbreaking clinical insights and networking",
 
-    day1: "Day 1-May 15,2026",
-    day2: "Day 2-May 16,2026",
+    day1: "Day 1-May 15, 2026",
+    day2: "Day 2-May 16, 2026",
 
     mainHallA: "Main Hall A",
     openingKeynote:
@@ -49,26 +52,26 @@ export const clinicalKnowledgeForumTranslations = {
     cardiovascularPanel:
       "Panel: Cardiovascular Innovations",
     cardiovascularPanelDesc:
-      "Panel Discussions.4 leading Cardiologists",
-    panel: "panel",
+      "Panel Discussions • 4 leading Cardiologists",
+    panel: "Panel",
 
     workshopRoom1: "Workshop Room 1",
     surgicalWorkshop:
       "Workshop: Minimally Invasive Surgical Techniques",
     drRobertSession:
-      "Dr.Robert williams.Head of Robotics Surgery,johns Hopkins",
+      "Dr. Robert Williams • Head of Robotics Surgery, Johns Hopkins",
     workshop: "Workshop",
 
     lunchNetworking:
       "Lunch Break & Networking",
-    exhibitionHall: "Exhibition hall",
+    exhibitionHall: "Exhibition Hall",
 
     hallC: "Hall C",
     rareDiseaseCaseStudy:
       "Case Study: Rare Disease Diagnosis",
     drEmilySession:
-      "Dr.Emily Rodriguez.Clinical Geneticist,Boston Childernns's",
-    caseStudy: "Case-study",
+      "Dr. Emily Rodriguez • Clinical Geneticist, Boston Children's",
+    caseStudy: "Case Study",
 
     mentalHealthPanel:
       "Panel: Mental Health in the Digital Age",
@@ -187,11 +190,15 @@ export const clinicalKnowledgeForumTranslations = {
   },
 
   ar: {
-    home: "الرئيسيه",
+    home: "الرئيسية",
     whatsOn: "ما هو المعروض",
 
-    cmeAccredited: "ساعات تدريبية معتمدة",
+    cmeAccredited: "ساعات تدريبية معتمدة - نسخة 2026",
     clinicalKnowledgeForum: "منتدى المعرفة السريرية",
+    Clinical: "سريري",
+    Knowledge: "معرفة",
+    Forum: "منتدى",
+
     heroDescription:
       "جلسات يناقش فيها الأطباء والخبراء الأبحاث الطبية وأساليب العلاج والتطورات في مجال الرعاية الصحية.",
 
@@ -204,23 +211,23 @@ export const clinicalKnowledgeForumTranslations = {
     cmeCredits: "ساعات تدريبية معتمدة",
     expertSpeakers: "متحدثون خبراء",
     researchPresentations: "عروض الأبحاث",
-    networking: "العلاقات",
+    networking: "التواصل",
 
-    allSessions: "جميع الفصول",
+    allSessions: "جميع الجلسات",
     keynotes: "الكلمات الرئيسية",
     panelDiscussions: "حلقات نقاش",
     workshops: "ورش العمل",
     caseStudies: "دراسات الحالة",
 
     conferenceSchedule: "جدول المؤتمر",
-    eventAgenda: "أجندة المعرض",
+    eventAgenda: "أجندة المؤتمر",
     scheduleDescription:
       "يومان من الرؤى السريرية الرائدة والتواصل",
 
-    day1: "اليوم الاول",
-    day2: "اليوم الثاني",
+    day1: "اليوم الأول - 15 مايو 2026",
+    day2: "اليوم الثاني - 16 مايو 2026",
 
-    mainHallA: "القاعة الرئيسية",
+    mainHallA: "القاعة الرئيسية أ",
     openingKeynote:
       "الكلمة الافتتاحية: مستقبل الطب الدقيق",
     drSarahSession:
@@ -236,15 +243,14 @@ export const clinicalKnowledgeForumTranslations = {
     cardiovascularPanel:
       "حلقة نقاش: ابتكارات أمراض القلب والأوعية الدموية",
     cardiovascularPanelDesc:
-      "حلقات نقاش. أربعة من كبار أطباء القلب",
-    panel: "لوحة",
+      "حلقة نقاش • 4 من كبار أطباء القلب",
+    panel: "حلقة نقاش",
 
-    workshopRoom1:
-      "ورشة عمل غرفة 1",
+    workshopRoom1: "غرفة ورش العمل 1",
     surgicalWorkshop:
       "ورشة عمل: التقنيات الجراحية طفيفة التوغل",
     drRobertSession:
-      "الدكتور روبرت ويليامز، رئيس قسم جراحة الروبوتات، جامعة جونز هوبكنز",
+      "الدكتور روبرت ويليامز • رئيس قسم جراحة الروبوتات، جامعة جونز هوبكنز",
     workshop: "ورشة عمل",
 
     lunchNetworking:
@@ -256,7 +262,7 @@ export const clinicalKnowledgeForumTranslations = {
     rareDiseaseCaseStudy:
       "دراسة حالة: تشخيص الأمراض النادرة",
     drEmilySession:
-      "الدكتورة إميلي رودريغيز، أخصائية علم الوراثة السريرية، مستشفى بوسطن للأطفال",
+      "الدكتورة إميلي رودريغيز • أخصائية علم الوراثة السريرية، مستشفى بوسطن للأطفال",
     caseStudy: "دراسة حالة",
 
     mentalHealthPanel:
@@ -270,7 +276,7 @@ export const clinicalKnowledgeForumTranslations = {
       "الدكتور جيمس ويلسون • مدير الأبحاث في منظمة الصحة العالمية",
 
     downloadAgenda:
-      "حمل الاجندة كاملة",
+      "تحميل الأجندة كاملة (PDF)",
 
     worldRenownedFaculty:
       "أعضاء هيئة تدريس ذوو شهرة عالمية",
@@ -280,56 +286,56 @@ export const clinicalKnowledgeForumTranslations = {
       "تعلم من كبار الأطباء والباحثين والمبتكرين في مجال الرعاية الصحية",
 
     drSarahJohnson:
-      "الدكتورة ساره جونسون",
+      "الدكتورة سارة جونسون",
     chiefOncology:
-      "رئيس قسم الأورام، مايو كلينك",
+      "رئيسة قسم الأورام، مايو كلينك",
     speakingPrecisionMedicine:
-      "الحديث عن: الطب الدقيق",
+      "يتحدث عن: الطب الدقيق",
 
     drMichaelChen:
-      "الدكتور ميخائئل تشين",
+      "الدكتور مايكل تشين",
     directorImaging:
       "مدير قسم التصوير الطبي، ستانفورد هيلث",
     speakingAIRadiology:
-      "الحديث عن: الذكاء الاصطناعي في علم الأشعة",
+      "يتحدث عن: الذكاء الاصطناعي في علم الأشعة",
 
     drRobertWilliams:
-      "الدكتور روبرت وليام",
+      "الدكتور روبرت ويليامز",
     headRoboticSurgery:
       "رئيس قسم الجراحة الروبوتية، جامعة جونز هوبكنز",
     speakingSurgicalInnovation:
-      "التحدث عن إبتكارات الجراحة",
+      "يتحدث عن: ابتكارات الجراحة",
 
     drEmilyRodriguez:
-      "الدكتور إيميلي رودريقوز",
+      "الدكتورة إميلي رودريغيز",
     clinicalGeneticist:
-      "أخصائي علم الوراثة السريرية، مستشفى بوسطن للأطفال",
+      "أخصائية علم الوراثة السريرية، مستشفى بوسطن للأطفال",
     speakingRareDiseases:
-      "الحديث عن: الأمراض النادرة",
+      "تتحدث عن: الأمراض النادرة",
 
     drJamesWilson:
       "الدكتور جيمس ويلسون",
     whoResearchDirector:
       "مدير البحوث في منظمة الصحة العالمية",
     speakingGlobalHealth:
-      "التحدث عن الصحة العالمية",
+      "يتحدث عن: الصحة العالمية",
 
     drLisaPatel:
       "الدكتورة ليزا باتيل",
     chiefImmunotherapy:
-      "رئيس قسم العلاج المناعي، مركز إم دي أندرسون للسرطان",
+      "رئيسة قسم العلاج المناعي، مركز إم دي أندرسون للسرطان",
     speakingCancerResearch:
-      "التحدث عن ابحاث السرطان",
+      "تتحدث عن: أبحاث السرطان",
 
-    research: "بحث",
+    research: "الأبحاث",
     keyFindingsPresented:
       "النتائج الرئيسية المقدمة",
     researchDescription:
       "سيتم عرض أبحاث رائدة في منتدى هذا العام",
 
     earlyCancerDetection:
-      "إنجازٌ هام في الكشف المبكر عن السرطان",
-    oncology: "الاورام",
+      "إنجاز هام في الكشف المبكر عن السرطان",
+    oncology: "الأورام",
     earlyCancerDetectionDesc:
       "أظهرت تقنية الخزعة السائلة الجديدة دقة بنسبة 94% في الكشف عن 12 نوعًا من السرطان في المرحلة الأولى.",
 
@@ -341,13 +347,13 @@ export const clinicalKnowledgeForumTranslations = {
 
     sickleCellTreatment:
       "نجاح تعديل الجينات في علاج فقر الدم المنجلي",
-    genetics: "الجينات",
+    genetics: "علم الوراثة",
     sickleCellTreatmentDesc:
       "أظهر العلاج القائم على تقنية كريسبر نتائج واعدة في 95% من المشاركين في التجارب السريرية.",
 
     telemedicineER:
       "التطبيب عن بعد يقلل زيارات الطوارئ بنسبة 40%",
-    digitalHealth: "الصحة الرقميه",
+    digitalHealth: "الصحة الرقمية",
     telemedicineERDesc:
       "برنامج المراقبة عن بعد للمرضى السريريين يقلل بشكل كبير من حالات دخول المستشفى.",
 
@@ -355,7 +361,7 @@ export const clinicalKnowledgeForumTranslations = {
     knowledgeExchange:
       "تبادل المعرفة",
     forumImpactDesc:
-      "يومين من التعليم السريري التحويلي",
+      "يومان من التعليم السريري التحويلي",
 
     expertSessions:
       "جلسات الخبراء",
@@ -371,7 +377,7 @@ export const clinicalKnowledgeForumTranslations = {
     reserveDescription:
       "انضم إلى أكثر من 500 متخصص في الرعاية الصحية لمدة يومين من التعليم السريري المتطور، والتواصل، واحصل على ساعات معتمدة للتعليم الطبي المستمر.",
 
-    registerNow: "سجل الان",
-    viewAgenda: "الاطلاع على الاجندة",
+    registerNow: "سجل الآن",
+    viewAgenda: "اطلع على الأجندة",
   },
 };

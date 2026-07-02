@@ -27,90 +27,122 @@ import {
   GraduationCap,
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
+import { useLanguage } from "../../../context/LanguageContext";
+import { clinicalKnowledgeForumTranslations } from "../../../il18/whatsOn/clinicalKnowledgeForum";
 
 export default function ClinicalKnowledgeForum() {
+  const { language } = useLanguage();
+  const t = clinicalKnowledgeForumTranslations[language];
+
   const [activeDay, setActiveDay] = useState("day1");
 
   const sessionTracks = [
-    { id: "all", name: "All Sessions", icon: BookOpen },
-    { id: "keynote", name: "Keynotes", icon: Mic2 },
-    { id: "panel", name: "Panel Discussions", icon: Users },
-    { id: "workshop", name: "Workshops", icon: Briefcase },
-    { id: "case-study", name: "Case Studies", icon: FileText },
+    { id: "all", name: t.allSessions, icon: BookOpen },
+    { id: "keynote", name: t.keynotes, icon: Mic2 },
+    { id: "panel", name: t.panelDiscussions, icon: Users },
+    { id: "workshop", name: t.workshops, icon: Briefcase },
+    { id: "case-study", name: t.caseStudies, icon: FileText },
+  ];
+
+  const statsData = [
+    {
+      icon: Mic2,
+      value: "30+",
+      label: t.expertSessions,
+      gradient: "from-blue-500 to-cyan-400",
+    },
+    {
+      icon: Users,
+      value: "50+",
+      label: t.renownedSpeakers,
+      gradient: "from-purple-500 to-pink-400",
+    },
+    {
+      icon: Award,
+      value: "12",
+      label: t.cmeCreditsAvailable,
+      gradient: "from-amber-500 to-orange-400",
+    },
+    {
+      icon: UserRound,
+      value: "500+",
+      label: t.healthcareProfessionals,
+      gradient: "from-emerald-500 to-teal-500",
+    },
   ];
 
   const agendaData = {
     day1: [
       {
         time: "09:00 AM - 09:45 AM",
-        title: "Opening Keynote: The Future of Precision Medicine",
-        speaker: "Dr. Sarah Johnson",
-        role: "Chief of Oncology, Mayo Clinic",
+        title: t.openingKeynote,
+        speaker: t.drSarahSession.split(" • ")[0] || "Dr. Sarah Johnson",
+        role: t.drSarahSession.split(" • ")[1] || "Chief of Oncology, Mayo Clinic",
         type: "keynote",
-        location: "Main Hall A",
+        location: t.mainHallA,
         track: "Oncology",
       },
       {
         time: "10:00 AM - 10:45 AM",
-        title: "AI in Radiology: Transforming Diagnostics",
-        speaker: "Dr. Michael Chen",
-        role: "Director of Medical Imaging, Stanford Health",
+        title: t.aiRadiology,
+        speaker: t.drMichaelSession.split(" • ")[0] || "Dr. Michael Chen",
+        role: t.drMichaelSession.split(" • ")[1] || "Director of Medical Imaging, Stanford Health",
         type: "keynote",
-        location: "Main Hall A",
+        location: t.mainHallA,
         track: "Radiology",
       },
       {
         time: "11:00 AM - 11:45 AM",
-        title: "Panel: Cardiovascular Innovations",
+        title: t.cardiovascularPanel,
         speaker: "Panel Discussion",
-        role: "4 Leading Cardiologists",
+        role: t.cardiovascularPanelDesc,
         type: "panel",
-        location: "Hall B",
+        location: t.hallB,
         track: "Cardiology",
       },
       {
         time: "12:00 PM - 12:45 PM",
-        title: "Workshop: Minimally Invasive Surgical Techniques",
-        speaker: "Dr. Robert Williams",
-        role: "Head of Robotic Surgery, Johns Hopkins",
+        title: t.surgicalWorkshop,
+        speaker: t.drRobertSession.split(" • ")[0] || "Dr. Robert Williams",
+        role: t.drRobertSession.split(" • ")[1] || "Head of Robotic Surgery, Johns Hopkins",
         type: "workshop",
-        location: "Workshop Room 1",
+        location: t.workshopRoom1,
         track: "Surgery",
       },
       {
         time: "01:00 PM - 01:45 PM",
-        title: "Lunch Break & Networking",
+        title: t.lunchNetworking,
         speaker: "",
         role: "",
         type: "break",
-        location: "Exhibition Hall",
+        location: t.exhibitionHall,
         track: "",
       },
       {
         time: "02:00 PM - 02:45 PM",
-        title: "Case Study: Rare Disease Diagnosis",
-        speaker: "Dr. Emily Rodriguez",
-        role: "Clinical Geneticist, Boston Children's",
+        title: t.rareDiseaseCaseStudy,
+        speaker: t.drEmilySession.split(" • ")[0] || "Dr. Emily Rodriguez",
+        role: t.drEmilySession.split(" • ")[1] || "Clinical Geneticist, Boston Children's",
         type: "case-study",
-        location: "Hall C",
+        location: t.hallC,
         track: "Genetics",
       },
       {
         time: "03:00 PM - 03:45 PM",
-        title: "Panel: Mental Health in the Digital Age",
+        title: t.mentalHealthPanel,
         speaker: "Panel Discussion",
-        role: "5 Psychiatry Experts",
+        role: t.mentalHealthPanelDesc,
         type: "panel",
-        location: "Hall B",
+        location: t.hallB,
         track: "Psychiatry",
       },
       {
         time: "04:00 PM - 04:45 PM",
-        title: "Closing Session: Future of Global Healthcare",
-        speaker: "Dr. James Wilson",
-        role: "WHO Director of Research",
+        title: t.closingSession,
+        speaker: t.drJamesSession.split(" • ")[0] || "Dr. James Wilson",
+        role: t.drJamesSession.split(" • ")[1] || "WHO Director of Research",
         type: "keynote",
-        location: "Main Hall A",
+        location: t.mainHallA,
         track: "Public Health",
       },
     ],
@@ -118,10 +150,10 @@ export default function ClinicalKnowledgeForum() {
       {
         time: "09:00 AM - 09:45 AM",
         title: "Keynote: Immunotherapy Breakthroughs",
-        speaker: "Dr. Lisa Patel",
-        role: "Chief of Immunotherapy, MD Anderson",
+        speaker: t.drLisaPatel,
+        role: t.chiefImmunotherapy,
         type: "keynote",
-        location: "Main Hall A",
+        location: t.mainHallA,
         track: "Oncology",
       },
       {
@@ -139,7 +171,7 @@ export default function ClinicalKnowledgeForum() {
         speaker: "Panel Discussion",
         role: "Digital Health Leaders",
         type: "panel",
-        location: "Hall B",
+        location: t.hallB,
         track: "Digital Health",
       },
       {
@@ -148,7 +180,7 @@ export default function ClinicalKnowledgeForum() {
         speaker: "Dr. Maria Garcia",
         role: "Lead Researcher, CRISPR Therapeutics",
         type: "case-study",
-        location: "Hall C",
+        location: t.hallC,
         track: "Genetics",
       },
     ],
@@ -156,49 +188,49 @@ export default function ClinicalKnowledgeForum() {
 
   const speakersData = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Chief of Oncology, Mayo Clinic",
-      topic: "Precision Medicine",
+      name: t.drSarahJohnson,
+      role: t.chiefOncology,
+      topic: t.speakingPrecisionMedicine.replace("Speaking on: ", ""),
       image: "👩‍⚕️",
       featured: true,
       gradient: "from-blue-500 to-cyan-400",
     },
     {
-      name: "Dr. Michael Chen",
-      role: "Director of Imaging, Stanford Health",
-      topic: "AI in Radiology",
+      name: t.drMichaelChen,
+      role: t.directorImaging,
+      topic: t.speakingAIRadiology.replace("Speaking on: ", ""),
       image: "👨‍⚕️",
       featured: true,
       gradient: "from-purple-500 to-pink-400",
     },
     {
-      name: "Dr. Robert Williams",
-      role: "Head of Robotic Surgery, Johns Hopkins",
-      topic: "Surgical Innovation",
+      name: t.drRobertWilliams,
+      role: t.headRoboticSurgery,
+      topic: t.speakingSurgicalInnovation.replace("Speaking on: ", ""),
       image: "👨‍⚕️",
       featured: false,
       gradient: "from-amber-500 to-orange-400",
     },
     {
-      name: "Dr. Emily Rodriguez",
-      role: "Clinical Geneticist, Boston Children's",
-      topic: "Rare Diseases",
+      name: t.drEmilyRodriguez,
+      role: t.clinicalGeneticist,
+      topic: t.speakingRareDiseases.replace("Speaking on: ", ""),
       image: "👩‍⚕️",
       featured: false,
       gradient: "from-emerald-500 to-teal-500",
     },
     {
-      name: "Dr. James Wilson",
-      role: "WHO Director of Research",
-      topic: "Global Health",
+      name: t.drJamesWilson,
+      role: t.whoResearchDirector,
+      topic: t.speakingGlobalHealth.replace("Speaking on: ", ""),
       image: "👨‍⚕️",
       featured: true,
       gradient: "from-blue-600 to-purple-600",
     },
     {
-      name: "Dr. Lisa Patel",
-      role: "Chief of Immunotherapy, MD Anderson",
-      topic: "Cancer Research",
+      name: t.drLisaPatel,
+      role: t.chiefImmunotherapy,
+      topic: t.speakingCancerResearch.replace("Speaking on: ", ""),
       image: "👩‍⚕️",
       featured: false,
       gradient: "from-cyan-500 to-blue-500",
@@ -207,31 +239,27 @@ export default function ClinicalKnowledgeForum() {
 
   const researchHighlights = [
     {
-      title: "Breakthrough in Early Cancer Detection",
-      description:
-        "New liquid biopsy technique shows 94% accuracy in detecting 12 cancer types at stage 1.",
-      category: "Oncology",
+      title: t.earlyCancerDetection,
+      description: t.earlyCancerDetectionDesc,
+      category: t.oncology,
       icon: Microscope,
     },
     {
-      title: "AI Predicts Heart Disease 5 Years in Advance",
-      description:
-        "Machine learning model analyzes ECG data to predict cardiovascular events with 87% accuracy.",
-      category: "Cardiology",
+      title: t.aiHeartDisease,
+      description: t.aiHeartDiseaseDesc,
+      category: t.cardiology,
       icon: Brain,
     },
     {
-      title: "Gene Editing Success in Sickle Cell Treatment",
-      description:
-        "CRISPR-based therapy shows promising results in 95% of clinical trial participants.",
-      category: "Genetics",
+      title: t.sickleCellTreatment,
+      description: t.sickleCellTreatmentDesc,
+      category: t.genetics,
       icon: FlaskConical,
     },
     {
-      title: "Telemedicine Reduces ER Visits by 40%",
-      description:
-        "Remote monitoring program for chronic patients significantly reduces hospital admissions.",
-      category: "Digital Health",
+      title: t.telemedicineER,
+      description: t.telemedicineERDesc,
+      category: t.digitalHealth,
       icon: HeartPulse,
     },
   ];
@@ -239,12 +267,62 @@ export default function ClinicalKnowledgeForum() {
   const currentAgenda =
     activeDay === "day1" ? agendaData.day1 : agendaData.day2;
 
+  // Get translated type label
+  const getTypeLabel = (type) => {
+    switch (type) {
+      case "keynote":
+        return t.keynote;
+      case "panel":
+        return t.panel;
+      case "workshop":
+        return t.workshop;
+      case "case-study":
+        return t.caseStudy;
+      case "break":
+        return t.break || (language === "ar" ? "استراحة" : "Break");
+      default:
+        return type.charAt(0).toUpperCase() + type.slice(1);
+    }
+  };
+
+  const getTypeColor = (type) => {
+    switch (type) {
+      case "keynote":
+        return "from-yellow-500 to-amber-500";
+      case "panel":
+        return "from-blue-500 to-cyan-500";
+      case "workshop":
+        return "from-purple-500 to-pink-500";
+      case "case-study":
+        return "from-emerald-500 to-teal-500";
+      case "break":
+        return "from-gray-500 to-gray-600";
+      default:
+        return "from-blue-500 to-cyan-400";
+    }
+  };
+
+  const getTypeIcon = (type) => {
+    switch (type) {
+      case "keynote":
+        return <Mic2 className="w-3 h-3" />;
+      case "panel":
+        return <Users className="w-3 h-3" />;
+      case "workshop":
+        return <Briefcase className="w-3 h-3" />;
+      case "case-study":
+        return <FileText className="w-3 h-3" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       <BreadCrumb
-        title="Clinical Knowledge Forum"
+        title={t.clinicalKnowledgeForum}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Whats On" }, { label: "Clinical Knowledge Forum" }]}
+        path={[{ label: t.whatsOn }, { label: t.clinicalKnowledgeForum }]}
       />
 
       <section className="relative min-h-screen py-10 sm:py-12 md:py-16 overflow-hidden">
@@ -262,23 +340,40 @@ export default function ClinicalKnowledgeForum() {
             <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
               <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-300" />
               <span className="text-xs sm:text-sm font-medium text-gray-300">
-                CME Accredited | 2026 Edition
+                {t.cmeAccredited}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative">
-              <span className="text-white">Clinical</span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                Knowledge
-              </span>
-              <br />
-              <span className="text-white">Forum</span>
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-            </h1>
+            {/* Title - English Version */}
+            {language === "en" && (
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative">
+                <span className="text-white">Clinical</span>{" "}
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                  Knowledge
+                </span>
+                <br />
+                <span className="text-white">Forum</span>
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+              </h1>
+            )}
+
+            {/* Title - Arabic Version */}
+            {language === "ar" && (
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative">
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                  منتدى
+                </span>{" "}
+                <span className="text-white">المعرفة</span>
+                <br />
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                  السريرية
+                </span>
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+              </h1>
+            )}
 
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-4">
-              Sessions where doctors and experts discuss medical research,
-              treatment methods, and healthcare advancements.
+              {t.heroDescription}
             </p>
           </div>
 
@@ -293,34 +388,19 @@ export default function ClinicalKnowledgeForum() {
 
                 <div className="relative z-10">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight">
-                    Advancing{" "}
-                    <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                      Clinical Excellence Through Knowledge Sharing
-                    </span>
+                    {t.advancingClinicalExcellence}
                   </h2>
 
                   <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                    Join{" "}
-                    <span className="text-blue-400 font-medium">
-                      500+ healthcare professionals
-                    </span>{" "}
-                    for{" "}
-                    <span className="text-cyan-300">
-                      30+ expert-led sessions
-                    </span>{" "}
-                    covering the latest breakthroughs in medical research,
-                    innovative treatment protocols, and emerging healthcare
-                    technologies. Earn{" "}
-                    <span className="text-purple-300">CME credits</span> while
-                    learning from world-renowned clinicians and researchers.
+                    {t.heroSubDescription}
                   </p>
 
                   <div className="mt-6 flex flex-wrap justify-center gap-2">
                     {[
-                      "CME Credits",
-                      "Expert Speakers",
-                      "Research Presentations",
-                      "Networking",
+                      t.cmeCredits,
+                      t.expertSpeakers,
+                      t.researchPresentations,
+                      t.networking,
                     ].map((tag, i) => (
                       <span
                         key={i}
@@ -363,18 +443,15 @@ export default function ClinicalKnowledgeForum() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                 <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                 <span className="text-xs sm:text-sm font-medium text-gray-300">
-                  Conference Schedule
+                  {t.conferenceSchedule}
                 </span>
               </div>
               <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Event{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Agenda
-                </span>
+                {t.eventAgenda}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
               <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
-                2 days of groundbreaking clinical insights and networking
+                {t.scheduleDescription}
               </p>
             </div>
 
@@ -388,7 +465,7 @@ export default function ClinicalKnowledgeForum() {
                     : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
                 }`}
               >
-                Day 1 - May 15, 2026
+                {t.day1}
               </button>
               <button
                 onClick={() => setActiveDay("day2")}
@@ -398,30 +475,13 @@ export default function ClinicalKnowledgeForum() {
                     : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
                 }`}
               >
-                Day 2 - May 16, 2026
+                {t.day2}
               </button>
             </div>
 
             {/* Agenda Items */}
             <div className="space-y-3 sm:space-y-4">
               {currentAgenda.map((item, idx) => {
-                const getTypeColor = () => {
-                  switch (item.type) {
-                    case "keynote":
-                      return "from-yellow-500 to-amber-500";
-                    case "panel":
-                      return "from-blue-500 to-cyan-500";
-                    case "workshop":
-                      return "from-purple-500 to-pink-500";
-                    case "case-study":
-                      return "from-emerald-500 to-teal-500";
-                    case "break":
-                      return "from-gray-500 to-gray-600";
-                    default:
-                      return "from-blue-500 to-cyan-400";
-                  }
-                };
-
                 if (item.type === "break") {
                   return (
                     <div
@@ -447,7 +507,9 @@ export default function ClinicalKnowledgeForum() {
                   <div key={idx} className="group relative">
                     <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-3 sm:p-4 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
                       <div
-                        className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${getTypeColor()}`}
+                        className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${getTypeColor(
+                          item.type
+                        )}`}
                       ></div>
 
                       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 pl-3">
@@ -472,10 +534,12 @@ export default function ClinicalKnowledgeForum() {
 
                         <div className="flex items-center gap-2">
                           <span
-                            className={`text-[10px] sm:text-xs px-2 py-1 rounded-full bg-gradient-to-r ${getTypeColor()} text-white`}
+                            className={`text-[10px] sm:text-xs px-2 py-1 rounded-full bg-gradient-to-r ${getTypeColor(
+                              item.type
+                            )} text-white inline-flex items-center gap-1`}
                           >
-                            {item.type.charAt(0).toUpperCase() +
-                              item.type.slice(1)}
+                            {getTypeIcon(item.type)}
+                            {getTypeLabel(item.type)}
                           </span>
                         </div>
                       </div>
@@ -490,7 +554,7 @@ export default function ClinicalKnowledgeForum() {
                 href="#"
                 className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
               >
-                Download Full Agenda (PDF)
+                {t.downloadAgenda}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -502,19 +566,15 @@ export default function ClinicalKnowledgeForum() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                 <Users className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                 <span className="text-xs sm:text-sm font-medium text-gray-300">
-                  World-Renowned Faculty
+                  {t.worldRenownedFaculty}
                 </span>
               </div>
               <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Featured{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Speakers
-                </span>
+                {t.featuredSpeakers}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
               <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
-                Learn from leading clinicians, researchers, and healthcare
-                innovators
+                {t.facultyDescription}
               </p>
             </div>
 
@@ -551,7 +611,8 @@ export default function ClinicalKnowledgeForum() {
                             {speaker.role}
                           </p>
                           <p className="text-[10px] text-gray-400">
-                            Speaking on: {speaker.topic}
+                            {language === "ar" ? "يتحدث عن:" : "Speaking on:"}{" "}
+                            {speaker.topic}
                           </p>
                         </div>
                       </div>
@@ -559,7 +620,7 @@ export default function ClinicalKnowledgeForum() {
                     {speaker.featured && (
                       <div className="absolute top-3 right-3 inline-flex  items-center gap-1 px-2 py-0.5 rounded-full bg-yellow-500/20 border border-yellow-500/30 text-[9px] text-yellow-300">
                         <Star className="w-2.5 h-2.5" />
-                        Keynote Speaker
+                        {language === "ar" ? "متحدث رئيسي" : "Keynote Speaker"}
                       </div>
                     )}
                   </div>
@@ -581,18 +642,16 @@ export default function ClinicalKnowledgeForum() {
                     <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                       <FlaskConical className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
                       <span className="text-xs sm:text-sm font-medium text-gray-300">
-                        Research Breakthroughs
+                        {language === "ar"
+                          ? "الإنجازات البحثية"
+                          : "Research Breakthroughs"}
                       </span>
                     </div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
-                      Key{" "}
-                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                        Findings
-                      </span>{" "}
-                      Presented
+                      {t.keyFindingsPresented}
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">
-                      Groundbreaking research being shared at this year's forum
+                      {t.researchDescription}
                     </p>
                   </div>
 
@@ -641,19 +700,16 @@ export default function ClinicalKnowledgeForum() {
               <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 mb-5">
                 <TrendingUp className="w-4 h-4 text-purple-400" />
                 <span className="text-xs sm:text-sm text-gray-300 tracking-wide">
-                  Forum Impact
+                  {t.forumImpact}
                 </span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-3">
-                Knowledge{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Exchange
-                </span>
+                {t.knowledgeExchange}
               </h2>
 
               <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-                2 days of transformative clinical education
+                {t.forumImpactDesc}
               </p>
 
               <div className="mt-6 flex justify-center">
@@ -662,32 +718,7 @@ export default function ClinicalKnowledgeForum() {
             </div>
 
             <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-              {[
-                {
-                  icon: Mic2,
-                  value: "30+",
-                  label: "Expert Sessions",
-                  gradient: "from-blue-500 to-cyan-400",
-                },
-                {
-                  icon: Users,
-                  value: "50+",
-                  label: "Renowned Speakers",
-                  gradient: "from-purple-500 to-pink-400",
-                },
-                {
-                  icon: Award,
-                  value: "12",
-                  label: "CME Credits Available",
-                  gradient: "from-amber-500 to-orange-400",
-                },
-                {
-                  icon: UserRound,
-                  value: "500+",
-                  label: "Healthcare Professionals",
-                  gradient: "from-emerald-500 to-teal-500",
-                },
-              ].map((stat, index) => {
+              {statsData.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div
@@ -731,17 +762,18 @@ export default function ClinicalKnowledgeForum() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                 <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span className="text-xs sm:text-sm font-medium text-white/90">
-                  Reserve Your Seat
+                  {t.reserveYourSeat}
                 </span>
               </div>
 
               <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                Advance Your Clinical Knowledge
+                {language === "ar"
+                  ? "طوّر معرفتك السريرية"
+                  : "Advance Your Clinical Knowledge"}
               </h4>
 
               <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                Join 500+ healthcare professionals for 2 days of cutting-edge
-                clinical education, networking, and CME credits
+                {t.reserveDescription}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
@@ -749,14 +781,14 @@ export default function ClinicalKnowledgeForum() {
                   href="/register"
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Register Now
+                  {t.registerNow}
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="#agenda"
                   className="group border border-white/30 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:bg-white/20 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  View Agenda
+                  {t.viewAgenda}
                   <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Link>
               </div>
