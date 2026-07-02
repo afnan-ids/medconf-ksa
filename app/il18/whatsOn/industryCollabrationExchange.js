@@ -1,4 +1,4 @@
-export const industryExchangeTranslations = {
+export const translations = {
   en: {
     home: "Home",
     whatsOn: "whats on",

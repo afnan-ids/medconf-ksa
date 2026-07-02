@@ -32,38 +32,44 @@ import {
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
 
+import { useLanguage } from "../../../context/LanguageContext";
+import { translations } from "../../../il18/whatsOn/industryCollabrationExchange";
+
 export default function IndustryCollaborationExchange() {
   const [activeTab, setActiveTab] = useState("opportunities");
 
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const partnershipCategories = [
     {
-      title: "Hospital-Pharma",
+      title: t.hospitalPharma,
       icon: Building2,
-      description: "Clinical trial partnerships, research collaborations, and drug development programs.",
+      description: t.hospitalPharmaDesc,
       opportunities: 12,
       gradient: "from-blue-500 to-cyan-400",
       color: "blue",
     },
     {
-      title: "MedTech-Research",
+      title: t.medTechResearch,
       icon: Microscope,
-      description: "Device innovation, technology validation, and clinical research partnerships.",
+      description: t.medTechResearchDesc,
       opportunities: 8,
       gradient: "from-purple-500 to-pink-400",
       color: "purple",
     },
     {
-      title: "Digital Health",
+      title: t.digitalHealth,
       icon: HeartPulse,
-      description: "AI solutions, telemedicine platforms, and healthcare IT integrations.",
+      description: t.digitalHealthDesc,
       opportunities: 15,
       gradient: "from-amber-500 to-orange-400",
       color: "amber",
     },
     {
-      title: "Academic-Industry",
+      title: t.academicIndustry,
       icon: Briefcase,
-      description: "Research grants, fellowship programs, and knowledge transfer initiatives.",
+      description: t.academicIndustryDesc,
       opportunities: 6,
       gradient: "from-emerald-500 to-teal-500",
       color: "emerald",
@@ -72,41 +78,41 @@ export default function IndustryCollaborationExchange() {
 
   const collaborationOpportunities = [
     {
-      title: "Clinical Trial Partnership",
-      organization: "Pfizer Research Labs",
+      title: t.clinicalTrialPartnership,
+      organization: t.pfizerResearchLabs,
       type: "Hospital-Pharma",
-      description: "Seeking 3 major hospitals for Phase III clinical trial of novel immunotherapy drug.",
-      requirements: "Oncology department with 500+ patients annually",
+      description: t.clinicalTrialDesc,
+      requirements: t.clinicalTrialRequirement,
       deadline: "June 30, 2026",
       matchScore: 92,
       gradient: "from-blue-500 to-cyan-400",
     },
     {
-      title: "AI Diagnostic Tool Validation",
-      organization: "Google Health",
+      title: t.aiDiagnosticToolValidation,
+      organization: t.googleHealth,
       type: "Digital Health",
-      description: "Partner with radiology departments to validate AI-powered early cancer detection algorithm.",
-      requirements: "Access to 10,000+ annotated medical images",
+      description: t.aiDiagnosticDesc,
+      requirements: t.aiDiagnosticRequirement,
       deadline: "July 15, 2026",
       matchScore: 88,
       gradient: "from-purple-500 to-pink-400",
     },
     {
-      title: "Wearable Device Research",
-      organization: "Apple Health",
+      title: t.wearableDeviceResearch,
+      organization: t.appleHealth,
       type: "MedTech-Research",
-      description: "Research partnership for cardiac monitoring feature validation with leading cardiology centers.",
-      requirements: "Cardiology department with remote monitoring capabilities",
+      description: t.wearableDeviceDesc,
+      requirements: t.wearableDeviceRequirement,
       deadline: "August 1, 2026",
       matchScore: 85,
       gradient: "from-amber-500 to-orange-400",
     },
     {
-      title: "Genomic Research Initiative",
-      organization: "Illumina",
+      title: t.genomicResearchInitiative,
+      organization: t.illumina,
       type: "Academic-Industry",
-      description: "Joint research program for population-scale genomic sequencing and analysis.",
-      requirements: "Access to diverse patient population and sequencing facilities",
+      description: t.genomicResearchDesc,
+      requirements: t.genomicResearchRequirement,
       deadline: "September 30, 2026",
       matchScore: 90,
       gradient: "from-emerald-500 to-teal-500",
@@ -115,25 +121,25 @@ export default function IndustryCollaborationExchange() {
 
   const successStories = [
     {
-      title: "AI-Powered Radiology Partnership",
-      partners: "Stanford Health + Siemens Healthineers",
-      result: "Reduced diagnosis time by 60% for critical cases",
+      title: t.aiPoweredRadiologyPartnership,
+      partners: t.stanfordSiemens,
+      result: t.stanfordSiemensDesc,
       year: "2025",
       icon: Award,
       gradient: "from-blue-500 to-cyan-400",
     },
     {
-      title: "Remote Patient Monitoring Program",
-      partners: "Cleveland Clinic + Philips Healthcare",
-      result: "40% reduction in hospital readmission rates",
+      title: t.remotePatientMonitoring,
+      partners: t.clevelandPhilips,
+      result: t.clevelandPhilipsDesc,
       year: "2025",
       icon: HeartPulse,
       gradient: "from-purple-500 to-pink-400",
     },
     {
-      title: "Genomics Research Consortium",
-      partners: "Mayo Clinic + Illumina + Pfizer",
-      result: "Identified 12 new genetic markers for rare diseases",
+      title: t.genomicsResearchConsortium,
+      partners: t.mayoIlluminaPfizer,
+      result: t.mayoIlluminaPfizerDesc,
       year: "2024",
       icon: FlaskConical,
       gradient: "from-amber-500 to-orange-400",
@@ -141,18 +147,45 @@ export default function IndustryCollaborationExchange() {
   ];
 
   const matchmakingEvents = [
-    { time: "10:00 AM - 12:00 PM", event: "Hospital-Pharma Speed Networking", location: "Collaboration Hall A", participants: "15 hospitals, 8 pharma companies", type: "B2B Meetings" },
-    { time: "1:00 PM - 3:00 PM", event: "MedTech Innovation Pitch Session", location: "Innovation Stage", participants: "20 startups, 30 investors", type: "Pitching" },
-    { time: "3:30 PM - 5:30 PM", event: "Research Partnership Roundtables", location: "Collaboration Hall B", participants: "12 research institutions", type: "Workshop" },
-    { time: "6:00 PM - 8:00 PM", event: "Networking Gala Reception", location: "Grand Ballroom", participants: "All attendees", type: "Networking" },
+    {
+      time: "10:00 AM - 12:00 PM",
+      event: "Hospital-Pharma Speed Networking",
+      location: "Collaboration Hall A",
+      participants: "15 hospitals, 8 pharma companies",
+      type: "B2B Meetings",
+    },
+    {
+      time: "1:00 PM - 3:00 PM",
+      event: "MedTech Innovation Pitch Session",
+      location: "Innovation Stage",
+      participants: "20 startups, 30 investors",
+      type: "Pitching",
+    },
+    {
+      time: "3:30 PM - 5:30 PM",
+      event: "Research Partnership Roundtables",
+      location: "Collaboration Hall B",
+      participants: "12 research institutions",
+      type: "Workshop",
+    },
+    {
+      time: "6:00 PM - 8:00 PM",
+      event: "Networking Gala Reception",
+      location: "Grand Ballroom",
+      participants: "All attendees",
+      type: "Networking",
+    },
   ];
 
   return (
     <>
       <BreadCrumb
-        title="Industry Collaboration Exchange"
+        title={t.industryCollaborationExchange}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Whats On" }, { label: "Industry Collaboration Exchange" }]}
+        path={[
+          { label: t.whatsOn },
+          { label: t.industryCollaborationExchange },
+        ]}
       />
 
       <section className="relative min-h-screen py-10 sm:py-12 md:py-16 overflow-hidden">
@@ -165,29 +198,22 @@ export default function IndustryCollaborationExchange() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
-          
           {/* ========== HERO SECTION ========== */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24">
             <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
               <Handshake className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-300" />
               <span className="text-xs sm:text-sm font-medium text-gray-300">
-                Bridging Healthcare Innovation
+                {t.bridgingHealthcareInnovation}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative">
-              <span className="text-white">Industry</span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                Collaboration
-              </span>
-              <br />
-              <span className="text-white">Exchange</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative text-white">
+              {t.industryCollaborationExchange}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-4">
-              Platform for partnerships between hospitals, pharmaceutical companies,
-              medical technology providers, and researchers.
+              {t.platformForPartnerships}
             </p>
           </div>
 
@@ -202,23 +228,21 @@ export default function IndustryCollaborationExchange() {
 
                 <div className="relative z-10">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight">
-                    Where{" "}
-                    <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                      Partnerships Drive Healthcare Innovation
-                    </span>
+                    {t.wherePartnershipsDrive}
+                   
                   </h2>
 
                   <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                    Connect with <span className="text-blue-400 font-medium">200+ organizations</span> across the
-                    healthcare ecosystem. Discover partnership opportunities, secure funding,
-                    and accelerate innovation through strategic collaboration between{" "}
-                    <span className="text-cyan-300">industry leaders</span>,{" "}
-                    <span className="text-purple-300">research institutions</span>, and{" "}
-                    <span className="text-emerald-300">healthcare providers</span>.
+                    {t.heroDescription}
                   </p>
 
                   <div className="mt-6 flex flex-wrap justify-center gap-2">
-                    {["B2B Meetings", "Joint Ventures", "Research Grants", "Technology Transfer"].map((tag, i) => (
+                    {[
+                      t.b2bMeetings,
+                      t.jointVentures,
+                      "Research Grants",
+                      t.technologyTransfer,
+                    ].map((tag, i) => (
                       <span
                         key={i}
                         className="px-3 py-1.5 text-xs sm:text-sm rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 cursor-default"
@@ -238,18 +262,14 @@ export default function IndustryCollaborationExchange() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                 <Network className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                 <span className="text-xs sm:text-sm font-medium text-gray-300">
-                  Collaboration Areas
+                  {t.collaborationAreas}
                 </span>
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Partnership{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Categories
-                </span>
+              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">{t.partnershipCategories}
                 <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
               <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
-                Explore collaboration opportunities across the healthcare ecosystem
+                {t.exploreCollaboration}
               </p>
             </div>
 
@@ -259,24 +279,36 @@ export default function IndustryCollaborationExchange() {
                 return (
                   <div key={index} className="group relative">
                     <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-white/20 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                      ></div>
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                       </div>
 
                       <div className="relative">
                         <div className="relative inline-block mb-3">
-                          <div className={`absolute inset-0 bg-gradient-to-r ${category.gradient} rounded-xl blur-md opacity-20 group-hover:opacity-40 transition`}></div>
-                          <div className={`relative w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-r ${category.gradient} rounded-xl blur-md opacity-20 group-hover:opacity-40 transition`}
+                          ></div>
+                          <div
+                            className={`relative w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
+                          >
                             <Icon className="w-6 h-6 text-white" />
                           </div>
                         </div>
-                        
-                        <h3 className="text-base sm:text-lg font-bold text-white mb-1">{category.title}</h3>
-                        <p className="text-xs text-gray-300 mb-2">{category.description}</p>
-                        
+
+                        <h3 className="text-base sm:text-lg font-bold text-white mb-1">
+                          {category.title}
+                        </h3>
+                        <p className="text-xs text-gray-300 mb-2">
+                          {category.description}
+                        </p>
+
                         <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
-                          <span className="text-[10px] text-blue-400">{category.opportunities} active opportunities</span>
+                          <span className="text-[10px] text-blue-400">
+                            {category.opportunities} active opportunities
+                          </span>
                           <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
                         </div>
                       </div>
@@ -293,14 +325,10 @@ export default function IndustryCollaborationExchange() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                 <Target className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                 <span className="text-xs sm:text-sm font-medium text-gray-300">
-                  Find Your Match
+                  {t.findYourMatch}
                 </span>
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Collaboration{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Opportunities
-                </span>
+              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">{t.collaborationOpportunities}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
             </div>
@@ -315,7 +343,7 @@ export default function IndustryCollaborationExchange() {
                     : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
                 }`}
               >
-                Open Opportunities
+                {t.openOpportunities}
               </button>
               <button
                 onClick={() => setActiveTab("matchmaking")}
@@ -325,7 +353,7 @@ export default function IndustryCollaborationExchange() {
                     : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
                 }`}
               >
-                Matchmaking Events
+                {t.matchmakingEvents}
               </button>
             </div>
 
@@ -335,42 +363,61 @@ export default function IndustryCollaborationExchange() {
                 {collaborationOpportunities.map((opportunity, idx) => (
                   <div key={idx} className="group relative">
                     <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${opportunity.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                      
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${opportunity.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                      ></div>
+
                       <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
-                            <h3 className="text-base sm:text-lg font-bold text-white">{opportunity.title}</h3>
-                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-gray-400">{opportunity.type}</span>
+                            <h3 className="text-base sm:text-lg font-bold text-white">
+                              {opportunity.title}
+                            </h3>
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-gray-400">
+                              {opportunity.type}
+                            </span>
                           </div>
-                          <p className="text-xs text-gray-400 mb-1">{opportunity.organization}</p>
-                          <p className="text-xs sm:text-sm text-gray-300 mb-2">{opportunity.description}</p>
+                          <p className="text-xs text-gray-400 mb-1">
+                            {opportunity.organization}
+                          </p>
+                          <p className="text-xs sm:text-sm text-gray-300 mb-2">
+                            {opportunity.description}
+                          </p>
                           <div className="flex flex-wrap gap-2 text-[10px] text-gray-500">
                             <span>📋 {opportunity.requirements}</span>
                             <span>⏰ Deadline: {opportunity.deadline}</span>
                           </div>
                         </div>
-                        
+
                         <div className="flex items-center gap-3">
                           <div className="text-center">
-                            <div className="text-xl sm:text-2xl font-bold text-blue-400">{opportunity.matchScore}%</div>
-                            <div className="text-[9px] text-gray-500">Match Score</div>
+                            <div className="text-xl sm:text-2xl font-bold text-blue-400">
+                              {opportunity.matchScore}%
+                            </div>
+                            <div className="text-[9px] text-gray-500">
+                              {t.matchScore}
+                            </div>
                           </div>
                           <button className="inline-flex items-center gap-1 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold hover:shadow-lg transition-all group/btn">
-                            Apply Now
+                            {t.applyNow}
                             <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                           </button>
                         </div>
                       </div>
-                      
-                      <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${opportunity.gradient} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
+
+                      <div
+                        className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${opportunity.gradient} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                      ></div>
                     </div>
                   </div>
                 ))}
-                
+
                 <div className="text-center mt-4">
-                  <Link href="#" className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group">
-                    View All 40+ Opportunities
+                  <Link
+                    href="#"
+                    className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+                  >
+                    {t.viewAllOpportunities}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -385,22 +432,30 @@ export default function IndustryCollaborationExchange() {
                     <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 hover:border-white/20 transition-all duration-300">
                       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                         <div className="min-w-[140px]">
-                          <div className="text-sm font-bold text-blue-400">{event.time}</div>
+                          <div className="text-sm font-bold text-blue-400">
+                            {event.time}
+                          </div>
                           <div className="text-[10px] text-gray-500 flex items-center gap-1">
                             <MapPin className="w-3 h-3" />
                             {event.location}
                           </div>
                         </div>
-                        
+
                         <div className="flex-1">
-                          <h3 className="text-sm sm:text-base font-semibold text-white">{event.event}</h3>
-                          <p className="text-xs text-gray-400">{event.participants}</p>
+                          <h3 className="text-sm sm:text-base font-semibold text-white">
+                            {event.event}
+                          </h3>
+                          <p className="text-xs text-gray-400">
+                            {event.participants}
+                          </p>
                         </div>
-                        
+
                         <div className="flex items-center gap-2">
-                          <span className="text-[10px] px-2 py-1 rounded-full bg-white/10 text-gray-400">{event.type}</span>
+                          <span className="text-[10px] px-2 py-1 rounded-full bg-white/10 text-gray-400">
+                            {event.type}
+                          </span>
                           <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
-                            Register →
+                            {t.registerInterest} →
                           </button>
                         </div>
                       </div>
@@ -415,24 +470,23 @@ export default function IndustryCollaborationExchange() {
           <div className="mb-12 sm:mb-16 md:mb-20">
             <div className="relative group">
               <div className="absolute -inset-10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
-              
+
               <div className="relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-8 md:p-10 overflow-hidden">
                 <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 blur-3xl rounded-full"></div>
-                
+
                 <div className="relative z-10">
                   <div className="text-center mb-6 sm:mb-8">
                     <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                       <Award className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-                      <span className="text-xs sm:text-sm font-medium text-gray-300">Proven Partnerships</span>
+                      <span className="text-xs sm:text-sm font-medium text-gray-300">
+                        {t.provenPartnerships}
+                      </span>
                     </div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
-                      Success{" "}
-                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                        Stories
-                      </span>
+                      {t.successStories}
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">
-                      Real-world collaborations driving healthcare innovation
+                      {t.successStoriesDesc}
                     </p>
                   </div>
 
@@ -440,16 +494,29 @@ export default function IndustryCollaborationExchange() {
                     {successStories.map((story, idx) => {
                       const Icon = story.icon;
                       return (
-                        <div key={idx} className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 group/story">
+                        <div
+                          key={idx}
+                          className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 group/story"
+                        >
                           <div className="flex items-start gap-3">
-                            <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${story.gradient} flex items-center justify-center flex-shrink-0`}>
+                            <div
+                              className={`w-10 h-10 rounded-lg bg-gradient-to-br ${story.gradient} flex items-center justify-center flex-shrink-0`}
+                            >
                               <Icon className="w-5 h-5 text-white" />
                             </div>
                             <div>
-                              <h4 className="text-sm font-semibold text-white mb-1">{story.title}</h4>
-                              <p className="text-[11px] text-blue-400 mb-1">{story.partners}</p>
-                              <p className="text-xs text-gray-300">{story.result}</p>
-                              <p className="text-[10px] text-gray-500 mt-1">{story.year}</p>
+                              <h4 className="text-sm font-semibold text-white mb-1">
+                                {story.title}
+                              </h4>
+                              <p className="text-[11px] text-blue-400 mb-1">
+                                {story.partners}
+                              </p>
+                              <p className="text-xs text-gray-300">
+                                {story.result}
+                              </p>
+                              <p className="text-[10px] text-gray-500 mt-1">
+                                {story.year}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -471,19 +538,16 @@ export default function IndustryCollaborationExchange() {
               <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 mb-5">
                 <TrendingUp className="w-4 h-4 text-purple-400" />
                 <span className="text-xs sm:text-sm text-gray-300 tracking-wide">
-                  Exchange Impact
+                  {t.exchangeImpact}
                 </span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-3">
-                Partnership{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Ecosystem
-                </span>
+                {t.partnershipEcosystem}
               </h2>
 
               <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-                Driving innovation through strategic collaboration
+                {t.partnershipEcosystemDesc}
               </p>
 
               <div className="mt-6 flex justify-center">
@@ -493,23 +557,56 @@ export default function IndustryCollaborationExchange() {
 
             <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
               {[
-                { icon: Building2, value: "200+", label: "Participating Organizations", gradient: "from-blue-500 to-cyan-400" },
-                { icon: Handshake, value: "85+", label: "Active Partnerships", gradient: "from-purple-500 to-pink-400" },
-                { icon: Target, value: "$50M+", label: "Joint Funding Secured", gradient: "from-amber-500 to-orange-400" },
-                { icon: Globe, value: "25+", label: "Countries Represented", gradient: "from-emerald-500 to-teal-500" },
+                {
+                  icon: Building2,
+                  value: "200+",
+                  label: t.participatingOrganizations,
+                  gradient: "from-blue-500 to-cyan-400",
+                },
+                {
+                  icon: Handshake,
+                  value: "85+",
+                  label: t.activePartnerships,
+                  gradient: "from-purple-500 to-pink-400",
+                },
+                {
+                  icon: Target,
+                  value: "$50M+",
+                  label: t.jointFundingSecured,
+                  gradient: "from-amber-500 to-orange-400",
+                },
+                {
+                  icon: Globe,
+                  value: "25+",
+                  label: t.countriesRepresented,
+                  gradient: "from-emerald-500 to-teal-500",
+                },
               ].map((stat, index) => {
                 const Icon = stat.icon;
                 return (
-                  <div key={index} className="group relative rounded-2xl p-[1px] transition-all duration-500 hover:-translate-y-2">
-                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-100 blur-md transition duration-500`}></div>
+                  <div
+                    key={index}
+                    className="group relative rounded-2xl p-[1px] transition-all duration-500 hover:-translate-y-2"
+                  >
+                    <div
+                      className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-100 blur-md transition duration-500`}
+                    ></div>
                     <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 text-center overflow-hidden">
-                      <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r ${stat.gradient} opacity-10 blur-2xl rounded-full`}></div>
+                      <div
+                        className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r ${stat.gradient} opacity-10 blur-2xl rounded-full`}
+                      ></div>
                       <div className="relative mb-3">
-                        <div className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} blur-lg opacity-20 group-hover:opacity-40 transition`}></div>
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} blur-lg opacity-20 group-hover:opacity-40 transition`}
+                        ></div>
                         <Icon className="relative w-8 h-8 sm:w-10 sm:h-10 text-white mx-auto group-hover:scale-110 transition-transform duration-500" />
                       </div>
-                      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 tracking-tight">{stat.value}</p>
-                      <p className="text-xs sm:text-sm text-gray-400">{stat.label}</p>
+                      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 tracking-tight">
+                        {stat.value}
+                      </p>
+                      <p className="text-xs sm:text-sm text-gray-400">
+                        {stat.label}
+                      </p>
                     </div>
                   </div>
                 );
@@ -528,16 +625,16 @@ export default function IndustryCollaborationExchange() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                 <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span className="text-xs sm:text-sm font-medium text-white/90">
-                  Join the Exchange
+                  {t.joinTheExchange}
                 </span>
               </div>
 
               <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                Ready to Forge Strategic Partnerships?
+                {t.readyToForge}
               </h4>
 
               <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                Register your organization, explore collaboration opportunities, and connect with potential partners at the Industry Collaboration Exchange
+                {t.joinExchangeDesc}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
@@ -545,14 +642,14 @@ export default function IndustryCollaborationExchange() {
                   href="/register"
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Register Interest
+                  {t.registerInterest}
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="#"
                   className="group border border-white/30 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:bg-white/20 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Browse Opportunities
+                  {t.browseOpportunities}
                   <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Link>
               </div>
