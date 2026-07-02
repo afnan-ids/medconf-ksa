@@ -31,94 +31,92 @@ import {
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
 
+import { useLanguage } from "../../../context/LanguageContext";
+import { translations } from "../../../il18/whatsOn/healthcareInnovationHub";
+
 export default function HealthcareInnovationHub() {
   const [activeCategory, setActiveCategory] = useState("all");
 
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const companiesData = [
     {
-      name: "MediAI Solutions",
+      name: t.mediAiSolutions,
       logo: Brain,
       category: "digital-health",
-      description:
-        "AI-powered diagnostic platform that predicts disease progression with 94% accuracy using patient data.",
-      tags: ["AI Diagnostics", "Predictive Analytics", "Cloud-Based"],
+      description: t.mediAiDescription,
+      tags: [t.aiDiagnostics, t.predictiveAnalytics, t.cloudBased],
       booth: "Booth #A12",
       featured: true,
       gradient: "from-blue-500 to-cyan-400",
     },
     {
-      name: "HealthTrack Wearables",
+      name: t.healthTrackWearables,
       logo: Watch,
       category: "medtech",
-      description:
-        "Next-gen wearable sensors for continuous glucose monitoring and cardiac health tracking.",
-      tags: ["Wearables", "Remote Monitoring", "IoT"],
+      description: t.healthTrackDescription,
+      tags: [t.wearables, t.remoteMonitoring, t.iot],
       booth: "Booth #B05",
       featured: false,
       gradient: "from-purple-500 to-pink-400",
     },
     {
-      name: "Genomic Research Lab",
+      name: t.genomicResearchLab,
       logo: Dna,
       category: "biotech",
-      description:
-        "Revolutionary gene sequencing technology for personalized medicine and rare disease detection.",
-      tags: ["Genomics", "Personalized Medicine", "Research"],
+      description: t.genomicDescription,
+      tags: [t.genomics, t.personalizedMedicine, t.research],
       booth: "Booth #C08",
       featured: true,
       gradient: "from-emerald-500 to-teal-500",
     },
     {
-      name: "TeleCare Platform",
+      name: t.telecarePlatform,
       logo: Monitor,
       category: "digital-health",
-      description:
-        "Integrated telemedicine solution with AI triage, EHR integration, and multi-language support.",
-      tags: ["Telemedicine", "EHR", "AI Triage"],
+      description: t.telecareDescription,
+      tags: [t.telemedicine, t.ehr, t.aiTriage],
       booth: "Booth #D03",
       featured: false,
       gradient: "from-amber-500 to-orange-400",
     },
     {
-      name: "Surgical Robotics Inc",
+      name: t.surgicalRoboticsInc,
       logo: Bot,
       category: "medtech",
-      description:
-        "Minimally invasive surgical robots with haptic feedback and 4K 3D visualization.",
-      tags: ["Robotics", "Surgery", "Precision"],
+      description: t.surgicalDescription,
+      tags: [t.robotics, t.surgery, t.precision],
       booth: "Booth #E11",
       featured: true,
       gradient: "from-blue-600 to-purple-600",
     },
     {
-      name: "BioPharma Innovations",
+      name: t.bioPharmaInnovations,
       logo: Pill,
       category: "biotech",
-      description:
-        "Novel drug delivery systems using nanotechnology for targeted cancer therapy.",
-      tags: ["Nanotech", "Drug Delivery", "Oncology"],
+      description: t.bioPharmaDescription,
+      tags: [t.nanotech, t.drugDelivery, t.oncology],
       booth: "Booth #F07",
       featured: false,
       gradient: "from-cyan-500 to-blue-500",
     },
     {
-      name: "Mental Health AI",
+      name: t.mentalHealthAi,
       logo: Heart,
       category: "digital-health",
-      description:
-        "AI-powered mental health companion app providing CBT-based interventions and crisis detection.",
-      tags: ["Mental Health", "AI", "Mobile App"],
+      description: t.mentalHealthDescription,
+      tags: [t.mentalHealthAi, t.ai, t.mobileApp],
       booth: "Booth #G02",
       featured: false,
       gradient: "from-purple-600 to-pink-500",
     },
     {
-      name: "NanoMed Devices",
+      name: t.nanoMedDevices,
       logo: Microscope,
       category: "medtech",
-      description:
-        "Nano-scale biosensors for early disease detection and real-time biomarker monitoring.",
-      tags: ["Nanotech", "Biosensors", "Early Detection"],
+      description: t.nanoMedDescription,
+      tags: ["Nanotech", t.biosensor, t.earlyDetection],
       booth: "Booth #H14",
       featured: false,
       gradient: "from-green-500 to-emerald-400",
@@ -131,45 +129,45 @@ export default function HealthcareInnovationHub() {
       : companiesData.filter((c) => c.category === activeCategory);
 
   const categories = [
-    { id: "all", name: "All Innovations", icon: Sparkles },
-    { id: "digital-health", name: "Digital Health", icon: HeartPulse },
-    { id: "medtech", name: "Medical Devices", icon: Microscope },
-    { id: "biotech", name: "Biotechnology", icon: FlaskConical },
+    { id: "all", name: t.allInnovations, icon: Sparkles },
+    { id: "digital-health", name: t.digitalHealth, icon: HeartPulse },
+    { id: "medtech", name: t.medicalDevices, icon: Microscope },
+    { id: "biotech", name: t.biotechnology, icon: FlaskConical },
   ];
 
   const pitchSchedule = [
     {
       time: "10:30 AM",
-      company: "MediAI Solutions",
-      topic: "AI in Early Disease Detection",
-      stage: "Main Stage",
+      company: t.mediAiSolutions,
+      topic: t.aiEarlyDiseaseDetection,
+      stage: t.mainStage,
     },
     {
       time: "11:45 AM",
-      company: "Genomic Research Lab",
-      topic: "Personalized Medicine Revolution",
-      stage: "Innovation Stage",
+      company: t.genomicResearchLab,
+      topic: t.personalizedMedicineRevolution,
+      stage: t.innovationStage,
     },
     {
       time: "1:30 PM",
-      company: "Surgical Robotics Inc",
-      topic: "Future of Minimally Invasive Surgery",
-      stage: "Main Stage",
+      company: t.surgicalRoboticsInc,
+      topic: t.futureMinimallyInvasiveSurgery,
+      stage: t.mainStage,
     },
     {
       time: "3:00 PM",
-      company: "HealthTrack Wearables",
-      topic: "Wearable Tech in Chronic Care",
-      stage: "Innovation Stage",
+      company: t.healthTrackWearables,
+      topic: t.wearableTechChronicCare,
+      stage: t.innovationStage,
     },
   ];
 
   return (
     <>
       <BreadCrumb
-        title="Healthcare Innovation Hub"
+        title={t.healthcareInnovationHub}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Whats On" }, { label: "Healthcare Innovation Hub" }]}
+        path={[{ label: t.whatsOn }, { label: t.healthcareInnovationHub }]}
       />
 
       <section className="relative min-h-screen py-10 sm:py-12 md:py-16 overflow-hidden">
@@ -187,24 +185,17 @@ export default function HealthcareInnovationHub() {
             <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
               <Rocket className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-300" />
               <span className="text-xs sm:text-sm font-medium text-gray-300">
-                Startup & Innovation Showcase
+                {t.startupInnovationShowcase}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative">
-              <span className="text-white">Healthcare</span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                Innovation
-              </span>
-              <br />
-              <span className="text-white">Hub</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 text-white relative">
+              {t.healthcareInnovationHub}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-4">
-              A dedicated space for startups and companies presenting new
-              healthcare solutions, digital health platforms, and medical
-              research innovations.
+              {t.heroDescription}
             </p>
           </div>
 
@@ -219,33 +210,19 @@ export default function HealthcareInnovationHub() {
 
                 <div className="relative z-10">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight">
-                    Where{" "}
-                    <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                      Innovation Meets Opportunity
-                    </span>
+                    {t.innovationOpportunity}
                   </h2>
 
                   <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                    Discover groundbreaking solutions from{" "}
-                    <span className="text-blue-400 font-medium">
-                      50+ startups
-                    </span>{" "}
-                    and{" "}
-                    <span className="text-cyan-300">established companies</span>{" "}
-                    at the forefront of healthcare transformation. From{" "}
-                    <span className="text-purple-300">AI diagnostics</span> to{" "}
-                    <span className="text-emerald-300">
-                      next-gen medical devices
-                    </span>
-                    , connect with pioneers shaping the future of medicine.
+                    {t.heroSubDescription}
                   </p>
 
                   <div className="mt-6 flex flex-wrap justify-center gap-2">
                     {[
-                      "Meet Founders",
-                      "Live Demos",
-                      "Investment Opportunities",
-                      "Networking",
+                      t.meetFounders,
+                      t.liveDemos,
+                      t.investmentOpportunities,
+                      t.networking,
                     ].map((tag, i) => (
                       <span
                         key={i}
@@ -266,18 +243,15 @@ export default function HealthcareInnovationHub() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                 <Building2 className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                 <span className="text-xs sm:text-sm font-medium text-gray-300">
-                  Featured Innovators
+                 {t.featuredInnovators}
                 </span>
               </div>
               <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Meet the{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Pioneers
-                </span>
+                {t.meetThePioneers}
                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
               <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
-                Discover innovative companies transforming healthcare
+                {t.innovatorsDescription}
               </p>
             </div>
 
@@ -326,7 +300,6 @@ export default function HealthcareInnovationHub() {
                         </div>
                       )}
 
-                    
                       {/* Logo Area  */}
                       <div className="relative p-4 sm:p-5 md:p-6 pb-0">
                         <div className="relative inline-block">
@@ -372,7 +345,7 @@ export default function HealthcareInnovationHub() {
 
                         {/* Visit Booth Button */}
                         <div className="inline-flex items-center gap-1 text-xs sm:text-sm text-blue-400 group-hover:text-blue-300 transition-colors">
-                          <span>Visit Booth</span>
+                          <span>{t.visitBooth}</span>
                           <Eye className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
@@ -400,18 +373,14 @@ export default function HealthcareInnovationHub() {
                     <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                       <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
                       <span className="text-xs sm:text-sm font-medium text-gray-300">
-                        Pitch Arena Schedule
+                        {t.pitchArenaSchedule}
                       </span>
                     </div>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
-                      Live{" "}
-                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                        Presentations
-                      </span>
+                      {t.livePresentations}
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">
-                      Watch startups pitch their innovations to investors and
-                      industry experts
+                      {t.presentationsDescription}
                     </p>
                   </div>
 
@@ -439,7 +408,7 @@ export default function HealthcareInnovationHub() {
                             {item.stage}
                           </span>
                           <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
-                            Add to Calendar +
+                            {t.addToCalendar} +
                           </button>
                         </div>
                       </div>
@@ -451,7 +420,7 @@ export default function HealthcareInnovationHub() {
                       href="#"
                       className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
                     >
-                      View Full Schedule
+                      {t.viewFullSchedule}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -470,19 +439,16 @@ export default function HealthcareInnovationHub() {
               <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 mb-5">
                 <TrendingUp className="w-4 h-4 text-purple-400" />
                 <span className="text-xs sm:text-sm text-gray-300 tracking-wide">
-                  Hub Impact
+                  {t.hubImpact}
                 </span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-3">
-                Innovation{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  Ecosystem
-                </span>
+                {t.innovationEcosystem}
               </h2>
 
               <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-                Driving healthcare transformation through collaboration
+                {t.ecosystemDescription}
               </p>
 
               <div className="mt-6 flex justify-center">
@@ -495,25 +461,25 @@ export default function HealthcareInnovationHub() {
                 {
                   icon: Users,
                   value: "50+",
-                  label: "Startups",
+                  label: t.startups,
                   gradient: "from-blue-500 to-cyan-400",
                 },
                 {
                   icon: Briefcase,
                   value: "30+",
-                  label: "Investors",
+                  label: t.investors,
                   gradient: "from-purple-500 to-pink-400",
                 },
                 {
                   icon: BadgeCheck,
                   value: "100+",
-                  label: "Innovations",
+                  label: t.innovations,
                   gradient: "from-amber-500 to-orange-400",
                 },
                 {
                   icon: Rocket,
                   value: "$50M+",
-                  label: "Funding Potential",
+                  label: t.fundingPotential,
                   gradient: "from-emerald-500 to-teal-500",
                 },
               ].map((stat, index) => {
@@ -560,17 +526,16 @@ export default function HealthcareInnovationHub() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                 <Rocket className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span className="text-xs sm:text-sm font-medium text-white/90">
-                  Join the Innovation Ecosystem
+                  {t.joinInnovationEcosystem}
                 </span>
               </div>
 
               <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                Are You a Healthcare Innovator?
+                {t.healthcareInnovator}
               </h4>
 
               <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                Showcase your solution, connect with investors, and accelerate
-                your growth at the Healthcare Innovation Hub
+                {t.healthcareInnovatorDescription}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
@@ -578,14 +543,14 @@ export default function HealthcareInnovationHub() {
                   href="/register"
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Apply to Exhibit
+                  {t.applyToExhibit}
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="#companies"
                   className="group border border-white/30 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:bg-white/20 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Explore Innovators
+                  {t.exploreInnovators}
                   <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Link>
               </div>

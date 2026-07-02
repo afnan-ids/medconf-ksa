@@ -1,4 +1,4 @@
-export const guidedExhibitionToursTranslations = {
+export const translations = {
   en: {
     home: "Home",
     whatsOn: "whats On",
@@ -91,8 +91,11 @@ export const guidedExhibitionToursTranslations = {
     lisaWong: "Lisa Wong",
     digitalHealthLead:
       "Digital Health Lead",
-    lisaExpertise:
-      "Expertise: Telemedicine & AI",
+    lisaExpertise: "Telemedicine & AI",
+
+    jamesWilson : "Dr. James Wilson",
+    researchPartner : "Research Partnerships",
+    jamesExpertise : "Clinical Research",
 
     dailyTours: "Daily Tours",
     maxGroupSize: "Max Group Size",
@@ -104,6 +107,7 @@ export const guidedExhibitionToursTranslations = {
 
     bookATour: "Book a Tour",
     privateGroup: "Private Group",
+    monitoring: "monitoring",
   },
 
   ar: {
@@ -218,5 +222,10 @@ export const guidedExhibitionToursTranslations = {
 
     bookATour: "احجز جولة",
     privateGroup: "مجموعة خاصة",
+    monitoring: "المراقبة",
+
+    jamesWilson : "د. جيمس ويلسون",
+    researchPartner : "شراكات البحث",
+    jamesExpertise : "البحوث السريرية",
   },
 };

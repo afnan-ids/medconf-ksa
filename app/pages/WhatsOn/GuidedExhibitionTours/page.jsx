@@ -29,15 +29,21 @@ import {
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
 
+import { useLanguage } from "../../../context/LanguageContext";
+import { translations } from "../../../il18/whatsOn/guidedExhibitionTrours";
+
 export default function GuidedExhibitionTours() {
   const [selectedTour, setSelectedTour] = useState("innovation");
   const [hoveredStop, setHoveredStop] = useState(null);
+
+   const { language } = useLanguage();
+  const t = translations[language];
 
   const tourSchedules = [
     {
       time: "10:00 AM",
       duration: "90 min",
-      theme: "Innovation Spotlight",
+      theme: t.innovationSpotlight,
       guide: "Dr. Sarah Chen",
       language: "English",
       maxGroup: 15,
@@ -46,7 +52,7 @@ export default function GuidedExhibitionTours() {
     {
       time: "11:30 AM",
       duration: "90 min",
-      theme: "Clinical Excellence",
+      theme: t.clinicalExcellence,
       guide: "Dr. Michael Roberts",
       language: "English",
       maxGroup: 15,
@@ -55,7 +61,7 @@ export default function GuidedExhibitionTours() {
     {
       time: "1:00 PM",
       duration: "60 min",
-      theme: "Digital Health Express",
+      theme: t.digitalHealth,
       guide: "Lisa Wong",
       language: "English",
       maxGroup: 12,
@@ -64,7 +70,7 @@ export default function GuidedExhibitionTours() {
     {
       time: "2:30 PM",
       duration: "90 min",
-      theme: "Research & Innovation",
+      theme: t.researchInnovations,
       guide: "Dr. James Wilson",
       language: "English",
       maxGroup: 15,
@@ -73,7 +79,7 @@ export default function GuidedExhibitionTours() {
     {
       time: "4:00 PM",
       duration: "60 min",
-      theme: "Surgical Tech Focus",
+      theme: t.surgicalTech,
       guide: "Dr. Emily Martinez",
       language: "English",
       maxGroup: 12,
@@ -84,45 +90,45 @@ export default function GuidedExhibitionTours() {
   const tourThemes = [
     {
       id: "innovation",
-      title: "Innovation Spotlight",
+      title: t.innovationSpotlight,
       icon: Sparkles,
-      description: "Breakthrough technologies and game-changing innovations",
+      description: t.innovationSpotlightDesc,
       duration: "90 min",
       stops: 8,
       color: "blue",
     },
     {
       id: "clinical",
-      title: "Clinical Excellence",
+      title: t.clinicalExcellence,
       icon: Stethoscope,
-      description: "Practical clinical solutions and patient care innovations",
+      description: t.clinicalExcellenceDesc,
       duration: "90 min",
       stops: 7,
       color: "purple",
     },
     {
       id: "digital",
-      title: "Digital Health",
+      title: t.digitalHealth,
       icon: HeartPulse,
-      description: "AI, telemedicine, and healthcare IT solutions",
+      description: t.digitalHealthDesc,
       duration: "60 min",
       stops: 5,
       color: "amber",
     },
     {
       id: "research",
-      title: "Research & Innovation",
+      title: t.researchInnovations,
       icon: Brain,
-      description: "Clinical research and academic-industry collaborations",
+      description: t.researchInnovationsDesc,
       duration: "90 min",
       stops: 6,
       color: "emerald",
     },
     {
       id: "surgical",
-      title: "Surgical Tech",
+      title: t.surgicalTech,
       icon: Microscope,
-      description: "Robotic systems and OR technology innovations",
+      description: t.surgicalTechDesc,
       duration: "60 min",
       stops: 6,
       color: "cyan",
@@ -131,22 +137,22 @@ export default function GuidedExhibitionTours() {
 
   const tourStops = {
     innovation: [
-      { booth: "#101", name: "Siemens Healthineers", highlight: "AI-Powered MRI Systems", type: "Medical Imaging", time: "15 min" },
-      { booth: "#205", name: "Intuitive Surgical", highlight: "Da Vinci Robotic System", type: "Robotics", time: "20 min" },
-      { booth: "#112", name: "Medtronic", highlight: "Next-Gen Cardiac Devices", type: "Cardiovascular", time: "15 min" },
-      { booth: "#156", name: "GE Healthcare", highlight: "AI-Enabled Imaging", type: "Digital Health", time: "15 min" },
-      { booth: "#089", name: "Boston Scientific", highlight: "Innovative Endoscopy Solutions", type: "Surgical", time: "10 min" },
-      { booth: "#203", name: "Philips Healthcare", highlight: "Advanced Patient Monitoring", type: "Monitoring", time: "10 min" },
-      { booth: "#167", name: "Stryker", highlight: "Robotic Joint Replacement", type: "Orthopedics", time: "15 min" },
-      { booth: "#134", name: "Abbott Laboratories", highlight: "Diabetes Care Innovations", type: "Chronic Care", time: "10 min" },
+      { booth: "#101", name: t.siemensHealthineers, highlight: t.aiPoweredMRI, type: t.medicalImaging, time: "15 min" },
+      { booth: "#205", name: t.intuitiveSurgical, highlight: t.daVinciRoboticSystem, type: t.robotics, time: "20 min" },
+      { booth: "#112", name: t.medtronic, highlight: t.nextGenCardiacDevices, type: t.cardiovascular, time: "15 min" },
+      { booth: "#156", name: t.geHealthcare, highlight: t.aiEnabledImaging, type: t.digitalHealth, time: "15 min" },
+      { booth: "#089", name: t.bostonScientific, highlight: t.innovativeEndoscopySolutions, type: t.surgical, time: "10 min" },
+      { booth: "#203", name: t.philipsHealthcare, highlight: t.advancedPatientMonitoring, type: t.monitoring, time: "10 min" },
+      { booth: "#167", name: t.stryker, highlight: t.roboticJointReplacement, type: t.orthopedics, time: "15 min" },
+      { booth: "#134", name: t.abbottLaboratories, highlight: t.diabetesCareInnovations, type: t.chronicCare, time: "10 min" },
     ],
     clinical: [
-      { booth: "#112", name: "Medtronic", highlight: "Minimally Invasive Surgery", type: "Surgical", time: "15 min" },
-      { booth: "#101", name: "Siemens Healthineers", highlight: "Clinical Diagnostics", type: "Diagnostics", time: "15 min" },
-      { booth: "#205", name: "Intuitive Surgical", highlight: "Clinical Outcomes", type: "Surgical", time: "15 min" },
+      { booth: "#112", name: t.medtronic, highlight: "Minimally Invasive Surgery", type: "Surgical", time: "15 min" },
+      { booth: "#101", name: t.siemensHealthineers, highlight: "Clinical Diagnostics", type: "Diagnostics", time: "15 min" },
+      { booth: "#205", name: t.intuitiveSurgical, highlight: "Clinical Outcomes", type: "Surgical", time: "15 min" },
       { booth: "#189", name: "Baxter", highlight: "Acute Care Solutions", type: "Critical Care", time: "10 min" },
-      { booth: "#156", name: "GE Healthcare", highlight: "Clinical Workflow Solutions", type: "IT Solutions", time: "10 min" },
-      { booth: "#203", name: "Philips Healthcare", highlight: "Patient Monitoring Systems", type: "Monitoring", time: "10 min" },
+      { booth: "#156", name: t.geHealthcare, highlight: "Clinical Workflow Solutions", type: "IT Solutions", time: "10 min" },
+      { booth: "#203", name: t.philipsHealthcare, highlight: "Patient Monitoring Systems", type: "Monitoring", time: "10 min" },
       { booth: "#221", name: "Zimmer Biomet", highlight: "Orthopedic Clinical Solutions", type: "Orthopedics", time: "10 min" },
     ],
     digital: [
@@ -175,10 +181,10 @@ export default function GuidedExhibitionTours() {
   };
 
   const tourGuides = [
-    { name: "Dr. Sarah Chen", role: "Medical Technology Specialist", expertise: "AI & Diagnostics", image: "👩‍⚕️", yearsExp: 12 },
-    { name: "Dr. Michael Roberts", role: "Clinical Innovation Director", expertise: "Surgical Tech", image: "👨‍⚕️", yearsExp: 15 },
-    { name: "Lisa Wong", role: "Digital Health Lead", expertise: "Telemedicine & AI", image: "👩‍💻", yearsExp: 8 },
-    { name: "Dr. James Wilson", role: "Research Partnerships", expertise: "Clinical Research", image: "👨‍🔬", yearsExp: 10 },
+    { name: t.drSarahChen, role: t.medicalTechnologySpecialist, expertise: t.drSarahExpertise, image: "👩‍⚕️", yearsExp: 12 },
+    { name: t.drMichaelRoberts, role: t.clinicalInnovationDirector, expertise: t.drMichaelExpertise, image: "👨‍⚕️", yearsExp: 15 },
+    { name: t.lisaWong, role: t.digitalHealthLead, expertise: t.lisaExpertise, image: "👩‍💻", yearsExp: 8 },
+    { name: t.jamesWilson, role: t.researchPartner, expertise: t.jamesExpertise, image: "👨‍🔬", yearsExp: 10 },
   ];
 
   const currentStops = tourStops[selectedTour] || tourStops.innovation;
@@ -209,9 +215,9 @@ export default function GuidedExhibitionTours() {
   return (
     <>
       <BreadCrumb
-        title="Guided Exhibition Tours"
+        title={t.guidedExhibitionTours}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Whats On" }, { label: "Guided Exhibition Tours" }]}
+        path={[{ label: t.whatsOn }, { label: t.guidedExhibitionTours }]}
       />
 
       <section className="relative min-h-screen py-16 md:py-20 lg:py-24 overflow-hidden">
@@ -228,16 +234,13 @@ export default function GuidedExhibitionTours() {
           <div className="text-center max-w-4xl mx-auto mb-20">
             <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6">
               <Compass className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-gray-300">Expert-Led Experiences</span>
+              <span className="text-sm text-gray-300">{t.expertLedExperiences}</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Guided</span>
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent ml-3">
-                Exhibition Tours
-              </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+              {t.guidedExhibitionTours}
             </h1>
             <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-              Expert-led journeys through the most impactful exhibits and medical innovations
+              {t.heroDescription}
             </p>
           </div>
 
@@ -245,7 +248,7 @@ export default function GuidedExhibitionTours() {
           <div className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Choose Your Path
+                {t.chooseYourPath}
               </h2>
               <div className="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
             </div>
@@ -309,7 +312,7 @@ export default function GuidedExhibitionTours() {
                   href="#schedule"
                   className="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-all duration-300 inline-flex items-center gap-2"
                 >
-                  Book Tour <ArrowRight className="w-4 h-4" />
+                  {t.bookATour} <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
@@ -350,9 +353,9 @@ export default function GuidedExhibitionTours() {
           <div id="schedule" className="mb-20">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Daily Schedule
+                {t.dailySchedule}
               </h2>
-              <p className="text-gray-400">Reserve your spot on our expert-led tours</p>
+              <p className="text-gray-400">{t.reserveYourSpot}</p>
             </div>
 
             <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
@@ -403,9 +406,9 @@ export default function GuidedExhibitionTours() {
           <div className="mb-20">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Expert Guides
+                {t.expertGuides}
               </h2>
-              <p className="text-gray-400">Industry experts with deep knowledge of medical technology</p>
+              <p className="text-gray-400">{t.expertGuidesDesc}</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -433,10 +436,10 @@ export default function GuidedExhibitionTours() {
           <div className="mb-20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { icon: Navigation, value: "8+", label: "Daily Tours" },
-                { icon: Users, value: "15", label: "Max Group Size" },
-                { icon: Award, value: "100%", label: "Expert Guides" },
-                { icon: BadgeCheck, value: "90%", label: "Satisfaction" },
+                { icon: Navigation, value: "8+", label: t.dailyTours },
+                { icon: Users, value: "15", label: t.maxGroupSize},
+                { icon: Award, value: "100%", label: t.expertGuides },
+                { icon: BadgeCheck, value: "90%", label: t.satisfaction },
               ].map((stat, index) => {
                 const Icon = stat.icon;
                 return (
@@ -464,13 +467,13 @@ export default function GuidedExhibitionTours() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span className="text-xs sm:text-sm font-medium text-white/90">
-                 Don't Miss Out
+                 {t.dontMissOut}
                 </span>
               </div>
 
               <h4 className="text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
                 
-                Book your guided tour today and discover the most innovative medical technologies
+                {t.ctaDescription}
               </h4>
 
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -478,13 +481,13 @@ export default function GuidedExhibitionTours() {
                   href="/register"
                   className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Book a Tour <ArrowRight className="w-4 h-4" />
+                  {t.bookATour} <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="#"
                   className="px-6 py-3 border border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Private Group <Users className="w-4 h-4" />
+                  {t.privateGroup} <Users className="w-4 h-4" />
                 </Link>
               </div>
             </div>

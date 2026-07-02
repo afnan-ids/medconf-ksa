@@ -1,4 +1,4 @@
-export const healthcareInnovationHubTranslations = {
+export const translations = {
   en: {
     home: "Home",
     whatsOn: "Whats On",
