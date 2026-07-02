@@ -43,7 +43,6 @@ export default function ClinicalKnowledgeForum() {
     { id: "workshop", name: t.workshops, icon: Briefcase },
     { id: "case-study", name: t.caseStudies, icon: FileText },
   ];
-
   const statsData = [
     {
       icon: Mic2,
