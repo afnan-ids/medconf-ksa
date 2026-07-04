@@ -246,7 +246,7 @@ export const translations = {
             "كل ما يتضمنه تسجيل الممارس الصحي.",
         practitionerRegistration: "تسجيل الممارسين الصحيين",
 
-        joinHealthcareProfessionals: "انضم إلى أكثر من 5000 متخصص في الرعاية الصحية",
+        joinHealthcareProfessionals: "انضم إلى أكثر من +5000 متخصص في الرعاية الصحية",
 
         practitioner: "الممارس الصحي",
         registration: "التسجيل",

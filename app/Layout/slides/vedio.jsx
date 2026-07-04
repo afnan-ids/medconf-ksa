@@ -36,9 +36,9 @@ const SlideVideo = () => {
   <div className="absolute inset-0 bg-black/20" />
 
   {/* Content Wrapper */}
-  <div className="relative w-full max-w-7xl mx-auto h-full flex items-center">
-    <div className="container mx-auto">
-      <div className="max-w-2xl sm:max-w-3xl">
+  <div className="relative w-full max-w-7xl  mx-auto h-full flex pt-30 md:pt-0 md:items-center">
+    <div className="container mx-auto pt-30 px-4 md:pt-0">
+      <div className="max-w-2xl sm:max-w-3xl pt-10 md:pt-0">
         <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-7xl font-medium drop-shadow-xl">
           <span
             className="block xs:inline font-bold mt-1 xs:mt-0 tracking-tight transition-all duration-500 bg-gradient-to-r from-cyan-400 via-purple-500 to-purple-600 bg-clip-text text-transparent"

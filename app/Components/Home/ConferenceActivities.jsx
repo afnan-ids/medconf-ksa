@@ -194,7 +194,7 @@ export default function ConferenceActivities() {
               <div className="space-y-2 xs:space-y-3 mb-4 xs:mb-6">
                 {language === "ar" && (
                   <h2
-                    className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white px-2"
+                    className="text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-white px-2"
                     dir="rtl"
                   >
                     فعاليـــــــات المؤتمـــــــــــــر

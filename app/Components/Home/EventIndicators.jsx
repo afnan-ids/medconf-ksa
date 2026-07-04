@@ -164,7 +164,7 @@ export default function EventIndicators() {
               <div className="space-y-4 mb-8">
                 {language === "ar" && (
                   <h2
-                    className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight"
+                    className="text-2xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight"
                     dir="rtl"
                   >
                     مؤشـــــرات التأثيـــــر في المؤتمر

@@ -198,7 +198,7 @@ export default function PractitionerRegistration() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
@@ -374,7 +374,7 @@ export default function PractitionerRegistration() {
                 </span>
               </h3>
 
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-3 ">
                 {features.map((feature, index) => {
                   const Icon = feature.icon;
 
@@ -391,7 +391,7 @@ export default function PractitionerRegistration() {
                         <Icon className="w-3.5 h-3.5 text-white" />
                       </div>
 
-                      <span className="text-sm text-white font-medium whitespace-nowrap">
+                      <span className="text-sm text-white font-medium">
                         {feature.text}
                       </span>
                     </div>
@@ -419,7 +419,7 @@ export default function PractitionerRegistration() {
                 </div>
 
                 <h4 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  {t.readyToJoin}?
+                  {t.readyToJoin}
                 </h4>
 
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">

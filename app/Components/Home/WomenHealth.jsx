@@ -40,17 +40,14 @@ const statsData = [
     labelAr: "نمو في العيادات المتخصصة لصحة المرأة",
     labelEn: "Women's Health Clinics Growth",
   },
- 
 ];
 const statsData2 = [
-
   {
     value: "15+",
     labelAr: "براءة اختـــــراع طبية مسجلـــــة عالميا لطبيبات سعــوديات",
     labelEn: "Global Medical Patents",
   },
 ];
-
 
 const highlightsData = [
   {
@@ -119,7 +116,7 @@ export default function WomenAndHealth() {
               {language === "ar" && (
                 <h2
                   dir="rtl"
-                  className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white px-2"
+                  className="text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white px-2"
                 >
                   المرأة والصحــــــــــة
                 </h2>
@@ -153,6 +150,21 @@ export default function WomenAndHealth() {
               >
                 Highlighting the role of women in advancing healthcare,
                 innovation, medical research, and community well-being.
+              </p>
+            )}
+            {language === "ar" && (
+              <p
+                className="
+            max-w-2xl mx-auto
+            text-neutral-300/80
+            text-xs xs:text-sm sm:text-base
+            leading-relaxed
+            font-light
+            px-2
+          "
+              >
+                تسليط الضوء على دور المرأة في تعزيز الرعاية الصحية والابتكار
+                والبحث الطبي ورفاه المجتمع.
               </p>
             )}
           </div>
@@ -279,7 +291,7 @@ export default function WomenAndHealth() {
                           </p>
                         )}
                         {language === "en" && (
-                          <p className="text-white/90 text-[9px] xs:text-[10px] sm:text-xs md:text-sm text-center mt-0.5 xs:mt-1">
+                          <p className="text-white/90 text-[5px] xs:text-[10px] sm:text-xs md:text-sm text-center mt-0.5 xs:mt-1">
                             {stat.labelEn}
                           </p>
                         )}
@@ -334,7 +346,12 @@ export default function WomenAndHealth() {
                       </div>
                     ))}
                   </div>
-                  <Image src="/images/Footer-logo.png" alt="" width={40} height={40}/>
+                  <Image
+                    src="/images/Footer-logo.png"
+                    alt=""
+                    width={40}
+                    height={40}
+                  />
                 </div>
 
                 {/* RIGHT */}
@@ -469,7 +486,7 @@ export default function WomenAndHealth() {
 
                   {/* CENTER CONTENT - Mobile optimized */}
                   <div className="flex flex-1 items-center px-3 xs:px-4 sm:px-8 lg:px-20 py-4 xs:py-5 sm:py-6">
-                    <div className="w-full py-2 xs:py-3 sm:py-4 mt-38 px-20">
+                    <div className="w-full py-2 xs:py-3 sm:py-4 mt-38 px-10 md:px-20">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 ">
                         {highlightsData.map((highlight, index) => (
                           <div
@@ -497,7 +514,7 @@ export default function WomenAndHealth() {
                             text-white
                             text-end
                             
-                            text-xs xs:text-sm
+                            text-xl md:text-xs xs:text-sm
                             md:text-base
                             leading-relaxed
                           "
@@ -510,7 +527,7 @@ export default function WomenAndHealth() {
                                 className="
                             relative
                             z-10
-                            text-white/80
+                            text-white
                             text-end
                             text-[18px]
                             leading-relaxed
