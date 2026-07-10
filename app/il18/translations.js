@@ -1,5 +1,6 @@
 export const translations = {
   en: {
+    // Navigation
     home: "Home",
     services: "Services",
     conferenceOrganization: "Conference Organization",
@@ -37,6 +38,7 @@ export const translations = {
 
     signIn: "Sign In",
 
+    // Hero Section
     discoverOurVersion: "Discover Our Version",
     alignedWithSaudi: "Aligned with Saudi Vision 2030 healthcare transformation goals",
 
@@ -57,7 +59,6 @@ export const translations = {
     nationwideImpact: "Nationwide Impact",
     stratigicPartnerCommitted: "Strategic partners committed to healthcare excellence and quality of life enhancement",
 
-
     globalNetwork: "Global Networks",
     network: "Network",
     partners: "Partners",
@@ -71,14 +72,14 @@ export const translations = {
     our: "Our",
     steamlineSolution: "Streamlined solutions for healthcare events, backed by data and decades of experience.",
     exploreService: "Explore Services",
-    viewAllServices: "View All Services",
 
     secureAccess: "Secure Access",
     complaints: "Complaints",
     secure: "Secure",
-    portals: "Portals",
-    allPortalAreEncrypted: "All portals are encrypted, PDPL compliant, and securely hosted inside Saudi Arabia.", accessAllPortals: "Access All Portals",
+    allPortalAreEncrypted: "All portals are encrypted, PDPL compliant, and securely hosted inside Saudi Arabia.",
+    accessAllPortals: "Access All Portals",
 
+    // Portal Cards
     exhibitorSponsorPortalTitle: "Exhibitor & Sponsor Portal",
     exhibitorSponsorPortalDescription: "Account creation, space booking, contract management",
 
@@ -88,7 +89,7 @@ export const translations = {
     healthcarePractitionersPortalTitle: "Healthcare Practitioners Portal",
     healthcarePractitionersPortalDescription: "License upload & SCFHS verification",
 
-    // English
+    // Service Cards
     conferenceOrganizationTitle: "Conference Organization",
     conferenceOrganizationDescription: "Full planning, live workshops, international streaming",
     conferenceOrganizationStats: "50+ events yearly",
@@ -110,6 +111,7 @@ export const translations = {
     expectedVisitors: "Expected Visitors",
     yearsExperience: "Years Experience",
 
+    // Footer
     quickLinks: "Quick Links",
     ourServices: "Our Services",
     connect: "Connect",
@@ -144,27 +146,23 @@ export const translations = {
 
     viewAllEvents: "View All Events",
 
-    conferencesAndExhibitions: "Conference & Exhibitions",
-    saudiArabiaPremiumPlatform: "Saudi Arabia's premium platform for secure medical conferences, exhibitions, CME credits, and healthcare portals.",
     hosted: "Hosted",
-    whatsOn: "What's On",
-    riyadhSaudiArabia: "Riyadh, Saudi Arabia",
-    subcribeToNewsletter: "Subcribe To Newsletter",
-    subcribe: "Subcribe",
-    allRightsReserved: "All Rights Reserved",
-    privacyPolicy: "Privacy Policy",
-    terms: "Terms",
+    subcribeToNewsletter: "Subscribe To Newsletter",
+    subcribe: "Subscribe",
 
-    conferenceOrganization: "Conference Organization",
+    // Conference Organization Page
     professionalConferenceManagement: "Professional Conference Management",
     transformYourVisioninto: "Transform Your Vision Into",
     unforgettableConferences: "Unforgettable Conferences",
-    wePlanAndManageProfessionalMedicalConferences: " We plan and manage professional medical conferences, summits, and industry events that connect healthcare leaders, innovators, and professionals from around the world.",
+    wePlanAndManageProfessionalMedicalConferences: "We plan and manage professional medical conferences, summits, and industry events that connect healthcare leaders, innovators, and professionals from around the world.",
     certified: "Certified",
+    awardWinning: "Award Winning",
+    globalReach: "Global Reach",
+    
     ourTeamSpecializeInorganizing: "Our team specializes in organizing high-quality conferences that bring together healthcare professionals, researchers, innovators, and industry leaders. From planning to execution, we handle every aspect of conference management to ensure a successful and impactful event.",
     accreditedPrograms: "Accredited Programs",
     internationalFacultyCoordination: "International Faculty Coordination",
-    scientificCommitteeManagement: "Scientific Committiee Management",
+    scientificCommitteeManagement: "Scientific Committee Management",
     whyChooseOur: "Why Choose Our",
     conferenceServices: "Conference Services",
 
@@ -174,67 +172,53 @@ export const translations = {
     comprehensive: "Comprehensive",
     solution: "Solution",
     recent: "Recent",
-    conference: "Confrenece",
     readytoOrganizeYourConference: "Ready To Organize Your Conference",
     partnerWithUsToOrganizeImpactful: "Partner with us to organize impactful medical conferences that connect professionals and drive innovation.",
     scheduleConsultation: "Schedule Consultation",
     callUs: "Call Us",
-    freeConsultation: "Free Consulatation",
+    freeConsultation: "Free Consultation",
     customProposal: "Custom Proposal",
+    support: "Support",
 
-    // EN
+    // Conference Features
     expertPlanning: "Expert Planning",
-    expertPlanningDescription:
-      "Professional planning and coordination to ensure every detail of your conference runs smoothly.",
+    expertPlanningDescription: "Professional planning and coordination to ensure every detail of your conference runs smoothly.",
     expertPlanningStats: "10+ Years Experience",
 
     speakerManagement: "Speaker Management",
-    speakerManagementDescription:
-      "Coordination with keynote speakers, medical experts, and industry leaders.",
+    speakerManagementDescription: "Coordination with keynote speakers, medical experts, and industry leaders.",
     speakerManagementStats: "500+ Speakers",
 
     attendeeEngagement: "Attendee Engagement",
-    attendeeEngagementDescription:
-      "Interactive sessions, workshops, and networking opportunities for participants.",
+    attendeeEngagementDescription: "Interactive sessions, workshops, and networking opportunities for participants.",
     attendeeEngagementStats: "95% Satisfaction",
 
     endToEndManagement: "End-to-End Management",
-    endToEndManagementDescription:
-      "From venue booking to event execution, we handle everything professionally.",
+    endToEndManagementDescription: "From venue booking to event execution, we handle everything professionally.",
     endToEndManagementStats: "200+ Events",
 
-    // EN
+    // Conference Steps
     discoveryPlanning: "Discovery & Planning",
-    discoveryPlanningDescription:
-      "Understanding your goals, audience, and conference vision.",
-    discoveryPlanningDetails:
-      "Initial consultation, goal setting, budget planning, timeline creation",
+    discoveryPlanningDescription: "Understanding your goals, audience, and conference vision.",
+    discoveryPlanningDetails: "Initial consultation, goal setting, budget planning, timeline creation",
 
     venueLogistics: "Venue & Logistics",
-    venueLogisticsDescription:
-      "Selecting and securing the perfect venue with all amenities.",
-    venueLogisticsDetails:
-      "Venue sourcing, contract negotiation, layout planning, accommodation booking",
+    venueLogisticsDescription: "Selecting and securing the perfect venue with all amenities.",
+    venueLogisticsDetails: "Venue sourcing, contract negotiation, layout planning, accommodation booking",
 
     speakerContent: "Speaker & Content",
-    speakerContentDescription:
-      "Curating experts and developing engaging session content.",
-    speakerContentDetails:
-      "Speaker invitations, abstract management, session scheduling, material preparation",
+    speakerContentDescription: "Curating experts and developing engaging session content.",
+    speakerContentDetails: "Speaker invitations, abstract management, session scheduling, material preparation",
 
     marketingRegistration: "Marketing & Registration",
-    marketingRegistrationDescription:
-      "Driving attendance and managing participant registration.",
-    marketingRegistrationDetails:
-      "Marketing campaigns, registration platform, attendee communications, reporting",
+    marketingRegistrationDescription: "Driving attendance and managing participant registration.",
+    marketingRegistrationDetails: "Marketing campaigns, registration platform, attendee communications, reporting",
 
     executionFollowUp: "Execution & Follow-up",
-    executionFollowUpDescription:
-      "Flawless on-day execution and post-event analysis.",
-    executionFollowUpDetails:
-      "On-site management, live support, feedback collection, post-event reporting",
+    executionFollowUpDescription: "Flawless on-day execution and post-event analysis.",
+    executionFollowUpDetails: "On-site management, live support, feedback collection, post-event reporting",
 
-    // EN
+    // Conference Service Categories
     planningCategory: "Planning",
     planningItem1: "Full conference planning & strategy",
     planningItem2: "Budget management & optimization",
@@ -259,7 +243,7 @@ export const translations = {
     attendeeExperienceItem3: "Mobile app & event platform",
     attendeeExperienceItem4: "On-site support & hospitality",
 
-    // EN
+    // Recent Conferences
     globalHealthSummit2024: "Global Health Summit 2024",
     medTechInnovationForum: "MedTech Innovation Forum",
     middleEastCardiologyConference: "Middle East Cardiology Conference",
@@ -268,23 +252,26 @@ export const translations = {
     abuDhabi: "Abu Dhabi",
     riyadh: "Riyadh",
 
-    // EN
-    testimonial1Text:
-      "The team delivered an exceptional conference experience. Their attention to detail and professional execution exceeded our expectations.",
+    // Testimonials
+    testimonial1Text: "The team delivered an exceptional conference experience. Their attention to detail and professional execution exceeded our expectations.",
     testimonial1Author: "Dr. Sarah Johnson",
     testimonial1Role: "Conference Chair, Global Health Summit",
 
-    testimonial2Text:
-      "From planning to execution, everything was seamless. Our attendees loved the experience, and we've already booked for next year.",
+    testimonial2Text: "From planning to execution, everything was seamless. Our attendees loved the experience, and we've already booked for next year.",
     testimonial2Author: "Prof. Ahmed Al-Rashid",
     testimonial2Role: "Medical Director, City Hospital",
 
-    support: "Support",
-    AwardWinnig: "Award Winning",
-    globalReach: "Global Reach",
+    // Conference Stats
+    eventsStat: "Events",
+    attendeesStat: "Attendees",
+    speakersStat: "Speakers",
+    countriesStat: "Countries",
+    medical: "Medical",
+    isoCertified: "ISO Certified",
   },
 
   ar: {
+    // Navigation
     home: "الرئيسية",
     services: "الخدمات",
     conferenceOrganization: "تنظيم المؤتمرات",
@@ -321,23 +308,22 @@ export const translations = {
     contact: "اتصل بنا",
 
     signIn: "تسجيل الدخول",
-    discoverOurVersion: "اكتشف رؤيتنا",
 
-    alignedWithSaudi:
-      "متوافق مع أهداف التحول الصحي لرؤية السعودية 2030",
+    // Hero Section
+    discoverOurVersion: "اكتشف رؤيتنا",
+    alignedWithSaudi: "متوافق مع أهداف التحول الصحي لرؤية السعودية 2030",
 
     eventScale: "حجم الفعالية",
     impactMatricx: "مصفوفة التأثير",
 
     digitalReach: "الوصول الرقمي",
-    BasedOnProjected:
-      "استنادًا إلى المؤشرات المتوقعة لموسم المؤتمر لعام 2026",
+    BasedOnProjected: "استنادًا إلى المؤشرات المتوقعة لموسم المؤتمر لعام 2026",
 
     exploreAllSectors: "استكشف جميع القطاعات",
-
     highlights: "أبرز الفعاليات",
     agenda: "جدول الأعمال",
     empowerment: "التمكين",
+
     enablingentities: "الجهات الداعمة",
     stratigicPartner: "الشريك الاستراتيجي",
 
@@ -355,19 +341,16 @@ export const translations = {
     ourExperties: "خبراتنا",
     healthCareFocused: "متخصصون في الرعاية الصحية",
     our: "خدماتنا",
-    services: "الخدمات",
     steamlineSolution: "حلول متكاملة لفعاليات الرعاية الصحية، مدعومة بالبيانات وخبرة تمتد لعقود.",
     exploreService: "استكشف الخدمات",
-    viewAllServices: "عرض جميع الخدمات",
 
     secureAccess: "وصول آمن",
     complaints: "الشكاوى",
     secure: "آمن",
-    portals: "البوابات",
     allPortalAreEncrypted: "جميع البوابات مشفرة ومتوافقة مع نظام حماية البيانات الشخصية (PDPL) ومستضافة بأمان داخل المملكة العربية السعودية.",
     accessAllPortals: "الوصول إلى جميع البوابات",
 
-    // Arabic
+    // Portal Cards
     exhibitorSponsorPortalTitle: "بوابة العارضين والرعاة",
     exhibitorSponsorPortalDescription: "إنشاء الحساب، حجز المساحات، وإدارة العقود",
 
@@ -377,7 +360,7 @@ export const translations = {
     healthcarePractitionersPortalTitle: "بوابة الممارسين الصحيين",
     healthcarePractitionersPortalDescription: "رفع الترخيص والتحقق من الهيئة السعودية للتخصصات الصحية",
 
-    // Arabic
+    // Service Cards
     conferenceOrganizationTitle: "تنظيم المؤتمرات",
     conferenceOrganizationDescription: "تخطيط متكامل، ورش عمل مباشرة، وبث دولي",
     conferenceOrganizationStats: "أكثر من 50 فعالية سنويًا",
@@ -424,7 +407,6 @@ export const translations = {
     privacyPolicy: "سياسة الخصوصية",
     terms: "الشروط والأحكام",
 
-    // Resources (if you decide to use them later)
     resources: "الموارد",
     cmeCredits: "ساعات التعليم الطبي المستمر",
     becomeASpeaker: "كن متحدثًا",
@@ -433,29 +415,22 @@ export const translations = {
     floorPlan: "مخطط المعرض",
     termsOfService: "شروط الاستخدام",
 
-    // Optional
     viewAllEvents: "عرض جميع الفعاليات",
 
-    conferencesAndExhibitions: "المؤتمرات والمعارض",
-    saudiArabiaPremiumPlatform: "المنصة الرائدة في المملكة العربية السعودية للمؤتمرات الطبية الآمنة، والمعارض، وساعات التعليم الطبي المستمر (CME)، وبوابات الرعاية الصحية.",
     hosted: "مستضاف",
-    whatsOn: "ما الجديد",
-    riyadhSaudiArabia: "الرياض، المملكة العربية السعودية",
     subcribeToNewsletter: "اشترك في النشرة الإخبارية",
     subcribe: "اشترك",
-    allRightsReserved: "جميع الحقوق محفوظة",
-    privacyPolicy: "سياسة الخصوصية",
-    terms: "الشروط والأحكام",
 
-    conferenceOrganization: "تنظيم المؤتمرات",
+    // Conference Organization Page
     professionalConferenceManagement: "إدارة احترافية للمؤتمرات",
     transformYourVisioninto: "حوّل رؤيتك إلى",
     unforgettableConferences: "مؤتمرات لا تُنسى",
-    wePlanAndManageProfessionalMedicalConferences:
-      "نخطط وندير المؤتمرات الطبية الاحترافية والقمم والفعاليات المتخصصة التي تجمع قادة الرعاية الصحية والمبتكرين والمهنيين من مختلف أنحاء العالم.",
+    wePlanAndManageProfessionalMedicalConferences: "نخطط وندير المؤتمرات الطبية الاحترافية والقمم والفعاليات الصناعية التي تربط قادة الرعاية الصحية والمبتكرين والمهنيين من جميع أنحاء العالم.",
     certified: "معتمد",
-    ourTeamSpecializeInorganizing:
-      "يتخصص فريقنا في تنظيم مؤتمرات عالية الجودة تجمع المتخصصين في الرعاية الصحية والباحثين والمبتكرين وقادة القطاع. ومن التخطيط إلى التنفيذ، نتولى جميع جوانب إدارة المؤتمرات لضمان نجاح الحدث وتحقيق أثره المرجو.",
+    awardWinning: "حائز على جوائز",
+    globalReach: "انتشار عالمي",
+    
+    ourTeamSpecializeInorganizing: "يتخصص فريقنا في تنظيم مؤتمرات عالية الجودة تجمع المتخصصين في الرعاية الصحية والباحثين والمبتكرين وقادة القطاع. ومن التخطيط إلى التنفيذ، نتولى جميع جوانب إدارة المؤتمرات لضمان نجاح الحدث وتحقيق أثره المرجو.",
     accreditedPrograms: "برامج معتمدة",
     internationalFacultyCoordination: "تنسيق الخبراء والمتحدثين الدوليين",
     scientificCommitteeManagement: "إدارة اللجنة العلمية",
@@ -468,68 +443,53 @@ export const translations = {
     comprehensive: "شاملة",
     solution: "الحلول",
     recent: "أحدث",
-    conference: "المؤتمرات",
     readytoOrganizeYourConference: "هل أنت مستعد لتنظيم مؤتمرك؟",
-    partnerWithUsToOrganizeImpactful:
-      "تعاون معنا لتنظيم مؤتمرات طبية مؤثرة تجمع المتخصصين وتسهم في دفع عجلة الابتكار.",
+    partnerWithUsToOrganizeImpactful: "تعاون معنا لتنظيم مؤتمرات طبية مؤثرة تجمع المتخصصين وتسهم في دفع عجلة الابتكار.",
     scheduleConsultation: "احجز استشارة",
     callUs: "اتصل بنا",
     freeConsultation: "استشارة مجانية",
     customProposal: "عرض مخصص",
+    support: "الدعم",
 
-    // AR
+    // Conference Features
     expertPlanning: "التخطيط الاحترافي",
-    expertPlanningDescription:
-      "تخطيط وتنسيق احترافي لضمان سير جميع تفاصيل مؤتمرك بسلاسة ونجاح.",
+    expertPlanningDescription: "تخطيط وتنسيق احترافي لضمان سير جميع تفاصيل مؤتمرك بسلاسة ونجاح.",
     expertPlanningStats: "أكثر من 10 سنوات خبرة",
 
     speakerManagement: "إدارة المتحدثين",
-    speakerManagementDescription:
-      "التنسيق مع المتحدثين الرئيسيين والخبراء الطبيين وقادة القطاع.",
+    speakerManagementDescription: "التنسيق مع المتحدثين الرئيسيين والخبراء الطبيين وقادة القطاع.",
     speakerManagementStats: "أكثر من 500 متحدث",
 
     attendeeEngagement: "تفاعل المشاركين",
-    attendeeEngagementDescription:
-      "جلسات تفاعلية وورش عمل وفرص للتواصل المهني للمشاركين.",
+    attendeeEngagementDescription: "جلسات تفاعلية وورش عمل وفرص للتواصل المهني للمشاركين.",
     attendeeEngagementStats: "95٪ نسبة رضا",
 
     endToEndManagement: "إدارة متكاملة",
-    endToEndManagementDescription:
-      "من حجز الموقع إلى تنفيذ الفعالية، نتولى جميع الجوانب باحترافية.",
+    endToEndManagementDescription: "من حجز الموقع إلى تنفيذ الفعالية، نتولى جميع الجوانب باحترافية.",
     endToEndManagementStats: "أكثر من 200 فعالية",
 
-    // AR
+    // Conference Steps
     discoveryPlanning: "الاكتشاف والتخطيط",
-    discoveryPlanningDescription:
-      "فهم أهدافك والجمهور المستهدف ورؤية المؤتمر.",
-    discoveryPlanningDetails:
-      "الاستشارة الأولية، تحديد الأهداف، تخطيط الميزانية، إعداد الجدول الزمني",
+    discoveryPlanningDescription: "فهم أهدافك والجمهور المستهدف ورؤية المؤتمر.",
+    discoveryPlanningDetails: "الاستشارة الأولية، تحديد الأهداف، تخطيط الميزانية، إعداد الجدول الزمني",
 
     venueLogistics: "الموقع والخدمات اللوجستية",
-    venueLogisticsDescription:
-      "اختيار وتأمين الموقع المثالي مع جميع المرافق المطلوبة.",
-    venueLogisticsDetails:
-      "اختيار الموقع، التفاوض على العقود، تخطيط المساحات، حجز الإقامة",
+    venueLogisticsDescription: "اختيار وتأمين الموقع المثالي مع جميع المرافق المطلوبة.",
+    venueLogisticsDetails: "اختيار الموقع، التفاوض على العقود، تخطيط المساحات، حجز الإقامة",
 
     speakerContent: "المتحدثون والمحتوى",
-    speakerContentDescription:
-      "اختيار الخبراء وإعداد محتوى جلسات مميز وجذاب.",
-    speakerContentDetails:
-      "دعوات المتحدثين، إدارة الملخصات العلمية، جدولة الجلسات، إعداد المواد",
+    speakerContentDescription: "اختيار الخبراء وإعداد محتوى جلسات مميز وجذاب.",
+    speakerContentDetails: "دعوات المتحدثين، إدارة الملخصات العلمية، جدولة الجلسات، إعداد المواد",
 
     marketingRegistration: "التسويق والتسجيل",
-    marketingRegistrationDescription:
-      "زيادة الحضور وإدارة تسجيل المشاركين.",
-    marketingRegistrationDetails:
-      "الحملات التسويقية، منصة التسجيل، التواصل مع المشاركين، التقارير",
+    marketingRegistrationDescription: "زيادة الحضور وإدارة تسجيل المشاركين.",
+    marketingRegistrationDetails: "الحملات التسويقية، منصة التسجيل، التواصل مع المشاركين، التقارير",
 
     executionFollowUp: "التنفيذ والمتابعة",
-    executionFollowUpDescription:
-      "تنفيذ احترافي للفعالية وتحليل النتائج بعد انتهائها.",
-    executionFollowUpDetails:
-      "إدارة الموقع، الدعم المباشر، جمع الملاحظات، تقارير ما بعد الفعالية",
+    executionFollowUpDescription: "تنفيذ احترافي للفعالية وتحليل النتائج بعد انتهائها.",
+    executionFollowUpDetails: "إدارة الموقع، الدعم المباشر، جمع الملاحظات، تقارير ما بعد الفعالية",
 
-    // AR
+    // Conference Service Categories
     planningCategory: "التخطيط",
     planningItem1: "التخطيط والاستراتيجية الشاملة للمؤتمر",
     planningItem2: "إدارة وتحسين الميزانية",
@@ -554,7 +514,7 @@ export const translations = {
     attendeeExperienceItem3: "تطبيق الهاتف ومنصة الفعالية",
     attendeeExperienceItem4: "الدعم والضيافة في موقع الفعالية",
 
-    // AR
+    // Recent Conferences
     globalHealthSummit2024: "القمة العالمية للصحة 2024",
     medTechInnovationForum: "منتدى الابتكار في التكنولوجيا الطبية",
     middleEastCardiologyConference: "مؤتمر أمراض القلب في الشرق الأوسط",
@@ -563,20 +523,21 @@ export const translations = {
     abuDhabi: "أبوظبي",
     riyadh: "الرياض",
 
-    // AR
-    testimonial1Text:
-      "قدم الفريق تجربة مؤتمر استثنائية. لقد تجاوز اهتمامهم بالتفاصيل والتنفيذ الاحترافي جميع توقعاتنا.",
+    // Testimonials
+    testimonial1Text: "قدم الفريق تجربة مؤتمر استثنائية. لقد تجاوز اهتمامهم بالتفاصيل والتنفيذ الاحترافي جميع توقعاتنا.",
     testimonial1Author: "د. سارة جونسون",
     testimonial1Role: "رئيسة المؤتمر، القمة العالمية للصحة",
 
-    testimonial2Text:
-      "من التخطيط إلى التنفيذ، سارت جميع المراحل بسلاسة. أحب المشاركون التجربة وقد قمنا بالفعل بحجز فعاليتنا للعام القادم.",
+    testimonial2Text: "من التخطيط إلى التنفيذ، سارت جميع المراحل بسلاسة. أحب المشاركون التجربة وقد قمنا بالفعل بحجز فعاليتنا للعام القادم.",
     testimonial2Author: "البروفيسور أحمد الراشد",
     testimonial2Role: "المدير الطبي، مستشفى المدينة",
 
-    support: "الدعم",
-    AwardWinnig: "حائز على جوائز",
-    globalReach: "انتشار عالمي",
-
+    // Conference Stats
+    eventsStat: "الفعاليات",
+    attendeesStat: "الحضور",
+    speakersStat: "المتحدثون",
+    countriesStat: "الدول",
+    medical: "المجال الطبي",
+    isoCertified: "حاصلون على شهادة ISO",
   },
 };
