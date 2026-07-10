@@ -33,95 +33,69 @@ export default function partnershipOpportunities() {
   const t = translations[language];
   const isRTL = language === "ar";
 
+  // Define sponsorship tiers with translations
   const sponsorshipTiers = [
     {
       id: "strategic",
       name: t.strategicPartner,
-      nameAr: t.strategicPartnerAr,
       icon: Crown,
       description: t.strategicPartnerDescription,
       color: "from-indigo-500 to-purple-600",
       price: t.strategicPartnerPrice,
       space: t.strategicPartnerSpace,
-      features: t.strategicPartnerFeatures,
+      features: [
+        t.strategicPartnerSupport,
+        t.strategicPartnerManager,
+        t.strategicPartnerParking,
+      ],
       popular: true,
-      badge: t.bestValue,
+      badge: "Best Value",
     },
     {
       id: "platinum",
       name: t.platinumPartner,
-      nameAr: t.platinumPartnerAr,
       icon: Diamond,
       description: t.platinumPartnerDescription,
       color: "from-cyan-500 to-teal-600",
       price: t.platinumPartnerPrice,
       space: t.platinumPartnerSpace,
-      features: t.platinumPartnerFeatures,
+      features: [
+        t.platinumPartnerSupport,
+        t.platinumPartnerManager,
+        t.platinumPartnerParking,
+      ],
       popular: false,
     },
     {
       id: "gold",
       name: t.goldPartner,
-      nameAr: t.goldPartnerAr,
       icon: Medal,
       description: t.goldPartnerDescription,
       color: "from-emerald-500 to-green-600",
       price: t.goldPartnerPrice,
       space: t.goldPartnerSpace,
-      features: t.goldPartnerFeatures,
+      features: [
+        t.goldPartnerSupport,
+        t.goldPartnerManager,
+        t.goldPartnerParking,
+      ],
       popular: false,
     },
     {
       id: "business",
       name: t.businessPackage,
-      nameAr: t.businessPackageAr,
       icon: Briefcase,
       description: t.businessPackageDescription,
       color: "from-blue-500 to-indigo-600",
-      price: t.businessPackagePrice,
+      price: t.businessPackagePricing,
       space: t.businessPackageSpace,
-      features: t.businessPackageFeatures,
+      features: [
+        t.businessPackageLocations,
+        t.businessPackageSupport,
+        t.businessPackageManager,
+      ],
       popular: false,
       customPrice: true,
-    },
-  ];
-
-  const benefits = [
-    {
-      icon: Users,
-      title: t.accessDecisionMakers,
-      stat: "5,000+",
-      statLabel: t.decisionMakers,
-    },
-    {
-      icon: TrendingUp,
-      title: t.brandExposure,
-      stat: "360°",
-      statLabel: t.brandExposureLabel,
-    },
-    {
-      icon: Calendar,
-      title: t.exclusiveB2BMeetings,
-      stat: "50+",
-      statLabel: t.b2bMeetings,
-    },
-    {
-      icon: Award,
-      title: t.officialRecognition,
-      stat: "100%",
-      statLabel: t.recognition,
-    },
-    {
-      icon: Globe,
-      title: t.globalMediaCoverage,
-      stat: "10M+",
-      statLabel: t.mediaReach,
-    },
-    {
-      icon: Heart,
-      title: t.vipFutureAccess,
-      stat: "24/7",
-      statLabel: t.vipSupport,
     },
   ];
 
@@ -166,10 +140,10 @@ export default function partnershipOpportunities() {
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
-              <span className="text-white">{t.sponsorshipStrategicPartnerships.split('&')[0]}</span>
+              <span className="text-white">Sponsorship &</span>
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                 {" "}
-                & {t.sponsorshipStrategicPartnerships.split('&')[1]}
+                Strategic Partnerships
               </span>
             </h2>
 
@@ -177,16 +151,6 @@ export default function partnershipOpportunities() {
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
                 {t.heroDescription}
-              </p>
-            </div>
-
-            {/* Arabic Title */}
-            <div className="mt-6" dir={isRTL ? "rtl" : "ltr"}>
-              <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-300">
-                {t.heroDescriptionAr}
-              </p>
-              <p className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent mt-2">
-                {t.heroSubtitleAr}
               </p>
             </div>
           </div>
@@ -226,10 +190,10 @@ export default function partnershipOpportunities() {
                 </span>
               </div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-                <span className="text-white">{t.chooseYourPartnershipLevel.split('Your')[0]}Your</span>
+                <span className="text-white">Choose Your</span>
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                   {" "}
-                  {t.chooseYourPartnershipLevel.split('Your')[1]}
+                  Partnership Level
                 </span>
               </h3>
               <div className="relative max-w-3xl mx-auto">
@@ -258,6 +222,15 @@ export default function partnershipOpportunities() {
                         className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${tier.color} transform -translate-y-full group-hover:translate-y-0 transition-transform duration-700`}
                       ></div>
 
+                      {/* Popular Badge */}
+                      {tier.popular && (
+                        <div className="absolute top-3 right-3 z-20">
+                          <span className="text-[10px] font-bold text-white bg-gradient-to-r from-yellow-500 to-amber-500 px-2.5 py-1 rounded-full shadow-lg">
+                            {tier.badge}
+                          </span>
+                        </div>
+                      )}
+
                       <div className="relative p-4 sm:p-5 md:p-6 flex flex-col h-full">
                         <div className="relative mb-4 sm:mb-5 md:mb-6">
                           <div
@@ -275,12 +248,6 @@ export default function partnershipOpportunities() {
                           <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-500">
                             {tier.name}
                           </h3>
-                          <p
-                            className="text-xs sm:text-sm text-gray-400 mb-1"
-                            dir={isRTL ? "rtl" : "ltr"}
-                          >
-                            {tier.nameAr}
-                          </p>
                           <p className="text-xs text-gray-500">
                             {tier.description}
                           </p>
@@ -300,13 +267,13 @@ export default function partnershipOpportunities() {
 
                         <div className="flex-1 mb-4 sm:mb-5">
                           <div className="space-y-1.5 sm:space-y-2">
-                            {tier.features.slice(0, 3).map((feature, idx) => (
+                            {tier.features.map((feature, idx) => (
                               <div
                                 key={idx}
                                 className="flex items-start gap-1.5 sm:gap-2"
                               >
                                 <div
-                                  className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-gradient-to-r ${tier.color} mt-1.5`}
+                                  className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-gradient-to-r ${tier.color} mt-1.5 flex-shrink-0`}
                                 ></div>
                                 <p className="text-xs sm:text-sm text-gray-300">
                                   {feature}
@@ -341,14 +308,14 @@ export default function partnershipOpportunities() {
             <div className="inline-flex items-center gap-2 bg-white/8 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 mb-8 shadow-lg shadow-cyan-500/5">
               <Shield className="w-4 h-4 text-cyan-400" />
               <span className="text-sm font-medium tracking-wide text-gray-300">
-                {t.whyIndustryLeaders}
+                {t.whyIndustryLeadersChooseUs}
               </span>
             </div>
 
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
-              {t.strategicAdvantage.split(' ')[0]}{" "}
+              The{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                {t.strategicAdvantage.split(' ').slice(1).join(' ')}
+                Strategic Advantage
               </span>
             </h3>
 
