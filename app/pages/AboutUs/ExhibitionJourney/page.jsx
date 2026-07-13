@@ -23,8 +23,13 @@ import {
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
 import Link from "next/link";
+import { useLanguage } from "../../../context/LanguageContext"; 
+import { translations } from "../../../il18/aboutUs/ourjourney";
 
-export default function ExhibitionJourney() {
+export default function ourjourney() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const [activeStep, setActiveStep] = useState(0);
   const [isVisible, setIsVisible] = useState({});
   const sectionRefs = useRef([]);
@@ -32,133 +37,128 @@ export default function ExhibitionJourney() {
   const journeySteps = [
     {
       id: "campaign",
-      titleAr: "حمــــــلة جلـــــــــب الرعــــــــاة",
-      titleEn: "Sponsorship Campaign",
-      timeline: "6 Months Before",
+      titleEn: t.sponsorshipCampaignTitle,
+      titleAr: t.sponsorshipCampaignTitleAr || t.sponsorshipCampaignTitle,
+      timeline: t.sponsorshipCampaignTimeline,
       icon: Megaphone,
       color: "from-blue-500 to-cyan-400",
       gradient: "blue",
       points: [
         {
           icon: Trophy,
-          textAr: "إبــــــراز الجهــــات الداعــــــمة",
-          textEn: "Supporting Entities",
+          textEn: t.supportingEntities,
+          textAr: t.supportingEntitiesAr || t.supportingEntities,
         },
         {
           icon: Share2,
-          textAr: "نشـــر المحتـــوى التعريفــي",
-          textEn: "Introductory Content",
+          textEn: t.introductoryContent,
+          textAr: t.introductoryContentAr || t.introductoryContent,
         },
       ],
-      description:
-        "Launch comprehensive outreach to secure strategic partners and sponsors for the exhibition.",
-      stats: { partners: "15+", reach: "100K+" },
+      description: t.sponsorshipCampaignDescription,
+      stats: { [t.partners]: "15+", [t.reach]: "100K+" },
     },
     {
       id: "registration",
-      titleAr: "التسويـــــــــق للتسجيــــــــــل",
-      titleEn: "Registration Campaign",
-      timeline: "2 Months Before",
+      titleEn: t.registrationCampaignTitle,
+      titleAr: t.registrationCampaignTitleAr || t.registrationCampaignTitle,
+      timeline: t.registrationCampaignTimeline,
       icon: Users,
       color: "from-purple-500 to-pink-400",
       gradient: "purple",
       points: [
         {
           icon: Users,
-          textAr: "إبــــــــــــراز المتحدثيـــــــــــــــن",
-          textEn: "Speakers & Sessions",
+          textEn: t.speakersAndSessions,
+          textAr: t.speakersAndSessionsAr || t.speakersAndSessions,
         },
         {
           icon: Trophy,
-          textAr: "إبــــــــــــراز الرعـــــــــــــــــــــــــاة",
-          textEn: "Sponsor Recognition",
+          textEn: t.sponsorRecognition,
+          textAr: t.sponsorRecognitionAr || t.sponsorRecognition,
         },
       ],
-      description:
-        "Drive attendee registrations through targeted marketing and speaker highlights.",
-      stats: { registrations: "2500+", speakers: "40+" },
+      description: t.registrationCampaignDescription,
+      stats: { [t.registrations]: "2500+", [t.speakers]: "40+" },
     },
     {
       id: "digital",
-      titleAr: "تكثيـــف التسجـــيل الرقمي",
-      titleEn: "Digital Registration",
-      timeline: "2 Weeks Before",
+      titleEn: t.digitalRegistrationTitle,
+      titleAr: t.digitalRegistrationTitleAr || t.digitalRegistrationTitle,
+      timeline: t.digitalRegistrationTimeline,
       icon: Monitor,
       color: "from-amber-500 to-orange-400",
       gradient: "amber",
       points: [
         {
           icon: Newspaper,
-          textAr: "الإعلانـــــــــات التقليديـــــــــة",
-          textEn: "Traditional Ads",
+          textEn: t.traditionalAds,
+          textAr: t.traditionalAdsAr || t.traditionalAds,
         },
         {
           icon: Calendar,
-          textAr: "ترويـــــــــج جـــدول الأعمـــال",
-          textEn: "Agenda Promotion",
+          textEn: t.agendaPromotion,
+          textAr: t.agendaPromotionAr || t.agendaPromotion,
         },
       ],
-      description:
-        "Intensify digital campaigns and promote the final agenda to maximize attendance.",
-      stats: { impressions: "500K+", clicks: "25K+" },
+      description: t.digitalRegistrationDescription,
+      stats: { [t.impressions]: "500K+", [t.clicks]: "25K+" },
     },
     {
       id: "during",
-      titleAr: "أثنــــــاء المؤتمـــــــــر",
-      titleEn: "During Event",
-      timeline: "During Conference",
+      titleEn: t.duringEventTitle,
+      titleAr: t.duringEventTitleAr || t.duringEventTitle,
+      timeline: t.duringEventTimeline,
       icon: Radio,
       color: "from-green-500 to-emerald-400",
       gradient: "green",
       points: [
         {
           icon: Clapperboard,
-          textAr: "بــــــث وتغطيـــــــــة يوميـــــة",
-          textEn: "Daily Coverage",
+          textEn: t.dailyCoverage,
+          textAr: t.dailyCoverageAr || t.dailyCoverage,
         },
         {
           icon: Users,
-          textAr: "لقـــــــــــاءات المتحدثيـــــــــن",
-          textEn: "Insights/Interviews",
+          textEn: t.insightsInterviews,
+          textAr: t.insightsInterviewsAr || t.insightsInterviews,
         },
         {
           icon: Handshake,
-          textAr: "دعــــــــــــــــم العارضــــــــــــين",
-          textEn: "Sponsor Support",
+          textEn: t.sponsorSupport,
+          textAr: t.sponsorSupportAr || t.sponsorSupport,
         },
       ],
-      description:
-        "Live coverage, speaker interviews, and dedicated sponsor support throughout the event.",
-      stats: { sessions: "60+", attendees: "3000+" },
+      description: t.duringEventDescription,
+      stats: { [t.sessions]: "60+", [t.attendees]: "3000+" },
     },
     {
       id: "after",
-      titleAr: "بعــــــــد المؤتمـــــــــر",
-      titleEn: "After Event",
-      timeline: "Post Event",
+      titleEn: t.afterEventTitle,
+      titleAr: t.afterEventTitleAr || t.afterEventTitle,
+      timeline: t.afterEventTimeline,
       icon: Video,
       color: "from-red-500 to-rose-400",
       gradient: "red",
       points: [
         {
           icon: Video,
-          textAr: "فيديـــــــــو الحصـــــــــــــــــــاد",
-          textEn: "Highlight Video",
+          textEn: t.highlightVideo,
+          textAr: t.highlightVideoAr || t.highlightVideo,
         },
         {
           icon: Handshake,
-          textAr: "شكـــــــــر الشركــــــــــــــــــــاء",
-          textEn: "Partner Thanks",
+          textEn: t.partnerThanks,
+          textAr: t.partnerThanksAr || t.partnerThanks,
         },
         {
           icon: BarChart3,
-          textAr: "إحصائيـــــــــات التأثيـــــــــــــــر",
-          textEn: "Event Statistics",
+          textEn: t.eventStatistics,
+          textAr: t.eventStatisticsAr || t.eventStatistics,
         },
       ],
-      description:
-        "Celebrate success with highlight reels, partner appreciation, and impact metrics.",
-      stats: { reach: "1M+", satisfaction: "96%" },
+      description: t.afterEventDescription,
+      stats: { [t.reachAfter]: "1M+", [t.satisfaction]: "96%" },
     },
   ];
 
@@ -200,9 +200,9 @@ export default function ExhibitionJourney() {
   return (
     <>
       <BreadCrumb
-        title="Exhibition Journey"
+        title={t.exhibitionJourney}
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[{ label: "Exhibition Journey" }]}
+        path={[{ label: t.exhibitionJourney }]}
       />
 
       <section className="relative min-h-screen py-10 sm:py-12 md:py-20 overflow-hidden">
@@ -213,27 +213,25 @@ export default function ExhibitionJourney() {
           <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto ">
+        <div className="relative max-w-7xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
               <TrendingUp className="w-4 h-4 text-yellow-300" />
               <span className="text-sm font-medium text-gray-300">
-                Your Path to Success
+                {t.yourPathToSuccess}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Exhibition </span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
+            
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                Journey Milestones
+                {t.exhibitionJourneyMilestones}
               </span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Follow our strategic roadmap from planning to post-event success —
-              every milestone brings us closer to an exceptional exhibition
-              experience.
+              {t.journeyDescription}
             </p>
           </div>
 
@@ -260,7 +258,6 @@ export default function ExhibitionJourney() {
                 >
                   {/* Desktop Layout - Alternating Cards */}
                   <div className="hidden lg:flex items-center">
-                    {/* Left Side */}
                     <div
                       className={`w-1/2 ${index % 2 === 0 ? "pr-16" : "pl-16 order-2"}`}
                     >
@@ -270,7 +267,6 @@ export default function ExhibitionJourney() {
                         }`}
                         onMouseEnter={() => setActiveStep(index)}
                       >
-                        {/* Gradient Icon Background */}
                         <div className="relative mb-4">
                           <div
                             className={`absolute inset-0 bg-gradient-to-r ${step.color} rounded-xl blur-md opacity-20 group-hover:opacity-40 transition-opacity`}
@@ -298,7 +294,6 @@ export default function ExhibitionJourney() {
 
                         <p className="text-gray-200 mb-4">{step.description}</p>
 
-                        {/* Key Points */}
                         <div className="space-y-2">
                           {step.points.map((point, idx) => {
                             const PointIcon = point.icon;
@@ -325,14 +320,13 @@ export default function ExhibitionJourney() {
                           })}
                         </div>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-white/10 ">
+                        <div className="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-white/10">
                           {Object.entries(step.stats).map(([key, value]) => (
-                            <div key={key} className="justify-self-center ">
-                              <p className="text-xl font-bold text-blue-400 justify-self-center w-full" >
+                            <div key={key} className="justify-self-center">
+                              <p className="text-xl font-bold text-blue-400 justify-self-center w-full">
                                 {value}
                               </p>
-                              <p className="text-xs text-gray-500 capitalize justify-self-center ">
+                              <p className="text-xs text-gray-500 capitalize justify-self-center">
                                 {key}
                               </p>
                             </div>
@@ -341,7 +335,6 @@ export default function ExhibitionJourney() {
                       </div>
                     </div>
 
-                    {/* Center Dot */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
                       <div
                         className={`relative w-12 h-12 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center border-4 border-gray-900 transition-all duration-300 ${
@@ -356,17 +349,14 @@ export default function ExhibitionJourney() {
                       </div>
                     </div>
 
-                    {/* Right Side - Spacer */}
                     <div className="w-1/2"></div>
                   </div>
 
                   {/* Mobile Layout - Vertical Cards */}
                   <div className="lg:hidden">
                     <div className="relative pl-10">
-                      {/* Timeline Line */}
                       <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/50 to-transparent"></div>
 
-                      {/* Step Number */}
                       <div
                         className={`absolute left-0 top-0 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center z-10`}
                       >
@@ -375,7 +365,6 @@ export default function ExhibitionJourney() {
                         </span>
                       </div>
 
-                      {/* Card */}
                       <div
                         className={`bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 transition-all duration-500 ${
                           isActive ? "ring-2 ring-blue-500/50" : ""
@@ -405,7 +394,6 @@ export default function ExhibitionJourney() {
                           {step.description}
                         </p>
 
-                        {/* Points */}
                         <div className="space-y-1.5 mb-3">
                           {step.points.map((point, idx) => {
                             const PointIcon = point.icon;
@@ -429,7 +417,6 @@ export default function ExhibitionJourney() {
                           })}
                         </div>
 
-                        {/* Stats */}
                         <div className="flex gap-4 pt-3 border-t border-white/10">
                           {Object.entries(step.stats).map(([key, value]) => (
                             <div key={key}>
@@ -449,11 +436,10 @@ export default function ExhibitionJourney() {
               );
             })}
           </div>
-          <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
 
-            {/* Floating orbs */}
+          {/* CTA Section */}
+          <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
+            <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
             <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
 
@@ -461,17 +447,16 @@ export default function ExhibitionJourney() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span className="text-xs sm:text-sm font-medium text-white/90">
-                  Join Us
+                  {t.joinUs}
                 </span>
               </div>
 
               <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                Ready to Begin Your Exhibition Journey?
+                {t.readyToBegin}
               </h4>
 
               <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                Join us in creating an unforgettable exhibition experience.
-                Let's make every milestone count
+                {t.ctaDescription}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
@@ -479,7 +464,7 @@ export default function ExhibitionJourney() {
                   href="/pages/Events"
                   className="group bg-white text-gray-900 px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Register Now
+                  {t.registerNow}
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -487,7 +472,6 @@ export default function ExhibitionJourney() {
           </div>
         </div>
 
-        {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
       </section>
     </>

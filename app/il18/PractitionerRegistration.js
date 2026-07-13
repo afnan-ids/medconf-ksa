@@ -1,297 +1,232 @@
 export const translations = {
-    en: {
-        // Benefits
-        knowledgeSharing: "Knowledge Sharing",
-        knowledgeSharingDescription:
-            "Attend educational sessions and learn about the latest medical innovations.",
-        sessions50Plus: "50+ Sessions",
+  en: {
+    // Practitioner Registration Hero
+    practitionerRegistration: "Practitioner Registration",
+    joinHealthcareProfessionals: "Join 5,000+ Healthcare Professionals",
+    practitioner: "Practitioner",
+    registration: "Registration",
+    practitionerHeroDescription: "Register as a healthcare practitioner to access exclusive conferences, workshops, and networking events. Connect with peers and stay at the forefront of medical innovation.",
 
-        networking: "Networking",
-        networkingDescription:
-            "Connect with doctors, researchers, and healthcare experts.",
-        peers1000Plus: "1000+ Peers",
+    // Stats
+    activeMembers: "Active Members",
+    eventsYearly: "Events Yearly",
+    specialties: "Specialties",
+    cmeCreditsStat: "CME Credits",
 
-        industryInsights: "Industry Insights",
-        industryInsightsDescription:
-            "Explore new technologies and medical solutions from leading companies.",
-        exhibitors200Plus: "200+ Exhibitors",
+    // Who Can Register
+    whoCanRegister: "Who Can Register?",
+    whoCanRegisterDescription: "Our registration is open to all qualified healthcare professionals looking to expand their knowledge and network.",
 
-        professionalGrowth: "Professional Growth",
-        professionalGrowthDescription:
-            "Enhance your professional network and career opportunities.",
-        cmeCredits: "CME Credits",
+    // Practitioner Types
+    physiciansSpecialists: "Physicians & Specialists",
+    physiciansSpecialistsDescription: "Medical doctors across all specialties",
 
-        // Process
-        signUp: "Sign Up",
-        signUpDescription:
-            "Fill out the practitioner registration form with your details.",
+    researchersAcademics: "Researchers & Academics",
+    researchersAcademicsDescription: "Medical researchers and faculty members",
 
-        verification: "Verification",
-        verificationDescription:
-            "Our team verifies your professional credentials and license.",
+    healthcareAdministrators: "Healthcare Administrators",
+    healthcareAdministratorsDescription: "Hospital and clinic management professionals",
 
-        confirmation: "Confirmation",
-        confirmationDescription:
-            "Receive confirmation and event access details via email.",
+    alliedHealthProfessionals: "Allied Health Professionals",
+    alliedHealthProfessionalsDescription: "Nurses, technicians, and therapists",
 
-        attendEvent: "Attend Event",
-        attendEventDescription:
-            "Participate in conferences, workshops, and networking sessions.",
+    // Benefits Section
+    benefitsOfRegistration: "Benefits of Registration",
 
-        // Practitioner Types
-        physiciansSpecialists: "Physicians & Specialists",
-        physiciansSpecialistsDescription:
-            "Medical doctors across all specialties",
+    knowledgeSharing: "Knowledge Sharing",
+    knowledgeSharingDescription: "Attend educational sessions and learn about the latest medical innovations.",
+    sessions50Plus: "50+ Sessions",
 
-        researchersAcademics: "Researchers & Academics",
-        researchersAcademicsDescription:
-            "Medical researchers and faculty members",
+    networking: "Networking",
+    networkingDescription: "Connect with doctors, researchers, and healthcare experts.",
+    peers1000Plus: "1000+ Peers",
 
-        healthcareAdministrators: "Healthcare Administrators",
-        healthcareAdministratorsDescription:
-            "Hospital and clinic management professionals",
+    industryInsights: "Industry Insights",
+    industryInsightsDescription: "Explore new technologies and medical solutions from leading companies.",
+    exhibitors200Plus: "200+ Exhibitors",
 
-        alliedHealthProfessionals: "Allied Health Professionals",
-        alliedHealthProfessionalsDescription:
-            "Nurses, technicians, and therapists",
+    professionalGrowth: "Professional Growth",
+    professionalGrowthDescription: "Enhance your professional network and career opportunities.",
+    cmeCredits: "CME Credits",
 
-        // Features
-        scfhsLicenseVerificationIncluded:
-            "SCFHS license verification included",
+    // Benefits Section Titles
+    benefitsTitle: "Benefits of Registration",
+    benefitsDescription: "Discover the value of joining our healthcare events and professional network.",
 
-        accessToAllConferenceSessions:
-            "Access to all conference sessions",
+    // Process Section
+    simpleProcess: "Simple",
+    fourStepProcess: "4-Step Process",
+    step: "Step",
 
-        exhibitorHallAccess:
-            "Exhibitor hall access",
+    signUp: "Sign Up",
+    signUpDescription: "Fill out the practitioner registration form with your details.",
 
-        networkingLoungeAccess:
-            "Networking lounge access",
+    verification: "Verification",
+    verificationDescription: "Our team verifies your professional credentials and license.",
 
-        cmeCpdCreditTracking:
-            "CME/CPD credit tracking",
+    confirmation: "Confirmation",
+    confirmationDescription: "Receive confirmation and event access details via email.",
 
-        workshopParticipation:
-            "Workshop participation",
+    attendEvent: "Attend Event",
+    attendEventDescription: "Participate in conferences, workshops, and networking sessions.",
 
-        eventMaterialsResources:
-            "Event materials & resources",
+    registrationProcessTitle: "Registration Process",
+    registrationProcessDescription: "Complete your registration in a few simple steps.",
 
-        postEventContentAccess:
-            "Post-event content access",
+    // Features Section
+    everythingIncluded: "Everything Included in Your",
+    registrationText: "Registration",
 
-        // EN
-        benefitsTitle: "Benefits of Registration",
-        benefitsDescription:
-            "Discover the value of joining our healthcare events and professional network.",
+    scfhsLicenseVerificationIncluded: "SCFHS license verification included",
 
-        registrationProcessTitle: "Registration Process",
-        registrationProcessDescription:
-            "Complete your registration in a few simple steps.",
+    accessToAllConferenceSessions: "Access to all conference sessions",
 
-        practitionerTypesTitle: "Who Can Register",
-        practitionerTypesDescription:
-            "Healthcare professionals from various disciplines are welcome.",
+    exhibitorHallAccess: "Exhibitor hall access",
 
-        registrationFeaturesTitle: "Registration Benefits",
-        registrationFeaturesDescription:
-            "Everything included with your practitioner registration.",
+    networkingLoungeAccess: "Networking lounge access",
 
-        practitionerRegistration: "Practitioner Registration",
+    cmeCpdCreditTracking: "CME/CPD credit tracking",
 
-        joinHealthcareProfessionals: "Join 5,000+ Healthcare Professionals",
+    workshopParticipation: "Workshop participation",
 
-        practitioner: "Practitioner",
-        registration: "Registration",
+    eventMaterialsResources: "Event materials & resources",
 
-        practitionerHeroDescription:
-            "Register as a healthcare practitioner to access exclusive conferences, workshops, and networking events. Connect with peers and stay at the forefront of medical innovation.",
+    postEventContentAccess: "Post-event content access",
 
-        // Stats
-        activeMembers: "Active Members",
-        eventsYearly: "Events Yearly",
-        specialties: "Specialties",
-        cmeCreditsStat: "CME Credits",
+    registrationFeaturesTitle: "Registration Benefits",
+    registrationFeaturesDescription: "Everything included with your practitioner registration.",
 
-        // Practitioner Types Section
-        whoCanRegister: "Who Can Register?",
-        whoCanRegisterDescription:
-            "Our registration is open to all qualified healthcare professionals looking to expand their knowledge and network.",
+    // CTA Section
+    limitedTimeOffer: "Limited Time Offer",
 
-        // Benefits Section
-        benefitsOfRegistration: "Benefits of Registration",
+    readyToJoin: "Ready to Join?",
 
-        // Process Section
-        simpleProcess: "Simple",
-        fourStepProcess: "4-Step Process",
+    readyToJoinDescription: "Become part of a professional healthcare network and stay updated with the latest industry innovations.",
 
-        step: "Step",
+    registerNow: "Register Now",
 
-        // Features Section
-        everythingIncluded: "Everything Included in Your",
-        registrationText: "Registration",
+    freeRegistrationLimitedTime: "Free registration for limited time",
 
-        // CTA Section
-        limitedTimeOffer: "Limited Time Offer",
+    verifiedProfessionalsOnly: "Verified professionals only",
 
-        readyToJoin: "Ready to Join?",
+    // Practitioner Types Section
+    practitionerTypesTitle: "Who Can Register",
+    practitionerTypesDescription: "Healthcare professionals from various disciplines are welcome.",
+  },
 
-        readyToJoinDescription:
-            "Become part of a professional healthcare network and stay updated with the latest industry innovations.",
+  ar: {
+    // Practitioner Registration Hero
+    practitionerRegistration: "تسجيل الممارسين",
+    joinHealthcareProfessionals: "انضم إلى أكثر من 5000 متخصص في الرعاية الصحية",
+    practitioner: "الممارس الصحي",
+    registration: "التسجيل",
+    practitionerHeroDescription: "سجل كممارس رعاية صحية للوصول إلى مؤتمرات وورش عمل وفعاليات تواصل حصرية. تواصل مع زملائك وابقَ على اطلاع دائم بأحدث الابتكارات الطبية.",
 
-        registerNow: "Register Now",
+    // Stats
+    activeMembers: "أكثر من 5000 عضو نشط",
+    eventsYearly: "أكثر من 150 فعالية سنويًا",
+    specialties: "أكثر من 30 تخصصًا",
+    cmeCreditsStat: "أكثر من 50 ساعة معتمدة للتعليم الطبي المستمر",
 
-        freeRegistrationLimitedTime:
-            "Free registration for limited time",
+    // Who Can Register
+    whoCanRegister: "من يمكنه التسجيل؟",
+    whoCanRegisterDescription: "التسجيل مفتوح لجميع متخصصي الرعاية الصحية المؤهلين الراغبين في توسيع معارفهم وشبكة علاقاتهم.",
 
-        verifiedProfessionalsOnly:
-            "Verified professionals only",
+    // Practitioner Types
+    physiciansSpecialists: "الأطباء والمتخصصون",
+    physiciansSpecialistsDescription: "أطباء من جميع التخصصات",
 
-    },
-    ar: {
-        // Benefits
-        knowledgeSharing: "مشاركة المعرفة",
-        knowledgeSharingDescription:
-            "احضر الجلسات التعليمية وتعرّف على أحدث الابتكارات الطبية.",
-        sessions50Plus: "50+ جلسة",
+    researchersAcademics: "الباحثون والأكاديميون",
+    researchersAcademicsDescription: "باحثون طبيون وأعضاء هيئة تدريس",
 
-        networking: "التواصل المهني",
-        networkingDescription:
-            "تواصل مع الأطباء والباحثين وخبراء الرعاية الصحية.",
-        peers1000Plus: "1000+ مشارك",
+    healthcareAdministrators: "مديرو الرعاية الصحية",
+    healthcareAdministratorsDescription: "متخصصو إدارة المستشفيات والعيادات",
 
-        industryInsights: "رؤى القطاع الصحي",
-        industryInsightsDescription:
-            "استكشف التقنيات الجديدة والحلول الطبية من الشركات الرائدة.",
-        exhibitors200Plus: "200+ عارض",
+    alliedHealthProfessionals: "متخصصو المهن الصحية المساعدة",
+    alliedHealthProfessionalsDescription: "ممرضون وفنيون ومعالجون",
 
-        professionalGrowth: "التطوير المهني",
-        professionalGrowthDescription:
-            "عزّز شبكتك المهنية وفرصك الوظيفية.",
-        cmeCredits: "ساعات CME معتمدة",
+    // Benefits Section
+    benefitsOfRegistration: "مزايا التسجيل",
 
-        // Process
-        signUp: "التسجيل",
-        signUpDescription:
-            "قم بتعبئة نموذج تسجيل الممارس ببياناتك.",
+    knowledgeSharing: "تبادل المعرفة",
+    knowledgeSharingDescription: "حضور جلسات تعليمية والتعرف على أحدث الابتكارات الطبية.",
+    sessions50Plus: "أكثر من 50 جلسة",
 
-        verification: "التحقق",
-        verificationDescription:
-            "يقوم فريقنا بالتحقق من مؤهلاتك المهنية وترخيصك.",
+    networking: "التواصل المهني",
+    networkingDescription: "تواصل مع الأطباء والباحثين وخبراء الرعاية الصحية.",
+    peers1000Plus: "أكثر من 1000 زميل",
 
-        confirmation: "التأكيد",
-        confirmationDescription:
-            "استلم رسالة تأكيد وتفاصيل الوصول إلى الحدث عبر البريد الإلكتروني.",
+    industryInsights: "رؤى قطاعية",
+    industryInsightsDescription: "اكتشف أحدث التقنيات والحلول الطبية من الشركات الرائدة.",
+    exhibitors200Plus: "أكثر من 200 عارض",
 
-        attendEvent: "حضور الفعالية",
-        attendEventDescription:
-            "شارك في المؤتمرات وورش العمل وجلسات التواصل المهني.",
+    professionalGrowth: "التطوير المهني",
+    professionalGrowthDescription: "عزز شبكتك المهنية وفرصك الوظيفية.",
+    cmeCredits: "ساعات معتمدة للتعليم الطبي المستمر",
 
-        // Practitioner Types
-        physiciansSpecialists: "الأطباء والاستشاريون",
-        physiciansSpecialistsDescription:
-            "الأطباء في جميع التخصصات الطبية",
+    // Benefits Section Titles
+    benefitsTitle: "مزايا التسجيل",
+    benefitsDescription: "اكتشف قيمة الانضمام إلى فعالياتنا الصحية وشبكتنا المهنية.",
 
-        researchersAcademics: "الباحثون والأكاديميون",
-        researchersAcademicsDescription:
-            "الباحثون الطبيون وأعضاء هيئة التدريس",
+    // Process Section
+    simpleProcess: "عملية",
+    fourStepProcess: "بسيطة من 4 خطوات",
+    step: "الخطوة",
 
-        healthcareAdministrators: "إداريّو الرعاية الصحية",
-        healthcareAdministratorsDescription:
-            "المتخصصون في إدارة المستشفيات والعيادات",
+    signUp: "التسجيل",
+    signUpDescription: "املأ استمارة تسجيل الممارسين ببياناتك.",
 
-        alliedHealthProfessionals: "المهن الصحية المساندة",
-        alliedHealthProfessionalsDescription:
-            "الممرضون والفنيون والمعالجون",
+    verification: "التحقق",
+    verificationDescription: "يتحقق فريقنا من مؤهلاتك المهنية ورخصتك.",
 
-        // Features
-        scfhsLicenseVerificationIncluded:
-            "يشمل التحقق من ترخيص الهيئة السعودية للتخصصات الصحية",
+    confirmation: "التأكيد",
+    confirmationDescription: "استلم تأكيدًا وتفاصيل الوصول إلى الفعالية عبر البريد الإلكتروني.",
 
-        accessToAllConferenceSessions:
-            "الوصول إلى جميع جلسات المؤتمر",
+    attendEvent: "حضور الفعالية",
+    attendEventDescription: "شارك في المؤتمرات وورش العمل وجلسات التواصل.",
 
-        exhibitorHallAccess:
-            "الدخول إلى منطقة المعرض",
+    registrationProcessTitle: "خطوات التسجيل",
+    registrationProcessDescription: "أكمل تسجيلك من خلال خطوات بسيطة وسريعة.",
 
-        networkingLoungeAccess:
-            "الوصول إلى صالة التواصل المهني",
+    // Features Section
+    everythingIncluded: "كل ما يشمله",
+    registrationText: "تسجيلك",
 
-        cmeCpdCreditTracking:
-            "تتبع ساعات CME/CPD",
+    scfhsLicenseVerificationIncluded: "التحقق من ترخيص SCFHS مشمول",
 
-        workshopParticipation:
-            "المشاركة في ورش العمل",
+    accessToAllConferenceSessions: "الوصول إلى جميع جلسات المؤتمر",
 
-        eventMaterialsResources:
-            "مواد وموارد الفعالية",
+    exhibitorHallAccess: "الوصول إلى قاعة العارضين",
 
-        postEventContentAccess:
-            "الوصول إلى محتوى الفعالية بعد انتهائها",
-        // AR
-        benefitsTitle: "مزايا التسجيل",
-        benefitsDescription:
-            "اكتشف قيمة الانضمام إلى فعالياتنا الصحية وشبكتنا المهنية.",
+    networkingLoungeAccess: "الوصول إلى ردهة التواصل",
 
-        registrationProcessTitle: "خطوات التسجيل",
-        registrationProcessDescription:
-            "أكمل تسجيلك من خلال خطوات بسيطة وسريعة.",
+    cmeCpdCreditTracking: "تتبع ساعات التعليم الطبي المستمر/التطوير المهني المستمر",
 
-        practitionerTypesTitle: "من يمكنه التسجيل",
-        practitionerTypesDescription:
-            "نرحب بالمتخصصين في الرعاية الصحية من مختلف المجالات.",
+    workshopParticipation: "المشاركة في ورش العمل",
 
-        registrationFeaturesTitle: "مزايا التسجيل",
-        registrationFeaturesDescription:
-            "كل ما يتضمنه تسجيل الممارس الصحي.",
-        practitionerRegistration: "تسجيل الممارسين الصحيين",
+    eventMaterialsResources: "مواد وموارد الفعالية",
 
         joinHealthcareProfessionals: "انضم إلى أكثر من +5000 متخصص في الرعاية الصحية",
+    postEventContentAccess: "الوصول إلى محتوى ما بعد الفعالية",
 
-        practitioner: "الممارس الصحي",
-        registration: "التسجيل",
+    registrationFeaturesTitle: "مزايا التسجيل",
+    registrationFeaturesDescription: "كل ما يتضمنه تسجيل الممارس الصحي.",
 
-        practitionerHeroDescription:
-            "سجّل كممارس صحي للوصول إلى المؤتمرات وورش العمل وفعاليات التواصل الحصرية. تواصل مع زملائك وابقَ على اطلاع بأحدث الابتكارات الطبية.",
+    // CTA Section
+    limitedTimeOffer: "عرض لفترة محدودة",
 
-        // Stats
-        activeMembers: "الأعضاء النشطون",
-        eventsYearly: "فعالية سنويًا",
-        specialties: "التخصصات",
-        cmeCreditsStat: "ساعات CME",
+    readyToJoin: "هل أنت مستعد للانضمام؟",
 
-        // Practitioner Types Section
-        whoCanRegister: "من يمكنه التسجيل؟",
-        whoCanRegisterDescription:
-            "التسجيل متاح لجميع المتخصصين المؤهلين في الرعاية الصحية الراغبين في توسيع معرفتهم وشبكتهم المهنية.",
+    readyToJoinDescription: "كن جزءًا من شبكة مهنية للرعاية الصحية وابقَ على اطلاع بأحدث الابتكارات في القطاع.",
 
-        // Benefits Section
-        benefitsOfRegistration: "مزايا التسجيل",
+    registerNow: "سجل الآن",
 
-        // Process Section
-        simpleProcess: "عملية",
-        fourStepProcess: "من 4 خطوات",
+    freeRegistrationLimitedTime: "تسجيل مجاني لفترة محدودة",
 
-        step: "الخطوة",
+    verifiedProfessionalsOnly: "للمهنيين المعتمدين فقط",
 
-        // Features Section
-        everythingIncluded: "كل ما يتضمنه",
-        registrationText: "التسجيل",
-
-        // CTA Section
-        limitedTimeOffer: "عرض لفترة محدودة",
-
-        readyToJoin: "هل أنت مستعد للانضمام؟",
-
-        readyToJoinDescription:
-            "كن جزءًا من شبكة مهنية للرعاية الصحية وابقَ على اطلاع بأحدث الابتكارات في القطاع.",
-
-        registerNow: "سجل الآن",
-
-        freeRegistrationLimitedTime:
-            "تسجيل مجاني لفترة محدودة",
-
-        verifiedProfessionalsOnly:
-            "للمهنيين المعتمدين فقط",
-    }
-}
+    // Practitioner Types Section
+    practitionerTypesTitle: "من يمكنه التسجيل",
+    practitionerTypesDescription: "نرحب بالمتخصصين في الرعاية الصحية من مختلف المجالات.",
+  },
+};
