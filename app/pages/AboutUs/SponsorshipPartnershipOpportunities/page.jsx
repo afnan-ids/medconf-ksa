@@ -36,52 +36,6 @@ export default function partnershipOpportunities() {
   // Define sponsorship tiers with translations
   const sponsorshipTiers = [
     {
-      id: "strategic",
-      name: t.strategicPartner,
-      icon: Crown,
-      description: t.strategicPartnerDescription,
-      color: "from-indigo-500 to-purple-600",
-      price: t.strategicPartnerPrice,
-      space: t.strategicPartnerSpace,
-      features: [
-        t.strategicPartnerSupport,
-        t.strategicPartnerManager,
-        t.strategicPartnerParking,
-      ],
-      popular: true,
-      badge: "Best Value",
-    },
-    {
-      id: "platinum",
-      name: t.platinumPartner,
-      icon: Diamond,
-      description: t.platinumPartnerDescription,
-      color: "from-cyan-500 to-teal-600",
-      price: t.platinumPartnerPrice,
-      space: t.platinumPartnerSpace,
-      features: [
-        t.platinumPartnerSupport,
-        t.platinumPartnerManager,
-        t.platinumPartnerParking,
-      ],
-      popular: false,
-    },
-    {
-      id: "gold",
-      name: t.goldPartner,
-      icon: Medal,
-      description: t.goldPartnerDescription,
-      color: "from-emerald-500 to-green-600",
-      price: t.goldPartnerPrice,
-      space: t.goldPartnerSpace,
-      features: [
-        t.goldPartnerSupport,
-        t.goldPartnerManager,
-        t.goldPartnerParking,
-      ],
-      popular: false,
-    },
-    {
       id: "business",
       name: t.businessPackage,
       icon: Briefcase,
@@ -92,10 +46,67 @@ export default function partnershipOpportunities() {
       features: [
         t.businessPackageLocations,
         t.businessPackageSupport,
+        t.partnershipManager,
+        t.businessPackageParking,
         t.businessPackageManager,
       ],
       popular: false,
       customPrice: true,
+    },
+
+    {
+      id: "gold",
+      name: t.goldPartner,
+      icon: Medal,
+      description: t.goldPartnerDescription,
+      color: "from-emerald-500 to-green-600",
+      price: t.goldPartnerPrice,
+      // space: t.goldPartnerSpace,
+      features: [
+        t.goldPartnerSpace,
+        t.goldPartnerSupport,
+        t.partnershipManager,
+        t.goldPartnerParking,
+        t.goldPartnerReport,
+      ],
+      popular: false,
+    },
+    {
+      id: "platinum",
+      name: t.platinumPartner,
+      icon: Diamond,
+      description: t.platinumPartnerDescription,
+      color: "from-cyan-500 to-teal-600",
+      price: t.platinumPartnerPrice,
+      space: t.platinumPartnerSpace,
+      features: [
+        t.platinumPartnerSpace,
+        t.platinumPartnerSupport,
+        t.platinumPartnerManager,
+        t.platinumPartnerParking,
+        t.platinumPartnerReport,
+      ],
+      popular: false,
+    },
+
+    {
+      id: "strategic",
+      name: t.strategicPartner,
+      icon: Crown,
+      description: t.strategicPartnerDescription,
+      color: "from-indigo-500 to-purple-600",
+      price: t.strategicPartnerPrice,
+      // space: t.strategicPartnerSpace,
+      features: [
+        t.strategicPartnerSpace,
+        t.strategicPartnerSupport,
+        t.strategicPartnerManager,
+        t.strategicPartnerParking,
+        t.strategicPartnerParking2,
+        t.strategicPartnerReport,
+      ],
+      popular: true,
+      badge: "Best Value",
     },
   ];
 
@@ -261,7 +272,7 @@ export default function partnershipOpportunities() {
                             {tier.price}
                           </div>
                           <div className="text-[10px] sm:text-xs text-gray-400">
-                            {tier.space}
+                            {/* {tier.space} */}
                           </div>
                         </div>
 

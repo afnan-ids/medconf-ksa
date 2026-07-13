@@ -22,32 +22,37 @@ export const translations = {
     chooseYourPartnershipLevel: "Choose Your Partnership Level",
     selectPackageDescription: "Select the package that aligns with your business objectives",
 
+    partnershipManager: "Partnership Manager",
     // Strategic Partner
-    strategicPartner: "Strategic Partner",
+    strategicPartner: "Strategic Sponsor",
     strategicPartnerDescription: "Maximum visibility and exclusive benefits for industry leaders",
-    strategicPartnerPrice: "2,000,000 SAR",
-    strategicPartnerSpace: "230 m²",
+    strategicPartnerPrice: "Based on Space and Location",
+    strategicPartnerSpace: "Space: 230 sqm",
     strategicPartnerSupport: "Marketing support as per attached plan",
-    strategicPartnerManager: "Dedicated partnership manager",
-    strategicPartnerParking: "2 VVIP parking spaces",
+    strategicPartnerManager: "Dedicated Partnership Manager",
+    strategicPartnerParking: "2 VIP parking spaces",
+    strategicPartnerParking2: "4 VIP parking spaces",
+    strategicPartnerReport: "Dedicated Performance Report",
 
     // Platinum Partner
-    platinumPartner: "Platinum Partner",
+    platinumPartner: "Platinum Sponsor",
     platinumPartnerDescription: "Premium exposure with comprehensive benefits",
     platinumPartnerPrice: "1,500,000 SAR",
-    platinumPartnerSpace: "160 m²",
+    platinumPartnerSpace: "Space: 160 sqm ",
     platinumPartnerSupport: "Marketing support as per attached plan",
-    platinumPartnerManager: "Dedicated partnership manager",
-    platinumPartnerParking: "4 VIP parking spaces",
+    platinumPartnerManager: "Dedicated Partnership Manager",
+    platinumPartnerParking: "4 VIP Parking",
+    platinumPartnerReport: "Dedicated Performance Report",
 
     // Gold Partner
-    goldPartner: "Gold Partner",
+    goldPartner: "Gold Sponsor",
     goldPartnerDescription: "Strong brand presence with key benefits",
     goldPartnerPrice: "1,000,000 SAR",
-    goldPartnerSpace: "120 m²",
+    goldPartnerSpace: "Space: 120 sqm",
     goldPartnerSupport: "Marketing support as per attached plan",
     goldPartnerManager: "Dedicated partnership manager",
-    goldPartnerParking: "3 VIP parking spaces",
+    goldPartnerReport: "Dedicated Performance Report",
+    goldPartnerParking: "3 VIP Parking",
 
     // Business Package
     businessPackage: "Business Package",
@@ -56,7 +61,8 @@ export const translations = {
     businessPackageSpace: "Flexible space",
     businessPackageLocations: "Various spaces in multiple locations",
     businessPackageSupport: "Marketing support as per attached plan",
-    businessPackageManager: "Dedicated partnership manager",
+    businessPackageManager: "Dedicated Performance Report",
+    businessPackageParking: "2 VIP Parking",
 
     // Why Choose Us
     whyIndustryLeadersChooseUs: "Why Industry Leaders Choose Us",
@@ -99,33 +105,40 @@ export const translations = {
     partnershipPackages: "باقات الشراكة",
     chooseYourPartnershipLevel: "اختر مستوى شراكتك",
     selectPackageDescription: "اختر الباقة التي تتوافق مع أهداف عملك",
-
+    partnershipManager: "مديــــــــــــــــــــــــــــــــــــر حســــــــــــــــــــــــــــــاب ",
     // Strategic Partner
-    strategicPartner: "شريك استراتيجي",
+    strategicPartner: "الراعي الاستراتيجي",
     strategicPartnerDescription: "أقصى قدر من الظهور ومزايا حصرية لرواد الصناعة",
-    strategicPartnerPrice: "2,000,000 ريال سعودي",
-    strategicPartnerSpace: "230 متر مربع",
-    strategicPartnerSupport: "دعم تسويقي وفقًا للخطة المرفقة",
-    strategicPartnerManager: "مدير شراكة مخصص",
-    strategicPartnerParking: "موقفان لكبار الشخصيات",
+    strategicPartnerLocation: "مساحـــــات مختلفـــــة بمـــــواقع متعــــــــددة",
+    strategicPartnerPrice: " حسب المساحة والموقع",
+    strategicPartnerSpace: "مساحة 230 م٢",
+
+    strategicPartnerSupport: "دعـــــم تسويقـــــي وفـــــق الخطـــة المرفقة",
+    strategicPartnerManager: "مديــــــــــــــــــر حســــــــــــاب مخصص للشريك",
+    strategicPartnerParking: "مواقـــــــــــــــــــــــــــــــف VIP عــــــــــــــــــــدد 2",
+    strategicPartnerParking2: "مــــــــــــــــــــــــــــــواقف VIP عــــــــــــــــــــــدد 4",
+    strategicPartnerReport: "تقريــــــــــــــــــــــــــــر أداء مخــــــــــــــــــــــــصص",
 
     // Platinum Partner
-    platinumPartner: "شريك بلاتيني",
+    platinumPartner: "الراعي البلاتيني",
     platinumPartnerDescription: "ظهور مميز مع مزايا شاملة",
     platinumPartnerPrice: "1,500,000 ريال سعودي",
-    platinumPartnerSpace: "160 متر مربع",
+    platinumPartnerSpace: "مساحة 160 م٢",
     platinumPartnerSupport: "دعم تسويقي وفقًا للخطة المرفقة",
-    platinumPartnerManager: "مدير شراكة مخصص",
-    platinumPartnerParking: "4 مواقف لكبار الشخصيات",
+    platinumPartnerManager: "مديــــــــــــر حســــــــــــاب مخصص للشريــــــك",
+    platinumPartnerParking: "• مواقــــــــــــــــــــــــف VIP عــــــــــــــــــــــــــــدد 4",
+    platinumPartnerReport: "تقريــــــــــــــــــــــــــــر أداء مخــــــــــــــــــــــــصص",
 
     // Gold Partner
-    goldPartner: "شريك ذهبي",
+    goldPartner: "الراعي الذهبي",
     goldPartnerDescription: "حضور قوي للعلامة التجارية مع مزايا رئيسية",
     goldPartnerPrice: "1,000,000 ريال سعودي",
-    goldPartnerSpace: "120 متر مربع",
+    goldPartnerSpace: "مساحة 120 م٢",
+
     goldPartnerSupport: "دعم تسويقي وفقًا للخطة المرفقة",
     goldPartnerManager: "مدير شراكة مخصص",
-    goldPartnerParking: "3 مواقف لكبار الشخصيات",
+    goldPartnerReport: "تقريــــــــــــــــــــــــــــر أداء مخــــــــــــــــــــــــصص",
+    goldPartnerParking: "مواقــــــــــــــــــــــــف VIP عـــــــــــــــــــــــــــــدد 3",
 
     // Business Package
     businessPackage: "باقة الأعمال",
@@ -134,8 +147,8 @@ export const translations = {
     businessPackageSpace: "مساحة مرنة",
     businessPackageLocations: "مساحات متنوعة في مواقع متعددة",
     businessPackageSupport: "دعم تسويقي وفقًا للخطة المرفقة",
-    businessPackageManager: "مدير شراكات متخصص",
-
+    businessPackageManager: "تقريــــــــــــر أداء عــــــــــــام عـــن المؤتمــــــــــــر",
+    businessPackageParking: "مواقـــــــــــــــــــــــــــــــف VIP عــــــــــــــــــــدد 2",
     // Why Choose Us
     whyIndustryLeadersChooseUs: "لماذا يختارنا رواد الصناعة؟",
     strategicAdvantage: "الميزة الاستراتيجية",
