@@ -58,19 +58,19 @@ export default function Footer() {
   const portals = [
     {
       label: t.sponsorPortal,
-      href: "/pages/Portals/SponcerPortal/dashboard",
+      href: "https://hpql-sponsor.i-diligence.com/login",
     },
     {
       label: t.exhibitorPortal,
-      href: "/pages/Portals/ExhibitorPortal/dashboard",
+      href: "https://hpql-exhibitor.i-diligence.com/login",
     },
     {
       label: t.visitorPortal,
-      href: "/pages/Portals/VisitorPortal/dashboard",
+      href: "https://hpql-visitor.i-diligence.com/login",
     },
     {
       label: t.healthCarePortal,
-      href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
+      href: "https://hpql-healthcare-practitioner.i-diligence.com/login",
     },
     {
       label: t.viewAllPortals,

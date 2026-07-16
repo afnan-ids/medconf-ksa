@@ -67,22 +67,22 @@ const navlinks = [
     submenus: [
       {
         label: "sponsorPortal",
-        href: "/pages/Portals/SponcerPortal/dashboard",
+        href: "https://hpql-sponsor.i-diligence.com/login",
         icon: Trophy,
       },
       {
         label: "exhibitorPortal",
-        href: "/pages/Portals/ExhibitorPortal/dashboard",
+        href: "https://hpql-exhibitor.i-diligence.com/login",
         icon: Building,
       },
       {
         label: "visitorPortal",
-        href: "/pages/Portals/VisitorPortal/dashboard",
+        href: "https://hpql-visitor.i-diligence.com/login",
         icon: Eye,
       },
       {
         label: "healthCarePortal",
-        href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
+        href: "https://hpql-healthcare-practitioner.i-diligence.com/login",
         icon: Stethoscope,
       },
       {
@@ -247,10 +247,10 @@ export default function Navbar() {
 
   // Portal options for Sign In dropdown
   const portalOptions = [
-    { label: "sponsorPortal", href: "/pages/Portals/SponcerPortal/dashboard", icon: Trophy },
-    { label: "exhibitorPortal", href: "/pages/Portals/ExhibitorPortal/dashboard", icon: Building },
-    { label: "visitorPortal", href: "/pages/Portals/VisitorPortal/dashboard", icon: Eye },
-    { label: "healthCarePortal", href: "/pages/Portals/HealthcarePractitionersPortal/dashboard", icon: Stethoscope },
+    { label: "sponsorPortal", href: "https://hpql-sponsor.i-diligence.com/login", icon: Trophy },
+    { label: "exhibitorPortal", href: "https://hpql-exhibitor.i-diligence.com/login", icon: Building },
+    { label: "visitorPortal", href: "https://hpql-visitor.i-diligence.com/login", icon: Eye },
+    { label: "healthCarePortal", href: "https://hpql-healthcare-practitioner.i-diligence.com/login", icon: Stethoscope },
     { label: "adminPortal", href: "/Admin/Dashboard", icon: Shield },
   ];
 
