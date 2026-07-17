@@ -27,25 +27,25 @@ export default function PortalsPage() {
       id: 'exhibitor',
       title: t.exhibitorPortal,
       icon: UserGroupIcon,
-      link: '/exhibitor-portal'
+      link: 'https://hpql-exhibitor.i-diligence.com/login/'
     },
      {
       id: 'visitor',
       title: t.visitorPortal,
       icon: UserIcon,
-      link: '/visitor-portal'
+      link: 'https://hpql-visitor.i-diligence.com/login/'
     },
     {
       id: 'healthcare',
       title: t.healthCarePortal,
       icon: HeartIcon,
-      link: '/healthcare-portal'
+      link: 'https://hpql-healthcare-practitioner.i-diligence.com/login/'
     },
     {
       id: 'admin',
       title: t.adminPortal,
       icon: Cog6ToothIcon,
-      link: '/admin-portal'
+      link: 'https://hpql-admin.i-diligence.com/'
     },
 
   ];

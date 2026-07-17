@@ -282,17 +282,17 @@ export default function Portals() {
             {/* Bottom CTA */}
             <div className="text-center mt-8 sm:mt-12 relative z-10">
               <Link
-                href="#"
+                href="../../pages/SignIn"
                 className="group relative inline-flex items-center"
               >
                 {/* Glow */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-50"></div>
 
                 {/* Button */}
-                <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div  className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   {/* <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> */}
                   <span>{t.accessAllPortals}</span>
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
+               
                 </div>
               </Link>
             </div>

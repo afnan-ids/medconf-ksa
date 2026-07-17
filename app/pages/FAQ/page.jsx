@@ -239,7 +239,7 @@ export default function FAQPage() {
       title: t.submitTicket,
       value: t.ticketDescription,
       action: t.createTicket,
-      link: "/support",
+      link: "../SignIn",
       gradient: "from-green-500 to-emerald-400",
       bgGradient: "from-green-500/10 to-emerald-500/10",
     },
