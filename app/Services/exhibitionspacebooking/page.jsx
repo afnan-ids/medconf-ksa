@@ -35,11 +35,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../il18/exhibitionSpaceBooking";
+import { useRouter } from 'next/navigation';
 
 export default function ExhibitionSpaceBooking() {
   const [selectedBooth, setSelectedBooth] = useState(null);
   const { language } = useLanguage();
   const t = translations[language];
+
+  const router = useRouter();
 
   const benefits = [
     {
@@ -616,7 +619,7 @@ export default function ExhibitionSpaceBooking() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                  <button  onClick={() => window.open('https://hpql-exhibitor.i-diligence.com/login/')}  className="cursor-pointer group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
                     {t.BookYourSpaceNow}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>

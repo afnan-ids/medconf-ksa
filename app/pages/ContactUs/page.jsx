@@ -515,11 +515,11 @@ export default function ContactPage() {
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  href="/pages/NavBar-Links/NavPortals"
+                  href="../SignIn"
                   className="group border-2 border-white text-white px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.accessPortals}
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5" />
+                  {/* <Shield className="w-4 h-4 sm:w-5 sm:h-5" /> */}
                 </Link>
               </div>
             </div>

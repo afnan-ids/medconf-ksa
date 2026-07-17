@@ -37,7 +37,10 @@ export const translations = {
     contact: "Contact",
 
     signIn: "Sign In",
+    portalSupportingprogramscomprehensivehealthtransformation:"Supporting Quality of Life programs & comprehensive health transformation",
 
+portalStrategicObjectives:"Strategic Objectives:",
+portal2026TargetsAlignment:"2026 Targets Alignment",
     // Hero Section
     discoverOurVersion: "Discover Our Version",
     alignedWithSaudi: "Aligned with Saudi Vision 2030 healthcare transformation goals",
@@ -80,11 +83,14 @@ export const translations = {
     accessAllPortals: "Access All Portals",
 
     // Portal Cards
-    exhibitorSponsorPortalTitle: "Exhibitor & Sponsor Portal",
+    exhibitorSponsorPortalTitle: "Exhibitor Portal",
     exhibitorSponsorPortalDescription: "Account creation, space booking, contract management",
 
     visitorPortalTitle: "Visitor Portal",
     visitorPortalDescription: "Registration, agenda, live streaming",
+
+    homepageSponsorPortal:"Sponsor Portal",
+    homepageSponsorPortaldescri:"Empowering our mission to create lasting change.",
 
     healthcarePractitionersPortalTitle: "Healthcare Practitioners Portal",
     healthcarePractitionersPortalDescription: "License upload & SCFHS verification",
@@ -308,7 +314,9 @@ export const translations = {
     contact: "اتصل بنا",
 
     signIn: "تسجيل الدخول",
-
+portalSupportingprogramscomprehensivehealthtransformation:"دعم برامج جودة الحياة والتحول الصحي الشامل",
+portalStrategicObjectives:"الأهداف الاستراتيجية:",
+portal2026TargetsAlignment:"مواءمة أهداف عام 2026",
     // Hero Section
     discoverOurVersion: "اكتشف رؤيتنا",
     alignedWithSaudi: "متوافق مع أهداف التحول الصحي لرؤية السعودية 2030",
@@ -356,6 +364,10 @@ export const translations = {
 
     visitorPortalTitle: "بوابة الزوار",
     visitorPortalDescription: "التسجيل، جدول الأعمال، والبث المباشر",
+
+    homepageSponsorPortal: "بوابة الرعاة",
+homepageSponsorPortaldescri: "تمكين مهمتنا لصنع تغيير دائم.",
+
 
     healthcarePractitionersPortalTitle: "بوابة الممارسين الصحيين",
     healthcarePractitionersPortalDescription: "رفع الترخيص والتحقق من الهيئة السعودية للتخصصات الصحية",

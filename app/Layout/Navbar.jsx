@@ -409,7 +409,7 @@ export default function Navbar() {
             </div>
 
             {/* Sign In Button with Dropdown */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* <div className="hidden lg:flex items-center gap-3">
               <div
                 className="relative"
                 onMouseEnter={handleSignInMouseEnter}
@@ -419,7 +419,7 @@ export default function Navbar() {
                   className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    {/* <LogIn className="w-4 h-4" /> */}
+                    <LogIn className="w-4 h-4" />
                     {t.signIn}
                     <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${signInOpen ? "rotate-180" : ""}`} />
                   </span>
@@ -429,15 +429,15 @@ export default function Navbar() {
                   </div>
                 </button>
 
-                {/* Sign In Dropdown */}
+            
                 {signInOpen && (
                   <div className="absolute right-0 top-full pt-2 w-64 z-50">
                     <div className="relative overflow-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl">
-                      {/* Floating Orbs */}
+                 
                       <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
                       <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
                       
-                      {/* Top gradient line */}
+                 
                       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
                       <div className="relative p-2">
@@ -477,7 +477,31 @@ export default function Navbar() {
               >
                 {language === "en" ? "العربية" : "English"}
               </button>
-            </div>
+            </div> */}
+
+            {/* Sign In Button */}
+<div className="hidden lg:flex items-center gap-3">
+  <Link href="../pages/SignIn">
+    <button
+      className="group cursor-pointer relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2"
+    >
+      <span className="relative z-10 flex items-center gap-2">
+        {t.signIn}
+      </span>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+      </div>
+    </button>
+  </Link>
+  
+   <button
+                onClick={toggleLanguage}
+                className="px-3 cursor-pointer py-2 border rounded text-white"
+              >
+                {language === "en" ? "العربية" : "English"}
+              </button>
+</div>
 
             {/* Mobile Menu Button */}
             <button

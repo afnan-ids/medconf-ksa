@@ -7,10 +7,14 @@ import { MdEmojiEvents } from "react-icons/md";
 
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../il18/events";
+import { useRouter } from 'next/navigation';
 
 const EventsSection = () => {
   const { language } = useLanguage();
   const t = translations[language];
+
+    const router = useRouter();
+
   const pastEvents = [
     {
       id: 1,
@@ -182,7 +186,7 @@ const EventsSection = () => {
 
                 {/* CTA Buttons - Updated with Services section style */}
                 <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3 md:pt-4">
-                  <button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 flex-1">
+                  <button onClick={() =>  window.open('https://hpql-visitor.i-diligence.com/login/')} className=" cursor-pointer group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 flex-1">
                     <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2">
                       {t.registerNow}
                       <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
@@ -190,7 +194,7 @@ const EventsSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
 
-                  <button className="group border-2 border-blue-500/50 text-blue-400 px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-blue-500/10 hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 flex-1 backdrop-blur-sm">
+                  <button onClick={() => window.open('https://hpql-exhibitor.i-diligence.com/login/')} className=" cursor-pointer group border-2 border-blue-500/50 text-blue-400 px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-blue-500/10 hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 flex-1 backdrop-blur-sm">
                     <span className="flex items-center justify-center gap-1 sm:gap-2">
                       {t.bookBooth}
                       <svg

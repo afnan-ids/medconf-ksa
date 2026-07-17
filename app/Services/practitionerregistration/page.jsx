@@ -427,7 +427,7 @@ export default function PractitionerRegistration() {
                 </p>
 
                 <Link
-                  href="/Forms/PractitionerRegistrationForm"
+                  href="https://hpql-healthcare-practitioner.i-diligence.com/login/"
                   className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
                 >
                  {t.registerNow}

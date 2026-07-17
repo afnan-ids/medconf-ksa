@@ -639,19 +639,21 @@ export default function IndustryCollaborationExchange() {
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
                 <Link
-                  href="/register"
+                  href="https://hpql-sponsor.i-diligence.com/Registration/"
+                    target="_blank"
+  rel="noopener noreferrer"
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.registerInterest}
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link
+                {/* <Link
                   href="#"
                   className="group border border-white/30 bg-white/10 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:bg-white/20 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.browseOpportunities}
                   <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
