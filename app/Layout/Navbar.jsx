@@ -92,7 +92,7 @@ const navlinks = [
       },
       {
         label: "viewAllPortals",
-        href: "/pages/Portals/",
+        href: "../pages/SignIn",
         isViewAll: true,
         icon: Eye,
       },
