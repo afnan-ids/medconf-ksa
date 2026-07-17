@@ -16,12 +16,12 @@ const HealthTransformation = () => {
           <div className="absolute top-30 w-full mb-10">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1 pb-10 mb-1">
               <div className="flex items-center">
-                <p className="text-xs text-blue-950 font-bold whitespace-nowrap">
+                <p className="text-xs text-blue-950 mt-7  font-bold whitespace-nowrap">
                   HPQL
                 </p>
                 {language === "en" && (
-                  <p className="text-xs text-blue-900 font-bold   ms-2 whitespace-nowrap">
-                    HEALTH PROMOTION & QUALITY OF LIFE
+                  <p className="text-sm text-blue-900 font-medium mt-7  ms-6 whitespace-nowrap">
+                    HEALTH. EMPOWERMENT . AWARENESS . LONGEVITY
                   </p>
                 )}
               </div>
@@ -30,7 +30,7 @@ const HealthTransformation = () => {
                   className="text-[10px] md:text-xs text-white/90 font-semibold tracking-[0.10em]"
                   dir="rtl"
                 >
-                  صحة • تمكين • توعية • عمر مديد
+                  ﺻﺤﺔ . ﺗﻤﻜﻴﻦ . ﺗﻮﻋﻴﺔ . ﻋﻤﺮ ﻣﺪﻳﺪ
                 </p>
               )}
             </div>
@@ -47,9 +47,9 @@ const HealthTransformation = () => {
               </div>
 
               {/* right Side */}
-              <div className="w-full lg:w-1/2 mt-20 px-2">
+              <div className="w-full lg:w-1/2  px-2 mt-10">
                 {/* Heading */}
-                <div className="relative text-white space-y-1.5">
+                <div className="relative text-white space-y-1.5 mt-50 ">
                   {language === "ar" && (
                     <p
                       className="text-sm md:text-lg lg:text-[36px] text-start leading-[1.4] tracking-tight"
@@ -77,7 +77,7 @@ const HealthTransformation = () => {
                 </div>
 
                 {/* Description */}
-                <div className="rounded-xl py-1 space-y-2">
+                <div className="rounded-xl py-1 space-y-2 mt-10">
                   {language === "ar" && (
                     <p
                       className="text-xs md:text-sm lg:text-[14px] leading-[1.8] text-white/95 text-start"
@@ -101,30 +101,30 @@ const HealthTransformation = () => {
                   )}
 
                   {language === "en" && (
-                    <p className="text-xs md:text-sm lg:text-[0.98rem] leading-[1.7] text-white/90 text-start">
+                    <p className="text-xs   md:text-sm lg:text-[0.98rem] leading-[1.7] text-white/90  text-justify">
                       <span style={{ wordSpacing: "0.25rem" }}>
                         The Health Promotion Conference and Exhibition Aims to
-                        be The Kingdom of
+                        be The Kingdom of {" "}
                       </span>
-                      <br />
+                 
                       <span style={{wordSpacing : "0.1rem"}}>
                         Saudi Arabia's premier specialized health platform. As a
-                        leading national event, it
+                        leading national event, it {" "}
                       </span>
-                      <br />
+              
                       <span style={{ wordSpacing: "0.7rem" }}>
                         integrates a specialized scientific conference with an
-                        interactive health
+                        interactive health {" "}
                       </span>
-                      <br />
+                  
                       <span style={{ wordSpacing: "0.3rem" }}>
                         exhibition, creating a comprehensive framework to elevate
-                        health promotion
+                        health promotion {" "}
                       </span>
-                      <br />
+                     
                       <span style={{ wordSpacing: "0.12rem" }}>
                         concepts and their vital link to the quality of life for
-                        both individuals and society
+                        both individuals and society {" "}
                       </span>
                     </p>
                   )}
