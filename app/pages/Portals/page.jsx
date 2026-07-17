@@ -17,7 +17,7 @@ const portals = [
   title: "Sponsor Portal",
   description: "Manage sponsorships, book exhibition space, and track contracts in real-time.",
   icon: Building2,
-  href: "/pages/Portals/SponcerPortal/dashboard",
+  href: "https://hpql-sponsor.i-diligence.com/login/",
   features: [
     "Booth & space selection",
     "Contract signing & tracking",
@@ -29,7 +29,7 @@ const portals = [
     title: "Exhibitor Portal",
     description: "Account creation, space booking, contract management",
     icon: Building2,
-    href: "/pages/Portals/ExhibitorPortal/dashboard",
+    href: "https://hpql-exhibitor.i-diligence.com/login/",
     features: ["Space booking", "Contract management", "Real-time updates"],
     color: "from-blue-800 to-cyan-600",
   },
@@ -37,7 +37,7 @@ const portals = [
     title: "Visitor Portal",
     description: "Registration, agenda, live streaming",
     icon: Users,
-    href: "/pages/Portals/VisitorPortal/dashboard",
+    href: "https://hpql-visitor.i-diligence.com/login/",
     features: ["Easy registration", "Live agenda", "Streaming access"],
     color: "from-purple-500 to-pink-400",
   },
@@ -45,7 +45,7 @@ const portals = [
     title: "Healthcare Practitioners Portal",
     description: "License upload & SCFHS verification",
     icon: Stethoscope,
-    href: "/pages/Portals/HealthcarePractitionersPortal/dashboard",
+    href: "https://hpql-healthcare-practitioner.i-diligence.com/login/",
     features: ["License upload", "SCFHS verification", "Credentialing"],
     color: "from-green-500 to-blue-400",
   },
@@ -157,7 +157,7 @@ export default function Portals() {
                     className={`inline-flex items-center justify-center gap-1 sm:gap-2 w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-r ${portal.color} text-white text-xs sm:text-sm font-semibold hover:shadow-lg transition-all duration-300 group/btn`}
                   >
                     Access Portal
-                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    {/* <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" /> */}
                   </Link>
                 </div>
 
