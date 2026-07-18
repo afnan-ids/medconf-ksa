@@ -74,7 +74,7 @@ export default function Footer() {
     },
     {
       label: t.viewAllPortals,
-      href: "/pages/Portals",
+      href: "/pages/SignIn",
       isViewAll: true,
     },
   ];
