@@ -41,12 +41,12 @@ export default function PortalsPage() {
       icon: HeartIcon,
       link: 'https://hpql-healthcare-practitioner.i-diligence.com/login/'
     },
-    {
-      id: 'admin',
-      title: t.adminPortal,
-      icon: Cog6ToothIcon,
-      link: 'https://hpql-admin.i-diligence.com/'
-    },
+    // {
+    //   id: 'admin',
+    //   title: t.adminPortal,
+    //   icon: Cog6ToothIcon,
+    //   link: 'https://hpql-admin.i-diligence.com/'
+    // },
 
   ];
 

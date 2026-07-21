@@ -33,7 +33,7 @@ import {
   Target,
   Globe2,
   Zap,
-  ArrowRight,
+  ChevronRight,
   DollarSign,
   CalendarDays,
   Crown,
@@ -103,7 +103,6 @@ export default function SponsorRegisterPage() {
     phone: "",
     sms: "",
   });
-  
 
   const inputStyle =
     "w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-gray-400 transition-all duration-300 hover:border-blue-400/50 hover:bg-white/15 focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500";
@@ -302,14 +301,14 @@ export default function SponsorRegisterPage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur-lg opacity-0 group-hover/badge:opacity-50 transition-opacity duration-500"></div>
                   <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl text-white text-xs">
                     <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                    <span>Hpql  2026 • Riyadh, Saudi Arabia</span>
+                    <span>Hpql 2026 • Riyadh, Saudi Arabia</span>
                   </div>
                 </div>
 
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                   Partner with{" "}
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Hpql  2026
+                    Hpql 2026
                   </span>
                   <br />
                   <span className="text-white">Elevate Your Brand</span>
@@ -749,7 +748,6 @@ export default function SponsorRegisterPage() {
 
               {/* COMMUNICATION PREFERENCES - Radio Buttons */}
               <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10">
-              
                 <div className="absolute -inset-px bg-gradient-to-r from-blue-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/10 group-hover:via-blue-500/10 group-hover:to-cyan-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
 
                 <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">

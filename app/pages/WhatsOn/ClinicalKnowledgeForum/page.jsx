@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
+  ChevronRight,
   Users,
   Mic2,
   BookOpen,
@@ -76,7 +76,8 @@ export default function ClinicalKnowledgeForum() {
         time: "09:00 AM - 09:45 AM",
         title: t.openingKeynote,
         speaker: t.drSarahSession.split(" • ")[0] || "Dr. Sarah Johnson",
-        role: t.drSarahSession.split(" • ")[1] || "Chief of Oncology, Mayo Clinic",
+        role:
+          t.drSarahSession.split(" • ")[1] || "Chief of Oncology, Mayo Clinic",
         type: "keynote",
         location: t.mainHallA,
         track: "Oncology",
@@ -85,7 +86,9 @@ export default function ClinicalKnowledgeForum() {
         time: "10:00 AM - 10:45 AM",
         title: t.aiRadiology,
         speaker: t.drMichaelSession.split(" • ")[0] || "Dr. Michael Chen",
-        role: t.drMichaelSession.split(" • ")[1] || "Director of Medical Imaging, Stanford Health",
+        role:
+          t.drMichaelSession.split(" • ")[1] ||
+          "Director of Medical Imaging, Stanford Health",
         type: "keynote",
         location: t.mainHallA,
         track: "Radiology",
@@ -103,7 +106,9 @@ export default function ClinicalKnowledgeForum() {
         time: "12:00 PM - 12:45 PM",
         title: t.surgicalWorkshop,
         speaker: t.drRobertSession.split(" • ")[0] || "Dr. Robert Williams",
-        role: t.drRobertSession.split(" • ")[1] || "Head of Robotic Surgery, Johns Hopkins",
+        role:
+          t.drRobertSession.split(" • ")[1] ||
+          "Head of Robotic Surgery, Johns Hopkins",
         type: "workshop",
         location: t.workshopRoom1,
         track: "Surgery",
@@ -121,7 +126,9 @@ export default function ClinicalKnowledgeForum() {
         time: "02:00 PM - 02:45 PM",
         title: t.rareDiseaseCaseStudy,
         speaker: t.drEmilySession.split(" • ")[0] || "Dr. Emily Rodriguez",
-        role: t.drEmilySession.split(" • ")[1] || "Clinical Geneticist, Boston Children's",
+        role:
+          t.drEmilySession.split(" • ")[1] ||
+          "Clinical Geneticist, Boston Children's",
         type: "case-study",
         location: t.hallC,
         track: "Genetics",
@@ -507,7 +514,7 @@ export default function ClinicalKnowledgeForum() {
                     <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-3 sm:p-4 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
                       <div
                         className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${getTypeColor(
-                          item.type
+                          item.type,
                         )}`}
                       ></div>
 
@@ -534,7 +541,7 @@ export default function ClinicalKnowledgeForum() {
                         <div className="flex items-center gap-2">
                           <span
                             className={`text-[10px] sm:text-xs px-2 py-1 rounded-full bg-gradient-to-r ${getTypeColor(
-                              item.type
+                              item.type,
                             )} text-white inline-flex items-center gap-1`}
                           >
                             {getTypeIcon(item.type)}
@@ -554,7 +561,7 @@ export default function ClinicalKnowledgeForum() {
                 className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
               >
                 {t.downloadAgenda}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
@@ -778,12 +785,12 @@ export default function ClinicalKnowledgeForum() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
                 <Link
                   href="https://hpql-healthcare-practitioner.i-diligence.com/Registration/"
-                    target="_blank"
-  rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.registerNow}
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 {/* <Link
                   href="#agenda"

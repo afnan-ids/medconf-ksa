@@ -13,7 +13,7 @@ import {
   Headphones,
   Clock,
   CheckCircle,
-  ArrowRight,
+  ChevronRight,
   ThumbsUp,
   ThumbsDown,
   FileText,
@@ -27,7 +27,10 @@ import {
   X,
   Loader2,
 } from "lucide-react";
-import { exhibitorFaqs, exhibitorContactOptions } from "../../Data/exhibitor-data";
+import {
+  exhibitorFaqs,
+  exhibitorContactOptions,
+} from "../../Data/exhibitor-data";
 
 const SupportContent = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,7 +46,7 @@ const SupportContent = () => {
     (faq) =>
       faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      faq.category.toLowerCase().includes(searchTerm.toLowerCase())
+      faq.category.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const categories = [...new Set(exhibitorFaqs.map((f) => f.category))];
@@ -65,7 +68,9 @@ const SupportContent = () => {
       setTicketSubject("");
       setTicketCategory("");
       setTicketMessage("");
-      alert("Support ticket submitted successfully! Our team will respond within 24 hours.");
+      alert(
+        "Support ticket submitted successfully! Our team will respond within 24 hours.",
+      );
     }, 1500);
   };
 
@@ -114,7 +119,8 @@ const SupportContent = () => {
             Exhibitor Support Center
           </h1>
           <p className="text-gray-300 mb-6">
-            Get instant support or browse frequently asked questions for exhibitors
+            Get instant support or browse frequently asked questions for
+            exhibitors
           </p>
 
           <div className="relative max-w-xl mx-auto">
@@ -158,14 +164,20 @@ const SupportContent = () => {
                         <h3 className="text-sm font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
                           {option.title}
                         </h3>
-                        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
                       </div>
-                      <p className="text-xs text-gray-300 mt-1">{option.desc}</p>
+                      <p className="text-xs text-gray-300 mt-1">
+                        {option.desc}
+                      </p>
                       <div className="flex items-center gap-1 mt-2">
                         <Clock className="w-3 h-3 text-gray-400" />
-                        <p className="text-xs text-gray-400">{option.availability}</p>
+                        <p className="text-xs text-gray-400">
+                          {option.availability}
+                        </p>
                       </div>
-                      <p className="text-xs text-blue-400 mt-1 font-mono">{option.contact}</p>
+                      <p className="text-xs text-blue-400 mt-1 font-mono">
+                        {option.contact}
+                      </p>
                     </div>
                   </div>
                 </button>
@@ -175,7 +187,9 @@ const SupportContent = () => {
             <div className="relative p-6 border-t border-white/10 bg-white/5">
               <div className="flex items-center gap-2 mb-3">
                 <Headphones className="w-4 h-4 text-blue-400" />
-                <h4 className="text-sm font-semibold text-white">Support Hours</h4>
+                <h4 className="text-sm font-semibold text-white">
+                  Support Hours
+                </h4>
               </div>
               <div className="space-y-1 text-xs text-gray-300">
                 <p>Saturday - Thursday: 9:00 AM - 8:00 PM</p>
@@ -337,12 +351,28 @@ const SupportContent = () => {
         <div className="relative flex items-start gap-3">
           <Sparkles className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-sm font-semibold text-white mb-1">Quick Tips for Exhibitors</p>
+            <p className="text-sm font-semibold text-white mb-1">
+              Quick Tips for Exhibitors
+            </p>
             <p className="text-xs text-gray-300">
-              • <span className="font-medium text-blue-400">Setup begins March 10</span> - Ensure all materials arrive by March 9
-              <br />• <span className="font-medium text-blue-400">Staff badges</span> - Register your team members by March 5
-              <br />• <span className="font-medium text-blue-400">Lead scanner app</span> - Download and test before the event
-              <br />• <span className="font-medium text-blue-400">Booth insurance</span> - Required documentation must be submitted
+              •{" "}
+              <span className="font-medium text-blue-400">
+                Setup begins March 10
+              </span>{" "}
+              - Ensure all materials arrive by March 9
+              <br />•{" "}
+              <span className="font-medium text-blue-400">Staff badges</span> -
+              Register your team members by March 5
+              <br />•{" "}
+              <span className="font-medium text-blue-400">
+                Lead scanner app
+              </span>{" "}
+              - Download and test before the event
+              <br />•{" "}
+              <span className="font-medium text-blue-400">
+                Booth insurance
+              </span>{" "}
+              - Required documentation must be submitted
             </p>
           </div>
         </div>
@@ -425,8 +455,12 @@ const SupportContent = () => {
                 <div className="flex items-start gap-2">
                   <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
                   <p className="text-xs text-gray-300">
-                    For urgent matters during event days (March 12-14), please call our emergency hotline: 
-                    <strong className="text-amber-400"> +966 55 123 4567</strong>
+                    For urgent matters during event days (March 12-14), please
+                    call our emergency hotline:
+                    <strong className="text-amber-400">
+                      {" "}
+                      +966 55 123 4567
+                    </strong>
                   </p>
                 </div>
               </div>

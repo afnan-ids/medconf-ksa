@@ -22,147 +22,11 @@ import {
   UsersRound,
   Landmark,
   BookOpen,
-  ArrowRight,
+  ChevronRight,
   Shield,
 } from "lucide-react";
 import { Handshake, Building2, TrendingUp } from "lucide-react";
 import Image from "next/image";
-
-const navlinks = [
-  { label: "home", href: "/" },
-
-  {
-    label: "services",
-    href: "/Services",
-    submenus: [
-      {
-        label: "conferenceOrganization",
-        href: "/Services/conferenceorganization",
-        icon: Calendar,
-      },
-      {
-        label: "exhibitionSpaceBooking",
-        href: "/Services/exhibitionspacebooking",
-        icon: Building,
-      },
-      {
-        label: "practitionerRegistration",
-        href: "/Services/practitionerregistration",
-        icon: UserPlus,
-      },
-      {
-        label: "viewAllServices",
-        href: "/Services",
-        isViewAll: true,
-        icon: Eye,
-      },
-    ],
-  },
-
-  { label: "events", href: "/pages/Events" },
-
-  {
-    label: "portals",
-    href: "/pages/Portals",
-    submenus: [
-      {
-        label: "sponsorPortal",
-        href: "https://hpql-sponsor.i-diligence.com/login",
-        icon: Trophy,
-      },
-      {
-        label: "exhibitorPortal",
-        href: "https://hpql-exhibitor.i-diligence.com/login",
-        icon: Building,
-      },
-      {
-        label: "visitorPortal",
-        href: "https://hpql-visitor.i-diligence.com/login",
-        icon: Eye,
-      },
-      {
-        label: "healthCarePortal",
-        href: "https://hpql-healthcare-practitioner.i-diligence.com/login",
-        icon: Stethoscope,
-      },
-      {
-        label: "adminPortal",
-        href: "https://hpql-admin.i-diligence.com/",
-        icon: Shield,
-      },
-      {
-        label: "viewAllPortals",
-        href: "../pages/SignIn",
-        isViewAll: true,
-        icon: Eye,
-      },
-    ],
-  },
-
-  {
-    label: "about",
-    href: "/pages/AboutUs",
-    submenus: [
-      {
-        label: "whoWeAre",
-        href: "/pages/AboutUs",
-        icon: Building2,
-      },
-      {
-        label: "ourJourney",
-        href: "/pages/AboutUs/ExhibitionJourney",
-        icon: TrendingUp,
-      },
-      {
-        label: "partnershipOpportunities",
-        href: "/pages/AboutUs/SponsorshipPartnershipOpportunities",
-        icon: Handshake,
-      },
-    ],
-  },
-
-  { label: "newsBlogs", href: "/pages/NewsBlogPage" },
-  { label: "faq", href: "/pages/FAQ" },
-
-  {
-    label: "whatsOn",
-    href: "#",
-    submenus: [
-      {
-        label: "medicalInnovationArena",
-        href: "/pages/WhatsOn/MedicalInnovationArena",
-        icon: Lightbulb,
-      },
-      {
-        label: "healthcareInnovationHub",
-        href: "/pages/WhatsOn/HealthcareInnovationHub",
-        icon: Microscope,
-      },
-      {
-        label: "medicalTechnologyZone",
-        href: "/pages/WhatsOn/MedicalTechnologyZone",
-        icon: Cpu,
-      },
-      {
-        label: "clinicalKnowledgeForum",
-        href: "/pages/WhatsOn/ClinicalKnowledgeForum",
-        icon: BookOpen,
-      },
-      {
-        label: "industryCollaborationExchange",
-        href: "/pages/WhatsOn/IndustryCollaborationExchange",
-        icon: UsersRound,
-      },
-      {
-        label: "guidedExhibitionTours",
-        href: "/pages/WhatsOn/GuidedExhibitionTours",
-        icon: Landmark,
-      },
-    ],
-  },
-
-  { label: "contact", href: "/pages/ContactUs" },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -175,6 +39,137 @@ export default function Navbar() {
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
   const pathname = usePathname();
+
+  const navlinks = [
+    { label: "home", href: "/" },
+
+    {
+      label: "services",
+      href: "/Services",
+      submenus: [
+        {
+          label: "conferenceOrganization",
+          href: "/Services/conferenceorganization",
+          icon: Calendar,
+        },
+        {
+          label: "exhibitionSpaceBooking",
+          href: "/Services/exhibitionspacebooking",
+          icon: Building,
+        },
+        {
+          label: "practitionerRegistration",
+          href: "/Services/practitionerregistration",
+          icon: UserPlus,
+        },
+        {
+          label: t.viewAllServices,
+          href: "/Services",
+          isViewAll: true,
+          icon: Eye,
+        },
+      ],
+    },
+
+    { label: "events", href: "/pages/Events" },
+
+    {
+      label: "portals",
+      href: "/pages/Portals",
+      submenus: [
+        {
+          label: "sponsorPortal",
+          href: "https://hpql-sponsor.i-diligence.com/login",
+          icon: Trophy,
+        },
+        {
+          label: "exhibitorPortal",
+          href: "https://hpql-exhibitor.i-diligence.com/login",
+          icon: Building,
+        },
+        {
+          label: "visitorPortal",
+          href: "https://hpql-visitor.i-diligence.com/login",
+          icon: Eye,
+        },
+        {
+          label: "healthCarePortal",
+          href: "https://hpql-healthcare-practitioner.i-diligence.com/login",
+          icon: Stethoscope,
+        },
+        {
+          label: t.viewAllPortals,
+          href: "../pages/SignIn",
+          isViewAll: true,
+          icon: Eye,
+        },
+      ],
+    },
+
+    {
+      label: "about",
+      href: "/pages/AboutUs",
+      submenus: [
+        {
+          label: "whoWeAre",
+          href: "/pages/AboutUs",
+          icon: Building2,
+        },
+        {
+          label: "ourJourney",
+          href: "/pages/AboutUs/ExhibitionJourney",
+          icon: TrendingUp,
+        },
+        {
+          label: "partnershipOpportunities",
+          href: "/pages/AboutUs/SponsorshipPartnershipOpportunities",
+          icon: Handshake,
+        },
+      ],
+    },
+
+    { label: "newsBlogs", href: "/pages/NewsBlogPage" },
+    { label: "faq", href: "/pages/FAQ" },
+
+    {
+      label: "whatsOn",
+      href: "#",
+      submenus: [
+        {
+          label: "medicalInnovationArena",
+          href: "/pages/WhatsOn/MedicalInnovationArena",
+          icon: Lightbulb,
+        },
+        {
+          label: "healthcareInnovationHub",
+          href: "/pages/WhatsOn/HealthcareInnovationHub",
+          icon: Microscope,
+        },
+        {
+          label: "medicalTechnologyZone",
+          href: "/pages/WhatsOn/MedicalTechnologyZone",
+          icon: Cpu,
+        },
+        {
+          label: "clinicalKnowledgeForum",
+          href: "/pages/WhatsOn/ClinicalKnowledgeForum",
+          icon: BookOpen,
+        },
+        {
+          label: "industryCollaborationExchange",
+          href: "/pages/WhatsOn/IndustryCollaborationExchange",
+          icon: UsersRound,
+        },
+        {
+          label: "guidedExhibitionTours",
+          href: "/pages/WhatsOn/GuidedExhibitionTours",
+          icon: Landmark,
+        },
+      ],
+    },
+
+    { label: "contact", href: "/pages/ContactUs" },
+  ];
 
   useEffect(() => {
     setMounted(true);
@@ -247,20 +242,37 @@ export default function Navbar() {
 
   // Portal options for Sign In dropdown
   const portalOptions = [
-    { label: "sponsorPortal", href: "https://hpql-sponsor.i-diligence.com/login", icon: Trophy },
-    { label: "exhibitorPortal", href: "https://hpql-exhibitor.i-diligence.com/login", icon: Building },
-    { label: "visitorPortal", href: "https://hpql-visitor.i-diligence.com/login", icon: Eye },
-    { label: "healthCarePortal", href: "https://hpql-healthcare-practitioner.i-diligence.com/login", icon: Stethoscope },
+    {
+      label: "sponsorPortal",
+      href: "https://hpql-sponsor.i-diligence.com/login",
+      icon: Trophy,
+    },
+    {
+      label: "exhibitorPortal",
+      href: "https://hpql-exhibitor.i-diligence.com/login",
+      icon: Building,
+    },
+    {
+      label: "visitorPortal",
+      href: "https://hpql-visitor.i-diligence.com/login",
+      icon: Eye,
+    },
+    {
+      label: "healthCarePortal",
+      href: "https://hpql-healthcare-practitioner.i-diligence.com/login",
+      icon: Stethoscope,
+    },
     { label: "adminPortal", href: "/Admin/Dashboard", icon: Shield },
   ];
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${scrolled
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
+          scrolled
             ? "bg-gray-900/80 backdrop-blur-xl border-b border-white/10 shadow-2xl"
             : "bg-gray-900/95 backdrop-blur-sm border-b border-white/5"
-          }`}
+        }`}
       >
         {/* Top Gradient Line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
@@ -303,12 +315,13 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`relative px-3 py-2 text-sm font-semibold rounded-xl transition-all duration-300 group flex items-center gap-1 ${isActive(link.href, link.submenus)
+                    className={`relative px-3 py-2 text-sm font-semibold rounded-xl transition-all duration-300 group flex items-center gap-1 ${
+                      isActive(link.href, link.submenus)
                         ? "text-blue-400"
                         : scrolled
                           ? "text-gray-300 hover:text-white"
                           : "text-gray-300 hover:text-white"
-                      }`}
+                    }`}
                   >
                     {isActive(link.href, link.submenus) && (
                       <span className="absolute inset-0 bg-blue-500/10 rounded-xl border border-blue-500/30"></span>
@@ -317,8 +330,9 @@ export default function Navbar() {
                     <span className="relative z-10">{t[link.label]}</span>
                     {link.submenus && (
                       <ChevronDown
-                        className={`relative z-10 w-4 h-4 transition-transform duration-300 ${openDropdown === link.label ? "rotate-180" : ""
-                          }`}
+                        className={`relative z-10 w-4 h-4 transition-transform duration-300 ${
+                          openDropdown === link.label ? "rotate-180" : ""
+                        }`}
                       />
                     )}
                     {isActive(link.href, link.submenus) && !link.submenus && (
@@ -347,10 +361,11 @@ export default function Navbar() {
                                   <Link
                                     key={submenu.label}
                                     href={submenu.href}
-                                    className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 group/item ${pathname === submenu.href
+                                    className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 group/item ${
+                                      pathname === submenu.href
                                         ? "text-blue-400 bg-blue-500/10"
                                         : "text-gray-300 hover:text-white hover:bg-white/5"
-                                      }`}
+                                    }`}
                                     onClick={() => setOpenDropdown(null)}
                                   >
                                     {IconComponent && (
@@ -361,7 +376,7 @@ export default function Navbar() {
                                     <span className="flex-1">
                                       {t[submenu.label]}
                                     </span>
-                                    <ArrowRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 transition-all duration-300 -translate-x-2 group-hover/item:translate-x-0" />
+                                    <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 transition-all duration-300 -translate-x-2 group-hover/item:translate-x-0" />
                                   </Link>
                                 );
                               })}
@@ -392,7 +407,7 @@ export default function Navbar() {
                                     )}
                                     {viewAllItem.label}
                                   </span>
-                                  <ArrowRight className="w-3 h-3 opacity-70 group-hover:translate-x-1 transition-transform" />
+                                  <ChevronRight className="w-3 h-3 opacity-70 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                               );
                             })}
@@ -457,7 +472,7 @@ export default function Navbar() {
                                   </div>
                                 )}
                                 <span className="flex-1">{t[portal.label]}</span>
-                                <ArrowRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 transition-all duration-300 -translate-x-2 group-hover/item:translate-x-0" />
+                                <ChevronRight className="w-3 h-3 opacity-0 group-hover/item:opacity-100 transition-all duration-300 -translate-x-2 group-hover/item:translate-x-0" />
                               </Link>
                             );
                           })}
@@ -478,9 +493,7 @@ export default function Navbar() {
             {/* Sign In Button */}
             <div className="hidden lg:flex items-center gap-3">
               <Link href="../pages/SignIn">
-                <button
-                  className="group cursor-pointer relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2"
-                >
+                <button className="group cursor-pointer relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2">
                   <span className="relative z-10 flex items-center gap-2">
                     {t.signIn}
                   </span>
@@ -502,10 +515,11 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-2 rounded-lg transition-all duration-300 ${scrolled
+              className={`lg:hidden p-2 rounded-lg transition-all duration-300 ${
+                scrolled
                   ? "text-white bg-white/10 hover:bg-white/20"
                   : "text-white bg-white/10 hover:bg-white/20"
-                }`}
+              }`}
               aria-label="Toggle Menu"
             >
               {mobileOpen ? (
@@ -520,10 +534,11 @@ export default function Navbar() {
 
       {/* Mobile Menu - Matching Footer Dark Style */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-20 z-50 transition-all duration-500 ${mobileOpen
+        className={`lg:hidden fixed inset-x-0 top-20 z-50 transition-all duration-500 ${
+          mobileOpen
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-4 pointer-events-none"
-          }`}
+        }`}
       >
         <div className="mx-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div className="relative overflow-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
@@ -549,16 +564,18 @@ export default function Navbar() {
                         window.location.href = link.href;
                       }
                     }}
-                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-semibold transition-all duration-300 ${isActive(link.href, link.submenus)
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                      isActive(link.href, link.submenus)
                         ? "text-blue-400 bg-blue-500/10 border border-blue-500/30"
                         : "text-gray-300 hover:text-white hover:bg-white/5"
-                      }`}
+                    }`}
                   >
                     <span>{t[link.label]}</span>
                     {link.submenus && (
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-300 ${openDropdown === link.label ? "rotate-180" : ""
-                          }`}
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          openDropdown === link.label ? "rotate-180" : ""
+                        }`}
                       />
                     )}
                   </button>
@@ -575,17 +592,18 @@ export default function Navbar() {
                               setMobileOpen(false);
                               setOpenDropdown(null);
                             }}
-                            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${pathname === submenu.href
+                            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                              pathname === submenu.href
                                 ? "text-blue-400 bg-blue-500/10"
                                 : "text-gray-400 hover:text-white hover:bg-white/5"
-                              }`}
+                            }`}
                           >
                             {IconComponent && (
                               <IconComponent className="w-4 h-4" />
                             )}
                             <span>{t[submenu.label]}</span>
                             {submenu.isViewAll && (
-                              <ArrowRight className="w-3 h-3 ml-auto opacity-70" />
+                              <ChevronRight className="w-3 h-3 ml-auto opacity-70" />
                             )}
                           </Link>
                         );
@@ -615,7 +633,9 @@ export default function Navbar() {
                       onClick={() => setMobileOpen(false)}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300"
                     >
-                      {IconComponent && <IconComponent className="w-4 h-4 text-gray-400" />}
+                      {IconComponent && (
+                        <IconComponent className="w-4 h-4 text-gray-400" />
+                      )}
                       <span>{t[portal.label]}</span>
                     </Link>
                   );

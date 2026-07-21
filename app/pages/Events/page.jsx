@@ -1,19 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import { Sparkles, Calendar, MapPin, Download, ArrowRight } from "lucide-react";
+import {
+  Sparkles,
+  Calendar,
+  MapPin,
+  Download,
+  ChevronRight
+} from "lucide-react";
 import BreadCrumb from "../../Components/BreadCrum";
 import { MdEmojiEvents } from "react-icons/md";
 
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../il18/events";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const EventsSection = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
-    const router = useRouter();
+  const router = useRouter();
 
   const pastEvents = [
     {
@@ -85,7 +91,7 @@ const EventsSection = () => {
             <div className="relative max-w-3xl mx-auto">
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
-               {t.eventsHeroDescription}
+                {t.eventsHeroDescription}
               </p>
             </div>
           </div>
@@ -132,7 +138,7 @@ const EventsSection = () => {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
                   {t.globalHealth}
                   <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent block mt-1">
-                   {t.exhibition2026}
+                    {t.exhibition2026}
                   </span>
                 </h2>
 
@@ -179,22 +185,34 @@ const EventsSection = () => {
                       50+
                     </p>
                     <p className="text-xs sm:text-sm text-gray-400 mt-0.5 sm:mt-1">
-                     {t.countries}
+                      {t.countries}
                     </p>
                   </div>
                 </div>
 
                 {/* CTA Buttons - Updated with Services section style */}
                 <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3 md:pt-4">
-                  <button onClick={() =>  window.open('https://hpql-visitor.i-diligence.com/login/')} className=" cursor-pointer group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 flex-1">
+                  <button
+                    onClick={() =>
+                      window.open("https://hpql-visitor.i-diligence.com/login/")
+                    }
+                    className=" cursor-pointer group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 flex-1"
+                  >
                     <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2">
                       {t.registerNow}
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
 
-                  <button onClick={() => window.open('https://hpql-exhibitor.i-diligence.com/login/')} className=" cursor-pointer group border-2 border-blue-500/50 text-blue-400 px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-blue-500/10 hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 flex-1 backdrop-blur-sm">
+                  <button
+                    onClick={() =>
+                      window.open(
+                        "https://hpql-exhibitor.i-diligence.com/login/",
+                      )
+                    }
+                    className=" cursor-pointer group border-2 border-blue-500/50 text-blue-400 px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:bg-blue-500/10 hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 flex-1 backdrop-blur-sm"
+                  >
                     <span className="flex items-center justify-center gap-1 sm:gap-2">
                       {t.bookBooth}
                       <svg
@@ -225,7 +243,7 @@ const EventsSection = () => {
               </h3>
               <span className="text-xs sm:text-sm text-blue-400 font-semibold hover:text-blue-300 cursor-pointer inline-flex items-center gap-1 sm:gap-2 group">
                 {t.viewAllReports}
-                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </div>
 
@@ -269,7 +287,7 @@ const EventsSection = () => {
                     <button className="mt-3 sm:mt-4 md:mt-5 text-blue-400 text-xs sm:text-sm font-semibold hover:gap-2 inline-flex items-center gap-1 transition-all group/btn">
                       {t.viewAllReports}
                       <span className="group-hover/btn:translate-x-1 transition-transform">
-                        →
+                       <ChevronRight className="mb-1" size={20}/>
                       </span>
                     </button>
                   </div>
@@ -303,7 +321,7 @@ const EventsSection = () => {
               </h4>
 
               <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-               {t.downloadReportsDescription}
+                {t.downloadReportsDescription}
               </p>
 
               <button className="group inline-flex items-center gap-1 sm:gap-2 bg-white text-gray-900 px-5 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">

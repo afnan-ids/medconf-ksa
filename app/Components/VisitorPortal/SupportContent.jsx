@@ -13,7 +13,7 @@ import {
   Headphones,
   Clock,
   CheckCircle,
-  ArrowRight,
+  ChevronRight,
   ThumbsUp,
   ThumbsDown,
   FileText,
@@ -34,7 +34,7 @@ const SupportContent = () => {
     (faq) =>
       faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      faq.category.toLowerCase().includes(searchTerm.toLowerCase())
+      faq.category.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const categories = [...new Set(faqData.map((f) => f.category))];
@@ -50,7 +50,9 @@ const SupportContent = () => {
       setShowTicketModal(false);
       setTicketSubject("");
       setTicketMessage("");
-      alert("Support ticket submitted successfully! Our team will respond within 24 hours.");
+      alert(
+        "Support ticket submitted successfully! Our team will respond within 24 hours.",
+      );
     }, 1500);
   };
 
@@ -126,12 +128,16 @@ const SupportContent = () => {
                         <h3 className="text-sm font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
                           {option.title}
                         </h3>
-                        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
                       </div>
-                      <p className="text-xs text-gray-300 mt-1">{option.desc}</p>
+                      <p className="text-xs text-gray-300 mt-1">
+                        {option.desc}
+                      </p>
                       <div className="flex items-center gap-1 mt-2">
                         <Clock className="w-3 h-3 text-gray-400" />
-                        <p className="text-xs text-gray-400">{option.availability}</p>
+                        <p className="text-xs text-gray-400">
+                          {option.availability}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -142,7 +148,9 @@ const SupportContent = () => {
             <div className="relative p-6 border-t border-white/10 bg-white/5">
               <div className="flex items-center gap-2 mb-3">
                 <Headphones className="w-4 h-4 text-blue-400" />
-                <h4 className="text-sm font-semibold text-white">Support Hours</h4>
+                <h4 className="text-sm font-semibold text-white">
+                  Support Hours
+                </h4>
               </div>
               <div className="space-y-1 text-xs text-gray-300">
                 <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
@@ -301,8 +309,18 @@ const SupportContent = () => {
                   onClick={() => setShowTicketModal(false)}
                   className="p-1 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-400 hover:text-white"
                 >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               </div>
@@ -314,7 +332,9 @@ const SupportContent = () => {
             {/* Form */}
             <div className="p-5 space-y-4">
               <div>
-                <label className="block text-xs font-medium text-gray-300 mb-1">Subject</label>
+                <label className="block text-xs font-medium text-gray-300 mb-1">
+                  Subject
+                </label>
                 <input
                   type="text"
                   value={ticketSubject}
@@ -325,7 +345,9 @@ const SupportContent = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-300 mb-1">Message</label>
+                <label className="block text-xs font-medium text-gray-300 mb-1">
+                  Message
+                </label>
                 <textarea
                   value={ticketMessage}
                   onChange={(e) => setTicketMessage(e.target.value)}

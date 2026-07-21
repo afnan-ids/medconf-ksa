@@ -12,7 +12,7 @@ import {
   Headphones,
   Clock,
   CheckCircle,
-  ArrowRight,
+  ChevronRight,
   ThumbsUp,
   ThumbsDown,
   ExternalLink,
@@ -163,7 +163,7 @@ const SupportHelpDeskContent = ({ getColorClasses }) => {
                           <h3 className="text-sm font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
                             {title}
                           </h3>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
                         </div>
                         <p className="text-xs text-gray-300 mt-1">{desc}</p>
                         <div className="flex items-center gap-1 mt-2">
@@ -322,67 +322,61 @@ const SupportHelpDeskContent = ({ getColorClasses }) => {
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
-    {showTicketModal && (
-  <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50">
-    
-    {/* Glow background */}
-    <div className="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl top-10 right-10"></div>
-    <div className="absolute w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl bottom-10 left-10"></div>
+      {showTicketModal && (
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50">
+          {/* Glow background */}
+          <div className="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl top-10 right-10"></div>
+          <div className="absolute w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl bottom-10 left-10"></div>
 
-    <div className="relative w-full max-w-md mx-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
-      
-      {/* Header */}
-      <div className="p-5 border-b border-white/10">
-        <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-          Submit a Request
-        </h3>
-        <p className="text-xs text-gray-400 mt-1">
-          Our team will get back to you within 24 hours
-        </p>
-      </div>
+          <div className="relative w-full max-w-md mx-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+            {/* Header */}
+            <div className="p-5 border-b border-white/10">
+              <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                Submit a Request
+              </h3>
+              <p className="text-xs text-gray-400 mt-1">
+                Our team will get back to you within 24 hours
+              </p>
+            </div>
 
-      {/* Form */}
-      <div className="p-5 space-y-4">
-        <input
-          type="text"
-          placeholder="Subject"
-          className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/40 focus:bg-white/10 transition-all"
-        />
+            {/* Form */}
+            <div className="p-5 space-y-4">
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/40 focus:bg-white/10 transition-all"
+              />
 
-        <textarea
-          placeholder="Describe your issue..."
-          rows={4}
-          className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/40 focus:bg-white/10 transition-all resize-none"
-        />
+              <textarea
+                placeholder="Describe your issue..."
+                rows={4}
+                className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-blue-500/40 focus:bg-white/10 transition-all resize-none"
+              />
 
-        {/* Actions */}
-        <div className="flex items-center gap-3 pt-2">
-          
-          {/* Submit */}
-          <button className="flex-1 py-2.5 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-xl font-medium relative overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:cursor-pointer">
-            <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></span>
-            <span className="relative">Submit Ticket</span>
-          </button>
+              {/* Actions */}
+              <div className="flex items-center gap-3 pt-2">
+                {/* Submit */}
+                <button className="flex-1 py-2.5 bg-gradient-to-r from-cyan-600 to-green-600 text-white rounded-xl font-medium relative overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:cursor-pointer">
+                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></span>
+                  <span className="relative">Submit Ticket</span>
+                </button>
 
-          {/* Cancel (now styled properly) */}
-          <button
-            onClick={() => setShowTicketModal(false)}
-            className="px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-red-400/70 transition-all duration-300 hover:cursor-pointer"
-          >
-            Cancel
-          </button>
-
+                {/* Cancel (now styled properly) */}
+                <button
+                  onClick={() => setShowTicketModal(false)}
+                  className="px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-red-400/70 transition-all duration-300 hover:cursor-pointer"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
-  </div>
-)}
-    </div>
-    
   );
 };
 

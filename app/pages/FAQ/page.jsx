@@ -11,7 +11,7 @@ import {
   Mail,
   Phone,
   MessageCircle,
-  ArrowRight,
+  ChevronRight,
   ThumbsUp,
   ThumbsDown,
   HelpCircle,
@@ -490,7 +490,7 @@ export default function FAQPage() {
                       </h3>
                       <p className="text-xs text-gray-400 mb-3">{card.value}</p>
                       <span className="inline-flex items-center gap-1 text-xs text-blue-400 group-hover:gap-2 transition-all">
-                        {card.action} <ArrowRight className="w-3 h-3" />
+                        {card.action} <ChevronRight className="w-3 h-3" />
                       </span>
                     </div>
                   </Link>

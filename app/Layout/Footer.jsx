@@ -8,7 +8,6 @@ import {
   Phone,
   MapPin,
   ShieldCheck,
-  ArrowRight,
   Heart,
   ChevronRight,
   Globe,
@@ -190,7 +189,6 @@ export default function Footer() {
                     </h2>
                     <p className="text-xs text-gray-400 -mt-1">
                       {t.conferencesAndExhibitions}
-                      
                     </p>
                   </div>
                 </div>
@@ -262,7 +260,7 @@ export default function Footer() {
                           {item.label}
                         </span>
                         {item.isViewAll && (
-                          <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                          <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         )}
                       </Link>
                     </li>
@@ -298,7 +296,7 @@ export default function Footer() {
                           {item.label}
                         </span>
                         {item.isViewAll && (
-                          <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                          <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         )}
                       </Link>
                     </li>
@@ -334,7 +332,7 @@ export default function Footer() {
                           {item.label}
                         </span>
                         {item.isViewAll && (
-                          <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                          <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         )}
                       </Link>
                     </li>

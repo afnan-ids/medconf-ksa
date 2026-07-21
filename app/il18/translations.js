@@ -42,7 +42,7 @@ export const translations = {
 portalStrategicObjectives:"Strategic Objectives:",
 portal2026TargetsAlignment:"2026 Targets Alignment",
     // Hero Section
-    discoverOurVersion: "Discover Our Version",
+    discoverOurVersion: "Discover Our Vision",
     alignedWithSaudi: "Aligned with Saudi Vision 2030 healthcare transformation goals",
 
     eventScale: "Event Scale",

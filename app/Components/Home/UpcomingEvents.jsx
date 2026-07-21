@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   Calendar,
   MapPin,
-  ArrowRight,
+  ChevronRight,
   Sparkles,
   Eye,
   Compass,
@@ -145,7 +145,7 @@ export default function UpcomingEvents() {
                     {/* Button text */}
                     <span className="relative z-10 flex items-center gap-1 sm:gap-2 text-gray-300 group-hover/btn:text-white transition-colors duration-300">
                       View Details
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 sm:group-hover/btn:translate-x-2 transition-transform duration-300" />
+                      <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 sm:group-hover/btn:translate-x-2 transition-transform duration-300" />
                     </span>
 
                     {/* Bottom line animation */}
@@ -170,7 +170,7 @@ export default function UpcomingEvents() {
 
                   <span>View All Events</span>
 
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
               </Link>
             </div>

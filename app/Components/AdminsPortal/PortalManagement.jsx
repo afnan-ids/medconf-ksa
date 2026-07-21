@@ -28,7 +28,7 @@ import {
   Briefcase,
   Stethoscope,
   Plus,
-  ArrowRight,
+  ChevronRight,
 } from "lucide-react";
 
 export default function PortalManagement() {

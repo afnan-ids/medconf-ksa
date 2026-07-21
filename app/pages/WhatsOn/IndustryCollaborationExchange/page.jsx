@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
+  ChevronRight,
   Handshake,
   Building2,
   FlaskConical,
@@ -229,7 +229,6 @@ export default function IndustryCollaborationExchange() {
                 <div className="relative z-10">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 tracking-tight">
                     {t.wherePartnershipsDrive}
-
                   </h2>
 
                   <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
@@ -265,7 +264,8 @@ export default function IndustryCollaborationExchange() {
                   {t.collaborationAreas}
                 </span>
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">{t.partnershipCategories}
+              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+                {t.partnershipCategories}
                 <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
               <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
@@ -328,7 +328,8 @@ export default function IndustryCollaborationExchange() {
                   {t.findYourMatch}
                 </span>
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">{t.collaborationOpportunities}
+              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+                {t.collaborationOpportunities}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
             </div>
@@ -337,19 +338,21 @@ export default function IndustryCollaborationExchange() {
             <div className="flex justify-center gap-3 sm:gap-4 mb-8">
               <button
                 onClick={() => setActiveTab("opportunities")}
-                className={`px-5 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 ${activeTab === "opportunities"
+                className={`px-5 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 ${
+                  activeTab === "opportunities"
                     ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
                     : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
-                  }`}
+                }`}
               >
                 {t.openOpportunities}
               </button>
               <button
                 onClick={() => setActiveTab("matchmaking")}
-                className={`px-5 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 ${activeTab === "matchmaking"
+                className={`px-5 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 ${
+                  activeTab === "matchmaking"
                     ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
                     : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
-                  }`}
+                }`}
               >
                 {t.matchmakingEvents}
               </button>
@@ -398,7 +401,7 @@ export default function IndustryCollaborationExchange() {
                           </div>
                           <button className="inline-flex items-center gap-1 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold hover:shadow-lg transition-all group/btn">
                             {t.applyNow}
-                            <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
+                            <ChevronRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                           </button>
                         </div>
                       </div>
@@ -416,7 +419,7 @@ export default function IndustryCollaborationExchange() {
                     className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
                   >
                     {t.viewAllOpportunities}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -643,7 +646,7 @@ export default function IndustryCollaborationExchange() {
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.registerInterest}
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 {/* <Link
                   href="#"
