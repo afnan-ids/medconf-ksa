@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   Calendar,
   Clock,
-  ChevronRight,
+ChevronRight,
   Sparkles,
   Eye,
   Heart,
@@ -28,7 +28,7 @@ import {
   Pin,
   Volume2,
   Loader2,
-  ChevronRight,
+
   Share2,
   Download,
   Star,

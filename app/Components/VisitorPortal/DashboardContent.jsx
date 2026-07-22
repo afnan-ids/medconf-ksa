@@ -10,7 +10,7 @@ import {
   Clock,
   ChevronRight,
   Sparkles,
-  ChevronRight,
+
   Ticket,
   UserCheck,
   Key,

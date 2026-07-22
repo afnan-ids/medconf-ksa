@@ -8,7 +8,7 @@ import {
   Star,
   MapPin,
   Calendar,
-  ChevronRight,
+
 } from "lucide-react";
 
 const SpeakersSection = () => {

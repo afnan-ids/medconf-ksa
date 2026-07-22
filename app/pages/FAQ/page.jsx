@@ -11,7 +11,7 @@ import {
   Mail,
   Phone,
   MessageCircle,
-  ChevronRight,
+
   ThumbsUp,
   ThumbsDown,
   HelpCircle,

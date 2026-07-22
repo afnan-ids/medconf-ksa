@@ -10,7 +10,6 @@ import {
   Clock,
   ChevronRight,
   Sparkles,
-  ChevronRight,
   Store,
   CheckCircle,
   DollarSign,

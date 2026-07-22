@@ -26,7 +26,7 @@ import {
   IdCard,
   MapPin,
   Calendar,
-  ChevronRight,
+
   Send,
   Download,
   TrendingUp,

@@ -22,7 +22,6 @@ import {
   Route,
   StarIcon,
   Headphones,
-  ChevronRight,
   CheckCircle,
   Zap,
   Shield,

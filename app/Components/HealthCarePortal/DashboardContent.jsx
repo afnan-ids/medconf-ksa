@@ -15,7 +15,6 @@ import {
   TrendingUp,
   MessageSquare,
   Sparkles,
-  ChevronRight,
 } from "lucide-react";
 
 const DashboardContent = () => {

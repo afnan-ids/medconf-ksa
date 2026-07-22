@@ -25,7 +25,7 @@ import {
   Globe,
   Clock,
   BadgeCheck,
-  ChevronRight,
+
   Phone,
   Mail,
   Link as LinkIcon,

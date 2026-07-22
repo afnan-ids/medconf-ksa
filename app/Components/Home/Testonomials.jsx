@@ -7,7 +7,7 @@ import {
   ShieldCheck,
   ChevronRight,
   ChevronLeft,
-  ChevronRight,
+
   User,
   Briefcase,
   GraduationCap,

@@ -33,7 +33,7 @@ import {
   Target,
   Globe2,
   Zap,
-  ChevronRight,
+
   DollarSign,
   CalendarDays,
   Crown,
