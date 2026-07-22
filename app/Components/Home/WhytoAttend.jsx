@@ -10,7 +10,7 @@ import {
   Handshake,
   Lightbulb,
   Star,
-  ArrowRight,
+  ChevronRight,
   Calendar,
   MapPin,
   TrendingUp,
@@ -93,7 +93,12 @@ const quickStats = [
     color: "purple",
   },
   { icon: Ticket, label: "Early Bird", value: "Save 30%", color: "cyan" },
-  { icon: Clock, label: "Registration", value: "Limited Seats", color: "emerald" },
+  {
+    icon: Clock,
+    label: "Registration",
+    value: "Limited Seats",
+    color: "emerald",
+  },
 ];
 
 // Perks/Benefits list
@@ -110,7 +115,12 @@ const perks = [
 const sessionTracks = [
   { name: "Digital Health", icon: Smartphone, sessions: 12, color: "blue" },
   { name: "Clinical Excellence", icon: Award, sessions: 18, color: "purple" },
-  { name: "Healthcare Leadership", icon: Briefcase, sessions: 10, color: "cyan" },
+  {
+    name: "Healthcare Leadership",
+    icon: Briefcase,
+    sessions: 10,
+    color: "cyan",
+  },
   { name: "Medical Research", icon: FileText, sessions: 15, color: "emerald" },
 ];
 
@@ -179,10 +189,9 @@ export default function WhyAttend() {
       {/* Glass container */}
       <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-4 py-4">
         <div className="rounded-2xl sm:rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden hover:shadow-[0_30px_60px_-15px_rgba(79,70,229,0.3)] transition-all duration-700">
-          
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
-          
+
           <div className="p-4 sm:p-8 lg:p-12 max-w-7xl mx-auto relative">
             {/* Decorative orbs inside */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl hidden sm:block"></div>
@@ -231,7 +240,9 @@ export default function WhyAttend() {
                     key={index}
                     className="group flex items-center gap-3 sm:gap-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-0.5"
                   >
-                    <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <div
+                      className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                    >
                       <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     <div>
@@ -259,9 +270,13 @@ export default function WhyAttend() {
                       key={index}
                       className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
                     >
-                      <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`} />
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`}
+                      />
                       <div className="relative flex gap-3 sm:gap-4">
-                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <div
+                          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                        >
                           <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
                         <div className="flex-1">
@@ -271,7 +286,9 @@ export default function WhyAttend() {
                           <p className="text-xs sm:text-sm text-gray-300 mb-2">
                             {highlight.description}
                           </p>
-                          <span className={`inline-flex items-center gap-1 text-[10px] sm:text-xs ${colors.text} font-medium`}>
+                          <span
+                            className={`inline-flex items-center gap-1 text-[10px] sm:text-xs ${colors.text} font-medium`}
+                          >
                             <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                             {highlight.highlight}
                           </span>
@@ -292,9 +309,13 @@ export default function WhyAttend() {
                       key={index}
                       className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
                     >
-                      <div className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`} />
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`}
+                      />
                       <div className="relative flex gap-3 sm:gap-4">
-                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <div
+                          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                        >
                           <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
                         <div className="flex-1">
@@ -304,7 +325,9 @@ export default function WhyAttend() {
                           <p className="text-xs sm:text-sm text-gray-300 mb-2">
                             {highlight.description}
                           </p>
-                          <span className={`inline-flex items-center gap-1 text-[10px] sm:text-xs ${colors.text} font-medium`}>
+                          <span
+                            className={`inline-flex items-center gap-1 text-[10px] sm:text-xs ${colors.text} font-medium`}
+                          >
                             <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                             {highlight.highlight}
                           </span>
@@ -339,13 +362,17 @@ export default function WhyAttend() {
                       key={index}
                       className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1"
                     >
-                      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center mx-auto mb-2 sm:mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <div
+                        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center mx-auto mb-2 sm:mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                      >
                         <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                       <h4 className="text-sm sm:text-base font-semibold text-white mb-1">
                         {track.name}
                       </h4>
-                      <p className={`text-[10px] sm:text-xs ${colors.text} font-medium`}>
+                      <p
+                        className={`text-[10px] sm:text-xs ${colors.text} font-medium`}
+                      >
                         {track.sessions} Sessions
                       </p>
                     </div>
@@ -375,7 +402,7 @@ export default function WhyAttend() {
                     {[
                       "Most conferences give you presentations and coffee breaks. We give you a transformative experience that stays with you long after you leave.",
                       "Every session is built for actionable knowledge — something you can apply immediately in real clinical settings.",
-                      "Connect naturally with professionals — no awkward networking, just meaningful conversations."
+                      "Connect naturally with professionals — no awkward networking, just meaningful conversations.",
                     ].map((text, idx) => (
                       <div
                         key={idx}
@@ -390,7 +417,8 @@ export default function WhyAttend() {
                                   {part.split(" ")[0]}
                                 </span>
                               )}
-                              {i === 1 && " " + part.split(" ").slice(1).join(" ")}
+                              {i === 1 &&
+                                " " + part.split(" ").slice(1).join(" ")}
                             </span>
                           ))}
                         </p>
@@ -403,7 +431,10 @@ export default function WhyAttend() {
                       <div>
                         <div className="flex gap-1 mb-3">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-yellow-400" />
+                            <Star
+                              key={i}
+                              className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-yellow-400"
+                            />
                           ))}
                         </div>
                         <p className="text-sm sm:text-base italic text-gray-200 leading-relaxed">
@@ -472,7 +503,9 @@ export default function WhyAttend() {
                   <div className="text-center sm:text-left">
                     <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-yellow-500/20 border border-yellow-500/30 mb-2">
                       <Zap className="w-3 h-3 text-yellow-400" />
-                      <span className="text-[10px] text-yellow-400 font-medium">Limited Time Offer</span>
+                      <span className="text-[10px] text-yellow-400 font-medium">
+                        Limited Time Offer
+                      </span>
                     </div>
                     <p className="text-base sm:text-lg md:text-xl font-bold text-white">
                       Early Bird Registration Ends Soon!
@@ -489,7 +522,9 @@ export default function WhyAttend() {
                       const colors = colorVariants[item.color];
                       return (
                         <div key={idx} className="text-center">
-                          <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg`}>
+                          <div
+                            className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg`}
+                          >
                             <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                               {item.value}
                             </span>
@@ -509,7 +544,7 @@ export default function WhyAttend() {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-0 group-hover/btn:opacity-60 transition-opacity duration-500"></div>
                     <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2">
                       Register Now
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                       <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity"></div>
                     </div>
                   </Link>

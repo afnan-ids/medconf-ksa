@@ -11,7 +11,7 @@ import {
   Stethoscope,
   Heart,
   Award,
-  ArrowRight,
+  ChevronRight,
   Smartphone,
   AlertCircle,
   Building2,
@@ -58,8 +58,7 @@ const FloatingIcon = ({
 };
 
 export default function LoginPage() {
-
-   const { language } = useLanguage();
+  const { language } = useLanguage();
   const t = translations[language];
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -295,7 +294,7 @@ export default function LoginPage() {
                       </span>
                     </h2>
                     <p className="text-xs text-gray-400 mt-0.5">
-                    {t.accessDashboard}
+                      {t.accessDashboard}
                     </p>
                   </div>
 
@@ -484,7 +483,7 @@ export default function LoginPage() {
                           ) : (
                             <>
                               {t.signIn}
-                              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                              <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                             </>
                           )}
                         </span>
@@ -572,8 +571,8 @@ export default function LoginPage() {
                             </>
                           ) : (
                             <>
-                             {t.signUp}
-                              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                              {t.signUp}
+                              <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                             </>
                           )}
                         </span>

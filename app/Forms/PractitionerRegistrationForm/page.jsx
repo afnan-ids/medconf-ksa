@@ -35,7 +35,7 @@ import {
   Target,
   Globe2,
   Zap,
-  ArrowRight,
+  ChevronRight,
 } from "lucide-react";
 import { useState } from "react";
 import PortalIntro from "../../Layout/PortalsAnimation";
@@ -72,7 +72,7 @@ const FloatingIcon = ({
 };
 
 export default function PractitionerRegisterPage() {
-   const { language } = useLanguage();
+  const { language } = useLanguage();
   const t = translations[language];
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -1143,7 +1143,7 @@ export default function PractitionerRegisterPage() {
                 {/* Terms Text */}
                 <div className="flex items-center justify-center mt-5 sm:mt-6 px-2">
                   <p className="text-[11px] sm:text-xs text-gray-500 text-center leading-relaxed">
-                   {t.termsText}
+                    {t.termsText}
                   </p>
                 </div>
               </div>
@@ -1152,7 +1152,7 @@ export default function PractitionerRegisterPage() {
             {/* Footer */}
             <div className="relative text-center py-6 border-t border-white/10 bg-gradient-to-r from-blue-600/5 via-cyan-500/5 to-blue-600/5">
               <p className="text-gray-400 text-sm">
-                 {t.alreadyHaveAccount}{" "}
+                {t.alreadyHaveAccount}{" "}
                 <Link
                   href="/Forms/Login"
                   className="text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text font-semibold hover:from-blue-300 hover:to-cyan-200 transition-all duration-300"

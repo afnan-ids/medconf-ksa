@@ -14,7 +14,7 @@ import {
   MessageSquare,
   Users,
   Building2,
-  ArrowRight,
+  ChevronRight,
   CheckCircle,
   Globe,
   Award,
@@ -396,7 +396,7 @@ export default function ContactPage() {
                     className="text-blue-400 hover:text-blue-300 text-xs sm:text-sm font-semibold inline-flex items-center gap-1 group"
                   >
                     {t.getDirections}
-                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -512,7 +512,7 @@ export default function ContactPage() {
                   className="group bg-white text-gray-900 px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.exploreEvents}
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="../SignIn"

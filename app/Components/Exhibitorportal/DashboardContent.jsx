@@ -8,7 +8,7 @@ import {
   Users,
   MapPin,
   Clock,
-  ArrowRight,
+  ChevronRight,
   Sparkles,
   ChevronRight,
   Store,
@@ -171,8 +171,12 @@ const DashboardContent = () => {
                 <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 Next Event
               </h3>
-              <p className="text-base sm:text-lg font-bold text-white">Exhibitor Briefing</p>
-              <p className="text-xs sm:text-sm text-gray-300 mt-1">March 10, 2026 at 10:00 AM</p>
+              <p className="text-base sm:text-lg font-bold text-white">
+                Exhibitor Briefing
+              </p>
+              <p className="text-xs sm:text-sm text-gray-300 mt-1">
+                March 10, 2026 at 10:00 AM
+              </p>
               <p className="text-xs text-gray-400 flex items-center gap-1 mt-1">
                 <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                 Main Hall A
@@ -193,15 +197,21 @@ const DashboardContent = () => {
             <div className="space-y-2.5 sm:space-y-3">
               <div className="flex justify-between items-center pb-1.5 border-b border-white/10">
                 <span className="text-xs text-gray-400">Leads Collected</span>
-                <span className="text-sm sm:text-base font-bold text-white">245</span>
+                <span className="text-sm sm:text-base font-bold text-white">
+                  245
+                </span>
               </div>
               <div className="flex justify-between items-center pb-1.5 border-b border-white/10">
                 <span className="text-xs text-gray-400">Staff Registered</span>
-                <span className="text-sm sm:text-base font-bold text-white">5 / 8</span>
+                <span className="text-sm sm:text-base font-bold text-white">
+                  5 / 8
+                </span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-xs text-gray-400">Days Until Event</span>
-                <span className="text-sm sm:text-base font-bold text-white">12 Days</span>
+                <span className="text-sm sm:text-base font-bold text-white">
+                  12 Days
+                </span>
               </div>
             </div>
           </div>
@@ -241,8 +251,8 @@ const DashboardContent = () => {
                         event.type === "mandatory"
                           ? "bg-red-500/20 text-red-400"
                           : event.type === "setup"
-                          ? "bg-amber-500/20 text-amber-400"
-                          : "bg-green-500/20 text-green-400"
+                            ? "bg-amber-500/20 text-amber-400"
+                            : "bg-green-500/20 text-green-400"
                       } capitalize`}
                     >
                       {event.type}
@@ -274,7 +284,9 @@ const DashboardContent = () => {
         <div className="relative p-4 sm:p-5 md:p-6 border-b border-white/10">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
-            <h3 className="text-base sm:text-lg font-semibold text-white">Quick Links</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-white">
+              Quick Links
+            </h3>
           </div>
         </div>
 

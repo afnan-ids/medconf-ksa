@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
+  ChevronRight,
   Stethoscope,
   Microscope,
   Server,
@@ -47,7 +47,7 @@ export default function MedicalTechnologyZone() {
       name: t.siemensHealthineers,
       logo: Hospital,
       category: "equipment",
-      description:t.siemensDescription,
+      description: t.siemensDescription,
       products: ["MRI Systems", "CT Scanners", "X-Ray Machines"],
       booth: "Booth #101",
       demoAvailable: true,
@@ -57,7 +57,7 @@ export default function MedicalTechnologyZone() {
       name: t.intuitiveSurgicalName,
       logo: Scan,
       category: "surgical",
-      description:t.intuitiveDescription,
+      description: t.intuitiveDescription,
       products: ["Robotic Systems", "Surgical Instruments", "3D Vision"],
       booth: "Booth #205",
       demoAvailable: true,
@@ -67,7 +67,7 @@ export default function MedicalTechnologyZone() {
       name: t.philipsHealthcareName,
       logo: Monitor,
       category: "monitoring",
-      description:t.philipsDescription,
+      description: t.philipsDescription,
       products: ["Patient Monitors", "Telehealth", "Ultrasound"],
       booth: "Booth #108",
       demoAvailable: true,
@@ -77,7 +77,7 @@ export default function MedicalTechnologyZone() {
       name: t.medtronicName,
       logo: HeartPulse,
       category: "surgical",
-      description:t.medtronicDescription,
+      description: t.medtronicDescription,
       products: ["Cardiac Devices", "Surgical Tools", "Diabetes Care"],
       booth: "Booth #112",
       demoAvailable: true,
@@ -87,7 +87,7 @@ export default function MedicalTechnologyZone() {
       name: t.geHealthcare,
       logo: Microscope,
       category: "equipment",
-      description:t.geDescription,
+      description: t.geDescription,
       products: ["AI Imaging", "Digital Solutions", "EDC Systems"],
       booth: "Booth #156",
       demoAvailable: false,
@@ -97,7 +97,7 @@ export default function MedicalTechnologyZone() {
       name: t.epicSystemsName,
       logo: Server,
       category: "it",
-      description:t.epicDescription,
+      description: t.epicDescription,
       products: ["EHR Software", "Patient Portals", "Analytics"],
       booth: "Booth #203",
       demoAvailable: true,
@@ -107,7 +107,7 @@ export default function MedicalTechnologyZone() {
       name: t.strykerCorporation,
       logo: Syringe,
       category: "surgical",
-      description:t.strykerDescription,
+      description: t.strykerDescription,
       products: ["Surgical Equipment", "Neuro Tech", "Orthopedics"],
       booth: "Booth #189",
       demoAvailable: true,
@@ -137,7 +137,7 @@ export default function MedicalTechnologyZone() {
       name: t.baxterInternational,
       logo: Stethoscope,
       category: "monitoring",
-      description:t.baxterDescription,
+      description: t.baxterDescription,
       products: ["Infusion Systems", "Acute Care", "Monitoring"],
       booth: "Booth #134",
       demoAvailable: true,
@@ -251,8 +251,7 @@ export default function MedicalTechnologyZone() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative text-white">
-              
-            {t.medicalTechnologyZone}
+              {t.medicalTechnologyZone}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
             </h1>
 
@@ -413,7 +412,7 @@ export default function MedicalTechnologyZone() {
                           </button>
                           <button className="inline-flex items-center gap-1 text-xs sm:text-sm text-gray-400 hover:text-white transition-colors">
                             <span>{t.viewProducts}</span>
-                            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                           </button>
                         </div>
                       </div>
@@ -489,7 +488,7 @@ export default function MedicalTechnologyZone() {
                       className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
                     >
                       {t.viewFullSchedule}
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
@@ -586,7 +585,7 @@ export default function MedicalTechnologyZone() {
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.requestInformation}
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="#exhibitors"

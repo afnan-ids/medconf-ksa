@@ -33,7 +33,7 @@ import {
   Target,
   Globe2,
   Zap,
-  ArrowRight,
+  ChevronRight,
   DollarSign,
   CalendarDays,
   Ruler,
@@ -352,7 +352,6 @@ export default function ExhibitorRegisterPage() {
             </div>
           </div>
 
-        
           {/* Main Form Container */}
           <div
             className="relative bg-gradient-to-br from-gray-900/80 via-indigo-950/80 to-gray-900/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-700"

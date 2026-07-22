@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "../../context/LanguageContext";
@@ -296,14 +296,13 @@ export default function TargetedSectors() {
             </div>
 
             {/* Bottom CTA - Mobile Optimized */}
-            <div className="text-center mt-8 sm:mt-10 md:mt-12 relative z-10">
+            {/* <div className="text-center mt-8 sm:mt-10 md:mt-12 relative z-10">
               <Link href="#" className="group inline-flex items-center">
                 <div
                   className="
                 relative
                 inline-flex
                 items-center
-                gap-2 sm:gap-2.5
                 overflow-hidden
                 rounded-full
                 border border-emerald-100
@@ -321,26 +320,26 @@ export default function TargetedSectors() {
                 hover:text-slate-900
               "
                 >
-                  {/* Soft gradient accent */}
+                  
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-emerald-50 via-green-50 to-teal-50" />
 
-                  {/* Small accent dot */}
-                  <div className="relative h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500" />
+                  <div className="relative h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500 me-1 mb-1" />
 
                   <span className="relative">{t.exploreAllSectors}</span>
 
-                  <ArrowRight
-                    className="
+                  <ChevronRight
+                  className="
                   relative
                   h-3 w-3 sm:h-4 sm:w-4
                   text-emerald-600
                   transition-transform duration-300
                   group-hover:translate-x-1
+                  mb-1
                 "
                   />
                 </div>
               </Link>
-            </div>
+            </div> */}
 
             {/* Bottom Decorative Line */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent"></div>

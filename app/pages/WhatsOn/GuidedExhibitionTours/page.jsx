@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
+  ChevronRight,
   Compass,
   MapPin,
   Clock,
@@ -36,7 +36,7 @@ export default function GuidedExhibitionTours() {
   const [selectedTour, setSelectedTour] = useState("innovation");
   const [hoveredStop, setHoveredStop] = useState(null);
 
-   const { language } = useLanguage();
+  const { language } = useLanguage();
   const t = translations[language];
 
   const tourSchedules = [
@@ -137,54 +137,270 @@ export default function GuidedExhibitionTours() {
 
   const tourStops = {
     innovation: [
-      { booth: "#101", name: t.siemensHealthineers, highlight: t.aiPoweredMRI, type: t.medicalImaging, time: "15 min" },
-      { booth: "#205", name: t.intuitiveSurgical, highlight: t.daVinciRoboticSystem, type: t.robotics, time: "20 min" },
-      { booth: "#112", name: t.medtronic, highlight: t.nextGenCardiacDevices, type: t.cardiovascular, time: "15 min" },
-      { booth: "#156", name: t.geHealthcare, highlight: t.aiEnabledImaging, type: t.digitalHealth, time: "15 min" },
-      { booth: "#089", name: t.bostonScientific, highlight: t.innovativeEndoscopySolutions, type: t.surgical, time: "10 min" },
-      { booth: "#203", name: t.philipsHealthcare, highlight: t.advancedPatientMonitoring, type: t.monitoring, time: "10 min" },
-      { booth: "#167", name: t.stryker, highlight: t.roboticJointReplacement, type: t.orthopedics, time: "15 min" },
-      { booth: "#134", name: t.abbottLaboratories, highlight: t.diabetesCareInnovations, type: t.chronicCare, time: "10 min" },
+      {
+        booth: "#101",
+        name: t.siemensHealthineers,
+        highlight: t.aiPoweredMRI,
+        type: t.medicalImaging,
+        time: "15 min",
+      },
+      {
+        booth: "#205",
+        name: t.intuitiveSurgical,
+        highlight: t.daVinciRoboticSystem,
+        type: t.robotics,
+        time: "20 min",
+      },
+      {
+        booth: "#112",
+        name: t.medtronic,
+        highlight: t.nextGenCardiacDevices,
+        type: t.cardiovascular,
+        time: "15 min",
+      },
+      {
+        booth: "#156",
+        name: t.geHealthcare,
+        highlight: t.aiEnabledImaging,
+        type: t.digitalHealth,
+        time: "15 min",
+      },
+      {
+        booth: "#089",
+        name: t.bostonScientific,
+        highlight: t.innovativeEndoscopySolutions,
+        type: t.surgical,
+        time: "10 min",
+      },
+      {
+        booth: "#203",
+        name: t.philipsHealthcare,
+        highlight: t.advancedPatientMonitoring,
+        type: t.monitoring,
+        time: "10 min",
+      },
+      {
+        booth: "#167",
+        name: t.stryker,
+        highlight: t.roboticJointReplacement,
+        type: t.orthopedics,
+        time: "15 min",
+      },
+      {
+        booth: "#134",
+        name: t.abbottLaboratories,
+        highlight: t.diabetesCareInnovations,
+        type: t.chronicCare,
+        time: "10 min",
+      },
     ],
     clinical: [
-      { booth: "#112", name: t.medtronic, highlight: "Minimally Invasive Surgery", type: "Surgical", time: "15 min" },
-      { booth: "#101", name: t.siemensHealthineers, highlight: "Clinical Diagnostics", type: "Diagnostics", time: "15 min" },
-      { booth: "#205", name: t.intuitiveSurgical, highlight: "Clinical Outcomes", type: "Surgical", time: "15 min" },
-      { booth: "#189", name: "Baxter", highlight: "Acute Care Solutions", type: "Critical Care", time: "10 min" },
-      { booth: "#156", name: t.geHealthcare, highlight: "Clinical Workflow Solutions", type: "IT Solutions", time: "10 min" },
-      { booth: "#203", name: t.philipsHealthcare, highlight: "Patient Monitoring Systems", type: "Monitoring", time: "10 min" },
-      { booth: "#221", name: "Zimmer Biomet", highlight: "Orthopedic Clinical Solutions", type: "Orthopedics", time: "10 min" },
+      {
+        booth: "#112",
+        name: t.medtronic,
+        highlight: "Minimally Invasive Surgery",
+        type: "Surgical",
+        time: "15 min",
+      },
+      {
+        booth: "#101",
+        name: t.siemensHealthineers,
+        highlight: "Clinical Diagnostics",
+        type: "Diagnostics",
+        time: "15 min",
+      },
+      {
+        booth: "#205",
+        name: t.intuitiveSurgical,
+        highlight: "Clinical Outcomes",
+        type: "Surgical",
+        time: "15 min",
+      },
+      {
+        booth: "#189",
+        name: "Baxter",
+        highlight: "Acute Care Solutions",
+        type: "Critical Care",
+        time: "10 min",
+      },
+      {
+        booth: "#156",
+        name: t.geHealthcare,
+        highlight: "Clinical Workflow Solutions",
+        type: "IT Solutions",
+        time: "10 min",
+      },
+      {
+        booth: "#203",
+        name: t.philipsHealthcare,
+        highlight: "Patient Monitoring Systems",
+        type: "Monitoring",
+        time: "10 min",
+      },
+      {
+        booth: "#221",
+        name: "Zimmer Biomet",
+        highlight: "Orthopedic Clinical Solutions",
+        type: "Orthopedics",
+        time: "10 min",
+      },
     ],
     digital: [
-      { booth: "#203", name: "Philips Healthcare", highlight: "Telehealth Platform", type: "Telemedicine", time: "15 min" },
-      { booth: "#156", name: "GE Healthcare", highlight: "AI Diagnostics Suite", type: "AI Solutions", time: "15 min" },
-      { booth: "#108", name: "Epic Systems", highlight: "Cloud EHR Platform", type: "EHR", time: "10 min" },
-      { booth: "#089", name: "Cerner", highlight: "Population Health Analytics", type: "Analytics", time: "10 min" },
-      { booth: "#205", name: "Google Health", highlight: "AI in Medical Imaging", type: "AI", time: "10 min" },
+      {
+        booth: "#203",
+        name: "Philips Healthcare",
+        highlight: "Telehealth Platform",
+        type: "Telemedicine",
+        time: "15 min",
+      },
+      {
+        booth: "#156",
+        name: "GE Healthcare",
+        highlight: "AI Diagnostics Suite",
+        type: "AI Solutions",
+        time: "15 min",
+      },
+      {
+        booth: "#108",
+        name: "Epic Systems",
+        highlight: "Cloud EHR Platform",
+        type: "EHR",
+        time: "10 min",
+      },
+      {
+        booth: "#089",
+        name: "Cerner",
+        highlight: "Population Health Analytics",
+        type: "Analytics",
+        time: "10 min",
+      },
+      {
+        booth: "#205",
+        name: "Google Health",
+        highlight: "AI in Medical Imaging",
+        type: "AI",
+        time: "10 min",
+      },
     ],
     research: [
-      { booth: "#156", name: "GE Healthcare", highlight: "Research Imaging Solutions", type: "Imaging", time: "15 min" },
-      { booth: "#112", name: "Medtronic", highlight: "Clinical Trial Devices", type: "Research", time: "15 min" },
-      { booth: "#101", name: "Siemens Healthineers", highlight: "Research Collaborations", type: "Partnerships", time: "15 min" },
-      { booth: "#205", name: "Illumina", highlight: "Genomic Research Tools", type: "Genomics", time: "15 min" },
-      { booth: "#134", name: "Pfizer", highlight: "Clinical Research Programs", type: "Pharma", time: "15 min" },
-      { booth: "#167", name: "Mayo Clinic", highlight: "Academic Research", type: "Academic", time: "10 min" },
+      {
+        booth: "#156",
+        name: "GE Healthcare",
+        highlight: "Research Imaging Solutions",
+        type: "Imaging",
+        time: "15 min",
+      },
+      {
+        booth: "#112",
+        name: "Medtronic",
+        highlight: "Clinical Trial Devices",
+        type: "Research",
+        time: "15 min",
+      },
+      {
+        booth: "#101",
+        name: "Siemens Healthineers",
+        highlight: "Research Collaborations",
+        type: "Partnerships",
+        time: "15 min",
+      },
+      {
+        booth: "#205",
+        name: "Illumina",
+        highlight: "Genomic Research Tools",
+        type: "Genomics",
+        time: "15 min",
+      },
+      {
+        booth: "#134",
+        name: "Pfizer",
+        highlight: "Clinical Research Programs",
+        type: "Pharma",
+        time: "15 min",
+      },
+      {
+        booth: "#167",
+        name: "Mayo Clinic",
+        highlight: "Academic Research",
+        type: "Academic",
+        time: "10 min",
+      },
     ],
     surgical: [
-      { booth: "#205", name: "Intuitive Surgical", highlight: "Robotic Surgery Demo", type: "Robotics", time: "20 min" },
-      { booth: "#112", name: "Medtronic", highlight: "Surgical Navigation Systems", type: "Navigation", time: "15 min" },
-      { booth: "#167", name: "Stryker", highlight: "Joint Replacement Robotics", type: "Robotics", time: "15 min" },
-      { booth: "#189", name: "Olympus", highlight: "Endoscopic Surgical Systems", type: "Endoscopy", time: "10 min" },
-      { booth: "#203", name: "Karl Storz", highlight: "OR Integration Solutions", type: "OR Tech", time: "10 min" },
-      { booth: "#221", name: "Zimmer Biomet", highlight: "Surgical Instruments", type: "Instruments", time: "10 min" },
+      {
+        booth: "#205",
+        name: "Intuitive Surgical",
+        highlight: "Robotic Surgery Demo",
+        type: "Robotics",
+        time: "20 min",
+      },
+      {
+        booth: "#112",
+        name: "Medtronic",
+        highlight: "Surgical Navigation Systems",
+        type: "Navigation",
+        time: "15 min",
+      },
+      {
+        booth: "#167",
+        name: "Stryker",
+        highlight: "Joint Replacement Robotics",
+        type: "Robotics",
+        time: "15 min",
+      },
+      {
+        booth: "#189",
+        name: "Olympus",
+        highlight: "Endoscopic Surgical Systems",
+        type: "Endoscopy",
+        time: "10 min",
+      },
+      {
+        booth: "#203",
+        name: "Karl Storz",
+        highlight: "OR Integration Solutions",
+        type: "OR Tech",
+        time: "10 min",
+      },
+      {
+        booth: "#221",
+        name: "Zimmer Biomet",
+        highlight: "Surgical Instruments",
+        type: "Instruments",
+        time: "10 min",
+      },
     ],
   };
 
   const tourGuides = [
-    { name: t.drSarahChen, role: t.medicalTechnologySpecialist, expertise: t.drSarahExpertise, image: "👩‍⚕️", yearsExp: 12 },
-    { name: t.drMichaelRoberts, role: t.clinicalInnovationDirector, expertise: t.drMichaelExpertise, image: "👨‍⚕️", yearsExp: 15 },
-    { name: t.lisaWong, role: t.digitalHealthLead, expertise: t.lisaExpertise, image: "👩‍💻", yearsExp: 8 },
-    { name: t.jamesWilson, role: t.researchPartner, expertise: t.jamesExpertise, image: "👨‍🔬", yearsExp: 10 },
+    {
+      name: t.drSarahChen,
+      role: t.medicalTechnologySpecialist,
+      expertise: t.drSarahExpertise,
+      image: "👩‍⚕️",
+      yearsExp: 12,
+    },
+    {
+      name: t.drMichaelRoberts,
+      role: t.clinicalInnovationDirector,
+      expertise: t.drMichaelExpertise,
+      image: "👨‍⚕️",
+      yearsExp: 15,
+    },
+    {
+      name: t.lisaWong,
+      role: t.digitalHealthLead,
+      expertise: t.lisaExpertise,
+      image: "👩‍💻",
+      yearsExp: 8,
+    },
+    {
+      name: t.jamesWilson,
+      role: t.researchPartner,
+      expertise: t.jamesExpertise,
+      image: "👨‍🔬",
+      yearsExp: 10,
+    },
   ];
 
   const currentStops = tourStops[selectedTour] || tourStops.innovation;
@@ -234,7 +450,9 @@ export default function GuidedExhibitionTours() {
           <div className="text-center max-w-4xl mx-auto mb-20">
             <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6">
               <Compass className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-gray-300">{t.expertLedExperiences}</span>
+              <span className="text-sm text-gray-300">
+                {t.expertLedExperiences}
+              </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
               {t.guidedExhibitionTours}
@@ -272,23 +490,37 @@ export default function GuidedExhibitionTours() {
                           : "bg-white/5 border-white/10 hover:border-white/20"
                       }`}
                     >
-                      <div className={`mb-3 ${isSelected ? "text-white" : `text-${theme.color}-400`}`}>
+                      <div
+                        className={`mb-3 ${isSelected ? "text-white" : `text-${theme.color}-400`}`}
+                      >
                         <Icon className="w-8 h-8" />
                       </div>
-                      <h3 className={`font-semibold mb-1 ${isSelected ? "text-white" : "text-white"}`}>
+                      <h3
+                        className={`font-semibold mb-1 ${isSelected ? "text-white" : "text-white"}`}
+                      >
                         {theme.title}
                       </h3>
                       <div className="flex items-center gap-3 text-xs mb-2">
-                        <span className={isSelected ? "text-white/70" : "text-gray-400"}>
+                        <span
+                          className={
+                            isSelected ? "text-white/70" : "text-gray-400"
+                          }
+                        >
                           <Clock className="w-3 h-3 inline mr-1" />
                           {theme.duration}
                         </span>
-                        <span className={isSelected ? "text-white/70" : "text-gray-400"}>
+                        <span
+                          className={
+                            isSelected ? "text-white/70" : "text-gray-400"
+                          }
+                        >
                           <Flag className="w-3 h-3 inline mr-1" />
                           {theme.stops} stops
                         </span>
                       </div>
-                      <p className={`text-xs leading-relaxed ${isSelected ? "text-white/70" : "text-gray-400"}`}>
+                      <p
+                        className={`text-xs leading-relaxed ${isSelected ? "text-white/70" : "text-gray-400"}`}
+                      >
                         {theme.description}
                       </p>
                     </div>
@@ -303,16 +535,20 @@ export default function GuidedExhibitionTours() {
             <div className="mb-20">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h3 className={`text-2xl font-bold text-white ${getLightColor(currentTheme.color)}`}>
+                  <h3
+                    className={`text-2xl font-bold text-white ${getLightColor(currentTheme.color)}`}
+                  >
                     {currentTheme.title}
                   </h3>
-                  <p className="text-gray-400 mt-1">{currentTheme.description}</p>
+                  <p className="text-gray-400 mt-1">
+                    {currentTheme.description}
+                  </p>
                 </div>
                 <Link
                   href="#schedule"
                   className="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-all duration-300 inline-flex items-center gap-2"
                 >
-                  {t.bookATour} <ArrowRight className="w-4 h-4" />
+                  {t.bookATour} <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
 
@@ -326,16 +562,26 @@ export default function GuidedExhibitionTours() {
                   >
                     <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
                       <div className="flex items-start gap-3">
-                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${getColorStyles(currentTheme.color)} flex items-center justify-center text-white text-sm font-bold flex-shrink-0`}>
+                        <div
+                          className={`w-8 h-8 rounded-lg bg-gradient-to-r ${getColorStyles(currentTheme.color)} flex items-center justify-center text-white text-sm font-bold flex-shrink-0`}
+                        >
                           {idx + 1}
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between flex-wrap gap-2 mb-1">
-                            <span className="text-xs font-mono text-blue-400">{stop.booth}</span>
-                            <span className="text-xs text-gray-500">{stop.time}</span>
+                            <span className="text-xs font-mono text-blue-400">
+                              {stop.booth}
+                            </span>
+                            <span className="text-xs text-gray-500">
+                              {stop.time}
+                            </span>
                           </div>
-                          <h4 className="font-semibold text-white mb-1">{stop.name}</h4>
-                          <p className="text-sm text-gray-400">{stop.highlight}</p>
+                          <h4 className="font-semibold text-white mb-1">
+                            {stop.name}
+                          </h4>
+                          <p className="text-sm text-gray-400">
+                            {stop.highlight}
+                          </p>
                           <span className="inline-block mt-2 text-xs px-2 py-0.5 rounded-full bg-white/5 text-gray-400">
                             {stop.type}
                           </span>
@@ -363,30 +609,53 @@ export default function GuidedExhibitionTours() {
                 <table className="w-full">
                   <thead className="bg-white/5 border-b border-white/10">
                     <tr>
-                      <th className="text-left p-4 text-gray-300 font-medium">Time</th>
-                      <th className="text-left p-4 text-gray-300 font-medium">Tour</th>
-                      <th className="text-left p-4 text-gray-300 font-medium">Guide</th>
-                      <th className="text-left p-4 text-gray-300 font-medium">Availability</th>
+                      <th className="text-left p-4 text-gray-300 font-medium">
+                        Time
+                      </th>
+                      <th className="text-left p-4 text-gray-300 font-medium">
+                        Tour
+                      </th>
+                      <th className="text-left p-4 text-gray-300 font-medium">
+                        Guide
+                      </th>
+                      <th className="text-left p-4 text-gray-300 font-medium">
+                        Availability
+                      </th>
                       <th className="text-left p-4 text-gray-300 font-medium"></th>
                     </tr>
                   </thead>
                   <tbody>
                     {tourSchedules.map((schedule, idx) => (
-                      <tr key={idx} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <tr
+                        key={idx}
+                        className="border-b border-white/5 hover:bg-white/5 transition-colors"
+                      >
                         <td className="p-4">
-                          <div className="font-semibold text-white">{schedule.time}</div>
-                          <div className="text-xs text-gray-500">{schedule.duration}</div>
+                          <div className="font-semibold text-white">
+                            {schedule.time}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            {schedule.duration}
+                          </div>
                         </td>
                         <td className="p-4">
-                          <div className="text-white">{schedule.theme} Tour</div>
-                          <div className="text-xs text-gray-500">{schedule.language}</div>
+                          <div className="text-white">
+                            {schedule.theme} Tour
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            {schedule.language}
+                          </div>
                         </td>
                         <td className="p-4">
                           <div className="text-white">{schedule.guide}</div>
-                          <div className="text-xs text-gray-500">Max {schedule.maxGroup} people</div>
+                          <div className="text-xs text-gray-500">
+                            Max {schedule.maxGroup} people
+                          </div>
                         </td>
                         <td className="p-4">
-                          <span className="text-green-400 font-medium">{schedule.available} spots</span>
+                          <span className="text-green-400 font-medium">
+                            {schedule.available} spots
+                          </span>
                           <div className="text-xs text-gray-500">available</div>
                         </td>
                         <td className="p-4">
@@ -413,7 +682,10 @@ export default function GuidedExhibitionTours() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {tourGuides.map((guide, index) => (
-                <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-all duration-300">
+                <div
+                  key={index}
+                  className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-all duration-300"
+                >
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl">
                       {guide.image}
@@ -421,11 +693,15 @@ export default function GuidedExhibitionTours() {
                     <div>
                       <h3 className="font-semibold text-white">{guide.name}</h3>
                       <p className="text-sm text-blue-400">{guide.role}</p>
-                      <p className="text-xs text-gray-500 mt-1">{guide.yearsExp}+ years exp</p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        {guide.yearsExp}+ years exp
+                      </p>
                     </div>
                   </div>
                   <div className="mt-3 pt-3 border-t border-white/10">
-                    <p className="text-xs text-gray-400">Expertise: {guide.expertise}</p>
+                    <p className="text-xs text-gray-400">
+                      Expertise: {guide.expertise}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -437,15 +713,20 @@ export default function GuidedExhibitionTours() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { icon: Navigation, value: "8+", label: t.dailyTours },
-                { icon: Users, value: "15", label: t.maxGroupSize},
+                { icon: Users, value: "15", label: t.maxGroupSize },
                 { icon: Award, value: "100%", label: t.expertGuides },
                 { icon: BadgeCheck, value: "90%", label: t.satisfaction },
               ].map((stat, index) => {
                 const Icon = stat.icon;
                 return (
-                  <div key={index} className="text-center p-6 bg-white/5 border border-white/10 rounded-xl">
+                  <div
+                    key={index}
+                    className="text-center p-6 bg-white/5 border border-white/10 rounded-xl"
+                  >
                     <Icon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-                    <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
+                    <p className="text-3xl font-bold text-white mb-1">
+                      {stat.value}
+                    </p>
                     <p className="text-sm text-gray-400">{stat.label}</p>
                   </div>
                 );
@@ -453,9 +734,7 @@ export default function GuidedExhibitionTours() {
             </div>
           </div>
 
-          
-    
-     <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
+          <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
             {/* Animated background */}
             <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
 
@@ -467,21 +746,20 @@ export default function GuidedExhibitionTours() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
                 <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span className="text-xs sm:text-sm font-medium text-white/90">
-                 {t.dontMissOut}
+                  {t.dontMissOut}
                 </span>
               </div>
 
               <h4 className="text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                
                 {t.ctaDescription}
               </h4>
 
-               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/register"
                   className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  {t.bookATour} <ArrowRight className="w-4 h-4" />
+                  {t.bookATour} <ChevronRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="#"
@@ -492,8 +770,6 @@ export default function GuidedExhibitionTours() {
               </div>
             </div>
           </div>
-
-
         </div>
       </section>
     </>

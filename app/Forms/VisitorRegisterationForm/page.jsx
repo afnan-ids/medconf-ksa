@@ -33,7 +33,7 @@ import {
   Target,
   Globe2,
   Zap,
-  ArrowRight,
+  ChevronRight,
   Ticket,
   UsersRound,
   Mic,
@@ -136,7 +136,7 @@ export default function VisitorRegisterPage() {
 
   const handleInfoRequestChange = (item) => {
     setInfoRequests((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
+      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item],
     );
   };
 
@@ -154,20 +154,118 @@ export default function VisitorRegisterPage() {
   };
 
   const floatingIcons = [
-    { Icon: Ticket, delay: 0, duration: 25, startX: 5, startY: 15, color: "text-blue-400/50" },
-    { Icon: UsersRound, delay: 2, duration: 22, startX: 92, startY: 10, color: "text-blue-400/50" },
-    { Icon: Shield, delay: 4, duration: 28, startX: 3, startY: 70, color: "text-blue-400/50" },
-    { Icon: Users, delay: 1, duration: 20, startX: 78, startY: 85, color: "text-blue-400/50" },
-    { Icon: Award, delay: 3, duration: 24, startX: 88, startY: 78, color: "text-blue-400/50" },
-    { Icon: Star, delay: 5, duration: 30, startX: 95, startY: 45, color: "text-blue-400/50" },
-    { Icon: Sparkles, delay: 2.5, duration: 18, startX: 2, startY: 40, color: "text-blue-400/50" },
-    { Icon: BadgeCheck, delay: 6, duration: 26, startX: 10, startY: 90, color: "text-blue-400/50" },
-    { Icon: Clock, delay: 1.5, duration: 21, startX: 25, startY: 3, color: "text-blue-400/50" },
-    { Icon: Mic, delay: 3.5, duration: 23, startX: 97, startY: 60, color: "text-blue-400/50" },
-    { Icon: Globe, delay: 4.5, duration: 27, startX: 50, startY: 50, color: "text-blue-400/50" },
-    { Icon: Calendar, delay: 1.8, duration: 24, startX: 60, startY: 92, color: "text-blue-400/50" },
-    { Icon: Coffee, delay: 0.8, duration: 19, startX: 15, startY: 45, color: "text-blue-400/50" },
-    { Icon: Gift, delay: 3.2, duration: 26, startX: 85, startY: 20, color: "text-blue-400/50" },
+    {
+      Icon: Ticket,
+      delay: 0,
+      duration: 25,
+      startX: 5,
+      startY: 15,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: UsersRound,
+      delay: 2,
+      duration: 22,
+      startX: 92,
+      startY: 10,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Shield,
+      delay: 4,
+      duration: 28,
+      startX: 3,
+      startY: 70,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Users,
+      delay: 1,
+      duration: 20,
+      startX: 78,
+      startY: 85,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Award,
+      delay: 3,
+      duration: 24,
+      startX: 88,
+      startY: 78,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Star,
+      delay: 5,
+      duration: 30,
+      startX: 95,
+      startY: 45,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Sparkles,
+      delay: 2.5,
+      duration: 18,
+      startX: 2,
+      startY: 40,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: BadgeCheck,
+      delay: 6,
+      duration: 26,
+      startX: 10,
+      startY: 90,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Clock,
+      delay: 1.5,
+      duration: 21,
+      startX: 25,
+      startY: 3,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Mic,
+      delay: 3.5,
+      duration: 23,
+      startX: 97,
+      startY: 60,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Globe,
+      delay: 4.5,
+      duration: 27,
+      startX: 50,
+      startY: 50,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Calendar,
+      delay: 1.8,
+      duration: 24,
+      startX: 60,
+      startY: 92,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Coffee,
+      delay: 0.8,
+      duration: 19,
+      startX: 15,
+      startY: 45,
+      color: "text-blue-400/50",
+    },
+    {
+      Icon: Gift,
+      delay: 3.2,
+      duration: 26,
+      startX: 85,
+      startY: 20,
+      color: "text-blue-400/50",
+    },
   ];
 
   const interests = [
@@ -186,12 +284,9 @@ export default function VisitorRegisterPage() {
       <BreadCrumb
         title="Visitor Registration"
         backgroundImage="/Images/Home/Bread-crum-1.avif"
-        path={[
-          { label: "Visitor Registration" },
-        ]}
+        path={[{ label: "Visitor Registration" }]}
       />
       <div className="min-h-screen relative">
-
         {/* Dark themed background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
           <div className="absolute top-10 left-10 w-32 h-32 sm:w-72 sm:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -206,7 +301,6 @@ export default function VisitorRegisterPage() {
             <FloatingIcon key={idx} {...icon} />
           ))}
         </div>
-
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-8 md:py-12">
           {/* Hero Banner */}
@@ -224,7 +318,7 @@ export default function VisitorRegisterPage() {
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                   Register for{" "}
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                    Hpql  2026
+                    Hpql 2026
                   </span>
                   <br />
                   <span className="text-white bg-clip-text text-transparent">
@@ -232,14 +326,17 @@ export default function VisitorRegisterPage() {
                   </span>
                 </h1>
 
-
                 <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                  Join <span className="font-semibold text-blue-400">50,000+ healthcare professionals</span> at the
-                  region's largest healthcare exhibition. Discover cutting-edge
-                  innovations, earn CPD points, and network with{" "}
+                  Join{" "}
+                  <span className="font-semibold text-blue-400">
+                    50,000+ healthcare professionals
+                  </span>{" "}
+                  at the region's largest healthcare exhibition. Discover
+                  cutting-edge innovations, earn CPD points, and network with{" "}
                   <span className="font-semibold text-cyan-400">
                     industry leaders
-                  </span>.
+                  </span>
+                  .
                 </p>
               </div>
 
@@ -278,7 +375,7 @@ export default function VisitorRegisterPage() {
           >
             {/* Animated gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-cyan-500/5 to-blue-600/5 opacity-0 hover:opacity-100 transition-opacity duration-700"></div>
-            
+
             {/* Decorative corner elements */}
             <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-br-3xl blur-2xl"></div>
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-blue-500/20 to-cyan-500/20 rounded-tl-3xl blur-2xl"></div>
@@ -289,31 +386,41 @@ export default function VisitorRegisterPage() {
               <div className="relative">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 mb-4">
                   <Ticket className="w-4 h-4 text-blue-400" />
-                  <span className="text-xs text-blue-300 font-medium">Free Registration</span>
+                  <span className="text-xs text-blue-300 font-medium">
+                    Free Registration
+                  </span>
                 </div>
                 <h2 className=" pb-2 text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent animate-gradient">
                   Visitor Registration
                 </h2>
-                <p className="text-gray-300 mt-3 text-lg">Join the region's premier healthcare event</p>
+                <p className="text-gray-300 mt-3 text-lg">
+                  Join the region's premier healthcare event
+                </p>
                 <div className="flex items-center justify-center gap-2 mt-4">
                   <div className="flex items-center gap-1 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
                     <Lock className="w-3 h-3 text-cyan-400" />
-                    <span className="text-xs text-gray-400">Secure Registration</span>
+                    <span className="text-xs text-gray-400">
+                      Secure Registration
+                    </span>
                   </div>
                   <div className="flex items-center gap-1 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
                     <BadgeCheck className="w-3 h-3 text-blue-400" />
-                    <span className="text-xs text-gray-400">CPD Accredited</span>
+                    <span className="text-xs text-gray-400">
+                      CPD Accredited
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="relative p-6 md:p-8 lg:p-10 space-y-8">
+            <form
+              onSubmit={handleSubmit}
+              className="relative p-6 md:p-8 lg:p-10 space-y-8"
+            >
               {/* ACCOUNT SECTION */}
               <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10">
-
                 <div className="absolute -inset-px bg-gradient-to-r from-blue-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/10 group-hover:via-blue-500/10 group-hover:to-cyan-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
-                
+
                 <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
@@ -325,7 +432,9 @@ export default function VisitorRegisterPage() {
                     <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Account Information
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">Create your visitor account</p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      Create your visitor account
+                    </p>
                   </div>
                 </div>
 
@@ -346,7 +455,7 @@ export default function VisitorRegisterPage() {
                         placeholder="visitor@example.com"
                         required
                       />
-                             </div>
+                    </div>
                   </div>
 
                   <div className="group/field">
@@ -365,7 +474,7 @@ export default function VisitorRegisterPage() {
                         placeholder="+966 XX XXX XXXX"
                         required
                       />
-                              </div>
+                    </div>
                   </div>
 
                   <div className="group/field">
@@ -389,9 +498,13 @@ export default function VisitorRegisterPage() {
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute right-3 top-3.5 text-gray-400 hover:text-blue-400 transition-colors"
                       >
-                        {showPassword ? <EyeOff className="w-5" /> : <Eye className="w-5" />}
+                        {showPassword ? (
+                          <EyeOff className="w-5" />
+                        ) : (
+                          <Eye className="w-5" />
+                        )}
                       </button>
-                               </div>
+                    </div>
                   </div>
 
                   <div className="group/field">
@@ -412,21 +525,26 @@ export default function VisitorRegisterPage() {
                       />
                       <button
                         type="button"
-                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        onClick={() =>
+                          setShowConfirmPassword(!showConfirmPassword)
+                        }
                         className="absolute right-3 top-3.5 text-gray-400 hover:text-cyan-400 transition-colors"
                       >
-                        {showConfirmPassword ? <EyeOff className="w-5" /> : <Eye className="w-5" />}
+                        {showConfirmPassword ? (
+                          <EyeOff className="w-5" />
+                        ) : (
+                          <Eye className="w-5" />
+                        )}
                       </button>
-                            </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* PERSONAL INFORMATION SECTION */}
               <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-emerald-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/10">
-
                 <div className="absolute -inset-px bg-gradient-to-r from-emerald-500/0 via-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/10 group-hover:via-emerald-500/10 group-hover:to-teal-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
-                
+
                 <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
@@ -438,7 +556,9 @@ export default function VisitorRegisterPage() {
                     <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Personal Information
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">Tell us about yourself</p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      Tell us about yourself
+                    </p>
                   </div>
                 </div>
 
@@ -479,9 +599,13 @@ export default function VisitorRegisterPage() {
                       onChange={handleInputChange}
                       className={selectStyle}
                     >
-                      <option value="" className="bg-gray-800">Select nationality</option>
+                      <option value="" className="bg-gray-800">
+                        Select nationality
+                      </option>
                       <option className="bg-gray-800">Saudi Arabia</option>
-                      <option className="bg-gray-800">United Arab Emirates</option>
+                      <option className="bg-gray-800">
+                        United Arab Emirates
+                      </option>
                       <option className="bg-gray-800">Kuwait</option>
                       <option className="bg-gray-800">Qatar</option>
                       <option className="bg-gray-800">Bahrain</option>
@@ -509,9 +633,8 @@ export default function VisitorRegisterPage() {
 
               {/* PROFESSIONAL INFORMATION SECTION */}
               <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-purple-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10">
-
                 <div className="absolute -inset-px bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
-                
+
                 <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
@@ -523,7 +646,9 @@ export default function VisitorRegisterPage() {
                     <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Professional Information
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">Tell us about your profession</p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      Tell us about your profession
+                    </p>
                   </div>
                 </div>
 
@@ -539,15 +664,21 @@ export default function VisitorRegisterPage() {
                       className={selectStyle}
                       required
                     >
-                      <option value="" className="bg-gray-800">Select your profession</option>
+                      <option value="" className="bg-gray-800">
+                        Select your profession
+                      </option>
                       <option className="bg-gray-800">Medical Doctor</option>
                       <option className="bg-gray-800">Dentist</option>
                       <option className="bg-gray-800">Pharmacist</option>
                       <option className="bg-gray-800">Nurse</option>
-                      <option className="bg-gray-800">Healthcare Administrator</option>
+                      <option className="bg-gray-800">
+                        Healthcare Administrator
+                      </option>
                       <option className="bg-gray-800">Researcher</option>
                       <option className="bg-gray-800">Student</option>
-                      <option className="bg-gray-800">Industry Professional</option>
+                      <option className="bg-gray-800">
+                        Industry Professional
+                      </option>
                       <option className="bg-gray-800">Other</option>
                     </select>
                   </div>
@@ -586,10 +717,16 @@ export default function VisitorRegisterPage() {
                       className={selectStyle}
                       required
                     >
-                      <option value="" className="bg-gray-800">Select visitor type</option>
-                      <option className="bg-gray-800">Healthcare Professional</option>
+                      <option value="" className="bg-gray-800">
+                        Select visitor type
+                      </option>
+                      <option className="bg-gray-800">
+                        Healthcare Professional
+                      </option>
                       <option className="bg-gray-800">Student</option>
-                      <option className="bg-gray-800">Industry Professional</option>
+                      <option className="bg-gray-800">
+                        Industry Professional
+                      </option>
                       <option className="bg-gray-800">Media</option>
                       <option className="bg-gray-800">General Public</option>
                     </select>
@@ -613,7 +750,9 @@ export default function VisitorRegisterPage() {
                           onChange={() => handleInterestChange(interest)}
                           className="w-4 h-4 text-blue-500 rounded bg-white/10 border-white/20"
                         />
-                        <span className="text-sm text-gray-300">{interest}</span>
+                        <span className="text-sm text-gray-300">
+                          {interest}
+                        </span>
                       </label>
                     ))}
                   </div>
@@ -630,7 +769,9 @@ export default function VisitorRegisterPage() {
                     onChange={handleInputChange}
                     className={selectStyle}
                   >
-                    <option value="" className="bg-gray-800">Select number</option>
+                    <option value="" className="bg-gray-800">
+                      Select number
+                    </option>
                     <option className="bg-gray-800">Just myself</option>
                     <option className="bg-gray-800">2-3 people</option>
                     <option className="bg-gray-800">4-6 people</option>
@@ -642,9 +783,8 @@ export default function VisitorRegisterPage() {
 
               {/* DOCUMENTS SECTION - Optional for visitors */}
               <div className="relative group bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-orange-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/10">
-
                 <div className="absolute -inset-px bg-gradient-to-r from-orange-500/0 via-orange-500/0 to-amber-500/0 group-hover:from-orange-500/10 group-hover:via-orange-500/10 group-hover:to-amber-500/10 rounded-2xl blur-xl transition-all duration-700 -z-10"></div>
-                
+
                 <div className="flex items-center gap-4 mb-8 pb-3 border-b border-white/10">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl blur-lg opacity-50 animate-pulse"></div>
@@ -656,7 +796,9 @@ export default function VisitorRegisterPage() {
                     <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Profile Photo (Optional)
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">Upload a professional photo</p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      Upload a professional photo
+                    </p>
                   </div>
                 </div>
 
@@ -676,19 +818,29 @@ export default function VisitorRegisterPage() {
                       accept="image/*"
                       onChange={(e) => handleFileChange(e, "profilePhoto")}
                     />
-                    <div className={`transition-all duration-300 ${hoveredDoc === 0 ? "text-white" : "text-gray-400"}`}>
+                    <div
+                      className={`transition-all duration-300 ${hoveredDoc === 0 ? "text-white" : "text-gray-400"}`}
+                    >
                       <Camera className="mx-auto mb-3 w-12 h-12" />
                     </div>
-                    <p className={`text-sm font-medium transition-all duration-300 ${hoveredDoc === 0 ? "text-white" : "text-gray-300"}`}>
+                    <p
+                      className={`text-sm font-medium transition-all duration-300 ${hoveredDoc === 0 ? "text-white" : "text-gray-300"}`}
+                    >
                       Profile Photo
                     </p>
-                    <p className="text-xs text-gray-500 mt-2">Recommended: Square image, JPG or PNG</p>
+                    <p className="text-xs text-gray-500 mt-2">
+                      Recommended: Square image, JPG or PNG
+                    </p>
                     {formData.profilePhoto && (
-                      <p className={`text-xs mt-2 truncate px-2 ${hoveredDoc === 0 ? "text-white/80" : "text-cyan-400"}`}>
+                      <p
+                        className={`text-xs mt-2 truncate px-2 ${hoveredDoc === 0 ? "text-white/80" : "text-cyan-400"}`}
+                      >
                         ✓ {formData.profilePhoto.name}
                       </p>
                     )}
-                    <Upload className={`absolute bottom-4 right-4 w-5 h-5 transition-all duration-300 ${hoveredDoc === 0 ? "text-white opacity-100" : "opacity-0"}`} />
+                    <Upload
+                      className={`absolute bottom-4 right-4 w-5 h-5 transition-all duration-300 ${hoveredDoc === 0 ? "text-white opacity-100" : "opacity-0"}`}
+                    />
                   </label>
                 </div>
               </div>
@@ -706,7 +858,9 @@ export default function VisitorRegisterPage() {
                     <h3 className="text-2xl md:text-3xl font-bold text-white">
                       Additional Information
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">Help us personalize your experience</p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      Help us personalize your experience
+                    </p>
                   </div>
                 </div>
 
@@ -718,7 +872,10 @@ export default function VisitorRegisterPage() {
                     </h4>
                     <div className="flex flex-wrap gap-6">
                       {["yes", "no", "maybe"].map((value) => (
-                        <label key={value} className="flex items-center gap-2 cursor-pointer group/radio">
+                        <label
+                          key={value}
+                          className="flex items-center gap-2 cursor-pointer group/radio"
+                        >
                           <div className="relative">
                             <input
                               type="radio"
@@ -731,7 +888,9 @@ export default function VisitorRegisterPage() {
                               <div className="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
                             </div>
                           </div>
-                          <span className="text-gray-300 capitalize group-hover/radio:text-white transition-colors duration-300">{value}</span>
+                          <span className="text-gray-300 capitalize group-hover/radio:text-white transition-colors duration-300">
+                            {value}
+                          </span>
                         </label>
                       ))}
                     </div>
@@ -748,7 +907,10 @@ export default function VisitorRegisterPage() {
                         { value: "no", label: "Not at this time" },
                         { value: "maybe", label: "Maybe, send me information" },
                       ].map((option) => (
-                        <label key={option.value} className="flex items-center gap-2 cursor-pointer group/radio">
+                        <label
+                          key={option.value}
+                          className="flex items-center gap-2 cursor-pointer group/radio"
+                        >
                           <div className="relative">
                             <input
                               type="radio"
@@ -761,7 +923,9 @@ export default function VisitorRegisterPage() {
                               <div className="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
                             </div>
                           </div>
-                          <span className="text-gray-300 group-hover/radio:text-white transition-colors duration-300">{option.label}</span>
+                          <span className="text-gray-300 group-hover/radio:text-white transition-colors duration-300">
+                            {option.label}
+                          </span>
                         </label>
                       ))}
                     </div>
@@ -781,7 +945,10 @@ export default function VisitorRegisterPage() {
                         "Networking Events",
                         "Special Offers",
                       ].map((item, i) => (
-                        <label key={i} className="flex items-center gap-2 cursor-pointer group/checkbox">
+                        <label
+                          key={i}
+                          className="flex items-center gap-2 cursor-pointer group/checkbox"
+                        >
                           <div className="relative">
                             <input
                               type="checkbox"
@@ -793,7 +960,9 @@ export default function VisitorRegisterPage() {
                               <CheckCircle className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300" />
                             </div>
                           </div>
-                          <span className="text-sm text-gray-300 group-hover/checkbox:text-white transition-colors duration-300">{item}</span>
+                          <span className="text-sm text-gray-300 group-hover/checkbox:text-white transition-colors duration-300">
+                            {item}
+                          </span>
                         </label>
                       ))}
                     </div>
@@ -809,9 +978,14 @@ export default function VisitorRegisterPage() {
                     <div className="flex flex-wrap gap-6 text-sm justify-between">
                       {["Email", "Phone", "SMS"].map((type) => (
                         <div key={type} className="flex items-center gap-3">
-                          <span className="text-gray-400 font-medium w-12">{type}:</span>
+                          <span className="text-gray-400 font-medium w-12">
+                            {type}:
+                          </span>
                           {["yes", "no"].map((option) => (
-                            <label key={option} className="flex items-center gap-1 cursor-pointer group/radio">
+                            <label
+                              key={option}
+                              className="flex items-center gap-1 cursor-pointer group/radio"
+                            >
                               <div className="relative">
                                 <input
                                   type="radio"
@@ -829,7 +1003,9 @@ export default function VisitorRegisterPage() {
                                   <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                               </div>
-                              <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">{option}</span>
+                              <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
+                                {option}
+                              </span>
                             </label>
                           ))}
                         </div>
@@ -846,9 +1022,14 @@ export default function VisitorRegisterPage() {
                     <div className="flex flex-wrap gap-6 text-sm justify-between">
                       {["Email", "Phone", "SMS"].map((type) => (
                         <div key={type} className="flex items-center gap-3">
-                          <span className="text-gray-400 font-medium w-12">{type}:</span>
+                          <span className="text-gray-400 font-medium w-12">
+                            {type}:
+                          </span>
                           {["yes", "no"].map((option) => (
-                            <label key={option} className="flex items-center gap-1 cursor-pointer group/radio">
+                            <label
+                              key={option}
+                              className="flex items-center gap-1 cursor-pointer group/radio"
+                            >
                               <div className="relative">
                                 <input
                                   type="radio"
@@ -866,7 +1047,9 @@ export default function VisitorRegisterPage() {
                                   <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                               </div>
-                              <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">{option}</span>
+                              <span className="text-gray-400 text-sm capitalize group-hover/radio:text-white transition-colors duration-300">
+                                {option}
+                              </span>
                             </label>
                           ))}
                         </div>
@@ -894,10 +1077,11 @@ export default function VisitorRegisterPage() {
                     <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                   </div>
                 </button>
-                
+
                 <div className="flex items-center justify-center gap-4 mt-6">
                   <p className="text-xs text-gray-500 text-center">
-                    By submitting, you agree to our Terms of Service and Privacy Policy
+                    By submitting, you agree to our Terms of Service and Privacy
+                    Policy
                   </p>
                 </div>
               </div>
@@ -920,16 +1104,32 @@ export default function VisitorRegisterPage() {
 
         <style jsx>{`
           @keyframes float {
-            0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-            25% { transform: translateY(-70px) translateX(50px) rotate(6deg); }
-            50% { transform: translateY(-110px) translateX(0px) rotate(0deg); }
-            75% { transform: translateY(-35px) translateX(-50px) rotate(-6deg); }
-            100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            0% {
+              transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+            25% {
+              transform: translateY(-70px) translateX(50px) rotate(6deg);
+            }
+            50% {
+              transform: translateY(-110px) translateX(0px) rotate(0deg);
+            }
+            75% {
+              transform: translateY(-35px) translateX(-50px) rotate(-6deg);
+            }
+            100% {
+              transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
           }
           @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+            100% {
+              background-position: 0% 50%;
+            }
           }
           .animate-gradient {
             background-size: 200% auto;

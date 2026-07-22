@@ -15,7 +15,7 @@ import {
   Wallet,
   Smartphone,
   Building,
-  ArrowRight,
+  ChevronRight,
   Receipt,
   TrendingUp,
   Shield,
@@ -25,7 +25,11 @@ import {
   History,
   Lock,
 } from "lucide-react";
-import { invoices, paymentMethods, paymentHistory } from "../../Data/sponsor-data";
+import {
+  invoices,
+  paymentMethods,
+  paymentHistory,
+} from "../../Data/sponsor-data";
 
 const PaymentsContent = () => {
   const [selectedInvoice, setSelectedInvoice] = useState(null);
@@ -34,11 +38,19 @@ const PaymentsContent = () => {
 
   const totalPaid = invoices
     .filter((inv) => inv.status === "paid")
-    .reduce((sum, inv) => sum + parseInt(inv.amount.replace("SAR ", "").replace(",", "")), 0);
-  
+    .reduce(
+      (sum, inv) =>
+        sum + parseInt(inv.amount.replace("SAR ", "").replace(",", "")),
+      0,
+    );
+
   const totalDue = invoices
     .filter((inv) => inv.status === "pending")
-    .reduce((sum, inv) => sum + parseInt(inv.amount.replace("SAR ", "").replace(",", "")), 0);
+    .reduce(
+      (sum, inv) =>
+        sum + parseInt(inv.amount.replace("SAR ", "").replace(",", "")),
+      0,
+    );
 
   const formatAmount = (amount) => {
     return amount.toLocaleString() + " SAR";
@@ -90,7 +102,8 @@ const PaymentsContent = () => {
                 Payments & Invoices
               </h2>
               <p className="text-xs sm:text-sm text-gray-300 mt-1">
-                Manage your sponsorship payments, view invoices, and track payment history
+                Manage your sponsorship payments, view invoices, and track
+                payment history
               </p>
             </div>
             <button className="relative w-full sm:w-auto px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-gray-600 to-cyan-700 text-white rounded-lg font-medium text-sm overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center gap-2">
@@ -114,8 +127,12 @@ const PaymentsContent = () => {
                 <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
               </div>
             </div>
-            <p className="text-xs sm:text-sm text-gray-300">Total Package Value</p>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-1">SAR 250,000</h2>
+            <p className="text-xs sm:text-sm text-gray-300">
+              Total Package Value
+            </p>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-1">
+              SAR 250,000
+            </h2>
           </div>
         </div>
 
@@ -128,7 +145,9 @@ const PaymentsContent = () => {
               </div>
             </div>
             <p className="text-xs sm:text-sm text-gray-300">Total Paid</p>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-1 break-words">{formatAmount(totalPaid)}</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-1 break-words">
+              {formatAmount(totalPaid)}
+            </h2>
           </div>
         </div>
 
@@ -141,11 +160,11 @@ const PaymentsContent = () => {
               </div>
             </div>
             <p className="text-xs sm:text-sm text-gray-300">Total Due</p>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-1 break-words">{formatAmount(totalDue)}</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-1 break-words">
+              {formatAmount(totalDue)}
+            </h2>
           </div>
         </div>
-
-        
       </div>
 
       {/* Invoices Section */}
@@ -190,17 +209,21 @@ const PaymentsContent = () => {
                   <div className="flex flex-col sm:flex-row justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
-                        <p className="text-sm sm:text-base font-semibold text-white">{invoice.id}</p>
+                        <p className="text-sm sm:text-base font-semibold text-white">
+                          {invoice.id}
+                        </p>
                         <span
                           className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium flex items-center gap-1 ${getStatusBadge(
-                            invoice.status
+                            invoice.status,
                           )}`}
                         >
                           {getStatusIcon(invoice.status)}
                           {invoice.status === "paid" ? "Paid" : "Pending"}
                         </span>
                       </div>
-                      <p className="text-xs sm:text-sm text-gray-300">{invoice.description}</p>
+                      <p className="text-xs sm:text-sm text-gray-300">
+                        {invoice.description}
+                      </p>
                       <div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-2 text-[10px] sm:text-xs text-gray-400">
                         <div className="flex items-center gap-1">
                           <Calendar className="w-3 h-3 text-cyan-400" />
@@ -219,7 +242,9 @@ const PaymentsContent = () => {
                       </div>
                     </div>
                     <div className="text-left sm:text-right">
-                      <p className="text-base sm:text-xl font-bold text-white">{invoice.amount}</p>
+                      <p className="text-base sm:text-xl font-bold text-white">
+                        {invoice.amount}
+                      </p>
                       <div className="flex gap-2 mt-2 justify-start sm:justify-end">
                         <button className="p-1 sm:p-1.5 bg-white/10 rounded-md border border-white/20 hover:bg-white/20 transition-all">
                           <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-gray-300" />
@@ -247,7 +272,6 @@ const PaymentsContent = () => {
 
       {/* Two Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 sm:gap-6">
-
         {/* Payment History */}
         <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
           <div className="relative p-4 sm:p-6 border-b border-white/10">
@@ -264,7 +288,9 @@ const PaymentsContent = () => {
             {paymentHistory.length === 0 ? (
               <div className="text-center py-6 sm:py-8">
                 <History className="w-10 h-10 sm:w-12 sm:h-12 text-gray-500 mx-auto mb-3" />
-                <p className="text-xs sm:text-sm text-gray-400">No payment history yet</p>
+                <p className="text-xs sm:text-sm text-gray-400">
+                  No payment history yet
+                </p>
               </div>
             ) : (
               <div className="space-y-2 sm:space-y-3">
@@ -274,14 +300,20 @@ const PaymentsContent = () => {
                     className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 bg-white/5 rounded-lg border border-white/10"
                   >
                     <div>
-                      <p className="text-xs sm:text-sm font-medium text-white">{payment.date}</p>
+                      <p className="text-xs sm:text-sm font-medium text-white">
+                        {payment.date}
+                      </p>
                       <p className="text-[10px] sm:text-xs text-gray-400">
                         Reference: {payment.reference}
                       </p>
                     </div>
                     <div className="text-left sm:text-right">
-                      <p className="text-xs sm:text-sm font-semibold text-white">{payment.amount}</p>
-                      <p className="text-[10px] sm:text-xs text-gray-400">{payment.method}</p>
+                      <p className="text-xs sm:text-sm font-semibold text-white">
+                        {payment.amount}
+                      </p>
+                      <p className="text-[10px] sm:text-xs text-gray-400">
+                        {payment.method}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -290,7 +322,7 @@ const PaymentsContent = () => {
 
             <button className="w-full mt-3 sm:mt-4 py-1.5 sm:py-2 text-xs sm:text-sm text-cyan-400 hover:text-cyan-300 transition-colors flex items-center justify-center gap-1">
               View Full History
-              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
             </button>
           </div>
         </div>
@@ -302,18 +334,19 @@ const PaymentsContent = () => {
         <div className="relative flex flex-col sm:flex-row items-start gap-3">
           <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
           <div>
-            <h4 className="text-sm sm:text-base font-semibold text-white mb-1">Secure Payment Processing</h4>
+            <h4 className="text-sm sm:text-base font-semibold text-white mb-1">
+              Secure Payment Processing
+            </h4>
             <p className="text-xs sm:text-sm text-gray-300">
-              All transactions are encrypted and secure. For payment assistance or to request a
-              payment plan, contact{" "}
+              All transactions are encrypted and secure. For payment assistance
+              or to request a payment plan, contact{" "}
               <a
                 href="mailto:finance@event.com"
                 className="text-cyan-400 hover:text-cyan-300 transition-colors"
               >
                 finance@event.com
               </a>{" "}
-              or call{" "}
-              <span className="text-cyan-400">+966 00 000 0000</span>
+              or call <span className="text-cyan-400">+966 00 000 0000</span>
             </p>
           </div>
         </div>
@@ -338,18 +371,28 @@ const PaymentsContent = () => {
                   <span className="text-gray-400 text-xl">&times;</span>
                 </button>
               </div>
-              <p className="text-xs sm:text-sm text-gray-300 mt-1">Invoice #INV-2026-002</p>
+              <p className="text-xs sm:text-sm text-gray-300 mt-1">
+                Invoice #INV-2026-002
+              </p>
             </div>
 
             <div className="relative p-5 sm:p-6 space-y-4">
               <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                 <div className="flex justify-between mb-2">
-                  <span className="text-xs sm:text-sm text-gray-400">Amount Due</span>
-                  <span className="text-lg sm:text-xl font-bold text-white">SAR 125,000</span>
+                  <span className="text-xs sm:text-sm text-gray-400">
+                    Amount Due
+                  </span>
+                  <span className="text-lg sm:text-xl font-bold text-white">
+                    SAR 125,000
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-xs sm:text-sm text-gray-400">Due Date</span>
-                  <span className="text-xs sm:text-sm text-cyan-400">Feb 28, 2026</span>
+                  <span className="text-xs sm:text-sm text-gray-400">
+                    Due Date
+                  </span>
+                  <span className="text-xs sm:text-sm text-cyan-400">
+                    Feb 28, 2026
+                  </span>
                 </div>
               </div>
 

@@ -13,7 +13,7 @@ import {
   Shield,
   Calendar,
   TrendingUp,
-  ArrowRight,
+  ChevronRight,
   X,
   FileText,
   Wallet,
@@ -30,9 +30,24 @@ const PaymentContent = () => {
   const [expandedInvoice, setExpandedInvoice] = useState(null);
 
   const paymentMethods = [
-    { id: "card", name: "Credit / Debit Card", icon: CreditCard, description: "Visa, Mastercard, Mada" },
-    { id: "bank", name: "Bank Transfer", icon: Landmark, description: "Direct bank transfer" },
-    { id: "mada", name: "Mada / SPAN", icon: Smartphone, description: "Local payment network" },
+    {
+      id: "card",
+      name: "Credit / Debit Card",
+      icon: CreditCard,
+      description: "Visa, Mastercard, Mada",
+    },
+    {
+      id: "bank",
+      name: "Bank Transfer",
+      icon: Landmark,
+      description: "Direct bank transfer",
+    },
+    {
+      id: "mada",
+      name: "Mada / SPAN",
+      icon: Smartphone,
+      description: "Local payment network",
+    },
   ];
 
   const handlePayment = () => {
@@ -40,7 +55,9 @@ const PaymentContent = () => {
     setTimeout(() => {
       setIsProcessing(false);
       setShowPaymentModal(false);
-      alert("Payment processed successfully! Receipt has been sent to your email.");
+      alert(
+        "Payment processed successfully! Receipt has been sent to your email.",
+      );
     }, 2000);
   };
 
@@ -60,11 +77,11 @@ const PaymentContent = () => {
   };
 
   const totalPaid = paymentData.paymentSchedule
-    .filter(p => p.status === "paid")
+    .filter((p) => p.status === "paid")
     .reduce((sum, p) => sum + parseInt(p.amount.replace("SAR ", "")), 0);
-  
+
   const totalPending = paymentData.paymentSchedule
-    .filter(p => p.status === "pending")
+    .filter((p) => p.status === "pending")
     .reduce((sum, p) => sum + parseInt(p.amount.replace("SAR ", "")), 0);
 
   return (
@@ -95,7 +112,9 @@ const PaymentContent = () => {
             <div className="flex items-center gap-3">
               <div className="px-3 py-2 bg-white/10 rounded-lg border border-white/20">
                 <span className="text-xs text-gray-300">Total: </span>
-                <span className="text-xs font-bold text-white">{paymentData.totalAmount}</span>
+                <span className="text-xs font-bold text-white">
+                  {paymentData.totalAmount}
+                </span>
               </div>
             </div>
           </div>
@@ -115,25 +134,36 @@ const PaymentContent = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-300">Total Amount</span>
-                    <span className="font-bold text-white">{paymentData.totalAmount}</span>
+                    <span className="font-bold text-white">
+                      {paymentData.totalAmount}
+                    </span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-300">Paid Amount</span>
-                    <span className="font-bold text-emerald-400">{paymentData.paidAmount}</span>
+                    <span className="font-bold text-emerald-400">
+                      {paymentData.paidAmount}
+                    </span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-300">Remaining Balance</span>
-                    <span className="font-bold text-amber-400">{paymentData.remainingAmount}</span>
+                    <span className="font-bold text-amber-400">
+                      {paymentData.remainingAmount}
+                    </span>
                   </div>
                   <div className="mt-3">
                     <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className="h-full bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full transition-all duration-500"
-                        style={{ width: `${(totalPaid / (totalPaid + totalPending)) * 100}%` }}
+                        style={{
+                          width: `${(totalPaid / (totalPaid + totalPending)) * 100}%`,
+                        }}
                       />
                     </div>
                     <p className="text-xs text-gray-400 mt-2">
-                      {Math.round((totalPaid / (totalPaid + totalPending)) * 100)}% completed
+                      {Math.round(
+                        (totalPaid / (totalPaid + totalPending)) * 100,
+                      )}
+                      % completed
                     </p>
                   </div>
                 </div>
@@ -155,15 +185,25 @@ const PaymentContent = () => {
                         className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-all"
                       >
                         <div>
-                          <p className="text-sm font-medium text-white">{payment.title}</p>
-                          <p className="text-xs text-gray-400 mt-0.5">Due: {payment.dueDate}</p>
+                          <p className="text-sm font-medium text-white">
+                            {payment.title}
+                          </p>
+                          <p className="text-xs text-gray-400 mt-0.5">
+                            Due: {payment.dueDate}
+                          </p>
                           {payment.paidDate && (
-                            <p className="text-xs text-emerald-400 mt-0.5">Paid: {payment.paidDate}</p>
+                            <p className="text-xs text-emerald-400 mt-0.5">
+                              Paid: {payment.paidDate}
+                            </p>
                           )}
                         </div>
                         <div className="text-right">
-                          <p className="text-sm font-bold text-white">{payment.amount}</p>
-                          <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-${status.color}-500/20 text-${status.color}-400 mt-1`}>
+                          <p className="text-sm font-bold text-white">
+                            {payment.amount}
+                          </p>
+                          <span
+                            className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-${status.color}-500/20 text-${status.color}-400 mt-1`}
+                          >
                             <StatusIcon className="w-3 h-3" />
                             {status.text}
                           </span>
@@ -182,14 +222,25 @@ const PaymentContent = () => {
                 </h3>
                 <div className="space-y-2">
                   {paymentData.invoiceItems.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center py-2 border-b border-white/10 last:border-0">
-                      <span className="text-xs text-gray-300">{item.description}</span>
-                      <span className="text-xs font-medium text-white">{item.amount}</span>
+                    <div
+                      key={index}
+                      className="flex justify-between items-center py-2 border-b border-white/10 last:border-0"
+                    >
+                      <span className="text-xs text-gray-300">
+                        {item.description}
+                      </span>
+                      <span className="text-xs font-medium text-white">
+                        {item.amount}
+                      </span>
                     </div>
                   ))}
                   <div className="flex justify-between items-center pt-3 mt-2 border-t border-white/20">
-                    <span className="text-sm font-semibold text-white">Total</span>
-                    <span className="text-sm font-bold text-blue-400">{paymentData.totalAmount}</span>
+                    <span className="text-sm font-semibold text-white">
+                      Total
+                    </span>
+                    <span className="text-sm font-bold text-blue-400">
+                      {paymentData.totalAmount}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -204,7 +255,10 @@ const PaymentContent = () => {
                   Make a Payment
                 </h4>
                 <p className="text-xs text-gray-300 mb-4">
-                  Pay your remaining balance of <strong className="text-amber-400">{paymentData.remainingAmount}</strong>
+                  Pay your remaining balance of{" "}
+                  <strong className="text-amber-400">
+                    {paymentData.remainingAmount}
+                  </strong>
                 </p>
                 <button
                   onClick={() => setShowPaymentModal(true)}
@@ -217,12 +271,19 @@ const PaymentContent = () => {
 
               {/* Payment Methods */}
               <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                <h4 className="text-xs font-semibold text-gray-300 mb-3">Accepted Payment Methods</h4>
+                <h4 className="text-xs font-semibold text-gray-300 mb-3">
+                  Accepted Payment Methods
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {paymentMethods.map((method) => (
-                    <div key={method.id} className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-lg">
+                    <div
+                      key={method.id}
+                      className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-lg"
+                    >
                       <method.icon className="w-3 h-3 text-blue-400" />
-                      <span className="text-xs text-gray-300">{method.name}</span>
+                      <span className="text-xs text-gray-300">
+                        {method.name}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -261,15 +322,21 @@ const PaymentContent = () => {
 
               {/* Payment History Summary */}
               <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                <h4 className="text-xs font-semibold text-gray-300 mb-2">Payment History</h4>
+                <h4 className="text-xs font-semibold text-gray-300 mb-2">
+                  Payment History
+                </h4>
                 <div className="space-y-2">
                   <div className="flex justify-between py-1">
                     <span className="text-xs text-gray-400">Jan 15, 2026</span>
-                    <span className="text-xs font-medium text-emerald-400">SAR 42,500</span>
+                    <span className="text-xs font-medium text-emerald-400">
+                      SAR 42,500
+                    </span>
                   </div>
                   <div className="flex justify-between py-1">
                     <span className="text-xs text-gray-400">Feb 15, 2026</span>
-                    <span className="text-xs font-medium text-amber-400">SAR 42,500 (Pending)</span>
+                    <span className="text-xs font-medium text-amber-400">
+                      SAR 42,500 (Pending)
+                    </span>
                   </div>
                 </div>
               </div>
@@ -318,7 +385,10 @@ const PaymentContent = () => {
                 </button>
               </div>
               <p className="text-xs text-gray-400 mt-1">
-                Amount due: <strong className="text-amber-400">{paymentData.remainingAmount}</strong>
+                Amount due:{" "}
+                <strong className="text-amber-400">
+                  {paymentData.remainingAmount}
+                </strong>
               </p>
             </div>
 
@@ -346,13 +416,19 @@ const PaymentContent = () => {
                             name="paymentMethod"
                             value={method.id}
                             checked={selectedPaymentMethod === method.id}
-                            onChange={(e) => setSelectedPaymentMethod(e.target.value)}
+                            onChange={(e) =>
+                              setSelectedPaymentMethod(e.target.value)
+                            }
                             className="text-blue-600"
                           />
                           <Icon className="w-5 h-5 text-blue-400" />
                           <div className="flex-1">
-                            <p className="text-sm font-medium text-white">{method.name}</p>
-                            <p className="text-xs text-gray-400">{method.description}</p>
+                            <p className="text-sm font-medium text-white">
+                              {method.name}
+                            </p>
+                            <p className="text-xs text-gray-400">
+                              {method.description}
+                            </p>
                           </div>
                         </label>
                       );
@@ -361,7 +437,8 @@ const PaymentContent = () => {
                 </div>
 
                 {/* Card Details (if card selected) */}
-                {(selectedPaymentMethod === "card" || selectedPaymentMethod === "mada") && (
+                {(selectedPaymentMethod === "card" ||
+                  selectedPaymentMethod === "mada") && (
                   <div className="space-y-3">
                     <div>
                       <label className="block text-xs font-medium text-gray-300 mb-1">
@@ -401,12 +478,25 @@ const PaymentContent = () => {
                 {/* Bank Transfer Details */}
                 {selectedPaymentMethod === "bank" && (
                   <div className="p-3 bg-blue-500/10 rounded-lg border border-blue-500/30">
-                    <p className="text-xs text-gray-300 mb-2">Bank Account Details:</p>
+                    <p className="text-xs text-gray-300 mb-2">
+                      Bank Account Details:
+                    </p>
                     <div className="space-y-1 text-xs">
-                      <p><span className="text-gray-400">Bank:</span> Saudi National Bank (SNB)</p>
-                      <p><span className="text-gray-400">Account Name:</span>HPQL</p>
-                      <p><span className="text-gray-400">IBAN:</span> SA03 5000 0000 0000 0000 1234</p>
-                      <p><span className="text-gray-400">Reference:</span> Booth A12 - PharmaCo</p>
+                      <p>
+                        <span className="text-gray-400">Bank:</span> Saudi
+                        National Bank (SNB)
+                      </p>
+                      <p>
+                        <span className="text-gray-400">Account Name:</span>HPQL
+                      </p>
+                      <p>
+                        <span className="text-gray-400">IBAN:</span> SA03 5000
+                        0000 0000 0000 1234
+                      </p>
+                      <p>
+                        <span className="text-gray-400">Reference:</span> Booth
+                        A12 - PharmaCo
+                      </p>
                     </div>
                   </div>
                 )}
@@ -415,15 +505,23 @@ const PaymentContent = () => {
                 <div className="p-3 bg-white/5 rounded-lg border border-white/10">
                   <div className="flex justify-between mb-2">
                     <span className="text-xs text-gray-400">Amount to Pay</span>
-                    <span className="text-sm font-bold text-white">{paymentData.remainingAmount}</span>
+                    <span className="text-sm font-bold text-white">
+                      {paymentData.remainingAmount}
+                    </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-xs text-gray-400">Processing Fee</span>
+                    <span className="text-xs text-gray-400">
+                      Processing Fee
+                    </span>
                     <span className="text-xs text-gray-300">SAR 0</span>
                   </div>
                   <div className="flex justify-between pt-2 mt-2 border-t border-white/10">
-                    <span className="text-sm font-semibold text-white">Total</span>
-                    <span className="text-sm font-bold text-blue-400">{paymentData.remainingAmount}</span>
+                    <span className="text-sm font-semibold text-white">
+                      Total
+                    </span>
+                    <span className="text-sm font-bold text-blue-400">
+                      {paymentData.remainingAmount}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -464,9 +562,12 @@ const PaymentContent = () => {
         <div className="relative flex items-start gap-3">
           <Shield className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="text-sm font-medium text-white">Secure Payment Processing</p>
+            <p className="text-sm font-medium text-white">
+              Secure Payment Processing
+            </p>
             <p className="text-xs text-gray-300 mt-0.5">
-              All payments are processed through secure, PCI-compliant gateways. Your financial information is encrypted and never stored.
+              All payments are processed through secure, PCI-compliant gateways.
+              Your financial information is encrypted and never stored.
             </p>
           </div>
         </div>

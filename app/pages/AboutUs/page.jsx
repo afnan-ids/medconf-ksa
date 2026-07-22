@@ -9,7 +9,7 @@ import {
   Globe,
   Shield,
   Sparkles,
-  ArrowRight,
+  ChevronRight,
   Calendar,
   HandHeart,
   Mail,
@@ -290,7 +290,7 @@ export default function AboutPage() {
                 <span className="text-xs sm:text-sm font-semibold">
                   {t.drivingHealthcareForward}
                 </span>
-                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
               </div>
             </div>
 
@@ -311,7 +311,7 @@ export default function AboutPage() {
                 <span className="text-xs sm:text-sm font-semibold">
                   {t.globalConnectionsLocalImpact}
                 </span>
-                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ import {
   Star,
   MapPin,
   Calendar,
-  ArrowRight,
+  ChevronRight,
 } from "lucide-react";
 
 const SpeakersSection = () => {
@@ -340,7 +340,7 @@ const SpeakersSection = () => {
                 <div className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <span>View All Speakers</span>
 
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
               </Link>
             </div>

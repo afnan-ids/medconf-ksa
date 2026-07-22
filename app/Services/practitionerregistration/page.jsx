@@ -5,7 +5,7 @@ import {
   MapPin,
   UserCheck,
   Sparkles,
-  ArrowRight,
+  ChevronRight,
   Users,
   Mic,
   Target,
@@ -423,19 +423,20 @@ export default function PractitionerRegistration() {
                 </h4>
 
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                 {t.readyToJoinDescription}
+                  {t.readyToJoinDescription}
                 </p>
 
                 <Link
                   href="https://hpql-healthcare-practitioner.i-diligence.com/login/"
                   className="group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
                 >
-                 {t.registerNow}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {t.registerNow}
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <p className="text-white/70 text-sm mt-4">
-                {t.freeRegistrationLimitedTime} • {t.verifiedProfessionalsOnly}
+                  {t.freeRegistrationLimitedTime} •{" "}
+                  {t.verifiedProfessionalsOnly}
                 </p>
               </div>
             </div>

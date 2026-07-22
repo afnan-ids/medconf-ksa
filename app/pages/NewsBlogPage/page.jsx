@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   Calendar,
   Clock,
-  ArrowRight,
+  ChevronRight,
   Sparkles,
   Eye,
   Heart,
@@ -337,7 +337,7 @@ export default function NewsBlogPage() {
                       href="#"
                       className="text-sm text-blue-400 hover:text-blue-300 flex items-center gap-1 transition-all hover:gap-2"
                     >
-                      {t.readMore} <ArrowRight className="w-3.5 h-3.5" />
+                      {t.readMore} <ChevronRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
@@ -532,7 +532,7 @@ export default function NewsBlogPage() {
             <button className="group px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto">
               <Loader2 className="w-4 h-4 group-hover:animate-spin" />
               {t.loadMoreArticles}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>

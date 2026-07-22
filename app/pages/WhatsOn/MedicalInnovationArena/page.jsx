@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
+  ChevronRight,
   Microscope,
   Brain,
   Stethoscope,
@@ -249,7 +249,7 @@ export default function MedicalInnovationArena() {
                         {/* Learn more link with arrow (same as contact page) */}
                         <div className="inline-flex items-center gap-1 text-xs sm:text-sm text-blue-400 group-hover:text-blue-300 transition-colors">
                           <span>{t.exploreZone}</span>
-                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                          <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
 
@@ -371,12 +371,12 @@ export default function MedicalInnovationArena() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
                 <Link
                   href="https://hpql-healthcare-practitioner.i-diligence.com/login/"
-                    target="_blank"
-  rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.registerNow}
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 {/* <Link
                   href="#experience"

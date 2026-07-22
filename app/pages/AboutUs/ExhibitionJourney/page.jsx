@@ -8,7 +8,7 @@ import {
   Radio,
   Video,
   CheckCircle,
-  ArrowRight,
+  ChevronRight,
   Sparkles,
   Trophy,
   TrendingUp,
@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import BreadCrumb from "../../../Components/BreadCrum";
 import Link from "next/link";
-import { useLanguage } from "../../../context/LanguageContext"; 
+import { useLanguage } from "../../../context/LanguageContext";
 import { translations } from "../../../il18/aboutUs/ourjourney";
 
 export default function ourjourney() {
@@ -224,7 +224,6 @@ export default function ourjourney() {
             </div>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
-            
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                 {t.exhibitionJourneyMilestones}
               </span>
@@ -465,7 +464,7 @@ export default function ourjourney() {
                   className="group bg-white text-gray-900 px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.registerNow}
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

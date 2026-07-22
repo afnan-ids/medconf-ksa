@@ -13,7 +13,7 @@ import {
   Send,
   Clock,
   CheckCircle,
-  ArrowRight,
+  ChevronRight,
   ThumbsUp,
   ThumbsDown,
   FileText,
@@ -44,10 +44,8 @@ const SupportContent = () => {
     (faq) =>
       (activeCategory === "all" || faq.category === activeCategory) &&
       (faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        faq.answer.toLowerCase().includes(searchTerm.toLowerCase()))
+        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())),
   );
-;
-
   return (
     <div className="space-y-4 sm:space-y-6">
       {/* Hero Section */}
@@ -63,7 +61,8 @@ const SupportContent = () => {
             Sponsor Support Desk
           </h1>
           <p className="text-xs sm:text-sm text-gray-300 mb-4 sm:mb-6 max-w-2xl mx-auto px-2">
-            Dedicated support for our platinum sponsors - We're here to help 24/7
+            Dedicated support for our platinum sponsors - We're here to help
+            24/7
           </p>
 
           {/* Search Bar */}
@@ -90,7 +89,9 @@ const SupportContent = () => {
               <h2 className="text-base sm:text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                 Contact Support
               </h2>
-              <p className="text-xs sm:text-sm text-gray-300 mt-1">Priority support for sponsors</p>
+              <p className="text-xs sm:text-sm text-gray-300 mt-1">
+                Priority support for sponsors
+              </p>
             </div>
 
             <div className="relative p-4 sm:p-6 space-y-3 sm:space-y-4">
@@ -102,8 +103,12 @@ const SupportContent = () => {
                     Platinum Priority
                   </span>
                 </div>
-                <p className="text-lg sm:text-2xl font-bold text-white mb-1 break-words">+966 00 000 0000</p>
-                <p className="text-[10px] sm:text-xs text-gray-300">24/7 Dedicated Sponsor Hotline</p>
+                <p className="text-lg sm:text-2xl font-bold text-white mb-1 break-words">
+                  +966 00 000 0000
+                </p>
+                <p className="text-[10px] sm:text-xs text-gray-300">
+                  24/7 Dedicated Sponsor Hotline
+                </p>
               </div>
 
               {/* Contact Options */}
@@ -113,10 +118,14 @@ const SupportContent = () => {
                     <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs sm:text-sm font-medium text-white">Email Support</p>
-                    <p className="text-[10px] sm:text-xs text-gray-400 truncate">sponsors@event.com</p>
+                    <p className="text-xs sm:text-sm font-medium text-white">
+                      Email Support
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-gray-400 truncate">
+                      sponsors@event.com
+                    </p>
                   </div>
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" />
                 </div>
 
                 <div className="flex items-center gap-3 p-2.5 sm:p-3 bg-white/5 rounded-lg border border-white/10 hover:border-cyan-500/30 transition-all">
@@ -124,10 +133,14 @@ const SupportContent = () => {
                     <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs sm:text-sm font-medium text-white">Schedule a Call</p>
-                    <p className="text-[10px] sm:text-xs text-gray-400">Book a meeting</p>
+                    <p className="text-xs sm:text-sm font-medium text-white">
+                      Schedule a Call
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-gray-400">
+                      Book a meeting
+                    </p>
                   </div>
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" />
+                  <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 flex-shrink-0" />
                 </div>
               </div>
             </div>
@@ -135,7 +148,9 @@ const SupportContent = () => {
             <div className="relative p-4 sm:p-6 border-t border-white/10 bg-white/5">
               <div className="flex items-center gap-2 mb-3">
                 <Headphones className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
-                <h4 className="text-xs sm:text-sm font-semibold text-white">Support Hours</h4>
+                <h4 className="text-xs sm:text-sm font-semibold text-white">
+                  Support Hours
+                </h4>
               </div>
               <div className="space-y-1 text-[10px] sm:text-xs text-gray-300">
                 <div className="flex justify-between">
@@ -202,7 +217,9 @@ const SupportContent = () => {
               {filteredFaqs.length === 0 ? (
                 <div className="text-center py-8 sm:py-12">
                   <HelpCircle className="w-10 h-10 sm:w-12 sm:h-12 text-gray-500 mx-auto mb-3" />
-                  <p className="text-xs sm:text-sm text-gray-400">No results found</p>
+                  <p className="text-xs sm:text-sm text-gray-400">
+                    No results found
+                  </p>
                 </div>
               ) : (
                 <div className="space-y-2 sm:space-y-3">
@@ -212,14 +229,18 @@ const SupportContent = () => {
                       className="border border-white/10 rounded-xl overflow-hidden bg-white/5"
                     >
                       <button
-                        onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                        onClick={() =>
+                          setExpandedFaq(expandedFaq === index ? null : index)
+                        }
                         className="w-full flex items-center justify-between p-3 sm:p-4 text-left hover:bg-white/10 transition-all duration-300"
                       >
                         <div className="flex items-start gap-2 sm:gap-3 flex-1">
                           <HelpCircle className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
                           <div className="flex-1">
                             <div className="flex flex-wrap items-center gap-2">
-                              <p className="text-xs sm:text-sm font-medium text-white">{faq.question}</p>
+                              <p className="text-xs sm:text-sm font-medium text-white">
+                                {faq.question}
+                              </p>
                               <span className="px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-xs bg-white/10 rounded-full text-gray-300 border border-white/10">
                                 {faq.category}
                               </span>
@@ -236,9 +257,13 @@ const SupportContent = () => {
                       {expandedFaq === index && (
                         <div className="px-3 sm:px-4 pb-3 sm:pb-4 pt-0">
                           <div className="pl-5 sm:pl-7">
-                            <p className="text-xs sm:text-sm text-gray-300 mb-3 sm:mb-4">{faq.answer}</p>
+                            <p className="text-xs sm:text-sm text-gray-300 mb-3 sm:mb-4">
+                              {faq.answer}
+                            </p>
                             <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-3 border-t border-white/10">
-                              <span className="text-[10px] sm:text-xs text-gray-400">Was this helpful?</span>
+                              <span className="text-[10px] sm:text-xs text-gray-400">
+                                Was this helpful?
+                              </span>
                               <div className="flex gap-2">
                                 <button className="flex items-center gap-1 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg text-[10px] sm:text-xs hover:bg-white/10 transition-all text-gray-300">
                                   <ThumbsUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
@@ -266,10 +291,12 @@ const SupportContent = () => {
                   <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-sm sm:text-base font-semibold text-white mb-1">Still need help?</h4>
+                  <h4 className="text-sm sm:text-base font-semibold text-white mb-1">
+                    Still need help?
+                  </h4>
                   <p className="text-[10px] sm:text-xs text-gray-300 mb-3">
-                    Can't find what you're looking for? Submit a ticket and our priority support
-                    team will get back to you within 2 hours.
+                    Can't find what you're looking for? Submit a ticket and our
+                    priority support team will get back to you within 2 hours.
                   </p>
                   <button
                     onClick={() => setShowTicketModal(true)}
@@ -313,8 +340,12 @@ const SupportContent = () => {
                   </span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm sm:text-base font-semibold text-white">{contact.name}</p>
-                  <p className="text-[10px] sm:text-xs text-cyan-400">{contact.role}</p>
+                  <p className="text-sm sm:text-base font-semibold text-white">
+                    {contact.name}
+                  </p>
+                  <p className="text-[10px] sm:text-xs text-cyan-400">
+                    {contact.role}
+                  </p>
                   <div className="flex flex-wrap items-center gap-2 mt-2">
                     <Mail className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gray-400" />
                     <a
@@ -326,7 +357,9 @@ const SupportContent = () => {
                   </div>
                   <div className="flex items-center gap-2 mt-1">
                     <Phone className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gray-400" />
-                    <span className="text-[10px] sm:text-xs text-gray-300">{contact.phone}</span>
+                    <span className="text-[10px] sm:text-xs text-gray-300">
+                      {contact.phone}
+                    </span>
                   </div>
                 </div>
                 <button className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-all self-end sm:self-center">
@@ -344,11 +377,16 @@ const SupportContent = () => {
         <div className="relative flex flex-col sm:flex-row items-start gap-3">
           <Award className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
           <div>
-            <h4 className="text-sm sm:text-base font-semibold text-white mb-1">Sponsor Resource Center</h4>
+            <h4 className="text-sm sm:text-base font-semibold text-white mb-1">
+              Sponsor Resource Center
+            </h4>
             <p className="text-xs sm:text-sm text-gray-300">
-              Access detailed sponsor guides, marketing templates, and event toolkits in our
-              resource center.{" "}
-              <a href="#" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              Access detailed sponsor guides, marketing templates, and event
+              toolkits in our resource center.{" "}
+              <a
+                href="#"
+                className="text-cyan-400 hover:text-cyan-300 transition-colors"
+              >
                 Browse Resources →
               </a>
             </p>
@@ -411,16 +449,35 @@ const SupportContent = () => {
                 </label>
                 <div className="flex gap-3">
                   <label className="flex items-center gap-1">
-                    <input type="radio" name="priority" className="text-cyan-600" defaultChecked />
-                    <span className="text-[10px] sm:text-xs text-gray-300">Normal</span>
+                    <input
+                      type="radio"
+                      name="priority"
+                      className="text-cyan-600"
+                      defaultChecked
+                    />
+                    <span className="text-[10px] sm:text-xs text-gray-300">
+                      Normal
+                    </span>
                   </label>
                   <label className="flex items-center gap-1">
-                    <input type="radio" name="priority" className="text-cyan-600" />
-                    <span className="text-[10px] sm:text-xs text-gray-300">High</span>
+                    <input
+                      type="radio"
+                      name="priority"
+                      className="text-cyan-600"
+                    />
+                    <span className="text-[10px] sm:text-xs text-gray-300">
+                      High
+                    </span>
                   </label>
                   <label className="flex items-center gap-1">
-                    <input type="radio" name="priority" className="text-red-600" />
-                    <span className="text-[10px] sm:text-xs text-gray-300">Urgent</span>
+                    <input
+                      type="radio"
+                      name="priority"
+                      className="text-red-600"
+                    />
+                    <span className="text-[10px] sm:text-xs text-gray-300">
+                      Urgent
+                    </span>
                   </label>
                 </div>
               </div>

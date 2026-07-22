@@ -36,12 +36,12 @@ export default function AdminDashboard() {
     },
     {
       title: "Total Bookings",
-      value: "1,847",
+      value: "SAR 1,847",
       icon: CalendarCheck,
     },
     {
       title: "Revenue",
-      value: "$2.4M",
+      value: "SAR 2.4M",
       icon: CreditCard,
     },
   ];

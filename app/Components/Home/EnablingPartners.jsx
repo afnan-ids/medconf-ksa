@@ -7,7 +7,6 @@ import {
   Users,
   Sparkles,
   Target,
-  ArrowRight,
   Star,
   HeartPulse,
   Microscope,
@@ -162,7 +161,12 @@ export default function EnablingPartners() {
                           إمكاناتهم لتعزيز جودة
                         </span>
                         <br />
-                        <span style={{ fontSize: "0.98rem",wordSpacing: "0.12rem" }}>
+                        <span
+                          style={{
+                            fontSize: "0.98rem",
+                            wordSpacing: "0.12rem",
+                          }}
+                        >
                           الحيــــاة وتطويــــر القطاع الصحــــي، بما يتماشــــى
                           مع المســــتهدفات الوطنية
                         </span>
@@ -413,7 +417,7 @@ export default function EnablingPartners() {
                 {/* RIGHT CONTENT */}
                 <div>
                   {language === "ar" && (
-                    <div className="lg:text-right pe-40"  dir="rtl">
+                    <div className="lg:text-right pe-40" dir="rtl">
                       {/* Mini Label */}
                       <div className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-[10px] sm:text-xs font-medium text-purple-300 mb-3 sm:mb-4">
                         <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
@@ -422,10 +426,10 @@ export default function EnablingPartners() {
 
                       {/* Heading */}
                       <h3 className="text-xl sm:text-3xl mt-2 lg:text-3xl leading-[1.3] text-white">
-                        <span style={{wordSpacing: "0.98rem"}}>
+                        <span style={{ wordSpacing: "0.98rem" }}>
                           التزام بالدقة المتناهيـــة لضـــمان
-                      </span> تجـــربة تنظيمية
-                        تليق بمكانة المملكة
+                        </span>{" "}
+                        تجـــربة تنظيمية تليق بمكانة المملكة
                       </h3>
 
                       {/* Description */}
@@ -436,14 +440,13 @@ export default function EnablingPartners() {
                         </span>
                         <br />
                         <span style={{ wordSpacing: "0.22rem" }}>
-                          
                           <span className="font-semibold text-cyan-300">
                             {" "}
                             SOLUTIONS VEXORA
                           </span>
                           ، بما يضمن أعلى معايير الجودة والدقة
                         </span>
-                        </p>
+                      </p>
                     </div>
                   )}
                 </div>

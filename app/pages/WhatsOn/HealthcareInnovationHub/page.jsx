@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
+  ChevronRight,
   Building2,
   Rocket,
   Microscope,
@@ -243,7 +243,7 @@ export default function HealthcareInnovationHub() {
               <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
                 <Building2 className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                 <span className="text-xs sm:text-sm font-medium text-gray-300">
-                 {t.featuredInnovators}
+                  {t.featuredInnovators}
                 </span>
               </div>
               <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
@@ -421,7 +421,7 @@ export default function HealthcareInnovationHub() {
                       className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
                     >
                       {t.viewFullSchedule}
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
@@ -541,12 +541,12 @@ export default function HealthcareInnovationHub() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
                 <Link
                   href="https://hpql-visitor.i-diligence.com/login/"
-                    target="_blank"
-  rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   {t.applyToExhibit}
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 {/* <Link
                   href="#companies"
