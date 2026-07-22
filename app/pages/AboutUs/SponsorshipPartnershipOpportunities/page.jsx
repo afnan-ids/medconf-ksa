@@ -318,9 +318,9 @@ export default function partnershipOpportunities() {
           <div className="relative mb-20 sm:mb-24 max-w-5xl mx-auto text-center px-4">
             <div className="inline-flex items-center gap-2 bg-white/8 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 mb-8 shadow-lg shadow-cyan-500/5">
               <Shield className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm font-medium tracking-wide text-gray-300">
+              {/* <span className="text-sm font-medium tracking-wide text-gray-300">
                 {t.whyIndustryLeadersChooseUs}
-              </span>
+              </span> */}
             </div>
 
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
