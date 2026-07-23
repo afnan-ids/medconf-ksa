@@ -11,7 +11,7 @@ const SlideVexora = () => {
   const t = translations[language];
   return (
     <>
-      <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
+      <div className="hidden md:block relative w-full h-full min-h-[400px] xs:min-h-[500px] sm:min-h-[600px] md:h-full bg-[url('/Images/Home/VeroxaSliderBackground.png')] bg-cover bg-center">
         <div className="relative z-10 w-full max-w-7xl mx-auto h-full grid grid-cols-1 lg:grid-cols-[45%_55%]  text-white lg:mt-20 pt-10">
           {/* Left Column */}
           <div className="text-center lg:text-left mb-8 lg:mb-0"></div>

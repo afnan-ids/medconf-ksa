@@ -19,7 +19,7 @@ const SlideVideo = () => {
   if (!mounted) return null;
 
   return (
-   <div className="relative w-full h-full min-h-[400px] xs:min-h-[500px] sm:min-h-[600px] md:h-full">
+   <div className="relative w-full h-full">
   {/* Video Background */}
   <video
     ref={videoRef}

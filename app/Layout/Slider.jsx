@@ -10,7 +10,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HeroSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(3);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const slides = [
@@ -53,18 +53,18 @@ const HeroSlider = () => {
   }, [isTransitioning, slides.length]);
 
   // Auto Slide
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 8000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     nextSlide();
+  //   }, 8000);
 
-    return () => clearInterval(interval);
-  }, [nextSlide]);
+  //   return () => clearInterval(interval);
+  // }, [nextSlide]);
 
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-[700px] overflow-hidden">
       <motion.div
         key={currentSlide}
         initial={{

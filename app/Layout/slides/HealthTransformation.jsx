@@ -10,7 +10,7 @@ const HealthTransformation = () => {
   const t = translations[language];
   return (
     <>
-      <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/HealthTransformationBG.png')] bg-cover " style={{backgroundPosition : "0px 80px", backgroundRepeat : "no-repeat"}}>
+      <div className="hidden md:block relative w-full h-full bg-[url('/Images/Home/slider/HealthTransformationBG.png')] bg-cover" style={{backgroundPosition : "0px 80px ", backgroundRepeat : "no-repeat"}}>
         <div className="relative z-10 w-full h-full flex items-center justify-center px-5 md:px-8 lg:px-14 overflow-y-auto">
           {/* Top Bar */}
           <div className="absolute top-30 w-full mb-10">
@@ -148,7 +148,7 @@ const HealthTransformation = () => {
       </div>
 
       {/* for mobile  */}
-      <div className="block md:hidden relative  h-[700px]  bg-[url('/Images/Home/slider/HealthTransformationBG.png')] bg-cover bg-top-right ">
+      <div className="block md:hidden relative  h-[700px]  bg-[url('/Images/Home/slider/HealthTransformationBG.png')]  bg-cover bg-no-repeat" style={{backgroundPosition: "-140px 0px"}}>
         {/* Abstract Layer Image */}
         <div className="absolute bottom-0 -left-90">
           <Image
