@@ -511,6 +511,28 @@ export default function Navbar() {
                 {language === "en" ? "العربية" : "English"}
               </button>
             </div>
+               {/* Sign In Button */}
+              <div className="lg:hidden flex items-center gap-3">
+                   <button
+                  onClick={toggleLanguage}
+                  className="px-3 cursor-pointer py-2 border rounded text-white"
+                >
+                  {language === "en" ? "العربية" : "English"}
+                </button>
+                <Link href="/pages/SignIn">
+                  <button className="group cursor-pointer relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2">
+                    <span className="relative z-10 flex items-center gap-2">
+                      {t.signIn}
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    </div>
+                  </button>
+                </Link>
+
+             
+              </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -541,6 +563,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
+          
           <div className="relative overflow-x-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
             {/* Floating Orbs in Mobile Menu */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -612,27 +635,7 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-               {/* Sign In Button */}
-              <div className="items-center gap-3">
-                <Link href="/pages/SignIn">
-                  <button className="group cursor-pointer relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2">
-                    <span className="relative z-10 flex items-center gap-2">
-                      {t.signIn}
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    </div>
-                  </button>
-                </Link>
-
-                <button
-                  onClick={toggleLanguage}
-                  className="px-3 mt-6 cursor-pointer py-2 border rounded text-white"
-                >
-                  {language === "en" ? "العربية" : "English"}
-                </button>
-              </div>
+            
 
               <div className="relative my-4">
                 <div className="absolute inset-0 flex items-center">
