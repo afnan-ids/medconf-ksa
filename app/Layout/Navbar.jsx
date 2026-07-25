@@ -63,7 +63,7 @@ export default function Navbar() {
           icon: UserPlus,
         },
         {
-          label: t.viewAllServices,
+          label: "viewAllServices",
           href: "/Services",
           isViewAll: true,
           icon: Eye,
@@ -98,7 +98,7 @@ export default function Navbar() {
           icon: Stethoscope,
         },
         {
-          label: t.viewAllPortals,
+          label: "viewAllPortals",
           href: "/pages/SignIn",
           isViewAll: true,
           icon: Eye,
@@ -262,7 +262,7 @@ export default function Navbar() {
       href: "https://hpql-healthcare-practitioner.i-diligence.com/login",
       icon: Stethoscope,
     },
-    { label: "adminPortal", href: "/Admin/Dashboard", icon: Shield },
+    // { label: "adminPortal", href: "/Admin/Dashboard", icon: Shield },
   ];
 
   return (
@@ -405,7 +405,7 @@ export default function Navbar() {
                                     {IconComponent && (
                                       <IconComponent className="w-4 h-4" />
                                     )}
-                                    {viewAllItem.label}
+                                    {t[viewAllItem.label]}
                                   </span>
                                   <ChevronRight className="w-3 h-3 opacity-70 group-hover:translate-x-1 transition-transform" />
                                 </Link>
@@ -541,7 +541,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
-          <div className="relative overflow-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
+          <div className="relative overflow-x-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
             {/* Floating Orbs in Mobile Menu */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
@@ -612,6 +612,27 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+               {/* Sign In Button */}
+              <div className="items-center gap-3">
+                <Link href="/pages/SignIn">
+                  <button className="group cursor-pointer relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2">
+                    <span className="relative z-10 flex items-center gap-2">
+                      {t.signIn}
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    </div>
+                  </button>
+                </Link>
+
+                <button
+                  onClick={toggleLanguage}
+                  className="px-3 mt-6 cursor-pointer py-2 border rounded text-white"
+                >
+                  {language === "en" ? "العربية" : "English"}
+                </button>
+              </div>
 
               <div className="relative my-4">
                 <div className="absolute inset-0 flex items-center">
@@ -621,7 +642,7 @@ export default function Navbar() {
 
               {/* Mobile Sign In with Portal Options */}
               <div className="space-y-2">
-                <div className="text-xs font-medium text-gray-400 uppercase tracking-wider px-2">
+                <div className="text-xs font-medium text-gray-400 uppercase tracking-wider px-2 mt-8">
                   {t.portalAccess || "Portal Access"}
                 </div>
                 {portalOptions.map((portal) => {
@@ -641,8 +662,7 @@ export default function Navbar() {
                   );
                 })}
               </div>
-
-              <Link
+              {/* <Link
                 href="/Forms/Login"
                 onClick={() => setMobileOpen(false)}
                 className="group relative overflow-hidden block w-full text-center px-2 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-xl transition-all duration-300 mt-2"
@@ -652,7 +672,7 @@ export default function Navbar() {
                   {t.signIn}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
