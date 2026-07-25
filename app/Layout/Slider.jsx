@@ -64,7 +64,7 @@ const HeroSlider = () => {
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="relative w-full h-[700px] overflow-hidden">
+    <div className="relative w-full h-[700] lg:h-screen overflow-hidden">
       <motion.div
         key={currentSlide}
         initial={{

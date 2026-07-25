@@ -49,7 +49,7 @@ const SlideVideo = () => {
 
         <div className="w-16 sm:w-20 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-cyan-300 mt-4 sm:mt-6 mb-4 sm:mb-8 rounded-full"></div>
 
-        <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-white/90 max-w-xl leading-relaxed mb-6 sm:mb-8 md:mb-10">
+        <p className="text-sm xs:text-base mt-10 lg:mt-0 sm:text-lg lg:text-xl text-white/90 max-w-xl leading-relaxed mb-6 sm:mb-8 md:mb-10">
         {t.leadingMedicalConferences}
           
         </p>

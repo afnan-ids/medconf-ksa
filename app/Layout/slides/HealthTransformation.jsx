@@ -163,7 +163,7 @@ const HealthTransformation = () => {
         <div className="relative z-10 w-full h-full flex items-center justify-center px-4 py-6 overflow-y-auto">
           <div className="w-full max-w-md mx-auto space-y-5">
             {/* Top Bar */}
-            <div className="text-center space-y-2 pt-2">
+            <div className="text-center mt-10 lg:mt-0 space-y-2 pt-2">
               <div className="space-y-1">
                 <p className="text-sm text-white font-bold">HPQL</p>
                 {language === "en" && (
@@ -183,7 +183,7 @@ const HealthTransformation = () => {
             </div>
 
             {/* Heading */}
-            <div className="text-center space-y-2">
+            <div className="text-center  space-y-2">
               {language === "ar" && (
                 <p
                   className="text-sm font-extrabold text-white leading-[1.4] tracking-tight"
