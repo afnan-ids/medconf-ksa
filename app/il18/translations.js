@@ -313,7 +313,7 @@ portal2026TargetsAlignment:"2026 Targets Alignment",
 
     contact: "اتصل بنا",
 
-    signIn: "تسجيل الدخول",
+    signIn: "دخول",
 portalSupportingprogramscomprehensivehealthtransformation:"دعم برامج جودة الحياة والتحول الصحي الشامل",
 portalStrategicObjectives:"الأهداف الاستراتيجية:",
 portal2026TargetsAlignment:"مواءمة أهداف عام 2026",
