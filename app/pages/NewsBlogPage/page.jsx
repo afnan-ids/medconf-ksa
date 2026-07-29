@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   Calendar,
   Clock,
-ChevronRight,
+  ChevronRight,
   Sparkles,
   Eye,
   Heart,
@@ -41,7 +41,7 @@ import { translations } from "../../il18/newsAndBlogs";
 export default function NewsBlogPage() {
   const { language } = useLanguage();
   const t = translations[language];
-  const [activeCategory, setActiveCategory] = useState("For You");
+  const [activeCategory, setActiveCategory] = useState("forYou");
   const [searchQuery, setSearchQuery] = useState("");
   const [likedArticles, setLikedArticles] = useState([]);
   const [bookmarkedArticles, setBookmarkedArticles] = useState([]);
@@ -254,19 +254,18 @@ export default function NewsBlogPage() {
               />
             </div>
 
-            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+            <div className="flex flex-wrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
               {categories.map((cat, i) => {
                 const Icon = cat.icon;
-                const isActive = activeCategory === cat.name;
+                const isActive = activeCategory === cat.key;
                 return (
                   <button
                     key={i}
-                    onClick={() => setActiveCategory(cat.name)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs whitespace-nowrap transition-all me-1 ${
-                      isActive
+                    onClick={() => setActiveCategory(cat.key)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs whitespace-nowrap transition-all me-1 ${isActive
                         ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105"
                         : "bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10"
-                    }`}
+                      }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
                     {t[cat.key]}
