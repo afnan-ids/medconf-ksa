@@ -51,7 +51,7 @@ export default function PortalsPage() {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative m-10 md:mt-0 overflow-hidden">
       {/* Background */}
       <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -81,7 +81,7 @@ export default function PortalsPage() {
           </div>
 
           {/* Portal Cards Grid - 3 per row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {portals.map((portal, index) => (
               <div
                 key={portal.id}
