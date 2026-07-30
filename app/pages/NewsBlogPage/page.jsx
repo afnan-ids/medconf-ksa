@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   Calendar,
   Clock,
-ChevronRight,
+  ChevronRight,
   Sparkles,
   Eye,
   Heart,
@@ -28,7 +28,6 @@ ChevronRight,
   Pin,
   Volume2,
   Loader2,
-
   Share2,
   Download,
   Star,
@@ -57,6 +56,7 @@ export default function NewsBlogPage() {
       prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id],
     );
   };
+  
   // Categories
   const categories = [
     { key: "forYou", icon: Sparkles },
@@ -213,7 +213,7 @@ export default function NewsBlogPage() {
         path={[{ label: t.newsAndBlogs }]}
       />
 
-      <section className="relative min-h-screen py-8 overflow-hidden">
+      <section className="relative min-h-screen py-6 sm:py-8 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-indigo-950 to-gray-900">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -221,28 +221,28 @@ export default function NewsBlogPage() {
           <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           {/* Hero Header - Enhanced */}
-          <div className="mb-10 text-center">
+          <div className="mb-8 sm:mb-10 text-center">
             <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 md:mb-8">
               <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-300" />
               <span className="text-xs sm:text-sm font-medium text-gray-300">
                 {t.freshUpdates}
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 px-2">
               {t.newsAnd}{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
-                {t.insights}{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent block sm:inline">
+                {t.insights}
               </span>
             </h1>
-            <p className="text-gray-400 text-sm max-w-xl mx-auto">
+            <p className="text-gray-400 text-xs sm:text-sm max-w-xl mx-auto px-4">
               {t.newsHeroDescription}
             </p>
           </div>
 
           {/* Search + Filter Bar - Enhanced */}
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-10">
+          <div className="flex flex-col md:flex-row gap-3 sm:gap-4 items-center justify-between mb-8 sm:mb-10">
             <div className="relative w-full md:max-w-md group">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-hover:text-blue-400 transition-colors" />
               <input
@@ -250,11 +250,11 @@ export default function NewsBlogPage() {
                 placeholder={t.searchArticles}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                className="w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
               />
             </div>
 
-            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+            <div className="flex gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide w-full md:w-auto">
               {categories.map((cat, i) => {
                 const Icon = cat.icon;
                 const isActive = activeCategory === cat.name;
@@ -262,14 +262,14 @@ export default function NewsBlogPage() {
                   <button
                     key={i}
                     onClick={() => setActiveCategory(cat.name)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs whitespace-nowrap transition-all me-1 ${
+                    className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs whitespace-nowrap transition-all me-1 ${
                       isActive
                         ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105"
                         : "bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10"
                     }`}
                   >
-                    <Icon className="w-3.5 h-3.5" />
-                    {t[cat.key]}
+                    <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <span className="hidden xs:inline">{t[cat.key]}</span>
                   </button>
                 );
               })}
@@ -277,19 +277,19 @@ export default function NewsBlogPage() {
           </div>
 
           {/* Main Grid - Featured + Side Stories */}
-          <div className="grid lg:grid-cols-12 gap-6 mb-12">
+          <div className="grid lg:grid-cols-12 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {/* Featured Story - Enhanced */}
             <div className="lg:col-span-7">
-              <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:bg-white/10 transition-all duration-500 h-full">
+              <div className="group relative rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:bg-white/10 transition-all duration-500 h-full">
                 {/* Image Placeholder with Overlay */}
-                <div className="relative h-64 bg-gradient-to-br from-blue-900/40 to-purple-900/40 flex items-center justify-center overflow-hidden">
+                <div className="relative h-48 sm:h-56 md:h-64 bg-gradient-to-br from-blue-900/40 to-purple-900/40 flex items-center justify-center overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Newspaper className="w-16 h-16 text-blue-400/30 group-hover:scale-110 transition-transform duration-500" />
+                    <Newspaper className="w-12 h-12 sm:w-16 sm:h-16 text-blue-400/30 group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
 
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
                     <span className="text-[10px] px-2 py-1 rounded-full bg-black/60 backdrop-blur-sm text-blue-400">
                       {featuredStory.category}
                     </span>
@@ -297,8 +297,8 @@ export default function NewsBlogPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-2 text-xs text-gray-500">
+                <div className="p-4 sm:p-5 md:p-6">
+                  <div className="flex items-center gap-2 mb-2 text-[10px] sm:text-xs text-gray-500">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       {featuredStory.date}
@@ -310,21 +310,21 @@ export default function NewsBlogPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors line-clamp-2">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors line-clamp-2">
                     {featuredStory.title}
                   </h2>
 
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                  <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">
                     {featuredStory.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
-                        <User className="w-5 h-5 text-white" />
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
+                        <User className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-xs sm:text-sm font-medium text-white">
                           {featuredStory.author}
                         </p>
                         <p className="text-[10px] text-gray-500">
@@ -346,7 +346,7 @@ export default function NewsBlogPage() {
 
             {/* Side Stories - Enhanced List */}
             <div className="lg:col-span-5 space-y-3">
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3">
                 <TrendingUp className="w-4 h-4 text-orange-400" />
                 <h3 className="text-sm font-semibold text-white">
                   {t.trendingNow}
@@ -356,22 +356,22 @@ export default function NewsBlogPage() {
               {topStories.map((story) => (
                 <div
                   key={story.id}
-                  className="group flex gap-4 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-purple-500/30 transition-all cursor-pointer"
+                  className="group flex gap-3 sm:gap-4 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-purple-500/30 transition-all cursor-pointer"
                 >
-                  <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-blue-900/40 to-purple-900/40 flex items-center justify-center flex-shrink-0 overflow-hidden relative">
-                    <Newspaper className="w-6 h-6 text-blue-400/30 group-hover:scale-110 transition-transform" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-gradient-to-br from-blue-900/40 to-purple-900/40 flex items-center justify-center flex-shrink-0 overflow-hidden relative">
+                    <Newspaper className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400/30 group-hover:scale-110 transition-transform" />
                     {story.pinned && (
-                      <div className="absolute top-1 right-1">
-                        <Pin className="w-3 h-3 text-amber-400" />
+                      <div className="absolute top-0.5 sm:top-1 right-0.5 sm:right-1">
+                        <Pin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-400" />
                       </div>
                     )}
                   </div>
 
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <span className="text-[10px] text-purple-400">
                       {story.category}
                     </span>
-                    <h4 className="text-sm font-semibold text-white mt-1 mb-1 line-clamp-2 group-hover:text-blue-400 transition">
+                    <h4 className="text-xs sm:text-sm font-semibold text-white mt-0.5 sm:mt-1 mb-0.5 sm:mb-1 line-clamp-2 group-hover:text-blue-400 transition">
                       {story.title}
                     </h4>
                     <div className="flex items-center gap-2 text-[10px] text-gray-500">
@@ -386,11 +386,11 @@ export default function NewsBlogPage() {
           </div>
 
           {/* Recent Articles Grid - Enhanced */}
-          <div className="mb-12">
-            <div className="flex items-center justify-between mb-5">
+          <div className="mb-8 sm:mb-12">
+            <div className="flex items-center justify-between mb-4 sm:mb-5">
               <div className="flex items-center gap-2">
                 <div className="w-1 h-5 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
-                <h2 className="text-lg font-bold text-white">
+                <h2 className="text-base sm:text-lg font-bold text-white">
                   {t.recentArticles}
                 </h2>
               </div>
@@ -402,11 +402,11 @@ export default function NewsBlogPage() {
               </Link>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
               {recentArticles.map((article) => (
                 <div
                   key={article.id}
-                  className="group rounded-xl p-5 bg-white/5 border border-white/10 hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                  className="group rounded-xl p-4 sm:p-5 bg-white/5 border border-white/10 hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span
@@ -424,7 +424,7 @@ export default function NewsBlogPage() {
                     </button>
                   </div>
 
-                  <h3 className="text-base font-semibold text-white mt-1 mb-2 line-clamp-2 group-hover:text-blue-400 transition">
+                  <h3 className="text-sm sm:text-base font-semibold text-white mt-1 mb-2 line-clamp-2 group-hover:text-blue-400 transition">
                     {article.title}
                   </h3>
 
@@ -432,7 +432,7 @@ export default function NewsBlogPage() {
                     {article.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
                     <div className="flex items-center gap-3 text-[10px] text-gray-500">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
@@ -469,18 +469,18 @@ export default function NewsBlogPage() {
           </div>
 
           {/* Popular Tags - Enhanced */}
-          <div className="mb-10">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="mb-8 sm:mb-10">
+            <div className="flex items-center gap-2 mb-3 sm:mb-4">
               <Award className="w-4 h-4 text-purple-400" />
               <h3 className="text-white font-semibold text-sm">
                 {t.popularTopics}
               </h3>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {popularTags.map((tag, i) => (
                 <button
                   key={i}
-                  className="px-3 py-1.5 text-xs rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
+                  className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
                 >
                   #{t[tag]}
                 </button>
@@ -489,8 +489,7 @@ export default function NewsBlogPage() {
           </div>
 
           {/* Newsletter - Enhanced */}
-
-          <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
+          <div className="relative mt-12 sm:mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
             {/* Animated background */}
             <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
 
@@ -506,7 +505,7 @@ export default function NewsBlogPage() {
                 </span>
               </div>
 
-              <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
+              <h4 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4 px-2">
                 {t.subscribeNewsletter}
               </h4>
 
@@ -514,7 +513,7 @@ export default function NewsBlogPage() {
                 {t.newsletterDescription}
               </p>
 
-              <div className="flex max-w-md mx-auto gap-2">
+              <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-2 px-4 sm:px-0">
                 <input
                   type="email"
                   placeholder={t.enterEmailAddress}
@@ -528,8 +527,8 @@ export default function NewsBlogPage() {
           </div>
 
           {/* Load More Button */}
-          <div className="text-center mt-10">
-            <button className="group px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto">
+          <div className="text-center mt-8 sm:mt-10">
+            <button className="group px-5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 flex items-center gap-2 mx-auto">
               <Loader2 className="w-4 h-4 group-hover:animate-spin" />
               {t.loadMoreArticles}
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

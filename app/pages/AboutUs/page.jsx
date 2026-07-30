@@ -244,7 +244,7 @@ export default function AboutPage() {
 
             <div className="relative max-w-3xl mx-auto">
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
+              <p className="text-sm text-justify md:text-center sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
                 {t.heroDescription}
               </p>
             </div>
@@ -375,20 +375,25 @@ export default function AboutPage() {
             </div>
 
             {/* Mobile Timeline */}
-            <div className="lg:hidden space-y-4 sm:space-y-5 md:space-y-6">
+            <div className="lg:hidden space-y-5 sm:space-y-6">
               {milestones.map((milestone, index) => (
-                <div key={index} className="relative pl-8 sm:pl-10">
-                  <div className="absolute left-3 sm:left-4 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 to-transparent"></div>
-                  <div className="absolute left-0 top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 flex items-center justify-center border-2 border-gray-900">
+                <div key={index} className="relative pl-12 sm:pl-14">
+                  {/* Central Timeline Vertical Line */}
+                  <div className="absolute left-4 top-2 bottom-0 w-px bg-gradient-to-b from-blue-500/50  to-transparent transform -translate-x-1/2"></div>
+
+                  {/* Fixed Timeline Dot Node */}
+                  <div className="absolute left-0 top-7 w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 flex items-center justify-center border-2 border-gray-900 shrink-0 shadow-lg z-10">
                     <span className="text-[10px] sm:text-xs font-bold text-white">
                       {milestone.year}
                     </span>
                   </div>
-                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5">
-                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-1">
+
+                  {/* Content Block */}
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 sm:p-5 shadow-md">
+                    <h3 className="text-sm sm:text-base font-bold text-white mb-1.5">
                       {milestone.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-400">
+                    <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                       {milestone.description}
                     </p>
                   </div>
@@ -405,7 +410,7 @@ export default function AboutPage() {
                     <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
                       <div className="relative w-16 h-16 flex items-center justify-center">
                         <div className="absolute inset-0 bg-blue-500 rounded-full blur-lg opacity-50"></div>
-                        <div className="relative w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 flex items-center justify-center border-4 border-gray-900">
+                        <div className="relative w-16 h-16 top-9 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 flex items-center justify-center border-4 border-gray-900">
                           <span className="text-white font-bold text-sm">
                             {milestone.year}
                           </span>
@@ -557,7 +562,7 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              <h4 className="text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
+              <h4 className="text-lg text-justify lg:text-2xl lg:text-center  font-bold text-white mb-2 sm:mb-3 md:mb-4">
                 "{t.testimonialText}"
               </h4>
 

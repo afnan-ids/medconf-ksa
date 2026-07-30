@@ -213,7 +213,7 @@ export default function HealthcareInnovationHub() {
                     {t.innovationOpportunity}
                   </h2>
 
-                  <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                  <p className="text-sm text-justify sm:text-base md:text-center  md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
                     {t.heroSubDescription}
                   </p>
 
@@ -361,53 +361,53 @@ export default function HealthcareInnovationHub() {
           </div>
 
           {/* ========== PITCH ARENA / DEMO SCHEDULE ========== */}
-          <div className="mb-12 sm:mb-16 md:mb-20">
+          <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-20">
             <div className="relative group">
-              <div className="absolute -inset-10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
+              <div className="absolute -inset-6 sm:-inset-8 md:-inset-10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
 
-              <div className="relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-8 md:p-10 overflow-hidden">
-                <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 blur-3xl rounded-full"></div>
+              <div className="relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-48 sm:w-64 h-48 sm:h-64 bg-blue-500/10 blur-3xl rounded-full"></div>
 
                 <div className="relative z-10">
-                  <div className="text-center mb-6 sm:mb-8">
-                    <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
+                  <div className="text-center mb-4 sm:mb-6 md:mb-8">
+                    <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
                       <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-                      <span className="text-xs sm:text-sm font-medium text-gray-300">
+                      <span className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-300">
                         {t.pitchArenaSchedule}
                       </span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1.5 sm:mb-2 px-2">
                       {t.livePresentations}
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">
+                    <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto px-4">
                       {t.presentationsDescription}
                     </p>
                   </div>
 
-                  <div className="space-y-3 sm:space-y-4">
+                  <div className="space-y-2 sm:space-y-3 md:space-y-4">
                     {pitchSchedule.map((item, idx) => (
                       <div
                         key={idx}
                         className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 group/item"
                       >
-                        <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-0">
-                          <div className="text-sm sm:text-base font-bold text-blue-400">
+                        <div className="flex items-start sm:items-center gap-2 sm:gap-3 md:gap-4 w-full sm:w-auto mb-2 sm:mb-0">
+                          <div className="text-sm sm:text-base font-bold text-blue-400 whitespace-nowrap min-w-[55px] sm:min-w-[70px]">
                             {item.time}
                           </div>
-                          <div>
-                            <div className="text-sm sm:text-base font-semibold text-white">
+                          <div className="flex-1 min-w-0">
+                            <div className="text-sm sm:text-base font-semibold text-white truncate">
                               {item.company}
                             </div>
-                            <div className="text-xs text-gray-400">
+                            <div className="text-xs text-gray-400 truncate">
                               {item.topic}
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
                           <span className="text-[10px] sm:text-xs text-gray-500">
                             {item.stage}
                           </span>
-                          <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
+                          <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap">
                             {t.addToCalendar} +
                           </button>
                         </div>
@@ -415,13 +415,13 @@ export default function HealthcareInnovationHub() {
                     ))}
                   </div>
 
-                  <div className="mt-6 text-center">
+                  <div className="mt-4 sm:mt-5 md:mt-6 text-center">
                     <Link
                       href="#"
-                      className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors group"
                     >
                       {t.viewFullSchedule}
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>

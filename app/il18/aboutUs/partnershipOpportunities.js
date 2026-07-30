@@ -19,8 +19,9 @@ export const translations = {
 
     // Packages Section
     partnershipPackages: "Partnership Packages",
-    chooseYourPartnershipLevel: "Choose Your Partnership Level",
-    selectPackageDescription: "Select the package that aligns with your business objectives",
+    chooseYourPartnershipLevel: "Partnership Opportunities",
+    pacExplore:"Explore",
+    selectPackageDescription: "Partner with us to maximize your market return.",
 
     partnershipManager: "Partnership Manager",
     // Strategic Partner
@@ -52,17 +53,18 @@ export const translations = {
     goldPartnerSupport: "Marketing support as per attached plan",
     goldPartnerManager: "Dedicated partnership manager",
     goldPartnerReport: "Dedicated Performance Report",
-    goldPartnerParking: "3 VIP Parking",
+    goldPartnerParking: "2 VIP Parking",
 
     // Business Package
     businessPackage: "Business Package",
     businessPackageDescription: "Flexible solutions tailored to your needs",
     businessPackagePricing: "Custom pricing",
-    businessPackageSpace: "Flexible space",
+    businessPackageSpace: "Partnership Manager",
     businessPackageLocations: "Various spaces in multiple locations",
     businessPackageSupport: "Marketing support as per attached plan",
     businessPackageManager: "Dedicated Performance Report",
     businessPackageParking: "2 VIP Parking",
+    businessPackageBasedonSpaceandLocation:"Based on Space and Location",
 
     // Why Choose Us
     whyIndustryLeadersChooseUs: "Why Industry Leaders Choose Us",
@@ -103,7 +105,8 @@ export const translations = {
 
     // Packages Section
     partnershipPackages: "باقات الشراكة",
-    chooseYourPartnershipLevel: "اختر مستوى شراكتك",
+    chooseYourPartnershipLevel: "فرص الشراكة",
+        pacExplore:"يستكشف",
     selectPackageDescription: "اختر الباقة التي تتوافق مع أهداف عملك",
     partnershipManager: "مديــــــــــــــــــــــــــــــــــــر حســــــــــــــــــــــــــــــاب ",
     // Strategic Partner
@@ -138,17 +141,18 @@ export const translations = {
     goldPartnerSupport: "دعم تسويقي وفقًا للخطة المرفقة",
     goldPartnerManager: "مدير شراكة مخصص",
     goldPartnerReport: "تقريــــــــــــــــــــــــــــر أداء مخــــــــــــــــــــــــصص",
-    goldPartnerParking: "مواقــــــــــــــــــــــــف VIP عـــــــــــــــــــــــــــــدد 3",
+    goldPartnerParking: "مواقــــــــــــــــــــــــف VIP عـــــــــــــــــــــــــــــدد 2",
 
     // Business Package
     businessPackage: "باقة الأعمال",
     businessPackageDescription: "حلول مرنة مصممة خصيصًا لك الاحتياجات",
     businessPackagePricing: "تسعير مخصص",
-    businessPackageSpace: "مساحة مرنة",
+    businessPackageSpace: "مدير الشراكات",
     businessPackageLocations: "مساحات متنوعة في مواقع متعددة",
     businessPackageSupport: "دعم تسويقي وفقًا للخطة المرفقة",
     businessPackageManager: "تقريــــــــــــر أداء عــــــــــــام عـــن المؤتمــــــــــــر",
     businessPackageParking: "مواقـــــــــــــــــــــــــــــــف VIP عــــــــــــــــــــدد 2",
+    businessPackageBasedonSpaceandLocation:"باقة أعمال تعتمد على المساحة والموقع",
     // Why Choose Us
     whyIndustryLeadersChooseUs: "لماذا يختارنا رواد الصناعة؟",
     strategicAdvantage: "الميزة الاستراتيجية",

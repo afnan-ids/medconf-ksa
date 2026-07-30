@@ -99,7 +99,7 @@ const BreadCrumb = ({ title, path }) => {
     {/* Bottom Border */}
     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-800/50 to-transparent"></div>
     
-    <style jsx>{`
+    <style >{`
       @keyframes liquid {
         0% {
           background-position: 0% 50%;

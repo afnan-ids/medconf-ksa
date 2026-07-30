@@ -352,78 +352,99 @@ export default function ourjourney() {
                   </div>
 
                   {/* Mobile Layout - Vertical Cards */}
-                  <div className="lg:hidden">
-                    <div className="relative pl-10">
-                      <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/50 to-transparent"></div>
 
-                      <div
-                        className={`absolute left-0 top-0 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center z-10`}
-                      >
-                        <span className="text-white font-bold text-xs">
+                  <div className="lg:hidden w-full">
+                    <div className="relative pl-12 pr-2">
+                      {/* Timeline Vertical Bar Connector */}
+                      <div className="absolute left-4 top-4 bottom-0 w-px bg-gradient-to-b from-blue-500 via-blue-500/30 to-transparent"></div>
+
+                      {/* Step Index Badge Node */}
+                      <div className="absolute left-0 top-7 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center z-10 shadow-lg shadow-blue-500/20 border-2 border-slate-950 shrink-0">
+                        <span className="text-white font-black text-xs tracking-tighter">
                           {index + 1}
                         </span>
                       </div>
 
+                      {/* Premium Content Card */}
                       <div
-                        className={`bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 transition-all duration-500 ${
-                          isActive ? "ring-2 ring-blue-500/50" : ""
+                        className={`flex flex-col bg-slate-900/60 backdrop-blur-xl border border-white/[0.08] rounded-2xl p-5 sm:p-6 transition-all duration-300 relative overflow-hidden ${
+                          isActive
+                            ? "ring-1 ring-blue-500/40 shadow-2xl shadow-blue-500/10 bg-slate-900/80"
+                            : ""
                         }`}
                       >
-                        <div
-                          className={`relative w-12 h-12 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center mb-3`}
-                        >
-                          <Icon className="w-6 h-6 text-white" />
+                        {/* Subtle Internal Glow Effect */}
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                        {/* Header Element Row */}
+                        <div className="flex items-center gap-3.5 mb-4 relative z-10">
+                          <div
+                            className={`w-11 h-11 rounded-xl bg-gradient-to-br ${step.color || "from-cyan-500 to-blue-600"} flex items-center justify-center shrink-0 shadow-inner shadow-white/20`}
+                          >
+                            <Icon className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug">
+                              {step.titleEn}
+                            </h3>
+                            {step.titleAr && (
+                              <p
+                                className="text-gray-400 text-xs mt-0.5 tracking-wide font-medium"
+                                dir="rtl"
+                              >
+                                {step.titleAr}
+                              </p>
+                            )}
+                          </div>
                         </div>
 
-                        <h3 className="text-xl font-bold text-white">
-                          {step.titleEn}
-                        </h3>
-                        <p className="text-gray-400 mb-2" dir="rtl">
-                          {step.titleAr}
-                        </p>
-
-                        <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-2 py-0.5 mb-3">
-                          <Calendar className="w-3 h-3 text-blue-400" />
-                          <span className="text-xs text-gray-300">
+                        {/* Timeline Context Pill */}
+                        <div className="inline-flex items-center gap-1.5 bg-white/[0.06] border border-white/[0.08] rounded-lg px-2.5 py-1 mb-4 self-start shadow-sm">
+                          <Calendar className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                          <span className="text-xs text-gray-300 font-medium tracking-wide">
                             {step.timeline}
                           </span>
                         </div>
 
-                        <p className="text-sm text-gray-400 mb-3">
+                        {/* Description Body Paragraph */}
+                        <p className="text-sm text-gray-400/90 mb-5 leading-relaxed tracking-wide font-normal">
                           {step.description}
                         </p>
 
-                        <div className="space-y-1.5 mb-3">
-                          {step.points.map((point, idx) => {
-                            const PointIcon = point.icon;
-                            return (
-                              <div
-                                key={idx}
-                                className="flex items-start gap-2 text-xs"
-                              >
-                                <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0 mt-0.5" />
-                                <span className="text-gray-300">
+                        {/* Bullet Feature Item Groups */}
+                        <div className="space-y-3 mb-6 relative z-10">
+                          {step.points.map((point, idx) => (
+                            <div
+                              key={idx}
+                              className="flex items-start gap-2.5 group/item"
+                            >
+                              <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5 drop-shadow-[0_0_4px_rgba(52,211,153,0.2)]" />
+                              <div className="flex flex-col min-w-0 flex-1">
+                                <span className="text-xs sm:text-sm text-gray-200 font-medium leading-normal tracking-wide">
                                   {point.textEn}
                                 </span>
-                                <span
-                                  className="text-gray-500 text-[10px]"
-                                  dir="rtl"
-                                >
-                                  {point.textAr}
-                                </span>
+                                {point.textAr && (
+                                  <span
+                                    className="text-gray-500 text-[11px] mt-0.5 tracking-wide leading-normal font-medium"
+                                    dir="rtl"
+                                  >
+                                    {point.textAr}
+                                  </span>
+                                )}
                               </div>
-                            );
-                          })}
+                            </div>
+                          ))}
                         </div>
 
-                        <div className="flex gap-4 pt-3 border-t border-white/10">
+                        {/* Bottom Fixed Stats Grid Footprint */}
+                        <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/[0.06] mt-auto relative z-10">
                           {Object.entries(step.stats).map(([key, value]) => (
-                            <div key={key}>
-                              <p className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                            <div key={key} className="min-w-0">
+                              <p className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 tracking-tight leading-none mb-1">
                                 {value}
                               </p>
-                              <p className="text-[10px] text-gray-500 capitalize">
-                                {key}
+                              <p className="text-[11px] text-gray-500 font-semibold uppercase tracking-wider truncate">
+                                {key.replace(/([A-Z])/g, " $1")}
                               </p>
                             </div>
                           ))}
@@ -437,38 +458,51 @@ export default function ourjourney() {
           </div>
 
           {/* CTA Section */}
-          <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
-            <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
-            <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+       <div className="relative mt-12 sm:mt-16 md:mt-24 lg:mt-32 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+  <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl">
+    {/* Background Image */}
+    <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
 
-            <div className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 text-center backdrop-blur-sm">
-              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
-                <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                <span className="text-xs sm:text-sm font-medium text-white/90">
-                  {t.joinUs}
-                </span>
-              </div>
+    {/* Floating orbs - pointer-events-none added to prevent touch blockages */}
+    <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none"></div>
+    <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none"></div>
 
-              <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                {t.readyToBegin}
-              </h4>
+    {/* Content Container - Aligned padding for premium appearance */}
+    <div className="relative py-12 sm:py-16 md:py-20 px-6 sm:px-8 md:px-12 text-center backdrop-blur-md bg-black/10">
+      
+      {/* Badge Tag */}
+      <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3.5 py-1.5 md:px-4 md:py-2 mb-4 md:mb-6">
+        <Star className="w-3.5 h-3.5 md:w-4 md:h-4 text-white shrink-0" />
+        <span className="text-xs md:text-sm font-medium text-white/90 tracking-wide">
+          {t.joinUs}
+        </span>
+      </div>
 
-              <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                {t.ctaDescription}
-              </p>
+      {/* Main Heading */}
+      <h4 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 md:mb-4 tracking-tight max-w-2xl mx-auto leading-tight">
+        {t.readyToBegin}
+      </h4>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-                <Link
-                  href="/pages/Events"
-                  className="group bg-white text-gray-900 px-5 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2"
-                >
-                  {t.registerNow}
-                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Sub-description Paragraph */}
+      <p className="text-white/80 text-sm md:text-base lg:text-lg mb-6 md:mb-8 max-w-xl mx-auto leading-relaxed">
+        {t.ctaDescription}
+      </p>
+
+      {/* Responsive Centered Actions Section */}
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-xs sm:max-w-none mx-auto">
+        <Link
+          href="/pages/Events"
+          className="group w-full sm:w-auto bg-white text-gray-900 px-6 py-3.5 md:px-8 md:py-4 rounded-full text-sm md:text-base font-bold hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 inline-flex items-center justify-center gap-2 shrink-0"
+        >
+          <span>{t.registerNow}</span>
+          <ChevronRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform shrink-0" />
+        </Link>
+      </div>
+
+    </div>
+  </div>
+</div>
+
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>

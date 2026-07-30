@@ -45,7 +45,7 @@ export default function Navbar() {
 
     {
       label: "services",
-      href: "/Services",
+      href: "#",
       submenus: [
         {
           label: "conferenceOrganization",
@@ -62,12 +62,12 @@ export default function Navbar() {
           href: "/Services/practitionerregistration",
           icon: UserPlus,
         },
-        {
-          label: t.viewAllServices,
-          href: "/Services",
-          isViewAll: true,
-          icon: Eye,
-        },
+        // {
+        //   label: t.viewAllServices,
+        //   href: "/Services",
+        //   isViewAll: true,
+        //   icon: Eye,
+        // },
       ],
     },
 
@@ -97,12 +97,12 @@ export default function Navbar() {
           href: "https://hpql-healthcare-practitioner.i-diligence.com/login",
           icon: Stethoscope,
         },
-        {
-          label: t.viewAllPortals,
-          href: "/pages/SignIn",
-          isViewAll: true,
-          icon: Eye,
-        },
+        // {
+        //   label: t.viewAllPortals,
+        //   href: "/pages/SignIn",
+        //   isViewAll: true,
+        //   icon: Eye,
+        // },
       ],
     },
 
@@ -534,129 +534,123 @@ export default function Navbar() {
 
       {/* Mobile Menu - Matching Footer Dark Style */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-20 z-50 transition-all duration-500 ${
-          mobileOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
-      >
-        <div className="mx-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
-          <div className="relative overflow-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
-            {/* Floating Orbs in Mobile Menu */}
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl"></div>
+  className={`lg:hidden fixed inset-x-0 top-22 sm:top-20 z-50 transition-all duration-500 ${
+    mobileOpen
+      ? "opacity-100 translate-y-0"
+      : "opacity-0 -translate-y-4 pointer-events-none"
+  }`}
+>
+  <div className="mx-3 sm:mx-4 md:mx-6 max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-5rem)] overflow-y-auto">
+    <div className="relative overflow-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl shadow-2xl">
+      {/* Floating Orbs in Mobile Menu */}
+      <div className="absolute -top-20 -right-20 w-32 sm:w-40 h-32 sm:h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 -left-20 w-32 sm:w-40 h-32 sm:h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/2 w-36 sm:w-48 h-36 sm:h-48 bg-cyan-500/5 rounded-full blur-3xl"></div>
 
-            {/* Top gradient line */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+      {/* Top gradient line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
-            <div className="relative p-4 space-y-2">
-              {navlinks.map((link) => (
-                <div key={link.label} className="space-y-1">
-                  <button
-                    onClick={() => {
-                      if (link.submenus) {
-                        setOpenDropdown(
-                          openDropdown === link.label ? null : link.label,
-                        );
-                      } else {
-                        setMobileOpen(false);
-                        window.location.href = link.href;
-                      }
-                    }}
-                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                      isActive(link.href, link.submenus)
-                        ? "text-blue-400 bg-blue-500/10 border border-blue-500/30"
-                        : "text-gray-300 hover:text-white hover:bg-white/5"
-                    }`}
-                  >
-                    <span>{t[link.label]}</span>
-                    {link.submenus && (
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-300 ${
-                          openDropdown === link.label ? "rotate-180" : ""
-                        }`}
-                      />
-                    )}
-                  </button>
+      {/* Header with Language Toggle */}
+      <div className="relative flex items-center justify-between p-3 sm:p-4 border-b border-white/10">
+        <span className="text-xs sm:text-sm font-medium text-gray-400">
+          Menu
+        </span>
+        <button
+          onClick={toggleLanguage}
+          className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/20 text-white text-xs sm:text-sm hover:bg-white/10 transition-colors duration-300"
+        >
+          {language === "en" ? "العربية" : "English"}
+        </button>
+      </div>
 
-                  {link.submenus && openDropdown === link.label && (
-                    <div className="ml-4 space-y-1 border-l-2 border-blue-500/30 pl-3 mt-2">
-                      {link.submenus.map((submenu) => {
-                        const IconComponent = submenu.icon;
-                        return (
-                          <Link
-                            key={submenu.label}
-                            href={submenu.href}
-                            onClick={() => {
-                              setMobileOpen(false);
-                              setOpenDropdown(null);
-                            }}
-                            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                              pathname === submenu.href
-                                ? "text-blue-400 bg-blue-500/10"
-                                : "text-gray-400 hover:text-white hover:bg-white/5"
-                            }`}
-                          >
-                            {IconComponent && (
-                              <IconComponent className="w-4 h-4" />
-                            )}
-                            <span>{t[submenu.label]}</span>
-                            {submenu.isViewAll && (
-                              <ChevronRight className="w-3 h-3 ml-auto opacity-70" />
-                            )}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              ))}
+      <div className="relative p-2 sm:p-3 md:p-4 space-y-1 sm:space-y-2">
+        {navlinks.map((link) => (
+          <div key={link.label} className="space-y-1">
+            <button
+              onClick={() => {
+                if (link.submenus) {
+                  setOpenDropdown(
+                    openDropdown === link.label ? null : link.label,
+                  );
+                } else {
+                  setMobileOpen(false);
+                  window.location.href = link.href;
+                }
+              }}
+              className={`w-full flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                isActive(link.href, link.submenus)
+                  ? "text-blue-400 bg-blue-500/10 border border-blue-500/30"
+                  : "text-gray-300 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              <span className="truncate">{t[link.label]}</span>
+              {link.submenus && (
+                <ChevronDown
+                  className={`w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 ml-2 transition-transform duration-300 ${
+                    openDropdown === link.label ? "rotate-180" : ""
+                  }`}
+                />
+              )}
+            </button>
 
-              <div className="relative my-4">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-white/10"></div>
-                </div>
-              </div>
-
-              {/* Mobile Sign In with Portal Options */}
-              <div className="space-y-2">
-                <div className="text-xs font-medium text-gray-400 uppercase tracking-wider px-2">
-                  {t.portalAccess || "Portal Access"}
-                </div>
-                {portalOptions.map((portal) => {
-                  const IconComponent = portal.icon;
+            {link.submenus && openDropdown === link.label && (
+              <div className="ml-2 sm:ml-4 space-y-1 border-l-2 border-blue-500/30 pl-2 sm:pl-3 mt-1 sm:mt-2">
+                {link.submenus.map((submenu) => {
+                  const IconComponent = submenu.icon;
                   return (
                     <Link
-                      key={portal.label}
-                      href={portal.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300"
+                      key={submenu.label}
+                      href={submenu.href}
+                      onClick={() => {
+                        setMobileOpen(false);
+                        setOpenDropdown(null);
+                      }}
+                      className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
+                        pathname === submenu.href
+                          ? "text-blue-400 bg-blue-500/10"
+                          : "text-gray-400 hover:text-white hover:bg-white/5"
+                      }`}
                     >
                       {IconComponent && (
-                        <IconComponent className="w-4 h-4 text-gray-400" />
+                        <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                       )}
-                      <span>{t[portal.label]}</span>
+                      <span className="truncate">{t[submenu.label]}</span>
+                      {submenu.isViewAll && (
+                        <ChevronRight className="w-3 h-3 ml-auto flex-shrink-0 opacity-70" />
+                      )}
                     </Link>
                   );
                 })}
               </div>
+            )}
+          </div>
+        ))}
 
-              <Link
-                href="/Forms/Login"
-                onClick={() => setMobileOpen(false)}
-                className="group relative overflow-hidden block w-full text-center px-2 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-xl transition-all duration-300 mt-2"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-1">
-                  <LogIn className="w-4 h-4" />
-                  {t.signIn}
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Link>
-            </div>
+        <div className="relative my-3 sm:my-4">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-white/10"></div>
           </div>
         </div>
+
+        {/* Sign In Button */}
+        <Link
+          href="/Forms/Login"
+          onClick={() => setMobileOpen(false)}
+          className="group relative overflow-hidden block w-full text-center px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:shadow-xl transition-all duration-300 text-xs sm:text-sm"
+        >
+          <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2">
+            <LogIn className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            {t.signIn}
+          </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </Link>
+
+        {/* Bottom decorative line */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
       </div>
+    </div>
+  </div>
+</div>
 
       {mobileOpen && (
         <div

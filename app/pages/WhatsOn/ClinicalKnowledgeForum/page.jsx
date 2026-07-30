@@ -352,12 +352,12 @@ export default function ClinicalKnowledgeForum() {
 
             {/* Title - English Version */}
             {language === "en" && (
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative">
+              <h1 className="text-xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 px-2 relative">
                 <span className="text-white">Clinical</span>{" "}
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                   Knowledge
-                </span>
-                <br />
+                </span>{" "}
+  
                 <span className="text-white">Forum</span>
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h1>
@@ -370,7 +370,7 @@ export default function ClinicalKnowledgeForum() {
                   منتدى
                 </span>{" "}
                 <span className="text-white">المعرفة</span>
-                <br />
+        {" "}
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                   السريرية
                 </span>
@@ -397,7 +397,7 @@ export default function ClinicalKnowledgeForum() {
                     {t.advancingClinicalExcellence}
                   </h2>
 
-                  <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                  <p className="text-sm text-justify md:text-center sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
                     {t.heroSubDescription}
                   </p>
 
@@ -444,127 +444,133 @@ export default function ClinicalKnowledgeForum() {
           </div>
 
           {/* ========== AGENDA / SCHEDULE SECTION ========== */}
-          <div id="agenda" className="mb-12 sm:mb-16 md:mb-20">
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
-                <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                <span className="text-xs sm:text-sm font-medium text-gray-300">
-                  {t.conferenceSchedule}
-                </span>
+     <div id="agenda" className="mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+  <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+    <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
+      <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
+      <span className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-300">
+        {t.conferenceSchedule}
+      </span>
+    </div>
+    <h2 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 px-4">
+      {t.eventAgenda}
+      <div className="absolute -bottom-3 sm:-bottom-4 left-1/2 -translate-x-1/2 w-12 sm:w-16 md:w-20 lg:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+    </h2>
+    <p className="text-xs sm:text-sm text-gray-400 mt-4 sm:mt-5 md:mt-6 max-w-xl mx-auto px-4">
+      {t.scheduleDescription}
+    </p>
+  </div>
+
+  {/* Day Selector */}
+  <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 px-4 sm:px-0">
+    <button
+      onClick={() => setActiveDay("day1")}
+      className={`px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 ${
+        activeDay === "day1"
+          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
+          : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
+      }`}
+    >
+      {t.day1}
+    </button>
+    <button
+      onClick={() => setActiveDay("day2")}
+      className={`px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 ${
+        activeDay === "day2"
+          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
+          : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
+      }`}
+    >
+      {t.day2}
+    </button>
+  </div>
+
+  {/* Agenda Items */}
+  <div className="space-y-2 sm:space-y-3 md:space-y-4 px-3 sm:px-0">
+    {currentAgenda.map((item, idx) => {
+      if (item.type === "break") {
+        return (
+          <div
+            key={idx}
+            className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 text-center"
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2">
+              <div className="text-sm sm:text-base font-semibold text-blue-400">
+                {item.time}
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                {t.eventAgenda}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-              </h2>
-              <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
-                {t.scheduleDescription}
-              </p>
-            </div>
-
-            {/* Day Selector */}
-            <div className="flex justify-center gap-3 sm:gap-4 mb-8">
-              <button
-                onClick={() => setActiveDay("day1")}
-                className={`px-5 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 ${
-                  activeDay === "day1"
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
-                    : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
-                }`}
-              >
-                {t.day1}
-              </button>
-              <button
-                onClick={() => setActiveDay("day2")}
-                className={`px-5 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 ${
-                  activeDay === "day2"
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
-                    : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
-                }`}
-              >
-                {t.day2}
-              </button>
-            </div>
-
-            {/* Agenda Items */}
-            <div className="space-y-3 sm:space-y-4">
-              {currentAgenda.map((item, idx) => {
-                if (item.type === "break") {
-                  return (
-                    <div
-                      key={idx}
-                      className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 text-center"
-                    >
-                      <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-                        <div className="text-sm sm:text-base font-semibold text-blue-400">
-                          {item.time}
-                        </div>
-                        <div className="text-sm sm:text-base text-gray-300">
-                          {item.title}
-                        </div>
-                        <div className="text-xs text-gray-500">
-                          {item.location}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                }
-
-                return (
-                  <div key={idx} className="group relative">
-                    <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-3 sm:p-4 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
-                      <div
-                        className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${getTypeColor(
-                          item.type,
-                        )}`}
-                      ></div>
-
-                      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 pl-3">
-                        <div className="min-w-[120px]">
-                          <div className="text-xs sm:text-sm font-bold text-blue-400">
-                            {item.time}
-                          </div>
-                          <div className="text-[10px] text-gray-500 flex items-center gap-1 mt-0.5">
-                            <MapPin className="w-3 h-3" />
-                            {item.location}
-                          </div>
-                        </div>
-
-                        <div className="flex-1">
-                          <h3 className="text-sm sm:text-base font-semibold text-white">
-                            {item.title}
-                          </h3>
-                          <p className="text-xs text-gray-400">
-                            {item.speaker} • {item.role}
-                          </p>
-                        </div>
-
-                        <div className="flex items-center gap-2">
-                          <span
-                            className={`text-[10px] sm:text-xs px-2 py-1 rounded-full bg-gradient-to-r ${getTypeColor(
-                              item.type,
-                            )} text-white inline-flex items-center gap-1`}
-                          >
-                            {getTypeIcon(item.type)}
-                            {getTypeLabel(item.type)}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="mt-6 text-center">
-              <Link
-                href="#"
-                className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
-              >
-                {t.downloadAgenda}
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <div className="text-sm sm:text-base text-gray-300">
+                {item.title}
+              </div>
+              <div className="text-[10px] sm:text-xs text-gray-500">
+                {item.location}
+              </div>
             </div>
           </div>
+        );
+      }
+
+      return (
+        <div key={idx} className="group relative">
+          <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-3 sm:p-4 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div
+              className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${getTypeColor(
+                item.type,
+              )}`}
+            ></div>
+
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2 sm:gap-3 pl-2 sm:pl-3">
+              {/* Time & Location */}
+              <div className="min-w-[80px] sm:min-w-[100px] md:min-w-[120px] w-full sm:w-auto">
+                <div className="text-xs sm:text-sm font-bold text-blue-400">
+                  {item.time}
+                </div>
+                <div className="text-[10px] text-gray-500 flex items-center gap-1 mt-0.5">
+                  <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                  <span className="truncate">{item.location}</span>
+                </div>
+              </div>
+
+              {/* Title & Speaker */}
+              <div className="flex-1 w-full sm:w-auto">
+                <h3 className="text-sm sm:text-base font-semibold text-white truncate">
+                  {item.title}
+                </h3>
+                <p className="text-[10px] sm:text-xs text-gray-400 truncate">
+                  {item.speaker} • {item.role}
+                </p>
+              </div>
+
+              {/* Type Badge */}
+             <div className="flex items-center w-full sm:w-auto p-1 sm:p-0 my-1 sm:my-0">
+  <span
+    className={`text-xs w-32 justify-center px-2.5 py-1 sm:py-1.5 rounded-full bg-gradient-to-r ${getTypeColor(
+      item.type
+    )} text-white inline-flex items-center gap-1.5 whitespace-nowrap font-medium tracking-wide shadow-sm shrink-0`}
+  >
+    <span className="shrink-0 flex items-center justify-center">
+      {getTypeIcon(item.type)}
+    </span>
+    <span className="leading-none truncate pt-0.5 md:pt-1 ">{getTypeLabel(item.type)}</span>
+  </span>
+</div>
+
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <div className="mt-4 sm:mt-5 md:mt-6 text-center">
+    <Link
+      href="#"
+      className="inline-flex items-center gap-2 text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+    >
+      {t.downloadAgenda}
+      <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+    </Link>
+  </div>
+</div>
 
           {/* ========== FEATURED SPEAKERS ========== */}
           <div className="mb-12 sm:mb-16 md:mb-20">
@@ -678,9 +684,9 @@ export default function ClinicalKnowledgeForum() {
                                 <h4 className="text-sm sm:text-base font-semibold text-white">
                                   {highlight.title}
                                 </h4>
-                                <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-gray-400">
+                                {/* <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-gray-400">
                                   {highlight.category}
-                                </span>
+                                </span> */}
                               </div>
                               <p className="text-xs text-gray-300 leading-relaxed">
                                 {highlight.description}
@@ -697,65 +703,67 @@ export default function ClinicalKnowledgeForum() {
           </div>
 
           {/* ========== STATS SECTION ========== */}
-          <div className="mb-12 sm:mb-16 md:mb-20 relative">
-            <div className="absolute inset-0 flex justify-center">
-              <div className="w-[600px] h-[300px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-40"></div>
+          <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-20 relative">
+  <div className="absolute inset-0 flex justify-center">
+    <div className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[200px] sm:h-[250px] md:h-[300px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-40"></div>
+  </div>
+
+  <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-14 relative z-10">
+    <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4 md:mb-5">
+      <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-400" />
+      <span className="text-[10px] sm:text-xs md:text-sm text-gray-300 tracking-wide">
+        {t.forumImpact}
+      </span>
+    </div>
+
+    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight mb-2 sm:mb-3 px-4">
+      {t.knowledgeExchange}
+    </h2>
+
+    <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-xl mx-auto px-4">
+      {t.forumImpactDesc}
+    </p>
+
+    <div className="mt-4 sm:mt-5 md:mt-6 flex justify-center">
+      <div className="w-16 sm:w-20 md:w-24 lg:w-28 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+    </div>
+  </div>
+
+  <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 px-3 sm:px-0">
+    {statsData.map((stat, index) => {
+      const Icon = stat.icon;
+      return (
+        <div
+          key={index}
+          className="group relative rounded-xl sm:rounded-2xl p-[1px] transition-all duration-500 hover:-translate-y-1 sm:hover:-translate-y-2"
+        >
+          <div
+            className={`absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-100 blur-md transition duration-500`}
+          ></div>
+          <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 text-center overflow-hidden">
+            <div
+              className={`absolute -top-10 -right-10 w-20 sm:w-24 md:w-28 lg:w-32 h-20 sm:h-24 md:h-28 lg:h-32 bg-gradient-to-r ${stat.gradient} opacity-10 blur-2xl rounded-full`}
+            ></div>
+            
+            <div className="relative mb-2 sm:mb-3">
+              <div
+                className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} blur-lg opacity-20 group-hover:opacity-40 transition`}
+              ></div>
+              <Icon className="relative w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white mx-auto group-hover:scale-110 transition-transform duration-500" />
             </div>
-
-            <div className="text-center mb-10 sm:mb-14 relative z-10">
-              <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 mb-5">
-                <TrendingUp className="w-4 h-4 text-purple-400" />
-                <span className="text-xs sm:text-sm text-gray-300 tracking-wide">
-                  {t.forumImpact}
-                </span>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-3">
-                {t.knowledgeExchange}
-              </h2>
-
-              <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-                {t.forumImpactDesc}
-              </p>
-
-              <div className="mt-6 flex justify-center">
-                <div className="w-28 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-              </div>
-            </div>
-
-            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-              {statsData.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <div
-                    key={index}
-                    className="group relative rounded-2xl p-[1px] transition-all duration-500 hover:-translate-y-2"
-                  >
-                    <div
-                      className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-100 blur-md transition duration-500`}
-                    ></div>
-                    <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 text-center overflow-hidden">
-                      <div
-                        className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r ${stat.gradient} opacity-10 blur-2xl rounded-full`}
-                      ></div>
-                      <div className="relative mb-3">
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} blur-lg opacity-20 group-hover:opacity-40 transition`}
-                        ></div>
-                        <Icon className="relative w-8 h-8 sm:w-10 sm:h-10 text-white mx-auto group-hover:scale-110 transition-transform duration-500" />
-                      </div>
-                      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 tracking-tight">
-                        {stat.value}
-                      </p>
-                      <p className="text-xs sm:text-sm text-gray-400">
-                        {stat.label}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-0.5 sm:mb-1 tracking-tight">
+              {stat.value}
+            </p>
+            <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 leading-tight">
+              {stat.label}
+            </p>
           </div>
+        </div>
+      );
+    })}
+  </div>
+</div>
 
           {/* ========== CTA SECTION ========== */}
           <div className="relative mt-16 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">

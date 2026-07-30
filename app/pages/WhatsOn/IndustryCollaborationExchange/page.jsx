@@ -25,7 +25,6 @@ import {
   Globe,
   Clock,
   BadgeCheck,
-
   Phone,
   Mail,
   Link as LinkIcon,
@@ -231,7 +230,7 @@ export default function IndustryCollaborationExchange() {
                     {t.wherePartnershipsDrive}
                   </h2>
 
-                  <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                  <p className="text-sm text-justify sm:text-base md:text-lg md:text-center text-gray-300 leading-relaxed max-w-3xl mx-auto">
                     {t.heroDescription}
                   </p>
 
@@ -256,29 +255,29 @@ export default function IndustryCollaborationExchange() {
           </div>
 
           {/* ========== PARTNERSHIP CATEGORIES ========== */}
-          <div className="mb-12 sm:mb-16 md:mb-20">
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
+          <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
                 <Network className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                <span className="text-xs sm:text-sm font-medium text-gray-300">
+                <span className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-300">
                   {t.collaborationAreas}
                 </span>
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+              <h2 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 px-4">
                 {t.partnershipCategories}
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                <div className="absolute -bottom-3 sm:-bottom-4 md:-bottom-5 left-1/2 -translate-x-1/2 w-12 sm:w-16 md:w-20 lg:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
-              <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
+              <p className="text-xs sm:text-sm text-gray-400 mt-4 sm:mt-5 md:mt-6 max-w-xl mx-auto px-4">
                 {t.exploreCollaboration}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 px-3 sm:px-0">
               {partnershipCategories.map((category, index) => {
                 const Icon = category.icon;
                 return (
-                  <div key={index} className="group relative">
-                    <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-white/20 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+                  <div key={index} className="group relative h-full">
+                    <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-white/20 hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col">
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                       ></div>
@@ -286,30 +285,34 @@ export default function IndustryCollaborationExchange() {
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                       </div>
 
-                      <div className="relative">
-                        <div className="relative inline-block mb-3">
-                          <div
-                            className={`absolute inset-0 bg-gradient-to-r ${category.gradient} rounded-xl blur-md opacity-20 group-hover:opacity-40 transition`}
-                          ></div>
-                          <div
-                            className={`relative w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
-                          >
-                            <Icon className="w-6 h-6 text-white" />
+                      <div className="relative flex flex-col h-full">
+                        {/* Content - grows to fill space */}
+                        <div className="flex-1">
+                          <div className="relative inline-block mb-2 sm:mb-3">
+                            <div
+                              className={`absolute inset-0 bg-gradient-to-r ${category.gradient} rounded-xl blur-md opacity-20 group-hover:opacity-40 transition`}
+                            ></div>
+                            <div
+                              className={`relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
+                            >
+                              <Icon className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
+                            </div>
                           </div>
+
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-1">
+                            {category.title}
+                          </h3>
+                          <p className="text-[10px] sm:text-xs text-gray-300 mb-2 sm:mb-3 md:mb-4 leading-relaxed line-clamp-3 sm:line-clamp-none">
+                            {category.description}
+                          </p>
                         </div>
 
-                        <h3 className="text-base sm:text-lg font-bold text-white mb-1">
-                          {category.title}
-                        </h3>
-                        <p className="text-xs text-gray-300 mb-2">
-                          {category.description}
-                        </p>
-
-                        <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10">
-                          <span className="text-[10px] text-blue-400">
+                        {/* Footer - sticks to bottom */}
+                        <div className="flex items-center justify-between mt-auto pt-2 sm:pt-3 border-t border-white/10">
+                          <span className="text-[10px] text-blue-400 truncate">
                             {category.opportunities} active opportunities
                           </span>
-                          <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                          <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all flex-shrink-0" />
                         </div>
                       </div>
                     </div>
@@ -320,25 +323,25 @@ export default function IndustryCollaborationExchange() {
           </div>
 
           {/* ========== COLLABORATION OPPORTUNITIES / MATCHMAKING TABS ========== */}
-          <div className="mb-12 sm:mb-16 md:mb-20">
-            <div className="text-center mb-8 sm:mb-10">
-              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
+          <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-6 sm:mb-8 md:mb-10">
+              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
                 <Target className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                <span className="text-xs sm:text-sm font-medium text-gray-300">
+                <span className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-300">
                   {t.findYourMatch}
                 </span>
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+              <h2 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 px-4">
                 {t.collaborationOpportunities}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                <div className="absolute -bottom-3 sm:-bottom-4 left-1/2 -translate-x-1/2 w-12 sm:w-16 md:w-20 lg:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
             </div>
 
             {/* Tab Buttons */}
-            <div className="flex justify-center gap-3 sm:gap-4 mb-8">
+            <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 px-4 sm:px-0">
               <button
                 onClick={() => setActiveTab("opportunities")}
-                className={`px-5 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 ${
+                className={`px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 ${
                   activeTab === "opportunities"
                     ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
                     : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
@@ -348,7 +351,7 @@ export default function IndustryCollaborationExchange() {
               </button>
               <button
                 onClick={() => setActiveTab("matchmaking")}
-                className={`px-5 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 ${
+                className={`px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 ${
                   activeTab === "matchmaking"
                     ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
                     : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
@@ -360,46 +363,49 @@ export default function IndustryCollaborationExchange() {
 
             {/* Open Opportunities Tab */}
             {activeTab === "opportunities" && (
-              <div className="space-y-4 sm:space-y-5">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5 px-3 sm:px-0">
                 {collaborationOpportunities.map((opportunity, idx) => (
                   <div key={idx} className="group relative">
-                    <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+                    <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${opportunity.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                       ></div>
 
-                      <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1 flex-wrap">
-                            <h3 className="text-base sm:text-lg font-bold text-white">
+                      <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-4">
+                        <div className="flex-1 w-full">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 mb-1 flex-wrap">
+                            <h3 className="text-sm sm:text-base md:text-lg font-bold text-white">
                               {opportunity.title}
                             </h3>
-                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-gray-400">
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-gray-400 inline-block w-fit">
                               {opportunity.type}
                             </span>
                           </div>
-                          <p className="text-xs text-gray-400 mb-1">
+                          <p className="text-xs text-gray-400 mb-0.5">
                             {opportunity.organization}
                           </p>
-                          <p className="text-xs sm:text-sm text-gray-300 mb-2">
+                          <p className="text-[10px] sm:text-xs md:text-sm text-gray-300 mb-2 line-clamp-2 sm:line-clamp-3">
                             {opportunity.description}
                           </p>
-                          <div className="flex flex-wrap gap-2 text-[10px] text-gray-500">
-                            <span>📋 {opportunity.requirements}</span>
+                          <div className="flex flex-col sm:flex-row flex-wrap gap-1 sm:gap-2 text-[10px] text-gray-500">
+                            <span className="truncate">
+                              📋 {opportunity.requirements}
+                            </span>
+                            <span className="hidden sm:inline">•</span>
                             <span>⏰ Deadline: {opportunity.deadline}</span>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-3">
-                          <div className="text-center">
-                            <div className="text-xl sm:text-2xl font-bold text-blue-400">
+                        <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                          <div className="text-center flex-shrink-0">
+                            <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-400">
                               {opportunity.matchScore}%
                             </div>
-                            <div className="text-[9px] text-gray-500">
+                            <div className="text-[8px] sm:text-[9px] text-gray-500">
                               {t.matchScore}
                             </div>
                           </div>
-                          <button className="inline-flex items-center gap-1 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold hover:shadow-lg transition-all group/btn">
+                          <button className="inline-flex items-center gap-1 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-[10px] sm:text-xs font-semibold hover:shadow-lg transition-all group/btn flex-shrink-0">
                             {t.applyNow}
                             <ChevronRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                           </button>
@@ -413,13 +419,13 @@ export default function IndustryCollaborationExchange() {
                   </div>
                 ))}
 
-                <div className="text-center mt-4">
+                <div className="text-center mt-3 sm:mt-4">
                   <Link
                     href="#"
-                    className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors group"
                   >
                     {t.viewAllOpportunities}
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -427,35 +433,35 @@ export default function IndustryCollaborationExchange() {
 
             {/* Matchmaking Events Tab */}
             {activeTab === "matchmaking" && (
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4 px-3 sm:px-0">
                 {matchmakingEvents.map((event, idx) => (
                   <div key={idx} className="group relative">
-                    <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 hover:border-white/20 transition-all duration-300">
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                        <div className="min-w-[140px]">
-                          <div className="text-sm font-bold text-blue-400">
+                    <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-3 sm:p-4 hover:border-white/20 transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
+                        <div className="min-w-[100px] sm:min-w-[120px] md:min-w-[140px] w-full sm:w-auto">
+                          <div className="text-sm sm:text-base font-bold text-blue-400">
                             {event.time}
                           </div>
                           <div className="text-[10px] text-gray-500 flex items-center gap-1">
-                            <MapPin className="w-3 h-3" />
-                            {event.location}
+                            <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                            <span className="truncate">{event.location}</span>
                           </div>
                         </div>
 
-                        <div className="flex-1">
-                          <h3 className="text-sm sm:text-base font-semibold text-white">
+                        <div className="flex-1 w-full sm:w-auto">
+                          <h3 className="text-sm sm:text-base font-semibold text-white truncate">
                             {event.event}
                           </h3>
-                          <p className="text-xs text-gray-400">
+                          <p className="text-[10px] sm:text-xs text-gray-400 truncate">
                             {event.participants}
                           </p>
                         </div>
 
-                        <div className="flex items-center gap-2">
-                          <span className="text-[10px] px-2 py-1 rounded-full bg-white/10 text-gray-400">
+                        <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
+                          <span className="text-[10px] px-2 py-1 rounded-full bg-white/10 text-gray-400 whitespace-nowrap">
                             {event.type}
                           </span>
-                          <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
+                          <button className="text-[10px] sm:text-xs text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap">
                             {t.registerInterest} →
                           </button>
                         </div>
@@ -468,54 +474,54 @@ export default function IndustryCollaborationExchange() {
           </div>
 
           {/* ========== SUCCESS STORIES ========== */}
-          <div className="mb-12 sm:mb-16 md:mb-20">
+          <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-20">
             <div className="relative group">
-              <div className="absolute -inset-10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
+              <div className="absolute -inset-4 sm:-inset-6 md:-inset-8 lg:-inset-10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
 
-              <div className="relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-3xl p-6 sm:p-8 md:p-10 overflow-hidden">
-                <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 blur-3xl rounded-full"></div>
+              <div className="relative bg-white/[0.04] backdrop-blur-2xl border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-48 sm:w-64 h-48 sm:h-64 bg-blue-500/10 blur-3xl rounded-full"></div>
 
                 <div className="relative z-10">
-                  <div className="text-center mb-6 sm:mb-8">
-                    <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
+                  <div className="text-center mb-4 sm:mb-6 md:mb-8">
+                    <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
                       <Award className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-                      <span className="text-xs sm:text-sm font-medium text-gray-300">
+                      <span className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-300">
                         {t.provenPartnerships}
                       </span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1.5 sm:mb-2 px-4">
                       {t.successStories}
                     </h3>
-                    <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto">
+                    <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto px-4">
                       {t.successStoriesDesc}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 px-2 sm:px-0">
                     {successStories.map((story, idx) => {
                       const Icon = story.icon;
                       return (
                         <div
                           key={idx}
-                          className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 group/story"
+                          className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 group/story hover:-translate-y-1"
                         >
-                          <div className="flex items-start gap-3">
+                          <div className="flex items-start gap-2.5 sm:gap-3">
                             <div
-                              className={`w-10 h-10 rounded-lg bg-gradient-to-br ${story.gradient} flex items-center justify-center flex-shrink-0`}
+                              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${story.gradient} flex items-center justify-center flex-shrink-0`}
                             >
-                              <Icon className="w-5 h-5 text-white" />
+                              <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                             </div>
-                            <div>
-                              <h4 className="text-sm font-semibold text-white mb-1">
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-xs sm:text-sm font-semibold text-white mb-0.5 sm:mb-1 truncate">
                                 {story.title}
                               </h4>
-                              <p className="text-[11px] text-blue-400 mb-1">
+                              <p className="text-[10px] sm:text-[11px] text-blue-400 mb-0.5 sm:mb-1 truncate">
                                 {story.partners}
                               </p>
-                              <p className="text-xs text-gray-300">
+                              <p className="text-[10px] sm:text-xs text-gray-300 line-clamp-2 sm:line-clamp-3">
                                 {story.result}
                               </p>
-                              <p className="text-[10px] text-gray-500 mt-1">
+                              <p className="text-[9px] sm:text-[10px] text-gray-500 mt-0.5 sm:mt-1">
                                 {story.year}
                               </p>
                             </div>
@@ -530,33 +536,33 @@ export default function IndustryCollaborationExchange() {
           </div>
 
           {/* ========== STATS SECTION ========== */}
-          <div className="mb-12 sm:mb-16 md:mb-20 relative">
+          <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-20 relative">
             <div className="absolute inset-0 flex justify-center">
-              <div className="w-[600px] h-[300px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-40"></div>
+              <div className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[200px] sm:h-[250px] md:h-[300px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl opacity-40"></div>
             </div>
 
-            <div className="text-center mb-10 sm:mb-14 relative z-10">
-              <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 mb-5">
-                <TrendingUp className="w-4 h-4 text-purple-400" />
-                <span className="text-xs sm:text-sm text-gray-300 tracking-wide">
+            <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-14 relative z-10">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4 md:mb-5">
+                <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-400" />
+                <span className="text-[10px] sm:text-xs md:text-sm text-gray-300 tracking-wide">
                   {t.exchangeImpact}
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-3">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight mb-2 sm:mb-3 px-4">
                 {t.partnershipEcosystem}
               </h2>
 
-              <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
+              <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-xl mx-auto px-4">
                 {t.partnershipEcosystemDesc}
               </p>
 
-              <div className="mt-6 flex justify-center">
-                <div className="w-28 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+              <div className="mt-4 sm:mt-5 md:mt-6 flex justify-center">
+                <div className="w-16 sm:w-20 md:w-24 lg:w-28 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
               </div>
             </div>
 
-            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+            <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 px-3 sm:px-0">
               {[
                 {
                   icon: Building2,
@@ -587,27 +593,31 @@ export default function IndustryCollaborationExchange() {
                 return (
                   <div
                     key={index}
-                    className="group relative rounded-2xl p-[1px] transition-all duration-500 hover:-translate-y-2"
+                    className="group relative rounded-xl sm:rounded-2xl p-[1px] transition-all duration-500 hover:-translate-y-1 sm:hover:-translate-y-2 h-full"
                   >
                     <div
-                      className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-100 blur-md transition duration-500`}
+                      className={`absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-100 blur-md transition duration-500`}
                     ></div>
-                    <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 text-center overflow-hidden">
+                    <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 text-center overflow-hidden h-full flex flex-col items-center justify-center">
                       <div
-                        className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r ${stat.gradient} opacity-10 blur-2xl rounded-full`}
+                        className={`absolute -top-10 -right-10 w-20 sm:w-24 md:w-28 lg:w-32 h-20 sm:h-24 md:h-28 lg:h-32 bg-gradient-to-r ${stat.gradient} opacity-10 blur-2xl rounded-full`}
                       ></div>
-                      <div className="relative mb-3">
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} blur-lg opacity-20 group-hover:opacity-40 transition`}
-                        ></div>
-                        <Icon className="relative w-8 h-8 sm:w-10 sm:h-10 text-white mx-auto group-hover:scale-110 transition-transform duration-500" />
+
+                      <div className="relative flex flex-col items-center justify-center w-full">
+                        <div className="relative mb-1.5 sm:mb-2 md:mb-3">
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} blur-lg opacity-20 group-hover:opacity-40 transition`}
+                          ></div>
+                          <Icon className="relative w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-10 lg:h-10 text-white mx-auto group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+
+                        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-0.5 sm:mb-1 tracking-tight">
+                          {stat.value}
+                        </p>
+                        <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-gray-400 leading-tight max-w-[90%] sm:max-w-full">
+                          {stat.label}
+                        </p>
                       </div>
-                      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 tracking-tight">
-                        {stat.value}
-                      </p>
-                      <p className="text-xs sm:text-sm text-gray-400">
-                        {stat.label}
-                      </p>
                     </div>
                   </div>
                 );

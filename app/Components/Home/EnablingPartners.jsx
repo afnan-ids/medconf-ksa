@@ -137,6 +137,7 @@ export default function EnablingPartners() {
                         of the Conference
                       </span>
                     </h2>
+
                   )}
 
                   <div className="flex justify-center">
@@ -145,10 +146,11 @@ export default function EnablingPartners() {
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"></div>
                     </div>
                   </div>
-                  <div className="">
+                
+                  <div className="w-full">
                     {language === "ar" && (
                       <p
-                        className=" md:text-[1rem] text-gray-300 mt-6 leading-relaxed text-right xs:px-0"
+                        className="text-sm xs:text-base sm:text-lg md:text-[1rem] text-gray-300 mt-4 xs:mt-5 sm:mt-6 leading-relaxed text-right px-3 xs:px-0 [word-spacing:0.12rem]"
                         dir="rtl"
                       >
                         <span style={{ wordSpacing: "" }}>
@@ -174,21 +176,22 @@ export default function EnablingPartners() {
                         الطموحة.
                       </p>
                     )}
+
                     {language === "en" && (
-                      <p className="md:text-[16.5px] mt-4 text-gray-300 leading-relaxed mt-3 xs:mt-4 text-start xs:px-0">
+                      <p className="text-xs text-justify xs:text-sm sm:text-base md:text-[16.5px] mt-3 xs:mt-4 sm:mt-5 text-gray-300 leading-relaxed text-start px-3 xs:px-0 [word-spacing:1.5px]">
                         <span style={{ wordSpacing: "1.5px" }}>
                           HEAL is empowered and supported by elite government
                           entities
                         </span>
-                        <br />
+                        <br className="hidden xs:block" />
                         <span style={{ wordSpacing: "1.2px" }}>
                           and strategic partners. They leverage their resources
                           to enhance
                         </span>
-                        <br />
+                        <br className="hidden xs:block" />
                         quality of life and develop the healthcare sector, in
                         alignment with
-                        <br />
+                        <br className="hidden xs:block" />
                         ambitious national objectives.
                       </p>
                     )}

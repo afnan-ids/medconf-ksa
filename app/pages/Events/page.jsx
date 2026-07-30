@@ -6,7 +6,7 @@ import {
   Calendar,
   MapPin,
   Download,
-  ChevronRight
+  ChevronRight,
 } from "lucide-react";
 import BreadCrumb from "../../Components/BreadCrum";
 import { MdEmojiEvents } from "react-icons/md";
@@ -90,14 +90,14 @@ const EventsSection = () => {
             {/* Description with decorative line */}
             <div className="relative max-w-3xl mx-auto">
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed px-4">
+              <p className="text-sm text-justify sm:text-base md:text-lg md:text-center lg:text-xl text-gray-300 leading-relaxed px-4">
                 {t.eventsHeroDescription}
               </p>
             </div>
           </div>
 
           {/* FEATURED EVENT */}
-          <div className="relative mb-24 sm:mb-28 md:mb-32 lg:mb-40">
+          <div className="relative mb-10 sm:mb-28 md:mb-32 lg:mb-15">
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
 
@@ -191,10 +191,12 @@ const EventsSection = () => {
                 </div>
 
                 {/* CTA Buttons - Updated with Services section style */}
-                <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3 md:pt-4">
+                <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3 md:pt-4 pb-10 ">
                   <button
                     onClick={() =>
-                      window.open("https://hpql-visitor.i-diligence.com/login/")
+                      window.open(
+                        "https://hpql-visitor.i-diligence.com/Registration/",
+                      )
                     }
                     className=" cursor-pointer group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-1 transition-all duration-300 flex-1"
                   >
@@ -205,7 +207,7 @@ const EventsSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
 
-                  <button
+                  {/* <button
                     onClick={() =>
                       window.open(
                         "https://hpql-exhibitor.i-diligence.com/login/",
@@ -229,105 +231,113 @@ const EventsSection = () => {
                         />
                       </svg>
                     </span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
           </div>
 
           {/* PAST EVENTS */}
-          <div className="mb-12 sm:mb-14 md:mb-16 lg:mb-20">
-            <div className="flex flex-col xs:flex-row items-center justify-between gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 lg:mb-14">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">
+
+          <div className="my-12 md:my-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+            {/* Header Row */}
+            <div className="flex flex-row items-center justify-between gap-4 mb-6 md:mb-10 w-full">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight whitespace-nowrap">
                 {t.pastEvents}
               </h3>
-              <span className="text-xs sm:text-sm text-blue-400 font-semibold hover:text-blue-300 cursor-pointer inline-flex items-center gap-1 sm:gap-2 group">
+              <span className="text-xs sm:text-sm text-blue-400 font-semibold hover:text-blue-300 cursor-pointer inline-flex items-center gap-1.5 group transition-colors shrink-0">
                 {t.viewAllReports}
-                <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {pastEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
+                  className="group relative flex flex-col h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300"
                 >
-                  {/* Image */}
-                  <div className="relative overflow-hidden aspect-[4/3]">
+                  {/* Fixed Aspect Image Wrapper */}
+                  <div className="relative overflow-hidden aspect-[4/3] w-full bg-white/5 shrink-0">
                     <Image
                       src={event.image}
                       alt={event.title}
                       width={600}
                       height={400}
-                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />
 
-                    {/* Overlay gradient on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                    {/* Shine effect */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    {/* Shine Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-3 sm:p-4 md:p-5 lg:p-6">
-                    <h4 className="text-sm sm:text-base md:text-lg font-semibold text-white line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-300 transition-all duration-500">
-                      {event.title}
-                    </h4>
-                    <div className="flex items-center gap-1 sm:gap-2 mt-1 sm:mt-2">
-                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500" />
-                      <p className="text-gray-400 text-xs sm:text-sm">
+                  {/* Content Box - Forces elements to align to rows */}
+                  <div className="flex flex-col flex-grow p-4 md:p-5">
+                    {/* Title - Fixed height block using line-clamp */}
+                    <div className="min-h-[2.5rem] sm:min-h-[2.75rem] mb-2">
+                      <h4 className="text-sm sm:text-base font-bold text-white line-clamp-2 leading-tight group-hover:text-blue-400 transition-colors duration-300">
+                        {event.title}
+                      </h4>
+                    </div>
+
+                    {/* Metadata Row - Pushed downwards to bottom row */}
+                    <div className="flex items-center gap-1.5 mt-auto pt-2 border-t border-white/5">
+                      <Calendar className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                      <p className="text-gray-400 text-xs sm:text-sm truncate">
                         {event.date}
                       </p>
                     </div>
-
-                    <button className="mt-3 sm:mt-4 md:mt-5 text-blue-400 text-xs sm:text-sm font-semibold hover:gap-2 inline-flex items-center gap-1 transition-all group/btn">
-                      {t.viewAllReports}
-                      <span className="group-hover/btn:translate-x-1 transition-transform">
-                       <ChevronRight className="mb-1" size={20}/>
-                      </span>
-                    </button>
                   </div>
 
-                  {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-blue-500 to-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  {/* Animated Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* DOWNLOAD SECTION - Updated to match Services theme */}
-          <div className="relative mt-16 sm:mt-20 md:mt-24 lg:mt-32 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl">
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
+          <div className="relative mt-12 sm:mt-16 md:mt-24 lg:mt-32 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl">
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-[url('/Images/Home/Bread-crum-1.avif')] bg-cover bg-center"></div>
 
-            {/* Floating orbs - responsive */}
-            <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+              {/* Floating orbs - responsive */}
+              <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none"></div>
 
-            <div className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8 text-center backdrop-blur-sm">
-              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
-                <Download className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                <span className="text-xs sm:text-sm font-medium text-white/90">
-                  {t.resources}
-                </span>
+              {/* Content Container - Fixed structural paddings */}
+              <div className="relative py-10 sm:py-14 md:py-16 lg:py-20 px-6 sm:px-8 md:px-12 text-center backdrop-blur-md bg-black/10">
+                {/* Badge Element */}
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-6">
+                  <Download className="w-3.5 h-3.5 md:w-4 md:h-4 text-white shrink-0" />
+                  <span className="text-xs pt-1 md:text-sm font-medium text-white/90 ">
+                    {t.resources}
+                  </span>
+                </div>
+
+                {/* Main Heading */}
+                <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 tracking-tight max-w-3xl mx-auto">
+                  {t.downloadAllEventReports}
+                </h4>
+
+                {/* Description Text */}
+                <p className="text-white/80 text-sm md:text-base lg:text-lg mb-6 md:mb-8 max-w-xl mx-auto leading-relaxed">
+                  {t.downloadReportsDescription}
+                </p>
+
+                {/* Action Button */}
+                <button className="group inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 md:px-8 md:py-4 rounded-full text-sm md:text-base font-semibold hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 w-full sm:w-auto justify-center">
+                  <span>{t.downloadReports}</span>
+                  <Download className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-y-0.5 transition-transform shrink-0" />
+                </button>
               </div>
-
-              <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
-                {t.downloadAllEventReports}
-              </h4>
-
-              <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-5 md:mb-6 lg:mb-8 max-w-xl mx-auto px-4">
-                {t.downloadReportsDescription}
-              </p>
-
-              <button className="group inline-flex items-center gap-1 sm:gap-2 bg-white text-gray-900 px-5 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                <span>{t.downloadReports}</span>
-                <Download className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-y-1 transition-transform" />
-              </button>
             </div>
           </div>
         </div>

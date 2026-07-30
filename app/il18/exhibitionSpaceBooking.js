@@ -21,6 +21,11 @@ export const translations = {
     upcomingExhibitionOpportunities: "Upcoming Exhibition Opportunities",
     expected: "Expected",
 
+
+    visitWebsiteDescription:"Visit our website through our marketing campaigns.",
+    visitWebsite:"Visit Website",
+
+
     globalHealthExpo2024: "Global Health Expo 2024",
     globalHealthExpoDate: "Nov 15-18, 2024",
     dubaiWorldTradeCentre: "Dubai World Trade Centre",
@@ -173,6 +178,10 @@ export const translations = {
     // Upcoming Exhibitions
     upcomingExhibitionOpportunities: "فرص المعارض القادمة",
     expected: "متوقع",
+
+    visitWebsiteDescription:"تفضل بزيارة موقعنا الإلكتروني من خلال حملاتنا التسويقية.",
+    visitWebsite:"زيارة الموقع الإلكتروني",
+
 
     globalHealthExpo2024: "المعرض العالمي للصحة 2024",
     globalHealthExpoDate: "15-18 نوفمبر 2024",

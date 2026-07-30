@@ -274,7 +274,7 @@ export default function MedicalTechnologyZone() {
                     {t.experienceFuture}
                   </h2>
 
-                  <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                  <p className="text-sm text-justify sm:text-base md:text-lg md:text-center text-gray-300 leading-relaxed max-w-3xl mx-auto">
                     {t.heroSubDescription}
                   </p>
 
@@ -299,46 +299,46 @@ export default function MedicalTechnologyZone() {
           </div>
 
           {/* ========== EXHIBITOR GRID ========== */}
-          <div id="exhibitors" className="mb-12 sm:mb-16 md:mb-20">
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4">
+          <div id="exhibitors" className="mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+            <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+              <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
                 <Building2 className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                <span className="text-xs sm:text-sm font-medium text-gray-300">
+                <span className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-300">
                   {t.exhibitors}
                 </span>
               </div>
-              <h2 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+              <h2 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 px-4">
                 {t.featuredExhibitors}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 -translate-x-1/2 w-12 sm:w-16 md:w-20 lg:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </h2>
-              <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl mx-auto mt-6">
+              <p className="text-xs sm:text-sm text-gray-400 mt-4 sm:mt-5 md:mt-6 max-w-xl mx-auto px-4">
                 {t.featuredExhibitorsDesc}
               </p>
             </div>
 
             {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10">
+            <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 md:gap-3 mb-6 sm:mb-8 md:mb-10 px-2 sm:px-0">
               {categories.map((cat) => {
                 const Icon = cat.icon;
                 return (
                   <button
                     key={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
-                    className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
+                    className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-medium transition-all duration-300 ${
                       activeCategory === cat.id
                         ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25"
                         : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
                     }`}
                   >
-                    <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
-                    {cat.name}
+                    <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
+                    <span className="hidden xs:inline">{cat.name}</span>
                   </button>
                 );
               })}
             </div>
 
             {/* Exhibitors Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 px-3 sm:px-0">
               {filteredExhibitors.map((exhibitor, index) => {
                 const Icon = exhibitor.logo;
                 return (
@@ -354,50 +354,50 @@ export default function MedicalTechnologyZone() {
 
                       {/* Demo Available Badge */}
                       {exhibitor.demoAvailable && (
-                        <div className="absolute top-3 right-3 z-20">
-                          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-[10px] font-semibold text-white">
-                            <Video className="w-3 h-3" />
+                        <div className="absolute top-2 sm:top-3 right-2 sm:right-3 z-20">
+                          <span className="inline-flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-[8px] sm:text-[10px] font-semibold text-white">
+                            <Video className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                             {t.liveDemos}
                           </span>
                         </div>
                       )}
 
                       {/* Logo Area */}
-                      <div className="relative p-4 sm:p-5 md:p-6 pb-0">
+                      <div className="relative p-3 sm:p-4 md:p-5 lg:p-6 pb-0">
                         <div className="relative inline-block">
                           <div
                             className={`absolute inset-0 bg-gradient-to-r ${exhibitor.gradient} rounded-xl blur-md opacity-20 group-hover:opacity-40 transition-opacity duration-500`}
                           ></div>
                           <div
-                            className={`relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br ${exhibitor.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
+                            className={`relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br ${exhibitor.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
                           >
-                            <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                            <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                           </div>
                         </div>
                       </div>
 
                       {/* Content */}
-                      <div className="p-4 sm:p-5 md:p-6 pt-2 sm:pt-3">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1">
+                      <div className="p-3 sm:p-4 md:p-5 lg:p-6 pt-2 sm:pt-3">
+                        <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-0.5 sm:mb-1">
                           {exhibitor.name}
                         </h3>
 
                         {/* Booth Number */}
-                        <div className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-blue-400 mb-2">
-                          <MapPin className="w-3 h-3" />
+                        <div className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-blue-400 mb-1.5 sm:mb-2">
+                          <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           {exhibitor.booth}
                         </div>
 
-                        <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-3">
+                        <p className="text-[10px] sm:text-xs md:text-sm text-gray-300 leading-relaxed mb-2 sm:mb-3 line-clamp-2 sm:line-clamp-3">
                           {exhibitor.description}
                         </p>
 
                         {/* Products */}
-                        <div className="flex flex-wrap gap-1.5 mb-3">
+                        <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-2 sm:mb-3">
                           {exhibitor.products.map((product, idx) => (
                             <span
                               key={idx}
-                              className="inline-flex px-2 py-0.5 rounded-full bg-white/10 border border-white/20 text-[9px] sm:text-[10px] text-gray-400"
+                              className="inline-flex px-1.5 sm:px-2 py-0.5 rounded-full bg-white/10 border border-white/20 text-[8px] sm:text-[9px] md:text-[10px] text-gray-400"
                             >
                               {product}
                             </span>
@@ -405,16 +405,18 @@ export default function MedicalTechnologyZone() {
                         </div>
 
                         {/* Buttons */}
-                        <div className="flex items-center gap-3 mt-3">
-                          <button className="inline-flex items-center gap-1 text-xs sm:text-sm text-blue-400 group-hover:text-blue-300 transition-colors">
-                            <span>{t.requestDemo}</span>
-                            <Eye className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
-                          </button>
-                          <button className="inline-flex items-center gap-1 text-xs sm:text-sm text-gray-400 hover:text-white transition-colors">
-                            <span>{t.viewProducts}</span>
-                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
-                          </button>
-                        </div>
+                      <div className="flex items-center justify-between w-full gap-3 mt-3">
+  <button className="inline-flex items-center gap-1.5 text-xs md:text-sm text-blue-400 hover:text-blue-300 transition-colors shrink-0 group/demo">
+    <span>{t.requestDemo}</span>
+    <Eye className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover/demo:translate-x-0.5 transition-transform shrink-0" />
+  </button>
+  
+  <button className="inline-flex items-center gap-1.5 text-xs md:text-sm text-gray-400 hover:text-white transition-colors shrink-0 group/prod">
+    <span>{t.viewProducts}</span>
+    <ChevronRight className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover/prod:translate-x-0.5 transition-transform shrink-0" />
+  </button>
+</div>
+
                       </div>
 
                       <div
@@ -470,14 +472,15 @@ export default function MedicalTechnologyZone() {
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-3 ml-0 lg:ml-4">
-                          <span className="text-[10px] sm:text-xs px-2 py-1 rounded-full bg-white/10 border border-white/20 text-gray-300">
-                            {demo.type}
-                          </span>
-                          <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
-                            {t.addToCalendar} +
-                          </button>
-                        </div>
+                       <div className="flex items-center justify-between w-full ml-0 lg:ml-4">
+  <span className="text-[10px] sm:text-xs px-2 py-1 rounded-full bg-white/10 border border-white/20 text-gray-300 shrink-0">
+    {demo.type}
+  </span>
+  <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors shrink-0">
+    {t.addToCalendar} +
+  </button>
+</div>
+
                       </div>
                     ))}
                   </div>
