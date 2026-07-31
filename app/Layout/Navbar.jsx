@@ -540,6 +540,7 @@ export default function Navbar() {
       : "opacity-0 -translate-y-4 pointer-events-none"
   }`}
 >
+  
   <div className="mx-3 sm:mx-4 md:mx-6 max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-5rem)] overflow-y-auto">
     <div className="relative overflow-hidden bg-gray-900/95 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl shadow-2xl">
       {/* Floating Orbs in Mobile Menu */}
