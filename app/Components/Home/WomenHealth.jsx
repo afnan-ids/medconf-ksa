@@ -391,291 +391,277 @@ export default function WomenAndHealth() {
         </div>
       </section>
 
-      {/* SECTION DIVIDER - Mobile optimized */}
-      <div className="relative z-20 py-2 xs:py-3 sm:py-4 md:py-6">
-        <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6">
-          <div className="relative h-px overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent" />
-            <div className="absolute left-1/2 top-1/2 h-12 w-24 xs:h-14 xs:w-28 sm:h-16 sm:w-32 -translate-x-1/2 -translate-y-1/2 bg-emerald-500/20 blur-2xl rounded-full" />
-            <div className="absolute left-1/2 top-1/2 h-12 w-24 xs:h-14 xs:w-28 sm:h-16 sm:w-32 -translate-x-1/2 -translate-y-1/2 bg-teal-500/20 blur-2xl rounded-full" />
-
-            {/* Decorative diamond */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 rotate-45 bg-emerald-400/40" />
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       {/* SECTION 2 - Mobile optimized */}
-      <section className="relative overflow-hidden">
-        <div className="relative z-20 max-w-8xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-4">
-          <div
-            className="
-              relative
-              overflow-hidden
-              rounded-xl xs:rounded-2xl
-              border
-              border-white/15
-              shadow-[0_20px_80px_rgba(0,0,0,0.6)]
-              transition-all
-              duration-500
-              hover:scale-[1.001]
-              hover:shadow-[0_25px_100px_rgba(0,0,0,0.7)]
-            "
-          >
-            {/* Enhanced edge glow */}
-            <div className="absolute inset-0 rounded-xl xs:rounded-2xl ring-1 ring-white/15 pointer-events-none" />
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent" />
+<section className="relative overflow-hidden">
+  <div className="relative z-20 max-w-8xl mx-auto px-2 xs:px-3 sm:px-6 lg:px-4">
+    <div
+      className="
+        relative
+        overflow-hidden
+        rounded-lg xs:rounded-xl sm:rounded-2xl
+        border
+        border-white/15
+        shadow-[0_20px_80px_rgba(0,0,0,0.6)]
+        transition-all
+        duration-500
+        hover:scale-[1.001]
+        hover:shadow-[0_25px_100px_rgba(0,0,0,0.7)]
+      "
+    >
+      {/* Enhanced edge glow */}
+      <div className="absolute inset-0 rounded-lg xs:rounded-xl sm:rounded-2xl ring-1 ring-white/15 pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent" />
 
-            {/* FULL BACKGROUND IMAGE */}
-            <div className="absolute inset-0">
-              <Image
-                src="/Images/Home/WomenAndHealth/womenBG-2.png"
-                alt="Women Empowerment"
-                fill
-                priority
-                className="object-cover object-center"
-              />
+      {/* FULL BACKGROUND IMAGE */}
+      <div className="absolute inset-0">
+        <Image
+          src="/Images/Home/WomenAndHealth/womenBG-2.png"
+          alt="Women Empowerment"
+          fill
+          priority
+          className="object-cover object-center"
+        />
 
-              <div className="absolute inset-0 bg-gradient-to-l from-black/20 via-transparent to-black/10" />
-              <div className="absolute top-0 left-0 w-40 h-40 xs:w-60 xs:h-60 sm:w-80 sm:h-80 bg-emerald-500/15 blur-3xl rounded-full" />
-              <div className="absolute bottom-0 right-0 w-48 h-48 xs:w-72 xs:h-72 sm:w-96 sm:h-96 bg-teal-500/15 blur-3xl rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/20 via-transparent to-black/10" />
+        <div className="absolute top-0 left-0 w-20 h-20 xs:w-40 xs:h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-emerald-500/15 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-24 h-24 xs:w-36 xs:h-36 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-teal-500/15 blur-3xl rounded-full" />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] min-h-[400px] xs:min-h-[440px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[600px]">
+        {/* LEFT PANEL */}
+        <div className="relative z-10 flex flex-col order-2 md:order-1">
+          <div className="w-full max-w-4xl mx-auto h-full flex flex-col">
+            {/* top text - Desktop only */}
+            <div className="px-2 xs:px-3 sm:px-4 lg:px-8 pt-2 xs:pt-3 sm:pt-4 lg:pt-5 hidden md:inline-flex">
+              <div
+                className="flex items-center text-white/80 text-[7px] xs:text-[8px] sm:text-[10px] lg:text-xs tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] lg:tracking-[0.2em] 
+                  px-1.5 xs:px-2 sm:px-2.5 lg:px-3
+                  py-0.5 xs:py-1 sm:py-1.5
+                  bg-white/5
+                  backdrop-blur-sm
+                  rounded-full
+                "
+              >
+                <span>
+                  {language === "en" && (
+                    <span className="font-semibold text-white">HPQL</span>
+                  )}
+                  {language === "en" && (
+                    <span className="hidden xs:inline">
+                      {" "}
+                      HEALTH PROMOTION & QUALITY OF LIFE
+                    </span>
+                  )}
+                </span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] min-h-[480px] xs:min-h-[500px] sm:min-h-[520px] lg:min-h-[600px]">
-              {/* LEFT PANEL */}
-              <div className="relative z-10 flex flex-col order-2 md:order-1">
-                <div className="w-full max-w-4xl mx-auto h-full flex flex-col">
-                  {/* top text  */}
-                  {/* Visible only on  desktop  */}
-                  <div className="px-3 xs:px-4 sm:px-6 lg:px-8 pt-3 xs:pt-4 sm:pt-5 hidden md:inline-flex">
+            {/* gradient image - Mobile optimized */}
+            <div className="absolute bottom-0 right-0 pointer-events-none opacity-50 xs:opacity-60 sm:opacity-80 md:opacity-100">
+              <Image
+                src="/Images/Home/WomenAndHealth/womenempowerBGgradient.png"
+                alt="Women Empowerment background"
+                height={900}
+                width={1000}
+                className="object-cover object-center w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-auto lg:h-auto opacity-70 xs:opacity-80 sm:opacity-90"
+              />
+            </div>
+
+            {/* CENTER CONTENT - Mobile optimized */}
+            <div className="flex flex-1 items-center px-2 xs:px-3 sm:px-4 md:px-6 lg:px-20 py-3 xs:py-4 sm:py-5 md:py-6">
+              <div className="w-full py-1 xs:py-2 sm:py-3 md:py-4 mt-20 xs:mt-28 sm:mt-32 md:mt-36 lg:mt-38 px-4 xs:px-6 sm:px-8 md:px-12 lg:px-20">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-8">
+                  {highlightsData.map((highlight, index) => (
                     <div
-                      className="flex items-center text-white/80 text-[8px] xs:text-[10px] sm:text-xs tracking-[0.15em] xs:tracking-[0.2em] 
-                        px-2 xs:px-3
-                        py-1 xs:py-1.5
-                        bg-white/5
-                        backdrop-blur-sm
-                        rounded-full
+                      key={index}
+                      className="
+                        group
+                        relative
+                        overflow-hidden
+                        rounded-lg xs:rounded-xl
+                        px-1.5 xs:px-2 sm:px-2.5 md:px-3
+                        py-1.5 xs:py-2 sm:py-2.5 md:py-3
+                        transition-all
+                        duration-300
+                        hover:bg-white/5
                       "
                     >
-                      <span>
-                        {language === "en" && (
-                          <span className="font-semibold text-white">HPQL</span>
-                        )}
-                        {language === "en" && (
-                          <span className="">
-                            {" "}
-                            HEALTH PROMOTION & QUALITY OF LIFE
-                          </span>
-                        )}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* gradient image - Mobile optimized */}
-                  <div className="absolute bottom-0 right-0 pointer-events-none opacity-70 xs:opacity-80 sm:opacity-100">
-                    <Image
-                      src="/Images/Home/WomenAndHealth/womenempowerBGgradient.png"
-                      alt="Women Empowerment background"
-                      height={900}
-                      width={1000}
-                      className="object-cover object-center w-90 h-160 xs:w-64 xs:h-64 sm:w-auto sm:h-auto opacity-85"
-                    />
-                  </div>
-
-                  {/* CENTER CONTENT - Mobile optimized */}
-                  <div className="flex flex-1 items-center px-3 xs:px-4 sm:px-8 lg:px-20 py-4 xs:py-5 sm:py-6">
-                    <div className="w-full py-2 xs:py-3 sm:py-4 mt-38 px-10 md:px-20">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 ">
-                        {highlightsData.map((highlight, index) => (
-                          <div
-                            key={index}
-                            className="
-                          group
-                          relative
-                          overflow-hidden
-                          rounded-lg xs:rounded-xl
-                          px-2 xs:px-3
-                          py-2 xs:py-3
-                          transition-all
-                          duration-300
-                          hover:bg-white/5
-                        "
-                          >
-                            <div className=" group-hover:opacity-100 transition-opacity duration-300">
-                              <div className="bg-emerald-400/10 blur-3xl rounded-full" />
-                            </div>
-                            {language === "ar" && (
-                              <h3
-                                className="
+                      <div className="group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="bg-emerald-400/10 blur-3xl rounded-full" />
+                      </div>
+                      {language === "ar" && (
+                        <h3
+                          className="
                             relative
                             z-10
                             text-white
                             text-end
-                            
-                            text-xl md:text-xs xs:text-sm
-                            md:text-base
+                            text-sm xs:text-base sm:text-lg md:text-xl
+                            lg:text-2xl
                             leading-relaxed
                           "
-                              >
-                                {highlight.titleAr}
-                              </h3>
-                            )}
-                            {language === "en" && (
-                              <p
-                                className="
+                        >
+                          {highlight.titleAr}
+                        </h3>
+                      )}
+                      {language === "en" && (
+                        <p
+                          className="
                             relative
                             z-10
                             text-white
                             text-end
-                            text-[18px]
+                            text-[14px] xs:text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px]
                             leading-relaxed
                             tracking-wide
                             mt-0.5
                           "
-                              >
-                                {highlight.titleEn}
-                              </p>
-                            )}
-                          </div>
-                        ))}
-                      </div>
+                        >
+                          {highlight.titleEn}
+                        </p>
+                      )}
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              {/* RIGHT PANEL  */}
-              <div
-                className="
-                relative
-                z-20
-                bg-[url('/Images/Home/WomenAndHealth/womenandHealthBG.png')]
-                bg-center
-                bg-cover
-                overflow-hidden
-                order-1 md:order-2
-              "
+        {/* RIGHT PANEL */}
+        <div
+          className="
+            relative
+            z-20
+            bg-[url('/Images/Home/WomenAndHealth/womenandHealthBG.png')]
+            bg-center
+            bg-cover
+            overflow-hidden
+            order-1 md:order-2
+            min-h-[200px] xs:min-h-[240px] sm:min-h-[280px] lg:min-h-[auto]
+          "
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
+          <div className="absolute inset-0 backdrop-blur-[0.5px] xs:backdrop-blur-[1px]" />
+          <div className="absolute top-0 right-0 w-20 h-20 xs:w-32 xs:h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-72 lg:h-72 bg-emerald-500/10 blur-3xl rounded-full" />
+          <div className="absolute bottom-0 left-0 w-16 h-16 xs:w-24 xs:h-24 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-56 lg:h-56 bg-teal-500/10 blur-3xl rounded-full" />
+
+          <div className="relative z-10 w-full max-w-7xl mx-auto h-full flex flex-col">
+            {/* top arabic text - Desktop only */}
+            <div className="hidden md:flex justify-end pt-2 xs:pt-3 sm:pt-4 lg:pt-5 max-w-2xl mx-auto lg:ps-20 px-2 xs:px-3 sm:px-4">
+              {language === "ar" && (
+                <span
+                  dir="rtl"
+                  className="
+                    text-white/80
+                    text-[7px] xs:text-[8px] sm:text-[10px] lg:text-xs
+                    tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.18em] lg:tracking-[0.2em]
+                    bg-white/5
+                    px-1.5 xs:px-2 sm:px-2.5 lg:px-3
+                    py-0.5 xs:py-1
+                    rounded-full
+                  "
+                >
+                  تعزيز الصحة وجودة الحياة
+                </span>
+              )}
+            </div>
+
+            {/* Mobile only - HPQL badge */}
+            <div className="max-w-7xl mt-2 xs:mt-3 sm:mt-4 mx-auto w-full flex md:hidden flex-col xs:flex-row items-center justify-between gap-1.5 xs:gap-2 sm:gap-3 text-white/80 text-[7px] xs:text-[8px] sm:text-[10px] lg:text-xs mb-0 xs:mb-3 sm:mb-4 lg:mb-4 px-2 xs:px-3">
+              <span className="backdrop-blur-sm bg-white/5 px-1.5 xs:px-2 sm:px-2.5 lg:px-3 py-0.5 xs:py-1 rounded-full text-center truncate max-w-[60%] xs:max-w-full">
+                {language === "en" && (
+                  <span className="font-semibold text-white">HPQL</span>
+                )}
+                {language === "en" && (
+                  <span className="hidden xs:inline">
+                    {" "}
+                    HEALTH PROMOTION & QUALITY OF LIFE
+                  </span>
+                )}
+                {language === "en" && (
+                  <span className="xs:hidden"> HPQL</span>
+                )}
+              </span>
+
+              <span
+                dir="rtl"
+                className="backdrop-blur-sm bg-white/5 px-1.5 xs:px-2 sm:px-2.5 lg:px-3 py-0.5 xs:py-1 rounded-full text-center text-[7px] xs:text-[8px] sm:text-[10px] lg:text-xs truncate max-w-[40%] xs:max-w-full"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
-                <div className="absolute inset-0 backdrop-blur-[0.5px] xs:backdrop-blur-[1px]" />
-                <div className="absolute top-0 right-0 w-40 h-40 xs:w-56 xs:h-56 sm:w-72 sm:h-72 bg-emerald-500/10 blur-3xl rounded-full" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 xs:w-44 xs:h-44 sm:w-56 sm:h-56 bg-teal-500/10 blur-3xl rounded-full" />
+                تعزيز الصحة وجودة الحياة
+              </span>
+            </div>
 
-                <div className="relative z-10 w-full max-w-7xl mx-auto h-full flex flex-col">
-                  {/* top arabic text visible only on Desktop */}
-                  <div className="hidden md:flex justify-end pt-3 xs:pt-4 sm:pt-5 max-w-2xl mx-auto lg:ps-20 px-3 xs:px-4">
-                    {language === "ar" && (
-                      <span
-                        dir="rtl"
-                        className="
-                        text-white/80
-                        text-[8px] xs:text-[10px] sm:text-xs
-                        tracking-[0.15em] xs:tracking-[0.2em]
-                        bg-white/5
-                        px-2 xs:px-3
-                        py-0.5 xs:py-1
-                        rounded-full
-                      "
-                      >
-                        تعزيز الصحة وجودة الحياة
-                      </span>
-                    )}
-                  </div>
-
-                  {/* visible only on mobile  */}
-                  {/* for mobile screens */}
-                  <div className="max-w-7xl mt-4 mx-auto w-full flex md:hidden flex-col xs:flex-row items-center justify-between gap-2 xs:gap-3 text-white/80 text-[8px] xs:text-[10px] sm:text-xs mb-0 xs:mb-5 lg:mb-4">
-                    <span className="backdrop-blur-sm bg-white/5 px-2 xs:px-3 py-1 rounded-full text-center">
-                      {language === "en" && (
-                        <span className="font-semibold text-white">HPQL</span>
-                      )}
-                      {language === "en" && (
-                        <span className="">
-                          {" "}
-                          HEALTH PROMOTION & QUALITY OF LIFE
-                        </span>
-                      )}
-                    </span>
-
-                    <span
-                      dir="rtl"
-                      className="backdrop-blur-sm bg-white/5 px-2 xs:px-3 py-1 rounded-full text-center text-[8px] xs:text-[10px] sm:text-xs"
-                    >
-                      تعزيز الصحة وجودة الحياة
-                    </span>
-                  </div>
-
-                  {/* CENTER CONTENT - Mobile optimized */}
-                  <div className="flex-1 flex items-center justify-center px-3 xs:px-4 py-6 xs:py-8 lg:pe-26">
-                    <div className="w-full text-center lg:text-right backdrop-blur-sm bg-white/5 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-5 border border-white/10">
-                      {language === "ar" && (
-                        <h2
-                          className="
-                      text-base xs:text-lg sm:text-xl
-                      lg:text-2xl
-              
+            {/* CENTER CONTENT - Mobile optimized */}
+            <div className="flex-1 flex items-center justify-center px-2 xs:px-3 sm:px-4 py-3 xs:py-4 sm:py-5 md:py-6 lg:pe-26">
+              <div className="w-full text-center lg:text-right backdrop-blur-sm bg-white/5 rounded-lg xs:rounded-xl sm:rounded-2xl p-2 xs:p-3 sm:p-4 md:p-5 border border-white/10">
+                {language === "ar" && (
+                  <h2
+                    className="
+                      text-sm xs:text-base sm:text-lg
+                      md:text-xl lg:text-2xl
                       text-white
                       leading-[1.2]
                       tracking-tight
                     "
-                        >
-                          المــــــرأة والصحــــــة
-                        </h2>
-                      )}
+                  >
+                    المــــــرأة والصحــــــة
+                  </h2>
+                )}
 
-                      {language === "en" && (
-                        <h2 className="text-sm xs:text-base sm:text-lg md:text-2xl font-medium tracking-wide text-white/90 mt-0.5 xs:mt-1">
-                          Woman & Health
-                        </h2>
-                      )}
+                {language === "en" && (
+                  <h2 className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-2xl font-medium tracking-wide text-white/90 mt-0.5 xs:mt-1">
+                    Woman & Health
+                  </h2>
+                )}
 
-                      <div className=" flex justify-between items-center gap-2 xs:gap-3">
-                        {/* Enhanced Glass Indicator - Mobile optimized */}
-                        <div className="relative flex items-center justify-center h-8 w-8 xs:h-9 xs:w-9 sm:h-10 sm:w-10">
-                          <div
-                            className="
-                          relative
-                          h-5 w-5 xs:h-6 xs:w-6 sm:h-7 sm:w-7
-                          rounded-full
-                          backdrop-blur-xl
-                          bg-white/10
-                          flex
-                          items-center
-                          justify-center
-                          shadow-[0_0_25px_rgba(16,185,129,0.3)]
-                          transition-all
-                          duration-300
-                          hover:scale-110
-                          hover:shadow-[0_0_35px_rgba(16,185,129,0.5)]
-                          cursor-pointer
-                        "
-                          >
-                            <FaCaretLeft className="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 text-emerald-300" />
-                          </div>
-                        </div>
-                        <div className="text-right flex-1">
-                          {language === "ar" && (
-                            <p className="text-white text-xs xs:text-sm sm:text-base font-semibold">
-                              أبرز المواضيع
-                            </p>
-                          )}
-                          {language === "en" && (
-                            <p className="text-white/60 text-[9px] xs:text-[10px] sm:text-xs tracking-wide">
-                              Key Highlights
-                            </p>
-                          )}
-                        </div>
-                      </div>
+                <div className="flex justify-between items-center gap-1.5 xs:gap-2 sm:gap-3">
+                  {/* Enhanced Glass Indicator - Mobile optimized */}
+                  <div className="relative flex items-center justify-center h-6 w-6 xs:h-7 xs:w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 lg:h-10 lg:w-10">
+                    <div
+                      className="
+                        relative
+                        h-4 w-4 xs:h-4.5 xs:w-4.5 sm:h-5 sm:w-5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6
+                        rounded-full
+                        backdrop-blur-xl
+                        bg-white/10
+                        flex
+                        items-center
+                        justify-center
+                        shadow-[0_0_25px_rgba(16,185,129,0.3)]
+                        transition-all
+                        duration-300
+                        hover:scale-110
+                        hover:shadow-[0_0_35px_rgba(16,185,129,0.5)]
+                        cursor-pointer
+                      "
+                    >
+                      <FaCaretLeft className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 lg:h-4 lg:w-4 text-emerald-300" />
                     </div>
+                  </div>
+                  <div className="text-right flex-1">
+                    {language === "ar" && (
+                      <p className="text-white text-[10px] xs:text-xs sm:text-sm md:text-base font-semibold">
+                        أبرز المواضيع
+                      </p>
+                    )}
+                    {language === "en" && (
+                      <p className="text-white/60 text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs tracking-wide">
+                        Key Highlights
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 }

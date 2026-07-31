@@ -74,33 +74,32 @@ export default function ExhibitionSpaceBooking() {
       stats: t.businessOpportunitiesStats,
     },
   ];
-
   const process = [
     {
       number: "01",
-      title: t.inquiry,
-      description: t.inquiryDescription,
+      title: t.visitWebsite,
+      description: t.visitWebsiteDescription, // "Visit our website through our marketing campaigns."
       color: "from-purple-500 to-pink-400",
-      icon: Phone,
+      icon: Globe,
     },
     {
       number: "02",
-      title: t.chooseSpace,
-      description: t.chooseSpaceDescription,
-      color: "from-blue-500 to-cyan-400",
-      icon: MapPin,
-    },
-    {
-      number: "03",
       title: t.registration,
-      description: t.registrationDescription,
+      description: t.registrationDescription, // "Go to the portal, register an account, and log in."
       color: "from-amber-500 to-orange-400",
       icon: Ticket,
     },
     {
+      number: "03",
+      title: t.chooseSpace,
+      description: t.chooseSpaceDescription, // "Browse the floor plan and choose your preferred space."
+      color: "from-blue-500 to-cyan-400",
+      icon: MapPin,
+    },
+    {
       number: "04",
       title: t.setupAndExhibit,
-      description: t.setupAndExhibitDescription,
+      description: t.setupAndExhibitDescription, // "Set up your booth and start exhibiting your products."
       color: "from-emerald-500 to-green-400",
       icon: Building2,
     },
@@ -290,21 +289,22 @@ export default function ExhibitionSpaceBooking() {
           {/* Hero Section */}
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-              <Sparkles className="w-4 h-4 text-purple-400" />
-              <span className="text-sm font-medium text-gray-300">
+              <Sparkles className="w-4 h-4 text-purple-400 shrink-0" />
+              <span className="text-xs md:text-[10px] lg:text-sm font-medium text-gray-300">
                 {t.premiumExhibitionSpaces}
               </span>
             </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">{t.showcaseYourBrandAt}</span>
-              <br />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-amber-400 bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              <span className="text-white block sm:inline">
+                {t.showcaseYourBrandAt}
+              </span>
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-amber-400 bg-clip-text text-transparent block sm:inline mt-1 sm:mt-0">
+                {" "}
                 {t.premierHealthcareEvents}
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-8 px-4">
+            <p className="text-sm text-justify  sm:text-lg   text-gray-300 max-w-3xl mx-auto mb-8 px-4">
               {t.securePremiumExhibitionSpace}
             </p>
 
@@ -335,10 +335,12 @@ export default function ExhibitionSpaceBooking() {
 
           {/* Upcoming Events Banner */}
           <div className="mb-16 md:mb-20">
-            <div className="bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-amber-500/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-purple-400" />
-                {t.upcomingExhibitionOpportunities}
+            <div className="bg-linear-to-r from-purple-500/10 via-pink-500/10 to-amber-500/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+              <h3 className="text-[15.2px] lg:text-2xl font-semibold text-white mb-4 flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-purple-400 " />
+                <span className="pt-1.75">
+                  {t.upcomingExhibitionOpportunities}
+                </span>
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {upcomingEvents.map((event, index) => (
@@ -368,7 +370,7 @@ export default function ExhibitionSpaceBooking() {
           </div>
 
           {/* Booth Types with Enhanced Cards */}
-          <div className="mb-16 md:mb-20">
+          {/* <div className="mb-16 md:mb-20">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
                 {t.chooseYourPerfect}
@@ -388,12 +390,11 @@ export default function ExhibitionSpaceBooking() {
                 return (
                   <div
                     key={index}
-                    className={`group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer ${
-                      selectedBooth === index ? "ring-2 ring-purple-500" : ""
-                    }`}
+                    className={`group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer ${selectedBooth === index ? "ring-2 ring-purple-500" : ""
+                      }`}
                     onClick={() => setSelectedBooth(index)}
                   >
-                    {/* Popular Badge */}
+                 
                     {booth.popular && (
                       <div className="absolute top-1 right-4 z-10">
                         <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
@@ -403,17 +404,17 @@ export default function ExhibitionSpaceBooking() {
                       </div>
                     )}
 
-                    {/* Background Gradient */}
+                  
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${booth.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                     ></div>
 
-                    {/* Border Gradient */}
+             
                     <div
                       className={`absolute inset-0 border-2 border-transparent group-hover:border-${booth.color.split("-")[1]}-500/50 rounded-2xl transition-all duration-500`}
                     ></div>
 
-                    {/* Content */}
+             
                     <div
                       className={`relative h-full p-6 ${booth.bgColor} backdrop-blur-sm border ${booth.borderColor} rounded-2xl`}
                     >
@@ -464,7 +465,7 @@ export default function ExhibitionSpaceBooking() {
                 );
               })}
             </div>
-          </div>
+          </div> */}
 
           {/* Benefits Grid */}
           <div className="mb-16 md:mb-20">
@@ -488,22 +489,26 @@ export default function ExhibitionSpaceBooking() {
                         className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity`}
                       ></div>
 
-                      <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-r ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
-                      >
-                        <Icon className="w-6 h-6 text-white" />
+                      <div className="flex items-center justify-between mb-4">
+                        <div
+                          className={`w-12 h-12 rounded-xl bg-gradient-to-r ${benefit.color} flex items-center justify-center group-hover:scale-110 transition-transform`}
+                        >
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        {benefit.stats && (
+                          <span className="text-xs font-semibold text-purple-400 bg-purple-400/10 px-2 py-1 rounded-full self-start">
+                            {benefit.stats}
+                          </span>
+                        )}
                       </div>
 
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-white">
                           {benefit.title}
                         </h3>
-                        <span className="text-xs font-semibold text-purple-400 bg-purple-400/10 px-2 py-1 rounded-full">
-                          {benefit.stats}
-                        </span>
                       </div>
 
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-gray-400 text-justify">
                         {benefit.description}
                       </p>
                     </div>
@@ -531,9 +536,9 @@ export default function ExhibitionSpaceBooking() {
                 return (
                   <div key={index} className="relative">
                     {/* Connector Line */}
-                    {index < process.length - 1 && (
+                    {/* {index < process.length - 1 && (
                       <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"></div>
-                    )}
+                    )} */}
 
                     <div className="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center group hover:bg-white/10 transition-all duration-300">
                       <div
@@ -561,36 +566,34 @@ export default function ExhibitionSpaceBooking() {
             </div>
           </div>
 
-          <div className="mb-20">
-            <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
-                {t.everythingIncludedinYour}
-                <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+          <div className="my-12 md:my-20 px-4 max-w-7xl mx-auto w-full">
+            <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center mb-6 md:mb-8 tracking-tight">
+                <span className="block sm:inline">
+                  {t.everythingIncludedinYour}
+                </span>
+                <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent block sm:inline mt-1 sm:mt-0">
                   {" "}
                   {t.exhibitionPackage}
                 </span>
               </h3>
 
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-2 md:gap-3">
                 {features.map((feature, index) => {
                   const Icon = feature.icon;
 
                   return (
                     <div
                       key={index}
-                      className="flex items-center gap-2 px-4 py-2 rounded-full 
-        bg-white/10 border border-white/10 backdrop-blur-sm
-        hover:scale-105 transition-all duration-300 shadow-lg"
+                      className="flex items-center w-30 lg:w-36 gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-md"
                     >
-                      {/* Icon */}
                       <div
-                        className={`w-6 h-6 flex items-center justify-center rounded-md bg-gradient-to-r ${feature.color}`}
+                        className={`w-5 h-5 md:w-6 md:h-6 flex items-center justify-center rounded-md bg-gradient-to-r ${feature.color} shrink-0`}
                       >
-                        <Icon className="w-3.5 h-3.5 text-white" />
+                        <Icon className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" />
                       </div>
 
-                      {/* Text */}
-                      <span className="text-sm text-white font-medium whitespace-nowrap">
+                      <span className="text-xs md:text-sm text-gray-200 font-medium break-words max-w-[160px] sm:max-w-none">
                         {feature.category}
                       </span>
                     </div>
@@ -622,16 +625,16 @@ export default function ExhibitionSpaceBooking() {
                   <button
                     onClick={() =>
                       window.open(
-                        "https://hpql-exhibitor.i-diligence.com/login/",
+                        "https://hpql-exhibitor.i-diligence.com/Registration/",
                       )
                     }
-                    className="cursor-pointer group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                    className="cursor-pointer group inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-xl text-[17px] lg:text-xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
                   >
                     {t.BookYourSpaceNow}
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
 
-                  <button className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-300">
+                  <button className="inline-flex cursor-pointer items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-300">
                     {t.ContactSales}
                   </button>
                 </div>

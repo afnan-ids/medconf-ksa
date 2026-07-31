@@ -162,7 +162,7 @@ export default function MedicalInnovationArena() {
                   </h2>
 
                   {/* Paragraph */}
-                  <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                  <p className="text-sm text-justify md:text-center sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
                     {t.heroSubDescription}
                   </p>
 

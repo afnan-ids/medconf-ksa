@@ -207,6 +207,7 @@ export default function ConferenceOrganization() {
           { label: `${t.services}`, href: "/pages/NavBar-Links/NavServices" },
           { label: `${t.conferenceOrganization}` },
         ]}
+        className="p-10"
       />
 
       <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900">

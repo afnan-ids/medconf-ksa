@@ -33,52 +33,43 @@ export default function partnershipOpportunities() {
   const t = translations[language];
   const isRTL = language === "ar";
 
-  // Define sponsorship tiers with translations
-  const sponsorshipTiers = [
+  const partners = [
     {
       id: "business",
       name: t.businessPackage,
-      icon: Briefcase,
-      description: t.businessPackageDescription,
-      color: "from-blue-500 to-indigo-600",
-      price: t.businessPackagePricing,
-      space: t.businessPackageSpace,
+      color: "rgb(76 76 76)",
+      price: "Custom Pricing",
+      space: t.businessPackageBasedonSpaceandLocation,
       features: [
         t.businessPackageLocations,
         t.businessPackageSupport,
-        t.partnershipManager,
+        t.businessPackageSpace,
         t.businessPackageParking,
         t.businessPackageManager,
       ],
-      popular: false,
       customPrice: true,
     },
-
     {
       id: "gold",
       name: t.goldPartner,
-      icon: Medal,
-      description: t.goldPartnerDescription,
-      color: "from-emerald-500 to-green-600",
-      price: t.goldPartnerPrice,
-      // space: t.goldPartnerSpace,
+      color: "rgb(106 80 13)",
+      price: "1,000,000 SAR",
+      space: "120 sqm",
       features: [
         t.goldPartnerSpace,
         t.goldPartnerSupport,
-        t.partnershipManager,
+        t.businessPackageSpace,
         t.goldPartnerParking,
         t.goldPartnerReport,
       ],
-      popular: false,
+      customPrice: false,
     },
     {
-      id: "platinum",
+      id: 'platinum',
       name: t.platinumPartner,
-      icon: Diamond,
-      description: t.platinumPartnerDescription,
-      color: "from-cyan-500 to-teal-600",
-      price: t.platinumPartnerPrice,
-      space: t.platinumPartnerSpace,
+      color: "rgb(85 185 220)",
+      price: "1,500,000 SAR",
+      space: "160 sqm",
       features: [
         t.platinumPartnerSpace,
         t.platinumPartnerSupport,
@@ -86,17 +77,14 @@ export default function partnershipOpportunities() {
         t.platinumPartnerParking,
         t.platinumPartnerReport,
       ],
-      popular: false,
+      customPrice: false,
     },
-
     {
       id: "strategic",
       name: t.strategicPartner,
-      icon: Crown,
-      description: t.strategicPartnerDescription,
-      color: "from-indigo-500 to-purple-600",
-      price: t.strategicPartnerPrice,
-      // space: t.strategicPartnerSpace,
+      color: "rgb(38 65 127)",
+      price: "2,000,000 SAR",
+      space: "230 sqm",
       features: [
         t.strategicPartnerSpace,
         t.strategicPartnerSupport,
@@ -105,11 +93,9 @@ export default function partnershipOpportunities() {
         t.strategicPartnerParking2,
         t.strategicPartnerReport,
       ],
-      popular: true,
-      badge: "Best Value",
+      customPrice: false,
     },
   ];
-
   const stats = [
     { value: "5,000+", label: t.corporateLeaders, icon: Users },
     { value: "10M+", label: t.mediaImpressions, icon: Globe },
@@ -151,10 +137,10 @@ export default function partnershipOpportunities() {
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
-              <span className="text-white">Sponsorship &</span>
+             
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
                 {" "}
-                Strategic Partnerships
+{t.sponsorship}
               </span>
             </h2>
 
@@ -166,30 +152,30 @@ export default function partnershipOpportunities() {
             </div>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20 md:mb-24">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={index}
-                  className="group relative rounded-xl sm:rounded-2xl p-4 sm:p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1"
-                >
-                  <div className="text-center">
-                    <div className="inline-flex p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white/10 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-500">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-teal-400" />
-                    </div>
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-xs sm:text-sm text-gray-400">
-                      {stat.label}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+  {/* Stats Section */}
+<div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-16 sm:mb-20 md:mb-24 px-3 sm:px-0">
+  {stats.map((stat, index) => {
+    const Icon = stat.icon;
+    return (
+      <div
+        key={index}
+        className="group relative rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1"
+      >
+        <div className="text-center">
+          <div className="inline-flex p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-white/10 mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-500">
+            <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-teal-400" />
           </div>
+          <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-0.5 sm:mb-1">
+            {stat.value}
+          </div>
+          <div className="text-[10px] sm:text-xs md:text-sm text-gray-400 leading-tight">
+            {stat.label}
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
 
           {/* Sponsorship Packages Grid */}
           <div className="mb-16 sm:mb-20 md:mb-24">
@@ -200,127 +186,93 @@ export default function partnershipOpportunities() {
                   {t.partnershipPackages}
                 </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-                <span className="text-white">Choose Your</span>
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 px-4">
+                <span className="text-white">{t.pacExplore}</span>
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent block sm:inline">
                   {" "}
-                  Partnership Level
+                  {t.chooseYourPartnershipLevel}
                 </span>
               </h3>
               <div className="relative max-w-3xl mx-auto">
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-                <p className="text-sm sm:text-base text-gray-400 px-4 mt-4">
+                <p className="text-xs sm:text-sm md:text-base text-gray-400 px-4 mt-4">
                   {t.selectPackageDescription}
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
-              {sponsorshipTiers.map((tier, index) => {
-                const Icon = tier.icon;
-                return (
-                  <div key={tier.id} className="group relative">
-                    <div className="relative h-full rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${tier.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                      ></div>
-
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                      </div>
-
-                      <div
-                        className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${tier.color} transform -translate-y-full group-hover:translate-y-0 transition-transform duration-700`}
-                      ></div>
-
-                      {/* Popular Badge */}
-                      {tier.popular && (
-                        <div className="absolute top-3 right-3 z-20">
-                          <span className="text-[10px] font-bold text-white bg-gradient-to-r from-yellow-500 to-amber-500 px-2.5 py-1 rounded-full shadow-lg">
-                            {tier.badge}
-                          </span>
-                        </div>
-                      )}
-
-                      <div className="relative p-4 sm:p-5 md:p-6 flex flex-col h-full">
-                        <div className="relative mb-4 sm:mb-5 md:mb-6">
-                          <div
-                            className={`absolute inset-0 bg-gradient-to-r ${tier.color} rounded-lg sm:rounded-xl blur-md sm:blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500`}
-                          ></div>
-                          <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl flex items-center justify-center border border-white/20 bg-white/10 group-hover:bg-white/20 transition-all duration-500">
-                            <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white group-hover:scale-110 transition-transform duration-500" />
-                          </div>
-                          <span className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-xs sm:text-sm font-bold text-white/60">
-                            {index + 1}
-                          </span>
-                        </div>
-
-                        <div className="mb-3 sm:mb-4">
-                          <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-500">
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 px-4 sm:px-4 md:px-0 max-w-xs sm:max-w-none w-full sm:w-full">
+                {partners.map((tier, index) => {
+                  return (
+                    <div
+                      key={tier.id}
+                      className="group relative flex justify-center"
+                    >
+                      <div className="relative w-full sm:w-full max-w-[320px] sm:max-w-none h-[320px] sm:h-auto rounded-lg sm:rounded-xl md:rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col">
+                        {/* Header with custom color */}
+                        <div
+                          className="relative p-4 sm:p-4 md:p-5 lg:p-6"
+                          style={{ backgroundColor: tier.color }}
+                        >
+                          <h3 className="text-centyer sm:text-base md:text-lg md:text-center lg:text-xl font-bold text-white text-center  sm:text-left">
                             {tier.name}
                           </h3>
-                          <p className="text-xs text-gray-500">
-                            {tier.description}
-                          </p>
-                          <div
-                            className={`w-8 h-0.5 bg-gradient-to-r ${tier.color} mt-3`}
-                          ></div>
                         </div>
 
-                        <div className="mb-4 sm:mb-5 p-2 sm:p-3 rounded-lg bg-white/5 border border-white/10">
-                          <div className="text-lg sm:text-xl font-bold text-white">
-                            {tier.price}
-                          </div>
-                          <div className="text-[10px] sm:text-xs text-gray-400">
-                            {/* {tier.space} */}
-                          </div>
-                        </div>
-
-                        <div className="flex-1 mb-4 sm:mb-5">
-                          <div className="space-y-1.5 sm:space-y-2">
-                            {tier.features.map((feature, idx) => (
-                              <div
-                                key={idx}
-                                className="flex items-start gap-1.5 sm:gap-2"
-                              >
+                        {/* Content */}
+                        <div className="relative p-4 sm:p-4 md:p-5 lg:p-6 flex-1 flex flex-col">
+                          {/* Features */}
+                          <div className="flex-1 mb-3 sm:mb-4 md:mb-5">
+                            <div className="space-y-2 sm:space-y-1.5 md:space-y-2">
+                              {tier.features.map((feature, idx) => (
                                 <div
-                                  className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-gradient-to-r ${tier.color} mt-1.5 flex-shrink-0`}
-                                ></div>
-                                <p className="text-xs sm:text-sm text-gray-300">
-                                  {feature}
-                                </p>
-                              </div>
-                            ))}
+                                  key={idx}
+                                  className="flex items-start gap-1.5 sm:gap-2"
+                                >
+                                  <div
+                                    className="w-1.5 h-1.5 sm:w-1.5 sm:h-1.5 rounded-full mt-1.5 flex-shrink-0"
+                                    style={{ backgroundColor: tier.color }}
+                                  ></div>
+                                  <p className="text-xs sm:text-xs md:text-sm text-gray-300 leading-relaxed">
+                                    {feature}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         </div>
 
-                        <div className="md:hidden mt-3">
-                          <button
-                            className={`inline-flex items-center justify-center gap-1 sm:gap-2 w-full px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-r ${tier.color} text-white text-xs sm:text-sm font-semibold hover:shadow-lg transition-all duration-300 group/btn`}
-                          >
-                            {t.requestInformation}
-                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
-                          </button>
-                        </div>
-
+                        {/* Bottom Footer - Price section styled like header */}
                         <div
-                          className={`absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r ${tier.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                        ></div>
+                          className="relative p-4 sm:p-4 md:p-5 lg:p-6 mt-auto"
+                          style={{ backgroundColor: tier.color }}
+                        >
+                          {tier.customPrice ? (
+                            <div className="text-sm sm:text-sm md:text-base text-center text-white/90 font-medium">
+                              {tier.space}
+                            </div>
+                          ) : (
+                            <div className="text-base sm:text-base md:text-xl font-bold text-center text-white">
+                              {tier.price}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           {/* Why Choose Us Section */}
-          <div className="relative mb-20 sm:mb-24 max-w-5xl mx-auto text-center px-4">
+          {/* <div className="relative mb-20 sm:mb-24 max-w-5xl mx-auto text-center px-4">
             <div className="inline-flex items-center gap-2 bg-white/8 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 mb-8 shadow-lg shadow-cyan-500/5">
               <Shield className="w-4 h-4 text-cyan-400" />
-              {/* <span className="text-sm font-medium tracking-wide text-gray-300">
+              <span className="text-sm font-medium tracking-wide text-gray-300">
                 {t.whyIndustryLeadersChooseUs}
-              </span> */}
+              </span>
             </div>
 
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
@@ -345,7 +297,7 @@ export default function partnershipOpportunities() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* CTA Section */}
           <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden">
