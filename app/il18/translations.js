@@ -36,7 +36,7 @@ export const translations = {
 
     contact: "Contact",
 
-    signIn: "Sign In",
+    signIn: "Get Pass",
     portalSupportingprogramscomprehensivehealthtransformation:"Supporting Quality of Life programs & comprehensive health transformation",
 
 portalStrategicObjectives:"Strategic Objectives:",
