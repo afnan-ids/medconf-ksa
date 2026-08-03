@@ -46,15 +46,16 @@ const SlideVexora = () => {
                   <h2
                     className="text-2xl md:text-2xl lg:text-3xl font-bold text-white leading-tight lg:mt-20 tracking-[0.15em]"
                     dir="rtl"
-                     style={{fontSize : "2.3rem", wordSpacing: "0.3rem"}}
+                    style={{ fontSize: "2.3rem", wordSpacing: "0.3rem" }}
                   >
                     مؤتمـــر ومعرض تعزيز الصحة وجودة الحياة
                   </h2>
                 )}
                 {language === "en" && (
-                  <h2 className=" text-white  tracking-[0.15em]"
-                    style={{fontSize : "1rem"}} >
-
+                  <h2
+                    className=" text-white  tracking-[0.15em]"
+                    style={{ fontSize: "1rem" }}
+                  >
                     HEALTH PROMOTION & QUALITY OF LIFE CONFERENCE & EXHIBITION
                   </h2>
                 )}
@@ -63,7 +64,10 @@ const SlideVexora = () => {
 
             {/* HEAL Section - More compact */}
             <div className="flex justify-end items-center pt-1 gap-1 lg:mt-8 tracking-[0.3em]">
-              <p className="  font-black text-6xl " style={{ letterSpacing : "6px"}}>
+              <p
+                className="  font-black text-6xl "
+                style={{ letterSpacing: "6px" }}
+              >
                 HPQL
               </p>
               <div className="text-right">
@@ -71,13 +75,17 @@ const SlideVexora = () => {
                   <p
                     className="text-base font-bold text-white mb-0.5"
                     dir="rtl"
-                    style={{fontSize : "2.2rem"}}
-                  > صحة • تمكين • توعية • عمر مديد
+                    style={{ fontSize: "2.2rem" }}
+                  >
+                    {" "}
+                    صحة • تمكين • توعية • عمر مديد
                   </p>
                 )}
                 {language === "en" && (
-                  <p className="w-full text-white uppercase tracking-[0.25em] font-light"
-                   style={{fontSize : "1.1rem"}}>
+                  <p
+                    className="w-full text-white uppercase tracking-[0.25em] font-light"
+                    style={{ fontSize: "1.1rem" }}
+                  >
                     HEALTH PROMOTION & QUALITY OF LIFE
                   </p>
                 )}
@@ -95,7 +103,6 @@ const SlideVexora = () => {
                         <p
                           className="text-md font-bold text-blue-900"
                           dir="rtl"
-                          
                         >
                           مركــــز جـــــدة للمعـــــارض والفعـــــــاليات
                         </p>
@@ -133,6 +140,48 @@ const SlideVexora = () => {
                 </div>
               </div>
             </div>
+       {/* Investment Card and Register Button */}
+<div className="flex justify-end">
+  <div className="bg-cyan-500 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden w-full max-w-200">
+    <div className="p-4">
+      <div className="flex items-center justify-between gap-3">
+        {/* Investment Title */}
+        <div className="text-start w-40">
+          {language === "ar" && (
+            <p className="text-md font-bold text-blue-900" dir="rtl">
+              استثمر في HPQL
+            </p>
+          )}
+          {language === "en" && (
+            <p className=" uppercase text-xl font-bold text-blue-900">
+              INVEST IN HPQL
+            </p>
+          )}
+        </div>
+
+        <div className="w-px h-10 bg-white/15" />
+
+        {/* Subtitle */}
+        <div className="text-sm font-semibold text-blue-900 text-center whitespace-nowrap">
+          HEALTH PROMOTION & QUALITY OF LIFE
+        </div>
+
+        <div className="w-px h-10 bg-white/15" />
+
+        {/* Register Button with Animation and Custom Colors */}
+        <button
+          onClick={() => (window.location.href = "/registration")}
+          className="group relative overflow-hidden border-2 border-blue-900 bg-cyan-500 text-blue-900 font-bold py-3 px-6 rounded-lg cursor-pointer select-none transition-all duration-300"
+        >
+          <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+            {language === "ar" ? "سجل الآن" : "Register Now"}
+          </span>
+          <span className="absolute inset-0 bg-blue-900 transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-[cubic-bezier(0.48,0,0.12,1)]"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
@@ -245,6 +294,7 @@ const SlideVexora = () => {
           </div>
         </div>
       </div>
+   
     </>
   );
 };

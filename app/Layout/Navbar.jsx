@@ -492,7 +492,7 @@ export default function Navbar() {
 
             {/* Sign In Button */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link href="/pages/SignIn">
+              <Link href="/pages/Registraction" className="group relative">
                 <button className="group cursor-pointer relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2">
                   <span className="relative z-10 flex items-center gap-2">
                     {t.signIn}
