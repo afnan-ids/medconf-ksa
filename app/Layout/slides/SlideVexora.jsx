@@ -170,7 +170,7 @@ const SlideVexora = () => {
 
         {/* Register Button with Animation and Custom Colors */}
         <button
-          onClick={() => (window.location.href = "/registration")}
+          onClick={() => (window.location.href = "https://hpql-sponsor.i-diligence.com/Registration/")}
           className="group relative overflow-hidden border-2 border-blue-900 bg-cyan-500 text-blue-900 font-bold py-3 px-6 rounded-lg cursor-pointer select-none transition-all duration-300"
         >
           <span className="relative z-10 group-hover:text-white transition-colors duration-300">
