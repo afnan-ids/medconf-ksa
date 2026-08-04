@@ -50,7 +50,7 @@ export default function RegistrationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
             
             {/* Card 1: Attendees (Visitors & Professionals) */}
-            <Link href="https://hpql-visitor.i-diligence.com/Registration_v2/">
+            <Link href="https://hpql-visitor.i-diligence.com/Registration/">
               <div className="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/10 cursor-pointer h-full">
                 <div className="p-8">
                   {/* Icons */}
