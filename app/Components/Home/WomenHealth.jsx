@@ -347,7 +347,7 @@ export default function WomenAndHealth() {
                     ))}
                   </div>
                   <Image
-                    src="/Images/Footer-logo.png"
+                    src="/Images/Logo.png"
                     alt=""
                     width={40}
                     height={40}
